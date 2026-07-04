@@ -3,120 +3,130 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VENTAS BOT | Soluciones WhatsApp</title>
+<title>VENTAS BOT PRO | El Bot #1 de WhatsApp en Perú</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
-body{background:#f8f9fa;color:#1a1a1a}
+body{background:#f8f9fa;color:#1a1a1a;scroll-behavior:smooth}
 .banner{position:relative}
-.banner img{width:100%;height:450px;object-fit:cover}
-.overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.8));padding:40px 20px;color:#fff}
-.overlay h1{font-size:2.8em;font-weight:700}
-nav{position:sticky;top:0;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.1);padding:15px 20px;display:flex;justify-content:space-between;align-items:center;z-index:100}
-nav a{background:#25D366;color:#fff;padding:10px 25px;border-radius:8px;text-decoration:none;font-weight:600}
-.container{max-width:1100px;margin:auto;padding:60px 20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px}
-.feature{background:#fff;padding:30px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.05);transition:0.3s}
-.feature:hover{transform:translateY(-5px);box-shadow:0 8px 30px rgba(0,0,0,0.1)}
-.feature .icon{font-size:2.5em;margin-bottom:15px}
-.feature h3{font-size:1.4em;margin-bottom:10px;color:#0066ff}
-.precio-card{background:#fff;border:2px solid #0066ff;border-radius:20px;padding:40px;text-align:center;position:relative}
-.precio-card.destacado{border-color:#25D366;transform:scale(1.05)}
-.badge{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:#25D366;color:#fff;padding:5px 20px;border-radius:20px;font-size:0.85em;font-weight:700}
-.precio{font-size:3.5em;font-weight:900;color:#0066ff;margin:15px 0}
-.precio span{font-size:0.4em;color:#666}
-.btn{background:#0066ff;color:#fff;padding:14px 30px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-block;margin-top:15px;transition:0.2s}
-.btn:hover{background:#0051cc}
+.banner img{width:100%;height:500px;object-fit:cover}
+.overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.85));padding:50px 20px;color:#fff;text-align:center}
+.overlay h1{font-size:3em;font-weight:900}
+.stats{display:flex;justify-content:center;gap:40px;margin-top:20px;flex-wrap:wrap}
+.stat b{font-size:1.8em;color:#00d4ff}
+nav{position:sticky;top:0;background:#fff;box-shadow:0 2px 15px rgba(0,0,0,0.08);padding:15px 20px;display:flex;justify-content:space-between;align-items:center;z-index:100}
+.container{max-width:1150px;margin:auto;padding:70px 20px}
+.titulo{text-align:center;font-size:2.4em;margin-bottom:50px;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}
+.feature{background:#fff;padding:35px;border-radius:18px;box-shadow:0 5px 25px rgba(0,0,0,0.06);transition:0.3s;opacity:0;transform:translateY(20px)}
+.feature.visible{opacity:1;transform:translateY(0)}
+.feature:hover{transform:translateY(-8px)}
+.precio-card{background:#fff;border:2px solid #e0e0e0;border-radius:20px;padding:40px;text-align:center;position:relative;transition:0.3s}
+.precio-card.destacado{border-color:#25D366;transform:scale(1.05);box-shadow:0 10px 40px rgba(37,211,102,0.2)}
+.badge{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:#25D366;color:#fff;padding:6px 22px;border-radius:20px;font-weight:700}
+.precio{font-size:3.8em;font-weight:900;color:#0066ff}
+.btn{background:#0066ff;color:#fff;padding:15px 35px;border-radius:12px;text-decoration:none;font-weight:700;display:inline-block;margin-top:20px}
 .btn-wsp{background:#25D366}
-.comandos-lista{background:#fff;padding:30px;border-radius:16px}
-.comandos-lista h3{margin-bottom:20px;color:#0066ff}
-.grid-cmd{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-.cmd-item{background:#f8f9fa;padding:10px 15px;border-radius:8px;border-left:3px solid #0066ff;font-size:0.9em}
-footer{background:#1a1a1a;color:#fff;text-align:center;padding:40px 20px;margin-top:60px}
+.testimonio{background:#fff;padding:25px;border-radius:15px;border-left:4px solid #25D366}
+.faq-item{background:#fff;margin-bottom:12px;border-radius:12px;overflow:hidden}
+.faq-btn{width:100%;padding:18px;background:#fff;border:none;text-align:left;font-size:1.1em;font-weight:600;cursor:pointer}
+.faq-contenido{padding:0 18px 18px;display:none}
+.whatsapp-float{position:fixed;bottom:25px;right:25px;background:#25D366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2em;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.4);z-index:999}
+footer{background:#111;color:#aaa;text-align:center;padding:50px 20px}
 </style>
 </head>
 <body>
 
 <nav>
-  <b style="font-size:1.3em">🤖 VENTAS BOT</b>
-  <a href="https://wa.me/51936994155">Comprar</a>
+  <b style="font-size:1.4em">🤖 VENTAS BOT PRO</b>
+  <a href="https://wa.me/51936994155" class="btn btn-wsp">Comprar Ahora</a>
 </nav>
 
 <div class="banner">
   <img src="https://files.evogb.win/CJOWbF.jpg" alt="Ventas Bot">
   <div class="overlay">
     <h1>Automatiza tu WhatsApp al 100%</h1>
-    <p style="font-size:1.2em;margin-top:10px">+100 Comandos profesionales para tu negocio</p>
+    <p style="font-size:1.3em;margin:15px 0">El bot más completo con +100 Comandos Profesionales</p>
+    <div class="stats">
+      <div class="stat"><b>+50</b><br>Bots Vendidos</div>
+      <div class="stat"><b>24/7</b><br>Online</div>
+      <div class="stat"><b>100%</b><br>Garantía</div>
+    </div>
   </div>
 </div>
 
 <div class="container">
-  <h2 style="text-align:center;font-size:2.2em;margin-bottom:40px">Todo lo que necesitas en 1 Bot</h2>
+  <h2 class="titulo">Características Principales</h2>
   <div class="grid">
-    <div class="feature">
-      <div class="icon">🧠</div><h3>Inteligencia Artificial</h3><p>GPT-4, Gemini, Claude y Copilot integrados. Responde cualquier pregunta.</p>
-    </div>
-    <div class="feature">
-      <div class="icon">⬇️</div><h3>Descargas Ilimitadas</h3><p>YouTube, TikTok, Spotify, Mediafire. Música y video al instante.</p>
-    </div>
-    <div class="feature">
-      <div class="icon">👑</div><h3>Administración de Grupos</h3><p>Kick, Promote, Mute, Todos. Control total de tus comunidades.</p>
-    </div>
-    <div class="feature">
-      <div class="icon">🎁</div><h3>Sistema de Sorteos</h3><p>Crea sorteos automáticos y aumenta el engagement de tu grupo.</p>
-    </div>
-    <div class="feature">
-      <div class="icon">⚡</div><h3>Velocidad Extrema</h3><p>0 delay. Servidores optimizados 24/7 sin caídas.</p>
-    </div>
-    <div class="feature">
-      <div class="icon">🇵🇪</div><h3>Soporte en Perú</h3><p>Te instalo y configuro todo. Soporte directo por WhatsApp.</p>
-    </div>
+    <div class="feature"><div style="font-size:2.5em">🧠</div><h3>Inteligencia Artificial</h3><p>GPT-4, Gemini, Claude y Copilot. Responde como un humano.</p></div>
+    <div class="feature"><div style="font-size:2.5em">⬇️</div><h3>Descargas Ilimitadas</h3><p>YouTube, TikTok, Spotify. Convierte en MP3 y MP4 al toque.</p></div>
+    <div class="feature"><div style="font-size:2.5em">👑</div><h3>Admin de Grupos</h3><p>Control total: Kick, Promote, Mute, Bienvenidas y más.</p></div>
   </div>
 
-  <h2 style="text-align:center;font-size:2.2em;margin:80px 0 40px">Planes y Precios</h2>
+  <h2 class="titulo" style="margin-top:80px">Elige tu Plan</h2>
   <div class="grid">
     <div class="precio-card">
-      <h3>BÁSICO</h3>
-      <div class="precio">S/20<span>/pago único</span></div>
+      <h3>BÁSICO</h3><div class="precio">S/20</div>
       <p>+100 Comandos<br>Grupos + Fun<br>Soporte 7 días</p>
-      <a href="https://wa.me/51936994155?text=BASICO" class="btn">Seleccionar</a>
+      <a href="https://wa.me/51936994155?text=Plan%20BASICO" class="btn">Comprar</a>
     </div>
     <div class="precio-card destacado">
-      <div class="badge">MÁS VENDIDO</div>
-      <h3>PREMIUM</h3>
-      <div class="precio">S/40<span>/pago único</span></div>
-      <p>Todo lo del Básico<br>+ Descargas<br>+ IA Avanzada<br>Soporte 30 días</p>
-      <a href="https://wa.me/51936994155?text=PREMIUM" class="btn btn-wsp">Seleccionar</a>
+      <div class="badge">RECOMENDADO</div>
+      <h3>PREMIUM</h3><div class="precio">S/40</div>
+      <p>Todo lo del Básico<br>+ Descargas + IA<br>Soporte 30 días</p>
+      <a href="https://wa.me/51936994155?text=Plan%20PREMIUM" class="btn btn-wsp">Comprar</a>
     </div>
     <div class="precio-card">
-      <h3>VIP</h3>
-      <div class="precio">S/70<span>/pago único</span></div>
-      <p>Todo lo del Premium<br>+ Subbots<br>+ Personalizado<br>Soporte 90 días</p>
-      <a href="https://wa.me/51936994155?text=VIP" class="btn">Seleccionar</a>
+      <h3>VIP</h3><div class="precio">S/70</div>
+      <p>Todo lo del Premium<br>+ Subbots + Personalizado<br>Soporte 90 días</p>
+      <a href="https://wa.me/51936994155?text=Plan%20VIP" class="btn">Comprar</a>
     </div>
   </div>
 
-  <div class="comandos-lista" style="margin-top:60px">
-    <h3>📋 Comandos Incluidos</h3>
-    <div class="grid-cmd">
-      <div class="cmd-item">.catalogo</div><div class="cmd-item">.comprarbot</div><div class="cmd-item">.garantia</div>
-      <div class="cmd-item">.spinrl</div><div class="cmd-item">.clima</div><div class="cmd-item">.ping</div>
-      <div class="cmd-item">.google</div><div class="cmd-item">.gpt4</div><div class="cmd-item">.gemini</div>
-      <div class="cmd-item">.play</div><div class="cmd-item">.ytmp4</div><div class="cmd-item">.spotify</div>
-      <div class="cmd-item">.kick</div><div class="cmd-item">.promote</div><div class="cmd-item">.todos</div>
-      <div class="cmd-item">.ship</div><div class="cmd-item">.piropo</div><div class="cmd-item">.s</div>
-    </div>
-    <p style="text-align:center;margin-top:20px;opacity:0.7">+80 comandos más disponibles</p>
+  <h2 class="titulo" style="margin-top:80px">Lo que dicen nuestros clientes</h2>
+  <div class="grid">
+    <div class="testimonio"><b>Carlos M.</b><p>"El mejor bot que he comprado. Me genera ingresos todos los días vendiendo en grupos."</p></div>
+    <div class="testimonio"><b>Lucía R.</b><p>"La instalación fue rápida y el soporte es buenísimo. 100% recomendado."</p></div>
+    <div class="testimonio"><b>Jorge P.</b><p>"Los comandos de IA están buenazos. Mis clientes piensan que respondo yo."</p></div>
   </div>
 
-  <div style="text-align:center;margin-top:60px">
-    <h2 style="font-size:2em;margin-bottom:15px">¿Listo para automatizar?</h2>
-    <a href="https://wa.me/51936994155" class="btn btn-wsp" style="font-size:1.2em;padding:18px 40px">HABLAR POR WHATSAPP</a>
+  <h2 class="titulo" style="margin-top:80px">Preguntas Frecuentes</h2>
+  <div class="faq-item">
+    <button class="faq-btn">¿Cómo me instalan el bot? ▼</button>
+    <div class="faq-contenido">Te envío el código + video tutorial. Si quieres te lo instalo yo por acceso remoto.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-btn">¿El bot se cae o da ban? ▼</button>
+    <div class="faq-contenido">No. Tiene sistema antiban y está optimizado para 24/7. Además tienes garantía de 7 días.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-btn">¿Puedo agregar mis propios comandos? ▼</button>
+    <div class="faq-contenido">Sí. En el plan VIP te enseño y te ayudo a crear comandos personalizados.</div>
   </div>
 </div>
 
+<a href="https://wa.me/51936994155" class="whatsapp-float">💬</a>
+
 <footer>
-  © 2026 VENTAS BOT | 936 994 155 | Chimbote, Ancash - Perú 🇵🇪
+  <h3>VENTAS BOT PRO</h3>
+  <p>WhatsApp: 936 994 155 | Chimbote, Perú 🇵🇪</p>
+  <p style="margin-top:15px;opacity:0.6">© 2026 Todos los derechos reservados</p>
 </footer>
+
+<script>
+// Animación al hacer scroll
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('visible'); }})
+},{threshold:0.1});
+document.querySelectorAll('.feature').forEach(el=>observer.observe(el));
+
+// FAQ Acordeón
+document.querySelectorAll('.faq-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const contenido = btn.nextElementSibling;
+    contenido.style.display = contenido.style.display === 'block' ? 'none' : 'block';
+  })
+})
+</script>
 
 </body>
 </html>
