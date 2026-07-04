@@ -3,34 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VENTAS BOT PRO | El Bot #1 de WhatsApp en Perú</title>
+<title>VENTAS BOT PRO | Regístrate</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
-body{background:#f8f9fa;color:#1a1a1a;scroll-behavior:smooth}
-.banner{position:relative}
-.banner img{width:100%;height:500px;object-fit:cover}
-.overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.85));padding:50px 20px;color:#fff;text-align:center}
-.overlay h1{font-size:3em;font-weight:900}
-.stats{display:flex;justify-content:center;gap:40px;margin-top:20px;flex-wrap:wrap}
-.stat b{font-size:1.8em;color:#00d4ff}
+body{background:#f8f9fa;color:#1a1a1a}
 nav{position:sticky;top:0;background:#fff;box-shadow:0 2px 15px rgba(0,0,0,0.08);padding:15px 20px;display:flex;justify-content:space-between;align-items:center;z-index:100}
+.nav-btns button{margin-left:10px;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;border:none;cursor:pointer}
+.btn-login{background:transparent;border:2px solid #0066ff;color:#0066ff}
+.btn-register{background:#0066ff;color:#fff}
+.btn-logout{background:#da3633;color:#fff;display:none}
+.banner{position:relative}
+.banner img{width:100%;height:450px;object-fit:cover;filter:brightness(0.5)}
+.overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.85));padding:50px 20px;color:#fff;text-align:center}
 .container{max-width:1150px;margin:auto;padding:70px 20px}
-.titulo{text-align:center;font-size:2.4em;margin-bottom:50px;font-weight:800}
+.titulo{text-align:center;font-size:2.4em;margin-bottom:40px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}
-.feature{background:#fff;padding:35px;border-radius:18px;box-shadow:0 5px 25px rgba(0,0,0,0.06);transition:0.3s;opacity:0;transform:translateY(20px)}
-.feature.visible{opacity:1;transform:translateY(0)}
-.feature:hover{transform:translateY(-8px)}
-.precio-card{background:#fff;border:2px solid #e0e0e0;border-radius:20px;padding:40px;text-align:center;position:relative;transition:0.3s}
-.precio-card.destacado{border-color:#25D366;transform:scale(1.05);box-shadow:0 10px 40px rgba(37,211,102,0.2)}
-.badge{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:#25D366;color:#fff;padding:6px 22px;border-radius:20px;font-weight:700}
+.precio-card{background:#fff;border:2px solid #e0e0e0;border-radius:20px;padding:40px;text-align:center;transition:0.3s}
+.precio-card.destacado{border-color:#25D366;transform:scale(1.05)}
 .precio{font-size:3.8em;font-weight:900;color:#0066ff}
-.btn{background:#0066ff;color:#fff;padding:15px 35px;border-radius:12px;text-decoration:none;font-weight:700;display:inline-block;margin-top:20px}
-.btn-wsp{background:#25D366}
-.testimonio{background:#fff;padding:25px;border-radius:15px;border-left:4px solid #25D366}
-.faq-item{background:#fff;margin-bottom:12px;border-radius:12px;overflow:hidden}
-.faq-btn{width:100%;padding:18px;background:#fff;border:none;text-align:left;font-size:1.1em;font-weight:600;cursor:pointer}
-.faq-contenido{padding:0 18px 18px;display:none}
-.whatsapp-float{position:fixed;bottom:25px;right:25px;background:#25D366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2em;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.4);z-index:999}
+.btn-wsp{background:#25D366;color:#fff;padding:15px 35px;border-radius:12px;text-decoration:none;font-weight:700;display:inline-block;margin-top:20px}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:1000;justify-content:center;align-items:center}
+.modal-contenido{background:#fff;padding:40px;border-radius:20px;width:90%;max-width:400px;position:relative}
+.cerrar{position:absolute;top:15px;right:20px;font-size:2em;cursor:pointer}
+.input-group{margin-bottom:20px}
+.input-group input{width:100%;padding:12px;border:2px solid #ddd;border-radius:10px;font-size:1em}
+.btn-submit{width:100%;background:#0066ff;color:#fff;padding:14px;border:none;border-radius:10px;font-size:1.1em;font-weight:700;cursor:pointer}
+#welcomeMsg{color:#25D366;font-weight:700;display:none}
 footer{background:#111;color:#aaa;text-align:center;padding:50px 20px}
 </style>
 </head>
@@ -38,94 +36,119 @@ footer{background:#111;color:#aaa;text-align:center;padding:50px 20px}
 
 <nav>
   <b style="font-size:1.4em">🤖 VENTAS BOT PRO</b>
-  <a href="https://wa.me/51936994155" class="btn btn-wsp">Comprar Ahora</a>
+  <div class="nav-btns">
+    <span id="welcomeMsg"></span>
+    <button class="btn-login" onclick="abrirModal('login')">Iniciar Sesión</button>
+    <button class="btn-register" onclick="abrirModal('registro')">Registrarse</button>
+    <button class="btn-logout" onclick="logout()">Salir</button>
+  </div>
 </nav>
 
 <div class="banner">
   <img src="https://files.evogb.win/CJOWbF.jpg" alt="Ventas Bot">
   <div class="overlay">
-    <h1>Automatiza tu WhatsApp al 100%</h1>
-    <p style="font-size:1.3em;margin:15px 0">El bot más completo con +100 Comandos Profesionales</p>
-    <div class="stats">
-      <div class="stat"><b>+50</b><br>Bots Vendidos</div>
-      <div class="stat"><b>24/7</b><br>Online</div>
-      <div class="stat"><b>100%</b><br>Garantía</div>
-    </div>
+    <h1 style="font-size:2.8em">Automatiza tu WhatsApp al 100%</h1>
+    <p style="font-size:1.3em;margin:15px 0">Regístrate para recibir ofertas exclusivas</p>
   </div>
 </div>
 
 <div class="container">
-  <h2 class="titulo">Características Principales</h2>
-  <div class="grid">
-    <div class="feature"><div style="font-size:2.5em">🧠</div><h3>Inteligencia Artificial</h3><p>GPT-4, Gemini, Claude y Copilot. Responde como un humano.</p></div>
-    <div class="feature"><div style="font-size:2.5em">⬇️</div><h3>Descargas Ilimitadas</h3><p>YouTube, TikTok, Spotify. Convierte en MP3 y MP4 al toque.</p></div>
-    <div class="feature"><div style="font-size:2.5em">👑</div><h3>Admin de Grupos</h3><p>Control total: Kick, Promote, Mute, Bienvenidas y más.</p></div>
-  </div>
-
-  <h2 class="titulo" style="margin-top:80px">Elige tu Plan</h2>
+  <h2 class="titulo">Elige tu Plan</h2>
   <div class="grid">
     <div class="precio-card">
       <h3>BÁSICO</h3><div class="precio">S/20</div>
-      <p>+100 Comandos<br>Grupos + Fun<br>Soporte 7 días</p>
-      <a href="https://wa.me/51936994155?text=Plan%20BASICO" class="btn">Comprar</a>
+      <p>+100 Comandos<br>Soporte 7 días</p>
+      <a href="https://wa.me/51936994155?text=Plan%20BASICO" class="btn-wsp">Comprar</a>
     </div>
     <div class="precio-card destacado">
-      <div class="badge">RECOMENDADO</div>
       <h3>PREMIUM</h3><div class="precio">S/40</div>
       <p>Todo lo del Básico<br>+ Descargas + IA<br>Soporte 30 días</p>
-      <a href="https://wa.me/51936994155?text=Plan%20PREMIUM" class="btn btn-wsp">Comprar</a>
+      <a href="https://wa.me/51936994155?text=Plan%20PREMIUM" class="btn-wsp">Comprar</a>
     </div>
     <div class="precio-card">
       <h3>VIP</h3><div class="precio">S/70</div>
-      <p>Todo lo del Premium<br>+ Subbots + Personalizado<br>Soporte 90 días</p>
-      <a href="https://wa.me/51936994155?text=Plan%20VIP" class="btn">Comprar</a>
+      <p>Todo lo del Premium<br>+ Subbots + Personalizado</p>
+      <a href="https://wa.me/51936994155?text=Plan%20VIP" class="btn-wsp">Comprar</a>
     </div>
-  </div>
-
-  <h2 class="titulo" style="margin-top:80px">Lo que dicen nuestros clientes</h2>
-  <div class="grid">
-    <div class="testimonio"><b>Carlos M.</b><p>"El mejor bot que he comprado. Me genera ingresos todos los días vendiendo en grupos."</p></div>
-    <div class="testimonio"><b>Lucía R.</b><p>"La instalación fue rápida y el soporte es buenísimo. 100% recomendado."</p></div>
-    <div class="testimonio"><b>Jorge P.</b><p>"Los comandos de IA están buenazos. Mis clientes piensan que respondo yo."</p></div>
-  </div>
-
-  <h2 class="titulo" style="margin-top:80px">Preguntas Frecuentes</h2>
-  <div class="faq-item">
-    <button class="faq-btn">¿Cómo me instalan el bot? ▼</button>
-    <div class="faq-contenido">Te envío el código + video tutorial. Si quieres te lo instalo yo por acceso remoto.</div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-btn">¿El bot se cae o da ban? ▼</button>
-    <div class="faq-contenido">No. Tiene sistema antiban y está optimizado para 24/7. Además tienes garantía de 7 días.</div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-btn">¿Puedo agregar mis propios comandos? ▼</button>
-    <div class="faq-contenido">Sí. En el plan VIP te enseño y te ayudo a crear comandos personalizados.</div>
   </div>
 </div>
 
-<a href="https://wa.me/51936994155" class="whatsapp-float">💬</a>
+<!-- MODAL LOGIN -->
+<div id="login" class="modal"><div class="modal-contenido">
+  <span class="cerrar" onclick="cerrarModal('login')">&times;</span>
+  <h2>Iniciar Sesión</h2>
+  <div class="input-group"><input type="email" id="loginEmail" placeholder="Email" required></div>
+  <div class="input-group"><input type="password" id="loginPass" placeholder="Contraseña" required></div>
+  <button class="btn-submit" onclick="login()">Entrar</button>
+</div></div>
+
+<!-- MODAL REGISTRO -->
+<div id="registro" class="modal"><div class="modal-contenido">
+  <span class="cerrar" onclick="cerrarModal('registro')">&times;</span>
+  <h2>Crear Cuenta</h2>
+  <div class="input-group"><input type="text" id="regName" placeholder="Tu nombre" required></div>
+  <div class="input-group"><input type="email" id="regEmail" placeholder="Email" required></div>
+  <div class="input-group"><input type="password" id="regPass" placeholder="Contraseña" required></div>
+  <button class="btn-submit" onclick="register()">Registrarse</button>
+</div></div>
 
 <footer>
-  <h3>VENTAS BOT PRO</h3>
-  <p>WhatsApp: 936 994 155 | Chimbote, Perú 🇵🇪</p>
-  <p style="margin-top:15px;opacity:0.6">© 2026 Todos los derechos reservados</p>
+  <p>VENTAS BOT PRO © 2026 | 936 994 155 | Chimbote, Perú 🇵🇪</p>
 </footer>
 
-<script>
-// Animación al hacer scroll
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('visible'); }})
-},{threshold:0.1});
-document.querySelectorAll('.feature').forEach(el=>observer.observe(el));
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-// FAQ Acordeón
-document.querySelectorAll('.faq-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const contenido = btn.nextElementSibling;
-    contenido.style.display = contenido.style.display === 'block' ? 'none' : 'block';
-  })
-})
+// PEGA TU CONFIG DE FIREBASE AQUI
+const firebaseConfig = {
+  apiKey: "TU_API_KEY",
+  authDomain: "TU_AUTH_DOMAIN",
+  projectId: "TU_PROJECT_ID",
+  storageBucket: "TU_BUCKET",
+  messagingSenderId: "TU_SENDER_ID",
+  appId: "TU_APP_ID"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+window.abrirModal = (id) => document.getElementById(id).style.display='flex'
+window.cerrarModal = (id) => document.getElementById(id).style.display='none'
+
+window.register = async () => {
+  try{
+    const name = regName.value; const email = regEmail.value; const pass = regPass.value;
+    await createUserWithEmailAndPassword(auth, email, pass);
+    alert("✅ Cuenta creada con éxito!");
+    cerrarModal('registro');
+  }catch(e){ alert("Error: " + e.message) }
+}
+
+window.login = async () => {
+  try{
+    await signInWithEmailAndPassword(auth, loginEmail.value, loginPass.value);
+    cerrarModal('login');
+  }catch(e){ alert("Error: Email o contraseña incorrectos") }
+}
+
+window.logout = () => signOut(auth);
+
+// Ver si el usuario ya inició sesión
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    welcomeMsg.innerText = `Hola, ${user.email.split('@')[0]} 👋`;
+    welcomeMsg.style.display = 'inline';
+    document.querySelector('.btn-login').style.display = 'none';
+    document.querySelector('.btn-register').style.display = 'none';
+    document.querySelector('.btn-logout').style.display = 'inline';
+  } else {
+    welcomeMsg.style.display = 'none';
+    document.querySelector('.btn-login').style.display = 'inline';
+    document.querySelector('.btn-register').style.display = 'inline';
+    document.querySelector('.btn-logout').style.display = 'none';
+  }
+});
 </script>
 
 </body>
