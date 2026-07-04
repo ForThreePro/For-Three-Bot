@@ -5,150 +5,123 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VENTAS BOT PRO</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700;900&family=Inter:wght@400;500&display=swap');
 
 :root{
-  --bg:#0B0F1A;
-  --card:#121829;
-  --border:#1E2A47;
-  --text:#EAECEF;
-  --text2:#A0AEC0;
-  --primary:#7C3AED; /* Morado */
-  --green:#25D366; /* Verde WhatsApp */
-  --blue:#3B82F6; /* Azul */
+  --bg:#050A18;
+  --card:#0D1429;
+  --border:#1A2444;
+  --text:#F0F4FF;
+  --text2:#8A9BB8;
+  --primary:#00D4FF; /* Azul hielo */
+  --sec:#0066FF; /* Azul fuerte */
+  --green:#00FF88; /* Verde menta */
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif}
 
 @keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes glow{0%,100%{box-shadow:0 0 5px var(--primary)}50%{box-shadow:0 0 20px var(--primary)}}
 
-nav{background:#0B0F1A;border-bottom:1px solid var(--border);padding:12px 15px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
-nav b{font-family:'Sora',sans-serif;font-size:1.1em;color:#fff}
-.btn{padding:9px 16px;border-radius:10px;font-weight:600;cursor:pointer;border:none;background:var(--green);color:#000;font-size:0.85em;transition:0.2s}
-.btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px #25D36640}
-.btn-blue{background:var(--blue);color:#fff}
-.btn-purple{background:var(--primary);color:#fff}
-.btn-red{background:#EF4444;color:#fff}
-.btn-disabled{background:#2d3748;color:#718096;cursor:not-allowed}
+nav{background:#050A18;border-bottom:1px solid var(--border);padding:12px 15px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
+nav b{font-family:'Exo 2',sans-serif;font-size:1.1em;color:#fff}
+.btn{padding:9px 16px;border-radius:8px;font-weight:700;cursor:pointer;border:1px solid var(--primary);background:transparent;color:var(--primary);font-size:0.85em;transition:0.2s;font-family:'Exo 2',sans-serif}
+.btn:hover{background:var(--primary);color:#000;box-shadow:0 0 15px var(--primary)}
+.btn-blue{border-color:var(--sec);color:var(--sec)}.btn-blue:hover{background:var(--sec);color:#fff}
+.btn-green{border-color:var(--green);color:var(--green)}.btn-green:hover{background:var(--green);color:#000}
+.btn-red{border-color:#FF3B5C;color:#FF3B5C}.btn-red:hover{background:#FF3B5C;color:#fff}
+.btn-disabled{border-color:#2d3748;color:#4A5568;cursor:not-allowed}
 
 .banner{position:relative;text-align:center}
-.banner img{width:100%;height:250px;object-fit:cover;filter:brightness(0.4)}
+.banner img{width:100%;height:250px;object-fit:cover;filter:brightness(0.35) hue-rotate(200deg)}
 .banner-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90%;animation:slideUp 0.6s}
-.banner-text h1{font-family:'Sora',sans-serif;font-size:1.8em;color:#fff;margin-bottom:15px;font-weight:800}
-.buscador{width:100%;padding:12px 20px;border-radius:12px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:0.95em}
-.buscador:focus{outline:none;border-color:var(--primary)}
+.banner-text h1{font-family:'Exo 2',sans-serif;font-size:1.8em;color:#fff;margin-bottom:15px;font-weight:900;text-shadow:0 0 10px var(--primary)}
+.buscador{width:100%;padding:12px 20px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:0.95em}
+.buscador:focus{outline:none;border-color:var(--primary);box-shadow:0 0 10px var(--primary)}
 
 .container{max-width:1200px;margin:auto;padding:30px 15px}
-.titulo{font-family:'Sora',sans-serif;text-align:center;font-size:1.7em;margin-bottom:30px;color:#fff;font-weight:800}
+.titulo{font-family:'Exo 2',sans-serif;text-align:center;font-size:1.7em;margin-bottom:30px;color:#fff;font-weight:900}
 
 .grid{display:grid;grid-template-columns:1fr;gap:18px}
 @media(min-width:768px){.grid{grid-template-columns:repeat(3,1fr)}}
 
-.card{background:var(--card);border:1px solid var(--border);padding:25px;border-radius:16px;text-align:center;position:relative;transition:0.3s;animation:slideUp 0.6s}
-.card:hover{border-color:var(--primary);transform:translateY(-3px)}
-.precio{font-family:'Sora',sans-serif;font-size:2.8em;font-weight:800;color:var(--green);margin:12px 0}
-.card h3{font-family:'Sora',sans-serif;color:#fff;font-size:1.2em}
+.card{background:var(--card);border:1px solid var(--border);padding:25px;border-radius:14px;text-align:center;position:relative;transition:0.3s;animation:slideUp 0.6s}
+.card:hover{border-color:var(--primary);animation:glow 2s infinite}
+.precio{font-family:'Exo 2',sans-serif;font-size:2.8em;font-weight:900;color:var(--green);margin:12px 0}
+.card h3{font-family:'Exo 2',sans-serif;color:#fff;font-size:1.2em}
 
-.categoria{background:var(--card);border:1px solid var(--border);padding:18px;border-radius:14px;margin-bottom:18px;animation:slideUp 0.6s}
-.categoria h3{background:linear-gradient(90deg,var(--primary),var(--blue));color:#fff;display:inline-block;padding:7px 16px;border-radius:20px;margin-bottom:15px;font-family:'Sora',sans-serif;font-weight:700;font-size:0.9em}
+.categoria{background:var(--card);border:1px solid var(--border);padding:18px;border-radius:12px;margin-bottom:18px;animation:slideUp 0.6s}
+.categoria h3{background:linear-gradient(90deg,var(--sec),var(--primary));color:#000;display:inline-block;padding:7px 16px;border-radius:6px;margin-bottom:15px;font-family:'Exo 2',sans-serif;font-weight:900;font-size:0.9em}
 .cmd-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
 @media(min-width:768px){.cmd-grid{grid-template-columns:repeat(4,1fr)}}
-.cmd{background:#0B0F1A;border:1px solid var(--border);padding:10px;border-radius:8px;font-size:0.85em;font-family:'Inter',monospace;color:var(--text2);transition:0.2s}
+.cmd{background:#050A18;border:1px solid var(--border);padding:10px;border-radius:6px;font-size:0.85em;font-family:'Inter',monospace;color:var(--text2);transition:0.2s}
 .cmd:hover{background:var(--border);border-color:var(--primary);color:#fff}
 .cmd.oculto{display:none}
 
-.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000e;justify-content:center;align-items:center;z-index:999;padding:20px}
-.modal-box{background:var(--card);border:1px solid var(--border);padding:30px;border-radius:16px;width:100%;max-width:400px;animation:slideUp 0.4s}
-input{width:100%;padding:12px;margin:12px 0;border:1px solid var(--border);background:#0B0F1A;color:var(--text);border-radius:10px;font-size:1em}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000f;justify-content:center;align-items:center;z-index:999;padding:20px}
+.modal-box{background:var(--card);border:1px solid var(--border);padding:30px;border-radius:14px;width:100%;max-width:400px;animation:slideUp 0.4s}
+input{width:100%;padding:12px;margin:12px 0;border:1px solid var(--border);background:#050A18;color:var(--text);border-radius:8px;font-size:1em}
 input:focus{outline:none;border-color:var(--primary)}
-#welcomeMsg{color:var(--green);font-weight:600}
-.bloqueo{position:absolute;top:0;left:0;right:0;bottom:0;background:#000a;display:flex;justify-content:center;align-items:center;border-radius:16px;color:#888;font-weight:700}
-footer{background:#080B14;border-top:1px solid var(--border);color:var(--text2);text-align:center;padding:30px 15px}
+#welcomeMsg{color:var(--green);font-weight:700;font-family:'Exo 2',sans-serif}
+.bloqueo{position:absolute;top:0;left:0;right:0;bottom:0;background:#000c;display:flex;justify-content:center;align-items:center;border-radius:14px;color:#FF3B5C;font-weight:900;font-family:'Exo 2',sans-serif}
+footer{background:#030712;border-top:1px solid var(--border);color:var(--text2);text-align:center;padding:30px 15px}
 .sin-resultados{text-align:center;color:var(--text2);padding:20px;display:none}
 </style>
 </head>
 <body>
 
 <nav>
-  <b>🤖 VENTAS BOT PRO</b>
+  <b>⚡ VENTAS BOT PRO</b>
   <div>
     <span id="welcomeMsg"></span>
-    <button class="btn btn-blue" id="btnLogin" onclick="openModal('login')">Entrar</button>
-    <button class="btn btn-purple" id="btnReg" onclick="openModal('register')">Registro</button>
-    <button class="btn btn-red" id="btnLogout" onclick="logout()" style="display:none">Salir</button>
+    <button class="btn btn-blue" id="btnLogin" onclick="openModal('login')">LOGIN</button>
+    <button class="btn btn-green" id="btnReg" onclick="openModal('register')">REGISTRO</button>
+    <button class="btn btn-red" id="btnLogout" onclick="logout()" style="display:none">SALIR</button>
   </div>
 </nav>
 
 <div class="banner">
   <img src="https://files.evogb.win/CJOWbF.jpg">
   <div class="banner-text">
-    <h1>+100 Comandos Profesionales</h1>
-    <input type="text" class="buscador" id="buscador" placeholder="🔍 Buscar comando: gpt4, kick, play...">
+    <h1>+100 COMANDOS PRO</h1>
+    <input type="text" class="buscador" id="buscador" placeholder="> BUSCAR: gpt4, kick, play...">
   </div>
 </div>
 
 <div class="container">
-  <h2 class="titulo">Elige tu Plan</h2>
+  <h2 class="titulo">ELIGE TU PLAN</h2>
   <div class="grid">
-    <div class="card"><div class="bloqueo" id="lock1">🔒 INICIA SESIÓN</div><h3>BÁSICO</h3><div class="precio">S/20</div><button class="btn btn-disabled" id="buy1" onclick="comprar('BASICO', 20)">Comprar</button></div>
-    <div class="card" style="border:2px solid var(--primary)"><div class="bloqueo" id="lock2">🔒 INICIA SESIÓN</div><h3>PREMIUM</h3><div class="precio">S/40</div><button class="btn btn-disabled" id="buy2" onclick="comprar('PREMIUM', 40)">Comprar</button></div>
-    <div class="card"><div class="bloqueo" id="lock3">🔒 INICIA SESIÓN</div><h3>VIP</h3><div class="precio">S/70</div><button class="btn btn-disabled" id="buy3" onclick="comprar('VIP', 70)">Comprar</button></div>
+    <div class="card"><div class="bloqueo" id="lock1">🔒 LOGIN</div><h3>BASICO</h3><div class="precio">S/20</div><button class="btn btn-disabled" id="buy1" onclick="comprar('BASICO', 20)">COMPRAR</button></div>
+    <div class="card"><div class="bloqueo" id="lock2">🔒 LOGIN</div><h3>PREMIUM</h3><div class="precio">S/40</div><button class="btn btn-disabled" id="buy2" onclick="comprar('PREMIUM', 40)">COMPRAR</button></div>
+    <div class="card"><div class="bloqueo" id="lock3">🔒 LOGIN</div><h3>VIP</h3><div class="precio">S/70</div><button class="btn btn-disabled" id="buy3" onclick="comprar('VIP', 70)">COMPRAR</button></div>
   </div>
 
-  <h2 class="titulo" style="margin-top:40px">📋 Todas las Categorías</h2>
-  <div id="sinResultados" class="sin-resultados">No se encontró ningún comando</div>
+  <h2 class="titulo" style="margin-top:40px">> TODAS LAS CATEGORIAS</h2>
+  <div id="sinResultados" class="sin-resultados">NO SE ENCONTRO NINGUN COMANDO</div>
 
-  <!-- 1. VENTAS BOT -->
+  <!-- PEGAR AQUI LAS 14 CATEGORIAS IGUALES A LAS DE ANTES -->
   <div class="categoria"><h3>VENTAS BOT [4]</h3><div class="cmd-grid"><div class="cmd">.catalogo</div><div class="cmd">.comprarbot</div><div class="cmd">.creador</div><div class="cmd">.garantia</div></div></div>
-
-  <!-- 2. SORTEOS -->
   <div class="categoria"><h3>SORTEOS [5]</h3><div class="cmd-grid"><div class="cmd">.addrl</div><div class="cmd">.delrl</div><div class="cmd">.listrl</div><div class="cmd">.spinrl</div><div class="cmd">.clearrl</div></div></div>
-
-  <!-- 3. MAIN -->
   <div class="categoria"><h3>MAIN [13]</h3><div class="cmd-grid"><div class="cmd">.cambio</div><div class="cmd">.clima</div><div class="cmd">.cleartmp</div><div class="cmd">.cpu</div><div class="cmd">.info</div><div class="cmd">.ram</div><div class="cmd">.reporte</div><div class="cmd">.uptime</div><div class="cmd">.ping</div><div class="cmd">.sc</div><div class="cmd">.donar</div></div></div>
-
-  <!-- 4. CONFIG -->
   <div class="categoria"><h3>CONFIG [12]</h3><div class="cmd-grid"><div class="cmd">.antilink</div><div class="cmd">.antispam</div><div class="cmd">.modoadmin</div><div class="cmd">.welcome</div><div class="cmd">.antibot</div><div class="cmd">.subbots</div><div class="cmd">.nsfw</div><div class="cmd">.audios</div><div class="cmd">.antiprivado</div><div class="cmd">.detect</div></div></div>
-
-  <!-- 5. DOWNLOADER -->
   <div class="categoria"><h3>DOWNLOADER [8]</h3><div class="cmd-grid"><div class="cmd">.mediafire</div><div class="cmd">.play</div><div class="cmd">.play2</div><div class="cmd">.spotify</div><div class="cmd">.tiktok</div><div class="cmd">.tiktoksearch</div><div class="cmd">.ytmp3</div><div class="cmd">.ytmp4</div></div></div>
-
-  <!-- 6. FREEFIRE -->
   <div class="categoria"><h3>FREEFIRE [4]</h3><div class="cmd-grid"><div class="cmd">.4vs4</div><div class="cmd">.6vs6</div><div class="cmd">.vs4</div><div class="cmd">.vs6</div></div></div>
-
-  <!-- 7. FUN -->
   <div class="categoria"><h3>FUN [41]</h3><div class="cmd-grid"><div class="cmd">.violar</div><div class="cmd">.follar</div><div class="cmd">.nalgada</div><div class="cmd">.lamer</div><div class="cmd">.chupar</div><div class="cmd">.mamar</div><div class="cmd">.tetas</div><div class="cmd">.pene</div><div class="cmd">.culo</div><div class="cmd">.ship</div><div class="cmd">.vr</div><div class="cmd">.vibra</div><div class="cmd">.suerte</div><div class="cmd">.coquetea</div><div class="cmd">.piropo</div><div class="cmd">.top</div><div class="cmd">.emojimix</div></div></div>
-
-  <!-- 8. GROUP -->
   <div class="categoria"><h3>GROUP [4]</h3><div class="cmd-grid"><div class="cmd">.setkick</div><div class="cmd">.delkick</div><div class="cmd">.setwelcome</div><div class="cmd">.delwelcome</div></div></div>
-
-  <!-- 9. GRUPOS -->
   <div class="categoria"><h3>GRUPOS [13]</h3><div class="cmd-grid"><div class="cmd">.promote</div><div class="cmd">.demote</div><div class="cmd">.banchat</div><div class="cmd">.unbanchat</div><div class="cmd">.delete</div><div class="cmd">.notify</div><div class="cmd">.kick</div><div class="cmd">.link</div><div class="cmd">.mute</div><div class="cmd">.unmute</div><div class="cmd">.grupo abrir</div><div class="cmd">.grupo cerrar</div><div class="cmd">.todos</div></div></div>
-
-  <!-- 10. IA -->
   <div class="categoria"><h3>INTELIGENCIA ARTIFICIAL [4]</h3><div class="cmd-grid"><div class="cmd">.claude</div><div class="cmd">.copilot</div><div class="cmd">.gemini</div><div class="cmd">.gpt4</div></div></div>
-
-  <!-- 11. OWNER -->
   <div class="categoria"><h3>OWNER [4]</h3><div class="cmd-grid"><div class="cmd">.autoadmin</div><div class="cmd">.dsowner</div><div class="cmd">.reset</div><div class="cmd">.update</div></div></div>
-
-  <!-- 12. SEARCH -->
   <div class="categoria"><h3>SEARCH [5]</h3><div class="cmd-grid"><div class="cmd">.google</div><div class="cmd">.letra</div><div class="cmd">.yts</div><div class="cmd">.tiktok</div><div class="cmd">.tiktoksearch</div></div></div>
-
-  <!-- 13. SORTEOS STAFF -->
   <div class="categoria"><h3>SORTEOS STAFF [7]</h3><div class="cmd-grid"><div class="cmd">.lista</div><div class="cmd">.setlunes</div><div class="cmd">.setmartes</div><div class="cmd">.setmiercoles</div><div class="cmd">.setjueves</div><div class="cmd">.setviernes</div><div class="cmd">.setsabado</div></div></div>
-
-  <!-- 14. STICKER -->
   <div class="categoria"><h3>STICKER [6]</h3><div class="cmd-grid"><div class="cmd">.brat</div><div class="cmd">.bratv</div><div class="cmd">.dado</div><div class="cmd">.qc</div><div class="cmd">.s</div><div class="cmd">.wm</div></div></div>
 
 </div>
 
-<footer>
-  <p>VENTAS BOT PRO © 2026<br>936 994 155 | Chimbote 🇵🇪</p>
-</footer>
+<footer><p>VENTAS BOT PRO © 2026<br>936 994 155 | CHIMBOTE</p></footer>
 
-<div id="login" class="modal"><div class="modal-box"><h2>Iniciar Sesión <span onclick="closeModal('login')" style="float:right;cursor:pointer">&times;</span></h2><input id="loginUser" placeholder="Usuario"><input id="loginPass" type="password" placeholder="Contraseña"><button class="btn btn-blue" style="width:100%" onclick="login()">Entrar</button></div></div>
-<div id="register" class="modal"><div class="modal-box"><h2>Crear Cuenta <span onclick="closeModal('register')" style="float:right;cursor:pointer">&times;</span></h2><input id="regUser" placeholder="Usuario"><input id="regPass" type="password" placeholder="Contraseña"><button class="btn btn-purple" style="width:100%" onclick="register()">Registrarse</button></div></div>
+<div id="login" class="modal"><div class="modal-box"><h2 style="font-family:Exo 2;color:#fff">LOGIN <span onclick="closeModal('login')" style="float:right;cursor:pointer">&times;</span></h2><input id="loginUser" placeholder="> USUARIO"><input id="loginPass" type="password" placeholder="> CONTRASEÑA"><button class="btn btn-blue" style="width:100%" onclick="login()">ACCEDER</button></div></div>
+<div id="register" class="modal"><div class="modal-box"><h2 style="font-family:Exo 2;color:#fff">REGISTRO <span onclick="closeModal('register')" style="float:right;cursor:pointer">&times;</span></h2><input id="regUser" placeholder="> USUARIO"><input id="regPass" type="password" placeholder="> CONTRASEÑA"><button class="btn btn-green" style="width:100%" onclick="register()">CREAR</button></div></div>
 
 <script>
 buscador.addEventListener('keyup', function(){
@@ -163,11 +136,11 @@ buscador.addEventListener('keyup', function(){
 });
 function openModal(id){document.getElementById(id).style.display='flex'}
 function closeModal(id){document.getElementById(id).style.display='none'}
-function register(){let u=regUser.value,p=regPass.value;if(u&&p){localStorage.setItem('user_'+u,p);alert("✅ Cuenta creada");closeModal('register')}}
-function login(){let u=loginUser.value,p=loginPass.value;if(localStorage.getItem('user_'+u)==p){localStorage.setItem('loggedUser',u);checkLogin();alert("✅ Bienvenido");closeModal('login')}else alert("❌ Error")}
+function register(){let u=regUser.value,p=regPass.value;if(u&&p){localStorage.setItem('user_'+u,p);alert("CUENTA CREADA");closeModal('register')}}
+function login(){let u=loginUser.value,p=loginPass.value;if(localStorage.getItem('user_'+u)==p){localStorage.setItem('loggedUser',u);checkLogin();alert("BIENVENIDO");closeModal('login')}else alert("ERROR")}
 function logout(){localStorage.removeItem('loggedUser');checkLogin()}
 function comprar(plan, precio){let u=localStorage.getItem('loggedUser');if(u){let m=`Hola! Soy ${u}%0AEnvié mi comprobante del plan ${plan} S/${precio}`;window.open(`https://wa.me/51936994155?text=${m}`,'_blank')}}
-function checkLogin(){let u=localStorage.getItem('loggedUser');if(u){welcomeMsg.innerText=`Hola, ${u}`;btnLogin.style.display='none';btnReg.style.display='none';btnLogout.style.display='inline';for(let i=1;i<=3;i++){document.getElementById('lock'+i).style.display='none';document.getElementById('buy'+i).classList.remove('btn-disabled');document.getElementById('buy'+i).classList.add('btn-green')}}else{welcomeMsg.innerText='';btnLogin.style.display='inline';btnReg.style.display='inline';btnLogout.style.display='none';for(let i=1;i<=3;i++){document.getElementById('lock'+i).style.display='flex';document.getElementById('buy'+i).classList.add('btn-disabled');document.getElementById('buy'+i).classList.remove('btn-green')}}}
+function checkLogin(){let u=localStorage.getItem('loggedUser');if(u){welcomeMsg.innerText=`${u}`;btnLogin.style.display='none';btnReg.style.display='none';btnLogout.style.display='inline';for(let i=1;i<=3;i++){document.getElementById('lock'+i).style.display='none';document.getElementById('buy'+i).classList.remove('btn-disabled');document.getElementById('buy'+i).classList.add('btn-green')}}else{welcomeMsg.innerText='';btnLogin.style.display='inline';btnReg.style.display='inline';btnLogout.style.display='none';for(let i=1;i<=3;i++){document.getElementById('lock'+i).style.display='flex';document.getElementById('buy'+i).classList.add('btn-disabled');document.getElementById('buy'+i).classList.remove('btn-green')}}}
 checkLogin();
 </script>
 </body>
