@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VENTAS BOT PRO | FOR THREE</title>
+<title>VENTAS BOT PRO | CYBERPUNK</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700;900&family=JetBrains+Mono:wght@400;600&display=swap');
 
@@ -26,6 +26,11 @@ body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospa
 @keyframes scanline{
   0%{background-position:0 0}
   100%{background-position:0 100vh}
+}
+@keyframes redFlash{
+  0%{background:#050000}
+ 50%{background:#FF0041}
+ 100%{background:#050000}
 }
 
 body::before{
@@ -80,6 +85,10 @@ footer{background:#000;border-top:2px solid var(--primary);color:var(--text2);te
 </style>
 </head>
 <body>
+
+<audio id="accesoSound" preload="auto">
+  <source src="https://cdn.pixabay.com/audio/2022/03/24/audio_d1718fbef1.mp3" type="audio/mpeg">
+</audio>
 
 <nav>
   <b>⚡ VENTAS BOT PRO ⚡</b>
@@ -149,7 +158,21 @@ buscador.addEventListener('keyup', function(){
 function openModal(id){document.getElementById(id).style.display='flex'}
 function closeModal(id){document.getElementById(id).style.display='none'}
 function register(){let u=regUser.value,p=regPass.value;if(u&&p){localStorage.setItem('user_'+u,p);alert("ACCESO CONCEDIDO");closeModal('register')}}
-function login(){let u=loginUser.value,p=loginPass.value;if(localStorage.getItem('user_'+u)==p){localStorage.setItem('loggedUser',u);checkLogin();alert("BIENVENIDO OPERADOR");closeModal('login')}else alert("ACCESO DENEGADO")}
+function login(){
+  let u=loginUser.value,p=loginPass.value;
+  if(localStorage.getItem('user_'+u)==p){
+    localStorage.setItem('loggedUser',u);
+    checkLogin();
+    
+    // EFECTO ACCESO CONCEDIDO
+    document.getElementById('accesoSound').play();
+    document.body.style.animation = 'redFlash 0.3s';
+    setTimeout(()=>{document.body.style.animation = ''}, 300);
+    
+    alert("BIENVENIDO OPERADOR");
+    closeModal('login')
+  }else alert("ACCESO DENEGADO")
+}
 function logout(){localStorage.removeItem('loggedUser');checkLogin()}
 function comprar(plan, precio){let u=localStorage.getItem('loggedUser');if(u){let m=`Hola! Soy ${u}%0AEnvié mi comprobante del plan ${plan} S/${precio}`;window.open(`https://wa.me/51936994155?text=${m}`,'_blank')}}
 function checkLogin(){let u=localStorage.getItem('loggedUser');if(u){welcomeMsg.innerText=`${u}`;btnLogin.style.display='none';btnReg.style.display='none';btnLogout.style.display='inline';for(let i=1;i<=3;i++){document.getElementById('lock'+i).style.display='none';document.getElementById('buy'+i).classList.remove('btn-disabled');document.getElementById('buy'+i).classList.add('btn')}}else{welcomeMsg.innerText='';btnLogin.style.display='inline';btnReg.style.display='inline';btnLogout.style.display='none';for(let i=1;i<=3;i++){document.getElementById('lock'+i).style.display='flex';document.getElementById('buy'+i).classList.add('btn-disabled');document.getElementById('buy'+i).classList.remove('btn')}}}
