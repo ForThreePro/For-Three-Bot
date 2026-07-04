@@ -25,41 +25,40 @@ body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospa
 
 nav{background:#000;border-bottom:2px solid var(--primary);padding:12px 15px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;font-family:'Rajdhani',sans-serif}
 nav b{color:var(--primary);font-size:1.1em;font-weight:900;text-shadow:0 0 10px var(--primary)}
-.btn-salir{padding:8px 18px;border-radius:4px;font-weight:900;cursor:pointer;border:2px solid var(--primary);background:transparent;color:var(--primary);font-size:0.85em;font-family:'Rajdhani',sans-serif}
-.btn-salir:hover{background:var(--primary);color:#000}
+.btn{padding:8px 16px;border-radius:4px;font-weight:900;cursor:pointer;border:2px solid var(--primary);background:transparent;color:var(--primary);font-size:0.85em;font-family:'Rajdhani',sans-serif;letter-spacing:1px;margin-left:5px}
+.btn:hover{background:var(--primary);color:#000;box-shadow:0 0 20px var(--primary)}
+.btn-green{border-color:var(--green);color:var(--green)}
+.btn-green:hover{background:var(--green);color:#000}
+.btn-red{border-color:#FF3B5C;color:#FF3B5C}
+.btn-red:hover{background:#FF3B5C;color:#fff}
 
 .banner{position:relative;text-align:center;border-bottom:2px solid var(--primary);padding:50px 15px;background:#000;animation:slideUp 0.6s}
 .banner h1{font-family:'Rajdhani',sans-serif;font-size:1.8em;color:var(--primary);margin-bottom:20px;font-weight:900;text-shadow:0 0 15px var(--primary)}
-.buscador{width:90%;max-width:600px;padding:12px 20px;border-radius:0;border:2px solid var(--primary);background:#000;color:var(--text);font-size:0.95em;font-family:'JetBrains Mono',monospace}
+.buscador{width:90%;max-width:600px;padding:12px 20px;border:2px solid var(--primary);background:#000;color:var(--text);font-family:'JetBrains Mono',monospace}
 .buscador:focus{outline:none;box-shadow:0 0 20px var(--primary)}
 
 .container{max-width:650px;margin:auto;padding:40px 15px}
-.titulo{font-family:'Rajdhani',sans-serif;text-align:center;font-size:1.8em;margin-bottom:30px;color:var(--primary);font-weight:900;letter-spacing:2px;text-shadow:0 0 10px var(--primary)}
+.titulo{font-family:'Rajdhani',sans-serif;text-align:center;font-size:1.8em;margin-bottom:30px;color:var(--primary);font-weight:900;text-shadow:0 0 10px var(--primary)}
 
 .grid{display:grid;grid-template-columns:1fr;gap:25px}
-
-.card{background:var(--card);border:2px solid #1a1a1a;padding:30px 20px;border-radius:6px;text-align:center;position:relative;transition:0.3s;animation:slideUp 0.6s}
+.card{background:var(--card);border:2px solid #1a1a1a;padding:30px 20px;border-radius:6px;text-align:center;position:relative;transition:0.3s}
 .card:hover{border-color:var(--primary)}
 .precio{font-family:'Rajdhani',sans-serif;font-size:3.5em;font-weight:900;color:var(--green);margin:15px 0;animation:glow 2s infinite}
 .card h3{font-family:'Rajdhani',sans-serif;color:#fff;font-size:1.5em;letter-spacing:1px}
 
-.btn{padding:12px 30px;border-radius:4px;font-weight:900;cursor:pointer;border:2px solid var(--primary);background:transparent;color:var(--primary);font-size:0.9em;font-family:'Rajdhani',sans-serif;letter-spacing:1px;margin-top:15px;transition:0.2s}
-.btn:hover{background:var(--primary);color:#000;box-shadow:0 0 20px var(--primary)}
+.btn-comprar{padding:12px 30px;border:2px solid var(--primary);background:transparent;color:var(--primary);font-weight:900;font-family:'Rajdhani',sans-serif;margin-top:15px;width:100%;cursor:pointer}
+.btn-comprar:hover{background:var(--primary);color:#000;box-shadow:0 0 20px var(--primary)}
 .btn-disabled{border-color:#2d0000;color:#550000;cursor:not-allowed}
 .btn-disabled:hover{background:transparent;box-shadow:none}
-
 .bloqueo{position:absolute;top:0;left:0;right:0;bottom:0;background:#000e;display:flex;justify-content:center;align-items:center;border-radius:6px;color:var(--primary);font-weight:900;font-family:'Rajdhani',sans-serif;letter-spacing:1px}
 
-.categoria{background:var(--card);border:2px solid #1a1a1a;padding:18px;border-radius:6px;margin-bottom:20px;animation:slideUp 0.6s}
-.categoria h3{background:var(--primary);color:#000;display:inline-block;padding:7px 18px;border-radius:0;margin-bottom:15px;font-family:'Rajdhani',sans-serif;font-weight:900;font-size:0.95em}
-.cmd-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-@media(min-width:768px){.cmd-grid{grid-template-columns:repeat(4,1fr)}}
-.cmd{background:#000;border:1px solid #1a1a1a;padding:10px;border-radius:3px;font-size:0.85em;color:var(--text2);transition:0.2s}
-.cmd:hover{background:var(--primary);color:#000;border-color:var(--primary)}
-.cmd.oculto{display:none}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000f;justify-content:center;align-items:center;z-index:999;padding:20px}
+.modal-box{background:var(--card);border:2px solid var(--primary);padding:30px;border-radius:6px;width:100%;max-width:400px;animation:slideUp 0.4s}
+input{width:100%;padding:12px;margin:12px 0;border:2px solid #1a1a1a;background:#000;color:var(--text);border-radius:4px;font-size:1em;font-family:'JetBrains Mono',monospace}
+input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 15px var(--primary)}
+#welcomeMsg{color:var(--green);font-weight:900;font-family:'Rajdhani',sans-serif;text-shadow:0 0 5px var(--green)}
 
 footer{background:#000;border-top:2px solid var(--primary);color:var(--text2);text-align:center;padding:30px 15px;font-family:'Rajdhani',sans-serif}
-.sin-resultados{text-align:center;color:var(--primary);padding:20px;display:none;font-weight:900}
 </style>
 </head>
 <body>
@@ -67,10 +66,10 @@ footer{background:#000;border-top:2px solid var(--primary);color:var(--text2);te
 <nav>
   <b>⚡ VENTAS BOT PRO ⚡</b>
   <div>
-    <span id="welcomeMsg" style="color:var(--green);font-weight:900;margin-right:10px"></span>
-    <button class="btn-salir" id="btnLogin" onclick="openModal('login')">LOGIN</button>
-    <button class="btn-salir" id="btnReg" onclick="openModal('register')" style="background:var(--green);color:#000;border-color:var(--green)">REG</button>
-    <button class="btn-salir" id="btnLogout" onclick="logout()" style="display:none">SALIR</button>
+    <span id="welcomeMsg"></span>
+    <button class="btn" id="btnLogin" onclick="openModal('login')">LOGIN</button>
+    <button class="btn btn-green" id="btnReg" onclick="openModal('register')">REG</button>
+    <button class="btn btn-red" id="btnLogout" onclick="logout()" style="display:none">SALIR</button>
   </div>
 </nav>
 
@@ -95,7 +94,7 @@ footer{background:#000;border-top:2px solid var(--primary);color:var(--text2);te
         - Soporté 24/7<br>
         - Permanente
       </p>
-      <button class="btn btn-disabled" id="buy1" onclick="comprar('BOT PARA GRUPO', 5)">COMPRAR</button>
+      <button class="btn-comprar btn-disabled" id="buy1" onclick="comprar('BOT PARA GRUPO', 5)">COMPRAR</button>
     </div>
 
     <div class="card">
@@ -111,7 +110,7 @@ footer{background:#000;border-top:2px solid var(--primary);color:var(--text2);te
         - Soporté 24/7<br><br>
         <b style="color:var(--primary)">Nota:</b> Combo Bot + Servidor. Al siguiente mes pagas solo S/10 del servidor
       </p>
-      <button class="btn btn-disabled" id="buy2" onclick="comprar('BOT PERSONALIZADO', 30)">COMPRAR</button>
+      <button class="btn-comprar btn-disabled" id="buy2" onclick="comprar('BOT PERSONALIZADO', 30)">COMPRAR</button>
     </div>
 
     <div class="card">
@@ -126,39 +125,67 @@ footer{background:#000;border-top:2px solid var(--primary);color:var(--text2);te
         - Soporté 24/7<br>
         - Yo Lo Instalo Por Ti
       </p>
-      <button class="btn btn-disabled" id="buy3" onclick="comprar('SERVIDOR HOSTING', 10)">COMPRAR</button>
+      <button class="btn-comprar btn-disabled" id="buy3" onclick="comprar('SERVIDOR HOSTING', 10)">COMPRAR</button>
     </div>
 
   </div>
-
-  <h2 class="titulo" style="margin-top:50px">[ DATABASE DE COMANDOS ]</h2>
-  <div id="sinResultados" class="sin-resultados">[ ERROR: NO SE ENCONTRO NADA ]</div>
-
-  <div class="categoria"><h3>VENTAS BOT [4]</h3><div class="cmd-grid"><div class="cmd">.catalogo</div><div class="cmd">.comprarbot</div><div class="cmd">.creador</div><div class="cmd">.garantia</div></div></div>
-  <div class="categoria"><h3>SORTEOS [5]</h3><div class="cmd-grid"><div class="cmd">.addrl</div><div class="cmd">.delrl</div><div class="cmd">.listrl</div><div class="cmd">.spinrl</div><div class="cmd">.clearrl</div></div></div>
-  <div class="categoria"><h3>MAIN [11]</h3><div class="cmd-grid"><div class="cmd">.cambio</div><div class="cmd">.clima</div><div class="cmd">.cleartmp</div><div class="cmd">.cpu</div><div class="cmd">.info</div><div class="cmd">.ram</div><div class="cmd">.reporte</div><div class="cmd">.uptime</div><div class="cmd">.ping</div><div class="cmd">.sc</div><div class="cmd">.donar</div></div></div>
-  <div class="categoria"><h3>INTELIGENCIA ARTIFICIAL [4]</h3><div class="cmd-grid"><div class="cmd">.claude</div><div class="cmd">.copilot</div><div class="cmd">.gemini</div><div class="cmd">.gpt4</div></div></div>
-
 </div>
 
-<footer>
-  <p>[ FOR THREE BOT v2.0.6 ]<br>936 994 155 | CHIMBOTE - PERU</p>
-</footer>
+<footer><p>[ FOR THREE BOT v2.0.6 ]<br>936 994 155 | CHIMBOTE - PERU</p></footer>
+
+<!-- MODALES -->
+<div id="login" class="modal">
+  <div class="modal-box">
+    <h2 style="font-family:Rajdhani;color:var(--primary);margin-bottom:15px">[ LOGIN ] <span onclick="closeModal('login')" style="float:right;cursor:pointer">&times;</span></h2>
+    <input id="loginUser" placeholder="> USER">
+    <input id="loginPass" type="password" placeholder="> PASS">
+    <button class="btn" style="width:100%" onclick="login()">ACCEDER</button>
+  </div>
+</div>
+
+<div id="register" class="modal">
+  <div class="modal-box">
+    <h2 style="font-family:Rajdhani;color:var(--primary);margin-bottom:15px">[ REGISTER ] <span onclick="closeModal('register')" style="float:right;cursor:pointer">&times;</span></h2>
+    <input id="regUser" placeholder="> USER">
+    <input id="regPass" type="password" placeholder="> PASS">
+    <button class="btn btn-green" style="width:100%" onclick="register()">CREAR CUENTA</button>
+  </div>
+</div>
 
 <script>
-const buscador = document.getElementById('buscador');
-const sinResultados = document.getElementById('sinResultados');
+function openModal(id){document.getElementById(id).style.display='flex'}
+function closeModal(id){document.getElementById(id).style.display='none'}
 
-buscador.addEventListener('keyup', function(){
-  let filtro = this.value.toLowerCase(); let encontrados = 0;
-  document.querySelectorAll('.cmd').forEach(cmd => {
-    if(cmd.innerText.toLowerCase().includes(filtro)){cmd.classList.remove('oculto');encontrados++}else{cmd.classList.add('oculto')}
-  });
-  document.querySelectorAll('.categoria').forEach(cat => {
-    cat.style.display = cat.querySelectorAll('.cmd:not(.oculto)').length > 0? 'block' : 'none';
-  });
-  sinResultados.style.display = encontrados === 0? 'block' : 'none';
-});
+function register(){
+  let u=document.getElementById('regUser').value.trim();
+  let p=document.getElementById('regPass').value.trim();
+  
+  if(u == "" || p == ""){
+    alert("PON ALGO PUES WEON, NI 1 Y 1 QUIERES PONER")
+    return
+  }
+  
+  localStorage.setItem('user_'+u,p);
+  alert("CUENTA CREADA: "+u);
+  closeModal('register')
+}
+
+function login(){
+  let u=document.getElementById('loginUser').value.trim();
+  let p=document.getElementById('loginPass').value.trim();
+  
+  if(localStorage.getItem('user_'+u) == p){
+    localStorage.setItem('loggedUser',u);
+    checkLogin();
+    alert("BIENVENIDO OPERADOR: "+u);
+    closeModal('login')
+  }else alert("ACCESO DENEGADO")
+}
+
+function logout(){
+  localStorage.removeItem('loggedUser');
+  checkLogin()
+}
 
 function comprar(plan, precio){
   let u=localStorage.getItem('loggedUser');
@@ -166,7 +193,7 @@ function comprar(plan, precio){
     let m=`Hola! Soy ${u}%0AEnvié mi comprobante del plan ${plan} S/${precio} para FOR THREE BOT`;
     window.open(`https://wa.me/51936994155?text=${m}`,'_blank')
   }else{
-    alert("INICIA SESION PARA COMPRAR")
+    alert("INICIA SESION PRIMERO")
   }
 }
 
@@ -192,11 +219,6 @@ function checkLogin(){
     }
   }
 }
-
-function login(){alert("FUNCION LOGIN")}
-function register(){alert("FUNCION REGISTRO")}
-function openModal(id){alert("ABRIR MODAL: "+id)}
-function logout(){localStorage.removeItem('loggedUser');checkLogin()}
 
 checkLogin();
 </script>
