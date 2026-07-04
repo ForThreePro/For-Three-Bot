@@ -2,237 +2,85 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>For Three Bot</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VENTAS BOT - Bot de WhatsApp</title>
 <style>
-:root[data-theme="dark"]{--bg:#0a0a0f;--card:#0f172a;--text:#f1f5f9;--muted:#94a3b8;--cyan:#00e5ff;--border:#1e293b;--green:#25D366;--yape:#7200ff}
-:root[data-theme="light"]{--bg:#f1f5f9;--card:#ffffff;--text:#0f172a;--muted:#64748b;--cyan:#0891b2;--border:#cbd5e1;--green:#16a34a;--yape:#5b00cc}
-*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;padding-bottom:70px;transition:.3s}
-header{position:sticky;top:0;background:var(--bg);z-index:10;padding:14px 16px;border-bottom:1px solid var(--border)}
-.topbar{display:flex;justify-content:space-between;align-items:center}
-.logo{font-weight:800;font-size:1.3rem}
-.top-actions{display:flex;gap:8px;align-items:center}
-.currency-btn{display:none}
-.theme-btn{background:var(--card);border:1px solid var(--border);width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;cursor:pointer}
-.tabs{display:flex;gap:24px;justify-content:center;margin-top:14px}
-.tab{color:var(--muted);font-weight:600;cursor:pointer;padding-bottom:8px;border-bottom:2px solid transparent}
-.tab.active{color:var(--cyan);border-color:var(--cyan)}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:16px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:.3s ease;cursor:pointer;opacity:0;animation:fadeIn.4s ease forwards}
-.card:hover{transform:translateY(-8px) scale(1.02);border-color:var(--cyan);box-shadow:0 8px 25px rgba(0,229,255,.25)}
-.card:nth-child(1){animation-delay:.1s}.card:nth-child(2){animation-delay:.2s}.card:nth-child(3){animation-delay:.3s}.card:nth-child(4){animation-delay:.4s}
-@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.card-img{height:140px;position:relative;overflow:hidden}
-.carousel-track{display:flex;height:100%;transition:transform.8s ease}
-.carousel-slide{min-width:100%;height:100%;background-size:cover;background-position:center}
-.tag{position:absolute;top:10px;left:10px;background:var(--cyan);color:#0a0a0f;font-size:.65rem;font-weight:800;padding:4px 10px;border-radius:6px;z-index:2}
-.card-body{padding:12px}
-.card-cat{font-size:.65rem;color:var(--muted);margin-bottom:4px}
-.card-title{font-size:.9rem;font-weight:700;margin-bottom:8px;min-height:38px}
-.card-price{font-size:1.1rem;font-weight:800;margin-bottom:4px;color:var(--cyan)}
-.card-price-sub{display:none}
-.btn-contratar{width:100%;background:var(--cyan);color:#0a0a0f;border:0;padding:12px 8px;border-radius:10px;font-weight:800;cursor:pointer;font-size:.9rem;transition:.2s}
-.btn-contratar:hover{transform:scale(1.03)}
-.features{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:24px 16px}
-.feature{display:flex;gap:10px;align-items:flex-start;font-size:.85rem}
-.feature span{color:var(--muted)}
-footer{padding:20px;text-align:center;font-size:.8rem;color:var(--muted);border-top:1px solid var(--border)}
-.wsp-float{position:fixed;bottom:16px;right:16px;width:54px;height:54px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(0,0,0,.4);cursor:pointer;z-index:50;text-decoration:none;font-size:1.8rem;transition:.3s}
-.product-wrap{padding:16px;max-width:600px;margin:0 auto}
-.product-img{width:100%;height:240px;background-size:cover;background-position:center;border-radius:16px;margin-bottom:16px;border:1px solid var(--border)}
-.product-title{font-size:1.6rem;font-weight:800;margin-bottom:8px}
-.product-price{font-size:2rem;font-weight:800;color:var(--cyan);margin-bottom:4px}
-.product-price-sub{display:none}
-.product-desc{color:var(--muted);font-size:.95rem;line-height:1.7;margin-bottom:18px}
-.product-list{list-style:none;margin-bottom:24px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px}
-.product-list li{padding:10px 0;border-bottom:1px solid var(--border);font-size:.9rem;display:flex;gap:8px}
-.product-list li:last-child{border:0}
-.product-list li b{color:var(--cyan);font-size:1.1rem}
-.btn-comprar{width:100%;background:var(--green);color:#fff;text-align:center;border:0;padding:16px;border-radius:12px;font-weight:800;cursor:pointer;font-size:1.05rem;margin-bottom:10px}
-.btn-volver-prod{width:100%;background:var(--card);color:var(--text);border:1px solid var(--border);padding:16px;border-radius:12px;font-weight:800;cursor:pointer;font-size:1.05rem}
-.dlocal-btn-container{margin-top:12px}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(12px);display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
-.modal.active{display:flex}
-.modal-box{background:var(--card);border:1px solid var(--cyan);border-radius:20px;width:100%;max-width:380px;box-shadow:0 8px 40px rgba(0,229,255,.2);animation:scaleIn.3s ease}
-@keyframes scaleIn{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
-.modal-header{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;border-bottom:1px solid var(--border)}
-.modal-header h3{font-size:1.2rem;font-weight:800}
-.x{background:rgba(255,255,255,.1);border:0;width:32px;height:32px;border-radius:50%;font-size:1.3rem;color:var(--muted);cursor:pointer}
-.amount{font-size:2.2rem;font-weight:800;color:var(--cyan);margin:16px 18px;text-align:center}
-.tc-info{display:none}
-.payment-tabs{display:flex;gap:8px;margin:16px 0;overflow-x:auto;padding:0 18px}
-.payment-tab{padding:10px 16px;background:var(--card);border:1px solid var(--border);border-radius:10px;cursor:pointer;font-weight:600;font-size:.85rem;white-space:nowrap}
-.payment-tab.active{background:var(--cyan);color:#0a0a0f;border-color:var(--cyan)}
-.payment-content{padding:0 18px 18px}
-.copy-box{display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,.1);padding:12px 14px;border-radius:12px;margin:12px 0;font-size:.9rem;border:1px solid var(--border)}
-.copy-btn{padding:8px 16px;background:var(--cyan);border:0;border-radius:10px;color:#0a0a0f;font-weight:800;cursor:pointer;font-size:.85rem}
-.info-text{color:var(--muted);font-size:.8rem;text-align:center;margin:12px 0;line-height:1.5}
-.paypal-breakdown{background:rgba(0,0,0,.1);border:1px solid var(--border);border-radius:12px;padding:12px;margin:12px 0}
-.paypal-row{display:flex;justify-content:space-between;padding:8px 0;font-size:.9rem}
-.paypal-row.total{border-top:1px solid var(--border);margin-top:8px;padding-top:12px;font-weight:800;color:var(--cyan)}
-.paypal-link{display:block;width:100%;background:#0070ba;color:#fff;text-align:center;padding:14px;border-radius:12px;font-weight:800;text-decoration:none;margin-top:12px}
-.btn-wsp{width:100%;background:var(--green);color:#fff;border:0;padding:14px;border-radius:12px;font-weight:800;cursor:pointer;font-size:.95rem;margin-top:12px}
-.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:var(--card);border:1px solid var(--cyan);padding:10px 14px;border-radius:8px;opacity:0;transition:.2s;z-index:999;font-weight:600}
-.toast.show{opacity:1}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { background: #0e0e0e; color: #fff; }
+header { background: linear-gradient(135deg, #00d4ff, #090979); padding: 40px 20px; text-align: center; }
+header h1 { font-size: 2.5em; }
+header p { margin-top: 10px; opacity: 0.9; }
+.container { max-width: 1000px; margin: auto; padding: 30px 20px; }
+.categoria { background: #1a1a1a; margin-bottom: 25px; border-radius: 15px; padding: 20px; border: 1px solid #00d4ff33; }
+.categoria h2 { color: #00d4ff; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+.comandos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
+.cmd { background: #111; padding: 10px 15px; border-radius: 8px; border-left: 3px solid #00d4ff; }
+.btn-whatsapp { display: block; text-align: center; background: #25D366; color: #fff; padding: 15px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 1.2em; margin-top: 30px; }
+.btn-whatsapp:hover { background: #1ebe5a; }
+footer { text-align: center; padding: 20px; opacity: 0.6; }
 </style>
 </head>
 <body>
 <header>
-<div class="topbar">
-<div class="logo">For Three Bot</div>
-<div class="top-actions">
-<button class="theme-btn" id="themeBtn" onclick="toggleTheme()">🌙</button>
-</div>
-</div>
-<div class="tabs"><div class="tab active" onclick="setTab('bots', this)">Bots</div><div class="tab" onclick="setTab('hosting', this)">Hosting</div></div>
+  <h1>🤖 VENTAS BOT</h1>
+  <p>El Bot de WhatsApp más completo. +100 comandos</p>
 </header>
-<div class="grid" id="productos">Cargando...</div>
-<div class="features">
-<div class="feature"><div>⚡</div><div><b>Entrega Inmediata</b><br><span>Por WhatsApp</span></div></div>
-<div class="feature"><div>💳</div><div><b>Tarjeta con DlocalGo</b><br><span>Pago seguro USD</span></div></div>
-<div class="feature"><div>🛠️</div><div><b>Soporte 24/7</b><br><span>Te ayudo</span></div></div>
-<div class="feature"><div>✅</div><div><b>+200 Clientes</b><br><span>Global</span></div></div>
+
+<div class="container">
+  <div class="categoria">
+    <h2>📦 VENTAS BOT [4]</h2>
+    <div class="comandos">
+      <div class="cmd">.catalogo</div>
+      <div class="cmd">.comprarbot</div>
+      <div class="cmd">.creador</div>
+      <div class="cmd">.garantia</div>
+    </div>
+  </div>
+
+  <div class="categoria">
+    <h2>🎁 SORTEOS [5]</h2>
+    <div class="comandos">
+      <div class="cmd">.addrl.delrl.listrl</div>
+      <div class="cmd">.spinrl.clearrl</div>
+    </div>
+  </div>
+
+  <div class="categoria">
+    <h2>⚙️ MAIN [13]</h2>
+    <div class="comandos">
+      <div class="cmd">.clima <ciudad></div>
+      <div class="cmd">.ping.uptime.cpu.ram</div>
+      <div class="cmd">.cambio.info.reporte</div>
+    </div>
+  </div>
+
+  <div class="categoria">
+    <h2>😂 FUN [41]</h2>
+    <div class="comandos">
+      <div class="cmd">.ship.piropo.suerte</div>
+      <div class="cmd">.top.top3.insulta</div>
+      <div class="cmd">+30 comandos de diversión</div>
+    </div>
+  </div>
+
+  <div class="categoria">
+    <h2>🧠 INTELIGENCIA ARTIFICIAL [4]</h2>
+    <div class="comandos">
+      <div class="cmd">.gpt4.gemini.claude.copilot</div>
+    </div>
+  </div>
+
+  <div class="categoria">
+    <h2>⬇️ DOWNLOADER [8]</h2>
+    <div class="comandos">
+      <div class="cmd">.play.ytmp3.ytmp4.tiktok</div>
+      <div class="cmd">.spotify.mediafire</div>
+    </div>
+  </div>
+
+  <a href="https://wa.me/519XXXXXXXX" class="btn-whatsapp">COMPRAR BOT POR WHATSAPP</a>
 </div>
-<footer>© 2026 For Three Bot | WhatsApp: +51 936 994 155</footer>
 
-<div id="productScreen" class="screen" style="display:none">
-<header><div class="topbar"><button onclick="showTienda()" style="background:0;border:0;color:var(--text);font-size:1.2rem">←</button><div class="logo">Detalle</div><span></span></div></header>
-<div class="product-wrap" id="productDetail"></div>
-</div>
-
-<div id="pagoModal" class="modal"><div class="modal-box">
-<div class="modal-header"><h3>Checkout</h3><button class="x" onclick="cerrarPago()">×</button></div>
-<div class="amount" id="montoTotal">$ 0.00</div>
-<div class="payment-tabs">
-<button class="payment-tab active" onclick="selectPayment('paypal',event)">🅿️ PayPal</button>
-<button class="payment-tab" onclick="selectPayment('yape',event)">💜 Yape</button>
-</div>
-<div id="paypalContent" class="payment-content">
-<div class="paypal-breakdown">
-<div class="paypal-row"><span>Subtotal</span><span id="paypalSubtotal">$0.00</span></div>
-<div class="paypal-row"><span>Fee 5.4% + $0.30</span><span id="paypalFee">$0.00</span></div>
-<div class="paypal-row total"><span>Total a pagar</span><span id="paypalTotal">$0.00</span></div>
-</div>
-<a id="paypalLink" target="_blank" class="paypal-link">Pagar con PayPal</a>
-</div>
-<div id="yapeContent" class="payment-content" style="display:none"><div class="copy-box"><span><b>Número:</b> <span id="yapeNum">936994155</span></span><button class="copy-btn" onclick="copyText('936994155')">Copiar</button></div><p class="info-text">Yapea y envía el comprobante.</p></div>
-<button id="wspBtn" class="btn-wsp">💬 Enviar Comprobante por WhatsApp</button>
-</div></div>
-
-<a class="wsp-float" href="https://wa.me/51936994155" target="_blank">💬</a>
-<div id="toast" class="toast"></div>
-
-<script>
-function formatPrice(p){return`$ ${p.toFixed(2)}`}
-document.addEventListener('DOMContentLoaded',()=>{loadTheme();renderProductos();startCarousels()});
-function loadTheme(){const s=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',s);document.getElementById('themeBtn').textContent=s==='dark'?'🌙':'☀️'}
-function toggleTheme(){const n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('theme',n);document.getElementById('themeBtn').textContent=n==='dark'?'🌙':'☀️';toast(n==='dark'?'Oscuro':'Claro')}
-function showTienda(){document.getElementById('productScreen').style.display='none';document.querySelector('.grid').style.display='grid';document.querySelector('.features').style.display='grid';document.querySelector('footer').style.display='block'}
-function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1500)}
-
-// PRECIOS FINALES USD
-const productosBots=[
-  {id:1,nom:"Bot Para Grupos WhatsApp",precio:3,imgs:["https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=600","https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=600","https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?q=80&w=600"],desc:"El bot más completo para administrar grupos de WhatsApp. Funciona 24/7 sin caídas.",features:["Descargas YouTube, TikTok, FB, IG","Juegos: PPT, Trivia, Match","IA ChatGPT + Sticker + Logo IA","Panel Admin: Kick, Ban","Soporte 24/7"]},
-  {id:2,nom:"Bot Personalizado VIP",precio:8,imgs:["https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=600","https://images.unsplash.com/photo-1555255707-4c4792736b81?q=80&w=600","https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=600"],desc:"Tu propio bot con tu marca, tu nombre y comandos exclusivos. 100% único.",features:["Todo lo del Bot Grupos","Comandos personalizados","Logo y nombre propio","Hosting 1GB RAM 1 mes","Soporte prioritario"]}
-];
-const productosHosting=[
-  {id:3,nom:"Hosting 1GB RAM",precio:2.5,imgs:["https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600","https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=600","https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=600"],desc:"Hosting perfecto para 1 bot pequeño. 99.9% Uptime garantizado.",features:["1GB RAM + 10GB SSD","Node.js 20 + Python 3.11","Panel Pterodactyl","Backups diarios","Soporte 24/7"]},
-  {id:4,nom:"Hosting 4GB RAM",precio:5,imgs:["https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600","https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600","https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=600"],desc:"Para 3-4 bots o bots pesados con IA. Máxima potencia.",features:["4GB RAM + 40GB SSD","Node.js 20 + Python 3.11","Panel completo","DDoS Protection","Soporte prioritario"]}
-];
-let currentTab='bots';let currentProduct=null;let carouselIntervals=[];
-
-function setTab(tab,el){currentTab=tab;document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');renderProductos()}
-function renderProductos(){
-  const d=currentTab==='bots'?productosBots:productosHosting;
-  document.getElementById('productos').innerHTML=d.map(p=>`
-    <div class="card">
-      <div class="card-img" id="carousel-${p.id}">
-        <div class="carousel-track">
-          ${p.imgs.map(img=>`<div class="carousel-slide" style="background-image:url('${img}')"></div>`).join('')}
-        </div>
-        <span class="tag">DIGITAL</span>
-      </div>
-      <div class="card-body">
-        <div class="card-cat">${currentTab.toUpperCase()}</div>
-        <div class="card-title">${p.nom}</div>
-        <div class="card-price">${formatPrice(p.precio)}</div>
-        <button class="btn-contratar" onclick="verInfo(${p.id})">Información</button>
-      </div>
-    </div>`).join('');
-  setTimeout(startCarousels,100);
-}
-
-function startCarousels(){
-  carouselIntervals.forEach(i=>clearInterval(i));carouselIntervals=[];
-  document.querySelectorAll('.carousel-track').forEach(track=>{
-    let index=0;const slides=track.children.length;
-    const id=setInterval(()=>{index=(index+1)%slides;track.style.transform=`translateX(-${index*100}%)`},3000);
-    carouselIntervals.push(id);
-  });
-}
-
-function verInfo(id){
-  const d=currentTab==='bots'?productosBots:productosHosting;
-  currentProduct=d.find(p=>p.id===id);
-  
-  const dlocalRefId = `789f9ca7-1932-4c6e-9181-62c5a10cd833-${id}`;
-  const dlocalBtnId = `dp-btn-789f9ca7-1932-4c6e-9181-62c5a10cd833-${id}`;
-
-  document.getElementById('productDetail').innerHTML=`
-  <div class="product-img" style="background-image:url('${currentProduct.imgs[0]}')"></div>
-  <div class="product-title">${currentProduct.nom}</div>
-  <div class="product-price">${formatPrice(currentProduct.precio)}</div>
-  <div class="product-desc">${currentProduct.desc}</div>
-  <ul class="product-list">${currentProduct.features.map(f=>`<li><b>✓</b> <span>${f}</span></li>`).join('')}</ul>
-  <button class="btn-comprar" onclick="abrirPago()">Pagar por Transferencia</button>
-  <div class="dlocal-btn-container" id="dlocal-container-${id}"></div>
-  <button class="btn-volver-prod" onclick="showTienda()">← Volver</button>`;
-
-  setTimeout(()=>{
-    const container = document.getElementById(`dlocal-container-${id}`);
-    if(container && !container.innerHTML.includes('DlocalGo')){
-      const script = document.createElement('script');
-      script.setAttribute('data-reference-id', dlocalRefId);
-      script.innerHTML = `
-      (function(){
-        const z=!!window.DlocalGo,s=z?document.querySelector('script[src="https://static.dlocalgo.com/dlocalgo.min.js"]'):document.createElement("script");
-        z||(s.src="https://static.dlocalgo.com/dlocalgo.min.js",s.async=!0,document.body.appendChild(s));
-        s.addEventListener("load",()=>{
-          const e=document.querySelector('script[data-reference-id="${dlocalRefId}"]'),t=e.parentNode,n="${dlocalBtnId}",c=document.createElement("div");
-          c.id=n,t.insertBefore(c,e);
-          new DlocalGo("jUINBvOSTsbtPXIGUXwRtOawSeoDuBfo").createCheckout(n,{
-            subType:"BUTTON",country:"",currency:"USD",amount:"${currentProduct.precio}",lang:"es",text:"Comprar $${currentProduct.precio} USD"
-          });
-        });
-      })()`;
-      container.appendChild(script);
-    }
-  },100);
-
-  document.querySelector('.grid').style.display='none';
-  document.querySelector('.features').style.display='none';
-  document.querySelector('footer').style.display='none';
-  document.getElementById('productScreen').style.display='block';
-}
-
-function abrirPago(){
-  document.getElementById('pagoModal').classList.add('active');
-  const p = currentProduct.precio;
-  const fee = (p * 0.054 + 0.30).toFixed(2);
-  const total = (p + parseFloat(fee)).toFixed(2);
-  document.getElementById('montoTotal').textContent = `$ ${p.toFixed(2)}`;
-  document.getElementById('paypalSubtotal').textContent = `$${p.toFixed(2)}`;
-  document.getElementById('paypalFee').textContent = `$${fee}`;
-  document.getElementById('paypalTotal').textContent = `$${total}`;
-  document.getElementById('paypalLink').href = `https://paypal.me/tuuser/${total}`;
-  document.getElementById('paypalLink').textContent = `Pagar con PayPal $${total}`;
-  document.getElementById('wspBtn').onclick=()=>window.open(`https://wa.me/51936994155?text=Hola,%20envié%20comprobante%20de%20$${p}%20USD`,'_blank')
-}
-function cerrarPago(){document.getElementById('pagoModal').classList.remove('active')}
-function selectPayment(t,ev){document.querySelectorAll('#paypalContent,#yapeContent').forEach(e=>e.style.display='none');document.querySelectorAll('.payment-tab').forEach(e=>e.classList.remove('active'));ev.target.classList.add('active');document.getElementById(t+'Content').style.display='block'}
-function copyText(t){navigator.clipboard.writeText(t);toast('Copiado')}
-</script>
+<footer>© 2026 VENTAS BOT - Hecho en Perú 🇵🇪</footer>
 </body>
 </html>
