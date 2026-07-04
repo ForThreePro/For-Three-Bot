@@ -6,21 +6,11 @@
 <title>FOR THREE BOT | CYBER</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700;900&family=JetBrains+Mono:wght@400;600&display=swap');
-
-:root{
-  --bg:#000;
-  --card:#050505;
-  --border:#FF0041;
-  --text:#fff;
-  --text2:#FF9999;
-  --primary:#FF0041;
-  --green:#00FF88;
-}
-
+:root{ --bg:#000; --card:#050505; --border:#FF0041; --text:#fff; --text2:#FF9999; --primary:#FF0041; --green:#00FF88; }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace}
-
 @keyframes glow{0%,100%{text-shadow:0 0 10px var(--green)}50%{text-shadow:0 0 25px var(--green),0 0 35px var(--green)}}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
 nav{background:#000;border-bottom:2px solid var(--primary);padding:12px 15px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;font-family:'Rajdhani',sans-serif}
 nav b{color:var(--primary);font-size:1.1em;font-weight:900;text-shadow:0 0 10px var(--primary)}
@@ -33,8 +23,10 @@ nav b{color:var(--primary);font-size:1.1em;font-weight:900;text-shadow:0 0 10px 
 
 .banner{position:relative;text-align:center;border-bottom:2px solid var(--primary);padding:50px 15px;background:#000}
 .banner h1{font-family:'Rajdhani',sans-serif;font-size:1.8em;color:var(--primary);margin-bottom:20px;font-weight:900;text-shadow:0 0 15px var(--primary)}
+.buscador{width:90%;max-width:600px;padding:12px 20px;border:2px solid var(--primary);background:#000;color:var(--text);font-family:'JetBrains Mono',monospace}
+.buscador:focus{outline:none;box-shadow:0 0 20px var(--primary)}
 
-.container{max-width:650px;margin:auto;padding:40px 15px}
+.container{max-width:900px;margin:auto;padding:40px 15px}
 .titulo{font-family:'Rajdhani',sans-serif;text-align:center;font-size:1.8em;margin-bottom:30px;color:var(--primary);font-weight:900;text-shadow:0 0 10px var(--primary)}
 
 .grid{display:grid;grid-template-columns:1fr;gap:25px}
@@ -48,7 +40,15 @@ nav b{color:var(--primary);font-size:1.1em;font-weight:900;text-shadow:0 0 10px 
 .btn-disabled{border-color:#2d0000;color:#550000;cursor:not-allowed}
 .bloqueo{position:absolute;top:0;left:0;right:0;bottom:0;background:#000e;display:flex;justify-content:center;align-items:center;border-radius:6px;color:var(--primary);font-weight:900;font-family:'Rajdhani',sans-serif}
 
-/* MODAL */
+.categoria{background:var(--card);border:2px solid #1a1a1a;padding:18px;border-radius:6px;margin-bottom:20px;animation:slideUp 0.6s}
+.categoria:hover{border-color:var(--primary)}
+.categoria h3{background:var(--primary);color:#000;display:inline-block;padding:7px 18px;border-radius:0;margin-bottom:15px;font-family:'Rajdhani',sans-serif;font-weight:900;font-size:0.95em}
+.cmd-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(min-width:768px){.cmd-grid{grid-template-columns:repeat(4,1fr)}}
+.cmd{background:#000;border:1px solid #1a1a1a;padding:10px;border-radius:3px;font-size:0.85em;color:var(--text2);transition:0.2s}
+.cmd:hover{background:var(--primary);color:#000;border-color:var(--primary)}
+.cmd.oculto{display:none}
+
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);justify-content:center;align-items:center;z-index:999}
 .modal-box{background:var(--card);border:2px solid var(--primary);padding:30px;border-radius:6px;width:90%;max-width:400px}
 input{width:100%;padding:12px;margin:12px 0;border:2px solid #1a1a1a;background:#000;color:var(--text);border-radius:4px;font-size:1em;font-family:'JetBrains Mono',monospace}
@@ -56,6 +56,7 @@ input:focus{outline:none;border-color:var(--primary)}
 #welcomeMsg{color:var(--green);font-weight:900;font-family:'Rajdhani',sans-serif;margin-right:10px}
 
 footer{background:#000;border-top:2px solid var(--primary);color:var(--text2);text-align:center;padding:30px 15px;font-family:'Rajdhani',sans-serif}
+.sin-resultados{text-align:center;color:var(--primary);padding:20px;display:none;font-weight:900;font-family:'Rajdhani',sans-serif}
 </style>
 </head>
 <body>
@@ -72,6 +73,7 @@ footer{background:#000;border-top:2px solid var(--primary);color:var(--text2);te
 
 <div class="banner">
   <h1>[ +100 COMANDOS CYBER ]</h1>
+  <input type="text" class="buscador" id="buscador" placeholder="> INIT SEARCH: gpt4, kick, play...">
 </div>
 
 <div class="container">
@@ -110,101 +112,70 @@ footer{background:#000;border-top:2px solid var(--primary);color:var(--text2);te
     </div>
 
   </div>
+
+  <h2 class="titulo" style="margin-top:50px">[ DATABASE DE COMANDOS ]</h2>
+  <div id="sinResultados" class="sin-resultados">[ ERROR: NO SE ENCONTRO NADA ]</div>
+
+  <!-- AQUI VAN TODAS LAS CATEGORIAS DE TU FOTO -->
+  <div class="categoria"><h3>VENTAS BOT [4]</h3><div class="cmd-grid"><div class="cmd">.catalogo</div><div class="cmd">.comprarbot</div><div class="cmd">.creador ( Bot De WhatsApp )</div><div class="cmd">.garantia</div></div></div>
+  
+  <div class="categoria"><h3>SORTEOS [5]</h3><div class="cmd-grid"><div class="cmd">.addrl</div><div class="cmd">.delrl</div><div class="cmd">.listrl</div><div class="cmd">.spinrl</div><div class="cmd">.clearrl</div></div></div>
+  
+  <div class="categoria"><h3>MAIN [13]</h3><div class="cmd-grid"><div class="cmd">.cambio ( Monedas )</div><div class="cmd">.clima <ciudad></div><div class="cmd">.cleartmp</div><div class="cmd">.cpu</div><div class="cmd">.info</div><div class="cmd">.ram</div><div class="cmd">.reporte <texto></div><div class="cmd">.uptime</div><div class="cmd">.ping</div><div class="cmd">.info</div><div class="cmd">.sc</div><div class="cmd">.donar</div></div></div>
+  
+  <div class="categoria"><h3>CONFIG [12]</h3><div class="cmd-grid"><div class="cmd">.antilink <on/off></div><div class="cmd">.antispam on/off</div><div class="cmd">.modoadmin <on/off></div><div class="cmd">.welcome on/off</div><div class="cmd">.antilink on/off</div><div class="cmd">.antibot on/off</div><div class="cmd">.modoadmin on/off</div><div class="cmd">.subbots on/off</div><div class="cmd">.nsfw on/off</div><div class="cmd">.audios on/off</div><div class="cmd">.antiprivado on/off</div><div class="cmd">.detect on/off</div></div></div>
+  
+  <div class="categoria"><h3>DOWNLOADER [8]</h3><div class="cmd-grid"><div class="cmd">.mediafire</div><div class="cmd">.play <búsqueda></div><div class="cmd">.play2 <búsqueda></div><div class="cmd">.spotify <búsqueda></div><div class="cmd">.tiktok <link></div><div class="cmd">.tiktoksearch <busqueda></div><div class="cmd">.ytmp3 <url></div><div class="cmd">.ytmp4 <url></div></div></div>
+  
+  <div class="categoria"><h3>FREEFIRE [4]</h3><div class="cmd-grid"><div class="cmd">.4vs4 ( EeUu )</div><div class="cmd">.6vs6 ( EeUu )</div><div class="cmd">.vs4 ( Sur )</div><div class="cmd">.vs6 ( Sur )</div></div></div>
+  
+  <div class="categoria"><h3>FUN [41]</h3><div class="cmd-grid"><div class="cmd">.violar @tag</div><div class="cmd">.follar @tag</div><div class="cmd">.nalgada @tag</div><div class="cmd">.lamer @tag</div><div class="cmd">.chupar @tag</div><div class="cmd">.mamar @tag</div><div class="cmd">.tetas @tag</div><div class="cmd">.pene @tag</div><div class="cmd">.culo @tag</div><div class="cmd">.caliente @tag</div><div class="cmd">.gay @user</div><div class="cmd">.lesbiana @user</div><div class="cmd">.pajero @user</div><div class="cmd">.pajera @user</div><div class="cmd">.puto @user</div><div class="cmd">.puta @user</div><div class="cmd">.manco @user</div><div class="cmd">.manca @user</div><div class="cmd">.rata @user</div><div class="cmd">.prostituta @user</div><div class="cmd">.prostituto @user</div><div class="cmd">.ship</div><div class="cmd">.vrd</div><div class="cmd">.vibra</div><div class="cmd">.suerte</div><div class="cmd">.coquetea</div><div class="cmd">.insulta</div><div class="cmd">.bello</div><div class="cmd">.feo</div><div class="cmd">.fiel</div><div class="cmd">.activo</div><div class="cmd">.potencial</div><div class="cmd">.naco</div><div class="cmd">.pro</div><div class="cmd">.inteligente</div><div class="cmd">.borracho</div><div class="cmd">.enquesea</div><div class="cmd">.top3</div><div class="cmd">.top</div><div class="cmd">.piropo ( Perú )</div><div class="cmd">.emojimix <emoji1>+<emoji2></div></div></div>
+  
+  <div class="categoria"><h3>GROUP [4]</h3><div class="cmd-grid"><div class="cmd">.setkick <mensaje></div><div class="cmd">.delkick</div><div class="cmd">.setwelcome <mensaje></div><div class="cmd">.delwelcome</div></div></div>
+  
+  <div class="categoria"><h3>GRUPOS [13]</h3><div class="cmd-grid"><div class="cmd">.promote</div><div class="cmd">.demote</div><div class="cmd">.banchat</div><div class="cmd">.unbanchat</div><div class="cmd">.delete</div><div class="cmd">.notify</div><div class="cmd">.kick @user</div><div class="cmd">.link</div><div class="cmd">.mute @user</div><div class="cmd">.unmute @user</div><div class="cmd">.grupo abrir</div><div class="cmd">.grupo cerrar</div><div class="cmd">.todos <texto></div></div></div>
+  
+  <div class="categoria"><h3>INTELIGENCIA ARTIFICIAL [4]</h3><div class="cmd-grid"><div class="cmd">.claude <texto></div><div class="cmd">.copilot <texto></div><div class="cmd">.gemini <texto></div><div class="cmd">.gpt4 <texto></div></div></div>
+  
+  <div class="categoria"><h3>OWNER [4]</h3><div class="cmd-grid"><div class="cmd">.autoadmin</div><div class="cmd">.dsowner</div><div class="cmd">.reset</div><div class="cmd">.update</div></div></div>
+  
+  <div class="categoria"><h3>SEARCH [5]</h3><div class="cmd-grid"><div class="cmd">.google <busqueda></div><div class="cmd">.letra <cancion></div><div class="cmd">.yts <busqueda></div><div class="cmd">.tiktok <link></div><div class="cmd">.tiktoksearch <busqueda></div></div></div>
+  
+  <div class="categoria"><h3>SORTEOS STAFF [7]</h3><div class="cmd-grid"><div class="cmd">.lista ( staff )</div><div class="cmd">.setlunes Texto | @tag</div><div class="cmd">.setmartes Texto | @tag</div><div class="cmd">.setmiercoles Texto | @tag</div><div class="cmd">.setjueves Texto | @tag</div><div class="cmd">.setviernes Texto | @tag</div><div class="cmd">.setsabado Texto | @tag</div></div></div>
+  
+  <div class="categoria"><h3>STICKER [6]</h3><div class="cmd-grid"><div class="cmd">.brat</div><div class="cmd">.bratv</div><div class="cmd">.dado</div><div class="cmd">.qc</div><div class="cmd">.s</div><div class="cmd">.wm <nombre>|<autor></div></div></div>
+
 </div>
 
 <footer><p>[ FOR THREE BOT v2.0.6 ]<br>936 994 155 | CHIMBOTE - PERU</p></footer>
 
 <!-- MODALES -->
-<div id="login" class="modal">
-  <div class="modal-box">
-    <h2 style="font-family:Rajdhani;color:var(--primary);margin-bottom:15px">[ LOGIN ] <span onclick="closeModal('login')" style="float:right;cursor:pointer;font-size:30px">&times;</span></h2>
-    <input id="loginUser" placeholder="> USER">
-    <input id="loginPass" type="password" placeholder="> PASS">
-    <button class="btn" style="width:100%" onclick="login()">ACCEDER</button>
-  </div>
-</div>
-
-<div id="register" class="modal">
-  <div class="modal-box">
-    <h2 style="font-family:Rajdhani;color:var(--primary);margin-bottom:15px">[ REGISTER ] <span onclick="closeModal('register')" style="float:right;cursor:pointer;font-size:30px">&times;</span></h2>
-    <input id="regUser" placeholder="> USER">
-    <input id="regPass" type="password" placeholder="> PASS">
-    <button class="btn btn-green" style="width:100%" onclick="register()">CREAR CUENTA</button>
-  </div>
-</div>
+<div id="login" class="modal"><div class="modal-box"><h2 style="font-family:Rajdhani;color:var(--primary);margin-bottom:15px">[ LOGIN ] <span onclick="closeModal('login')" style="float:right;cursor:pointer;font-size:30px">&times;</span></h2><input id="loginUser" placeholder="> USER"><input id="loginPass" type="password" placeholder="> PASS"><button class="btn" style="width:100%" onclick="login()">ACCEDER</button></div></div>
+<div id="register" class="modal"><div class="modal-box"><h2 style="font-family:Rajdhani;color:var(--primary);margin-bottom:15px">[ REGISTER ] <span onclick="closeModal('register')" style="float:right;cursor:pointer;font-size:30px">&times;</span></h2><input id="regUser" placeholder="> USER"><input id="regPass" type="password" placeholder="> PASS"><button class="btn btn-green" style="width:100%" onclick="register()">CREAR CUENTA</button></div></div>
 
 <script>
-function openModal(id){
-  document.getElementById(id).style.display='flex'
-}
-function closeModal(id){
-  document.getElementById(id).style.display='none'
-}
+const buscador = document.getElementById('buscador');
+const sinResultados = document.getElementById('sinResultados');
 
-function register(){
-  let u=document.getElementById('regUser').value.trim();
-  let p=document.getElementById('regPass').value.trim();
-  
-  if(u == "" || p == ""){
-    alert("PON ALGO PUES WEON")
-    return
-  }
-  
-  localStorage.setItem('user_'+u,p);
-  alert("CUENTA CREADA: "+u);
-  closeModal('register')
-}
+buscador.addEventListener('keyup', function(){
+  let filtro = this.value.toLowerCase(); let encontrados = 0;
+  document.querySelectorAll('.cmd').forEach(cmd => {
+    if(cmd.innerText.toLowerCase().includes(filtro)){cmd.classList.remove('oculto');encontrados++}else{cmd.classList.add('oculto')}
+  });
+  document.querySelectorAll('.categoria').forEach(cat => {
+    cat.style.display = cat.querySelectorAll('.cmd:not(.oculto)').length > 0? 'block' : 'none';
+  });
+  sinResultados.style.display = encontrados === 0? 'block' : 'none';
+});
 
-function login(){
-  let u=document.getElementById('loginUser').value.trim();
-  let p=document.getElementById('loginPass').value.trim();
-  
-  if(localStorage.getItem('user_'+u) == p){
-    localStorage.setItem('loggedUser',u);
-    checkLogin();
-    alert("BIENVENIDO: "+u);
-    closeModal('login')
-  }else alert("ACCESO DENEGADO")
-}
+function openModal(id){document.getElementById(id).style.display='flex'}
+function closeModal(id){document.getElementById(id).style.display='none'}
 
-function logout(){
-  localStorage.removeItem('loggedUser');
-  checkLogin()
-}
-
-function comprar(plan, precio){
-  let u=localStorage.getItem('loggedUser');
-  if(u){
-    let m=`Hola! Soy ${u}%0AEnvié mi comprobante del plan ${plan} S/${precio} para FOR THREE BOT`;
-    window.open(`https://wa.me/51936994155?text=${m}`,'_blank')
-  }else{
-    alert("INICIA SESION PRIMERO")
-  }
-}
-
-function checkLogin(){
-  let u=localStorage.getItem('loggedUser');
-  if(u){
-    document.getElementById('welcomeMsg').innerText=u;
-    document.getElementById('btnLogin').style.display='none';
-    document.getElementById('btnReg').style.display='none';
-    document.getElementById('btnLogout').style.display='inline';
-    for(let i=1;i<=3;i++){
-      document.getElementById('lock'+i).style.display='none';
-      document.getElementById('buy'+i).classList.remove('btn-disabled');
-    }
-  }else{
-    document.getElementById('welcomeMsg').innerText='';
-    document.getElementById('btnLogin').style.display='inline';
-    document.getElementById('btnReg').style.display='inline';
-    document.getElementById('btnLogout').style.display='none';
-    for(let i=1;i<=3;i++){
-      document.getElementById('lock'+i).style.display='flex';
-      document.getElementById('buy'+i).classList.add('btn-disabled');
-    }
-  }
-}
-
+function register(){let u=document.getElementById('regUser').value.trim();let p=document.getElementById('regPass').value.trim();if(u==""||p==""){alert("PON ALGO PUES WEON");return}localStorage.setItem('user_'+u,p);alert("CUENTA CREADA: "+u);closeModal('register')}
+function login(){let u=document.getElementById('loginUser').value.trim();let p=document.getElementById('loginPass').value.trim();if(localStorage.getItem('user_'+u)==p){localStorage.setItem('loggedUser',u);checkLogin();alert("BIENVENIDO: "+u);closeModal('login')}else alert("ACCESO DENEGADO")}
+function logout(){localStorage.removeItem('loggedUser');checkLogin()}
+function comprar(plan, precio){let u=localStorage.getItem('loggedUser');if(u){let m=`Hola! Soy ${u}%0AEnvié mi comprobante del plan ${plan} S/${precio} para FOR THREE BOT`;window.open(`https://wa.me/51936994155?text=${m}`,'_blank')}else{alert("INICIA SESION PRIMERO")}}
+function checkLogin(){let u=localStorage.getItem('loggedUser');if(u){document.getElementById('welcomeMsg').innerText=u;document.getElementById('btnLogin').style.display='none';document.getElementById('btnReg').style.display='none';document.getElementById('btnLogout').style.display='inline';for(let i=1;i<=3;i++){document.getElementById('lock'+i).style.display='none';document.getElementById('buy'+i).classList.remove('btn-disabled');}}else{document.getElementById('welcomeMsg').innerText='';document.getElementById('btnLogin').style.display='inline';document.getElementById('btnReg').style.display='inline';document.getElementById('btnLogout').style.display='none';for(let i=1;i<=3;i++){document.getElementById('lock'+i).style.display='flex';document.getElementById('buy'+i).classList.add('btn-disabled');}}}
 checkLogin();
 </script>
 </body>
