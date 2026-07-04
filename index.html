@@ -3,102 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VENTAS BOT | +100 Comandos Pro</title>
+<title>VENTAS BOT PRO 2026</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
-body{background:#0d1117;color:#c9d1d9}
-.banner{width:100%;max-height:400px;object-fit:cover}
-header{text-align:center;padding:20px;background:#161b22;border-bottom:1px solid #30363d}
-header h1{font-size:2.5em;color:#58a6ff}
-.badges{display:flex;justify-content:center;gap:15px;margin:20px 0;flex-wrap:wrap}
-.badge{background:#21262d;padding:8px 15px;border-radius:20px;font-size:0.9em;border:1px solid #30363d}
-.container{max-width:1100px;margin:auto;padding:30px 20px}
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-@media(max-width:768px){.grid-2{grid-template-columns:1fr}}
-.card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:25px}
-.card h3{color:#58a6ff;margin-bottom:15px;font-size:1.4em}
-.lista-comandos{columns:2;column-gap:20px}
-.lista-comandos p{margin-bottom:8px;font-size:0.9em}
-.lista-comandos span{color:#7ee787}
-.btn-wsp{display:block;width:100%;text-align:center;background:#238636;color:#fff;padding:16px;border-radius:10px;text-decoration:none;font-weight:bold;font-size:1.2em;margin-top:20px;transition:0.2s}
-.btn-wsp:hover{background:#2ea043}
-.precio-box{background:linear-gradient(135deg,#1f6feb,#58a6ff);padding:30px;border-radius:12px;text-align:center}
-.precio{font-size:3em;font-weight:900;color:#fff}
-.categorias{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
-.cat-item{background:#21262d;padding:15px;border-radius:8px;border-left:4px solid #58a6ff}
-footer{text-align:center;padding:30px;opacity:0.5;font-size:0.9em}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Roboto:wght@300;400;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#fff;font-family:'Roboto',sans-serif;overflow-x:hidden}
+.banner{position:relative;width:100%;height:500px;overflow:hidden}
+.banner img{width:100%;height:100%;object-fit:cover;filter:brightness(0.4)}
+.banner-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+.banner-text h1{font-family:'Orbitron',sans-serif;font-size:3.5em;background:linear-gradient(90deg,#00f5ff,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.container{max-width:1200px;margin:auto;padding:50px 20px}
+.titulo{font-family:'Orbitron';text-align:center;font-size:2.5em;margin-bottom:40px;color:#00f5ff}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px}
+.card{background:linear-gradient(145deg,#111,#1a1a1a);padding:30px;border-radius:20px;border:1px solid #333;transition:0.4s;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:-2px;left:-2px;right:-2px;bottom:-2px;background:linear-gradient(45deg,#00f5ff,#ff00ff);z-index:-1;border-radius:20px;opacity:0;transition:0.4s}
+.card:hover::before{opacity:1}
+.card:hover{transform:translateY(-10px)}
+.card h3{color:#00f5ff;font-size:1.5em;margin-bottom:15px}
+.lista{list-style:none}
+.lista li{padding:8px 0;border-bottom:1px dashed #333}
+.precio-grande{font-size:3em;font-weight:900;color:#ff00ff;text-align:center;margin:20px 0}
+.btn-3d{display:block;background:linear-gradient(90deg,#00f5ff,#ff00ff);color:#000;padding:18px;text-align:center;border-radius:15px;text-decoration:none;font-weight:900;font-size:1.2em;margin-top:20px;box-shadow:0 5px 20px #00f5ff55;transition:0.3s}
+.btn-3d:hover{transform:scale(1.05);box-shadow:0 10px 30px #ff00ffaa}
+.comandos-wrap{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.tag{background:#1a1a1a;border:1px solid #00f5ff;padding:8px 15px;border-radius:50px;font-size:0.85em}
+footer{text-align:center;padding:40px;background:#050505}
 </style>
 </head>
 <body>
 
-<img src="https://files.evogb.win/CJOWbF.jpg" alt="Ventas Bot Banner" class="banner">
-
-<header>
-  <h1>🤖 VENTAS BOT PRO</h1>
-  <div class="badges">
-    <div class="badge">✅ +100 Comandos</div>
-    <div class="badge">⚡ 24/7 Online</div>
-    <div class="badge">🇵🇪 Soporte Perú</div>
-    <div class="badge">🛡️ Garantía 7 días</div>
+<div class="banner">
+  <img src="https://files.evogb.win/CJOWbF.jpg" alt="Banner Ventas Bot">
+  <div class="banner-text">
+    <h1>VENTAS BOT</h1>
+    <p style="font-size:1.3em;margin-top:10px">+100 Comandos | IA | Descargas | Grupos</p>
+    <a href="https://wa.me/51936994155" class="btn-3d" style="display:inline-block;margin-top:20px">ADQUIR AHORA</a>
   </div>
-</header>
+</div>
 
 <div class="container">
-
-  <div class="grid-2">
+  <h2 class="titulo">ELIGE TU PLAN</h2>
+  <div class="cards">
     <div class="card">
-      <h3>📋 ¿Qué incluye el Bot?</h3>
-      <div class="lista-comandos">
-        <p><span>📦</span> Sistema de Ventas</p>
-        <p><span>🎁</span> Sorteos Automáticos</p>
-        <p><span>⚙️</span> Info: Clima, Ping, RAM</p>
-        <p><span>🔍</span> Google, YT, TikTok Search</p>
-        <p><span>🧠</span> IA: GPT4, Gemini, Claude</p>
-        <p><span>⬇️</span> Descargas: YT, Spotify, TK</p>
-        <p><span>👑</span> Admin Grupos Completo</p>
-        <p><span>😂</span> Fun: Ship, Piropo, Top</p>
-        <p><span>🎨</span> Stickers: S, Brat, QC</p>
-      </div>
-    </div>
-
-    <div class="card precio-box">
-      <h3 style="color:#fff">PRECIO LANZAMIENTO</h3>
-      <div class="precio">S/40</div>
-      <p style="margin:10px 0">Pago único. Sin mensualidad</p>
-      <ul style="text-align:left;list-style:none;margin:20px 0">
-        <li>✅ Instalación incluida</li>
-        <li>✅ 1 Mes de soporte</li>
-        <li>✅ Actualizaciones gratis</li>
+      <h3>🚀 BÁSICO</h3>
+      <div class="precio-grande">S/20</div>
+      <ul class="lista">
+        <li>✅ +100 Comandos</li><li>✅ Grupos + Fun</li><li>✅ Soporte 7 días</li><li>✅ Instalación</li>
       </ul>
-      <a href="https://wa.me/51936994155?text=Hola%20quiero%20comprar%20VENTAS%20BOT%20PRO" class="btn-wsp">COMPRAR POR WHATSAPP</a>
+      <a href="https://wa.me/51936994155?text=BASICO" class="btn-3d">COMPRAR</a>
+    </div>
+    <div class="card">
+      <h3>💎 PREMIUM</h3>
+      <div class="precio-grande">S/40</div>
+      <ul class="lista">
+        <li>✅ Todo lo Básico</li><li>✅ Descargas YT + Spotify</li><li>✅ IA GPT4 + Gemini</li><li>✅ Soporte 30 días</li>
+      </ul>
+      <a href="https://wa.me/51936994155?text=PREMIUM" class="btn-3d">COMPRAR</a>
+    </div>
+    <div class="card">
+      <h3>👑 VIP</h3>
+      <div class="precio-grande">S/70</div>
+      <ul class="lista">
+        <li>✅ Todo lo Premium</li><li>✅ Subbots ilimitados</li><li>✅ Comandos a medida</li><li>✅ Soporte 90 días</li>
+      </ul>
+      <a href="https://wa.me/51936994155?text=VIP" class="btn-3d">COMPRAR</a>
     </div>
   </div>
 
-  <div class="card" style="margin-top:30px">
-    <h3>📚 Categorías de Comandos</h3>
-    <div class="categorias">
-      <div class="cat-item"><b>VENTAS [4]</b><br>.catalogo.comprarbot.garantia</div>
-      <div class="cat-item"><b>SORTEOS [5]</b><br>.addrl.spinrl.listrl</div>
-      <div class="cat-item"><b>MAIN [13]</b><br>.clima.ping.cambio.reporte</div>
-      <div class="cat-item"><b>SEARCH [5]</b><br>.google.letra.yts.tiktoksearch</div>
-      <div class="cat-item"><b>IA [4]</b><br>.gpt4.gemini.claude.copilot</div>
-      <div class="cat-item"><b>DOWNLOADER [8]</b><br>.play.ytmp3.ytmp4.spotify</div>
-      <div class="cat-item"><b>GRUPOS [13]</b><br>.kick.promote.mute.todos</div>
-      <div class="cat-item"><b>FUN [41]</b><br>.ship.piropo.top.suerte</div>
-      <div class="cat-item"><b>STICKER [6]</b><br>.s.brat.qc.wm</div>
-    </div>
+  <h2 class="titulo" style="margin-top:60px">COMANDOS DESTACADOS</h2>
+  <div class="comandos-wrap">
+    <div class="tag">.gpt4</div><div class="tag">.gemini</div><div class="tag">.play</div>
+    <div class="tag">.ytmp4</div><div class="tag">.spotify</div><div class="tag">.clima</div>
+    <div class="tag">.ship</div><div class="tag">.piropo</div><div class="tag">.kick</div>
+    <div class="tag">.spinrl</div><div class="tag">.s</div><div class="tag">.ping</div>
   </div>
 
-  <div class="card" style="margin-top:30px;text-align:center">
-    <h3>💬 ¿Tienes dudas?</h3>
-    <p>Escríbeme directo y te respondo al toque</p>
-    <a href="https://wa.me/51936994155" class="btn-wsp" style="max-width:400px;margin:20px auto 0">CHATEAR AHORA</a>
+  <h2 class="titulo" style="margin-top:60px">¿POR QUÉ NOSOTROS?</h2>
+  <div class="cards">
+    <div class="card"><h3>⚡ ULTRA RÁPIDO</h3><p>Sin lag. Respuesta instantánea 24/7</p></div>
+    <div class="card"><h3>🛡️ ANTIBAN</h3><p>Sistema anti-caída. Garantía total</p></div>
+    <div class="card"><h3>🇵🇪 SOPORTE PE</h3><p>Te ayudo por WhatsApp al instante</p></div>
   </div>
-
 </div>
 
 <footer>
-  VENTAS BOT © 2026 | Chimbote, Ancash - Perú 🇵🇪 | WhatsApp: 936 994 155
+  <p>VENTAS BOT 2026 | Chimbote - Perú 🇵🇪</p>
+  <p>WhatsApp: 936 994 155</p>
 </footer>
 
 </body>
