@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>VENTAS BOT PRO</title>
+<title>VENTAS BOT PRO | +100 Comandos</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
 nav{background:#fff;padding:15px 30px;display:flex;justify-content:space-between;box-shadow:0 2px 10px #0001;position:sticky;top:0;z-index:10}
@@ -10,17 +10,23 @@ nav{background:#fff;padding:15px 30px;display:flex;justify-content:space-between
 .btn-blue{background:#0066ff;color:#fff}.btn-green{background:#25D366;color:#fff}.btn-red{background:#da3633;color:#fff}
 .btn-disabled{background:#ccc;color:#666;cursor:not-allowed}
 .banner{position:relative;text-align:center;color:#fff}
-.banner img{width:100%;height:400px;object-fit:cover;filter:brightness(0.4)}
+.banner img{width:100%;height:350px;object-fit:cover;filter:brightness(0.4)}
 .banner-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#0008;justify-content:center;align-items:center;z-index:999}
 .modal-box{background:#fff;padding:30px;border-radius:15px;width:90%;max-width:400px}
 input{width:100%;padding:12px;margin:10px 0;border:2px solid #ddd;border-radius:8px}
-.container{max-width:1100px;margin:auto;padding:60px 20px}
+.container{max-width:1200px;margin:auto;padding:50px 20px}
+.titulo{text-align:center;font-size:2.2em;margin-bottom:40px;font-weight:800}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px}
 .card{background:#fff;padding:30px;border-radius:15px;text-align:center;box-shadow:0 4px 15px #0001;position:relative}
 .precio{font-size:3em;font-weight:900;color:#0066ff}
+.categoria{background:#161b22;color:#fff;padding:20px;border-radius:12px;margin-bottom:25px}
+.categoria h3{background:#25D366;display:inline-block;padding:8px 20px;border-radius:20px;margin-bottom:15px}
+.cmd-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
+.cmd{background:#0d1117;padding:8px 12px;border-radius:6px;font-size:0.9em;border-left:3px solid #25D366}
 #welcomeMsg{color:#25D366;font-weight:700}
-.bloqueo{position:absolute;top:0;left:0;right:0;bottom:0;background:#0006;display:flex;justify-content:center;align-items:center;border-radius:15px;color:#fff;font-weight:700;font-size:1.2em}
+.bloqueo{position:absolute;top:0;left:0;right:0;bottom:0;background:#0006;display:flex;justify-content:center;align-items:center;border-radius:15px;color:#fff;font-weight:700}
+footer{background:#111;color:#aaa;text-align:center;padding:40px 20px}
 </style>
 </head>
 <body>
@@ -44,108 +50,171 @@ input{width:100%;padding:12px;margin:10px 0;border:2px solid #ddd;border-radius:
 </div>
 
 <div class="container">
-  <h2 style="text-align:center;margin-bottom:30px">Elige tu Plan</h2>
+  <h2 class="titulo">Elige tu Plan</h2>
   <div class="grid">
-    <!-- CARD 1 -->
-    <div class="card" id="card1">
-      <div class="bloqueo" id="lock1">🔒 INICIA SESIÓN</div>
-      <h3>BÁSICO</h3><div class="precio">S/20</div>
-      <button class="btn btn-disabled" id="buy1" onclick="comprar('BASICO')">Comprar</button>
-    </div>
-    <!-- CARD 2 -->
-    <div class="card" id="card2">
-      <div class="bloqueo" id="lock2">🔒 INICIA SESIÓN</div>
-      <h3>PREMIUM</h3><div class="precio">S/40</div>
-      <button class="btn btn-disabled" id="buy2" onclick="comprar('PREMIUM')">Comprar</button>
-    </div>
-    <!-- CARD 3 -->
-    <div class="card" id="card3">
-      <div class="bloqueo" id="lock3">🔒 INICIA SESIÓN</div>
-      <h3>VIP</h3><div class="precio">S/70</div>
-      <button class="btn btn-disabled" id="buy3" onclick="comprar('VIP')">Comprar</button>
+    <div class="card"><div class="bloqueo" id="lock1">🔒 INICIA SESIÓN</div><h3>BÁSICO</h3><div class="precio">S/20</div><button class="btn btn-disabled" id="buy1" onclick="comprar('BASICO')">Comprar</button></div>
+    <div class="card" style="border:2px solid #25D366"><div class="bloqueo" id="lock2">🔒 INICIA SESIÓN</div><h3>PREMIUM</h3><div class="precio">S/40</div><button class="btn btn-disabled" id="buy2" onclick="comprar('PREMIUM')">Comprar</button></div>
+    <div class="card"><div class="bloqueo" id="lock3">🔒 INICIA SESIÓN</div><h3>VIP</h3><div class="precio">S/70</div><button class="btn btn-disabled" id="buy3" onclick="comprar('VIP')">Comprar</button></div>
+  </div>
+
+  <h2 class="titulo" style="margin-top:60px">📋 Todos los Comandos</h2>
+
+  <!-- VENTAS BOT -->
+  <div class="categoria">
+    <h3>VENTAS BOT [4]</h3>
+    <div class="cmd-grid">
+      <div class="cmd">.catalogo</div><div class="cmd">.comprarbot</div>
+      <div class="cmd">.creador</div><div class="cmd">.garantia</div>
     </div>
   </div>
+
+  <!-- SORTEOS -->
+  <div class="categoria">
+    <h3>SORTEOS [5]</h3>
+    <div class="cmd-grid">
+      <div class="cmd">.addrl</div><div class="cmd">.delrl</div><div class="cmd">.listrl</div>
+      <div class="cmd">.spinrl</div><div class="cmd">.clearrl</div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="categoria">
+    <h3>MAIN [13]</h3>
+    <div class="cmd-grid">
+      <div class="cmd">.cambio</div><div class="cmd">.clima</div><div class="cmd">.cleartmp</div>
+      <div class="cmd">.cpu</div><div class="cmd">.info</div><div class="cmd">.ram</div>
+      <div class="cmd">.reporte</div><div class="cmd">.uptime</div><div class="cmd">.ping</div>
+      <div class="cmd">.sc</div><div class="cmd">.donar</div>
+    </div>
+  </div>
+
+  <!-- CONFIG -->
+  <div class="categoria">
+    <h3>CONFIG [12]</h3>
+    <div class="cmd-grid">
+      <div class="cmd">.antilink</div><div class="cmd">.antispam</div><div class="cmd">.modoadmin</div>
+      <div class="cmd">.welcome</div><div class="cmd">.antibot</div><div class="cmd">.subbots</div>
+      <div class="cmd">.nsfw</div><div class="cmd">.audios</div><div class="cmd">.antiprivado</div>
+      <div class="cmd">.detect</div>
+    </div>
+  </div>
+
+  <!-- DOWNLOADER -->
+  <div class="categoria">
+    <h3>DOWNLOADER [8]</h3>
+    <div class="cmd-grid">
+      <div class="cmd">.mediafire</div><div class="cmd">.play</div><div class="cmd">.play2</div>
+      <div class="cmd">.spotify</div><div class="cmd">.tiktok</div><div class="cmd">.tiktoksearch</div>
+      <div class="cmd">.ytmp3</div><div class="cmd">.ytmp4</div>
+    </div>
+  </div>
+
+  <!-- FREEFIRE -->
+  <div class="categoria">
+    <h3>FREEFIRE [4]</h3>
+    <div class="cmd-grid">
+      <div class="cmd">.4vs4</div><div class="cmd">.6vs6</div><div class="cmd">.vs4</div><div class="cmd">.vs6</div>
+    </div>
+  </div>
+
+  <!-- FUN -->
+  <div class="categoria">
+    <h3>FUN [41]</h3>
+    <div class="cmd-grid">
+      <div class="cmd">.violar</div><div class="cmd">.follar</div><div class="cmd">.nalgada</div>
+      <div class="cmd">.lamer</div><div class="cmd">.chupar</div><div class="cmd">.mamar</div>
+      <div class="cmd">.tetas</div><div class="cmd">.pene</div><div class="cmd">.culo</div>
+      <div class="cmd">.ship</div><div class="cmd">.vr</div><div class="cmd">.vibra</div>
+      <div class="cmd">.suerte</div><div class="cmd">.coquetea</div><div class="cmd">.piropo</div>
+      <div class="cmd">.top</div><div class="cmd">.emojimix</div>
+    </div>
+  </div>
+
+  <!-- GROUP -->
+  <div class="categoria">
+    <h3>GROUP [4]</h3>
+    <div class="cmd-grid">
+      <div class="cmd">.setkick</div><div class="cmd">.delkick</div>
+      <div class="cmd">.setwelcome</div><div class="cmd">.delwelcome</div>
+    </div>
+  </div>
+
+  <!-- GRUPOS -->
+  <div class="categoria">
+    <h3>GRUPOS [13]</h3>
+    <div class="cmd-grid">
+      <div class="cmd">.promote</div><div class="cmd">.demote</div><div class="cmd">.banchat</div>
+      <div class="cmd">.unbanchat</div><div class="cmd">.delete</div><div class="cmd">.notify</div>
+      <div class="cmd">.kick</div><div class="cmd">.link</div><div class="cmd">.mute</div>
+      <div class="cmd">.unmute</div><div class="cmd">.grupo abrir</div><div class="cmd">.grupo cerrar</div>
+      <div class="cmd">.todos</div>
+    </div>
+  </div>
+
+  <!-- IA -->
+  <div class="categoria">
+    <h3>INTELIGENCIA ARTIFICIAL [4]</h3>
+    <div class="cmd-grid">
+      <div class="cmd">.claude</div><div class="cmd">.copilot</div>
+      <div class="cmd">.gemini</div><div class="cmd">.gpt4</div>
+    </div>
+  </div>
+
+  <!-- OWNER -->
+  <div class="categoria">
+    <h3>OWNER [4]</h3>
+    <div class="cmd-grid">
+      <div class="cmd">.autoadmin</div><div class="cmd">.dsowner</div>
+      <div class="cmd">.reset</div><div class="cmd">.update</div>
+    </div>
+  </div>
+
+  <!-- SEARCH -->
+  <div class="categoria">
+    <h3>SEARCH [5]</h3>
+    <div class="cmd-grid">
+      <div class="cmd">.google</div><div class="cmd">.letra</div><div class="cmd">.yts</div>
+      <div class="cmd">.tiktok</div><div class="cmd">.tiktoksearch</div>
+    </div>
+  </div>
+
+  <!-- SORTEOS STAFF -->
+  <div class="categoria">
+    <h3>SORTEOS STAFF [7]</h3>
+    <div class="cmd-grid">
+      <div class="cmd">.lista</div><div class="cmd">.setlunes</div><div class="cmd">.setmartes</div>
+      <div class="cmd">.setmiercoles</div><div class="cmd">.setjueves</div><div class="cmd">.setviernes</div>
+      <div class="cmd">.setsabado</div>
+    </div>
+  </div>
+
+  <!-- STICKER -->
+  <div class="categoria">
+    <h3>STICKER [6]</h3>
+    <div class="cmd-grid">
+      <div class="cmd">.brat</div><div class="cmd">.bratv</div><div class="cmd">.dado</div>
+      <div class="cmd">.qc</div><div class="cmd">.s</div><div class="cmd">.wm</div>
+    </div>
+  </div>
+
 </div>
 
-<!-- MODAL LOGIN -->
-<div id="login" class="modal"><div class="modal-box">
-  <h2>Iniciar Sesión <span onclick="closeModal('login')" style="float:right;cursor:pointer">&times;</span></h2>
-  <input id="loginUser" type="text" placeholder="Usuario">
-  <input id="loginPass" type="password" placeholder="Contraseña">
-  <button class="btn btn-blue" onclick="login()">Entrar</button>
-</div></div>
+<footer>
+  <p>VENTAS BOT PRO © 2026 | 936 994 155 | Chimbote, Perú 🇵🇪</p>
+</footer>
 
-<!-- MODAL REGISTRO -->
-<div id="register" class="modal"><div class="modal-box">
-  <h2>Crear Cuenta <span onclick="closeModal('register')" style="float:right;cursor:pointer">&times;</span></h2>
-  <input id="regUser" type="text" placeholder="Crea un usuario">
-  <input id="regPass" type="password" placeholder="Crea una contraseña">
-  <button class="btn btn-green" onclick="register()">Registrarse</button>
-</div></div>
+<!-- MODALES IGUALES -->
+<div id="login" class="modal"><div class="modal-box"><h2>Login <span onclick="closeModal('login')" style="float:right;cursor:pointer">&times;</span></h2><input id="loginUser" placeholder="Usuario"><input id="loginPass" type="password" placeholder="Contraseña"><button class="btn btn-blue" onclick="login()">Entrar</button></div></div>
+<div id="register" class="modal"><div class="modal-box"><h2>Registro <span onclick="closeModal('register')" style="float:right;cursor:pointer">&times;</span></h2><input id="regUser" placeholder="Usuario"><input id="regPass" type="password" placeholder="Contraseña"><button class="btn btn-green" onclick="register()">Registrarse</button></div></div>
 
 <script>
 function openModal(id){document.getElementById(id).style.display='flex'}
 function closeModal(id){document.getElementById(id).style.display='none'}
-
-// REGISTRAR
-function register(){
-  let user = regUser.value; let pass = regPass.value;
-  if(user=="" || pass==""){ alert("Completa todo"); return; }
-  localStorage.setItem('user_' + user, pass);
-  alert("✅ Cuenta creada! Ahora inicia sesión");
-  closeModal('register');
-}
-
-// LOGIN
-function login(){
-  let user = loginUser.value; let pass = loginPass.value;
-  let savedPass = localStorage.getItem('user_' + user);
-  if(savedPass && savedPass == pass){
-    localStorage.setItem('loggedUser', user);
-    checkLogin();
-    alert("✅ Bienvenido " + user + "! Ya puedes comprar");
-    closeModal('login');
-  } else { alert("❌ Usuario o contraseña incorrectos"); }
-}
-
-// LOGOUT
-function logout(){
-  localStorage.removeItem('loggedUser');
-  checkLogin();
-}
-
-// COMPRAR
-function comprar(plan){
-  let user = localStorage.getItem('loggedUser');
-  if(!user){ alert("Debes iniciar sesión primero"); return; }
-  window.open(`https://wa.me/51936994155?text=Hola%20soy%20${user}%20quiero%20comprar%20plan%20${plan}`, '_blank')
-}
-
-// VERIFICAR SI ESTA LOGUEADO
-function checkLogin(){
-  let user = localStorage.getItem('loggedUser');
-  if(user){
-    welcomeMsg.innerText = `Hola, ${user} 👋`;
-    btnLogin.style.display = 'none'; btnReg.style.display = 'none'; btnLogout.style.display = 'inline';
-
-    // DESBLOQUEAR BOTONES
-    for(let i=1; i<=3; i++){
-      document.getElementById('lock'+i).style.display = 'none';
-      document.getElementById('buy'+i).classList.remove('btn-disabled');
-      document.getElementById('buy'+i).classList.add('btn-green');
-    }
-  } else {
-    welcomeMsg.innerText = '';
-    btnLogin.style.display = 'inline'; btnReg.style.display = 'inline'; btnLogout.style.display = 'none';
-
-    // BLOQUEAR BOTONES
-    for(let i=1; i<=3; i++){
-      document.getElementById('lock'+i).style.display = 'flex';
-      document.getElementById('buy'+i).classList.add('btn-disabled');
-      document.getElementById('buy'+i).classList.remove('btn-green');
-    }
-  }
-}
+function register(){let u=regUser.value,p=regPass.value;if(u&&p){localStorage.setItem('user_'+u,p);alert("✅ Cuenta creada");closeModal('register')}}
+function login(){let u=loginUser.value,p=loginPass.value;if(localStorage.getItem('user_'+u)==p){localStorage.setItem('loggedUser',u);checkLogin();alert("✅ Bienvenido");closeModal('login')}else alert("❌ Error")}
+function logout(){localStorage.removeItem('loggedUser');checkLogin()}
+function comprar(p){let u=localStorage.getItem('loggedUser');if(u)window.open(`https://wa.me/51936994155?text=Hola%20soy%20${u}%20quiero%20${p}`,'_blank')}
+function checkLogin(){let u=localStorage.getItem('loggedUser');if(u){welcomeMsg.innerText=`Hola, ${u} 👋`;btnLogin.style.display='none';btnReg.style.display='none';btnLogout.style.display='inline';for(let i=1;i<=3;i++){document.getElementById('lock'+i).style.display='none';document.getElementById('buy'+i).classList.remove('btn-disabled');document.getElementById('buy'+i).classList.add('btn-green')}}else{welcomeMsg.innerText='';btnLogin.style.display='inline';btnReg.style.display='inline';btnLogout.style.display='none';for(let i=1;i<=3;i++){document.getElementById('lock'+i).style.display='flex';document.getElementById('buy'+i).classList.add('btn-disabled');document.getElementById('buy'+i).classList.remove('btn-green')}}}
 checkLogin();
 </script>
 </body>
