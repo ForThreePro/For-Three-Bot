@@ -3,79 +3,89 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VENTAS BOT PRO</title>
+<title>VENTAS BOT PRO | FOR THREE</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700;900&family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700;900&family=JetBrains+Mono:wght@400;600&display=swap');
 
 :root{
-  --bg:#050A18;
-  --card:#0D1429;
-  --border:#1A2444;
-  --text:#F0F4FF;
-  --text2:#8A9BB8;
-  --primary:#00D4FF; /* Azul hielo */
-  --sec:#0066FF; /* Azul fuerte */
-  --green:#00FF88; /* Verde menta */
+  --bg:#050000;
+  --card:#0A0000;
+  --border:#330000;
+  --text:#FFE6E6;
+  --text2:#FF9999;
+  --primary:#FF0041; /* Rojo neón */
+  --sec:#FF1A1A; /* Rojo sangre */
+  --green:#00FF88; /* Para precios */
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif}
+body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace}
 
 @keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes glow{0%,100%{box-shadow:0 0 5px var(--primary)}50%{box-shadow:0 0 20px var(--primary)}}
+@keyframes redGlow{0%,100%{box-shadow:0 0 5px var(--primary)}50%{box-shadow:0 0 25px var(--primary),0 0 40px var(--primary)}}
+@keyframes scanline{
+  0%{background-position:0 0}
+  100%{background-position:0 100vh}
+}
 
-nav{background:#050A18;border-bottom:1px solid var(--border);padding:12px 15px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
-nav b{font-family:'Exo 2',sans-serif;font-size:1.1em;color:#fff}
-.btn{padding:9px 16px;border-radius:8px;font-weight:700;cursor:pointer;border:1px solid var(--primary);background:transparent;color:var(--primary);font-size:0.85em;transition:0.2s;font-family:'Exo 2',sans-serif}
-.btn:hover{background:var(--primary);color:#000;box-shadow:0 0 15px var(--primary)}
-.btn-blue{border-color:var(--sec);color:var(--sec)}.btn-blue:hover{background:var(--sec);color:#fff}
-.btn-green{border-color:var(--green);color:var(--green)}.btn-green:hover{background:var(--green);color:#000}
+body::before{
+  content:"";
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  background:linear-gradient(transparent 50%,rgba(255,0,65,0.03) 50%);
+  background-size:100% 4px;z-index:-1;animation:scanline 8s linear infinite;pointer-events:none
+}
+
+nav{background:#050000;border-bottom:2px solid var(--primary);padding:12px 15px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
+nav b{font-family:'Rajdhani',sans-serif;font-size:1.2em;color:var(--primary);text-shadow:0 0 10px var(--primary)}
+.btn{padding:9px 16px;border-radius:4px;font-weight:900;cursor:pointer;border:2px solid var(--primary);background:transparent;color:var(--primary);font-size:0.85em;transition:0.2s;font-family:'Rajdhani',sans-serif;letter-spacing:1px}
+.btn:hover{background:var(--primary);color:#000;box-shadow:0 0 20px var(--primary)}
+.btn-green{border-color:var(--green);color:var(--green)}.btn-green:hover{background:var(--green);color:#000;box-shadow:0 0 20px var(--green)}
 .btn-red{border-color:#FF3B5C;color:#FF3B5C}.btn-red:hover{background:#FF3B5C;color:#fff}
-.btn-disabled{border-color:#2d3748;color:#4A5568;cursor:not-allowed}
+.btn-disabled{border-color:#2d0000;color:#550000;cursor:not-allowed}
 
-.banner{position:relative;text-align:center}
-.banner img{width:100%;height:250px;object-fit:cover;filter:brightness(0.35) hue-rotate(200deg)}
+.banner{position:relative;text-align:center;border-bottom:2px solid var(--primary)}
+.banner img{width:100%;height:250px;object-fit:cover;filter:brightness(0.25) hue-rotate(350deg) saturate(2)}
 .banner-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90%;animation:slideUp 0.6s}
-.banner-text h1{font-family:'Exo 2',sans-serif;font-size:1.8em;color:#fff;margin-bottom:15px;font-weight:900;text-shadow:0 0 10px var(--primary)}
-.buscador{width:100%;padding:12px 20px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:0.95em}
-.buscador:focus{outline:none;border-color:var(--primary);box-shadow:0 0 10px var(--primary)}
+.banner-text h1{font-family:'Rajdhani',sans-serif;font-size:2em;color:var(--primary);margin-bottom:15px;font-weight:900;text-shadow:0 0 15px var(--primary)}
+.buscador{width:100%;padding:12px 20px;border-radius:0;border:2px solid var(--primary);background:#000;color:var(--text);font-size:0.95em;font-family:'JetBrains Mono',monospace}
+.buscador:focus{outline:none;box-shadow:0 0 20px var(--primary)}
 
 .container{max-width:1200px;margin:auto;padding:30px 15px}
-.titulo{font-family:'Exo 2',sans-serif;text-align:center;font-size:1.7em;margin-bottom:30px;color:#fff;font-weight:900}
+.titulo{font-family:'Rajdhani',sans-serif;text-align:center;font-size:1.8em;margin-bottom:30px;color:var(--primary);font-weight:900;letter-spacing:2px;text-shadow:0 0 10px var(--primary)}
 
-.grid{display:grid;grid-template-columns:1fr;gap:18px}
+.grid{display:grid;grid-template-columns:1fr;gap:20px}
 @media(min-width:768px){.grid{grid-template-columns:repeat(3,1fr)}}
 
-.card{background:var(--card);border:1px solid var(--border);padding:25px;border-radius:14px;text-align:center;position:relative;transition:0.3s;animation:slideUp 0.6s}
-.card:hover{border-color:var(--primary);animation:glow 2s infinite}
-.precio{font-family:'Exo 2',sans-serif;font-size:2.8em;font-weight:900;color:var(--green);margin:12px 0}
-.card h3{font-family:'Exo 2',sans-serif;color:#fff;font-size:1.2em}
+.card{background:var(--card);border:2px solid var(--border);padding:25px;border-radius:6px;text-align:center;position:relative;transition:0.3s;animation:slideUp 0.6s}
+.card:hover{border-color:var(--primary);animation:redGlow 2s infinite}
+.precio{font-family:'Rajdhani',sans-serif;font-size:3em;font-weight:900;color:var(--green);margin:15px 0;text-shadow:0 0 10px var(--green)}
+.card h3{font-family:'Rajdhani',sans-serif;color:#fff;font-size:1.3em;letter-spacing:1px}
 
-.categoria{background:var(--card);border:1px solid var(--border);padding:18px;border-radius:12px;margin-bottom:18px;animation:slideUp 0.6s}
-.categoria h3{background:linear-gradient(90deg,var(--sec),var(--primary));color:#000;display:inline-block;padding:7px 16px;border-radius:6px;margin-bottom:15px;font-family:'Exo 2',sans-serif;font-weight:900;font-size:0.9em}
+.categoria{background:var(--card);border:2px solid var(--border);padding:18px;border-radius:6px;margin-bottom:20px;animation:slideUp 0.6s}
+.categoria h3{background:linear-gradient(90deg,var(--sec),var(--primary));color:#000;display:inline-block;padding:7px 18px;border-radius:0;margin-bottom:15px;font-family:'Rajdhani',sans-serif;font-weight:900;font-size:0.95em;letter-spacing:1px}
 .cmd-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
 @media(min-width:768px){.cmd-grid{grid-template-columns:repeat(4,1fr)}}
-.cmd{background:#050A18;border:1px solid var(--border);padding:10px;border-radius:6px;font-size:0.85em;font-family:'Inter',monospace;color:var(--text2);transition:0.2s}
-.cmd:hover{background:var(--border);border-color:var(--primary);color:#fff}
+.cmd{background:#000;border:1px solid var(--border);padding:10px;border-radius:3px;font-size:0.85em;font-family:'JetBrains Mono',monospace;color:var(--text2);transition:0.2s}
+.cmd:hover{background:var(--primary);color:#000;border-color:var(--primary);transform:scale(1.05)}
 .cmd.oculto{display:none}
 
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000f;justify-content:center;align-items:center;z-index:999;padding:20px}
-.modal-box{background:var(--card);border:1px solid var(--border);padding:30px;border-radius:14px;width:100%;max-width:400px;animation:slideUp 0.4s}
-input{width:100%;padding:12px;margin:12px 0;border:1px solid var(--border);background:#050A18;color:var(--text);border-radius:8px;font-size:1em}
-input:focus{outline:none;border-color:var(--primary)}
-#welcomeMsg{color:var(--green);font-weight:700;font-family:'Exo 2',sans-serif}
-.bloqueo{position:absolute;top:0;left:0;right:0;bottom:0;background:#000c;display:flex;justify-content:center;align-items:center;border-radius:14px;color:#FF3B5C;font-weight:900;font-family:'Exo 2',sans-serif}
-footer{background:#030712;border-top:1px solid var(--border);color:var(--text2);text-align:center;padding:30px 15px}
-.sin-resultados{text-align:center;color:var(--text2);padding:20px;display:none}
+.modal-box{background:var(--card);border:2px solid var(--primary);padding:30px;border-radius:6px;width:100%;max-width:400px;animation:slideUp 0.4s}
+input{width:100%;padding:12px;margin:12px 0;border:2px solid var(--border);background:#000;color:var(--text);border-radius:4px;font-size:1em;font-family:'JetBrains Mono',monospace}
+input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 15px var(--primary)}
+#welcomeMsg{color:var(--green);font-weight:900;font-family:'Rajdhani',sans-serif;text-shadow:0 0 5px var(--green)}
+.bloqueo{position:absolute;top:0;left:0;right:0;bottom:0;background:#000e;display:flex;justify-content:center;align-items:center;border-radius:6px;color:var(--primary);font-weight:900;font-family:'Rajdhani',sans-serif;letter-spacing:1px}
+footer{background:#000;border-top:2px solid var(--primary);color:var(--text2);text-align:center;padding:30px 15px;font-family:'Rajdhani',sans-serif}
+.sin-resultados{text-align:center;color:var(--primary);padding:20px;display:none;font-weight:900}
 </style>
 </head>
 <body>
 
 <nav>
-  <b>⚡ VENTAS BOT PRO</b>
+  <b>⚡ VENTAS BOT PRO ⚡</b>
   <div>
     <span id="welcomeMsg"></span>
-    <button class="btn btn-blue" id="btnLogin" onclick="openModal('login')">LOGIN</button>
+    <button class="btn" id="btnLogin" onclick="openModal('login')">LOGIN</button>
     <button class="btn btn-green" id="btnReg" onclick="openModal('register')">REGISTRO</button>
     <button class="btn btn-red" id="btnLogout" onclick="logout()" style="display:none">SALIR</button>
   </div>
@@ -84,23 +94,23 @@ footer{background:#030712;border-top:1px solid var(--border);color:var(--text2);
 <div class="banner">
   <img src="https://files.evogb.win/CJOWbF.jpg">
   <div class="banner-text">
-    <h1>+100 COMANDOS PRO</h1>
-    <input type="text" class="buscador" id="buscador" placeholder="> BUSCAR: gpt4, kick, play...">
+    <h1>[ +100 COMANDOS CYBER ]</h1>
+    <input type="text" class="buscador" id="buscador" placeholder="> INIT SEARCH: gpt4, kick, play...">
   </div>
 </div>
 
 <div class="container">
-  <h2 class="titulo">ELIGE TU PLAN</h2>
+  <h2 class="titulo">[ SELECCIONAR PLAN ]</h2>
   <div class="grid">
-    <div class="card"><div class="bloqueo" id="lock1">🔒 LOGIN</div><h3>BASICO</h3><div class="precio">S/20</div><button class="btn btn-disabled" id="buy1" onclick="comprar('BASICO', 20)">COMPRAR</button></div>
-    <div class="card"><div class="bloqueo" id="lock2">🔒 LOGIN</div><h3>PREMIUM</h3><div class="precio">S/40</div><button class="btn btn-disabled" id="buy2" onclick="comprar('PREMIUM', 40)">COMPRAR</button></div>
-    <div class="card"><div class="bloqueo" id="lock3">🔒 LOGIN</div><h3>VIP</h3><div class="precio">S/70</div><button class="btn btn-disabled" id="buy3" onclick="comprar('VIP', 70)">COMPRAR</button></div>
+    <div class="card"><div class="bloqueo" id="lock1">[ ACCESO DENEGADO ]</div><h3>BASICO</h3><div class="precio">S/20</div><button class="btn btn-disabled" id="buy1" onclick="comprar('BASICO', 20)">COMPRAR</button></div>
+    <div class="card"><div class="bloqueo" id="lock2">[ ACCESO DENEGADO ]</div><h3>PREMIUM</h3><div class="precio">S/40</div><button class="btn btn-disabled" id="buy2" onclick="comprar('PREMIUM', 40)">COMPRAR</button></div>
+    <div class="card"><div class="bloqueo" id="lock3">[ ACCESO DENEGADO ]</div><h3>VIP</h3><div class="precio">S/70</div><button class="btn btn-disabled" id="buy3" onclick="comprar('VIP', 70)">COMPRAR</button></div>
   </div>
 
-  <h2 class="titulo" style="margin-top:40px">> TODAS LAS CATEGORIAS</h2>
-  <div id="sinResultados" class="sin-resultados">NO SE ENCONTRO NINGUN COMANDO</div>
+  <h2 class="titulo" style="margin-top:50px">[ DATABASE DE COMANDOS ]</h2>
+  <div id="sinResultados" class="sin-resultados">[ ERROR: NO SE ENCONTRO NADA ]</div>
 
-  <!-- PEGAR AQUI LAS 14 CATEGORIAS IGUALES A LAS DE ANTES -->
+  <!-- LAS 14 CATEGORIAS -->
   <div class="categoria"><h3>VENTAS BOT [4]</h3><div class="cmd-grid"><div class="cmd">.catalogo</div><div class="cmd">.comprarbot</div><div class="cmd">.creador</div><div class="cmd">.garantia</div></div></div>
   <div class="categoria"><h3>SORTEOS [5]</h3><div class="cmd-grid"><div class="cmd">.addrl</div><div class="cmd">.delrl</div><div class="cmd">.listrl</div><div class="cmd">.spinrl</div><div class="cmd">.clearrl</div></div></div>
   <div class="categoria"><h3>MAIN [13]</h3><div class="cmd-grid"><div class="cmd">.cambio</div><div class="cmd">.clima</div><div class="cmd">.cleartmp</div><div class="cmd">.cpu</div><div class="cmd">.info</div><div class="cmd">.ram</div><div class="cmd">.reporte</div><div class="cmd">.uptime</div><div class="cmd">.ping</div><div class="cmd">.sc</div><div class="cmd">.donar</div></div></div>
@@ -118,10 +128,12 @@ footer{background:#030712;border-top:1px solid var(--border);color:var(--text2);
 
 </div>
 
-<footer><p>VENTAS BOT PRO © 2026<br>936 994 155 | CHIMBOTE</p></footer>
+<footer>
+  <p>[ VENTAS BOT PRO v2.0.6 ]<br>936 994 155 | CHIMBOTE - PERU</p>
+</footer>
 
-<div id="login" class="modal"><div class="modal-box"><h2 style="font-family:Exo 2;color:#fff">LOGIN <span onclick="closeModal('login')" style="float:right;cursor:pointer">&times;</span></h2><input id="loginUser" placeholder="> USUARIO"><input id="loginPass" type="password" placeholder="> CONTRASEÑA"><button class="btn btn-blue" style="width:100%" onclick="login()">ACCEDER</button></div></div>
-<div id="register" class="modal"><div class="modal-box"><h2 style="font-family:Exo 2;color:#fff">REGISTRO <span onclick="closeModal('register')" style="float:right;cursor:pointer">&times;</span></h2><input id="regUser" placeholder="> USUARIO"><input id="regPass" type="password" placeholder="> CONTRASEÑA"><button class="btn btn-green" style="width:100%" onclick="register()">CREAR</button></div></div>
+<div id="login" class="modal"><div class="modal-box"><h2 style="font-family:Rajdhani;color:var(--primary)">[ LOGIN ] <span onclick="closeModal('login')" style="float:right;cursor:pointer">&times;</span></h2><input id="loginUser" placeholder="> USER"><input id="loginPass" type="password" placeholder="> PASS"><button class="btn" style="width:100%" onclick="login()">ACCEDER</button></div></div>
+<div id="register" class="modal"><div class="modal-box"><h2 style="font-family:Rajdhani;color:var(--primary)">[ REGISTER ] <span onclick="closeModal('register')" style="float:right;cursor:pointer">&times;</span></h2><input id="regUser" placeholder="> USER"><input id="regPass" type="password" placeholder="> PASS"><button class="btn btn-green" style="width:100%" onclick="register()">CREAR</button></div></div>
 
 <script>
 buscador.addEventListener('keyup', function(){
@@ -136,11 +148,11 @@ buscador.addEventListener('keyup', function(){
 });
 function openModal(id){document.getElementById(id).style.display='flex'}
 function closeModal(id){document.getElementById(id).style.display='none'}
-function register(){let u=regUser.value,p=regPass.value;if(u&&p){localStorage.setItem('user_'+u,p);alert("CUENTA CREADA");closeModal('register')}}
-function login(){let u=loginUser.value,p=loginPass.value;if(localStorage.getItem('user_'+u)==p){localStorage.setItem('loggedUser',u);checkLogin();alert("BIENVENIDO");closeModal('login')}else alert("ERROR")}
+function register(){let u=regUser.value,p=regPass.value;if(u&&p){localStorage.setItem('user_'+u,p);alert("ACCESO CONCEDIDO");closeModal('register')}}
+function login(){let u=loginUser.value,p=loginPass.value;if(localStorage.getItem('user_'+u)==p){localStorage.setItem('loggedUser',u);checkLogin();alert("BIENVENIDO OPERADOR");closeModal('login')}else alert("ACCESO DENEGADO")}
 function logout(){localStorage.removeItem('loggedUser');checkLogin()}
 function comprar(plan, precio){let u=localStorage.getItem('loggedUser');if(u){let m=`Hola! Soy ${u}%0AEnvié mi comprobante del plan ${plan} S/${precio}`;window.open(`https://wa.me/51936994155?text=${m}`,'_blank')}}
-function checkLogin(){let u=localStorage.getItem('loggedUser');if(u){welcomeMsg.innerText=`${u}`;btnLogin.style.display='none';btnReg.style.display='none';btnLogout.style.display='inline';for(let i=1;i<=3;i++){document.getElementById('lock'+i).style.display='none';document.getElementById('buy'+i).classList.remove('btn-disabled');document.getElementById('buy'+i).classList.add('btn-green')}}else{welcomeMsg.innerText='';btnLogin.style.display='inline';btnReg.style.display='inline';btnLogout.style.display='none';for(let i=1;i<=3;i++){document.getElementById('lock'+i).style.display='flex';document.getElementById('buy'+i).classList.add('btn-disabled');document.getElementById('buy'+i).classList.remove('btn-green')}}}
+function checkLogin(){let u=localStorage.getItem('loggedUser');if(u){welcomeMsg.innerText=`${u}`;btnLogin.style.display='none';btnReg.style.display='none';btnLogout.style.display='inline';for(let i=1;i<=3;i++){document.getElementById('lock'+i).style.display='none';document.getElementById('buy'+i).classList.remove('btn-disabled');document.getElementById('buy'+i).classList.add('btn')}}else{welcomeMsg.innerText='';btnLogin.style.display='inline';btnReg.style.display='inline';btnLogout.style.display='none';for(let i=1;i<=3;i++){document.getElementById('lock'+i).style.display='flex';document.getElementById('buy'+i).classList.add('btn-disabled');document.getElementById('buy'+i).classList.remove('btn')}}}
 checkLogin();
 </script>
 </body>
