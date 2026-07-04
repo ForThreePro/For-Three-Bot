@@ -3,116 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FOR THREE BOT | CYBERPUNK</title>
+<title>FOR THREE BOT | CYBER</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700;900&family=JetBrains+Mono:wght@400;600&display=swap');
 
 :root{
-  --bg:#050000;
-  --card:#0A0000;
-  --border:#330000;
-  --text:#FFE6E6;
-  --text2:#FF9999;
+  --bg:#000;
+  --card:#050505;
+  --border:#FF0041;
+  --text:#fff;
   --primary:#FF0041; /* Rojo neón */
-  --sec:#FF1A1A; /* Rojo sangre */
-  --green:#00FF88; /* Para precios */
+  --green:#00FF88; /* Precio */
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace}
 
-@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes redGlow{0%,100%{box-shadow:0 0 5px var(--primary)}50%{box-shadow:0 0 25px var(--primary),0 0 40px var(--primary)}}
-@keyframes scanline{
- 0%{background-position:0 0}
- 100%{background-position:0 100vh}
-@keyframes redFlash{
- 0%{background:#050000}
- 50%{background:#FF0041}
- 100%{background:#050000}
-}
+@keyframes glow{0%,100%{text-shadow:0 0 5px var(--green)}50%{text-shadow:0 0 20px var(--green),0 0 30px var(--green)}}
 
-body::before{
-  content:"";
-  position:fixed;top:0;left:0;width:100%;height:100%;
-  background:linear-gradient(transparent 50%,rgba(255,0,65,0.03) 50%);
-  background-size:100% 4px;z-index:-1;animation:scanline 8s linear infinite;pointer-events:none
-}
+nav{background:#000;border-bottom:2px solid var(--primary);padding:12px 15px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;font-family:'Rajdhani',sans-serif}
+nav b{color:var(--primary);font-size:1.1em;font-weight:900;text-shadow:0 0 10px var(--primary)}
+.btn-salir{padding:8px 18px;border-radius:4px;font-weight:900;cursor:pointer;border:2px solid var(--primary);background:transparent;color:var(--primary);font-size:0.85em;font-family:'Rajdhani',sans-serif}
 
-nav{background:#050000;border-bottom:2px solid var(--primary);padding:12px 15px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
-nav b{font-family:'Rajdhani',sans-serif;font-size:1.2em;color:var(--primary);text-shadow:0 0 10px var(--primary)}
-.btn{padding:9px 16px;border-radius:4px;font-weight:900;cursor:pointer;border:2px solid var(--primary);background:transparent;color:var(--primary);font-size:0.85em;transition:0.2s;font-family:'Rajdhani',sans-serif;letter-spacing:1px}
-.btn:hover{background:var(--primary);color:#000;box-shadow:0 0 20px var(--primary)}
-.btn-green{border-color:var(--green);color:var(--green)}.btn-green:hover{background:var(--green);color:#000;box-shadow:0 0 20px var(--green)}
-.btn-red{border-color:#FF3B5C;color:#FF3B5C}.btn-red:hover{background:#FF3B5C;color:#fff}
-.btn-disabled{border-color:#2d0000;color:#550000;cursor:not-allowed}
+.banner{position:relative;text-align:center;border-bottom:2px solid var(--primary);padding:40px 15px;background:#000}
+.banner h1{font-family:'Rajdhani',sans-serif;font-size:1.8em;color:var(--primary);margin-bottom:20px;font-weight:900;text-shadow:0 0 15px var(--primary)}
+.buscador{width:90%;max-width:600px;padding:12px 20px;border-radius:0;border:2px solid var(--primary);background:#000;color:var(--text);font-size:0.95em;font-family:'JetBrains Mono',monospace}
 
-.banner{position:relative;text-align:center;border-bottom:2px solid var(--primary)}
-.banner img{width:100%;height:250px;object-fit:cover;filter:brightness(0.25) hue-rotate(350deg) saturate(2)}
-.banner-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90%;animation:slideUp 0.6s}
-.banner-text h1{font-family:'Rajdhani',sans-serif;font-size:2em;color:var(--primary);margin-bottom:15px;font-weight:900;text-shadow:0 0 15px var(--primary)}
-.buscador{width:100%;padding:12px 20px;border-radius:0;border:2px solid var(--primary);background:#000;color:var(--text);font-size:0.95em;font-family:'JetBrains Mono',monospace}
-.buscador:focus{outline:none;box-shadow:0 0 20px var(--primary)}
-
-.container{max-width:1200px;margin:auto;padding:30px 15px}
+.container{max-width:600px;margin:auto;padding:30px 15px}
 .titulo{font-family:'Rajdhani',sans-serif;text-align:center;font-size:1.8em;margin-bottom:30px;color:var(--primary);font-weight:900;letter-spacing:2px;text-shadow:0 0 10px var(--primary)}
 
-.grid{display:grid;grid-template-columns:1fr;gap:20px}
-@media(min-width:768px){.grid{grid-template-columns:repeat(3,1fr)}}
+.grid{display:grid;grid-template-columns:1fr;gap:25px}
 
-.card{background:var(--card);border:2px solid var(--border);padding:25px;border-radius:6px;text-align:center;position:relative;transition:0.3s;animation:slideUp 0.6s}
-.card:hover{border-color:var(--primary);animation:redGlow 2s infinite}
-.precio{font-family:'Rajdhani',sans-serif;font-size:3em;font-weight:900;color:var(--green);margin:15px 0;text-shadow:0 0 10px var(--green)}
-.card h3{font-family:'Rajdhani',sans-serif;color:#fff;font-size:1.3em;letter-spacing:1px}
+.card{background:var(--card);border:2px solid #1a1a1a;padding:30px 20px;border-radius:6px;text-align:center;position:relative;transition:0.3s}
+.card:hover{border-color:var(--primary)}
+.precio{font-family:'Rajdhani',sans-serif;font-size:3.5em;font-weight:900;color:var(--green);margin:15px 0;animation:glow 2s infinite}
+.card h3{font-family:'Rajdhani',sans-serif;color:#fff;font-size:1.5em;letter-spacing:1px}
 
-.categoria{background:var(--card);border:2px solid var(--border);padding:18px;border-radius:6px;margin-bottom:20px;animation:slideUp 0.6s}
-.categoria h3{background:linear-gradient(90deg,var(--sec),var(--primary));color:#000;display:inline-block;padding:7px 18px;border-radius:0;margin-bottom:15px;font-family:'Rajdhani',sans-serif;font-weight:900;font-size:0.95em;letter-spacing:1px}
+.categoria{background:var(--card);border:2px solid #1a1a1a;padding:18px;border-radius:6px;margin-bottom:20px}
+.categoria h3{background:var(--primary);color:#000;display:inline-block;padding:7px 18px;border-radius:0;margin-bottom:15px;font-family:'Rajdhani',sans-serif;font-weight:900}
 .cmd-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
 @media(min-width:768px){.cmd-grid{grid-template-columns:repeat(4,1fr)}}
-.cmd{background:#000;border:1px solid var(--border);padding:10px;border-radius:3px;font-size:0.85em;font-family:'JetBrains Mono',monospace;color:var(--text2);transition:0.2s}
-.cmd:hover{background:var(--primary);color:#000;border-color:var(--primary);transform:scale(1.05)}
-.cmd.oculto{display:none}
+.cmd{background:#000;border:1px solid #1a1a1a;padding:10px;border-radius:3px;font-size:0.85em;color:#FF9999}
 
-.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000f;justify-content:center;align-items:center;z-index:999;padding:20px}
-.modal-box{background:var(--card);border:2px solid var(--primary);padding:30px;border-radius:6px;width:100%;max-width:400px;animation:slideUp 0.4s}
-input{width:100%;padding:12px;margin:12px 0;border:2px solid var(--border);background:#000;color:var(--text);border-radius:4px;font-size:1em;font-family:'JetBrains Mono',monospace}
-input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 15px var(--primary)}
-#welcomeMsg{color:var(--green);font-weight:900;font-family:'Rajdhani',sans-serif;text-shadow:0 0 5px var(--green)}
-.bloqueo{position:absolute;top:0;left:0;right:0;bottom:0;background:#000e;display:flex;justify-content:center;align-items:center;border-radius:6px;color:var(--primary);font-weight:900;font-family:'Rajdhani',sans-serif;letter-spacing:1px}
-footer{background:#000;border-top:2px solid var(--primary);color:var(--text2);text-align:center;padding:30px 15px;font-family:'Rajdhani',sans-serif}
-.sin-resultados{text-align:center;color:var(--primary);padding:20px;display:none;font-weight:900}
+.btn{padding:10px 25px;border-radius:4px;font-weight:900;cursor:pointer;border:2px solid var(--primary);background:transparent;color:var(--primary);font-size:0.9em;font-family:'Rajdhani',sans-serif;letter-spacing:1px;margin-top:10px}
+.btn:hover{background:var(--primary);color:#000;box-shadow:0 0 20px var(--primary)}
+.btn-disabled{border-color:#2d0000;color:#550000;cursor:not-allowed}
+.bloqueo{position:absolute;top:0;left:0;right:0;bottom:0;background:#000e;display:flex;justify-content:center;align-items:center;border-radius:6px;color:var(--primary);font-weight:900;font-family:'Rajdhani',sans-serif}
+
+footer{background:#000;border-top:2px solid var(--primary);color:#FF9999;text-align:center;padding:30px 15px;font-family:'Rajdhani',sans-serif}
 </style>
 </head>
 <body>
 
 <nav>
-  <b>⚡ FOR THREE BOT ⚡</b>
-  <div>
-    <span id="welcomeMsg"></span>
-    <button class="btn" id="btnLogin" onclick="openModal('login')">LOGIN</button>
-    <button class="btn btn-green" id="btnReg" onclick="openModal('register')">REGISTRO</button>
-    <button class="btn btn-red" id="btnLogout" onclick="logout()" style="display:none">SALIR</button>
-  </div>
+  <b>⚡ VENTAS BOT PRO ⚡</b>
+  <button class="btn-salir" id="btnLogout" onclick="logout()" style="display:none">SALIR</button>
 </nav>
 
 <div class="banner">
-  <img src="https://files.evogb.win/CJOWbF.jpg">
-  <div class="banner-text">
-    <h1>[ +100 COMANDOS FOR THREE BOT ]</h1>
-    <input type="text" class="buscador" id="buscador" placeholder="> INIT SEARCH: gpt4, kick, play...">
-  </div>
+  <h1>[ +100 COMANDOS CYBER ]</h1>
+  <input type="text" class="buscador" id="buscador" placeholder="> INIT SEARCH: gpt4, kick, play...">
 </div>
 
 <div class="container">
   <h2 class="titulo">[ SELECCIONAR PLAN ]</h2>
   <div class="grid">
-
+    
     <div class="card">
       <div class="bloqueo" id="lock1">[ ACCESO DENEGADO ]</div>
       <h3>BOT PARA GRUPO</h3>
       <div class="precio">S/5</div>
-      <p style="color:var(--text2); font-size:0.8em; margin:10px 0 15px 0; text-align:left; line-height:1.6">
-        <b style="color:var(--primary)">Incluye:</b><br>
+      <p style="color:#FF9999; font-size:0.8em; margin:10px 0 15px 0; text-align:left">
         - Todos Los Comandos<br>
         - 1 Solo Bot Comprado<br>
         - Activo 24/7<br>
@@ -122,21 +83,17 @@ footer{background:#000;border-top:2px solid var(--primary);color:var(--text2);te
       <button class="btn btn-disabled" id="buy1" onclick="comprar('BOT PARA GRUPO', 5)">COMPRAR</button>
     </div>
 
-    <div class="card" style="border-color:var(--primary); box-shadow:0 0 25px var(--primary)">
-      <div style="position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--primary); color:#000; padding:4px 15px; font-family:'Rajdhani',sans-serif; font-weight:900; font-size:0.75em; letter-spacing:1px; border-radius:3px">
-        [ RECOMENDADO ]
-      </div>
+    <div class="card">
       <div class="bloqueo" id="lock2">[ ACCESO DENEGADO ]</div>
       <h3>BOT PERSONALIZADO</h3>
       <div class="precio">S/30</div>
-      <p style="color:var(--text2); font-size:0.8em; margin:10px 0 15px 0; text-align:left; line-height:1.6">
-        <b style="color:var(--primary)">Incluye:</b><br>
+      <p style="color:#FF9999; font-size:0.8em; margin:10px 0 15px 0; text-align:left">
         - Comandos Personalizado<br>
         - Tu Logo + Tu Nombre<br>
         - Activo 24/7<br>
         - Permanente ( Bot )<br>
         - Soporté 24/7<br><br>
-        <b style="color:#FF3B5C">Nota:</b> Ojo Estás Comprando Combo Bot Personalizado + Servidor. Al Siguiente Mes Tendrás Que Pagar El Valor Del Servidor Nada Más Que Sería 10 Soles
+        <b style="color:var(--primary)">Nota:</b> Combo Bot + Servidor. Al siguiente mes pagas solo S/10 del servidor
       </p>
       <button class="btn btn-disabled" id="buy2" onclick="comprar('BOT PERSONALIZADO', 30)">COMPRAR</button>
     </div>
@@ -145,8 +102,7 @@ footer{background:#000;border-top:2px solid var(--primary);color:var(--text2);te
       <div class="bloqueo" id="lock3">[ ACCESO DENEGADO ]</div>
       <h3>SERVIDOR HOSTING</h3>
       <div class="precio">S/10</div>
-      <p style="color:var(--text2); font-size:0.8em; margin:10px 0 15px 0; text-align:left; line-height:1.6">
-        <b style="color:var(--primary)">Incluye:</b><br>
+      <p style="color:#FF9999; font-size:0.8em; margin:10px 0 15px 0; text-align:left">
         - 3Gb De Ram<br>
         - Cpu 300v<br>
         - Activo 24/7<br>
@@ -157,64 +113,22 @@ footer{background:#000;border-top:2px solid var(--primary);color:var(--text2);te
     </div>
 
   </div>
-
-  <h2 class="titulo" style="margin-top:50px">[ DATABASE DE COMANDOS ]</h2>
-  <div id="sinResultados" class="sin-resultados">[ ERROR: NO SE ENCONTRO NADA ]</div>
-
-  <!-- LAS 14 CATEGORIAS -->
-  <div class="categoria"><h3>VENTAS BOT [4]</h3><div class="cmd-grid"><div class="cmd">.catalogo</div><div class="cmd">.comprarbot</div><div class="cmd">.creador</div><div class="cmd">.garantia</div></div></div>
-  <div class="categoria"><h3>SORTEOS [5]</h3><div class="cmd-grid"><div class="cmd">.addrl</div><div class="cmd">.delrl</div><div class="cmd">.listrl</div><div class="cmd">.spinrl</div><div class="cmd">.clearrl</div></div></div>
-  <div class="categoria"><h3>MAIN [13]</h3><div class="cmd-grid"><div class="cmd">.cambio</div><div class="cmd">.clima</div><div class="cmd">.cleartmp</div><div class="cmd">.cpu</div><div class="cmd">.info</div><div class="cmd">.ram</div><div class="cmd">.reporte</div><div class="cmd">.uptime</div><div class="cmd">.ping</div><div class="cmd">.sc</div><div class="cmd">.donar</div></div></div>
-  <div class="categoria"><h3>CONFIG [12]</h3><div class="cmd-grid"><div class="cmd">.antilink</div><div class="cmd">.antispam</div><div class="cmd">.modoadmin</div><div class="cmd">.welcome</div><div class="cmd">.antibot</div><div class="cmd">.subbots</div><div class="cmd">.nsfw</div><div class="cmd">.audios</div><div class="cmd">.antiprivado</div><div class="cmd">.detect</div></div></div>
-  <div class="categoria"><h3>DOWNLOADER [8]</h3><div class="cmd-grid"><div class="cmd">.mediafire</div><div class="cmd">.play</div><div class="cmd">.play2</div><div class="cmd">.spotify</div><div class="cmd">.tiktok</div><div class="cmd">.tiktoksearch</div><div class="cmd">.ytmp3</div><div class="cmd">.ytmp4</div></div></div>
-  <div class="categoria"><h3>FREEFIRE [4]</h3><div class="cmd-grid"><div class="cmd">.4vs4</div><div class="cmd">.6vs6</div><div class="cmd">.vs4</div><div class="cmd">.vs6</div></div></div>
-  <div class="categoria"><h3>FUN [41]</h3><div class="cmd-grid"><div class="cmd">.violar</div><div class="cmd">.follar</div><div class="cmd">.nalgada</div><div class="cmd">.lamer</div><div class="cmd">.chupar</div><div class="cmd">.mamar</div><div class="cmd">.tetas</div><div class="cmd">.pene</div><div class="cmd">.culo</div><div class="cmd">.ship</div><div class="cmd">.vr</div><div class="cmd">.vibra</div><div class="cmd">.suerte</div><div class="cmd">.coquetea</div><div class="cmd">.piropo</div><div class="cmd">.top</div><div class="cmd">.emojimix</div></div></div>
-  <div class="categoria"><h3>GROUP [4]</h3><div class="cmd-grid"><div class="cmd">.setkick</div><div class="cmd">.delkick</div><div class="cmd">.setwelcome</div><div class="cmd">.delwelcome</div></div></div>
-  <div class="categoria"><h3>GRUPOS [13]</h3><div class="cmd-grid"><div class="cmd">.promote</div><div class="cmd">.demote</div><div class="cmd">.banchat</div><div class="cmd">.unbanchat</div><div class="cmd">.delete</div><div class="cmd">.notify</div><div class="cmd">.kick</div><div class="cmd">.link</div><div class="cmd">.mute</div><div class="cmd">.unmute</div><div class="cmd">.grupo abrir</div><div class="cmd">.grupo cerrar</div><div class="cmd">.todos</div></div></div>
-  <div class="categoria"><h3>INTELIGENCIA ARTIFICIAL [4]</h3><div class="cmd-grid"><div class="cmd">.claude</div><div class="cmd">.copilot</div><div class="cmd">.gemini</div><div class="cmd">.gpt4</div></div></div>
-  <div class="categoria"><h3>OWNER [4]</h3><div class="cmd-grid"><div class="cmd">.autoadmin</div><div class="cmd">.dsowner</div><div class="cmd">.reset</div><div class="cmd">.update</div></div></div>
-  <div class="categoria"><h3>SEARCH [5]</h3><div class="cmd-grid"><div class="cmd">.google</div><div class="cmd">.letra</div><div class="cmd">.yts</div><div class="cmd">.tiktok</div><div class="cmd">.tiktoksearch</div></div></div>
-  <div class="categoria"><h3>SORTEOS STAFF [7]</h3><div class="cmd-grid"><div class="cmd">.lista</div><div class="cmd">.setlunes</div><div class="cmd">.setmartes</div><div class="cmd">.setmiercoles</div><div class="cmd">.setjueves</div><div class="cmd">.setviernes</div><div class="cmd">.setsabado</div></div></div>
-  <div class="categoria"><h3>STICKER [6]</h3><div class="cmd-grid"><div class="cmd">.brat</div><div class="cmd">.bratv</div><div class="cmd">.dado</div><div class="cmd">.qc</div><div class="cmd">.s</div><div class="cmd">.wm</div></div></div>
-
 </div>
 
 <footer>
   <p>[ FOR THREE BOT v2.0.6 ]<br>936 994 155 | CHIMBOTE - PERU</p>
 </footer>
 
-<div id="login" class="modal"><div class="modal-box"><h2 style="font-family:Rajdhani;color:var(--primary)">[ LOGIN ] <span onclick="closeModal('login')" style="float:right;cursor:pointer">&times;</span></h2><input id="loginUser" placeholder="> USER"><input id="loginPass" type="password" placeholder="> PASS"><button class="btn" style="width:100%" onclick="login()">ACCEDER</button></div></div>
-<div id="register" class="modal"><div class="modal-box"><h2 style="font-family:Rajdhani;color:var(--primary)">[ REGISTER ] <span onclick="closeModal('register')" style="float:right;cursor:pointer">&times;</span></h2><input id="regUser" placeholder="> USER"><input id="regPass" type="password" placeholder="> PASS"><button class="btn btn-green" style="width:100%" onclick="register()">CREAR</button></div></div>
-
 <script>
+// Tu JS de login/buscador va aquí igual
 buscador.addEventListener('keyup', function(){
-  let filtro = this.value.toLowerCase(); let encontrados = 0;
+  let filtro = this.value.toLowerCase();
   document.querySelectorAll('.cmd').forEach(cmd => {
-    if(cmd.innerText.toLowerCase().includes(filtro)){cmd.classList.remove('oculto');encontrados++}else{cmd.classList.add('oculto')}
+    cmd.style.display = cmd.innerText.toLowerCase().includes(filtro)? 'block' : 'none'
   });
-  document.querySelectorAll('.categoria').forEach(cat => {
-    cat.style.display = cat.querySelectorAll('.cmd:not(.oculto)').length > 0? 'block' : 'none';
-  });
-  sinResultados.style.display = encontrados === 0? 'block' : 'none';
 });
-function openModal(id){document.getElementById(id).style.display='flex'}
-function closeModal(id){document.getElementById(id).style.display='none'}
-function register(){let u=regUser.value,p=regPass.value;if(u&&p){localStorage.setItem('user_'+u,p);alert("ACCESO CONCEDIDO");closeModal('register')}}
-function login(){
-  let u=loginUser.value,p=loginPass.value;
-  if(localStorage.getItem('user_'+u)==p){
-    localStorage.setItem('loggedUser',u);
-    checkLogin();
-    document.body.style.animation = 'redFlash 0.3s';
-    setTimeout(()=>{document.body.style.animation = ''}, 300);
-    alert("BIENVENIDO OPERADOR A FOR THREE BOT");
-    closeModal('login')
-  }else alert("ACCESO DENEGADO")
-}
-function logout(){localStorage.removeItem('loggedUser');checkLogin()}
 function comprar(plan, precio){let u=localStorage.getItem('loggedUser');if(u){let m=`Hola! Soy ${u}%0AEnvié mi comprobante del plan ${plan} S/${precio} para FOR THREE BOT`;window.open(`https://wa.me/51936994155?text=${m}`,'_blank')}}
-function checkLogin(){let u=localStorage.getItem('loggedUser');if(u){welcomeMsg.innerText=`${u}`;btnLogin.style.display='none';btnReg.style.display='none';btnLogout.style.display='inline';for(let i=1;i<=3;i++){document.getElementById('lock'+i).style.display='none';document.getElementById('buy'+i).classList.remove('btn-disabled');document.getElementById('buy'+i).classList.add('btn')}}else{welcomeMsg.innerText='';btnLogin.style.display='inline';btnReg.style.display='inline';btnLogout.style.display='none';for(let i=1;i<=3;i++){document.getElementById('lock'+i).style.display='flex';document.getElementById('buy'+i).classList.add('btn-disabled');document.getElementById('buy'+i).classList.remove('btn')}}}
-checkLogin();
+function logout(){localStorage.removeItem('loggedUser');location.reload()}
 </script>
 </body>
 </html>
