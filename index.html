@@ -25,8 +25,7 @@ body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospa
 @keyframes redGlow{0%,100%{box-shadow:0 0 5px var(--primary)}50%{box-shadow:0 0 25px var(--primary),0 0 40px var(--primary)}}
 @keyframes scanline{
  0%{background-position:0 0}
-  100%{background-position:0 100vh}
-}
+ 100%{background-position:0 100vh}
 @keyframes redFlash{
  0%{background:#050000}
  50%{background:#FF0041}
@@ -107,9 +106,56 @@ footer{background:#000;border-top:2px solid var(--primary);color:var(--text2);te
 <div class="container">
   <h2 class="titulo">[ SELECCIONAR PLAN ]</h2>
   <div class="grid">
-    <div class="card"><div class="bloqueo" id="lock1">[ ACCESO DENEGADO ]</div><h3>BASICO</h3><div class="precio">S/20</div><button class="btn btn-disabled" id="buy1" onclick="comprar('BASICO', 20)">COMPRAR</button></div>
-    <div class="card"><div class="bloqueo" id="lock2">[ ACCESO DENEGADO ]</div><h3>PREMIUM</h3><div class="precio">S/40</div><button class="btn btn-disabled" id="buy2" onclick="comprar('PREMIUM', 40)">COMPRAR</button></div>
-    <div class="card"><div class="bloqueo" id="lock3">[ ACCESO DENEGADO ]</div><h3>VIP</h3><div class="precio">S/70</div><button class="btn btn-disabled" id="buy3" onclick="comprar('VIP', 70)">COMPRAR</button></div>
+
+    <div class="card">
+      <div class="bloqueo" id="lock1">[ ACCESO DENEGADO ]</div>
+      <h3>BOT PARA GRUPO</h3>
+      <div class="precio">S/5</div>
+      <p style="color:var(--text2); font-size:0.8em; margin:10px 0 15px 0; text-align:left; line-height:1.6">
+        <b style="color:var(--primary)">Incluye:</b><br>
+        - Todos Los Comandos<br>
+        - 1 Solo Bot Comprado<br>
+        - Activo 24/7<br>
+        - Soporté 24/7<br>
+        - Permanente
+      </p>
+      <button class="btn btn-disabled" id="buy1" onclick="comprar('BOT PARA GRUPO', 5)">COMPRAR</button>
+    </div>
+
+    <div class="card" style="border-color:var(--primary); box-shadow:0 0 25px var(--primary)">
+      <div style="position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--primary); color:#000; padding:4px 15px; font-family:'Rajdhani',sans-serif; font-weight:900; font-size:0.75em; letter-spacing:1px; border-radius:3px">
+        [ RECOMENDADO ]
+      </div>
+      <div class="bloqueo" id="lock2">[ ACCESO DENEGADO ]</div>
+      <h3>BOT PERSONALIZADO</h3>
+      <div class="precio">S/30</div>
+      <p style="color:var(--text2); font-size:0.8em; margin:10px 0 15px 0; text-align:left; line-height:1.6">
+        <b style="color:var(--primary)">Incluye:</b><br>
+        - Comandos Personalizado<br>
+        - Tu Logo + Tu Nombre<br>
+        - Activo 24/7<br>
+        - Permanente ( Bot )<br>
+        - Soporté 24/7<br><br>
+        <b style="color:#FF3B5C">Nota:</b> Ojo Estás Comprando Combo Bot Personalizado + Servidor. Al Siguiente Mes Tendrás Que Pagar El Valor Del Servidor Nada Más Que Sería 10 Soles
+      </p>
+      <button class="btn btn-disabled" id="buy2" onclick="comprar('BOT PERSONALIZADO', 30)">COMPRAR</button>
+    </div>
+
+    <div class="card">
+      <div class="bloqueo" id="lock3">[ ACCESO DENEGADO ]</div>
+      <h3>SERVIDOR HOSTING</h3>
+      <div class="precio">S/10</div>
+      <p style="color:var(--text2); font-size:0.8em; margin:10px 0 15px 0; text-align:left; line-height:1.6">
+        <b style="color:var(--primary)">Incluye:</b><br>
+        - 3Gb De Ram<br>
+        - Cpu 300v<br>
+        - Activo 24/7<br>
+        - Soporté 24/7<br>
+        - Yo Lo Instalo Por Ti
+      </p>
+      <button class="btn btn-disabled" id="buy3" onclick="comprar('SERVIDOR HOSTING', 10)">COMPRAR</button>
+    </div>
+
   </div>
 
   <h2 class="titulo" style="margin-top:50px">[ DATABASE DE COMANDOS ]</h2>
