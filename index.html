@@ -2,82 +2,92 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VENTAS BOT PRO</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;-webkit-tap-highlight-color:transparent}
-body{background:#0d1117;color:#c9d1d9}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Roboto+Mono:wght@400;600&display=swap');
 
-nav{background:#161b22;padding:12px 15px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;border-bottom:1px solid #30363d}
-nav b{font-size:1em;color:#fff}
-.btn{padding:8px 14px;border-radius:8px;font-weight:600;cursor:pointer;border:none;font-size:0.85em}
-.btn-blue{background:#1f6feb;color:#fff}.btn-green{background:#238636;color:#fff}.btn-red{background:#da3633;color:#fff}
-.btn-disabled{background:#30363d;color:#8b949e;cursor:not-allowed}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#00ff41;font-family:'Roboto Mono',monospace;overflow-x:hidden}
 
-.banner{position:relative;text-align:center;color:#fff}
-.banner img{width:100%;height:220px;object-fit:cover;filter:brightness(0.4)}
-.banner-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90%}
-.banner-text h1{font-size:1.5em;margin-bottom:10px}
-.buscador{width:100%;padding:12px 15px;border-radius:50px;border:none;font-size:0.95em;background:#fff}
+@keyframes glow{0%,100%{text-shadow:0 0 5px #00ff41}50%{text-shadow:0 0 20px #00ff41,0 0 30px #00ff41}}
+@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+nav{background:#010101;border-bottom:2px solid #00ff41;padding:12px 15px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
+nav b{font-family:'Orbitron',sans-serif;font-size:1.1em;color:#00ff41;animation:glow 2s infinite}
+.btn{padding:9px 16px;border-radius:4px;font-weight:700;cursor:pointer;border:2px solid #00ff41;background:transparent;color:#00ff41;font-family:'Orbitron',sans-serif;font-size:0.8em;transition:0.3s}
+.btn:hover{background:#00ff41;color:#000;box-shadow:0 0 15px #00ff41}
+.btn-red{border-color:#ff0041;color:#ff0041}.btn-red:hover{background:#ff0041;color:#000}
+.btn-disabled{border-color:#333;color:#333;cursor:not-allowed}
+.btn-disabled:hover{background:transparent;box-shadow:none}
+
+.banner{position:relative;text-align:center;border-bottom:2px solid #00ff41}
+.banner img{width:100%;height:250px;object-fit:cover;filter:brightness(0.3) hue-rotate(90deg)}
+.banner-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90%;animation:slideUp 0.8s}
+.banner-text h1{font-family:'Orbitron',sans-serif;font-size:1.8em;color:#00ff41;animation:glow 2s infinite;margin-bottom:15px}
+.buscador{width:100%;padding:12px 20px;border-radius:0;border:2px solid #00ff41;background:#000;color:#00ff41;font-size:0.95em;font-family:'Roboto Mono',monospace}
+.buscador:focus{outline:none;box-shadow:0 0 20px #00ff41}
 
 .container{max-width:1200px;margin:auto;padding:30px 15px}
-.titulo{text-align:center;font-size:1.6em;margin-bottom:25px;font-weight:800;color:#fff}
+.titulo{font-family:'Orbitron',sans-serif;text-align:center;font-size:1.8em;margin-bottom:30px;color:#00ff41;animation:glow 2s infinite}
 
-.grid{display:grid;grid-template-columns:1fr;gap:15px}
+.grid{display:grid;grid-template-columns:1fr;gap:20px}
 @media(min-width:768px){.grid{grid-template-columns:repeat(3,1fr)}}
 
-.card{background:#161b22;padding:20px;border-radius:12px;text-align:center;border:1px solid #30363d;position:relative}
-.precio{font-size:2.5em;font-weight:900;color:#58a6ff;margin:10px 0}
-.card h3{color:#fff}
+.card{background:#010101;border:2px solid #00ff41;padding:25px;border-radius:8px;text-align:center;position:relative;transition:0.3s;animation:slideUp 0.6s}
+.card:hover{transform:translateY(-5px);box-shadow:0 0 25px #00ff41}
+.precio{font-family:'Orbitron',sans-serif;font-size:3em;font-weight:900;color:#00ff41;margin:15px 0;animation:glow 2s infinite}
+.card h3{font-family:'Orbitron',sans-serif;color:#fff;font-size:1.3em}
 
-.categoria{background:#161b22;border:1px solid #30363d;padding:15px;border-radius:12px;margin-bottom:15px}
-.categoria h3{background:#238636;display:inline-block;padding:6px 15px;border-radius:20px;margin-bottom:12px;font-size:0.9em;color:#fff}
-.cmd-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+.categoria{background:#010101;border:2px solid #00ff41;padding:18px;border-radius:8px;margin-bottom:20px;animation:slideUp 0.6s}
+.categoria h3{background:#00ff41;color:#000;display:inline-block;padding:6px 18px;border-radius:0;margin-bottom:15px;font-family:'Orbitron',sans-serif;font-weight:900;font-size:0.9em}
+.cmd-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
 @media(min-width:768px){.cmd-grid{grid-template-columns:repeat(4,1fr)}}
-.cmd{background:#0d1117;padding:8px 10px;border-radius:6px;font-size:0.8em;border-left:2px solid #238636;font-family:monospace}
+.cmd{background:#000;border:1px solid #00ff41;padding:10px;border-radius:4px;font-size:0.85em;font-family:'Roboto Mono',monospace;transition:0.2s}
+.cmd:hover{background:#00ff41;color:#000;transform:scale(1.05)}
 .cmd.oculto{display:none}
 
-.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000c;justify-content:center;align-items:center;z-index:999;padding:20px}
-.modal-box{background:#161b22;padding:25px;border-radius:15px;width:100%;max-width:400px;border:1px solid #30363d}
-input{width:100%;padding:12px;margin:10px 0;border:2px solid #30363d;background:#0d1117;color:#fff;border-radius:8px;font-size:1em}
-#welcomeMsg{color:#3fb950;font-weight:700;font-size:0.85em}
-.bloqueo{position:absolute;top:0;left:0;right:0;bottom:0;background:#0008;display:flex;justify-content:center;align-items:center;border-radius:12px;color:#fff;font-weight:700;font-size:0.9em}
-footer{background:#010409;color:#8b949e;text-align:center;padding:30px 15px;border-top:1px solid #30363d}
-.sin-resultados{text-align:center;color:#8b949e;padding:20px;display:none}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000e;justify-content:center;align-items:center;z-index:999;padding:20px}
+.modal-box{background:#010101;border:2px solid #00ff41;padding:30px;border-radius:8px;width:100%;max-width:400px;animation:slideUp 0.4s}
+input{width:100%;padding:12px;margin:12px 0;border:2px solid #00ff41;background:#000;color:#00ff41;border-radius:4px;font-size:1em;font-family:'Roboto Mono',monospace}
+input:focus{outline:none;box-shadow:0 0 15px #00ff41}
+#welcomeMsg{color:#00ff41;font-weight:700;font-family:'Orbitron',sans-serif}
+.bloqueo{position:absolute;top:0;left:0;right:0;bottom:0;background:#000c;display:flex;justify-content:center;align-items:center;border-radius:8px;color:#ff0041;font-weight:900;font-family:'Orbitron',sans-serif}
+footer{background:#000;border-top:2px solid #00ff41;color:#00ff41;text-align:center;padding:30px 15px;font-family:'Orbitron',sans-serif}
+.sin-resultados{text-align:center;color:#ff0041;padding:20px;display:none;font-weight:700}
 </style>
 </head>
 <body>
 
 <nav>
-  <b>🤖 VENTAS BOT</b>
+  <b>⚡ VENTAS BOT PRO ⚡</b>
   <div>
     <span id="welcomeMsg"></span>
-    <button class="btn btn-blue" id="btnLogin" onclick="openModal('login')">Entrar</button>
-    <button class="btn btn-green" id="btnReg" onclick="openModal('register')">Registro</button>
-    <button class="btn btn-red" id="btnLogout" onclick="logout()" style="display:none">Salir</button>
+    <button class="btn" id="btnLogin" onclick="openModal('login')">LOGIN</button>
+    <button class="btn" id="btnReg" onclick="openModal('register')">REGISTRO</button>
+    <button class="btn btn-red" id="btnLogout" onclick="logout()" style="display:none">SALIR</button>
   </div>
 </nav>
 
 <div class="banner">
   <img src="https://files.evogb.win/CJOWbF.jpg">
   <div class="banner-text">
-    <h1>+100 Comandos Pro</h1>
-    <input type="text" class="buscador" id="buscador" placeholder="🔍 Busca: gpt4, kick, play...">
+    <h1>+100 COMANDOS PRO</h1>
+    <input type="text" class="buscador" id="buscador" placeholder="> BUSCAR COMANDO: gpt4, kick, play...">
   </div>
 </div>
 
 <div class="container">
-  <h2 class="titulo">Elige tu Plan</h2>
+  <h2 class="titulo">SELECCIONA TU PLAN</h2>
   <div class="grid">
-    <div class="card"><div class="bloqueo" id="lock1">🔒 INICIA SESIÓN</div><h3>BÁSICO</h3><div class="precio">S/20</div><button class="btn btn-disabled" id="buy1" onclick="comprar('BASICO', 20)">Comprar</button></div>
-    <div class="card" style="border:2px solid #238636"><div class="bloqueo" id="lock2">🔒 INICIA SESIÓN</div><h3>PREMIUM</h3><div class="precio">S/40</div><button class="btn btn-disabled" id="buy2" onclick="comprar('PREMIUM', 40)">Comprar</button></div>
-    <div class="card"><div class="bloqueo" id="lock3">🔒 INICIA SESIÓN</div><h3>VIP</h3><div class="precio">S/70</div><button class="btn btn-disabled" id="buy3" onclick="comprar('VIP', 70)">Comprar</button></div>
+    <div class="card"><div class="bloqueo" id="lock1">🔒 LOGIN REQUERIDO</div><h3>BASICO</h3><div class="precio">S/20</div><button class="btn btn-disabled" id="buy1" onclick="comprar('BASICO', 20)">COMPRAR</button></div>
+    <div class="card"><div class="bloqueo" id="lock2">🔒 LOGIN REQUERIDO</div><h3>PREMIUM</h3><div class="precio">S/40</div><button class="btn btn-disabled" id="buy2" onclick="comprar('PREMIUM', 40)">COMPRAR</button></div>
+    <div class="card"><div class="bloqueo" id="lock3">🔒 LOGIN REQUERIDO</div><h3>VIP</h3><div class="precio">S/70</div><button class="btn btn-disabled" id="buy3" onclick="comprar('VIP', 70)">COMPRAR</button></div>
   </div>
 
-  <h2 class="titulo" style="margin-top:40px">📋 Todos los Comandos</h2>
-  <div id="sinResultados" class="sin-resultados">No se encontró ningún comando</div>
+  <h2 class="titulo" style="margin-top:50px">> TODOS LOS COMANDOS</h2>
+  <div id="sinResultados" class="sin-resultados">NO SE ENCONTRÓ NINGÚN COMANDO</div>
 
-  <!-- COPIA AQUI TODAS TUS CATEGORIAS IGUAL QUE ANTES -->
   <div class="categoria">
     <h3>VENTAS BOT [4]</h3>
     <div class="cmd-grid">
@@ -106,17 +116,16 @@ footer{background:#010409;color:#8b949e;text-align:center;padding:30px 15px;bord
     </div>
   </div>
 
-  <!-- SIGUE PEGANDO EL RESTO DE CATEGORIAS AQUI IGUAL -->
-  <!-- DOWNLOADER, FREEFIRE, FUN, GRUPOS, IA, OWNER, SEARCH, STICKER -->
+  <!-- SIGUE PEGANDO EL RESTO: DOWNLOADER, FREEFIRE, FUN, GRUPOS, IA, OWNER, SEARCH, STICKER -->
 
 </div>
 
 <footer>
-  <p>VENTAS BOT PRO © 2026<br>936 994 155 | Chimbote 🇵🇪</p>
+  <p>VENTAS BOT PRO © 2026<br>936 994 155 | CHIMBOTE PERU</p>
 </footer>
 
-<div id="login" class="modal"><div class="modal-box"><h2 style="color:#fff">Iniciar Sesión <span onclick="closeModal('login')" style="float:right;cursor:pointer">&times;</span></h2><input id="loginUser" placeholder="Usuario"><input id="loginPass" type="password" placeholder="Contraseña"><button class="btn btn-blue" style="width:100%" onclick="login()">Entrar</button></div></div>
-<div id="register" class="modal"><div class="modal-box"><h2 style="color:#fff">Crear Cuenta <span onclick="closeModal('register')" style="float:right;cursor:pointer">&times;</span></h2><input id="regUser" placeholder="Usuario"><input id="regPass" type="password" placeholder="Contraseña"><button class="btn btn-green" style="width:100%" onclick="register()">Registrarse</button></div></div>
+<div id="login" class="modal"><div class="modal-box"><h2 style="color:#00ff41;font-family:Orbitron">LOGIN <span onclick="closeModal('login')" style="float:right;cursor:pointer">&times;</span></h2><input id="loginUser" placeholder="> USUARIO"><input id="loginPass" type="password" placeholder="> CONTRASEÑA"><button class="btn" style="width:100%" onclick="login()">ACCEDER</button></div></div>
+<div id="register" class="modal"><div class="modal-box"><h2 style="color:#00ff41;font-family:Orbitron">REGISTRO <span onclick="closeModal('register')" style="float:right;cursor:pointer">&times;</span></h2><input id="regUser" placeholder="> USUARIO"><input id="regPass" type="password" placeholder="> CONTRASEÑA"><button class="btn" style="width:100%" onclick="register()">CREAR</button></div></div>
 
 <script>
 buscador.addEventListener('keyup', function(){
@@ -132,11 +141,11 @@ buscador.addEventListener('keyup', function(){
 
 function openModal(id){document.getElementById(id).style.display='flex'}
 function closeModal(id){document.getElementById(id).style.display='none'}
-function register(){let u=regUser.value,p=regPass.value;if(u&&p){localStorage.setItem('user_'+u,p);alert("✅ Cuenta creada");closeModal('register')}}
-function login(){let u=loginUser.value,p=loginPass.value;if(localStorage.getItem('user_'+u)==p){localStorage.setItem('loggedUser',u);checkLogin();alert("✅ Bienvenido");closeModal('login')}else alert("❌ Error")}
+function register(){let u=regUser.value,p=regPass.value;if(u&&p){localStorage.setItem('user_'+u,p);alert("CUENTA CREADA");closeModal('register')}}
+function login(){let u=loginUser.value,p=loginPass.value;if(localStorage.getItem('user_'+u)==p){localStorage.setItem('loggedUser',u);checkLogin();alert("BIENVENIDO");closeModal('login')}else alert("ERROR")}
 function logout(){localStorage.removeItem('loggedUser');checkLogin()}
 function comprar(plan, precio){let u=localStorage.getItem('loggedUser');if(u){let m=`Hola! Soy ${u}%0AEnvié mi comprobante del plan ${plan} S/${precio}`;window.open(`https://wa.me/51936994155?text=${m}`,'_blank')}}
-function checkLogin(){let u=localStorage.getItem('loggedUser');if(u){welcomeMsg.innerText=`Hola, ${u}`;btnLogin.style.display='none';btnReg.style.display='none';btnLogout.style.display='inline';for(let i=1;i<=3;i++){document.getElementById('lock'+i).style.display='none';document.getElementById('buy'+i).classList.remove('btn-disabled');document.getElementById('buy'+i).classList.add('btn-green')}}else{welcomeMsg.innerText='';btnLogin.style.display='inline';btnReg.style.display='inline';btnLogout.style.display='none';for(let i=1;i<=3;i++){document.getElementById('lock'+i).style.display='flex';document.getElementById('buy'+i).classList.add('btn-disabled');document.getElementById('buy'+i).classList.remove('btn-green')}}}
+function checkLogin(){let u=localStorage.getItem('loggedUser');if(u){welcomeMsg.innerText=`${u}`;btnLogin.style.display='none';btnReg.style.display='none';btnLogout.style.display='inline';for(let i=1;i<=3;i++){document.getElementById('lock'+i).style.display='none';document.getElementById('buy'+i).classList.remove('btn-disabled');document.getElementById('buy'+i).classList.add('btn')}}else{welcomeMsg.innerText='';btnLogin.style.display='inline';btnReg.style.display='inline';btnLogout.style.display='none';for(let i=1;i<=3;i++){document.getElementById('lock'+i).style.display='flex';document.getElementById('buy'+i).classList.add('btn-disabled');document.getElementById('buy'+i).classList.remove('btn')}}}
 checkLogin();
 </script>
 </body>
