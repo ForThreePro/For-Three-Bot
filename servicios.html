@@ -1,133 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios - YallicoDev</title>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servicios - YallicoDev</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}body{background:#05050a;color:#fff;font-family:'Rajdhani',sans-serif}.grid-bg{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 50% 50%, rgba(0,255,255,0.08) 0%, transparent 70%);z-index:-1}nav{background:rgba(5,5,10,0.9);backdrop-filter:blur(15px);padding:15px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #00ffff}.logo{font-family:'Orbitron';color:#00ffff;font-size:1.5em;font-weight:900;display:flex;align-items:center;gap:10px}.logo img{height:40px;border-radius:8px;border:1px solid #00ffff}nav ul{display:flex;gap:20px;list-style:none}nav a{color:#fff;text-decoration:none;font-weight:700}section{padding:60px 5%}h2{font-family:'Orbitron';text-align:center;font-size:2em;color:#00ffff;margin-bottom:40px}.grid-cyber{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;max-width:1200px;margin:auto}.card-cyber{background:linear-gradient(145deg,#0a0a14,#05050a);border:1px solid rgba(0,255,255,0.3);border-radius:20px;padding:30px}.etiqueta{background:#ff00ff;color:#000;padding:5px 15px;border-radius:8px;font-weight:900;display:inline-block;margin-bottom:15px}.precio-cyber{font-size:2em;color:#00ffff;font-weight:900;font-family:'Orbitron';margin:10px 0}.card-cyber ul{list-style:none;margin:15px 0}.card-cyber ul li{padding:8px 0;color:#ccc}.btn-card{display:block;background:linear-gradient(90deg,#00ffff,#008888);color:#000;padding:14px;border-radius:12px;text-decoration:none;font-weight:900;text-align:center;margin-top:20px;font-family:'Orbitron'}footer{text-align:center;padding:40px;border-top:1px solid rgba(0,255,255,0.3);color:#888}</style>
 </head>
-<body>
-    <div class="grid-bg"></div>
-
-    <nav>
-        <h2 class="logo">Yallico<span>Dev</span></h2>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="portafolio.html">Portafolio</a></li>
-            <li><a href="reglas.html">Reglas</a></li>
-            <li><a href="soporte.html">Soporte</a></li>
-        </ul>
-        <button id="btnTema" class="btn-tema">🌙</button>
-    </nav>
-
-    <section style="padding: 80px 5%;">
-        <h2 style="text-align: center; font-family: 'Orbitron'; font-size: 2.5em; color: #00ffff; margin-bottom: 20px;">> SERVICIOS PREMIUM_</h2>
-        <p style="text-align: center; color: #ff00ff; margin-bottom: 50px;">Elige el que necesitas. Entrega rápida y garantía</p>
-        
-        <div class="grid-cyber">
-
-            <!-- SERVICIO 1 -->
-            <div class="card-cyber" id="bot-personalizado">
-                <div style="background: #ff00ff; color: #000; padding: 5px 15px; border-radius: 8px; font-weight: 900; display: inline-block; margin-bottom: 15px;">MAS VENDIDO</div>
-                <h3>Bot Personalizado</h3>
-                <p class="precio-cyber">S/ 30</p>
-                <ul style="list-style: none; text-align: left; margin: 20px 0;">
-                    <li>✓ +100 Comandos Sin Errores</li>
-                    <li>✓ Logo + Nombre HD Personalizado</li>
-                    <li>✓ 12 Menús Interactivos</li>
-                    <li>✓ Soporte 24/7</li>
-                    <li>✓ Hosting 1 Mes Gratis</li>
-                </ul>
-                <a href="https://wa.me/51936994155?text=Hola YallicoDev, quiero el Bot Personalizado de S/30" target="_blank" class="btn-card">Pedir Ahora</a>
-            </div>
-
-            <!-- SERVICIO 2 -->
-            <div class="card-cyber" id="bot-grupo">
-                <h3>Bot Para Grupo</h3>
-                <p class="precio-cyber">S/ 7</p>
-                <ul style="list-style: none; text-align: left; margin: 20px 0;">
-                    <li>✓ +100 Comandos</li>
-                    <li>✓ Bot For Three</li>
-                    <li>✓ 0 Instalación. Yo lo configuro</li>
-                    <li>✓ Permanente + Garantía 7 días</li>
-                </ul>
-                <a href="https://wa.me/51936994155?text=Hola YallicoDev, quiero el Bot Para Grupo de S/7" target="_blank" class="btn-card">Pedir Ahora</a>
-            </div>
-
-            <!-- SERVICIO 3 -->
-            <div class="card-cyber" id="hosting">
-                <h3>Hosting SSD</h3>
-                <p class="precio-cyber">S/ 10</p>
-                <ul style="list-style: none; text-align: left; margin: 20px 0;">
-                    <li>✓ Yo Lo Instalo Todo</li>
-                    <li>✓ 0 Caídas. Uptime 99.9%</li>
-                    <li>✓ Soporte 24/7</li>
-                    <li>✓ Panel de control incluido</li>
-                </ul>
-                <a href="https://wa.me/51936994155?text=Hola YallicoDev, quiero Hosting SSD de S/10" target="_blank" class="btn-card">Pedir Ahora</a>
-            </div>
-
-            <!-- SERVICIO 4 -->
-            <div class="card-cyber" id="web">
-                <h3>Página Web Gamer</h3>
-                <p class="precio-cyber">S/ 15</p>
-                <ul style="list-style: none; text-align: left; margin: 20px 0;">
-                    <li>✓ Diseño 100% Personalizable</li>
-                    <li>✓ Responsive para Celular</li>
-                    <li>✓ Botón WhatsApp Conectado</li>
-                    <li>✓ Entrega en 24 Horas</li>
-                </ul>
-                <a href="https://wa.me/51936994155?text=Hola YallicoDev, quiero una Página Web de S/15" target="_blank" class="btn-card">Pedir Ahora</a>
-            </div>
-
-            <!-- SERVICIO 5 -->
-            <div class="card-cyber">
-                <h3>Pack Completo</h3>
-                <p class="precio-cyber">S/ 50 <span style="font-size: 0.6em; text-decoration: line-through;">S/62</span></p>
-                <ul style="list-style: none; text-align: left; margin: 20px 0;">
-                    <li>✓ Bot Personalizado</li>
-                    <li>✓ Hosting 1 Mes</li>
-                    <li>✓ Página Web</li>
-                    <li>✓ Logo Gratis</li>
-                </ul>
-                <a href="https://wa.me/51936994155?text=Hola YallicoDev, quiero el Pack Completo de S/50" target="_blank" class="btn-card">Ahorra S/12</a>
-            </div>
-
-            <!-- SERVICIO 6 -->
-            <div class="card-cyber">
-                <h3>Mantenimiento Mensual</h3>
-                <p class="precio-cyber">S/ 8</p>
-                <ul style="list-style: none; text-align: left; margin: 20px 0;">
-                    <li>✓ Actualizaciones</li>
-                    <li>✓ Arreglo de Bugs</li>
-                    <li>✓ Agregar Comandos Nuevos</li>
-                    <li>✓ Respaldo Semanal</li>
-                </ul>
-                <a href="https://wa.me/51936994155?text=Hola YallicoDev, quiero Mantenimiento Mensual de S/8" target="_blank" class="btn-card">Contratar</a>
-            </div>
-
-        </div>
-
-        <div class="card-cyber" style="max-width: 800px; margin: 50px auto 0;">
-            <h3 style="color: #00ffff; text-align: center;">¿No sabes qué necesitas?</h3>
-            <p style="text-align: center; margin: 15px 0;">Escríbeme y te asesoro gratis</p>
-            <div style="text-align: center;">
-                <a href="https://wa.me/51936994155" target="_blank" class="btn-cyber">Asesoría Gratis</a>
-            </div>
-        </div>
-
-    </section>
-
-    <footer>
-        <p>© 2026 YallicoDev | SYSTEM ONLINE</p>
-        <div class="footer-links">
-            <a href="reglas.html">Reglas</a>
-            <a href="soporte.html">Soporte</a>
-            <a href="portafolio.html">Portafolio</a>
-        </div>
-    </footer>
-    <script src="script.js"></script>
-</body>
-</html>
+<body><div class="grid-bg"></div>
+<nav><div class="logo"><img src="https://files.evogb.win/HT1tmL.jpg">Yallico<span>Dev</span></div><ul><li><a href="index.html">Inicio</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="portafolio.html">Portafolio</a></li></ul></nav>
+<section>
+<h2>> SERVICIOS PREMIUM</h2>
+<div class="grid-cyber">
+<div class="card-cyber"><div class="etiqueta">MAS VENDIDO</div><h3>Bot Personalizado</h3><p class="precio-cyber">S/ 30</p><ul><li>✓ +100 Comandos</li><li>✓ Logo HD</li><li>✓ 12 Menús</li><li>✓ Soporte 24/7</li></ul><a href="pagos.html?servicio=Bot+Personalizado+S/30" class="btn-card">Pedir Ahora</a></div>
+<div class="card-cyber"><h3>Bot Para Grupo</h3><p class="precio-cyber">S/ 7</p><ul><li>✓ +100 Comandos</li><li>✓ Bot For Three</li><li>✓ Instalación Gratis</li></ul><a href="pagos.html?servicio=Bot+Grupo+S/7" class="btn-card">Pedir Ahora</a></div>
+<div class="card-cyber"><h3>Hosting SSD</h3><p class="precio-cyber">S/ 10</p><ul><li>✓ Yo Lo Instalo</li><li>✓ 0 Caídas</li><li>✓ Panel Control</li></ul><a href="pagos.html?servicio=Hosting+SSD+S/10" class="btn-card">Pedir Ahora</a></div>
+<div class="card-cyber"><h3>Página Web</h3><p class="precio-cyber">S/ 15</p><ul><li>✓ Diseño Cyber</li><li>✓ Responsive</li><li>✓ Entrega 24h</li></ul><a href="pagos.html?servicio=Pagina+Web+S/15" class="btn-card">Pedir Ahora</a></div>
+<div class="card-cyber"><h3>Pack Completo</h3><p class="precio-cyber">S/ 50</p><ul><li>✓ Bot + Web + Hosting</li><li>✓ Logo Gratis</li><li>✓ Ahorras S/12</li></ul><a href="pagos.html?servicio=Pack+Completo+S/50" class="btn-card">Pedir Ahora</a></div>
+</div></section><footer><p>© 2026 YallicoDev</p></footer></body></html>
