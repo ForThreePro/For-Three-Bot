@@ -1,56 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reglas - YallicoDev</title>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reglas - YallicoDev</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#05050a;color:#fff;font-family:'Rajdhani',sans-serif}
+.grid-bg{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 50% 50%, rgba(0,255,255,0.08) 0%, transparent 70%);z-index:-1}
+nav{background:rgba(5,5,10,0.9);padding:15px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #00ffff}
+.logo{font-family:'Orbitron';color:#00ffff;font-size:1.5em;font-weight:900;display:flex;align-items:center;gap:10px}
+.logo img{height:40px;border-radius:8px;border:1px solid #00ffff}
+.btn-volver{background:transparent;border:2px solid #00ffff;color:#00ffff;padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:900;font-family:'Orbitron'}
+section{padding:60px 5%;max-width:800px;margin:auto}
+h2{font-family:'Orbitron';text-align:center;font-size:2.2em;color:#00ffff;margin-bottom:30px;text-shadow:0 0 20px #00ffff}
+.regla{background:rgba(0,255,255,0.05);border-left:4px solid #00ffff;padding:20px;margin-bottom:15px;border-radius:10px}
+.regla h3{color:#00ffff;font-family:'Orbitron';margin-bottom:8px}
+</style>
 </head>
-<body>
-    <div class="grid-bg"></div>
-
-    <nav>
-        <h2 class="logo">Yallico<span>Dev</span></h2>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="portafolio.html">Portafolio</a></li>
-            <li><a href="reglas.html">Reglas</a></li>
-            <li><a href="soporte.html">Soporte</a></li>
-        </ul>
-        <button id="btnTema" class="btn-tema">🌙</button>
-    </nav>
-
-    <section style="padding: 80px 5%;">
-        <h2 style="text-align: center; font-family: 'Orbitron'; font-size: 2.5em; color: #00ffff; margin-bottom: 50px;">> REGLAS Y CONDICIONES_</h2>
-        
-        <div class="card-cyber" style="max-width: 800px; margin: auto;">
-            <h3 style="color: #ff00ff; margin-bottom: 15px;">1. ⚡ PAGO</h3>
-            <p>El 100% del pago se realiza por Yape antes de iniciar. Número: +51 936 994 155</p>
-            
-            <h3 style="color: #ff00ff; margin: 25px 0 15px;">2. ⏰ ENTREGA</h3>
-            <p>De 1 a 3 días hábiles. Bots complejos hasta 5 días. Se te avisa por WhatsApp.</p>
-
-            <h3 style="color: #ff00ff; margin: 25px 0 15px;">3. 🛡️ GARANTÍA</h3>
-            <p>7 días de soporte gratis para corregir bugs. Actualizaciones nuevas se cotizan aparte.</p>
-
-            <h3 style="color: #ff00ff; margin: 25px 0 15px;">4. ❌ REEMBOLSO</h3>
-            <p>No hay reembolso una vez iniciado el desarrollo del código.</p>
-
-            <h3 style="color: #ff00ff; margin: 25px 0 15px;">5. 📢 SOPORTE</h3>
-            <p>Horario 24/7 por WhatsApp. Tiempo de respuesta: Máximo 2 horas.</p>
-
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="index.html" class="btn-cyber">Volver al Inicio</a>
-                <a href="soporte.html" class="btn-grupo-cyber">Ir a Soporte</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2026 YallicoDev | SYSTEM ONLINE</p>
-    </footer>
-    <script src="script.js"></script>
-</body>
-</html>
+<body><div class="grid-bg"></div>
+<nav>
+    <div class="logo"><img src="https://files.evogb.win/HT1tmL.jpg">Yallico<span>Dev</span></div>
+    <a href="index.html" class="btn-volver">← INICIO</a>
+</nav>
+<section>
+<h2>> REGLAS Y TÉRMINOS</h2>
+<div class="regla"><h3>1. PAGO ANTICIPADO</h3><p>Todo servicio se paga al 100% antes de empezar. Acepto Yape, Plin y BCP.</p></div>
+<div class="regla"><h3>2. TIEMPO DE ENTREGA</h3><p>Bots: 1 a 3 horas. Hosting: Instalación inmediata. No hago reembolso si ya se entregó.</p></div>
+<div class="regla"><h3>3. GARANTÍA</h3><p>7 días de soporte gratis por fallas. No cubre si modificas el código.</p></div>
+<div class="regla"><h3>4. PROHIBIDO</h3><p>Queda prohibido usar los bots para estafas, spam masivo o cosas ilegales.</p></div>
+</section>
+</body></html>
