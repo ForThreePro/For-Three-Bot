@@ -1,93 +1,113 @@
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Rajdhani', sans-serif; }
-body { background: #0a0a0f; color: #fff; }
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Orbitron:wght@700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #05050a; color: #e0e0e0; overflow-x: hidden; }
 
 .grid-bg {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background-image: linear-gradient(rgba(0,255,255,0.05) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(0,255,255,0.05) 1px, transparent 1px);
-    background-size: 40px 40px; z-index: -1;
+    background: radial-gradient(circle at 50% 50%, rgba(0,255,255,0.1) 0%, transparent 70%);
+    z-index: -1;
 }
 
-/* NAV PRO */
+/* NAV GLASS */
 nav {
-    background: rgba(10,10,15,0.9); backdrop-filter: blur(10px);
-    padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;
-    border-bottom: 2px solid #00ffff; position: sticky; top: 0; z-index: 999;
+    background: rgba(5,5,10,0.7); backdrop-filter: blur(20px);
+    padding: 15px 8%; display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid rgba(0,255,255,0.3); position: sticky; top: 0; z-index: 999;
 }
-.logo { font-family: 'Orbitron'; color: #00ffff; font-size: 1.5em; font-weight: 900; text-shadow: 0 0 10px #00ffff; }
+.logo { font-family: 'Orbitron'; color: #00ffff; font-size: 1.6em; font-weight: 900; }
 .logo span { color: #ff00ff; }
-nav ul { display: flex; gap: 15px; list-style: none; }
-nav a { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.9em; }
-nav a:hover { color: #00ffff; }
-.btn-tema { background: #00ffff; border: none; padding: 8px 12px; border-radius: 8px; font-size: 1.2em; cursor: pointer; }
+nav ul { display: flex; gap: 25px; list-style: none; }
+nav a { color: #fff; text-decoration: none; font-weight: 700; transition: 0.3s; }
+nav a:hover { color: #00ffff; text-shadow: 0 0 10px #00ffff; }
+.btn-tema { background: #00ffff; border: none; padding: 10px 14px; border-radius: 10px; cursor: pointer; }
 
-/* HEADER */
-header { text-align: center; padding: 60px 20px; }
-.titulo-cyber { font-family: 'Orbitron'; font-size: 2.2em; color: #00ffff; text-shadow: 0 0 20px #00ffff; }
-.sub-cyber { color: #ff00ff; margin: 10px 0 25px; }
-
-/* CONTADOR */
-.contador-cyber { display: flex; justify-content: center; gap: 20px; padding: 30px 5%; flex-wrap: wrap; }
-.stat-box { background: rgba(0,255,255,0.1); border: 1px solid #00ffff; padding: 15px 25px; border-radius: 12px; text-align: center; min-width: 120px; }
-.stat-box h3 { font-family: 'Orbitron'; font-size: 1.8em; color: #00ffff; }
-
-/* SECCIONES */
-section { padding: 50px 5%; }
-h2 { font-family: 'Orbitron'; text-align: center; font-size: 1.8em; color: #00ffff; margin-bottom: 30px; }
-
-/* CARDS PRO - ESTO ERA EL BUG */
-.grid-cyber {
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px; max-width: 1100px; margin: auto;
+/* HERO BANNER NUEVO */
+.hero-banner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 80px 8%; gap: 40px; min-height: 70vh;
 }
-.card-cyber {
-    background: #111118; 
-    border: 2px solid #00ffff; 
-    border-radius: 15px;
-    padding: 25px; 
+.hero-tag { color: #00ffff; font-weight: 700; margin-bottom: 10px; }
+.hero-titulo { font-family: 'Orbitron'; font-size: 2.8em; line-height: 1.2; margin-bottom: 15px; }
+.hero-titulo span { color: #00ffff; text-shadow: 0 0 20px #00ffff; }
+.hero-sub { color: #aaa; font-size: 1.1em; margin-bottom: 30px; }
+.hero-btns { display: flex; gap: 15px; flex-wrap: wrap; }
+.btn-hero-principal {
+    background: linear-gradient(90deg, #00ffff, #ff00ff); color: #000;
+    padding: 16px 35px; border-radius: 12px; text-decoration: none;
+    font-weight: 900; font-family: 'Orbitron'; transition: 0.3s;
+}
+.btn-hero-principal:hover { transform: scale(1.05); box-shadow: 0 0 30px #00ffff; }
+.btn-hero-sec {
+    background: transparent; color: #00ffff; border: 2px solid #00ffff;
+    padding: 14px 33px; border-radius: 12px; text-decoration: none; font-weight: 900;
+}
+.hero-img img { max-width: 450px; border-radius: 20px; border: 2px solid #00ffff; box-shadow: 0 0 40px rgba(0,255,255,0.3); }
+
+/* CONTADOR PRO */
+.contador-cyber { display: flex; justify-content: center; gap: 30px; padding: 50px 5%; flex-wrap: wrap; }
+.stat-box { 
+    background: rgba(0,255,255,0.05); border: 1px solid rgba(0,255,255,0.3); 
+    padding: 20px 30px; border-radius: 15px; text-align: center; min-width: 150px;
     transition: 0.3s;
 }
-.card-cyber:hover { border-color: #ff00ff; transform: translateY(-5px); box-shadow: 0 0 20px #ff00ff; }
-.card-cyber h3 { font-size: 1.3em; margin-bottom: 10px; color: #fff; }
-.precio-cyber { font-size: 1.8em; color: #00ffff; font-weight: 900; margin-bottom: 15px; }
-.card-cyber ul { list-style: none; margin: 15px 0; }
-.card-cyber ul li { padding: 5px 0; color: #ccc; font-size: 0.95em; }
+.stat-box:hover { border-color: #00ffff; box-shadow: 0 0 20px rgba(0,255,255,0.3); }
+.stat-box h3 { font-family: 'Orbitron'; font-size: 2.2em; color: #00ffff; }
 
-/* BOTONES */
+/* CARDS PRO 2.0 */
+section { padding: 80px 8%; }
+h2 { font-family: 'Orbitron'; text-align: center; font-size: 2.2em; color: #00ffff; margin-bottom: 50px; }
+
+.grid-cyber {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; max-width: 1200px; margin: auto;
+}
+.card-cyber {
+    background: linear-gradient(145deg, #0a0a14, #05050a);
+    border: 1px solid rgba(0,255,255,0.2); border-radius: 20px;
+    padding: 30px; transition: 0.4s; position: relative; overflow: hidden;
+}
+.card-cyber::before {
+    content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+.card-cyber:hover::before { left: 100%; }
+.card-cyber:hover { border-color: #00ffff; transform: translateY(-10px); box-shadow: 0 10px 40px rgba(0,255,255,0.2); }
+
+.etiqueta { background: #ff00ff; color: #000; padding: 5px 15px; border-radius: 8px; font-weight: 900; font-size: 0.8em; display: inline-block; margin-bottom: 15px; }
+.card-cyber h3 { font-size: 1.4em; margin-bottom: 10px; }
+.precio-cyber { font-size: 2.2em; color: #00ffff; font-weight: 900; font-family: 'Orbitron'; margin-bottom: 20px; }
+.card-cyber ul { list-style: none; }
+.card-cyber ul li { padding: 8px 0; color: #ccc; }
+
 .btn-card {
     display: block; background: linear-gradient(90deg, #00ffff, #008888); color: #000;
-    padding: 12px; border-radius: 10px; text-decoration: none;
-    font-weight: 900; text-align: center; margin-top: 15px;
+    padding: 14px; border-radius: 12px; text-decoration: none;
+    font-weight: 900; text-align: center; margin-top: 20px; font-family: 'Orbitron';
+    transition: 0.3s;
 }
-.btn-card:hover { box-shadow: 0 0 15px #00ffff; }
-
-.btn-cyber, .btn-grupo-cyber {
-    display: inline-block; background: transparent; color: #00ffff;
-    border: 2px solid #00ffff; padding: 14px 30px; border-radius: 10px;
-    font-weight: 900; text-decoration: none; margin: 5px;
-}
-.btn-grupo-cyber { border-color: #25D366; color: #25D366; }
+.btn-card:hover { box-shadow: 0 0 20px #00ffff; }
 
 /* FOOTER */
-footer { text-align: center; padding: 30px; border-top: 1px solid #00ffff; color: #888; }
-.footer-links { display: flex; justify-content: center; gap: 15px; margin-top: 10px; }
-.footer-links a { color: #00ffff; text-decoration: none; }
+footer { text-align: center; padding: 40px; border-top: 1px solid rgba(0,255,255,0.3); color: #888; }
 
 /* BOTONES FLOTANTES */
 .btn-flotante, .btn-flotante-grupo {
-    position: fixed; bottom: 20px; width: 55px; height: 55px; border-radius: 50%;
+    position: fixed; bottom: 20px; width: 60px; height: 60px; border-radius: 50%;
     display: flex; justify-content: center; align-items: center;
     font-size: 1.8em; text-decoration: none; z-index: 1000;
+    box-shadow: 0 0 20px rgba(0,255,255,0.4);
 }
 .btn-flotante { right: 20px; background: #25D366; }
-.btn-flotante-grupo { right: 85px; background: #128C7E; }
+.btn-flotante-grupo { right: 90px; background: #128C7E; }
 
-/* RESPONSIVE CELULAR */
-@media (max-width: 768px) {
-    nav { flex-direction: column; gap: 10px; }
-    nav ul { flex-wrap: wrap; justify-content: center; }
-    .titulo-cyber { font-size: 1.8em; }
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .hero-banner { flex-direction: column; text-align: center; padding: 60px 5%; }
+    .hero-img img { max-width: 100%; }
+    .hero-titulo { font-size: 2em; }
+    nav ul { display: none; } /* Ocultar menú en cel, luego hacemos hamburguesa */
     .grid-cyber { grid-template-columns: 1fr; }
-    .btn-flotante-grupo { bottom: 85px; right: 20px; }
+    .btn-flotante-grupo { bottom: 90px; right: 20px; }
 }
