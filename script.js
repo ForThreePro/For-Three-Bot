@@ -2,19 +2,15 @@
 const btnTema = document.getElementById('btnTema');
 const body = document.body;
 
-// Cargar tema guardado al entrar
 if(localStorage.getItem('tema') === 'light'){
     body.classList.add('light-mode');
-    btnTema.innerText = '🌙'; // Si está claro, muestra luna para volver a oscuro
+    if(btnTema) btnTema.innerText = '🌙';
 } else {
-    btnTema.innerText = '☀️'; // Si está oscuro, muestra sol para ir a claro
+    if(btnTema) btnTema.innerText = '☀️';
 }
 
-// Evento al dar click
 btnTema?.addEventListener('click', () => {
     body.classList.toggle('light-mode');
-    
-    // Guardar preferencia y cambiar icono
     if(body.classList.contains('light-mode')){
         localStorage.setItem('tema', 'light');
         btnTema.innerText = '🌙'; 
@@ -24,14 +20,12 @@ btnTema?.addEventListener('click', () => {
     }
 });
 
-// SCROLL SUAVE AL DAR CLICK EN EL MENU
+// SCROLL SUAVE
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        if(target){
-            target.scrollIntoView({behavior: 'smooth'});
-        }
+        if(target){ target.scrollIntoView({behavior: 'smooth'}); }
     });
 });
 
