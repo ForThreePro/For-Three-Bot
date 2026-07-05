@@ -5,12 +5,16 @@
 <title>YallicoDev - Bots y Hosting SSD</title>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{background:#05050a;color:#fff;font-family:'Rajdhani',sans-serif}
-.grid-bg{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 50% 50%, rgba(0,255,255,0.08) 0%, transparent 70%);z-index:-1}
-nav{background:rgba(5,5,10,0.9);padding:15px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #00ffff;position:sticky;top:0;z-index:100}
+*{margin:0;padding:0;box-sizing:border-box}body{background:#05050a;color:#fff;font-family:'Rajdhani',sans-serif;transition:0.3s}
+.grid-bg{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 50% 50%, rgba(0,255,255,0.08) 0%, transparent 70%);z-index:-1;transition:0.3s}
+nav{background:rgba(5,5,10,0.9);padding:15px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #00ffff;position:sticky;top:0;z-index:100;transition:0.3s}
 .logo{font-family:'Orbitron';color:#00ffff;font-size:1.5em;font-weight:900;display:flex;align-items:center;gap:10px}
 .logo img{height:40px;border-radius:8px;border:1px solid #00ffff}
-.menu a{color:#00ffff;text-decoration:none;margin-left:20px;font-weight:700}
+.menu{display:flex;align-items:center;gap:20px}
+.menu a{color:#00ffff;text-decoration:none;font-weight:700;transition:0.2s}
+.menu a:hover{text-shadow:0 0 10px #00ffff}
+#btnTema{background:transparent;border:2px solid #00ffff;color:#00ffff;padding:8px 14px;border-radius:10px;cursor:pointer;font-size:1.2em;font-family:'Orbitron';transition:0.3s}
+#btnTema:hover{box-shadow:0 0 15px #00ffff}
 .hero{min-height:85vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:60px 5%}
 .hero-content h1{font-family:'Orbitron';font-size:3.5em;color:#00ffff;text-shadow:0 0 30px #00ffff;margin-bottom:20px}
 .hero-content p{font-size:1.3em;color:#aaa;margin-bottom:30px}
@@ -18,7 +22,8 @@ nav{background:rgba(5,5,10,0.9);padding:15px 5%;display:flex;justify-content:spa
 section{padding:60px 5%;max-width:1000px;margin:auto}
 h2{font-family:'Orbitron';text-align:center;font-size:2.2em;color:#00ffff;margin-bottom:40px;text-shadow:0 0 20px #00ffff}
 .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.card-info{background:rgba(0,255,255,0.05);border:1px solid rgba(0,255,255,0.3);padding:30px;border-radius:20px;text-align:center}
+.card-info{background:rgba(0,255,255,0.05);border:1px solid rgba(0,255,255,0.3);padding:30px;border-radius:20px;text-align:center;transition:0.3s}
+.card-info:hover{transform:translateY(-5px);border-color:#00ffff}
 .card-info h3{font-family:'Orbitron';color:#00ffff;margin-bottom:10px}
 .grid-servicios{display:grid;gap:25px}
 .card-servicio{background:linear-gradient(145deg,#0a0a14,#05050a);border:1px solid rgba(0,255,255,0.3);border-radius:20px;padding:25px;transition:0.3s}
@@ -31,6 +36,22 @@ h2{font-family:'Orbitron';text-align:center;font-size:2.2em;color:#00ffff;margin
 .btn-wa-soporte{display:inline-block;background:#25D366;color:#fff;padding:18px 45px;border-radius:15px;text-decoration:none;font-weight:900;font-family:'Orbitron';font-size:1.1em;margin-top:15px}
 footer{text-align:center;padding:40px;border-top:1px solid rgba(0,255,255,0.3);color:#888}
 .whatsapp-btn{position:fixed;bottom:20px;right:20px;background:#25D366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2em;text-decoration:none;box-shadow:0 0 20px rgba(37,211,102,0.5)}
+
+/* MODO CLARO */
+body.light-mode{background:#f0f0f5;color:#111}
+body.light-mode .grid-bg{background:radial-gradient(circle at 50% 50%, rgba(0,119,255,0.05) 0%, transparent 70%)}
+body.light-mode nav{background:rgba(255,255,255,0.9);border-bottom:2px solid #0077ff}
+body.light-mode .logo{color:#0077ff}
+body.light-mode .menu a{color:#0077ff}
+body.light-mode #btnTema{border-color:#0077ff;color:#0077ff}
+body.light-mode h2{color:#0077ff;text-shadow:0 0 10px rgba(0,119,255,0.3)}
+body.light-mode .hero-content h1{color:#0077ff;text-shadow:0 0 20px rgba(0,119,255,0.3)}
+body.light-mode .card-servicio, 
+body.light-mode .card-info,
+body.light-mode .soporte{background:#fff;border:1px solid #ddd}
+body.light-mode .precio{color:#0077ff;text-shadow:none}
+body.light-mode .btn-demo{border-color:#0077ff;color:#0077ff}
+body.light-mode footer{border-top:1px solid #ddd;color:#555}
 </style>
 </head>
 <body><div class="grid-bg"></div>
@@ -38,10 +59,12 @@ footer{text-align:center;padding:40px;border-top:1px solid rgba(0,255,255,0.3);c
 <nav>
     <div class="logo"><img src="https://files.evogb.win/HT1tmL.jpg">Yallico<span>Dev</span></div>
     <div class="menu">
-        <a href="#servicios">Servicios</a>
+        <a href="servicios.html">Servicios</a>
         <a href="#portafolio">Portafolio</a>
+        <a href="soporte.html">Soporte</a>
         <a href="reglas.html">Reglas</a>
         <a href="faq.html">FAQ</a>
+        <button id="btnTema">☀️</button>
     </div>
 </nav>
 
@@ -103,4 +126,6 @@ footer{text-align:center;padding:40px;border-top:1px solid rgba(0,255,255,0.3);c
 
 <a href="https://wa.me/51936994155" target="_blank" class="whatsapp-btn">💬</a>
 <footer><p>© 2026 YallicoDev | SYSTEM ONLINE</p></footer>
+
+<script src="script.js"></script>
 </body></html>
