@@ -1,66 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soporte - YallicoDev</title>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soporte - YallicoDev</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#05050a;color:#fff;font-family:'Rajdhani',sans-serif}
+.grid-bg{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 50% 50%, rgba(0,255,255,0.08) 0%, transparent 70%);z-index:-1}
+nav{background:rgba(5,5,10,0.9);padding:15px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #00ffff}
+.logo{font-family:'Orbitron';color:#00ffff;font-size:1.5em;font-weight:900;display:flex;align-items:center;gap:10px}
+.logo img{height:40px;border-radius:8px;border:1px solid #00ffff}
+.btn-volver{background:transparent;border:2px solid #00ffff;color:#00ffff;padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:900;font-family:'Orbitron'}
+section{padding:60px 5%;max-width:700px;margin:auto;text-align:center}
+h2{font-family:'Orbitron';font-size:2.2em;color:#00ffff;margin-bottom:20px;text-shadow:0 0 20px #00ffff}
+.card-soporte{background:linear-gradient(145deg,#0a0a14,#05050a);border:2px solid #00ffff;border-radius:20px;padding:40px;margin:20px 0}
+.card-soporte h3{font-family:'Orbitron';color:#ff00ff;font-size:1.5em;margin-bottom:15px}
+.btn-wa-grande{display:block;background:linear-gradient(90deg,#25D366,#128C7E);color:#fff;padding:20px;border-radius:15px;text-decoration:none;font-weight:900;font-family:'Orbitron';font-size:1.2em;margin:15px 0;box-shadow:0 0 25px rgba(37,211,102,0.4)}
+.horario{color:#aaa;margin-top:20px}
+</style>
 </head>
-<body>
-    <div class="grid-bg"></div>
+<body><div class="grid-bg"></div>
+<nav>
+    <div class="logo"><img src="https://files.evogb.win/HT1tmL.jpg">Yallico<span>Dev</span></div>
+    <a href="index.html" class="btn-volver">← INICIO</a>
+</nav>
+<section>
+<h2>> SOPORTE TÉCNICO 24/7</h2>
+<p style="color:#aaa;margin-bottom:30px">¿Tienes un problema? Te ayudo al instante</p>
 
-    <nav>
-        <h2 class="logo">Yallico<span>Dev</span></h2>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="portafolio.html">Portafolio</a></li>
-            <li><a href="reglas.html">Reglas</a></li>
-            <li><a href="soporte.html">Soporte</a></li>
-        </ul>
-        <button id="btnTema" class="btn-tema">🌙</button>
-    </nav>
+<div class="card-soporte">
+    <h3>💬 WHATSAPP DIRECTO</h3>
+    <p>Respuesta en menos de 5 minutos</p>
+    <a href="https://wa.me/51936994155" target="_blank" class="btn-wa-grande">HABLAR AHORA</a>
+</div>
 
-    <section style="padding: 80px 5%;">
-        <h2 style="text-align: center; font-family: 'Orbitron'; font-size: 2.5em; color: #00ffff; margin-bottom: 50px;">> CENTRO DE SOPORTE_</h2>
-        
-        <div class="card-cyber" style="max-width: 600px; margin: auto;">
-            <h3 style="color: #00ffff; text-align: center; margin-bottom: 20px;">¿Tienes un problema?</h3>
-            <form id="formSoporte">
-                <input type="text" id="nombreS" placeholder="Tu Nombre" required style="width: 100%; background: #111; border: 1px solid #00ffff; padding: 15px; border-radius: 10px; color: #fff; margin-bottom: 15px;">
-                <input type="text" id="idPedido" placeholder="ID de Pedido o Fecha" required style="width: 100%; background: #111; border: 1px solid #00ffff; padding: 15px; border-radius: 10px; color: #fff; margin-bottom: 15px;">
-                <textarea id="problema" placeholder="Describe el problema..." rows="5" required style="width: 100%; background: #111; border: 1px solid #00ffff; padding: 15px; border-radius: 10px; color: #fff; margin-bottom: 15px;"></textarea>
-                <button type="submit" class="btn-cyber" style="width: 100%; border: none;">Enviar Ticket a WhatsApp</button>
-            </form>
-        </div>
+<div class="card-soporte">
+    <h3>📧 CORREO</h3>
+    <p>Para temas importantes y facturación</p>
+    <a href="mailto:yallicodev@gmail.com" class="btn-wa-grande" style="background:linear-gradient(90deg,#00ffff,#ff00ff);color:#000">ENVIAR CORREO</a>
+</div>
 
-        <div class="card-cyber" style="max-width: 600px; margin: 30px auto 0; text-align: center;">
-            <h3 style="color: #25D366;">📢 Grupo de Soporte y Comunidad</h3>
-            <p style="margin: 15px 0;">Únete para soporte entre usuarios, anuncios y sorteos</p>
-            <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk" target="_blank" class="btn-grupo-cyber">Unirme al Grupo</a>
-        </div>
-
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="reglas.html" class="btn-card">Leer Reglas</a>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2026 YallicoDev | SYSTEM ONLINE</p>
-    </footer>
-    
-    <script>
-    // JS para enviar soporte a WA
-    document.getElementById('formSoporte')?.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const nombre = document.getElementById('nombreS').value;
-        const id = document.getElementById('idPedido').value;
-        const problema = document.getElementById('problema').value;
-        const texto = `TICKET DE SOPORTE%0A%0ANombre: ${nombre}%0AID: ${id}%0AProblema: ${problema}`;
-        window.open(`https://wa.me/51936994155?text=${texto}`, '_blank');
-    });
-    </script>
-    <script src="script.js"></script>
-</body>
-</html>
+<p class="horario">⏰ Horario: Lunes a Domingo 8am - 11pm<br>Fuera de horario respondo al día siguiente</p>
+</section>
+</body></html>
