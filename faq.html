@@ -7,94 +7,25 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}body{background:#05050a;color:#fff;font-family:'Rajdhani',sans-serif}
 .grid-bg{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 50% 50%, rgba(0,255,255,0.08) 0%, transparent 70%);z-index:-1}
-
-nav{background:rgba(5,5,10,0.9);padding:15px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #00ffff;position:sticky;top:0}
+nav{background:rgba(5,5,10,0.9);padding:15px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #00ffff}
 .logo{font-family:'Orbitron';color:#00ffff;font-size:1.5em;font-weight:900;display:flex;align-items:center;gap:10px}
 .logo img{height:40px;border-radius:8px;border:1px solid #00ffff}
-nav ul{display:flex;gap:20px;list-style:none}nav a{color:#fff;text-decoration:none;font-weight:700}nav a:hover{color:#00ffff}
-
+.btn-volver{background:transparent;border:2px solid #00ffff;color:#00ffff;padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:900;font-family:'Orbitron'}
 section{padding:60px 5%;max-width:800px;margin:auto}
-h2{font-family:'Orbitron';text-align:center;font-size:2.2em;color:#00ffff;margin-bottom:40px;text-shadow:0 0 20px #00ffff}
-
-.faq-item{background:linear-gradient(145deg,#0a0a14,#05050a);border:1px solid rgba(0,255,255,0.3);border-radius:15px;margin-bottom:15px;overflow:hidden;transition:0.3s}
-.faq-item:hover{border-color:#00ffff}
-.faq-pregunta{padding:20px;font-family:'Orbitron';font-size:1.1em;color:#00ffff;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
-.faq-pregunta span{font-size:1.5em;transition:0.3s}
-.faq-respuesta{padding:0 20px 20px 20px;color:#ccc;line-height:1.7;display:none}
-.faq-respuesta.active{display:block}
-.faq-pregunta.active span{transform:rotate(45deg)}
-
-.cta-final{text-align:center;margin-top:50px;padding:30px;border:2px solid #00ffff;border-radius:20px;background:rgba(0,255,255,0.05)}
-.cta-final h3{font-family:'Orbitron';color:#00ffff;margin-bottom:15px}
-.btn-wa{display:inline-block;background:linear-gradient(90deg,#00ffff,#ff00ff);color:#000;padding:16px 40px;border-radius:15px;text-decoration:none;font-weight:900;font-family:'Orbitron';font-size:1.1em;margin-top:10px}
-
-footer{text-align:center;padding:40px;border-top:1px solid rgba(0,255,255,0.3);color:#888;margin-top:60px}
+h2{font-family:'Orbitron';text-align:center;font-size:2.2em;color:#00ffff;margin-bottom:30px;text-shadow:0 0 20px #00ffff}
+.faq-item{background:rgba(0,255,255,0.05);border:1px solid rgba(0,255,255,0.3);padding:20px;margin-bottom:15px;border-radius:15px}
+.faq-item h3{color:#00ffff;font-family:'Orbitron';margin-bottom:10px}
 </style>
 </head>
 <body><div class="grid-bg"></div>
-
 <nav>
     <div class="logo"><img src="https://files.evogb.win/HT1tmL.jpg">Yallico<span>Dev</span></div>
-    <ul><li><a href="index.html">Inicio</a></li><li><a href="portafolio.html">Portafolio</a></li><li><a href="faq.html">FAQ</a></li></ul>
+    <a href="index.html" class="btn-volver">← INICIO</a>
 </nav>
-
 <section>
 <h2>> PREGUNTAS FRECUENTES</h2>
-
-<div class="faq-item">
-    <div class="faq-pregunta" onclick="toggleFAQ(this)">¿Cuánto demora la entrega? <span>+</span></div>
-    <div class="faq-respuesta">Depende del servicio: Bot Personalizado 24-48h, Hosting SSD entrega inmediata, Bot Para Grupo 24h. Si es urgente me escribes y le meto prioridad.</div>
-</div>
-
-<div class="faq-item">
-    <div class="faq-pregunta" onclick="toggleFAQ(this)">¿Piden adelanto? <span>+</span></div>
-    <div class="faq-respuesta">Sí bro, 50% para empezar y 50% al entregar. Así ambos estamos seguros. Acepto Yape, Plin y BCP.</div>
-</div>
-
-<div class="faq-item">
-    <div class="faq-pregunta" onclick="toggleFAQ(this)">¿Dan garantía y soporte? <span>+</span></div>
-    <div class="faq-respuesta">Claro que sí. Garantía de 15 días por cualquier error. Soporte 24/7 por WhatsApp el primer mes gratis. Después soporte con costo mínimo.</div>
-</div>
-
-<div class="faq-item">
-    <div class="faq-pregunta" onclick="toggleFAQ(this)">¿Puedo pedir funciones personalizadas? <span>+</span></div>
-    <div class="faq-respuesta">Sí, todos los bots son 100% personalizados. Dime qué quieres que haga y te cotizo. El precio base es S/30 pero puede subir según comandos.</div>
-</div>
-
-<div class="faq-item">
-    <div class="faq-pregunta" onclick="toggleFAQ(this)">¿Hacen reembolsos? <span>+</span></div>
-    <div class="faq-respuesta">No hay reembolso una vez iniciado el proyecto. Por eso te mando demos y avances para que veas que sí trabajo. Si no te gusta antes de empezar, te devuelvo el 100%.</div>
-</div>
-
-<div class="faq-item">
-    <div class="faq-pregunta" onclick="toggleFAQ(this)">¿El hosting se cae? <span>+</span></div>
-    <div class="faq-respuesta">Uso SSD de alta velocidad. 99.9% uptime. Yo lo instalo y configuro todo. Si se cae por mi culpa, te doy días gratis.</div>
-</div>
-
-<div class="cta-final">
-    <h3>¿TIENES OTRA DUDA?</h3>
-    <p>Escríbeme directo y te respondo al toque</p>
-    <a href="https://wa.me/51936994155" target="_blank" class="btn-wa">HABLAR POR WHATSAPP</a>
-</div>
-
+<div class="faq-item"><h3>¿Cuánto demora la entrega?</h3><p>De 1 a 3 horas después de confirmar tu pago. Hosting se entrega al instante.</p></div>
+<div class="faq-item"><h3>¿Doy soporte después de la compra?</h3><p>Sí. 7 días de soporte gratis. Después cobro S/5 por mantenimiento.</p></div>
+<div class="faq-item"><h3>¿Qué pasa si mi bot se cae?</h3><p>Si es por mi hosting yo lo arreglo gratis. Si es por tu culpa cobro S/10.</p></div>
 </section>
-
-<script>
-function toggleFAQ(element){
-    const respuesta = element.nextElementSibling;
-    const span = element.querySelector('span');
-    
-    document.querySelectorAll('.faq-respuesta').forEach(item => {
-        if(item !== respuesta) item.classList.remove('active');
-    });
-    document.querySelectorAll('.faq-pregunta').forEach(item => {
-        if(item !== element) item.classList.remove('active');
-    });
-    
-    respuesta.classList.toggle('active');
-    element.classList.toggle('active');
-}
-</script>
-
-<footer><p>© 2026 YallicoDev | SYSTEM ONLINE</p></footer>
 </body></html>
