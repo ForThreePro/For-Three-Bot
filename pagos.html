@@ -2,56 +2,59 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Finalizar Pedido - YallicoDev</title>
+<title>Completar Pago - YallicoDev</title>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}body{background:#05050a;color:#fff;font-family:'Rajdhani',sans-serif}
 .grid-bg{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 50% 50%, rgba(0,255,255,0.08) 0%, transparent 70%);z-index:-1}
-nav{background:rgba(5,5,10,0.9);padding:15px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #00ffff}
+
+nav{background:rgba(5,5,10,0.9);padding:15px 5%;display:flex;justify-content:center;align-items:center;border-bottom:2px solid #00ffff}
 .logo{font-family:'Orbitron';color:#00ffff;font-size:1.5em;font-weight:900;display:flex;align-items:center;gap:10px}
 .logo img{height:40px;border-radius:8px;border:1px solid #00ffff}
-.btn-volver{background:transparent;border:2px solid #00ffff;color:#00ffff;padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:900;font-family:'Orbitron'}
 
-section{padding:60px 5%;max-width:600px;margin:auto}
-h2{font-family:'Orbitron';text-align:center;font-size:2.2em;color:#00ffff;margin-bottom:30px;text-shadow:0 0 20px #00ffff}
+section{padding:40px 5%;max-width:500px;margin:auto;text-align:center}
+h2{font-family:'Orbitron';font-size:2em;color:#00ffff;margin-bottom:10px;text-shadow:0 0 20px #00ffff}
+.sub{color:#aaa;margin-bottom:20px}
 
-.resumen{background:linear-gradient(145deg,#0a0a14,#05050a);border:2px solid #00ffff;border-radius:20px;padding:30px;margin-bottom:30px}
-.resumen h3{font-family:'Orbitron';color:#00ffff;margin-bottom:15px}
-.item{font-size:1.3em;margin-bottom:10px}
-.precio-final{font-family:'Orbitron';font-size:2.8em;color:#00ffff;text-align:center;margin:20px 0;text-shadow:0 0 20px #00ffff}
+.card{background:linear-gradient(145deg,#0a0a14,#05050a);border:2px solid #00ffff;border-radius:20px;padding:25px;margin-bottom:20px;text-align:left}
+.card h3{font-family:'Orbitron';color:#ff00ff;text-align:center;font-size:1.3em;margin-bottom:15px}
+.card p{color:#ccc;margin-bottom:8px}
+.card b{color:#00ffff}
 
-.info-pago{background:rgba(0,255,255,0.05);border:1px solid rgba(0,255,255,0.3);border-radius:15px;padding:20px;margin-bottom:30px}
-.info-pago h4{color:#00ffff;font-family:'Orbitron';margin-bottom:10px}
-.info-pago p{color:#aaa;line-height:1.7}
+.btn-wa{display:block;background:linear-gradient(90deg,#25D366,#128C7E);color:#fff;padding:16px;border-radius:15px;text-decoration:none;font-weight:900;font-family:'Orbitron';font-size:1em;text-align:center;margin-top:15px;box-shadow:0 0 20px rgba(37,211,102,0.4)}
+.btn-wa:hover{transform:scale(1.03)}
 
-.btn-wa-pago{display:block;background:linear-gradient(90deg,#25D366,#128C7E);color:#fff;padding:20px;border-radius:15px;text-decoration:none;font-weight:900;font-family:'Orbitron';font-size:1.2em;text-align:center;box-shadow:0 0 25px rgba(37,211,102,0.4)}
-.btn-wa-pago:hover{transform:scale(1.02)}
+.alerta{color:#ff4d4d;font-size:0.9em;margin:20px 0}
+.btn-volver{color:#00ffff;text-decoration:underline;font-family:'Orbitron'}
 </style>
 </head>
 <body><div class="grid-bg"></div>
 
 <nav>
-    <div class="logo"><img src="https://files.evogb.win/HT1tmL.jpg">Yallico<span>Dev</span></div>
-    <a href="portafolio.html" class="btn-volver">← VOLVER</a>
+    <div class="logo"><img src="https://files.evogb.win/HT1tmL.jpg">Yallico Dev</div>
 </nav>
 
 <section>
-<h2>> FINALIZAR PEDIDO</h2>
+<h2>> COMPLETAR PAGO</h2>
+<p class="sub">Estás comprando: <span id="producto" style="color:#00ffff;font-weight:900">Cargando...</span></p>
 
-<div class="resumen">
-    <h3>RESUMEN DE TU PEDIDO</h3>
-    <div class="item" id="nombre-servicio">Cargando...</div>
-    <div class="precio-final" id="precio-servicio">S/ 0</div>
+<div class="card">
+    <h3>YAPE / PLIN</h3>
+    <p><b>Número:</b> 936 994 155</p>
+    <p><b>Nombre:</b> Yallico</p>
+    <a id="btn-yape" href="#" target="_blank" class="btn-wa">Enviar Comprobante por WhatsApp</a>
 </div>
 
-<div class="info-pago">
-    <h4>¿COMO PAGAR?</h4>
-    <p><b>1. Yape / Plin:</b> 936 994 155<br>
-    <b>2. BCP:</b> Te paso el número al WhatsApp<br><br>
-    Dale clic al botón de abajo, envíame el comprobante y empiezo tu pedido al toque.</p>
+<div class="card">
+    <h3>TRANSFERENCIA BCP</h3>
+    <p><b>CCI:</b> 002-XXX-XXXXXXX</p>
+    <p><b>Titular:</b> Yallico</p>
+    <a id="btn-bcp" href="#" target="_blank" class="btn-wa">Enviar Comprobante por WhatsApp</a>
 </div>
 
-<a id="btn-whatsapp" href="#" target="_blank" class="btn-wa-pago">ENVIAR PEDIDO POR WHATSAPP</a>
+<p class="alerta">IMPORTANTE: Después de pagar, es obligatorio enviar el comprobante para activar tu servicio en 1 hora</p>
+
+<a href="index.html" class="btn-volver">← Volver al Inicio</a>
 
 </section>
 
@@ -61,20 +64,16 @@ const params = new URLSearchParams(window.location.search);
 const servicio = params.get('servicio');
 
 if(servicio){
-    const partes = servicio.split('S/');
-    const nombre = partes[0].trim();
-    const precio = 'S/ ' + partes[1];
-
-    document.getElementById('nombre-servicio').innerText = nombre;
-    document.getElementById('precio-servicio').innerText = precio;
-
-    // MENSAJE AUTOMATICO PARA WHATSAPP
-    const mensaje = `Hola YallicoDev! Quiero pedir: ${nombre} por ${precio}. Mi nombre es:`;
-    document.getElementById('btn-whatsapp').href = `https://wa.me/51936994155?text=${encodeURIComponent(mensaje)}`;
+    document.getElementById('producto').innerText = servicio.replace('+', ' ');
+    
+    const mensaje = `Hola YallicoDev! Ya realice el pago de: ${servicio}. Adjunto comprobante:`;
+    const linkWa = `https://wa.me/51936994155?text=${encodeURIComponent(mensaje)}`;
+    
+    document.getElementById('btn-yape').href = linkWa;
+    document.getElementById('btn-bcp').href = linkWa;
 } else {
-    document.getElementById('nombre-servicio').innerText = 'No seleccionaste ningún servicio';
+    document.getElementById('producto').innerText = 'Error: No se seleccionó producto';
 }
 </script>
 
-<footer style="text-align:center;padding:40px;color:#888"><p>© 2026 YallicoDev</p></footer>
 </body></html>
