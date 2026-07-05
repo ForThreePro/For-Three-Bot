@@ -7,38 +7,110 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}body{background:#05050a;color:#fff;font-family:'Rajdhani',sans-serif}
 .grid-bg{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 50% 50%, rgba(0,255,255,0.08) 0%, transparent 70%);z-index:-1}
-nav{background:rgba(5,5,10,0.9);padding:15px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #00ffff;position:sticky;top:0}
+nav{background:rgba(5,5,10,0.9);padding:15px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #00ffff;position:sticky;top:0;z-index:100}
 .logo{font-family:'Orbitron';color:#00ffff;font-size:1.5em;font-weight:900;display:flex;align-items:center;gap:10px}
 .logo img{height:40px;border-radius:8px;border:1px solid #00ffff}
+.menu a{color:#00ffff;text-decoration:none;margin-left:20px;font-weight:700}
+
 .hero{min-height:85vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:60px 5%}
 .hero-content h1{font-family:'Orbitron';font-size:3.5em;color:#00ffff;text-shadow:0 0 30px #00ffff;margin-bottom:20px}
 .hero-content p{font-size:1.3em;color:#aaa;margin-bottom:30px}
-.btn-principal{display:inline-block;background:linear-gradient(90deg,#00ffff,#ff00ff);color:#000;padding:18px 45px;border-radius:15px;text-decoration:none;font-weight:900;font-family:'Orbitron';font-size:1.2em;box-shadow:0 0 25px rgba(0,255,255,0.4);margin:10px}
-.btn-principal:hover{transform:scale(1.05)}
-.faq-cta{border:2px solid #00ffff;border-radius:20px;background:rgba(0,255,255,0.05);padding:40px;text-align:center;margin:60px 5%;max-width:800px;margin:auto}
-.faq-cta h3{font-family:'Orbitron';color:#00ffff;font-size:2em;margin-bottom:15px}
-footer{text-align:center;padding:40px;border-top:1px solid rgba(0,255,255,0.3);color:#888;margin-top:60px}
+.btn-principal{display:inline-block;background:linear-gradient(90deg,#00ffff,#ff00ff);color:#000;padding:18px 45px;border-radius:15px;text-decoration:none;font-weight:900;font-family:'Orbitron';font-size:1.2em;box-shadow:0 0 25px rgba(0,255,255,0.4)}
+
+section{padding:60px 5%;max-width:1000px;margin:auto}
+h2{font-family:'Orbitron';text-align:center;font-size:2.2em;color:#00ffff;margin-bottom:40px;text-shadow:0 0 20px #00ffff}
+
+/* SERVICIOS */
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card-info{background:rgba(0,255,255,0.05);border:1px solid rgba(0,255,255,0.3);padding:30px;border-radius:20px;text-align:center}
+.card-info h3{font-family:'Orbitron';color:#00ffff;margin-bottom:10px}
+
+/* PORTAFOLIO */
+.grid-servicios{display:grid;gap:25px}
+.card-servicio{background:linear-gradient(145deg,#0a0a14,#05050a);border:1px solid rgba(0,255,255,0.3);border-radius:20px;padding:25px;transition:0.3s}
+.card-servicio:hover{transform:translateY(-8px);border-color:#00ffff;box-shadow:0 0 30px rgba(0,255,255,0.3)}
+.precio{font-family:'Orbitron';font-size:2.5em;color:#00ffff;font-weight:900;margin:10px 0;text-shadow:0 0 15px #00ffff}
+.botones{display:flex;gap:10px}
+.btn-demo{flex:1;background:transparent;border:2px solid #00ffff;color:#00ffff;padding:16px;border-radius:15px;text-decoration:none;font-weight:900;text-align:center;font-family:'Orbitron'}
+.btn-pedir{flex:1;background:linear-gradient(90deg,#00ffff,#00e6e6);color:#000;padding:16px;border-radius:15px;text-decoration:none;font-weight:900;text-align:center;font-family:'Orbitron'}
+
+/* SOPORTE */
+.soporte{background:rgba(0,255,255,0.05);border:2px solid #00ffff;border-radius:20px;padding:40px;text-align:center}
+.btn-wa-soporte{display:inline-block;background:#25D366;color:#fff;padding:18px 45px;border-radius:15px;text-decoration:none;font-weight:900;font-family:'Orbitron';font-size:1.1em;margin-top:15px}
+
+footer{text-align:center;padding:40px;border-top:1px solid rgba(0,255,255,0.3);color:#888}
 .whatsapp-btn{position:fixed;bottom:20px;right:20px;background:#25D366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2em;text-decoration:none}
 </style>
 </head>
 <body><div class="grid-bg"></div>
 
-<nav><div class="logo"><img src="https://files.evogb.win/HT1tmL.jpg">Yallico<span>Dev</span></div></nav>
+<nav>
+    <div class="logo"><img src="https://files.evogb.win/HT1tmL.jpg">Yallico<span>Dev</span></div>
+    <div class="menu">
+        <a href="#servicios">Servicios</a>
+        <a href="#portafolio">Portafolio</a>
+        <a href="#soporte">Soporte</a>
+    </div>
+</nav>
 
 <section class="hero">
     <div class="hero-content">
         <h1>> YallicoDev</h1>
         <p>Bots Personalizados + Hosting SSD de Alta Velocidad<br>Entrega rápida y soporte 24/7</p>
-        <a href="portafolio.html" class="btn-principal">VER PORTAFOLIO</a>
-        <a href="faq.html" class="btn-principal">VER FAQ</a>
+        <a href="#portafolio" class="btn-principal">VER PRECIOS</a>
     </div>
 </section>
 
-<div class="faq-cta">
-    <h3>¿TIENES DUDAS?</h3>
-    <p>Resuelve todas tus preguntas antes de comprar</p>
-    <a href="faq.html" class="btn-principal">IR A PREGUNTAS FRECUENTES</a>
+<!-- SECCION SERVICIOS -->
+<section id="servicios">
+<h2>> SERVICIOS</h2>
+<div class="grid-3">
+    <div class="card-info"><h3>⚡ Bots Personalizados</h3><p>Con +100 comandos, logo HD y panel admin. Para tu grupo o empresa.</p></div>
+    <div class="card-info"><h3>🚀 Hosting SSD</h3><p>Yo te lo instalo. 0 caídas, rápido y con soporte para mantenerlo online.</p></div>
+    <div class="card-info"><h3>🛡️ Mantenimiento</h3><p>Actualizaciones, anti-caídas y soporte técnico cuando lo necesites.</p></div>
 </div>
+</section>
+
+<!-- SECCION PORTAFOLIO -->
+<section id="portafolio">
+<h2>> PORTAFOLIO</h2>
+<div class="grid-servicios">
+    <div class="card-servicio">
+        <h3>Bot Personalizado</h3>
+        <div class="precio">S/ 30</div>
+        <div class="botones">
+            <a href="https://files.evogb.win/kyA46Q.mp4" target="_blank" class="btn-demo">Ver Demo</a>
+            <a href="pagos.html?servicio=Bot+Personalizado+S/30" class="btn-pedir">Pedir Ahora</a>
+        </div>
+    </div>
+    <div class="card-servicio">
+        <h3>Hosting SSD</h3>
+        <div class="precio">S/ 10</div>
+        <div class="botones">
+            <a href="https://files.evogb.win/KZD2Bf.mp4" target="_blank" class="btn-demo">Ver Demo</a>
+            <a href="pagos.html?servicio=Hosting+SSD+S/10" class="btn-pedir">Pedir Ahora</a>
+        </div>
+    </div>
+    <div class="card-servicio">
+        <h3>Bot Para Grupo</h3>
+        <div class="precio">S/ 15</div>
+        <div class="botones">
+            <a href="https://files.evogb.win/39TPXD.mp4" target="_blank" class="btn-demo">Ver Demo</a>
+            <a href="pagos.html?servicio=Bot+Para+Grupo+S/15" class="btn-pedir">Pedir Ahora</a>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- SECCION SOPORTE -->
+<section id="soporte">
+<h2>> SOPORTE 24/7</h2>
+<div class="soporte">
+    <h3>¿Tienes un problema o duda?</h3>
+    <p>Te respondo en menos de 5 minutos. Estoy para ayudarte antes y después de tu compra.</p>
+    <a href="https://wa.me/51936994155" target="_blank" class="btn-wa-soporte">HABLAR CON SOPORTE</a>
+</div>
+</section>
 
 <a href="https://wa.me/51936994155" target="_blank" class="whatsapp-btn">💬</a>
 <footer><p>© 2026 YallicoDev | SYSTEM ONLINE</p></footer>
