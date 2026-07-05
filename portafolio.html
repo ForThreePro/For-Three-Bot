@@ -40,8 +40,16 @@ h2{font-family:'Orbitron';text-align:center;font-size:2.5em;color:#00ffff;margin
 .btn-pedir{flex:1;background:linear-gradient(90deg,#00ffff,#ff00ff);color:#000;padding:14px;border-radius:10px;text-decoration:none;font-weight:900;text-align:center;font-family:'Orbitron';transition:0.3s}
 .btn-pedir:hover{transform:scale(1.05);box-shadow:0 0 25px #ff00ff}
 
+/* SECCION SOPORTE */
+.card-soporte{background:linear-gradient(145deg,#0a0a14,#05050a);border-radius:20px;padding:30px;transition:0.3s;opacity:0;transform:translateY(50px)}
+.card-soporte.visible{animation:fadeUp 0.8s forwards}
+.card-soporte:hover{transform:translateY(-10px)}
+.card-soporte h3{font-family:'Orbitron';font-size:1.4em;margin-bottom:15px}
+.card-soporte ul{list-style:none;color:#ccc;line-height:2}
+
 @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
 footer{text-align:center;padding:40px;border-top:1px solid rgba(0,255,255,0.3);color:#888}
+@media(max-width:768px){.card-botones{flex-direction:column}}
 </style>
 </head>
 <body><div class="grid-bg"></div>
@@ -108,18 +116,62 @@ footer{text-align:center;padding:40px;border-top:1px solid rgba(0,255,255,0.3);c
         </div>
     </div>
 </div>
+
+<!-- SECCIÓN SOPORTE Y REGLAS -->
+<div style="margin-top:100px; max-width:1200px; margin:auto">
+    <h2 style="margin-top:60px">> SOPORTE Y REGLAS</h2>
+    
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;margin-top:40px">
+        
+        <!-- CARD SOPORTE -->
+        <div class="card-soporte" style="border:2px solid #00ffff">
+            <h3 style="color:#00ffff">🛡️ GARANTÍA + SOPORTE</h3>
+            <ul>
+                <li>✓ <b>Soporte 24/7</b> por WhatsApp</li>
+                <li>✓ <b>Garantía 15 días</b> por errores</li>
+                <li>✓ <b>Actualizaciones</b> incluidas 1 mes</li>
+                <li>✓ <b>Instalación gratis</b> yo lo configuro todo</li>
+            </ul>
+        </div>
+
+        <!-- CARD REGLAS -->
+        <div class="card-soporte" style="border:2px solid #ff00ff">
+            <h3 style="color:#ff00ff">📋 REGLAS DE COMPRA</h3>
+            <ul>
+                <li>1. <b>50% Adelanto</b> para empezar el trabajo</li>
+                <li>2. <b>50% Al entregar</b> antes de dar accesos</li>
+                <li>3. <b>Tiempo de entrega:</b> 24h - 72h</li>
+                <li>4. <b>No reembolsos</b> una vez iniciado</li>
+            </ul>
+        </div>
+
+        <!-- CARD PAGO -->
+        <div class="card-soporte" style="border:2px solid #00ffff">
+            <h3 style="color:#00ffff">💳 MÉTODOS DE PAGO</h3>
+            <ul>
+                <li>✓ <b>Yape:</b> 936 994 155</li>
+                <li>✓ <b>Plin:</b> 936 994 155</li>
+                <li>✓ <b>BCP:</b> CCI 002-XXX-XXXXXXX</li>
+                <li>✓ <b>Paypal:</b> Consultar</li>
+            </ul>
+            <a href="pagos.html" style="display:block;background:linear-gradient(90deg,#00ffff,#ff00ff);color:#000;padding:14px;border-radius:12px;text-decoration:none;font-weight:900;text-align:center;margin-top:15px;font-family:'Orbitron'">Ir a Pagar</a>
+        </div>
+
+    </div>
+</div>
+
 </section>
 <footer><p>© 2026 YallicoDev | ¿Tienes un proyecto? <a href="https://wa.me/51936994155" style="color:#00ffff">Hablemos</a></p></footer>
 
 <script>
 // ANIMACIÓN AL HACER SCROLL
-const cards = document.querySelectorAll('.card-cyber');
+const cards = document.querySelectorAll('.card-cyber, .card-soporte');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
         if(entry.isIntersecting){
             setTimeout(() => {
                 entry.target.classList.add('visible');
-            }, index * 150); // Aparecen 1 por 1
+            }, index * 150);
         }
     });
 }, {threshold: 0.1});
