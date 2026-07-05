@@ -3,103 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yallico Dev | Servicios Gamer PRO</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+    <title>YallicoDev | Cyber Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="bg-gamer"></div>
-    <div class="particles"></div>
+    <div class="grid-bg"></div>
 
     <nav>
         <h2 class="logo">Yallico<span>Dev</span></h2>
         <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#portafolio">Portafolio</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="portafolio.html">Portafolio</a></li>
             <li><a href="reglas.html">Reglas</a></li>
             <li><a href="soporte.html">Soporte</a></li>
         </ul>
         <button id="btnTema" class="btn-tema">🌙</button>
     </nav>
 
-    <header id="inicio" class="fade-in">
-        <div class="glitch" data-text="YALLICO DEV">YALLICO DEV</div>
-        <p class="subtitulo">> Desarrollador de Bots y Webs Profesionales</p>
+    <header id="inicio">
+        <h1 class="titulo-cyber">YALLICO DEV</h1>
+        <p class="sub-cyber">> Desarrollador de Bots y Webs Profesionales</p>
+        
         <div class="btns-header">
-            <button id="btnVerServicios">Ver Servicios</button>
-            <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk" target="_blank" class="btn-grupo">📢 Unirme al Grupo</a>
+            <a href="servicios.html" class="btn-cyber">Ver Servicios</a>
+            <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk" target="_blank" class="btn-grupo-cyber">📢 Unirme al Grupo</a>
         </div>
-        <div class="stats-rapidas">
+
+        <div class="stats-cyber">
             <div><span>⚡</span> Entrega 24h</div>
             <div><span>🛡️</span> Garantía 7 días</div>
             <div><span>💚</span> Soporte 24/7</div>
         </div>
     </header>
 
-    <section class="contador-section fade-in">
-        <div class="contador-box">
-            <div class="contador-item"><h3 id="contBots">0</h3><p>Bots Entregados</p></div>
-            <div class="contador-item"><h3 id="contClientes">0</h3><p>Clientes Felices</p></div>
-            <div class="contador-item"><h3>99.9%</h3><p>Uptime</p></div>
+    <section class="contador-cyber">
+        <div class="stat-box"><h3>+127</h3><p>Bots Entregados</p></div>
+        <div class="stat-box"><h3>+89</h3><p>Clientes Felices</p></div>
+        <div class="stat-box"><h3>99.9%</h3><p>Uptime</p></div>
+    </section>
+
+    <section id="servicios-preview">
+        <h2>> SERVICIOS PREMIUM_</h2>
+        <div class="grid-cyber">
+            <div class="card-cyber">
+                <h3>Bot Personalizado</h3>
+                <p class="precio-cyber">S/ 30</p>
+                <a href="servicios.html#bot-personalizado" class="btn-card">Ver Detalles</a>
+            </div>
+            <div class="card-cyber">
+                <h3>Bot Para Grupo</h3>
+                <p class="precio-cyber">S/ 7</p>
+                <a href="servicios.html#bot-grupo" class="btn-card">Ver Detalles</a>
+            </div>
+            <div class="card-cyber">
+                <h3>Hosting SSD</h3>
+                <p class="precio-cyber">S/ 10</p>
+                <a href="servicios.html#hosting" class="btn-card">Ver Detalles</a>
+            </div>
+            <div class="card-cyber">
+                <h3>Página Web</h3>
+                <p class="precio-cyber">S/ 15</p>
+                <a href="servicios.html#web" class="btn-card">Ver Detalles</a>
+            </div>
         </div>
+        <a href="servicios.html" class="btn-ver-todo">Ver Todos los Servicios →</a>
     </section>
 
-    <section id="servicios">
-        <h2 class="fade-in">> SERVICIOS PREMIUM_</h2>
-        <div class="grid-servicios">
-            <div class="card fade-in"><div class="etiqueta">MAS VENDIDO</div><div class="precio">S/ 30</div><h3>Bot Personalizado</h3><ul><li>✓ +100 Comandos Sin Errores</li><li>✓ Logo + Nombre HD</li><li>✓ Soporte 24/7</li><li>✓ Hosting 1 Mes Gratis</li></ul><button class="btn-pedir" data-servicio="Bot Personalizado" data-precio="30">Pedir Ahora</button></div>
-            <div class="card fade-in"><div class="precio">S/ 7</div><h3>Bot Para Grupo</h3><ul><li>✓ +100 Comandos</li><li>✓ Bot For Three</li><li>✓ 0 Instalación</li><li>✓ Permanente + Garantía</li></ul><button class="btn-pedir" data-servicio="Bot Para Grupo" data-precio="7">Pedir Ahora</button></div>
-            <div class="card fade-in"><div class="precio">S/ 10</div><h3>Hosting SSD</h3><ul><li>✓ Yo Lo Instalo</li><li>✓ Soporte 24/7</li><li>✓ 0 Caídas</li></ul><button class="btn-pedir" data-servicio="Hosting" data-precio="10">Pedir Ahora</button></div>
-            <div class="card fade-in"><div class="precio">S/ 15</div><h3>Página Web Gamer</h3><ul><li>✓ Diseño Personalizable</li><li>✓ 0 Caídas</li><li>✓ Entrega Rápida</li></ul><button class="btn-pedir" data-servicio="Página Web" data-precio="15">Pedir Ahora</button></div>
+    <footer>
+        <p>© 2026 YallicoDev | SYSTEM ONLINE</p>
+        <div class="footer-links">
+            <a href="reglas.html">Reglas</a>
+            <a href="soporte.html">Soporte</a>
+            <a href="portafolio.html">Portafolio</a>
         </div>
-    </section>
+    </footer>
 
-    <section id="calculadora">
-        <h2 class="fade-in">> COTIZADOR INTELIGENTE_</h2>
-        <div class="calc-box fade-in">
-            <h3>Arma tu paquete:</h3>
-            <label><input type="checkbox" class="calc-item" data-precio="30"> Bot Personalizado - S/30</label>
-            <label><input type="checkbox" class="calc-item" data-precio="7"> Bot Para Grupo - S/7</label>
-            <label><input type="checkbox" class="calc-item" data-precio="10"> Hosting - S/10</label>
-            <label><input type="checkbox" class="calc-item" data-precio="15"> Página Web - S/15</label>
-            <div class="total-box"><p>Total: <span id="totalPrecio">S/ 0</span></p><button id="btnCotizarWA">Cotizar por WhatsApp</button></div>
-        </div>
-    </section>
-
-    <section id="portafolio">
-        <h2 class="fade-in">> PORTAFOLIO_</h2>
-        <div class="grid-portafolio">
-            <div class="porta-item fade-in"><img src="https://via.placeholder.com/400x250/00ff00/000?text=Bot+Tienda"><div class="overlay"><h4>Bot Tienda WhatsApp</h4><p>+150 comandos, sistema de pagos</p></div></div>
-            <div class="porta-item fade-in"><img src="https://via.placeholder.com/400x250/ff00ff/000?text=Bot+Grupo"><div class="overlay"><h4>Bot Moderación</h4><p>Antispam, bienvenidas, admin</p></div></div>
-            <div class="porta-item fade-in"><img src="https://via.placeholder.com/400x250/00ffff/000?text=Pagina+Web"><div class="overlay"><h4>Landing Page</h4><p>Diseño responsive + conexión WA</p></div></div>
-        </div>
-    </section>
-
-    <section id="formulario">
-        <h2 class="fade-in">> HAZ TU PEDIDO_</h2>
-        <form id="formPedido" class="form-box fade-in">
-            <input type="text" id="nombre" placeholder="Tu Nombre" required>
-            <input type="text" id="servicio" placeholder="¿Qué servicio deseas?" required>
-            <input type="number" id="presupuesto" placeholder="Tu Presupuesto S/" required>
-            <textarea id="mensaje" placeholder="Cuéntame más detalles..." rows="4"></textarea>
-            <button type="submit">Enviar Pedido por WhatsApp</button>
-        </form>
-    </section>
-
-    <section id="pago">
-        <h2 class="fade-in">> MÉTODOS DE PAGO_</h2>
-        <div class="pago-box fade-in">
-            <h3>💚 Yape</h3>
-            <p><b>Número:</b> +51 936 994 155</p>
-            <p><b>Nombre:</b> Cristhofer Rojas</p>
-            <a href="https://wa.me/51936994155" target="_blank" class="btn-wa">Enviar Comprobante</a>
-        </div>
-    </section>
-
-    <footer><p>© 2026 Yallico Dev | SYSTEM ONLINE | v2.0</p></footer>
-
-    <a href="https://wa.me/51936994155" class="btn-flotante-wa" target="_blank">💬</a>
+    <a href="https://wa.me/51936994155" class="btn-flotante" target="_blank">💬</a>
     <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk" class="btn-flotante-grupo" target="_blank">📢</a>
     <script src="script.js"></script>
 </body>
