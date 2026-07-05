@@ -4,29 +4,35 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reglas - YallicoDev</title>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{background:#05050a;color:#fff;font-family:'Rajdhani',sans-serif}
-.grid-bg{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 50% 50%, rgba(0,255,255,0.08) 0%, transparent 70%);z-index:-1}
-nav{background:rgba(5,5,10,0.9);padding:15px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #00ffff}
-.logo{font-family:'Orbitron';color:#00ffff;font-size:1.5em;font-weight:900;display:flex;align-items:center;gap:10px}
-.logo img{height:40px;border-radius:8px;border:1px solid #00ffff}
-.btn-volver{background:transparent;border:2px solid #00ffff;color:#00ffff;padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:900;font-family:'Orbitron'}
-section{padding:60px 5%;max-width:800px;margin:auto}
-h2{font-family:'Orbitron';text-align:center;font-size:2.2em;color:#00ffff;margin-bottom:30px;text-shadow:0 0 20px #00ffff}
-.regla{background:rgba(0,255,255,0.05);border-left:4px solid #00ffff;padding:20px;margin-bottom:15px;border-radius:10px}
+/* ESTILOS SOLO PARA ESTA PAGINA */
+.regla{background:rgba(0,255,255,0.05);border-left:4px solid #00ffff;padding:20px;margin-bottom:15px;border-radius:10px;transition:0.3s}
+.regla:hover{border-color:#ff00ff;transform:translateX(5px)}
 .regla h3{color:#00ffff;font-family:'Orbitron';margin-bottom:8px}
+
+/* MODO CLARO */
+body.light-mode .regla{background:rgba(0,119,255,0.05);border-left:4px solid #0077ff}
+body.light-mode .regla h3{color:#0077ff}
 </style>
 </head>
 <body><div class="grid-bg"></div>
 <nav>
     <div class="logo"><img src="https://files.evogb.win/HT1tmL.jpg">Yallico<span>Dev</span></div>
-    <a href="index.html" class="btn-volver">← INICIO</a>
+    <div class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="soporte.html">Soporte</a>
+        <a href="faq.html">FAQ</a>
+        <button id="btnTema">☀️</button>
+    </div>
 </nav>
-<section>
+<section style="max-width:800px;margin:auto">
 <h2>> REGLAS Y TÉRMINOS</h2>
 <div class="regla"><h3>1. PAGO ANTICIPADO</h3><p>Todo servicio se paga al 100% antes de empezar. Acepto Yape, Plin y BCP.</p></div>
 <div class="regla"><h3>2. TIEMPO DE ENTREGA</h3><p>Bots: 1 a 3 horas. Hosting: Instalación inmediata. No hago reembolso si ya se entregó.</p></div>
 <div class="regla"><h3>3. GARANTÍA</h3><p>7 días de soporte gratis por fallas. No cubre si modificas el código.</p></div>
-<div class="regla"><h3>4. PROHIBIDO</h3><p>Queda prohibido usar los bots para estafas, spam masivo o cosas ilegales.</p></div>
+<div class="regla"><h3>4. PROHIBIDO</h3><p>Queda prohibido usar los bots para estafas, spam masivo o cosas ilegales. Se cancela el servicio sin reembolso.</p></div>
 </section>
+<script src="script.js"></script>
 </body></html>
