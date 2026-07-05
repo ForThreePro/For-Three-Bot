@@ -4,28 +4,36 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FAQ - YallicoDev</title>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{background:#05050a;color:#fff;font-family:'Rajdhani',sans-serif}
-.grid-bg{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 50% 50%, rgba(0,255,255,0.08) 0%, transparent 70%);z-index:-1}
-nav{background:rgba(5,5,10,0.9);padding:15px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #00ffff}
-.logo{font-family:'Orbitron';color:#00ffff;font-size:1.5em;font-weight:900;display:flex;align-items:center;gap:10px}
-.logo img{height:40px;border-radius:8px;border:1px solid #00ffff}
-.btn-volver{background:transparent;border:2px solid #00ffff;color:#00ffff;padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:900;font-family:'Orbitron'}
-section{padding:60px 5%;max-width:800px;margin:auto}
-h2{font-family:'Orbitron';text-align:center;font-size:2.2em;color:#00ffff;margin-bottom:30px;text-shadow:0 0 20px #00ffff}
-.faq-item{background:rgba(0,255,255,0.05);border:1px solid rgba(0,255,255,0.3);padding:20px;margin-bottom:15px;border-radius:15px}
+/* ESTILOS SOLO PARA ESTA PAGINA */
+.faq-item{background:rgba(0,255,255,0.05);border:1px solid rgba(0,255,255,0.3);padding:20px;margin-bottom:15px;border-radius:15px;transition:0.3s}
+.faq-item:hover{border-color:#00ffff;box-shadow:0 0 20px rgba(0,255,255,0.2)}
 .faq-item h3{color:#00ffff;font-family:'Orbitron';margin-bottom:10px}
+
+/* MODO CLARO */
+body.light-mode .faq-item{background:#fff;border:1px solid #ddd}
+body.light-mode .faq-item h3{color:#0077ff}
 </style>
 </head>
 <body><div class="grid-bg"></div>
 <nav>
     <div class="logo"><img src="https://files.evogb.win/HT1tmL.jpg">Yallico<span>Dev</span></div>
-    <a href="index.html" class="btn-volver">← INICIO</a>
+    <div class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="soporte.html">Soporte</a>
+        <a href="reglas.html">Reglas</a>
+        <button id="btnTema">☀️</button>
+    </div>
 </nav>
-<section>
+<section style="max-width:800px;margin:auto">
 <h2>> PREGUNTAS FRECUENTES</h2>
 <div class="faq-item"><h3>¿Cuánto demora la entrega?</h3><p>De 1 a 3 horas después de confirmar tu pago. Hosting se entrega al instante.</p></div>
-<div class="faq-item"><h3>¿Doy soporte después de la compra?</h3><p>Sí. 7 días de soporte gratis. Después cobro S/5 por mantenimiento.</p></div>
-<div class="faq-item"><h3>¿Qué pasa si mi bot se cae?</h3><p>Si es por mi hosting yo lo arreglo gratis. Si es por tu culpa cobro S/10.</p></div>
+<div class="faq-item"><h3>¿Doy soporte después de la compra?</h3><p>Sí. 7 días de soporte gratis. Después cobro S/5 por mantenimiento mensual.</p></div>
+<div class="faq-item"><h3>¿Qué pasa si mi bot se cae?</h3><p>Si es por mi hosting yo lo arreglo gratis. Si es por tu culpa cobro S/10 la reparación.</p></div>
+<div class="faq-item"><h3>¿Puedo pedir reembolso?</h3><p>No. Una vez entregado el producto no hay devoluciones. Pero tienes garantía de 7 días.</p></div>
+<div class="faq-item"><h3>¿Trabajas 24/7?</h3><p>Si. Atiendo de 8am a 11pm todos los días. Fuera de ese horario respondo al día siguiente.</p></div>
 </section>
+<script src="script.js"></script>
 </body></html>
