@@ -2,34 +2,65 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Soporte - Yallico Dev</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte - YallicoDev</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="bg-gamer"></div>
+    <div class="grid-bg"></div>
+
     <nav>
         <h2 class="logo">Yallico<span>Dev</span></h2>
-        <ul><li><a href="index.html">Inicio</a></li><li><a href="reglas.html">Reglas</a></li><li><a href="soporte.html">Soporte</a></li></ul>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="portafolio.html">Portafolio</a></li>
+            <li><a href="reglas.html">Reglas</a></li>
+            <li><a href="soporte.html">Soporte</a></li>
+        </ul>
+        <button id="btnTema" class="btn-tema">🌙</button>
     </nav>
 
-    <section>
-        <h2>> CENTRO DE SOPORTE_</h2>
-        <div class="form-box">
-            <h3>¿Tienes un problema con tu bot?</h3>
+    <section style="padding: 80px 5%;">
+        <h2 style="text-align: center; font-family: 'Orbitron'; font-size: 2.5em; color: #00ffff; margin-bottom: 50px;">> CENTRO DE SOPORTE_</h2>
+        
+        <div class="card-cyber" style="max-width: 600px; margin: auto;">
+            <h3 style="color: #00ffff; text-align: center; margin-bottom: 20px;">¿Tienes un problema?</h3>
             <form id="formSoporte">
-                <input type="text" id="nombreS" placeholder="Tu Nombre" required>
-                <input type="text" id="idPedido" placeholder="ID de Pedido o Fecha" required>
-                <textarea id="problema" placeholder="Describe el problema..." rows="5" required></textarea>
-                <button type="submit">Enviar Ticket a WhatsApp</button>
+                <input type="text" id="nombreS" placeholder="Tu Nombre" required style="width: 100%; background: #111; border: 1px solid #00ffff; padding: 15px; border-radius: 10px; color: #fff; margin-bottom: 15px;">
+                <input type="text" id="idPedido" placeholder="ID de Pedido o Fecha" required style="width: 100%; background: #111; border: 1px solid #00ffff; padding: 15px; border-radius: 10px; color: #fff; margin-bottom: 15px;">
+                <textarea id="problema" placeholder="Describe el problema..." rows="5" required style="width: 100%; background: #111; border: 1px solid #00ffff; padding: 15px; border-radius: 10px; color: #fff; margin-bottom: 15px;"></textarea>
+                <button type="submit" class="btn-cyber" style="width: 100%; border: none;">Enviar Ticket a WhatsApp</button>
             </form>
         </div>
-        <div class="pago-box" style="margin-top: 30px;">
-            <h3>📢 Únete al Grupo de Soporte</h3>
-            <p>Ayuda entre usuarios y anuncios importantes</p>
-            <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk" target="_blank" class="btn-grupo">Unirme al Grupo</a>
+
+        <div class="card-cyber" style="max-width: 600px; margin: 30px auto 0; text-align: center;">
+            <h3 style="color: #25D366;">📢 Grupo de Soporte y Comunidad</h3>
+            <p style="margin: 15px 0;">Únete para soporte entre usuarios, anuncios y sorteos</p>
+            <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk" target="_blank" class="btn-grupo-cyber">Unirme al Grupo</a>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="reglas.html" class="btn-card">Leer Reglas</a>
         </div>
     </section>
+
+    <footer>
+        <p>© 2026 YallicoDev | SYSTEM ONLINE</p>
+    </footer>
+    
+    <script>
+    // JS para enviar soporte a WA
+    document.getElementById('formSoporte')?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nombre = document.getElementById('nombreS').value;
+        const id = document.getElementById('idPedido').value;
+        const problema = document.getElementById('problema').value;
+        const texto = `TICKET DE SOPORTE%0A%0ANombre: ${nombre}%0AID: ${id}%0AProblema: ${problema}`;
+        window.open(`https://wa.me/51936994155?text=${texto}`, '_blank');
+    });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
