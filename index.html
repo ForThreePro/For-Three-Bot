@@ -1,83 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YallicoDev - Bots y Hosting SSD</title>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whois Dev - Servicios Gamer</title>
 <link rel="stylesheet" href="style.css">
+<style>
+  .hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(180deg, rgba(0,240,255,0.1), transparent);
+  }
+  .hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    animation: glow 2s infinite alternate;
+  }
+  @keyframes glow {
+    from { text-shadow: 0 0 10px #00f0ff; }
+    to { text-shadow: 0 0 30px #00ffea; }
+  }
+  .hero p { font-size: 1.2em; color: #8a9bb8; margin-bottom: 30px; }
+  
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 60px;
+  }
+  .feature {
+    background: #0f1525;
+    border: 1px solid #00f0ff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+  }
+  .feature:hover { transform: translateY(-5px); box-shadow: 0 0 20px rgba(0,240,255,0.4); }
+  .feature h3 { color: #00f0ff; margin-bottom: 10px; font-family: 'Orbitron'; }
+</style>
 </head>
-<body><div class="grid-bg"></div>
+<body>
 
-<nav>
-    <div class="logo"><img src="https://files.evogb.win/HT1tmL.jpg">Yallico<span>Dev</span></div>
-    <div class="menu">
-        <a href="servicios.html">Servicios</a>
-        <a href="#portafolio">Portafolio</a>
-        <a href="soporte.html">Soporte</a>
-        <a href="reglas.html">Reglas</a>
-        <a href="faq.html">FAQ</a>
-        <button id="btnTema">☀️</button>
-    </div>
-</nav>
+<header>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="portafolio.html">Portafolio</a>
+    <a href="pagos.html">Pagos</a>
+    <a href="faq.html">FAQ</a>
+    <a href="reglas.html">Reglas</a>
+    <a href="soporte.html">Soporte</a>
+  </nav>
+</header>
 
 <section class="hero">
-    <div class="hero-content">
-        <h1>> YallicoDev</h1>
-        <p>Bots Personalizados + Hosting SSD de Alta Velocidad<br>Entrega rápida y soporte 24/7</p>
-        <a href="#portafolio" class="btn-principal">VER PRECIOS</a>
-    </div>
+  <h1>WHOIS DEV</h1>
+  <p>Desarrollo de Bots, Webs y Hosting para Gamers ⚡</p>
+  <a href="servicios.html" class="btn">VER SERVICIOS</a>
 </section>
 
-<section id="servicios">
-<h2>> SERVICIOS</h2>
-<div class="grid-3">
-    <div class="card-info"><h3>⚡ Bots Personalizados</h3><p>Con +100 comandos, logo HD y panel admin. Para tu grupo o empresa.</p></div>
-    <div class="card-info"><h3>🚀 Hosting SSD</h3><p>Yo te lo instalo. 0 caídas, rápido y con soporte para mantenerlo online.</p></div>
-    <div class="card-info"><h3>🛡️ Mantenimiento</h3><p>Actualizaciones, anti-caídas y soporte técnico cuando lo necesites.</p></div>
+<div class="container">
+  <h2 style="text-align:center; margin-bottom:30px;">¿POR QUÉ ELEGIRME?</h2>
+  <div class="features">
+    <div class="feature">
+      <h3>ENTREGA RÁPIDA</h3>
+      <p>Trabajos listos en 24-48h. Sin demoras.</p>
+    </div>
+    <div class="feature">
+      <h3>SOPORTE 24/7</h3>
+      <p>Estoy disponible para ayudarte cuando lo necesites.</p>
+    </div>
+    <div class="feature">
+      <h3>100% PERSONALIZADO</h3>
+      <p>Diseño y comandos hechos a tu gusto Gamer.</p>
+    </div>
+  </div>
 </div>
-</section>
-
-<section id="portafolio">
-<h2>> PORTAFOLIO</h2>
-<div class="grid-servicios">
-    <div class="card-servicio">
-        <h3>Bot Personalizado</h3>
-        <div class="precio">S/ 30</div>
-        <div class="botones">
-            <a href="https://files.evogb.win/kyA46Q.mp4" target="_blank" class="btn-demo">Ver Demo</a>
-            <a href="pagos.html?servicio=Bot+Personalizado+S/30" class="btn-pedir">Pedir Ahora</a>
-        </div>
-    </div>
-    <div class="card-servicio">
-        <h3>Hosting SSD</h3>
-        <div class="precio">S/ 10</div>
-        <div class="botones">
-            <a href="https://files.evogb.win/KZD2Bf.mp4" target="_blank" class="btn-demo">Ver Demo</a>
-            <a href="pagos.html?servicio=Hosting+SSD+S/10" class="btn-pedir">Pedir Ahora</a>
-        </div>
-    </div>
-    <div class="card-servicio">
-        <h3>Bot Para Grupo</h3>
-        <div class="precio">S/ 15</div>
-        <div class="botones">
-            <a href="https://files.evogb.win/39TPXD.mp4" target="_blank" class="btn-demo">Ver Demo</a>
-            <a href="pagos.html?servicio=Bot+Para+Grupo+S/15" class="btn-pedir">Pedir Ahora</a>
-        </div>
-    </div>
-</div>
-</section>
-
-<section id="soporte">
-<h2>> SOPORTE 24/7</h2>
-<div class="soporte">
-    <h3>¿Tienes un problema o duda?</h3>
-    <p>Te respondo en menos de 5 minutos. Estoy para ayudarte antes y después de tu compra.</p>
-    <a href="https://wa.me/51936994155" target="_blank" class="btn-wa-soporte">HABLAR CON SOPORTE</a>
-</div>
-</section>
-
-<a href="https://wa.me/51936994155" target="_blank" class="whatsapp-btn">💬</a>
-<footer><p>© 2026 YallicoDev | SYSTEM ONLINE</p></footer>
 
 <script src="script.js"></script>
-</body></html>
+</body>
+</html>
