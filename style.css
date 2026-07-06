@@ -1,103 +1,45 @@
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#05050a;color:#fff;font-family:'Rajdhani',sans-serif;transition:0.3s}
-.grid-bg{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 50% 50%, rgba(0,255,255,0.08) 0%, transparent 70%);z-index:-1;transition:0.3s}
-nav{background:rgba(5,5,10,0.9);padding:15px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #00ffff;position:sticky;top:0;z-index:100;transition:0.3s;flex-wrap:wrap}
-.logo{font-family:'Orbitron';color:#00ffff;font-size:1.5em;font-weight:900;display:flex;align-items:center;gap:10px}
-.logo img{height:40px;border-radius:8px;border:1px solid #00ffff}
-.menu{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-.menu a{color:#00ffff;text-decoration:none;font-weight:700;transition:0.2s;font-size:0.95em}
-.menu a:hover{text-shadow:0 0 10px #00ffff}
-#btnTema{background:transparent;border:2px solid #00ffff;color:#00ffff;padding:8px 14px;border-radius:10px;cursor:pointer;font-size:1.2em;font-family:'Orbitron';transition:0.3s}
-#btnTema:hover{box-shadow:0 0 15px #00ffff}
-.hero{min-height:85vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:60px 5%}
-.hero-content h1{font-family:'Orbitron';font-size:3.5em;color:#00ffff;text-shadow:0 0 30px #00ffff;margin-bottom:20px}
-.hero-content p{font-size:1.3em;color:#aaa;margin-bottom:30px}
-.btn-principal{display:inline-block;background:linear-gradient(90deg,#00ffff,#ff00ff);color:#000;padding:18px 45px;border-radius:15px;text-decoration:none;font-weight:900;font-family:'Orbitron';font-size:1.2em;box-shadow:0 0 25px rgba(0,255,255,0.4)}
-section{padding:60px 5%;max-width:1000px;margin:auto}
-h2{font-family:'Orbitron';text-align:center;font-size:2.2em;color:#00ffff;margin-bottom:40px;text-shadow:0 0 20px #00ffff}
-.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.card-info{background:rgba(0,255,255,0.05);border:1px solid rgba(0,255,255,0.3);padding:30px;border-radius:20px;text-align:center;transition:0.3s}
-.card-info:hover{transform:translateY(-5px);border-color:#00ffff}
-.card-info h3{font-family:'Orbitron';color:#00ffff;margin-bottom:10px;font-size:1.2em}
-.card-miembros{color:#00ffff;font-weight:700;font-size:0.9em;margin:8px 0;text-shadow:0 0 10px rgba(0,255,255,0.5)}
-.grid-servicios{display:grid;gap:25px}
-.card-servicio{background:linear-gradient(145deg,#0a0a14,#05050a);border:1px solid rgba(0,255,255,0.3);border-radius:20px;padding:25px;transition:0.3s}
-.card-servicio:hover{transform:translateY(-8px);border-color:#00ffff;box-shadow:0 0 30px rgba(0,255,255,0.3)}
-.precio{font-family:'Orbitron';font-size:2.5em;color:#00ffff;font-weight:900;margin:10px 0;text-shadow:0 0 15px #00ffff}
-.botones{display:flex;gap:10px}
-.btn-demo{flex:1;background:transparent;border:2px solid #00ffff;color:#00ffff;padding:16px;border-radius:15px;text-decoration:none;font-weight:900;text-align:center;font-family:'Orbitron'}
-.btn-pedir{flex:1;background:linear-gradient(90deg,#00ffff,#00e6e6);color:#000;padding:16px;border-radius:15px;text-decoration:none;font-weight:900;text-align:center;font-family:'Orbitron'}
-.soporte{background:rgba(0,255,255,0.05);border:2px solid #00ffff;border-radius:20px;padding:40px;text-align:center}
-.btn-wa-soporte{display:inline-block;background:#25D366;color:#fff;padding:18px 45px;border-radius:15px;text-decoration:none;font-weight:900;font-family:'Orbitron';font-size:1.1em;margin-top:15px;transition:0.3s}
-.btn-wa-soporte:hover{transform:translateY(-3px);box-shadow:0 0 25px rgba(37,211,102,0.5)}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;600&display=swap');
 
-/* BOTON GRUPO OFICIAL */
-.btn-wa-grupo{
-    display:inline-block;
-    background:linear-gradient(90deg,#00ffff,#ff00ff);
-    color:#000;
-    padding:16px 35px;
-    border-radius:15px;
-    text-decoration:none;
-    font-weight:900;
-    font-family:'Orbitron';
-    font-size:1em;
-    margin-top:15px;
-    box-shadow:0 0 20px rgba(0,255,255,0.4);
-    transition:0.3s
-}
-.btn-wa-grupo:hover{
-    transform:translateY(-3px);
-    box-shadow:0 0 30px rgba(255,0,255,0.5)
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    background: #05070f; 
+    color: #e0e8ff; 
+    font-family: 'Poppins', sans-serif;
+    background-image: radial-gradient(circle at 20% 50%, rgba(0,240,255,0.1) 0%, transparent 50%);
 }
 
-footer{text-align:center;padding:40px;border-top:1px solid rgba(0,255,255,0.3);color:#888}
-.whatsapp-btn{position:fixed;bottom:20px;right:20px;background:#25D366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2em;text-decoration:none;box-shadow:0 0 20px rgba(37,211,102,0.5);z-index:99}
-
-/* MODO CLARO */
-body.light-mode{background:#f0f0f5;color:#111}
-body.light-mode .grid-bg{background:radial-gradient(circle at 50% 50%, rgba(0,119,255,0.05) 0%, transparent 70%)}
-body.light-mode nav{background:rgba(255,255,255,0.9);border-bottom:2px solid #0077ff}
-body.light-mode .logo{color:#0077ff}
-body.light-mode .menu a{color:#0077ff}
-body.light-mode #btnTema{border-color:#0077ff;color:#0077ff}
-body.light-mode h2{color:#0077ff;text-shadow:0 0 10px rgba(0,119,255,0.3)}
-body.light-mode .hero-content h1{color:#0077ff;text-shadow:0 0 20px rgba(0,119,255,0.3)}
-body.light-mode .card-servicio, 
-body.light-mode .card-info,
-body.light-mode .soporte{background:#fff;border:1px solid #ddd}
-body.light-mode .precio{color:#0077ff;text-shadow:none}
-body.light-mode .btn-demo{border-color:#0077ff;color:#0077ff}
-body.light-mode .btn-wa-grupo{background:linear-gradient(90deg,#0077ff,#00ccff);color:#fff}
-body.light-mode .card-miembros{color:#0077ff;text-shadow:0 0 5px rgba(0,119,255,0.3)}
-body.light-mode footer{border-top:1px solid #ddd;color:#555}
-
-/* NAV 2 LINEAS PARA CEL */
-@media (max-width: 768px){
-    nav{padding:12px 4%;flex-direction:column;gap:12px;position:relative}
-    .logo{width:100%;justify-content:center;font-size:1.4em}
-    .menu{width:100%;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-    .menu a{font-size:0.85em;padding:6px 8px}
-    #btnTema{position:absolute;top:12px;right:10px;padding:6px 10px;font-size:1.1em}
-    
-    .hero{min-height:70vh;padding:40px 4%}
-    .hero-content h1{font-size:2.2em}
-    .hero-content p{font-size:1em}
-    .btn-principal{padding:15px 30px;font-size:1em}
-    
-    section{padding:40px 4%}
-    h2{font-size:1.6em}
-    .grid-3, .grid-servicios{grid-template-columns:1fr;gap:15px}
-    .card-servicio, .card-info{padding:20px}
-    .precio{font-size:2em}
-    .botones{flex-direction:column}
-    .btn-demo, .btn-pedir{padding:14px}
-    .soporte{padding:25px 20px}
-    .btn-wa-soporte, .btn-wa-grupo{padding:15px 25px;font-size:1em;width:100%}
-    .whatsapp-btn{width:50px;height:50px;font-size:1.5em;bottom:15px;right:15px}
-    .logo img{height:35px}
+header { 
+    background: rgba(15,21,37,0.9); 
+    padding: 20px; 
+    border-bottom: 2px solid #00f0ff;
+    box-shadow: 0 0 20px rgba(0,240,255,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
+nav { text-align: center; }
+nav a { 
+    color: #00f0ff; 
+    text-decoration: none; 
+    margin: 0 15px; 
+    font-weight: 700;
+    font-family: 'Orbitron', sans-serif;
+    transition: 0.3s;
+}
+nav a:hover { color: #00ffea; text-shadow: 0 0 10px #00f0ff; }
 
-@media (max-width: 480px){
-    .hero-content h1{font-size:1.8em}
-    .menu a{font-size:0.8em;padding:4px 6px}
+.container { max-width: 1200px; margin: 40px auto; padding: 20px; }
+h1, h2 { font-family: 'Orbitron', sans-serif; color: #00f0ff; text-shadow: 0 0 15px #00f0ff; }
+
+.btn { 
+    background: linear-gradient(90deg, #00f0ff, #0088ff); 
+    color: #05070f; 
+    padding: 14px 30px; 
+    border-radius: 10px; 
+    text-decoration: none; 
+    font-weight: 900;
+    font-family: 'Orbitron', sans-serif;
+    display: inline-block;
+    transition: 0.3s;
+}
+.btn:hover { transform: scale(1.05); box-shadow: 0 0 20px #00f0ff; }
