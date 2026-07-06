@@ -6,24 +6,29 @@ body {
     color: #e0e8ff; 
     font-family: 'Poppins', sans-serif;
     background-image: radial-gradient(circle at 20% 50%, rgba(0,240,255,0.1) 0%, transparent 50%);
+    min-height: 100vh;
+    transition: 0.4s;
 }
 
 header { 
-    background: rgba(15,21,37,0.9); 
+    background: rgba(15,21,37,0.95); 
     padding: 20px; 
     border-bottom: 2px solid #00f0ff;
     box-shadow: 0 0 20px rgba(0,240,255,0.3);
     position: sticky;
     top: 0;
     z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-nav { text-align: center; }
 nav a { 
     color: #00f0ff; 
     text-decoration: none; 
-    margin: 0 15px; 
+    margin: 0 12px; 
     font-weight: 700;
     font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
     transition: 0.3s;
 }
 nav a:hover { color: #00ffea; text-shadow: 0 0 10px #00f0ff; }
@@ -31,7 +36,7 @@ nav a:hover { color: #00ffea; text-shadow: 0 0 10px #00f0ff; }
 .container { max-width: 1200px; margin: 40px auto; padding: 20px; }
 h1, h2 { font-family: 'Orbitron', sans-serif; color: #00f0ff; text-shadow: 0 0 15px #00f0ff; }
 
-.btn { 
+.btn, .btn-comprar { 
     background: linear-gradient(90deg, #00f0ff, #0088ff); 
     color: #05070f; 
     padding: 14px 30px; 
@@ -41,5 +46,51 @@ h1, h2 { font-family: 'Orbitron', sans-serif; color: #00f0ff; text-shadow: 0 0 1
     font-family: 'Orbitron', sans-serif;
     display: inline-block;
     transition: 0.3s;
+    border: none;
+    cursor: pointer;
 }
-.btn:hover { transform: scale(1.05); box-shadow: 0 0 20px #00f0ff; }
+.btn:hover, .btn-comprar:hover { transform: scale(1.05); box-shadow: 0 0 20px #00f0ff; }
+
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 60px;
+    border-top: 1px solid #00f0ff;
+    color: #8a9bb8;
+}
+
+/* BOTON TEMA */
+#btnTema {
+    background: #00f0ff;
+    color: #05070f;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 15px #00f0ff;
+    transition: 0.3s;
+}
+#btnTema:hover { transform: scale(1.1) rotate(180deg); }
+
+/* MODO CLARO */
+body.light-mode {
+    background: #f0f4ff;
+    color: #0a0e1a;
+    background-image: radial-gradient(circle at 20% 50%, rgba(0,136,255,0.1) 0%, transparent 50%);
+}
+body.light-mode header { background: rgba(255,255,255,0.95); border-bottom: 2px solid #0088ff; }
+body.light-mode nav a { color: #0088ff; }
+body.light-mode nav a:hover { color: #00aaff; text-shadow: 0 0 10px #0088ff; }
+body.light-mode h1, body.light-mode h2 { color: #0088ff; text-shadow: none; }
+body.light-mode .card, body.light-mode .feature { 
+    background: #fff; 
+    border: 2px solid #0088ff; 
+    box-shadow: 0 0 10px rgba(0,136,255,0.2);
+}
+body.light-mode .btn, body.light-mode .btn-comprar { 
+    background: linear-gradient(90deg, #0088ff, #00aaff); 
+    color: #fff; 
+}
+body.light-mode #btnTema { background: #0088ff; color: #fff; box-shadow: 0 0 15px #0088ff; }
