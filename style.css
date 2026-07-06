@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;600;700&display=swap');
 
 :root{
     --bg-dark: #03050a;
@@ -24,6 +24,7 @@ body {
 }
 @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
 
+/* HEADER */
 header { 
     background: rgba(8,15,30,0.95); backdrop-filter: blur(10px);
     padding: 15px 20px; border-bottom: 2px solid var(--primary);
@@ -43,6 +44,7 @@ h1 { font-family: 'Orbitron'; font-size: 2.5em; color: var(--primary); text-alig
 @keyframes glow { from {text-shadow: 0 0 10px var(--primary);} to {text-shadow: 0 0 25px var(--accent);} }
 .subtitulo { text-align: center; color: #8aa4d0; margin-bottom: 40px; font-size: 1.1em; }
 
+/* BOTONES */
 .btn, .btn-comprar { 
     background: linear-gradient(90deg, var(--primary), var(--primary-2)); 
     color: #fff; padding: 14px 28px; border-radius: 12px; 
@@ -52,6 +54,7 @@ h1 { font-family: 'Orbitron'; font-size: 2.5em; color: var(--primary); text-alig
 }
 .btn:hover, .btn-comprar:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 0 25px var(--primary); }
 
+/* CARDS */
 .card { 
     background: var(--bg-card-dark); 
     border: 2px solid var(--primary); border-radius: 15px; padding: 25px; 
@@ -65,6 +68,7 @@ h1 { font-family: 'Orbitron'; font-size: 2.5em; color: var(--primary); text-alig
 .card ul li { color: #c0d0e8; margin: 8px 0; padding-left: 25px; position: relative; }
 .card ul li::before { content: "⚡"; position: absolute; left: 0; color: var(--primary); }
 
+/* BOTON TEMA */
 #btnTema {
     background: linear-gradient(135deg, var(--primary), var(--primary-2));
     color: #fff; border: 2px solid var(--accent); width: 45px; height: 45px;
@@ -73,9 +77,114 @@ h1 { font-family: 'Orbitron'; font-size: 2.5em; color: var(--primary); text-alig
 }
 #btnTema:hover { transform: rotate(180deg) scale(1.1); }
 
+/* FOOTER */
 footer { text-align:center; padding:30px; color:#8aa4d0; border-top:1px solid var(--primary); margin-top:60px; }
 
-/* MODO CLARO ELEGANTE */
+/* ================= HERO PRO INICIO ================= */
+.hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 40px 20px;
+}
+.hero-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(0,140,255,0.3) 0%, transparent 70%);
+    animation: pulse 4s infinite;
+    z-index: 0;
+}
+@keyframes pulse { 0%,100% {transform: scale(1); opacity: 0.5;} 50% {transform: scale(1.1); opacity: 0.8;} }
+
+.hero-content { position: relative; z-index: 2; max-width: 800px; }
+
+.saludo {
+    color: var(--accent);
+    font-family: 'Orbitron';
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+    animation: fadeInDown 0.8s;
+}
+.nombre {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.hero h1 {
+    font-size: 4em;
+    margin-bottom: 15px;
+    animation: fadeInDown 1s;
+}
+.descripcion {
+    font-size: 1.3em;
+    color: #a8c0e0;
+    margin-bottom: 30px;
+    animation: fadeInUp 1.2s;
+}
+@keyframes fadeInDown { from {opacity:0; transform: translateY(-20px);} to {opacity:1; transform: translateY(0);} }
+@keyframes fadeInUp { from {opacity:0; transform: translateY(20px);} to {opacity:1; transform: translateY(0);} }
+
+.badges {
+    display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px;
+    animation: fadeInUp 1.4s;
+}
+.badge {
+    background: rgba(0,140,255,0.15);
+    border: 1px solid var(--primary);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+.hero-btns { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; animation: fadeInUp 1.6s; }
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+.btn-outline:hover { background: var(--primary); color: #fff; }
+
+/* SECCION SERVICIOS INICIO */
+.titulo-seccion {
+    font-family: 'Orbitron';
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary);
+}
+.grid-servicios-inicio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+.card-servicio {
+    background: var(--bg-card-dark);
+    border: 2px solid var(--primary);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: 0.4s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+.card-servicio:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(0,140,255,0.5);
+    border-color: var(--accent);
+}
+.icono { font-size: 3em; margin-bottom: 15px; }
+.card-servicio h3 { font-family: 'Orbitron'; color: var(--accent); margin-bottom: 10px; }
+
+/* ================= MODO CLARO ELEGANTE ================= */
 body.light-mode {
     background: var(--bg-light); color: var(--text-light);
     background-image: radial-gradient(circle at 30% 20%, rgba(0,140,255,0.1) 0%, transparent 60%);
@@ -87,11 +196,17 @@ body.light-mode h1 { color: var(--primary-2); text-shadow: 0 0 15px rgba(0,85,25
 body.light-mode .card { background: var(--bg-card-light); border: 2px solid var(--primary-2); }
 body.light-mode .card ul li { color: #333; }
 body.light-mode .btn, body.light-mode .btn-comprar { background: linear-gradient(90deg, var(--primary-2), var(--primary)); }
+body.light-mode .descripcion { color: #444; }
+body.light-mode .card-servicio { background: var(--bg-card-light); color: var(--text-light); }
+body.light-mode .badge { background: rgba(0,85,255,0.1); border-color: var(--primary-2); }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px){
     header { flex-direction: column; gap: 10px; }
     nav { gap: 10px; }
     h1 { font-size: 1.8em; }
     .container { padding: 15px; margin: 30px auto; }
+    .hero h1 { font-size: 2.5em; }
+    .descripcion { font-size: 1.1em; }
+    .hero-btns { flex-direction: column; align-items: center; }
 }
