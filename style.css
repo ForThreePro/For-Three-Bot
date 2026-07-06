@@ -20,9 +20,7 @@ body {
     font-family: 'Poppins', sans-serif;
     background-image: radial-gradient(circle at 30% 20%, rgba(0,140,255,0.15) 0%, transparent 60%);
     transition: background 0.4s, color 0.4s;
-    animation: fadeIn 0.6s;
 }
-@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
 
 header { 
     background: rgba(8,15,30,0.95); backdrop-filter: blur(10px);
@@ -39,8 +37,7 @@ nav a {
 nav a:hover, nav a.active { color: var(--accent); text-shadow: 0 0 10px var(--primary); }
 
 .container { max-width: 1100px; margin: 50px auto; padding: 20px; }
-h1 { font-family: 'Orbitron'; font-size: 2.5em; color: var(--primary); text-align: center; margin-bottom: 10px; text-shadow: 0 0 20px var(--primary); animation: glow 2s infinite alternate; }
-@keyframes glow { from {text-shadow: 0 0 10px var(--primary);} to {text-shadow: 0 0 25px var(--accent);} }
+h1 { font-family: 'Orbitron'; font-size: 2.2em; color: var(--primary); text-align: center; margin-bottom: 10px; text-shadow: 0 0 20px var(--primary); }
 .subtitulo { text-align: center; color: #8aa4d0; margin-bottom: 40px; font-size: 1.1em; }
 
 .btn, .btn-comprar { 
@@ -48,7 +45,7 @@ h1 { font-family: 'Orbitron'; font-size: 2.5em; color: var(--primary); text-alig
     color: #fff; padding: 14px 28px; border-radius: 12px; 
     text-decoration: none; font-weight: 900; font-family: 'Orbitron';
     display: inline-block; transition: 0.3s; border: none; cursor: pointer;
-    box-shadow: 0 0 15px rgba(0,140,255,0.5);
+    box-shadow: 0 0 15px rgba(0,140,255,0.5); margin-top: 10px;
 }
 .btn:hover, .btn-comprar:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 0 25px var(--primary); }
 
@@ -56,14 +53,15 @@ h1 { font-family: 'Orbitron'; font-size: 2.5em; color: var(--primary); text-alig
     background: var(--bg-card-dark); 
     border: 2px solid var(--primary); border-radius: 15px; padding: 25px; 
     transition: 0.4s; box-shadow: 0 0 15px rgba(0,140,255,0.2);
-    margin-bottom: 25px; opacity: 0; transform: translateY(20px);
+    margin-bottom: 25px;
 }
 .card:hover { transform: translateY(-8px); box-shadow: 0 0 35px rgba(0,140,255,0.5); }
 .card h2 { color: var(--accent); font-family: 'Orbitron'; margin-bottom: 15px; font-size: 1.4em; }
-.precio { color: var(--accent); font-size: 2.2em; font-weight: 900; font-family: 'Orbitron'; margin: 10px 0; }
+.precio { color: var(--accent); font-size: 2em; font-weight: 900; font-family: 'Orbitron'; margin: 10px 0; }
 .card ul { list-style: none; margin: 15px 0; }
 .card ul li { color: #c0d0e8; margin: 8px 0; padding-left: 25px; position: relative; }
 .card ul li::before { content: "⚡"; position: absolute; left: 0; color: var(--primary); }
+.advertencia { color: #ff5555; font-weight: 600; }
 
 #btnTema {
     background: linear-gradient(135deg, var(--primary), var(--primary-2));
@@ -83,7 +81,7 @@ body.light-mode {
 body.light-mode header { background: rgba(255,255,255,0.95); border-bottom: 2px solid var(--primary-2); }
 body.light-mode nav a { color: var(--primary-2); }
 body.light-mode nav a:hover, body.light-mode nav a.active { color: var(--primary); }
-body.light-mode h1 { color: var(--primary-2); text-shadow: 0 0 15px rgba(0,85,255,0.3); }
+body.light-mode h1 { color: var(--primary-2); }
 body.light-mode .card { background: var(--bg-card-light); border: 2px solid var(--primary-2); }
 body.light-mode .card ul li { color: #333; }
 body.light-mode .btn, body.light-mode .btn-comprar { background: linear-gradient(90deg, var(--primary-2), var(--primary)); }
@@ -92,6 +90,6 @@ body.light-mode .btn, body.light-mode .btn-comprar { background: linear-gradient
 @media (max-width: 768px){
     header { flex-direction: column; gap: 10px; }
     nav { gap: 10px; }
-    h1 { font-size: 1.8em; }
+    h1 { font-size: 1.6em; }
     .container { padding: 15px; margin: 30px auto; }
 }
