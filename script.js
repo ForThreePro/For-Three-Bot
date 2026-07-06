@@ -1,24 +1,30 @@
-// MODO CLARO/OSCURO
+// MODO CLARO/OSCURO GAMER
 const btnTema = document.getElementById('btnTema');
 const body = document.body;
 
-if(localStorage.getItem('tema') === 'light'){
-    body.classList.add('light-mode');
-    if(btnTema) btnTema.innerText = '🌙';
-} else {
-    if(btnTema) btnTema.innerText = '☀️';
-}
-
-btnTema?.addEventListener('click', () => {
-    body.classList.toggle('light-mode');
-    if(body.classList.contains('light-mode')){
-        localStorage.setItem('tema', 'light');
-        btnTema.innerText = '🌙'; 
+// Cargar tema al iniciar
+window.addEventListener('DOMContentLoaded', () => {
+    if(localStorage.getItem('tema') === 'light'){
+        body.classList.add('light-mode');
+        if(btnTema) btnTema.innerText = '🌙';
     } else {
-        localStorage.setItem('tema', 'dark');
-        btnTema.innerText = '☀️';
+        if(btnTema) btnTema.innerText = '☀️';
     }
 });
+
+// Cambiar tema al click
+if(btnTema){
+    btnTema.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        if(body.classList.contains('light-mode')){
+            localStorage.setItem('tema', 'light');
+            btnTema.innerText = '🌙'; 
+        } else {
+            localStorage.setItem('tema', 'dark');
+            btnTema.innerText = '☀️';
+        }
+    });
+}
 
 // SCROLL SUAVE
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -37,7 +43,7 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.style.transform = 'translateY(0)';
         }
     });
-});
+}, { threshold: 0.1 });
 
 document.querySelectorAll('.card, .feature').forEach(card => {
     card.style.opacity = 0;
