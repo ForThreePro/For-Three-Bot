@@ -1,91 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Servicios - YallicoDev</title>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<meta charset="UTF-8"><title>Servicios - Whois Dev</title>
 <link rel="stylesheet" href="style.css">
 <style>
-/* ESTILOS SOLO PARA ESTA PAGINA */
-.grid-3-detalle{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
-.card-servicio-detalle{background:linear-gradient(145deg,#0a0a14,#05050a);border:2px solid rgba(0,255,255,0.3);padding:30px;border-radius:20px;transition:0.3s;position:relative}
-.card-servicio-detalle:hover{border-color:#00ffff;box-shadow:0 0 30px rgba(0,255,255,0.3);transform:translateY(-5px)}
-.card-servicio-detalle h3{font-family:'Orbitron';color:#00ffff;font-size:1.5em;margin-bottom:5px}
-.precio-servicio{font-family:'Orbitron';color:#00ffff;font-size:2em;font-weight:900;margin-bottom:15px;text-shadow:0 0 15px #00ffff}
-.card-servicio-detalle ul{list-style:none;padding-left:0;margin-bottom:20px}
-.card-servicio-detalle li{color:#aaa;margin-bottom:8px}
-.card-servicio-detalle li:before{content:"✓ ";color:#00ffff;font-weight:900}
-.btn-ir{display:block;background:linear-gradient(90deg,#00ffff,#00e6e6);color:#000;padding:14px 25px;border-radius:10px;text-decoration:none;font-weight:900;font-family:'Orbitron';text-align:center}
-
-/* MODO CLARO PARA ESTA PAGINA */
-body.light-mode .card-servicio-detalle{background:#fff;border:1px solid #ddd}
-body.light-mode .card-servicio-detalle li{color:#333}
+  h1 { text-align: center; font-size: 2.8em; margin-bottom: 10px; }
+  .sub { text-align: center; color: #8a9bb8; margin-bottom: 40px; }
+  .grid-servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+  .card { background: linear-gradient(145deg, #0f1525, #131b2e); border: 2px solid #00f0ff; border-radius: 15px; padding: 25px; transition: 0.3s; box-shadow: 0 0 15px rgba(0,240,255,0.2); }
+  .card:hover { transform: translateY(-8px); box-shadow: 0 0 30px rgba(0,240,255,0.5); }
+  .card h2 { font-size: 1.5em; margin-bottom: 5px; }
+  .precio { color: #00ffea; font-size: 2em; font-weight: 900; font-family: 'Orbitron'; margin-bottom: 15px; }
+  .precio span { font-size: 0.5em; color: #8a9bb8; }
+  .card ul { list-style: none; margin: 20px 0; }
+  .card ul li { color: #c0c8dd; margin: 10px 0; padding-left: 25px; position: relative; }
+  .card ul li::before { content: "▸"; position: absolute; left: 0; color: #00f0ff; font-weight: bold; }
+  .btn-comprar { display: block; width: 100%; background: linear-gradient(90deg, #00f0ff, #0088ff); color: #05070f; text-align: center; padding: 14px; border-radius: 10px; text-decoration: none; font-family: 'Orbitron'; font-weight: 900; }
 </style>
 </head>
-<body><div class="grid-bg"></div>
-<nav>
-    <div class="logo"><img src="https://files.evogb.win/HT1tmL.jpg">Yallico<span>Dev</span></div>
-    <div class="menu">
-        <a href="index.html">Inicio</a>
-        <a href="portafolio.html">Portafolio</a>
-        <a href="soporte.html">Soporte</a>
-        <a href="reglas.html">Reglas</a>
-        <a href="faq.html">FAQ</a>
-        <button id="btnTema">☀️</button>
-    </div>
-</nav>
-<section>
-<h2>> NUESTROS SERVICIOS</h2>
-<div class="grid-3-detalle">
-    <div class="card-servicio-detalle">
-        <h3>⚡ BOT PERSONALIZADO</h3>
-        <div class="precio-servicio">S/ 30</div>
-        <ul>
-            <li>+100 Comandos</li>
-            <li>Logo HD Personalizado</li>
-            <li>Panel de Administración</li>
-            <li>Anti-Caidas</li>
-            <li>Instalación Incluida</li>
-        </ul>
-        <a href="pagos.html?servicio=Bot+Personalizado+S/30" class="btn-ir">PEDIR AHORA</a>
-    </div>
-    <div class="card-servicio-detalle">
-        <h3>🌐 PÁGINA WEB</h3>
-        <div class="precio-servicio">S/ 15</div>
-        <ul>
-            <li>Diseño Cyberpunk Responsive</li>
-            <li>Dominio .com Gratis 1 Año</li>
-            <li>Hosting SSD Incluido</li>
-            <li>Botón WhatsApp + Formulario</li>
-            <li>Entrega en 3 Días</li>
-        </ul>
-        <a href="pagos.html?servicio=Pagina+Web+S/15" class="btn-ir">PEDIR AHORA</a>
-    </div>
-    <div class="card-servicio-detalle">
-        <h3>🚀 HOSTING SSD</h3>
-        <div class="precio-servicio">S/ 10</div>
-        <ul>
-            <li>SSD NVMe Alta Velocidad</li>
-            <li>99.9% Uptime Garantizado</li>
-            <li>Panel Pterodactyl</li>
-            <li>Yo te lo Configuro</li>
-            <li>Soporte 24/7</li>
-        </ul>
-        <a href="pagos.html?servicio=Hosting+SSD+S/10" class="btn-ir">PEDIR AHORA</a>
-    </div>
-    <div class="card-servicio-detalle">
-        <h3>👥 BOT PARA GRUPO</h3>
-        <div class="precio-servicio">S/ 15</div>
-        <ul>
-            <li>Auto Bienvenida y Despedida</li>
-            <li>Antispam + Antienlaces</li>
-            <li>Comandos de Diversión</li>
-            <li>Admin Tools: Kick, Ban, Warn</li>
-            <li>Configuración Incluida</li>
-        </ul>
-        <a href="pagos.html?servicio=Bot+Para+Grupo+S/15" class="btn-ir">PEDIR AHORA</a>
-    </div>
+<body>
+<header><nav>...mismo menú de index...</nav></header>
+<div class="container">
+  <h1>MIS SERVICIOS</h1>
+  <p class="sub">Todo para potenciar tu grupo y proyectos Gamer ⚡</p>
+  <div class="grid-servicios">
+    <div class="card"><h2>BOT PARA GRUPO</h2><div class="precio">S/ 7 <span>SOLES</span></div><ul><li>Bot Necesario Para Grupos de Free Fire O Otros Grupos</li><li>Comandos interactivos</li><li>Configuración rápida</li></ul><a href="https://wa.me/59169707905?text=Hola%20quiero%20el%20Bot%20Para%20Grupo%20S/7" class="btn-comprar">COMPRAR AHORA</a></div>
+    <div class="card"><h2>BOT PERSONALIZADO</h2><div class="precio">S/ 30 <span>SOLES</span></div><ul><li>Bot Con +100 Comandos Sin Errores</li><li>Logo Y Nombre Personalizado</li><li>Panel de administración</li><li>Soporte incluido</li></ul><a href="https://wa.me/59169707905?text=Hola%20quiero%20el%20Bot%20Personalizado%20S/30" class="btn-comprar">COMPRAR AHORA</a></div>
+    <div class="card"><h2>PÁGINA WEB</h2><div class="precio">S/ 30 <span>SOLES</span></div><ul><li>Diseño A Tu Gusto</li><li>Entrega Rápida</li><li>Dominio Gratis</li><li>Responsive 100%</li></ul><a href="https://wa.me/59169707905?text=Hola%20quiero%20una%20Pagina%20Web%20S/30" class="btn-comprar">COMPRAR AHORA</a></div>
+    <div class="card"><h2>HOSTING BOT</h2><div class="precio">S/ 10 <span>SOLES</span></div><ul><li>2GB De RAM</li><li>300 CPU</li><li>Hosting Confiable</li><li>Activo 24/7</li></ul><a href="https://wa.me/59169707905?text=Hola%20quiero%20Hosting%20Bot%20S/10" class="btn-comprar">COMPRAR AHORA</a></div>
+  </div>
 </div>
-</section>
-<script src="script.js"></script>
-</body></html>
+<footer>© 2026 Whois Dev</footer>
+</body>
+</html>
