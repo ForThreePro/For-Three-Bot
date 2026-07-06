@@ -2,6 +2,7 @@
 const btnTema = document.getElementById('btnTema');
 const body = document.body;
 
+// Cargar tema guardado
 if(localStorage.getItem('tema') === 'light'){
     body.classList.add('light-mode');
     if(btnTema) btnTema.innerText = '🌙';
@@ -9,6 +10,7 @@ if(localStorage.getItem('tema') === 'light'){
     if(btnTema) btnTema.innerText = '☀️';
 }
 
+// Botón para cambiar tema
 btnTema?.addEventListener('click', () => {
     body.classList.toggle('light-mode');
     if(body.classList.contains('light-mode')){
@@ -39,9 +41,10 @@ const observer = new IntersectionObserver((entries) => {
     });
 });
 
-document.querySelectorAll('.card-servicio, .card-info').forEach(card => {
+// Adaptado a tus clases actuales
+document.querySelectorAll('.card, .feature').forEach(card => {
     card.style.opacity = 0;
     card.style.transform = 'translateY(20px)';
-    card.style.transition = '0.6s';
+    card.style.transition = '0.6s ease';
     observer.observe(card);
 });
