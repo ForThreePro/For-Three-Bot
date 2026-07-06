@@ -44,130 +44,116 @@ nav a:hover, nav a.active { background: rgba(0,170,255,0.2); color: var(--accent
 
 .container { max-width: 1100px; margin: 30px auto; padding: 15px; }
 
-/* HERO MEJORADO */
-.hero {
-    min-height: 85vh;
+/* HERO NUEVO PREMIUM */
+.hero-nuevo {
+    min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 40px 20px;
+    background: linear-gradient(180deg, rgba(0,170,255,0.1) 0%, transparent 100%);
 }
-.hero-content { max-width: 600px; }
-
-.saludo {
-    color: var(--accent);
-    font-family: 'Orbitron';
-    font-size: 0.9em;
-    margin-bottom: 8px;
-    letter-spacing: 2px;
-}
-.nombre {
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.hero h1 {
-    font-size: 2.8em;
-    margin-bottom: 15px;
-    font-family: 'Orbitron';
-}
-.descripcion {
-    font-size: 1em;
-    color: #a8c0e0;
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
-
-.badges {
-    display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 25px;
-}
-.badge {
-    background: rgba(0,170,255,0.1);
+.tag {
+    background: rgba(0,170,255,0.2);
     border: 1px solid var(--primary);
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.85em;
-    font-weight: 600;
-}
-
-.hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-.btn, .btn-comprar { 
-    background: linear-gradient(90deg, var(--primary), var(--primary-2)); 
-    color: #fff; padding: 12px 24px; border-radius: 12px; 
-    text-decoration: none; font-weight: 900; font-family: 'Orbitron';
-    font-size: 0.9em; display: inline-block; transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(0,170,255,0.4);
-}
-.btn-outline {
-    background: transparent;
-    border: 2px solid var(--primary);
-    color: var(--primary);
-}
-.btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,170,255,0.6); }
-
-/* CARDS PREMIUM */
-.titulo-seccion {
+    color: var(--accent);
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-size: 0.8em;
     font-family: 'Orbitron';
-    font-size: 1.8em;
-    text-align: center;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+.hero-nuevo h1 {
+    font-size: 3em;
+    font-family: 'Orbitron';
+    margin-bottom: 15px;
+}
+.slogan {
+    font-size: 1.2em;
+    color: #a8c0e0;
     margin-bottom: 30px;
-    color: var(--primary);
 }
-.grid-servicios-inicio {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 35px;
 }
-.card-servicio {
-    background: var(--card);
+.stat .num {
+    font-size: 2em;
+    font-family: 'Orbitron';
+    color: var(--accent);
+    font-weight: 900;
+}
+.stat .txt {
+    font-size: 0.85em;
+    color: #8aa4d0;
+}
+.btn-brillo {
+    position: relative;
+    overflow: hidden;
+}
+.btn-brillo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: 0.5s;
+}
+.btn-brillo:hover::after { left: 100%; }
+
+/* CARDS NUEVAS */
+.card-servicio-nuevo {
+    background: linear-gradient(145deg, #0b1224, #0f1833);
     border: 1px solid rgba(0,170,255,0.3);
-    border-radius: 15px;
-    padding: 20px;
-    text-align: left;
+    border-radius: 20px;
+    padding: 25px;
     text-decoration: none;
     color: var(--text);
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    transition: 0.4s;
 }
-.card-servicio:hover {
+.card-servicio-nuevo:hover {
+    transform: translateY(-8px);
     border-color: var(--accent);
-    transform: translateX(5px);
-    box-shadow: 0 0 20px rgba(0,170,255,0.3);
+    box-shadow: 0 10px 30px rgba(0,170,255,0.4);
 }
-.icono { font-size: 2.5em; }
-.card-servicio h3 { font-family: 'Orbitron'; color: var(--accent); font-size: 1.1em; margin-bottom: 5px; }
-.card-servicio p { font-size: 0.9em; color: #a8c0e0; }
-
-/* CARDS SERVICIOS */
-.card { 
-    background: var(--card); 
-    border: 1px solid rgba(0,170,255,0.3); border-radius: 15px; padding: 20px; 
-    margin-bottom: 20px;
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
 }
-.card h2 { color: var(--accent); font-family: 'Orbitron'; margin-bottom: 10px; font-size: 1.3em; }
-.precio { color: var(--accent); font-size: 1.8em; font-weight: 900; font-family: 'Orbitron'; }
-.card ul { list-style: none; margin: 15px 0; }
-.card ul li { color: #a8c0e0; margin: 8px 0; padding-left: 20px; position: relative; font-size: 0.9em; }
-.card ul li::before { content: "▸"; position: absolute; left: 0; color: var(--primary); }
-
-footer { text-align:center; padding:25px; color:#7a8aa0; border-top:1px solid rgba(0,170,255,0.3); font-size:0.85em; }
-
-/* MODO CLARO */
-body.light-mode {
-    --bg: #f0f6ff;
-    --card: #ffffff;
-    --text: #0a0e1a;
+.etiqueta {
+    background: var(--primary);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 0.7em;
+    font-weight: 700;
+    font-family: 'Orbitron';
 }
-body.light-mode .descripcion, body.light-mode .card ul li, body.light-mode .card-servicio p { color: #444; }
+.etiqueta-2 { background: #ff6b00; }
+.etiqueta-3 { background: #00cc66; }
+.precio-mini { margin-top: 15px; font-size: 1.1em; }
+.precio-mini b { color: var(--accent); font-size: 1.3em; font-family: 'Orbitron'; }
 
-/* TABLET Y PC */
+/* CTA FINAL */
+.cta-final {
+    background: linear-gradient(135deg, var(--primary-2), var(--primary));
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 50px;
+}
+.cta-final h2 { font-family: 'Orbitron'; font-size: 2em; margin-bottom: 10px; color: #fff; }
+.cta-final p { margin-bottom: 25px; color: #eaf2ff; }
+.cta-final .btn { background: #fff; color: var(--primary-2); }
+
 @media (min-width: 768px){
-    header { flex-direction: row; justify-content: space-between; }
-    nav a { font-size: 14px; }
-    .hero h1 { font-size: 4em; }
+    .hero-nuevo h1 { font-size: 4.5em; }
     .grid-servicios-inicio { grid-template-columns: repeat(3, 1fr); }
-    .card-servicio { flex-direction: column; text-align: center; }
 }
