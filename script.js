@@ -1,3 +1,12 @@
+// CONTADOR DE CUPOS QUE BAJA
+let cupos = 12;
+setInterval(()=>{
+  if(cupos > 3){
+    cupos -= 1;
+    document.getElementById('cupos').innerText = cupos;
+  }
+}, 7200000); // baja 1 cada 2 horas
+
 // TYPING EFFECT
 const texto = "by Yayico | Automatización que vende 24/7 sin caídas";
 let i = 0;
