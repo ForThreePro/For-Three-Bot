@@ -2,15 +2,14 @@ let pais='PEN',precioBase=0,metodoSel='',planSel='';
 
 // REGLA DE PAGOS
 const pagosData = {
-  PEN: [{nombre:'Yape', num:'936994155'}], // SOLO YAPE PARA PERU
+  PEN: [{nombre:'Yape', num:'936994155'}], // SOLO YAPE
   MXN: [{nombre:'Prex', num:'12249975'},{nombre:'Global66', num:'@CRIROJ1855'}], // DEMAS
   CLP: [{nombre:'Prex', num:'12249975'},{nombre:'Global66', num:'@CRIROJ1855'}],
   COP: [{nombre:'Prex', num:'12249975'},{nombre:'Global66', num:'@CRIROJ1855'}]
 };
 
 function abrirPago(n,p){
-  precioBase=p;
-  planSel=n;
+  precioBase=p;planSel=n;
   document.getElementById('popup').style.display='flex';
   document.getElementById('nomPlan').innerText=n;
   cambiarPais();
@@ -23,19 +22,17 @@ function cambiarPais(){
   // Cambiar precio
   document.getElementById('precio').innerText = document.querySelector(`.elite .price`).getAttribute(`data-${pais.toLowerCase()}`);
 
-  // Renderizar métodos según país
+  // Renderizar métodos
   let html='';
   pagosData.forEach(p=>{
     html+=`<div class="metodo" onclick="seleccionar(this,'${p.num}')"><b>${p.nombre}</b><br><small>${p.num}</small></div>`;
   });
   document.getElementById('metodosPago').innerHTML=html;
-  document.getElementById('numPago').innerText = 'Seleccione un método';
 }
 
 function seleccionar(el,num){
   document.querySelectorAll('.metodo').forEach(m=>m.classList.remove('sel'));
-  el.classList.add('sel');
-  metodoSel=num;
+  el.classList.add('sel');metodoSel=num;
   document.getElementById('numPago').innerText = num;
 }
 
@@ -44,7 +41,6 @@ function enviarWsp(){
   let msg=`Hola. Deseo activar OMNIA AI plan ${planSel}. Realicé el pago a ${metodoSel}. Adjunto comprobante.`;
   window.open(`https://wa.me/51936994155?text=${encodeURIComponent(msg)}`,'_blank');
 }
-
 function cerrarPago(){document.getElementById('popup').style.display='none'}
 
 // MÚSICA
