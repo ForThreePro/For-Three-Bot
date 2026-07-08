@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RAYO PREM BOT by Yallico - El Bot Más Rápido</title>
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style-v2.css">
 </head>
 <body>
-  <img id="videoFondo" src="./Fondo.gif?v=2" alt="fondo">
+  <img id="videoFondo" src="./Fondo.gif" alt="fondo">
   <div class="capa-oscura"></div>
 
   <div class="container">
@@ -56,65 +56,14 @@
     </footer>
   </div>
 
-  <div id="popupPago" class="popup">
-    <div class="popup-content" style="max-height:90vh; overflow-y:auto">
-      <span class="cerrar" onclick="cerrarPago()">&times;</span>
-      <h2>Completa tu compra de <span id="nombrePlan"></span></h2>
-      
-      <div style="margin:15px 0">
-        <label style="color:#FFD700">Selecciona tu país:</label>
-        <select id="selectorPais" onchange="cambiarPais()" style="width:100%; padding:10px; margin-top:8px; border-radius:10px; background:#1a1a1a; color:#fff; border:2px solid #FFD700; font-weight:bold">
-          <option value="PEN">🇵🇪 Perú - Soles</option>
-          <option value="MXN">🇲🇽 México - Pesos</option>
-          <option value="CLP">🇨🇱 Chile - Pesos</option>
-          <option value="COP">🇨🇴 Colombia - Pesos</option>
-          <option value="USD">🇺🇸 USA - Dólares</option>
-          <option value="ARS">🇦🇷 Argentina - Pesos</option>
-          <option value="PYG">🇵🇾 Paraguay - Guaraníes</option>
-          <option value="BOB">🇧🇴 Bolivia - Bolivianos</option>
-        </select>
-      </div>
-
-      <p class="precio-popup">Total: <span id="precioConvertido"></span></p>
-
-      <div style="text-align:left; margin:20px 0">
-        <h3 style="color:#FFD700; margin-bottom:15px; text-align:center">Elige cómo pagar 👇</h3>
-        
-        <div class="card-pago" style="background:#1a1a1a; padding:15px; border-radius:15px; margin-bottom:12px; border:2px solid #5F2EEA">
-          <h4 style="color:#5F2EEA; margin-bottom:8px">📱 Yape / Plin</h4>
-          <p style="color:#aaa; font-size:0.9em">A nombre de: <b>Cristhofer Rojas</b></p>
-          <div class="btn-pago" onclick="copiar('936994155')" style="background:#333; padding:10px; border-radius:10px; margin:8px 0; cursor:pointer; display:flex; justify-content:space-between">
-            <b>936 994 155</b> <span style="color:#FFD700">Copiar</span>
-          </div>
-        </div>
-
-        <div class="card-pago" style="background:#1a1a1a; padding:15px; border-radius:15px; margin-bottom:12px; border:2px solid #00D1A0">
-          <h4 style="color:#00D1A0; margin-bottom:8px">🌎 Global66</h4>
-          <p style="color:#aaa; font-size:0.9em">Para Chile, México, USA, Colombia</p>
-          <div class="btn-pago" onclick="copiar('@CRIROJ1855')" style="background:#333; padding:10px; border-radius:10px; margin:8px 0; cursor:pointer; display:flex; justify-content:space-between">
-            <b>@CRIROJ1855</b> <span style="color:#FFD700">Copiar</span>
-          </div>
-        </div>
-
-        <div class="card-pago" style="background:#1a1a1a; padding:15px; border-radius:15px; margin-bottom:15px; border:2px solid #FF6B00">
-          <h4 style="color:#FF6B00; margin-bottom:8px">💳 Prex</h4>
-          <p style="color:#aaa; font-size:0.9em">A nombre de: <b>Cristhofer Yhair Rojas Huarcaya</b></p>
-          <div class="btn-pago" onclick="copiar('12249975')" style="background:#333; padding:10px; border-radius:10px; margin:8px 0; cursor:pointer; display:flex; justify-content:space-between">
-            <b>12249975</b> <span style="color:#FFD700">Copiar</span>
-          </div>
-        </div>
-      </div>
-
-      <a id="btnWhats" href="#" class="btn" style="background:#25D366; color:#fff; width:100%">ENVIAR CAPTURA POR WHATSAPP</a>
-    </div>
-  </div>
+  <div id="popupPago" class="popup">...TU POPUP COMPLETO...</div>
 
   <a href="https://wa.me/51936994155" class="wa-float">💬</a>
   <div id="noti">🔥 Alguien acaba de comprar Bot Prem</div>
 
-  <audio id="musicaFondo" src="./musica.mp3?v=2" loop></audio>
+  <audio id="musicaFondo" src="./musica.mp3" loop></audio>
   <button id="btnMusica" onclick="toggleMusica()" style="position:fixed; bottom:80px; right:20px; background:#5F2EEA; border:none; border-radius:50%; width:50px; height:50px; font-size:24px; cursor:pointer; z-index:999">🔊</button>
 
-<script src="script.js?v=2"></script>
+<script src="script-v2.js"></script>
 </body>
 </html>
