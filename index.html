@@ -45,31 +45,6 @@
       </div>
     </section>
 
-    <section class="pagos">
-      <h2 class="titulo">ELIGE CÓMO PAGAR</h2>
-      
-      <div class="card anim" style="margin-bottom:20px">
-        <h3>📱 Yape / Plin</h3>
-        <p style="color:#aaa;margin-bottom:15px">A nombre de: <b>Cristhofer Rojas</b></p>
-        <div class="btn-pago" onclick="copiar('936994155')">Yape/Plin: <b>936 994 155</b> <span>Copiar</span></div>
-        <a id="btnYape" href="https://wa.me/51936994155" class="btn" style="background:#5F2EEA;color:#fff;width:100%;margin-top:10px">ENVIAR CAPTURA POR WHATSAPP</a>
-      </div>
-
-      <div class="card anim" style="margin-bottom:20px">
-        <h3>🌎 Global66</h3>
-        <p style="color:#aaa;margin-bottom:15px">Para Chile, México, USA, Colombia</p>
-        <div class="btn-pago" onclick="copiar('@CRIROJ1855')">Usuario Global66: <b>@CRIROJ1855</b> <span>Copiar</span></div>
-        <a href="https://global66.com/enviar" target="_blank" class="btn" style="background:#00D1A0;color:#000;width:100%;margin-top:10px">PAGAR CON GLOBAL66</a>
-      </div>
-
-      <div class="card anim">
-        <h3>💳 Prex</h3>
-        <p style="color:#aaa;margin-bottom:15px">A nombre de: <b>Cristhofer Yhair Rojas Huarcaya</b></p>
-        <div class="btn-pago" onclick="copiar('12249975')">N° Prex: <b>12249975</b> <span>Copiar</span></div>
-        <a href="https://prexcard.com" target="_blank" class="btn" style="background:#FF6B00;color:#fff;width:100%;margin-top:10px">PAGAR CON PREX</a>
-      </div>
-    </section>
-
     <footer>
       <p>¿Dudas? <a href="https://wa.me/51936994155" class="wa">wa.me/51936994155</a></p>
       <p style="margin-top:10px;color:#555">RAYO PREM BOT by Yallico © 2026</p>
@@ -77,12 +52,40 @@
   </div>
 
   <div id="popupPago" class="popup">
-    <div class="popup-content">
+    <div class="popup-content" style="max-height:90vh; overflow-y:auto">
       <span class="cerrar" onclick="cerrarPago()">&times;</span>
       <h2>Completa tu compra de <span id="nombrePlan"></span></h2>
       <p class="precio-popup">Total: S/<span id="precioPlan"></span></p>
-      <p style="margin-bottom:20px">Elige tu método de pago de arriba 👆</p>
-      <a id="btnWhats" href="#" class="btn">ENVIAR CAPTURA POR WHATSAPP</a>
+
+      <div style="text-align:left; margin:20px 0">
+        <h3 style="color:#FFD700; margin-bottom:15px; text-align:center">Elige cómo pagar 👇</h3>
+        
+        <div class="card-pago" style="background:#1a1a1a; padding:15px; border-radius:15px; margin-bottom:12px; border:2px solid #5F2EEA">
+          <h4 style="color:#5F2EEA; margin-bottom:8px">📱 Yape / Plin</h4>
+          <p style="color:#aaa; font-size:0.9em">A nombre de: <b>Cristhofer Rojas</b></p>
+          <div class="btn-pago" onclick="copiar('936994155')" style="background:#333; padding:10px; border-radius:10px; margin:8px 0; cursor:pointer; display:flex; justify-content:space-between">
+            <b>936 994 155</b> <span style="color:#FFD700">Copiar</span>
+          </div>
+        </div>
+
+        <div class="card-pago" style="background:#1a1a1a; padding:15px; border-radius:15px; margin-bottom:12px; border:2px solid #00D1A0">
+          <h4 style="color:#00D1A0; margin-bottom:8px">🌎 Global66</h4>
+          <p style="color:#aaa; font-size:0.9em">Para Chile, México, USA, Colombia</p>
+          <div class="btn-pago" onclick="copiar('@CRIROJ1855')" style="background:#333; padding:10px; border-radius:10px; margin:8px 0; cursor:pointer; display:flex; justify-content:space-between">
+            <b>@CRIROJ1855</b> <span style="color:#FFD700">Copiar</span>
+          </div>
+        </div>
+
+        <div class="card-pago" style="background:#1a1a1a; padding:15px; border-radius:15px; margin-bottom:15px; border:2px solid #FF6B00">
+          <h4 style="color:#FF6B00; margin-bottom:8px">💳 Prex</h4>
+          <p style="color:#aaa; font-size:0.9em">A nombre de: <b>Cristhofer Yhair Rojas Huarcaya</b></p>
+          <div class="btn-pago" onclick="copiar('12249975')" style="background:#333; padding:10px; border-radius:10px; margin:8px 0; cursor:pointer; display:flex; justify-content:space-between">
+            <b>12249975</b> <span style="color:#FFD700">Copiar</span>
+          </div>
+        </div>
+      </div>
+
+      <a id="btnWhats" href="#" class="btn" style="background:#25D366; color:#fff; width:100%">ENVIAR CAPTURA POR WHATSAPP</a>
     </div>
   </div>
 
