@@ -1,63 +1,39 @@
-*{box-sizing:border-box;margin:0;padding:0}
-body,html{font-family:'Arial',sans-serif;background:#000;color:#fff;overflow-x:hidden}
+*{margin:0;padding:0;box-sizing:border-box}
+body,html{font-family:'Poppins',sans-serif;color:#fff}
 
 #videoFondo{
-  position:fixed;top:0;left:0;width:100vw;height:100vh;
-  background:url('./Fondo.gif') no-repeat center fixed;
-  background-size:cover;z-index:-2;filter:brightness(0.6)
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  object-fit:cover;z-index:-1;
 }
-.capa-oscura{position:fixed;top:0;left:0;width:100vw;height:100vh;background:linear-gradient(180deg,rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.95) 100%);z-index:-1}
-.ruido{position:fixed;top:0;left:0;width:100%;height:100%;background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==');opacity:0.03;z-index:-1;pointer-events:none}
 
-.container{max-width:1200px;margin:0 auto;padding:20px;position:relative;z-index:1}
+.container{padding:20px;max-width:1000px;margin:auto}
 
-.logo{font-family:'Orbitron',sans-serif;font-size:3.2em;font-weight:900;color:#FFD700;text-align:center;text-shadow:0 0 10px #FFD700, 0 0 20px #FFD700;animation:brillo 2s infinite}
-.sublogo{text-align:center;color:#FFD700;font-size:14px;letter-spacing:3px;margin-bottom:20px}
-@keyframes brillo{0%,100%{text-shadow:0 0 10px #FFD700, 0 0 20px #FFD700}50%{text-shadow:0 0 20px #FFD700, 0 0 40px #FFD700}}
+/* TEXTO CON CONTORNO PARA QUE SE VEA SOBRE EL GIF */
+.logo{font-size:3em;font-weight:900;text-align:center;color:#FFD700;-webkit-text-stroke:2px #000;text-shadow:0 0 10px #000;margin-top:20px}
+.sublogo{text-align:center;color:#FFD700;-webkit-text-stroke:1px #000;font-weight:700}
+#btnPais{display:block;margin:15px auto;padding:12px 25px;background:#000;color:#FFD700;border:3px solid #FFD700;border-radius:50px;font-weight:900;cursor:pointer}
+.garantia{text-align:center;background:#FFD700;color:#000;padding:15px;border-radius:10px;font-weight:900;margin:20px 0;border:3px solid #000}
+.btn{display:block;width:300px;margin:20px auto;padding:18px;background:#FFD700;color:#000;text-align:center;text-decoration:none;font-weight:900;border-radius:50px;border:3px solid #000}
 
-#btnPais{background:#000;color:#FFD700;border:2px solid #FFD700;padding:12px 25px;border-radius:50px;display:block;margin:15px auto;cursor:pointer;font-weight:900;font-size:14px;transition:0.3s}
-#btnPais:hover{background:#FFD700;color:#000;box-shadow:0 0 20px #FFD700}
+.titulo{text-align:center;font-size:2.5em;color:#FFD700;-webkit-text-stroke:2px #000;margin:50px 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:rgba(0,0,0,0.85);padding:30px;border-radius:15px;text-align:center;border:3px solid #FFD700;backdrop-filter:blur(5px)}
+.card.destacado{transform:scale(1.1);border:4px solid #FFD700;position:relative}
+.tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#FFD700;color:#000;padding:5px 15px;border-radius:20px;font-weight:900}
+.card h3{color:#FFD700;font-size:1.8em}
+.precio{font-size:3em;color:#fff;margin:15px 0}
+.btn-comprar{width:100%;padding:15px;background:#FFD700;color:#000;border:none;border-radius:10px;font-weight:900;font-size:16px;cursor:pointer}
 
-.garantia{background:linear-gradient(90deg,#FFD700,#FFA500);color:#000;padding:16px;border-radius:12px;text-align:center;font-weight:900;margin:25px 0;font-size:15px;border:2px solid #FFD700;box-shadow:0 0 20px rgba(255,215,0,0.4)}
-.btn-principal{background:linear-gradient(90deg,#FFD700,#FFA500);color:#000;padding:20px 40px;border-radius:50px;text-decoration:none;font-weight:900;display:block;width:90%;max-width:350px;margin:25px auto;text-align:center;font-size:17px;box-shadow:0 0 30px #FFD700;border:none;transition:0.3s;letter-spacing:1px}
-.btn-principal:hover{transform:scale(1.05);box-shadow:0 0 40px #FFD700}
+#btnMusica{position:fixed;bottom:20px;right:20px;width:60px;height:60px;border-radius:50%;background:#FFD700;color:#000;border:3px solid #000;font-size:28px;cursor:pointer;z-index:999}
 
-.titulo{font-family:'Orbitron',sans-serif;text-align:center;font-size:2.5em;color:#FFD700;margin:60px 0 30px;text-shadow:0 0 15px #FFD700}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
-.card{background:rgba(17,17,17,0.8);backdrop-filter:blur(10px);padding:35px;border-radius:20px;text-align:center;border:2px solid #333;transition:0.4s;position:relative}
-.card:hover{transform:translateY(-10px);border-color:#FFD700;box-shadow:0 0 30px rgba(255,215,0,0.3)}
-.card.destacado{background:rgba(26,26,26,0.9);border:3px solid #FFD700;transform:scale(1.08);box-shadow:0 0 40px rgba(255,215,0,0.5)}
-.etiqueta{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#FFD700,#FFA500);color:#000;padding:8px 20px;border-radius:20px;font-weight:900;font-size:13px}
-.card h3{color:#FFD700;font-size:1.6em;margin-bottom:10px}
-.desc{color:#aaa;font-size:14px;margin-bottom:15px}
-.precio{font-size:3.5em;font-weight:900;color:#fff;margin:20px 0;text-shadow:0 0 15px #fff}
-.beneficios{list-style:none;text-align:left;margin:20px 0}
-.beneficios li{padding:8px 0;color:#ddd;font-size:14px}
-.btn-comprar{background:linear-gradient(90deg,#FFD700,#FFA500);color:#000;border:none;padding:16px;width:100%;border-radius:12px;font-weight:900;font-size:16px;cursor:pointer;transition:0.3s}
-.btn-comprar:hover{transform:scale(1.05)}
+.popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);justify-content:center;align-items:center;z-index:1000}
+.popup-content{background:#000;padding:30px;border-radius:20px;width:90%;max-width:500px;border:3px solid #FFD700}
+.cerrar{float:right;font-size:30px;color:#FFD700;cursor:pointer}
+.popup-content h2{text-align:center;color:#FFD700;margin-bottom:20px}
+.popup-content select{width:100%;padding:15px;margin:10px 0;background:#111;color:#fff;border:2px solid #FFD700;border-radius:10px}
+.total{text-align:center;font-size:2.5em;color:#FFD700;margin:20px 0}
+.metodo{display:flex;justify-content:space-between;align-items:center;background:#111;padding:12px;border-radius:10px;margin:10px 0;border:2px solid #FFD700}
+.metodo b{color:#FFD700}
+.metodo button{padding:8px 12px;background:#FFD700;color:#000;border:none;border-radius:8px;font-weight:900;cursor:pointer}
 
-#btnMusica{position:fixed;bottom:25px;right:25px;background:linear-gradient(90deg,#FFD700,#FFA500);border:none;border-radius:50%;width:65px;height:65px;font-size:30px;cursor:pointer;z-index:999;color:#000;box-shadow:0 0 25px #FFD700}
-
-.popup{display:none;position:fixed;z-index:1000;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.98);justify-content:center;align-items:center;backdrop-filter:blur(8px)}
-.popup-content{background:linear-gradient(145deg,#0a0a0a,#111);padding:35px;border-radius:25px;width:95%;max-width:550px;border:3px solid #FFD700;max-height:90vh;overflow-y:auto;box-shadow:0 0 50px rgba(255,215,0,0.5)}
-.cerrar{float:right;font-size:35px;cursor:pointer;color:#FFD700}
-.plan-seleccionado{text-align:center;color:#FFD700;font-size:1.5em;font-weight:900;margin-bottom:20px}
-.popup-content label{color:#FFD700;font-weight:900;font-size:15px}
-.popup-content select{width:100%;padding:16px;margin:12px 0;background:#000;color:#fff;border:2px solid #FFD700;border-radius:12px;font-size:16px}
-.total{font-size:2.3em;text-align:center;color:#FFD700;margin:20px 0;font-weight:900}
-.nota{text-align:center;color:#aaa;font-size:13px;margin:15px 0}
-
-.pagos-titulo{color:#FFD700;font-weight:900;text-align:center;margin:20px 0 15px;font-size:18px}
-.pagos{background:rgba(0,0,0,0.5);padding:20px;border-radius:15px;margin:15px 0;border:2px solid #FFD700}
-.metodo-pago{background:#000;border:2px solid #333;border-radius:14px;padding:15px;margin:12px 0;display:flex;align-items:center;justify-content:space-between;transition:0.3s}
-.metodo-pago:hover{border-color:#FFD700;box-shadow:0 0 15px #FFD700}
-.metodo-info{display:flex;flex-direction:column;gap:4px}
-.metodo-nombre{color:#FFD700;font-weight:900;font-size:16px}
-.metodo-numero{color:#fff;font-size:15px;letter-spacing:1px;font-weight:700}
-.btn-copiar{background:linear-gradient(90deg,#FFD700,#FFA500);color:#000;border:none;padding:10px 15px;border-radius:10px;font-weight:900;font-size:12px;cursor:pointer}
-
-@media (max-width: 768px){
-  .grid{grid-template-columns:1fr}
-  .logo{font-size:2.3em}
-  .card.destacado{transform:scale(1)}
-  .precio{font-size:3em}
+@media(max-width:768px){.grid{grid-template-columns:1fr}.card.destacado{transform:scale(1)}}
