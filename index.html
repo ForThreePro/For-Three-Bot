@@ -3,73 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OMNIA AI | Asistente Ejecutivo para WhatsApp</title>
-<link rel="stylesheet" href="style.css?v=20">
+<title>SYNCRA AI | Automatiza tu WhatsApp</title>
+<link rel="stylesheet" href="style.css?v=21">
 </head>
 <body>
-  <div class="bg-obsidiana"></div>
 
   <div class="container">
     <nav>
-      <div class="logo">OMNIA<span>AI</span></div>
+      <div class="logo">SYNCRA<span>AI</span></div>
       <div class="nav-actions">
-        <button id="btnPais">🇵🇪 PEN</button>
+        <select id="paisTop" onchange="cambiarPaisTop()"><option value="PEN">🇵🇪 PEN</option><option value="MXN">🇲🇽 MXN</option><option value="CLP">🇨🇱 CLP</option><option value="COP">🇨🇴 COP</option></select>
         <button id="btnMusica" onclick="toggleMusica()">🔊</button>
       </div>
     </nav>
 
     <header>
-      <div class="kicker">LA IA EJECUTIVA #1 EN LATAM</div>
-      <h1>Escala tu empresa<br><span>sin contratar personal</span></h1>
-      <p>OMNIA es tu fuerza de ventas 24/7. Responde, califica y cierra por WhatsApp en segundos.</p>
+      <h1>Convierte cada chat<br><span>en una venta</span></h1>
+      <p>SYNCRA es el cerebro de IA para tu WhatsApp. Atiende 1000 clientes a la vez.</p>
       <div class="cta">
-        <a href="https://wa.me/51936994155" class="btn-gold">Solicitar Implementación</a>
-        <a href="#planes" class="btn-outline">Ver Planes</a>
+        <a href="https://wa.me/51936994155" class="btn-blue">Empezar Gratis</a>
+        <a href="#planes" class="btn-white">Ver Precios</a>
       </div>
-      <div class="social-proof">+300 Empresas facturan 7 cifras con OMNIA</div>
     </header>
 
     <section id="planes" class="planes">
-      <h2>Inversión Estratégica</h2>
+      <h2>Planes Simples</h2>
       <div class="cards">
-        <div class="card"><h3>Core</h3><p>Para emprendedores</p><div class="price" data-pen="S/7" data-mxn="$130" data-clp="$7000" data-cop="$28000">S/7</div><button onclick="abrirPago('Core',7)">Adquirir</button></div>
-        <div class="card elite"><div class="elite-tag">ENTERPRISE</div><h3>Elite</h3><p>Para escalar a 7 cifras</p><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('Elite',30)">Adquirir</button></div>
-        <div class="card"><h3>Commerce</h3><p>Tienda + IA Integrada</p><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('Commerce',30)">Adquirir</button></div>
+        <div class="card"><h3>Básico</h3><div class="price" data-pen="S/7" data-mxn="$130" data-clp="$7000" data-cop="$28000">S/7</div><button onclick="abrirPago('Básico',7)">Elegir</button></div>
+        <div class="card pro"><h3>Pro</h3><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('Pro',30)">Elegir</button></div>
+        <div class="card"><h3>Tienda</h3><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('Tienda',30)">Elegir</button></div>
       </div>
     </section>
   </div>
 
-  <!-- CHECKOUT LUXURY TIPO STRIPE -->
+  <!-- CHECKOUT BLANCO MINIMALISTA -->
   <div id="popup" class="popup">
-    <div class="modal-lux">
-      <div class="modal-head">
-        <h2>Finalizar Inversión</h2>
-        <span class="close" onclick="cerrarPago()">×</span>
-      </div>
-      <div class="modal-body">
-        <div class="col1">
-          <div class="resumen"><span id="nomPlan"></span><b id="precio"></b></div>
-          <label>País de Facturación</label>
-          <select id="pais" onchange="cambiarPais()">
-            <option value="PEN" selected>🇵🇪 Perú - Soles</option>
-            <option value="MXN">🇲🇽 México - Pesos</option>
-            <option value="CLP">🇨🇱 Chile - Pesos</option>
-            <option value="COP">🇨🇴 Colombia - Pesos</option>
-          </select>
-          <label>Método de Pago</label>
-          <div id="metodosPago"></div>
-        </div>
-        <div class="col2">
-          <div class="card-visual"><p>OMNIA PAY</p><div id="numPago">Seleccione un método</div></div>
-          <p class="nota">1. Realice la transferencia</p>
-          <p class="nota">2. Envíe su comprobante para activación en 5 min</p>
-          <button class="btn-final" onclick="enviarWsp()">Enviar Comprobante</button>
-        </div>
-      </div>
+    <div class="modal-white">
+      <span class="close" onclick="cerrarPago()">×</span>
+      <h2>Completa tu compra</h2>
+      <div class="resumen"><b id="nomPlan"></b><span id="precio"></span></div>
+      <label>País</label>
+      <select id="pais" onchange="cambiarPais()"><option value="PEN">Perú</option><option value="MXN">México</option><option value="CLP">Chile</option><option value="COP">Colombia</option></select>
+      <label>Pagar con</label>
+      <div id="metodosPago"></div>
+      <button class="btn-final" onclick="enviarWsp()">Enviar comprobante por WhatsApp</button>
     </div>
   </div>
 
   <audio id="musica" src="Musica.mp3" loop></audio>
-<script src="script.js?v=20"></script>
+<script src="script.js?v=21"></script>
 </body>
 </html>
