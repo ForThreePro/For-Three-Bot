@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rayo Prem Bot - El Bot Más Rápido</title>
+<title>FOR THREE BOT by Yayico - El Bot Más Rápido</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- FONDO GIF -->
-  <div id="videoFondo"></div>
+  <!-- FONDO GIF CON IMG PARA GITHUB -->
+  <img id="videoFondo" src="./Fondo.gif" alt="fondo">
   <div class="capa-oscura"></div>
 
   <div class="container">
     <header>
-      <div class="logo">⚡ RAYO PREM BOT</div>
+      <div class="logo">⚡ FOR THREE BOT</div>
       <p class="sub" id="typing"></p>
-      <a href="https://wa.me/51936994155" class="btn">HABLAR CON YALLICO AHORA</a>
+      <a href="https://wa.me/51936994155" class="btn">HABLAR CON YAYICO AHORA</a>
     </header>
 
     <div class="urgencia">⚠️ Solo quedan <span id="cupos">12</span> cupos con servidor gratis este mes</div>
@@ -30,15 +30,14 @@
         <p>✅ Instalación y configuración gratis</p>
         <p>✅ Soporte 24/7 directo por WhatsApp</p>
         <p>✅ Actualizaciones de por vida</p>
-        <p>✅ Garantía 24/7</p>
-        <p>✅ Servidor estable sin caídas</p>
+        <p>✅ Garantía 30 días o te devuelvo</p>
       </div>
     </section>
 
     <section class="beneficios">
-      <div class="item anim"><h4>🚀 24/7 Activo</h4><p>Tu bot no duerme. Vende mientras tú descansas.</p></div>
-      <div class="item anim"><h4>🛡️ Sin Caídas</h4><p>Servidor estable. Cero errores, cero estrés.</p></div>
-      <div class="item anim"><h4>⚡ +100 Comandos</h4><p>Todo lo que necesitas en un solo bot.</p></div>
+      <div class="item anim"><h4>🚀 24/7 Activo</h4><p>Vende mientras duermes</p></div>
+      <div class="item anim"><h4>🛡️ Sin Caídas</h4><p>Servidor estable</p></div>
+      <div class="item anim"><h4>⚡ +100 Comandos</h4><p>Todo en uno</p></div>
     </section>
 
     <section class="planes">
@@ -47,14 +46,14 @@
         <div class="card anim">
           <h3>Bot Basic Grupo</h3>
           <div class="precio">S/7</div>
-          <ul><li>Bot Para Grupo Sin Caídas</li><li>Activo 24/7</li><li>+100 Comandos Sin Errores</li></ul>
+          <ul><li>Bot Para Grupo</li><li>Activo 24/7</li><li>+100 Comandos</li></ul>
           <button onclick="abrirPago('Bot Basic Grupo', '7')" class="btn">LO QUIERO</button>
         </div>
         <div class="card destacado anim">
           <span class="tag">MÁS VENDIDO</span>
           <h3>Bot Prem Personalizado</h3>
           <div class="precio">S/30</div>
-          <ul><li>Bot Personalizado</li><li>Servidor 1 Mes Gratis</li><li>Diseñado A Tu Gusto</li></ul>
+          <ul><li>Bot Personalizado</li><li>Servidor 1 Mes Gratis</li><li>Diseño A Tu Gusto</li></ul>
           <button onclick="abrirPago('Bot Prem Personalizado', '30')" class="btn">LO QUIERO</button>
         </div>
         <div class="card anim">
@@ -67,12 +66,20 @@
     </section>
 
     <section class="pagos">
-      <h3>Métodos de Pago Seguros</h3>
-      <div class="logos">Yape  Plin  BCP  Interbank</div>
+      <h3>Paga con Tarjeta, Yape, Plin</h3>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="TU_CORREO_PAYPAL@gmail.com">
+        <input type="hidden" name="item_name" id="itemPaypal" value="Bot Prem">
+        <input type="hidden" name="amount" id="montoPaypal" value="30.00">
+        <input type="hidden" name="currency_code" value="PEN">
+        <input type="hidden" name="return" value="https://wa.me/51936994155">
+        <button type="submit" class="btn" style="background:#0070ba;color:#fff;width:100%">💳 PAGAR CON TARJETA / PAYPAL</button>
+      </form>
     </section>
 
     <footer>
-      <p>¿Dudas? Escríbeme directo: <a href="https://wa.me/51936994155" class="wa">wa.me/51936994155</a></p>
+      <p>¿Dudas? <a href="https://wa.me/51936994155" class="wa">wa.me/51936994155</a></p>
       <p style="margin-top:10px;color:#555">FOR THREE BOT by Yayico © 2026</p>
     </footer>
   </div>
@@ -85,10 +92,7 @@
       <p class="precio-popup">Total: S/<span id="precioPlan"></span></p>
       <h3>Paga por Yape o Plin</h3>
       <div class="btn-pago" onclick="copiar('936994155')">📱 Yape/Plin: 936 994 155 <span>Copiar</span></div>
-      <h3>O Transferencia</h3>
-      <div class="btn-pago" onclick="copiar('001-234-56789')">🏦 BCP: 001-234-56789 <span>Copiar</span></div>
-      <div class="btn-pago" onclick="copiar('002-345-67890')">🏦 Interbank: 002-345-67890 <span>Copiar</span></div>
-      <p style="margin-top:15px">Después de pagar, Envíame la captura 👇</p>
+      <p style="margin-top:15px">Después de pagar, escríbeme 👇</p>
       <a id="btnWhats" href="#" class="btn">ENVIAR CAPTURA POR WHATSAPP</a>
     </div>
   </div>
@@ -96,11 +100,9 @@
   <a href="https://wa.me/51936994155" class="wa-float">💬</a>
   <div id="noti">🔥 Alguien acaba de comprar Bot Prem</div>
 
-  <!-- MÚSICA DE FONDO -->
-  <audio id="musica" loop>
-    <source src="Musica.mp3" type="audio/mpeg">
-  </audio>
-  <div id="btnSonido"><button onclick="activarMusica()">⚡ ACTIVAR MÚSICA</button></div>
+  <!-- MÚSICA -->
+  <audio id="musica" loop><source src="./Musica.mp3" type="audio/mpeg"></audio>
+  <div id="btnSonido"><button onclick="activarMusica()">🔊 ACTIVAR MÚSICA</button></div>
 
 <script src="script.js"></script>
 </body>
