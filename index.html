@@ -3,97 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZENTRY BOT | IA para WhatsApp</title>
-<link rel="stylesheet" href="style.css?v=15">
+<title>ZENTRY BOT | IA que Vende por Ti</title>
+<link rel="stylesheet" href="style.css?v=16">
 </head>
 <body>
+  <div id="aura"></div>
   <canvas id="particles"></canvas>
   
   <div class="container">
     <nav>
-      <div class="logo">ZENTRY<span>.BOT</span></div>
+      <div class="logo">ZENTRY<span>.AI</span></div>
       <div class="nav-right">
+        <div class="contador">OFERTA: <span id="timer">23:59:59</span></div>
         <button id="btnPais" onclick="abrirSelectorPais()">🌎 PEN</button>
         <button id="btnMusica" onclick="toggleMusica()">🔊</button>
       </div>
     </nav>
 
     <header>
-      <div class="badge">NUEVA VERSIÓN v3.0</div>
-      <h1>Tu WhatsApp con <span>Inteligencia Artificial</span></h1>
-      <p>Vende 24/7, responde en 1 seg y escala tu negocio sin contratar personal.</p>
-      <div class="cta">
-        <a href="https://wa.me/51936994155" class="btn-main">Quiero mi Bot Ahora</a>
-        <a href="#planes" class="btn-ghost">Ver Planes</a>
-      </div>
-      <div class="stats">
-        <div><b>+500</b><span>Clientes Activos</span></div>
-        <div><b>99.9%</b><span>Uptime</span></div>
-        <div><b><5min</b><span>Activación</span></div>
+      <div class="badge animate">LANZAMIENTO v4.0</div>
+      <h1 class="animate-delay-1">Convierte tu WhatsApp en<br><span>una Máquina de Ventas</span></h1>
+      <p class="animate-delay-2">La IA que responde, vende y fideliza clientes mientras duermes.</p>
+      <div class="cta animate-delay-3">
+        <a href="https://wa.me/51936994155" class="btn-main">Activar mi Bot Ahora</a>
+        <a href="#planes" class="btn-ghost">Ver Demo</a>
       </div>
     </header>
 
     <section id="planes" class="planes">
-      <h2>Elige tu Potencia</h2>
+      <h2>Planes con Superpoderes</h2>
       <div class="cards">
-        <div class="card">
-          <div class="icon">🚀</div><h3>Starter</h3><p>Para emprendedores</p>
+        <div class="card tilt"><div class="brillo"></div>
+          <div class="icon">🚀</div><h3>Starter</h3>
           <div class="price" data-pen="7" data-mxn="130" data-clp="7000" data-cop="28000">$7</div>
-          <ul><li>✓ Respuestas Ilimitadas</li><li>✓ 1 Usuario</li><li>✓ Soporte Chat</li></ul>
-          <button onclick="abrirPago('Starter',7)">Empezar</button>
+          <ul><li>✓ Respuestas 24/7</li><li>✓ 500 Mensajes/mes</li><li>✓ Soporte</li></ul>
+          <button onclick="abrirPago('Starter',7)">Elegir Starter</button>
         </div>
-        <div class="card pro">
-          <div class="ribbon">EL MÁS USADO</div>
-          <div class="icon">⚡</div><h3>Pro</h3><p>Para escalar ventas</p>
+        <div class="card pro tilt"><div class="brillo"></div><div class="ribbon">AHORRA 40%</div>
+          <div class="icon">⚡</div><h3>Pro</h3>
           <div class="price" data-pen="30" data-mxn="550" data-clp="30000" data-cop="120000">$30</div>
-          <ul><li>✓ Todo Starter</li><li>✓ Base de Datos</li><li>✓ Flujos + Menús</li><li>✓ Prioridad 24/7</li></ul>
-          <button onclick="abrirPago('Pro',30)">Potenciar</button>
+          <ul><li>✓ Todo Starter</li><li>✓ Mensajes Ilimitados</li><li>✓ Base de Datos</li><li>✓ Flujos + IA</li></ul>
+          <button onclick="abrirPago('Pro',30)">Elegir Pro</button>
         </div>
-        <div class="card">
-          <div class="icon">🏪</div><h3>WebStore</h3><p>Tu tienda + Bot</p>
+        <div class="card tilt"><div class="brillo"></div>
+          <div class="icon">🏪</div><h3>WebStore</h3>
           <div class="price" data-pen="30" data-mxn="550" data-clp="30000" data-cop="120000">$30</div>
-          <ul><li>✓ Landing Premium</li><li>✓ Catálogo + Carrito</li><li>✓ Dominio .com Gratis</li></ul>
-          <button onclick="abrirPago('WebStore',30)">Vender Online</button>
+          <ul><li>✓ Tienda + Bot</li><li>✓ Pasarela de Pagos</li><li>✓ Dominio Gratis</li></ul>
+          <button onclick="abrirPago('WebStore',30)">Elegir WebStore</button>
         </div>
       </div>
     </section>
   </div>
 
-  <!-- CHECKOUT GLASS PRO -->
+  <!-- CHECKOUT CON QR -->
   <div id="popup" class="popup">
     <div class="checkout-glass">
       <span class="close" onclick="cerrarPago()">×</span>
       <div class="checkout-header">
-        <h2>Completa tu Orden</h2>
-        <p>Estás a 1 paso de automatizar</p>
+        <h2>Pago Seguro</h2>
+        <div class="progress"><div class="bar"></div></div>
       </div>
       <div class="checkout-body">
         <div class="col-izq">
-          <label>Plan Seleccionado</label>
           <div class="plan-resumen"><h3 id="nomPlan"></h3><h2 id="precio">$0</h2></div>
-          
-          <label>1. Selecciona País</label>
-          <select id="pais" onchange="cambiarPais()">
-            <option value="PEN">🇵🇪 Perú - Soles</option><option value="MXN">🇲🇽 México - Pesos</option>
-            <option value="CLP">🇨🇱 Chile - Pesos</option><option value="COP">🇨🇴 Colombia - Pesos</option>
-          </select>
-
-          <label>2. Elige cómo pagar</label>
+          <label>Selecciona País</label>
+          <select id="pais" onchange="cambiarPais()"><option value="PEN">🇵🇪 Perú</option><option value="MXN">🇲🇽 México</option><option value="CLP">🇨🇱 Chile</option><option value="COP">🇨🇴 Colombia</option></select>
+          <label>Elige Método de Pago</label>
           <div class="metodos" id="metodosPago"></div>
+          <div class="qr-box" id="qrBox" style="display:none">
+            <p>Escanea o copia los datos</p>
+            <div class="qr-fake"></div>
+            <button onclick="copiarDatos()">Copiar Datos</button>
+          </div>
         </div>
         <div class="col-der">
-          <h3>Pasos para activar</h3>
-          <div class="paso"><span>1</span><p>Transfiere al método que elijas</p></div>
-          <div class="paso"><span>2</span><p>Toma captura de tu pago</p></div>
-          <div class="paso"><span>3</span><p>Envíanosla y te activamos</p></div>
-          <button class="btn-final" onclick="enviarWsp()">Enviar Comprobante por WhatsApp</button>
-          <div class="seguro">🔒 Tu pago está protegido. Garantía 7 días</div>
+          <h3>Activación Express</h3>
+          <div class="paso"><span>1</span><p>Paga con el método elegido</p></div>
+          <div class="paso"><span>2</span><p>Envía tu captura aquí</p></div>
+          <div class="paso"><span>3</span><p>Te activamos en <b>5 min</b></p></div>
+          <button class="btn-final" onclick="enviarWsp()">Enviar Captura por WhatsApp</button>
         </div>
       </div>
     </div>
   </div>
 
   <audio id="musica" src="Musica.mp3" loop></audio>
-<script src="script.js?v=15"></script>
+<script src="script.js?v=16"></script>
 </body>
 </html>
