@@ -1,11 +1,11 @@
 let pais='PEN',precioBase=0,metodoSel='',planSel='';
 
-// TUS DATOS DE PAGO
+// REGLA DE PAGOS
 const pagosData = {
-  PEN: [{nombre:'Yape', num:'936994155'}], // SOLO YAPE PARA PERU
-  MXN: [{nombre:'Prex', num:'12249975'},{nombre:'Global66', num:'@CRIROJ1855'}], // DEMAS PAISES
-  CLP: [{nombre:'Prex', num:'12249975'},{nombre:'Global66', num:'@CRIROJ1855'}],
-  COP: [{nombre:'Prex', num:'12249975'},{nombre:'Global66', num:'@CRIROJ1855'}]
+  PEN: [{nombre:'YAPE', num:'936994155'}], // SOLO YAPE
+  MXN: [{nombre:'PREX', num:'12249975'},{nombre:'GLOBAL66', num:'@CRIROJ1855'}],
+  CLP: [{nombre:'PREX', num:'12249975'},{nombre:'GLOBAL66', num:'@CRIROJ1855'}],
+  COP: [{nombre:'PREX', num:'12249975'},{nombre:'GLOBAL66', num:'@CRIROJ1855'}]
 };
 
 function abrirPago(n,p){
@@ -13,7 +13,7 @@ function abrirPago(n,p){
   document.getElementById('popup').style.display='flex';
   document.getElementById('nomPlan').innerText=n;
   document.getElementById('pais').value = pais;
-  cambiarPais(); // Cargar precios y metodos al abrir
+  cambiarPais();
 }
 
 function cambiarPaisTop(){
@@ -26,17 +26,15 @@ function cambiarPaisTop(){
 function cambiarPais(){
   pais=document.getElementById('pais').value;
   document.getElementById('paisTop').value = pais;
-  
-  // Cambiar precio del modal
-  document.getElementById('precio').innerText = document.querySelector(`.pro.price`).getAttribute(`data-${pais.toLowerCase()}`);
+  document.getElementById('precio').innerText = document.querySelector(`.elite .price`).getAttribute(`data-${pais.toLowerCase()}`);
 
-  // Renderizar métodos de pago según país
+  // Renderizar métodos - CORREGIDO
   let html='';
-  pagosData[pais].forEach(p=>{ // AQUI ESTABA EL ERROR. Ahora si recorre el array del pais
-    html+=`<div class="metodo" onclick="seleccionar(this,'${p.num}')"><b>${p.nombre}</b> - ${p.num}</div>`;
+  pagosData.forEach(p=>{
+    html+=`<div class="metodo" onclick="seleccionar(this,'${p.num}')">[ ${p.nombre} ] >> ${p.num}</div>`;
   });
   document.getElementById('metodosPago').innerHTML=html;
-  metodoSel = ''; // Resetear selección
+  metodoSel = '';
 }
 
 function seleccionar(el,num){
@@ -45,8 +43,8 @@ function seleccionar(el,num){
 }
 
 function enviarWsp(){
-  if(!metodoSel){alert('Elige un método de pago');return}
-  let msg=`Hola, quiero SYNCRA AI plan ${planSel}. Pagué por ${metodoSel}. Envío captura.`;
+  if(!metodoSel){alert('SELECCIONA UN METODO');return}
+  let msg=`[NEONET] SOLICITUD: Plan ${planSel}. PAGO: ${metodoSel}. ENVIANDO CAPTURA.`;
   window.open(`https://wa.me/51936994155?text=${encodeURIComponent(msg)}`,'_blank');
 }
 function cerrarPago(){document.getElementById('popup').style.display='none'}
