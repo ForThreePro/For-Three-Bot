@@ -4,50 +4,69 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rayo Prem Bot | Yallico</title>
-<link rel="stylesheet" href="style.css?v=10">
+<link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
-  <div class="fondo-animado"></div>
+  <div class="rayos"></div>
   
   <div class="container">
     <header>
       <div class="logo">⚡ RAYO PREM BOT</div>
-      <p class="sub">by YALLICO</p>
+      <p class="by">by YALLICO</p>
       <button id="btnPais" onclick="abrirSelectorPais()">PAÍS: PERÚ</button>
-      <div class="garantia">7 DÍAS DE GARANTÍA O DEVOLUCIÓN</div>
-      <a href="https://wa.me/51936994155" class="btn">HABLAR CON YALLICO</a>
+      <div class="garantia">⚡ 7 DÍAS DE GARANTÍA TOTAL ⚡</div>
+      <a href="https://wa.me/51936994155" class="btn-wa">HABLAR CON YALLICO</a>
     </header>
 
-    <section>
-      <h2 class="titulo">PLANES</h2>
+    <section class="planes">
+      <h2>ELIGE TU PLAN</h2>
       <div class="grid">
-        <div class="card"><h3>BASIC</h3><p class="pre">S/7</p><button onclick="abrirPago('BASIC',7)">COMPRAR</button></div>
-        <div class="card pro"><span>TOP</span><h3>PREM</h3><p class="pre">S/30</p><button onclick="abrirPago('PREM',30)">COMPRAR</button></div>
-        <div class="card"><h3>WEB PRO</h3><p class="pre">S/30</p><button onclick="abrirPago('WEB PRO',30)">COMPRAR</button></div>
+        <div class="card"><h3>BASIC</h3><p class="precio">S/7</p><button onclick="abrirPago('BASIC',7)">COMPRAR AHORA</button></div>
+        <div class="card pro"><div class="badge">TOP VENTAS</div><h3>PREM</h3><p class="precio">S/30</p><button onclick="abrirPago('PREM',30)">COMPRAR AHORA</button></div>
+        <div class="card"><h3>WEB PRO</h3><p class="precio">S/30</p><button onclick="abrirPago('WEB PRO',30)">COMPRAR AHORA</button></div>
       </div>
     </section>
   </div>
 
+  <!-- SECCIÓN DE PAGOS NUEVA -->
   <div id="popup" class="popup">
-    <div class="box">
-      <span onclick="cerrarPago()">X</span>
-      <h2 id="nomPlan"></h2>
+    <div class="modal">
+      <span class="close" onclick="cerrarPago()">×</span>
+      <h2>Pagar: <span id="nomPlan"></span></h2>
+      
+      <label>País</label>
       <select id="pais" onchange="cambiarPais()">
         <option value="PEN">🇵🇪 Perú</option><option value="MXN">🇲🇽 México</option>
         <option value="CLP">🇨🇱 Chile</option><option value="COP">🇨🇴 Colombia</option>
       </select>
-      <h1 id="precio">S/0</h1>
-      <div id="pagos">
-        <div id="yapeBox"><b>Yape:</b> 936994155 <button onclick="copiar('yape')">COPIAR</button><p id="yape" hidden>936994155</p></div>
-        <div><b>Prex:</b> 12249975 <button onclick="copiar('prex')">COPIAR</button><p id="prex" hidden>12249975</p></div>
-        <div><b>Global:</b> @CRIROJ1855 <button onclick="copiar('global')">COPIAR</button><p id="global" hidden>@CRIROJ1855</p></div>
+
+      <div class="total-box">
+        <p>TOTAL A PAGAR</p>
+        <h1 id="precio">S/0</h1>
       </div>
-      <a href="https://wa.me/51936994155" target="_blank" class="btn">ENVIAR CAPTURA</a>
+
+      <h3>Métodos de Pago</h3>
+      <div class="lista-pagos">
+        <div class="item-pago" id="yapeItem">
+          <div><img src="https://i.imgur.com/4L1tN9g.png" width="35"><b>Yape</b><p id="yape">936994155</p></div>
+          <button onclick="copiar('yape')">Copiar</button>
+        </div>
+        <div class="item-pago">
+          <div><img src="https://i.imgur.com/8KQz9mL.png" width="35"><b>Prex</b><p id="prex">12249975</p></div>
+          <button onclick="copiar('prex')">Copiar</button>
+        </div>
+        <div class="item-pago">
+          <div><img src="https://i.imgur.com/3bV1z2w.png" width="35"><b>Global66</b><p id="global">@CRIROJ1855</p></div>
+          <button onclick="copiar('global')">Copiar</button>
+        </div>
+      </div>
+
+      <a href="https://wa.me/51936994155" target="_blank" class="btn-wa">ENVIAR CAPTURA POR WHATSAPP</a>
     </div>
   </div>
 
   <audio id="musica" src="Musica.mp3" loop></audio>
   <button id="btnMusica" onclick="toggleMusica()">🔊</button>
-<script src="script.js?v=10"></script>
+<script src="script.js?v=11"></script>
 </body>
 </html>
