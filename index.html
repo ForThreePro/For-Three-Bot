@@ -3,44 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AURA AI | Asistente para WhatsApp</title>
-<link rel="stylesheet" href="style.css?v=23">
+<title>Dulce Maní | Chocotejas Artesanales</title>
+<link rel="stylesheet" href="style.css?v=24">
 </head>
 <body>
 
   <div class="container">
     <nav>
-      <div class="logo">Aura<span>AI</span></div>
+      <div class="logo">🍫 Dulce<span>Maní</span></div>
       <div class="nav-actions">
         <select id="paisTop" onchange="cambiarPaisTop()"><option value="PEN">🇵🇪 PEN</option><option value="MXN">🇲🇽 MXN</option><option value="CLP">🇨🇱 CLP</option><option value="COP">🇨🇴 COP</option></select>
-        <button id="btnMusica" onclick="toggleMusica()">🔊</button>
       </div>
     </nav>
 
     <header>
-      <h1>Tu asistente de ventas<br><span>que trabaja por ti</span></h1>
-      <p>AURA responde a tus clientes, califica y agenda citas por WhatsApp. Sin estrés.</p>
+      <h1>Chocotejas artesanales<br><span>hechas con amor</span></h1>
+      <p>Chocolate premium, maní crocante y el mejor manjar. Envíos a todo Perú.</p>
       <div class="cta">
-        <a href="https://wa.me/51936994155" class="btn-main">Empezar ahora</a>
-        <a href="#planes" class="btn-sec">Ver planes</a>
+        <a href="#productos" class="btn-main">Ver productos</a>
       </div>
     </header>
 
-    <section id="planes" class="planes">
-      <h2>Planes transparentes</h2>
+    <section id="productos" class="productos">
+      <h2>Nuestras Delicias</h2>
       <div class="cards">
-        <div class="card"><h3>Inicio</h3><p>Ideal para probar</p><div class="price" data-pen="S/7" data-mxn="$130" data-clp="$7000" data-cop="$28000">S/7</div><button onclick="abrirPago('Inicio',7)">Elegir plan</button></div>
-        <div class="card pro"><div class="badge">Recomendado</div><h3>Profesional</h3><p>Para crecer tu negocio</p><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('Profesional',30)">Elegir plan</button></div>
-        <div class="card"><h3>Tienda</h3><p>Con catálogo integrado</p><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('Tienda',30)">Elegir plan</button></div>
+        <div class="card"><img src="https://placehold.co/300x200/D2B48C/fff?text=Caja+6"><h3>Caja 6 unidades</h3><p>Surtido: Pecanas, Maní, Coco</p><div class="price" data-pen="S/25" data-mxn="$450" data-clp="$25000" data-cop="$100000">S/25</div><button onclick="abrirPago('Caja 6',25)">Pedir ahora</button></div>
+        <div class="card pro"><img src="https://placehold.co/300x200/D2B48C/fff?text=Caja+12"><div class="badge">Más vendido</div><h3>Caja 12 unidades</h3><p>Ideal para regalar</p><div class="price" data-pen="S/45" data-mxn="$800" data-clp="$45000" data-cop="$180000">S/45</div><button onclick="abrirPago('Caja 12',45)">Pedir ahora</button></div>
+        <div class="card"><img src="https://placehold.co/300x200/D2B48C/fff?text=Kilo+Maní"><h3>Kilo de Maní Garapiñado</h3><p>Dulce y crocante</p><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('Kilo Maní',30)">Pedir ahora</button></div>
       </div>
     </section>
   </div>
 
-  <!-- CHECKOUT LIMPIO -->
+  <!-- CHECKOUT -->
   <div id="popup" class="popup">
     <div class="modal-clean">
       <span class="close" onclick="cerrarPago()">×</span>
-      <h2>Finalizar compra</h2>
+      <h2>Finalizar pedido</h2>
       <div class="resumen"><div><b id="nomPlan"></b></div><div id="precio"></div></div>
       
       <label>País</label>
@@ -49,11 +47,10 @@
       <label>Método de pago</label>
       <div id="metodosPago"></div>
       
-      <button class="btn-final" onclick="enviarWsp()">Enviar comprobante por WhatsApp</button>
+      <button class="btn-final" onclick="enviarWsp()">Enviar pedido por WhatsApp</button>
     </div>
   </div>
 
-  <audio id="musica" src="Musica.mp3" loop></audio>
-<script src="script.js?v=23"></script>
+<script src="script.js?v=24"></script>
 </body>
 </html>
