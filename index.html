@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ZENTRY BOT | IA que Vende por Ti</title>
-<link rel="stylesheet" href="style.css?v=16">
+<link rel="stylesheet" href="style.css?v=17">
 </head>
 <body>
   <div id="aura"></div>
   <canvas id="particles"></canvas>
-  
+
   <div class="container">
     <nav>
       <div class="logo">ZENTRY<span>.AI</span></div>
@@ -26,7 +26,7 @@
       <p class="animate-delay-2">La IA que responde, vende y fideliza clientes mientras duermes.</p>
       <div class="cta animate-delay-3">
         <a href="https://wa.me/51936994155" class="btn-main">Activar mi Bot Ahora</a>
-        <a href="#planes" class="btn-ghost">Ver Demo</a>
+        <a href="#planes" class="btn-ghost">Ver Planes</a>
       </div>
     </header>
 
@@ -67,7 +67,12 @@
         <div class="col-izq">
           <div class="plan-resumen"><h3 id="nomPlan"></h3><h2 id="precio">$0</h2></div>
           <label>Selecciona País</label>
-          <select id="pais" onchange="cambiarPais()"><option value="PEN">🇵🇪 Perú</option><option value="MXN">🇲🇽 México</option><option value="CLP">🇨🇱 Chile</option><option value="COP">🇨🇴 Colombia</option></select>
+          <select id="pais" onchange="cambiarPais()">
+            <option value="PEN">🇵🇪 Perú - Soles</option>
+            <option value="MXN">🇲🇽 México - Pesos</option>
+            <option value="CLP">🇨🇱 Chile - Pesos</option>
+            <option value="COP">🇨🇴 Colombia - Pesos</option>
+          </select>
           <label>Elige Método de Pago</label>
           <div class="metodos" id="metodosPago"></div>
           <div class="qr-box" id="qrBox" style="display:none">
@@ -88,6 +93,6 @@
   </div>
 
   <audio id="musica" src="Musica.mp3" loop></audio>
-<script src="script.js?v=16"></script>
+<script src="script.js?v=17"></script>
 </body>
 </html>
