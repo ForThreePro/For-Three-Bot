@@ -1,4 +1,4 @@
-console.log("Rayo Prem Bot v3 Cargado");
+console.log("Rayo Prem Bot v4 Cargado");
 let pais = 'PEN';
 let precioBase = 0;
 
@@ -28,6 +28,12 @@ function cambiarPais(){
 
 function cerrarPago(){ 
   document.getElementById('popupPago').style.display = 'none'; 
+}
+
+function copiar(id){
+  let texto = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(texto);
+  alert("✅ Copiado: " + texto);
 }
 
 const musica = document.getElementById('musicaFondo'); 
