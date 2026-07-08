@@ -3,75 +3,97 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nexus Bot | by Yallico</title>
-<link rel="stylesheet" href="style.css?v=14">
+<title>ZENTRY BOT | IA para WhatsApp</title>
+<link rel="stylesheet" href="style.css?v=15">
 </head>
 <body>
-  <div class="grid-fondo"></div>
+  <canvas id="particles"></canvas>
   
   <div class="container">
     <nav>
-      <div class="brand">NEXUS<span>BOT</span></div>
-      <button id="btnPais" onclick="abrirSelectorPais()">🌎 PERÚ</button>
+      <div class="logo">ZENTRY<span>.BOT</span></div>
+      <div class="nav-right">
+        <button id="btnPais" onclick="abrirSelectorPais()">🌎 PEN</button>
+        <button id="btnMusica" onclick="toggleMusica()">🔊</button>
+      </div>
     </nav>
 
     <header>
-      <h1>Automatiza tu WhatsApp<br><span>al Nivel Dios</span></h1>
-      <p>Los bots más rápidos y estables del mercado. Activación inmediata.</p>
-      <a href="https://wa.me/51936994155" class="btn-main">Hablar con un Asesor</a>
-      <div class="trust">✓ Soporte 24/7  ✓ Garantía 7 días  ✓ Activación en 5 min</div>
+      <div class="badge">NUEVA VERSIÓN v3.0</div>
+      <h1>Tu WhatsApp con <span>Inteligencia Artificial</span></h1>
+      <p>Vende 24/7, responde en 1 seg y escala tu negocio sin contratar personal.</p>
+      <div class="cta">
+        <a href="https://wa.me/51936994155" class="btn-main">Quiero mi Bot Ahora</a>
+        <a href="#planes" class="btn-ghost">Ver Planes</a>
+      </div>
+      <div class="stats">
+        <div><b>+500</b><span>Clientes Activos</span></div>
+        <div><b>99.9%</b><span>Uptime</span></div>
+        <div><b><5min</b><span>Activación</span></div>
+      </div>
     </header>
 
-    <section class="precios">
-      <h2>Planes Nexus</h2>
+    <section id="planes" class="planes">
+      <h2>Elige tu Potencia</h2>
       <div class="cards">
-        <div class="card"><h3>Starter</h3><p>Ideal para empezar</p><div class="price">$7</div><ul><li>Respuestas Auto</li><li>24/7 Online</li></ul><button onclick="abrirPago('Starter',7)">Adquirir</button></div>
-        <div class="card pro"><span class="tag">RECOMENDADO</span><h3>Pro</h3><p>El más vendido</p><div class="price">$30</div><ul><li>Todo Starter</li><li>Menú + DB</li><li>Flujos Avanzados</li></ul><button onclick="abrirPago('Pro',30)">Adquirir</button></div>
-        <div class="card"><h3>WebStore</h3><p>Tu tienda online</p><div class="price">$30</div><ul><li>Landing Pro</li><li>Pasarela Pagos</li><li>Dominio Gratis</li></ul><button onclick="abrirPago('WebStore',30)">Adquirir</button></div>
+        <div class="card">
+          <div class="icon">🚀</div><h3>Starter</h3><p>Para emprendedores</p>
+          <div class="price" data-pen="7" data-mxn="130" data-clp="7000" data-cop="28000">$7</div>
+          <ul><li>✓ Respuestas Ilimitadas</li><li>✓ 1 Usuario</li><li>✓ Soporte Chat</li></ul>
+          <button onclick="abrirPago('Starter',7)">Empezar</button>
+        </div>
+        <div class="card pro">
+          <div class="ribbon">EL MÁS USADO</div>
+          <div class="icon">⚡</div><h3>Pro</h3><p>Para escalar ventas</p>
+          <div class="price" data-pen="30" data-mxn="550" data-clp="30000" data-cop="120000">$30</div>
+          <ul><li>✓ Todo Starter</li><li>✓ Base de Datos</li><li>✓ Flujos + Menús</li><li>✓ Prioridad 24/7</li></ul>
+          <button onclick="abrirPago('Pro',30)">Potenciar</button>
+        </div>
+        <div class="card">
+          <div class="icon">🏪</div><h3>WebStore</h3><p>Tu tienda + Bot</p>
+          <div class="price" data-pen="30" data-mxn="550" data-clp="30000" data-cop="120000">$30</div>
+          <ul><li>✓ Landing Premium</li><li>✓ Catálogo + Carrito</li><li>✓ Dominio .com Gratis</li></ul>
+          <button onclick="abrirPago('WebStore',30)">Vender Online</button>
+        </div>
       </div>
     </section>
   </div>
 
-  <!-- CHECKOUT NUEVO -->
+  <!-- CHECKOUT GLASS PRO -->
   <div id="popup" class="popup">
-    <div class="checkout">
-      <div class="checkout-left">
-        <span class="close" onclick="cerrarPago()">×</span>
-        <h2>Resumen de Compra</h2>
-        <div class="item"><p id="nomPlan"></p><h3 id="precio">$0</h3></div>
-        
-        <h3>Selecciona tu país</h3>
-        <select id="pais" onchange="cambiarPais()">
-          <option value="PEN">🇵🇪 Perú</option><option value="MXN">🇲🇽 México</option>
-          <option value="CLP">🇨🇱 Chile</option><option value="COP">🇨🇴 Colombia</option>
-        </select>
-
-        <h3>Método de Pago</h3>
-        <div class="metodos">
-          <div class="metodo" id="yapeMetodo" onclick="seleccionar(this)">
-            <input type="radio" name="pago"><img src="https://i.imgur.com/4L1tN9g.png"><div><b>Yape/Plin</b><small>936994155</small></div>
-          </div>
-          <div class="metodo" onclick="seleccionar(this)">
-            <input type="radio" name="pago"><img src="https://i.imgur.com/8KQz9mL.png"><div><b>Prex Card</b><small>12249975</small></div>
-          </div>
-          <div class="metodo" onclick="seleccionar(this)">
-            <input type="radio" name="pago"><img src="https://i.imgur.com/3bV1z2w.png"><div><b>Global66</b><small>@CRIROJ1855</small></div>
-          </div>
-        </div>
-        <button class="btn-pagar" onclick="irWhatsapp()">Pagar y Enviar Comprobante</button>
+    <div class="checkout-glass">
+      <span class="close" onclick="cerrarPago()">×</span>
+      <div class="checkout-header">
+        <h2>Completa tu Orden</h2>
+        <p>Estás a 1 paso de automatizar</p>
       </div>
-      <div class="checkout-right">
-        <h3>Instrucciones</h3>
-        <p>1. Selecciona tu método de pago</p>
-        <p>2. Realiza la transferencia</p>
-        <p>3. Dale click al botón para enviar captura</p>
-        <div class="seguro">🔒 Pago 100% Seguro</div>
+      <div class="checkout-body">
+        <div class="col-izq">
+          <label>Plan Seleccionado</label>
+          <div class="plan-resumen"><h3 id="nomPlan"></h3><h2 id="precio">$0</h2></div>
+          
+          <label>1. Selecciona País</label>
+          <select id="pais" onchange="cambiarPais()">
+            <option value="PEN">🇵🇪 Perú - Soles</option><option value="MXN">🇲🇽 México - Pesos</option>
+            <option value="CLP">🇨🇱 Chile - Pesos</option><option value="COP">🇨🇴 Colombia - Pesos</option>
+          </select>
+
+          <label>2. Elige cómo pagar</label>
+          <div class="metodos" id="metodosPago"></div>
+        </div>
+        <div class="col-der">
+          <h3>Pasos para activar</h3>
+          <div class="paso"><span>1</span><p>Transfiere al método que elijas</p></div>
+          <div class="paso"><span>2</span><p>Toma captura de tu pago</p></div>
+          <div class="paso"><span>3</span><p>Envíanosla y te activamos</p></div>
+          <button class="btn-final" onclick="enviarWsp()">Enviar Comprobante por WhatsApp</button>
+          <div class="seguro">🔒 Tu pago está protegido. Garantía 7 días</div>
+        </div>
       </div>
     </div>
   </div>
 
   <audio id="musica" src="Musica.mp3" loop></audio>
-  <button id="btnMusica" onclick="toggleMusica()">🔊</button>
-<script src="script.js?v=14"></script>
+<script src="script.js?v=15"></script>
 </body>
 </html>
