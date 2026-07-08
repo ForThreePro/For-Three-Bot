@@ -55,7 +55,22 @@
     <div class="popup-content" style="max-height:90vh; overflow-y:auto">
       <span class="cerrar" onclick="cerrarPago()">&times;</span>
       <h2>Completa tu compra de <span id="nombrePlan"></span></h2>
-      <p class="precio-popup">Total: S/<span id="precioPlan"></span></p>
+      
+      <div style="margin:15px 0">
+        <label style="color:#FFD700">Selecciona tu país:</label>
+        <select id="selectorPais" onchange="cambiarPais()" style="width:100%; padding:10px; margin-top:8px; border-radius:10px; background:#1a1a1a; color:#fff; border:2px solid #FFD700; font-weight:bold">
+          <option value="PEN">🇵🇪 Perú - Soles</option>
+          <option value="MXN">🇲🇽 México - Pesos</option>
+          <option value="CLP">🇨🇱 Chile - Pesos</option>
+          <option value="COP">🇨🇴 Colombia - Pesos</option>
+          <option value="USD">🇺🇸 USA - Dólares</option>
+          <option value="ARS">🇦🇷 Argentina - Pesos</option>
+          <option value="PYG">🇵🇾 Paraguay - Guaraníes</option>
+          <option value="BOB">🇧🇴 Bolivia - Bolivianos</option>
+        </select>
+      </div>
+
+      <p class="precio-popup">Total: <span id="precioConvertido"></span></p>
 
       <div style="text-align:left; margin:20px 0">
         <h3 style="color:#FFD700; margin-bottom:15px; text-align:center">Elige cómo pagar 👇</h3>
@@ -91,6 +106,9 @@
 
   <a href="https://wa.me/51936994155" class="wa-float">💬</a>
   <div id="noti">🔥 Alguien acaba de comprar Bot Prem</div>
+
+  <audio id="musicaFondo" src="./musica.mp3" loop></audio>
+  <button id="btnMusica" onclick="toggleMusica()" style="position:fixed; bottom:80px; right:20px; background:#5F2EEA; border:none; border-radius:50%; width:50px; height:50px; font-size:24px; cursor:pointer; z-index:999">🔊</button>
 
 <script src="script.js"></script>
 </body>
