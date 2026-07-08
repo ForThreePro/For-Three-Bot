@@ -27,15 +27,8 @@ async function actualizarContador() {
 }
 actualizarContador();
 
-// TASAS EXACTAS
-const tasas = {
-  PEN: 1, MXN: 5.1429, CLP: 285.71, COP: 1028.57, 
-  USD: 0.3333, ARS: 457.14, PYG: 1885.71, BOB: 3.1429
-};
-const simbolos = {
-  PEN: 'S/', MXN: '$', CLP: '$', COP: '$', 
-  USD: 'US$', ARS: '$', PYG: '₲', BOB: 'Bs'
-};
+const tasas = {PEN: 1, MXN: 5.1429, CLP: 285.71, COP: 1028.57, USD: 0.3333, ARS: 457.14, PYG: 1885.71, BOB: 3.1429};
+const simbolos = {PEN: 'S/', MXN: '$', CLP: '$', COP: '$', USD: 'US$', ARS: '$', PYG: '₲', BOB: 'Bs'};
 
 function abrirPago(nombre, precio){
   precioBase = parseFloat(precio);
@@ -59,29 +52,18 @@ function cerrarPago(){ document.getElementById('popupPago').style.display = 'non
 function copiar(texto){ navigator.clipboard.writeText(texto); alert("✅ Copiado: " + texto); }
 window.onclick = function(event) { if (event.target == document.getElementById('popupPago')) { cerrarPago(); } }
 
-// MÚSICA DE FONDO AL 50% - ARREGLADA
+// MÚSICA ARREGLADA AL 50%
 const musica = document.getElementById('musicaFondo');
 musica.volume = 0.5;
 let musicaIniciada = false;
 
-window.addEventListener('load', () => {
-  musica.play().catch(() => {});
-});
-
+window.addEventListener('load', () => { musica.play().catch(() => {}); });
 document.body.addEventListener('click', () => {
-  if(!musicaIniciada){
-    musica.play();
-    musicaIniciada = true;
-  }
+  if(!musicaIniciada){ musica.play(); musicaIniciada = true; }
 });
 
 function toggleMusica(){
   const btn = document.getElementById('btnMusica');
-  if(musica.paused){
-    musica.play();
-    btn.innerText = '🔊';
-  } else {
-    musica.pause();
-    btn.innerText = '🔇';
-  }
+  if(musica.paused){ musica.play(); btn.innerText = '🔊'; } 
+  else { musica.pause(); btn.innerText = '🔇'; }
 }
