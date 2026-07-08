@@ -3,16 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEONET AI | Sistema de Venta Neural</title>
-<link rel="stylesheet" href="style.css?v=22">
+<title>AURA AI | Asistente para WhatsApp</title>
+<link rel="stylesheet" href="style.css?v=23">
 </head>
 <body>
-  <div class="grid-bg"></div>
-  <div class="scanline"></div>
 
   <div class="container">
     <nav>
-      <div class="logo glitch" data-text="NEONET.AI">NEONET<span>.AI</span></div>
+      <div class="logo">Aura<span>AI</span></div>
       <div class="nav-actions">
         <select id="paisTop" onchange="cambiarPaisTop()"><option value="PEN">🇵🇪 PEN</option><option value="MXN">🇲🇽 MXN</option><option value="CLP">🇨🇱 CLP</option><option value="COP">🇨🇴 COP</option></select>
         <button id="btnMusica" onclick="toggleMusica()">🔊</button>
@@ -20,40 +18,42 @@
     </nav>
 
     <header>
-      <div class="tag">// SISTEMA_ACTIVO</div>
-      <h1>Hackea tus <span>Ventas</span><br>con Inteligencia Neural</h1>
-      <p>NEONET es el bot que piensa, vende y escala. Conectado 24/7 a la red.</p>
+      <h1>Tu asistente de ventas<br><span>que trabaja por ti</span></h1>
+      <p>AURA responde a tus clientes, califica y agenda citas por WhatsApp. Sin estrés.</p>
       <div class="cta">
-        <a href="https://wa.me/51936994155" class="btn-neon">CONECTAR AHORA</a>
-        <a href="#planes" class="btn-outline">ACCEDER A PROTOCOLOS</a>
+        <a href="https://wa.me/51936994155" class="btn-main">Empezar ahora</a>
+        <a href="#planes" class="btn-sec">Ver planes</a>
       </div>
     </header>
 
     <section id="planes" class="planes">
-      <h2>// SELECCIONA TU NIVEL DE ACCESO</h2>
+      <h2>Planes transparentes</h2>
       <div class="cards">
-        <div class="card"><div class="card-header">PROTOCOLO // BASIC</div><p>Para empezar en la red</p><div class="price" data-pen="S/7" data-mxn="$130" data-clp="$7000" data-cop="$28000">S/7</div><button onclick="abrirPago('BASIC',7)">INYECTAR</button></div>
-        <div class="card elite"><div class="card-header">PROTOCOLO // OMEGA</div><p>Acceso total al sistema</p><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('OMEGA',30)">INYECTAR</button></div>
-        <div class="card"><div class="card-header">PROTOCOLO // COMERCIO</div><p>Tienda + IA Neural</p><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('COMERCIO',30)">INYECTAR</button></div>
+        <div class="card"><h3>Inicio</h3><p>Ideal para probar</p><div class="price" data-pen="S/7" data-mxn="$130" data-clp="$7000" data-cop="$28000">S/7</div><button onclick="abrirPago('Inicio',7)">Elegir plan</button></div>
+        <div class="card pro"><div class="badge">Recomendado</div><h3>Profesional</h3><p>Para crecer tu negocio</p><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('Profesional',30)">Elegir plan</button></div>
+        <div class="card"><h3>Tienda</h3><p>Con catálogo integrado</p><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('Tienda',30)">Elegir plan</button></div>
       </div>
     </section>
   </div>
 
-  <!-- CHECKOUT CYBERPUNK -->
+  <!-- CHECKOUT LIMPIO -->
   <div id="popup" class="popup">
-    <div class="modal-cyber">
-      <div class="modal-header">// TERMINAL_DE_PAGO</div>
-      <span class="close" onclick="cerrarPago()">[X]</span>
-      <div class="resumen">> PLAN: <span id="nomPlan"></span> | COSTO: <span id="precio"></span></div>
-      <label>> SELECCIONA_PAIS:</label>
-      <select id="pais" onchange="cambiarPais()"><option value="PEN">PERU</option><option value="MXN">MEXICO</option><option value="CLP">CHILE</option><option value="COP">COLOMBIA</option></select>
-      <label>> METODO_DE_TRANSFERENCIA:</label>
+    <div class="modal-clean">
+      <span class="close" onclick="cerrarPago()">×</span>
+      <h2>Finalizar compra</h2>
+      <div class="resumen"><div><b id="nomPlan"></b></div><div id="precio"></div></div>
+      
+      <label>País</label>
+      <select id="pais" onchange="cambiarPais()"><option value="PEN">Perú</option><option value="MXN">México</option><option value="CLP">Chile</option><option value="COP">Colombia</option></select>
+      
+      <label>Método de pago</label>
       <div id="metodosPago"></div>
-      <button class="btn-final" onclick="enviarWsp()">> ENVIAR_COMPROBANTE.exe</button>
+      
+      <button class="btn-final" onclick="enviarWsp()">Enviar comprobante por WhatsApp</button>
     </div>
   </div>
 
   <audio id="musica" src="Musica.mp3" loop></audio>
-<script src="script.js?v=22"></script>
+<script src="script.js?v=23"></script>
 </body>
 </html>
