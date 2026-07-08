@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rayo Prem Bot by Yallico</title>
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
-  <img id="videoFondo" src="./Fondo.gif">
+  <img id="videoFondo" src="Fondo.gif">
   <div class="capa-oscura"></div>
 
   <div class="container">
@@ -42,8 +42,8 @@
       <p class="total">Total: <span id="precioConvertido">S/0</span></p>
       
       <div class="pagos-titulo">⚡ MÉTODOS DE PAGO ⚡</div>
-      <div class="pagos">
-        <div class="metodo-pago">
+      <div class="pagos" id="contenedorPagos">
+        <div class="metodo-pago" id="pago-yape">
           <div class="metodo-info">
             <span class="metodo-nombre">💛 Yape</span>
             <span class="metodo-numero" id="yape">936994155</span>
@@ -72,8 +72,8 @@
     </div>
   </div>
 
-  <audio id="musicaFondo" src="./Musica.mp3" loop></audio>
+  <audio id="musicaFondo" src="Musica.mp3" loop></audio>
   <button id="btnMusica" onclick="toggleMusica()">🔊</button>
-<script src="script.js?v=4"></script>
+<script src="script.js?v=5"></script>
 </body>
 </html>
