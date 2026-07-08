@@ -34,6 +34,19 @@ async function actualizarContador() {
 }
 actualizarContador();
 
+// MÚSICA DE FONDO VOLUMEN 5
+const musica = document.getElementById('musica'); 
+musica.volume = 0.5; // VOLUMEN AL 50%
+
+window.addEventListener('load', () => { 
+  musica.play().catch(() => {}) 
+});
+
+function activarMusica(){ 
+  musica.play(); 
+  document.getElementById('btnSonido').style.display = 'none'; 
+}
+
 // FUNCIONES PARA EL POPUP DE PAGO
 function abrirPago(nombre, precio){
   document.getElementById('popupPago').style.display = 'flex';
@@ -56,11 +69,6 @@ window.onclick = function(event) {
     cerrarPago();
   }
 }
-
-// TRUENO
-const audio = document.getElementById('trueno'); audio.volume = 0.3;
-window.addEventListener('load', () => { audio.play().catch(() => {}) });
-function activarSonido(){ audio.play(); document.getElementById('btnSonido').style.display = 'none'; }
 
 // EFECTO BOTONES
 document.querySelectorAll('.btn').forEach(btn=>{
