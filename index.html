@@ -3,37 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OMNIA AI | La IA Ejecutiva para WhatsApp</title>
-<link rel="stylesheet" href="style.css?v=19">
+<title>OMNIA AI | Asistente Ejecutivo WhatsApp</title>
+<link rel="stylesheet" href="style.css?v=20">
 </head>
 <body>
-  <div class="bg-lux"></div>
+  <div class="bg-glow"></div>
 
   <div class="container">
     <nav>
       <div class="logo">OMNIA<span>AI</span></div>
       <div class="nav-actions">
-        <button id="btnPais">🇵🇪 PER</button>
+        <button id="btnPais">🇵🇪 PEN</button>
         <button id="btnMusica" onclick="toggleMusica()">🔊</button>
       </div>
     </nav>
 
     <header>
-      <div class="kicker">EXCLUSIVO PARA EMPRESAS</div>
-      <h1>Automatiza tu fuerza de ventas<br><span>con Inteligencia Artificial</span></h1>
-      <p>OMNIA es el asistente ejecutivo que convierte conversaciones en ventas. 24/7. Sin errores.</p>
+      <div class="kicker">INTELIGENCIA ARTIFICIAL EJECUTIVA</div>
+      <h1>Tu equipo de ventas<br><span>que nunca duerme</span></h1>
+      <p>OMNIA responde, califica y vende por WhatsApp. Activación en 5 minutos.</p>
       <div class="cta">
-        <a href="https://wa.me/51936994155" class="btn-gold">Solicitar Demo Privada</a>
+        <a href="https://wa.me/51936994155" class="btn-gold">Quiero mi IA Ahora</a>
+        <a href="#planes" class="btn-outline">Ver Inversión</a>
       </div>
-      <div class="logos">Confían en nosotros: <b>+300 Empresas</b></div>
     </header>
 
     <section id="planes" class="planes">
-      <h2>Inversión</h2>
+      <h2>Elige tu Plan</h2>
       <div class="cards">
-        <div class="card"><h3>Core</h3><p>Para equipos pequeños</p><div class="price" data-pen="S/7" data-mxn="$130" data-clp="$7000" data-cop="$28000">S/7</div><button onclick="abrirPago('Core',7)">Adquirir Acceso</button></div>
-        <div class="card elite"><div class="elite-tag">ENTERPRISE</div><h3>Elite</h3><p>Para escalar a 7 cifras</p><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('Elite',30)">Adquirir Acceso</button></div>
-        <div class="card"><h3>Commerce</h3><p>Tienda + IA Integrada</p><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('Commerce',30)">Adquirir Acceso</button></div>
+        <div class="card"><h3>Core</h3><p>Para empezar</p><div class="price" data-pen="S/7" data-mxn="$130" data-clp="$7000" data-cop="$28000">S/7</div><button onclick="abrirPago('Core',7)">Activar</button></div>
+        <div class="card elite"><div class="elite-tag">MÁS VENDIDO</div><h3>Elite</h3><p>Para escalar</p><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('Elite',30)">Activar</button></div>
+        <div class="card"><h3>Commerce</h3><p>Tienda + Bot</p><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('Commerce',30)">Activar</button></div>
       </div>
     </section>
   </div>
@@ -49,20 +49,26 @@
         <div class="col1">
           <div class="resumen"><span id="nomPlan"></span><b id="precio"></b></div>
           <label>País de Facturación</label>
-          <select id="pais" onchange="cambiarPais()"><option value="PEN">Perú</option><option value="MXN">México</option><option value="CLP">Chile</option><option value="COP">Colombia</option></select>
+          <select id="pais" onchange="cambiarPais()">
+            <option value="PEN" selected>🇵🇪 Perú - Soles</option>
+            <option value="MXN">🇲🇽 México - Pesos</option>
+            <option value="CLP">🇨🇱 Chile - Pesos</option>
+            <option value="COP">🇨🇴 Colombia - Pesos</option>
+          </select>
           <label>Método de Pago</label>
           <div id="metodosPago"></div>
         </div>
         <div class="col2">
           <div class="card-visual"><p>OMNIA PAY</p><div id="numPago"></div></div>
-          <p class="nota">Tras realizar el pago, envía tu comprobante para activación inmediata.</p>
-          <button class="btn-final" onclick="enviarWsp()">Enviar Comprobante</button>
+          <p class="nota">1. Transfiere al método seleccionado</p>
+          <p class="nota">2. Envía tu comprobante para activación inmediata</p>
+          <button class="btn-final" onclick="enviarWsp()">Enviar Comprobante por WhatsApp</button>
         </div>
       </div>
     </div>
   </div>
 
   <audio id="musica" src="Musica.mp3" loop></audio>
-<script src="script.js?v=19"></script>
+<script src="script.js?v=20"></script>
 </body>
 </html>
