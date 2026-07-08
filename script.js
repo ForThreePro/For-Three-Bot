@@ -1,22 +1,11 @@
 let pais='PEN',precioBase=0,metodoSel='';
 
-// REGLA DE PAGOS NUEVA
+// REGLA DE PAGOS: PERU=YAPE | DEMAS=PREX+GLOBAL
 const pagosData = {
-  PEN: [ // SOLO YAPE PARA PERU
-    {nombre:'Yape', num:'936994155', icon:'💛'}
-  ],
-  MXN: [ // OTROS PAISES = PREX + GLOBAL
-    {nombre:'Prex', num:'12249975', icon:'💳'},
-    {nombre:'Global66', num:'@CRIROJ1855', icon:'🌎'}
-  ],
-  CLP: [
-    {nombre:'Prex', num:'12249975', icon:'💳'},
-    {nombre:'Global66', num:'@CRIROJ1855', icon:'🌎'}
-  ],
-  COP: [
-    {nombre:'Prex', num:'12249975', icon:'💳'},
-    {nombre:'Global66', num:'@CRIROJ1855', icon:'🌎'}
-  ]
+  PEN: [{nombre:'Yape', num:'936994155', icon:'💛'}],
+  MXN: [{nombre:'Prex', num:'12249975', icon:'💳'},{nombre:'Global66', num:'@CRIROJ1855', icon:'🌎'}],
+  CLP: [{nombre:'Prex', num:'12249975', icon:'💳'},{nombre:'Global66', num:'@CRIROJ1855', icon:'🌎'}],
+  COP: [{nombre:'Prex', num:'12249975', icon:'💳'},{nombre:'Global66', num:'@CRIROJ1855', icon:'🌎'}]
 };
 
 function abrirPago(n,p){
@@ -32,16 +21,16 @@ function cambiarPais(){
 
   // Cambiar precios
   document.querySelectorAll('.price').forEach(el=>{
-    el.innerText = '$' + el.getAttribute(`data-${pais.toLowerCase()}`);
+    el.innerText = el.getAttribute(`data-${pais.toLowerCase()}`);
   });
 
   // Renderizar métodos según país
   let html='';
-  pagosData[pais].forEach(p=>{
+  pagosData.forEach(p=>{
     html+=`<div class="metodo" onclick="seleccionar(this,'${p.num}')"><b>${p.icon} ${p.nombre}</b><small>${p.num}</small></div>`;
   });
   document.getElementById('metodosPago').innerHTML=html;
-  document.getElementById('qrBox').style.display='none'; // reset
+  document.getElementById('qrBox').style.display='none';
 }
 
 function seleccionar(el,num){
