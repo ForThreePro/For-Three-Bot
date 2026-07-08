@@ -2,136 +2,51 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RAYO PREM BOT by Yallico - El Bot Más Rápido</title>
-<link rel="stylesheet" href="style-v2.css">
+<title>Rayo Prem Bot by Yallico</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <img id="videoFondo" src="./Fondo.gif" alt="fondo">
+  <img id="videoFondo" src="./Fondo.gif">
   <div class="capa-oscura"></div>
 
   <div class="container">
     <header>
       <div class="logo">⚡ RAYO PREM BOT</div>
-      <p class="sub" id="typing"></p>
-
-      <!-- SELECTOR DE PAIS ARRIBA -->
-      <div style="background:#111; padding:12px; border-radius:12px; margin:15px 0; border:2px solid #FFD700">
-        <p style="color:#FFD700; margin-bottom:8px; font-weight:bold">🌎 Elige tu país:</p>
-        <select id="selectorPaisInicio" onchange="cambiarPaisInicio()" style="width:100%; padding:10px; border-radius:10px; background:#000; color:#FFD700; border:2px solid #FFD700; font-weight:bold; font-size:16px">
-          <option value="PEN">🇵🇪 Perú - Soles</option>
-          <option value="MXN">🇲🇽 México - Pesos</option>
-          <option value="CLP">🇨🇱 Chile - Pesos</option>
-          <option value="COP">🇨🇴 Colombia - Pesos</option>
-          <option value="USD">🇺🇸 USA - Dólares</option>
-          <option value="ARS">🇦🇷 Argentina - Pesos</option>
-          <option value="PYG">🇵🇾 Paraguay - Guaraníes</option>
-          <option value="BOB">🇧🇴 Bolivia - Bolivianos</option>
-        </select>
-      </div>
-
-      <!-- GARANTIA AMARILLO CON NEGRO -->
-      <div style="background: linear-gradient(90deg, #FFD700, #000); padding:14px; border-radius:12px; margin:15px 0; text-align:center; font-weight:900; color:#FFD700; border:2px solid #FFD700; box-shadow:0 0 20px #FFD700">
-        ⚡ GARANTÍA RAYO: 7 días o te devuelvo tu dinero + Soporte 24/7
-      </div>
-
-      <a href="https://wa.me/51936994155" class="btn">HABLAR CON YALLICO AHORA</a>
+      <button id="btnPais" onclick="abrirSelectorPais()">⚡ País: Perú</button>
+      <div class="garantia">⚡ GARANTÍA RAYO: 7 días o te devuelvo tu dinero</div>
+      <a href="https://wa.me/51936994155" class="btn">HABLAR CON YALLICO</a>
     </header>
-
-    <div class="urgencia">⚠️ Solo quedan <span id="cupos">12</span> cupos con servidor gratis este mes</div>
-
-    <section class="contador">
-      <p>⚡ Ya <span id="visitas">0</span> personas vieron RAYO PREM BOT</p>
-    </section>
 
     <section class="planes">
       <h2 class="titulo">ELIGE TU PLAN</h2>
       <div class="grid">
-        <div class="card anim">
-          <h3>Bot Basic Grupo</h3>
-          <div class="precio">Cargando...</div>
-          <button onclick="abrirPago('Bot Basic Grupo', '7')" class="btn">LO QUIERO</button>
-        </div>
-        <div class="card destacado anim">
-          <span class="tag">MÁS VENDIDO</span>
-          <h3>Bot Prem Personalizado</h3>
-          <div class="precio">Cargando...</div>
-          <button onclick="abrirPago('Bot Prem Personalizado', '30')" class="btn">LO QUIERO</button>
-        </div>
-        <div class="card anim">
-          <h3>Web Pro</h3>
-          <div class="precio">Cargando...</div>
-          <button onclick="abrirPago('Web Pro', '30')" class="btn">LO QUIERO</button>
-        </div>
+        <div class="card"><h3>Rayo Bot Basic</h3><div class="precio">S/7</div><button onclick="abrirPago('Rayo Bot Basic',7)">LO QUIERO</button></div>
+        <div class="card destacado"><h3>Rayo Bot Prem</h3><div class="precio">S/30</div><button onclick="abrirPago('Rayo Bot Prem',30)">LO QUIERO</button></div>
+        <div class="card"><h3>Rayo Web Pro</h3><div class="precio">S/30</div><button onclick="abrirPago('Rayo Bot Web Pro',30)">LO QUIERO</button></div>
       </div>
     </section>
-
-    <footer>
-      <p>¿Dudas? <a href="https://wa.me/51936994155" class="wa">wa.me/51936994155</a></p>
-      <p style="margin-top:10px;color:#555">RAYO PREM BOT by Yallico © 2026</p>
-    </footer>
   </div>
 
-  <!-- POPUP DE PAGO -->
   <div id="popupPago" class="popup">
-    <div class="popup-content" style="max-height:90vh; overflow-y:auto">
-      <span class="cerrar" onclick="cerrarPago()">&times;</span>
-      <h2>Completa tu compra de <span id="nombrePlan"></span></h2>
-
-      <div style="margin:15px 0">
-        <label style="color:#FFD700">País seleccionado:</label>
-        <select id="selectorPais" onchange="cambiarPais()" style="width:100%; padding:10px; margin-top:8px; border-radius:10px; background:#1a1a1a; color:#fff; border:2px solid #FFD700; font-weight:bold">
-          <option value="PEN">🇵🇪 Perú - Soles</option>
-          <option value="MXN">🇲🇽 México - Pesos</option>
-          <option value="CLP">🇨🇱 Chile - Pesos</option>
-          <option value="COP">🇨🇴 Colombia - Pesos</option>
-          <option value="USD">🇺🇸 USA - Dólares</option>
-          <option value="ARS">🇦🇷 Argentina - Pesos</option>
-          <option value="PYG">🇵🇾 Paraguay - Guaraníes</option>
-          <option value="BOB">🇧🇴 Bolivia - Bolivianos</option>
-        </select>
-      </div>
-
-      <p class="precio-popup" style="font-size:1.8em; color:#FFD700; text-align:center; margin:15px 0">Total: <span id="precioConvertido"></span></p>
-
-      <div style="text-align:left; margin:20px 0">
-        <h3 style="color:#FFD700; margin-bottom:15px; text-align:center">Elige cómo pagar 👇</h3>
-
-        <div class="card-pago" style="background:#1a1a1a; padding:15px; border-radius:15px; margin-bottom:12px; border:2px solid #5F2EEA">
-          <h4 style="color:#5F2EEA; margin-bottom:8px">📱 Yape / Plin</h4>
-          <p style="color:#aaa; font-size:0.9em">A nombre de: <b>Cristhofer Rojas</b></p>
-          <div class="btn-pago" onclick="copiar('936994155')" style="background:#333; padding:10px; border-radius:10px; margin:8px 0; cursor:pointer; display:flex; justify-content:space-between">
-            <b>936 994 155</b> <span style="color:#FFD700">Copiar</span>
-          </div>
-        </div>
-
-        <div class="card-pago" style="background:#1a1a1a; padding:15px; border-radius:15px; margin-bottom:12px; border:2px solid #00D1A0">
-          <h4 style="color:#00D1A0; margin-bottom:8px">🌎 Global66</h4>
-          <p style="color:#aaa; font-size:0.9em">Para Chile, México, USA, Colombia</p>
-          <div class="btn-pago" onclick="copiar('@CRIROJ1855')" style="background:#333; padding:10px; border-radius:10px; margin:8px 0; cursor:pointer; display:flex; justify-content:space-between">
-            <b>@CRIROJ1855</b> <span style="color:#FFD700">Copiar</span>
-          </div>
-        </div>
-
-        <div class="card-pago" style="background:#1a1a1a; padding:15px; border-radius:15px; margin-bottom:15px; border:2px solid #FF6B00">
-          <h4 style="color:#FF6B00; margin-bottom:8px">💳 Prex</h4>
-          <p style="color:#aaa; font-size:0.9em">A nombre de: <b>Cristhofer Yhair Rojas Huarcaya</b></p>
-          <div class="btn-pago" onclick="copiar('12249975')" style="background:#333; padding:10px; border-radius:10px; margin:8px 0; cursor:pointer; display:flex; justify-content:space-between">
-            <b>12249975</b> <span style="color:#FFD700">Copiar</span>
-          </div>
-        </div>
-      </div>
-
-      <a id="btnWhats" href="#" class="btn" style="background:#25D366; color:#fff; width:100%">ENVIAR CAPTURA POR WHATSAPP</a>
+    <div class="popup-content">
+      <span onclick="cerrarPago()">&times;</span>
+      <h2>Compra: <span id="nombrePlan"></span></h2>
+      <select id="selectorPais" onchange="cambiarPais()">
+        <option value="PEN">🇵🇪 Perú</option>
+        <option value="MXN">🇲🇽 México</option>
+        <option value="CLP">🇨🇱 Chile</option>
+        <option value="COP">🇨🇴 Colombia</option>
+      </select>
+      <p>Total: <span id="precioConvertido"></span></p>
+      <div>Yape: 936994155</div>
+      <div>Prex: 12249975</div>
+      <div>Global66: @CRIROJ1855</div>
+      <a id="btnWhats" href="#">ENVIAR CAPTURA</a>
     </div>
   </div>
 
-  <a href="https://wa.me/51936994155" class="wa-float">💬</a>
-  <div id="noti">🔥 Alguien acaba de comprar Bot Prem</div>
-
-  <audio id="musicaFondo" src="./musica.mp3" loop></audio>
-  <button id="btnMusica" onclick="toggleMusica()" style="position:fixed; bottom:80px; right:20px; background:#5F2EEA; border:none; border-radius:50%; width:50px; height:50px; font-size:24px; cursor:pointer; z-index:999">🔊</button>
-
-<script src="script-v3.js?v=1"></script>
+  <audio id="musicaFondo" src="./Musica.mp3" loop></audio>
+  <button id="btnMusica" onclick="toggleMusica()">🔊</button>
+<script src="script.js"></script>
 </body>
 </html>
