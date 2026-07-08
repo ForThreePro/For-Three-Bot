@@ -34,6 +34,29 @@ async function actualizarContador() {
 }
 actualizarContador();
 
+// FUNCIONES PARA EL POPUP DE PAGO
+function abrirPago(nombre, precio){
+  document.getElementById('popupPago').style.display = 'flex';
+  document.getElementById('nombrePlan').innerText = nombre;
+  document.getElementById('precioPlan').innerText = precio;
+  document.getElementById('btnWhats').href = `https://wa.me/51936994155?text=Hola%20Yayico,%20ya%20pagué%20${nombre}%20de%20S/${precio}.%20Aquí%20mi%20captura:`;
+}
+
+function cerrarPago(){
+  document.getElementById('popupPago').style.display = 'none';
+}
+
+function copiar(texto){
+  navigator.clipboard.writeText(texto);
+  alert("✅ Copiado: " + texto);
+}
+
+window.onclick = function(event) {
+  if (event.target == document.getElementById('popupPago')) {
+    cerrarPago();
+  }
+}
+
 // TRUENO
 const audio = document.getElementById('trueno'); audio.volume = 0.3;
 window.addEventListener('load', () => { audio.play().catch(() => {}) });
