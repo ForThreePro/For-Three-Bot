@@ -1,27 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Three Bot - Yallico</title>
-<link rel="stylesheet" href="style.css?v=2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOT RAYO by Yayico - El Bot Más Rápido del Perú</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <nav>
-    <a href="index.html" class="active">Inicio</a>
-    <a href="bot-grupo.html">Bot Grupo</a>
-    <a href="bot-personalizado.html">Bot Personalizado</a>
-    <a href="web-servidor.html">Web & Servidor</a>
-    <a href="pagos.html">Pagos</a>
-  </nav>
-  <button id="btnTema">🌙</button>
-</header>
-<div class="container">
-  <h1>FOR THREE BOT</h1>
-  <p class="subtitulo">Hola, soy Yallico. Servicios Gamer Profesionales</p>
-  <div style="text-align:center;"><a href="bot-grupo.html" class="btn" style="width:auto;">VER SERVICIOS</a></div>
-</div>
-<footer>© 2026 For Three Bot | Entrega Rápida | Soporte 24/7</footer>
+  <div class="rayo-bg"></div>
+  <div class="container">
+    <header>
+      <div class="logo">⚡ BOT RAYO</div>
+      <p class="sub">by Yayico | Automatización que vende 24/7 sin caídas</p>
+      <a href="https://wa.me/51936994155" class="btn">HABLAR CON YAYICO AHORA</a>
+    </header>
+
+    <section class="contador">
+      <p>⚡ Ya <span id="visitas">0</span> personas vieron BOT RAYO</p>
+    </section>
+
+    <section class="beneficios">
+      <div class="item"><h4>🚀 24/7 Activo</h4><p>Tu bot no duerme. Vende mientras tú descansas.</p></div>
+      <div class="item"><h4>🛡️ Sin Caídas</h4><p>Servidor estable. Cero errores, cero estrés.</p></div>
+      <div class="item"><h4>⚡ +100 Comandos</h4><p>Todo lo que necesitas en un solo bot.</p></div>
+    </section>
+
+    <section class="planes">
+      <h2 class="titulo">ELIGE TU RAYO</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Rayo Basic Grupo</h3>
+          <div class="precio">S/7</div>
+          <ul>
+            <li>Bot Para Grupo Sin Caídas</li>
+            <li>Activo 24/7</li>
+            <li>+100 Comandos Sin Errores</li>
+          </ul>
+          <a href="https://wa.me/51936994155?text=Quiero%20Rayo%20Basic%20Grupo" class="btn">LO QUIERO</a>
+        </div>
+        <div class="card destacado">
+          <span class="tag">MÁS VENDIDO</span>
+          <h3>Rayo Prem Bot</h3>
+          <div class="precio">S/30</div>
+          <ul>
+            <li>Bot Personalizado</li>
+            <li>Servidor 1 Mes Gratis</li>
+            <li>Diseñado A Tu Gusto</li>
+          </ul>
+          <a href="https://wa.me/51936994155?text=Quiero%20Rayo%20Prem%20Bot" class="btn">LO QUIERO</a>
+        </div>
+        <div class="card">
+          <h3>Rayo Web Pro</h3>
+          <div class="precio">S/30</div>
+          <ul>
+            <li>Página Profesional</li>
+            <li>Diseño A Tu Gusto</li>
+            <li>100% Funcional</li>
+          </ul>
+          <a href="https://wa.me/51936994155?text=Quiero%20Rayo%20Web%20Pro" class="btn">LO QUIERO</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <h2 class="titulo">PREGUNTAS FRECUENTES</h2>
+      <div class="item"><b>¿Cómo me entregan el bot?</b><p>Te lo instalo y configuro todo por WhatsApp en menos de 1 hora.</p></div>
+      <div class="item"><b>¿Hay garantía?</b><p>Claro pe. Si se cae, te lo arreglo al toque.</p></div>
+    </section>
+
+    <footer>
+      <p>¿Dudas? Escríbeme directo: <a href="https://wa.me/51936994155" class="wa">wa.me/51936994155</a></p>
+      <p style="margin-top:10px;color:#555">BOT RAYO by Yayico © 2026</p>
+    </footer>
+  </div>
+
+  <audio id="trueno" loop>
+    <source src="trueno.ogg" type="audio/ogg">
+  </audio>
+  <div id="btnSonido">
+    <button onclick="activarSonido()">🔊 ACTIVAR TRUENO</button>
+  </div>
+
 <script src="script.js"></script>
 </body>
 </html>
