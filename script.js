@@ -5,7 +5,7 @@ setInterval(()=>{
     cupos -= 1;
     document.getElementById('cupos').innerText = cupos;
   }
-}, 7200000); // baja 1 cada 2 horas
+}, 7200000);
 
 // TYPING EFFECT
 const texto = "by Yayico | Automatización que vende 24/7 sin caídas";
@@ -36,11 +36,12 @@ actualizarContador();
 
 // MÚSICA DE FONDO VOLUMEN 5
 const musica = document.getElementById('musica'); 
-musica.volume = 0.5; // VOLUMEN AL 50%
+musica.volume = 0.5;
 
-window.addEventListener('load', () => { 
+// Solo reproduce música si el usuario toca algo - regla de celulares
+document.addEventListener('click', ()=>{
   musica.play().catch(() => {}) 
-});
+}, {once: true});
 
 function activarMusica(){ 
   musica.play(); 
@@ -69,9 +70,3 @@ window.onclick = function(event) {
     cerrarPago();
   }
 }
-
-// EFECTO BOTONES
-document.querySelectorAll('.btn').forEach(btn=>{
-  btn.addEventListener('mouseover',()=>{btn.style.boxShadow='0 0 35px #FFD700'})
-  btn.addEventListener('mouseout',()=>{btn.style.boxShadow='0 0 25px #FFD700'})
-})
