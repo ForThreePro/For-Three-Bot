@@ -39,9 +39,8 @@ function abrirPago(nombre, precio){
   document.getElementById('popupPago').style.display = 'flex';
   document.getElementById('nombrePlan').innerText = nombre;
   document.getElementById('precioPlan').innerText = precio;
-  document.getElementById('itemPaypal').value = nombre;
-  document.getElementById('montoPaypal').value = precio + ".00";
   document.getElementById('btnWhats').href = `https://wa.me/51936994155?text=Hola%20Yayico,%20ya%20pagué%20${nombre}%20de%20S/${precio}.%20Aquí%20mi%20captura:`;
+  document.getElementById('btnYape').href = `https://wa.me/51936994155?text=Hola%20Yayico,%20ya%20pagué%20${nombre}%20de%20S/${precio}.%20Aquí%20mi%20captura:`;
 }
 function cerrarPago(){ document.getElementById('popupPago').style.display = 'none'; }
 function copiar(texto){ navigator.clipboard.writeText(texto); alert("✅ Copiado: " + texto); }
