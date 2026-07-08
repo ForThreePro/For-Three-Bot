@@ -27,27 +27,14 @@ async function actualizarContador() {
 }
 actualizarContador();
 
-// TASAS EXACTAS SEGÚN TUS PRECIOS
+// TASAS EXACTAS
 const tasas = {
-  PEN: 1,
-  MXN: 5.1429,    // 7=37 | 30=160.50
-  CLP: 285.71,    // 7=2000 | 30=8500  
-  COP: 1028.57,   // 7=7200 | 30=31500
-  USD: 0.3333,    // 7=2.50 | 30=9
-  ARS: 457.14,    // 7=3200 | 30=14141.28
-  PYG: 1885.71,   // 7=13200 | 30=54544.60
-  BOB: 3.1429     // 7=22 | 30=90.43
+  PEN: 1, MXN: 5.1429, CLP: 285.71, COP: 1028.57, 
+  USD: 0.3333, ARS: 457.14, PYG: 1885.71, BOB: 3.1429
 };
-
 const simbolos = {
-  PEN: 'S/',
-  MXN: '$',
-  CLP: '$',
-  COP: '$',
-  USD: 'US$',
-  ARS: '$',
-  PYG: '₲',
-  BOB: 'Bs'
+  PEN: 'S/', MXN: '$', CLP: '$', COP: '$', 
+  USD: 'US$', ARS: '$', PYG: '₲', BOB: 'Bs'
 };
 
 function abrirPago(nombre, precio){
@@ -72,14 +59,21 @@ function cerrarPago(){ document.getElementById('popupPago').style.display = 'non
 function copiar(texto){ navigator.clipboard.writeText(texto); alert("✅ Copiado: " + texto); }
 window.onclick = function(event) { if (event.target == document.getElementById('popupPago')) { cerrarPago(); } }
 
-// MÚSICA DE FONDO AL 50%
+// MÚSICA DE FONDO AL 50% - ARREGLADA
 const musica = document.getElementById('musicaFondo');
 musica.volume = 0.5;
+let musicaIniciada = false;
 
-document.addEventListener('click', function iniciarMusica() {
-  musica.play().catch(e => {});
-  document.removeEventListener('click', iniciarMusica);
-}, { once: true });
+window.addEventListener('load', () => {
+  musica.play().catch(() => {});
+});
+
+document.body.addEventListener('click', () => {
+  if(!musicaIniciada){
+    musica.play();
+    musicaIniciada = true;
+  }
+});
 
 function toggleMusica(){
   const btn = document.getElementById('btnMusica');
