@@ -7,7 +7,12 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="rayo-bg"></div>
+  <!-- VIDEO DE FONDO -->
+  <video autoplay muted loop playsinline id="videoFondo">
+    <source src="Fondo.mp4" type="video/mp4">
+  </video>
+  <div class="capa-oscura"></div>
+
   <div class="container">
     <header>
       <div class="logo">⚡ BOT RAYO</div>
@@ -68,14 +73,6 @@
       <div class="logos">Yape  Plin  BCP  Interbank  PayPal</div>
     </section>
 
-    <section class="testimonios">
-      <h2 class="titulo">LO QUE DICEN NUESTROS CLIENTES</h2>
-      <div class="grid">
-        <div class="item anim">⭐<p>"Mi grupo se activó al 100%. Ya no contesto nada yo"</p><b>- Carlos G.</b></div>
-        <div class="item anim">⭐<p>"El mejor bot. Cero lag y me lo entregó en 30 min"</p><b>- Ana M.</b></div>
-      </div>
-    </section>
-
     <footer>
       <p>¿Dudas? Escríbeme directo: <a href="https://wa.me/51936994155" class="wa">wa.me/51936994155</a></p>
       <p style="margin-top:10px;color:#555">BOT RAYO by Yayico © 2026</p>
@@ -88,14 +85,11 @@
       <span class="cerrar" onclick="cerrarPago()">&times;</span>
       <h2>Completa tu compra de <span id="nombrePlan"></span></h2>
       <p class="precio-popup">Total: S/<span id="precioPlan"></span></p>
-      
       <h3>Paga por Yape o Plin</h3>
       <div class="btn-pago" onclick="copiar('936994155')">📱 Yape/Plin: 936 994 155 <span>Copiar</span></div>
-      
       <h3>O Transferencia</h3>
       <div class="btn-pago" onclick="copiar('001-234-56789')">🏦 BCP: 001-234-56789 <span>Copiar</span></div>
       <div class="btn-pago" onclick="copiar('002-345-67890')">🏦 Interbank: 002-345-67890 <span>Copiar</span></div>
-      
       <p style="margin-top:15px">Después de pagar, escríbeme la captura 👇</p>
       <a id="btnWhats" href="#" class="btn">ENVIAR CAPTURA POR WHATSAPP</a>
     </div>
@@ -104,8 +98,11 @@
   <a href="https://wa.me/51936994155" class="wa-float">💬</a>
   <div id="noti">🔥 Alguien acaba de comprar Rayo Prem</div>
 
-  <audio id="trueno" loop><source src="trueno.ogg" type="audio/ogg"></audio>
-  <div id="btnSonido"><button onclick="activarSonido()">🔊 ACTIVAR TRUENO</button></div>
+  <!-- MÚSICA DE FONDO -->
+  <audio id="musica" loop>
+    <source src="Musica.mp3" type="audio/mpeg">
+  </audio>
+  <div id="btnSonido"><button onclick="activarMusica()">🔊 ACTIVAR MÚSICA</button></div>
 
 <script src="script.js"></script>
 </body>
