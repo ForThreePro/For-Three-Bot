@@ -7,3 +7,11 @@
 #noti.show{right:20px}
 .testimonios .item{text-align:center}
 .testimonios b{color:#FFD700}
+.urgencia{background: #ff000022;border:2px solid #ff0000;color:#ff4444;text-align:center;padding:12px;border-radius:10px;margin:20px 0;font-weight:900;font-size:1.1em;animation:parpadeo 1.5s infinite}
+@keyframes parpadeo{0%,100%{opacity:1}50%{opacity:0.5}}
+#cupos{color:#FFD700;font-size:1.3em}
+.incluye{background:#111;padding:30px;border-radius:15px;margin:40px 0;border:1px solid #333}
+.checks p{padding:8px 0;font-size:1.1em}
+.pagos{text-align:center;margin:50px 0}
+.pagos h3{color:#FFD700;margin-bottom:15px}
+.logos{font-size:1.2em;font-weight:900;letter-spacing:3px}
