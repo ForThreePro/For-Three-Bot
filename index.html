@@ -7,8 +7,8 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- VIDEO DE FONDO -->
-  <video autoplay muted loop playsinline id="videoFondo">
+  <!-- VIDEO DE FONDO PARA PC Y CELULAR -->
+  <video autoplay muted loop playsinline preload="metadata" id="videoFondo">
     <source src="Fondo.mp4" type="video/mp4">
   </video>
   <div class="capa-oscura"></div>
@@ -90,7 +90,7 @@
       <h3>O Transferencia</h3>
       <div class="btn-pago" onclick="copiar('001-234-56789')">🏦 BCP: 001-234-56789 <span>Copiar</span></div>
       <div class="btn-pago" onclick="copiar('002-345-67890')">🏦 Interbank: 002-345-67890 <span>Copiar</span></div>
-      <p style="margin-top:15px">Después de pagar, escríbeme la captura 👇</p>
+      <p style="margin-top:15px">Después de pagar, Enviame la captura 👇</p>
       <a id="btnWhats" href="#" class="btn">ENVIAR CAPTURA POR WHATSAPP</a>
     </div>
   </div>
