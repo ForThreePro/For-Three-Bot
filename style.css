@@ -1,31 +1,45 @@
-*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif}
-body{background:#F5F5F7;color:#1D1D1F}
-.container{max-width:1000px;margin:auto;padding:20px}
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
-.logo{font-size:1.8em;font-weight:700}.logo span{color:#0071E3}
-.nav-actions{display:flex;gap:10px}
-#paisTop,#btnMusica{background:#fff;border:1px solid #D2D2D7;padding:8px 14px;border-radius:8px;cursor:pointer}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Orbitron', sans-serif}
+body{background:#010005;color:#00F0FF;overflow-x:hidden}
+.grid-bg{position:fixed;top:0;left:0;width:100%;height:100%;background-image:linear-gradient(rgba(255,0,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,255,0.1) 1px, transparent 1px);background-size:40px 40px;z-index:-2}
+.scanline{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(transparent 50%, rgba(0,0,0,0.5) 50%);background-size:100% 4px;z-index:-1;animation:scan 8s linear infinite}
+@keyframes scan{0%{transform:translateY(0)}100%{transform:translateY(100vh)}}
+
+.container{max-width:1200px;margin:auto;padding:20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid #FF00FF}
+.logo{font-size:2em;font-weight:900;color:#FF00FF;text-shadow:0 0 10px #FF00FF}
+.logo span{color:#00F0FF}
+.glitch{position:relative}.glitch::before{content:attr(data-text);position:absolute;left:2px;color:#FF00FF;animation:glitch 2s infinite}
+@keyframes glitch{0%,100%{text-shadow:2px 0 #00F0FF}50%{text-shadow:-2px 0 #FF00FF}}
+#paisTop,#btnMusica{background:#000;border:1px solid #00F0FF;color:#00F0FF;padding:8px 14px;cursor:pointer}
 
 header{text-align:center;padding:100px 20px}
-header h1{font-size:3.5em;font-weight:700;line-height:1.1}
-header h1 span{color:#0071E3}
-header p{color:#6E6E73;font-size:1.3em;max-width:600px;margin:20px auto 30px}
-.btn-blue{background:#0071E3;color:#fff;padding:14px 30px;border-radius:980px;text-decoration:none;font-weight:600}
-.btn-white{border:1px solid #0071E3;color:#0071E3;padding:12px 28px;border-radius:980px;text-decoration:none;font-weight:600;margin-left:10px}
+.tag{color:#FF00FF;margin-bottom:20px;letter-spacing:3px}
+header h1{font-size:3.5em;font-weight:900;text-shadow:0 0 20px #00F0FF}
+header h1 span{color:#FF00FF}
+header p{color:#aaa;font-size:1.2em;max-width:600px;margin:20px auto 30px}
+.btn-neon{background:#FF00FF;color:#000;padding:16px 35px;text-decoration:none;font-weight:900;box-shadow:0 0 20px #FF00FF}
+.btn-outline{border:2px solid #00F0FF;color:#00F0FF;padding:14px 33px;text-decoration:none;font-weight:900;margin-left:10px}
 
-.planes{padding:80px 0}.planes h2{text-align:center;font-size:2.5em;margin-bottom:40px}
+.planes{padding:80px 0}.planes h2{text-align:center;color:#FF00FF;margin-bottom:40px;letter-spacing:2px}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
-.card{background:#fff;border:1px solid #D2D2D7;padding:30px;border-radius:18px;text-align:center}
-.card.pro{border:2px solid #0071E3}
-.price{font-size:2.5em;font-weight:700;color:#1D1D1F;margin:15px 0}
-.card button{width:100%;padding:12px;background:#0071E3;color:#fff;border:none;border-radius:8px;font-weight:600;cursor:pointer}
+.card{background:#000;border:1px solid #00F0FF;padding:30px;position:relative;transition:0.3s}
+.card:hover{box-shadow:0 0 30px #00F0FF;transform:translateY(-5px)}
+.card-header{color:#FF00FF;margin-bottom:10px;font-size:14px}
+.card p{color:#666;font-size:12px;margin-bottom:15px}
+.card.elite{border-color:#FF00FF;box-shadow:0 0 30px #FF00FF}
+.price{font-size:2.5em;font-weight:900;color:#00F0FF;margin:15px 0}
+.card button{width:100%;padding:14px;background:#FF00FF;color:#000;border:none;font-weight:900;cursor:pointer}
 
-/* MODAL BLANCO */
-.popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);justify-content:center;align-items:center;z-index:999}
-.modal-white{width:500px;max-width:90%;background:#fff;border-radius:18px;padding:30px;position:relative}
-.close{position:absolute;top:15px;right:20px;font-size:24px;cursor:pointer}
-.resumen{display:flex;justify-content:space-between;background:#F5F5F7;padding:15px;border-radius:12px;margin:15px 0}
-select{width:100%;padding:12px;border:1px solid #D2D2D7;border-radius:8px;margin:10px 0}
-.metodo{background:#F5F5F7;padding:14px;border-radius:12px;margin:8px 0;border:2px solid transparent;cursor:pointer}
-.metodo.sel{border-color:#0071E3}
-.btn-final{width:100%;padding:14px;background:#0071E3;color:#fff;border:none;border-radius:8px;font-weight:600;margin-top:15px;cursor:pointer}
+/* MODAL CYBERPUNK */
+.popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);justify-content:center;align-items:center;z-index:999}
+.modal-cyber{width:600px;max-width:90%;background:#000;border:2px solid #FF00FF;padding:30px;position:relative;box-shadow:0 0 50px #FF00FF}
+.modal-header{color:#FF00FF;margin-bottom:20px;font-size:18px}
+.close{position:absolute;top:10px;right:15px;color:#FF00FF;cursor:pointer;font-size:20px}
+.resumen{color:#00F0FF;margin:15px 0;padding:10px;background:#010005;border:1px dashed #00F0FF}
+label{color:#FF00FF;font-size:12px;display:block;margin:15px 0 5px}
+select{width:100%;padding:12px;background:#000;color:#00F0FF;border:1px solid #00F0FF;margin:10px 0}
+.metodo{background:#000;padding:14px;border:1px solid #00F0FF;margin:8px 0;cursor:pointer;color:#00F0FF}
+.metodo.sel{box-shadow:0 0 15px #FF00FF;border-color:#FF00FF}
+.btn-final{width:100%;padding:15px;background:#FF00FF;color:#000;border:none;font-weight:900;margin-top:15px;cursor:pointer}
+@media(max-width:900px){.cards{grid-template-columns:1fr}}
