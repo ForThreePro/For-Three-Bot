@@ -4,51 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rayo Prem Bot | Yallico</title>
-<link rel="stylesheet" href="style.css?v=8">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=9">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="videoFondo"></div>
-  <div class="capa-oscura"></div>
-  <div class="ruido"></div>
-
+  <img id="videoFondo" src="./Fondo.gif" alt="fondo">
+  
   <div class="container">
     <header>
       <div class="logo">⚡ RAYO PREM BOT</div>
       <p class="sublogo">by YALLICO</p>
-      <button id="btnPais" onclick="abrirSelectorPais()">🌍 PAÍS: PERÚ</button>
-      <div class="garantia">⚡ GARANTÍA RAYO: 7 DÍAS O TE DEVUELVO TU DINERO</div>
-      <a href="https://wa.me/51936994155" class="btn btn-principal">HABLAR CON YALLICO AHORA</a>
+      <button id="btnPais" onclick="abrirSelectorPais()">PAÍS: PERÚ</button>
+      <div class="garantia">GARANTÍA: 7 DÍAS O TE DEVUELVO TU DINERO</div>
+      <a href="https://wa.me/51936994155" class="btn">HABLAR CON YALLICO</a>
     </header>
 
     <section class="planes">
-      <h2 class="titulo">ELIGE TU PLAN RAYO</h2>
+      <h2 class="titulo">ELIGE TU PLAN</h2>
       <div class="grid">
-        <div class="card">
-          <h3>Rayo Bot Basic</h3>
-          <p class="desc">Para empezar a vender</p>
-          <div class="precio">S/7</div>
-          <ul class="beneficios"><li>✅ Respuestas Automáticas</li><li>✅ 24/7 Activo</li></ul>
-          <button class="btn-comprar" onclick="abrirPago('Rayo Bot Basic',7)">LO QUIERO</button>
-        </div>
-        
-        <div class="card destacado">
-          <div class="etiqueta">🔥 MÁS VENDIDO</div>
-          <h3>Rayo Bot Prem</h3>
-          <p class="desc">El más completo</p>
-          <div class="precio">S/30</div>
-          <ul class="beneficios"><li>✅ Todo lo del Basic</li><li>✅ Menú Interactivo</li><li>✅ Base de Datos</li></ul>
-          <button class="btn-comprar" onclick="abrirPago('Rayo Bot Prem',30)">LO QUIERO</button>
-        </div>
-        
-        <div class="card">
-          <h3>Rayo Web Pro</h3>
-          <p class="desc">Tu tienda online</p>
-          <div class="precio">S/30</div>
-          <ul class="beneficios"><li>✅ Diseño Profesional</li><li>✅ Pasarela de Pagos</li><li>✅ Dominio Gratis</li></ul>
-          <button class="btn-comprar" onclick="abrirPago('Rayo Web Pro',30)">LO QUIERO</button>
-        </div>
+        <div class="card"><h3>BASIC</h3><div class="precio">S/7</div><button class="btn-comprar" onclick="abrirPago('BASIC',7)">COMPRAR</button></div>
+        <div class="card destacado"><span class="tag">TOP</span><h3>PREM</h3><div class="precio">S/30</div><button class="btn-comprar" onclick="abrirPago('PREM',30)">COMPRAR</button></div>
+        <div class="card"><h3>WEB PRO</h3><div class="precio">S/30</div><button class="btn-comprar" onclick="abrirPago('WEB PRO',30)">COMPRAR</button></div>
       </div>
     </section>
   </div>
@@ -56,34 +32,24 @@
   <div id="popupPago" class="popup">
     <div class="popup-content">
       <span class="cerrar" onclick="cerrarPago()">&times;</span>
-      <h2>Finalizar Compra</h2>
-      <p class="plan-seleccionado"><span id="nombrePlan"></span></p>
-      
-      <label>1. Elige tu país:</label>
+      <h2><span id="nombrePlan"></span></h2>
       <select id="selectorPais" onchange="cambiarPais()">
-        <option value="PEN">🇵🇪 Perú - PEN</option>
-        <option value="MXN">🇲🇽 México - MXN</option>
-        <option value="CLP">🇨🇱 Chile - CLP</option>
-        <option value="COP">🇨🇴 Colombia - COP</option>
+        <option value="PEN">🇵🇪 Perú</option><option value="MXN">🇲🇽 México</option>
+        <option value="CLP">🇨🇱 Chile</option><option value="COP">🇨🇴 Colombia</option>
       </select>
-      <p class="total">TOTAL: <span id="precioConvertido">S/0</span></p>
+      <p class="total"><span id="precioConvertido">S/0</span></p>
       
-      <div class="pagos-titulo">2. PAGA AQUI ⚡</div>
       <div class="pagos" id="contenedorPagos">
-        <div class="metodo-pago" id="pago-yape">
-          <div class="metodo-info"><span class="metodo-nombre">💛 Yape</span><span class="metodo-numero" id="yape">936994155</span></div>
-          <button class="btn-copiar" onclick="copiar('yape')">COPIAR</button>
-        </div>
-        <div class="metodo-pago"><div class="metodo-info"><span class="metodo-nombre">💳 Prex</span><span class="metodo-numero" id="prex">12249975</span></div><button class="btn-copiar" onclick="copiar('prex')">COPIAR</button></div>
-        <div class="metodo-pago"><div class="metodo-info"><span class="metodo-nombre">🌎 Global66</span><span class="metodo-numero" id="global">@CRIROJ1855</span></div><button class="btn-copiar" onclick="copiar('global')">COPIAR</button></div>
+        <div class="metodo" id="pago-yape"><b>Yape:</b> <span id="yape">936994155</span> <button onclick="copiar('yape')">COPIAR</button></div>
+        <div class="metodo"><b>Prex:</b> <span id="prex">12249975</span> <button onclick="copiar('prex')">COPIAR</button></div>
+        <div class="metodo"><b>Global66:</b> <span id="global">@CRIROJ1855</span> <button onclick="copiar('global')">COPIAR</button></div>
       </div>
-      <p class="nota">3. Envía tu captura y te activo en 5 min</p>
-      <a id="btnWhats" href="https://wa.me/51936994155" target="_blank" class="btn btn-principal">ENVIAR CAPTURA A WHATSAPP</a>
+      <a href="https://wa.me/51936994155" target="_blank" class="btn">ENVIAR CAPTURA</a>
     </div>
   </div>
 
   <audio id="musicaFondo" src="Musica.mp3" loop></audio>
   <button id="btnMusica" onclick="toggleMusica()">🔊</button>
-<script src="script.js?v=8"></script>
+<script src="script.js?v=9"></script>
 </body>
 </html>
