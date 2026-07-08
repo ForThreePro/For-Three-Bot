@@ -25,8 +25,6 @@ header p{color:#aaa;font-size:1.3em;max-width:650px;margin:0 auto 30px}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
 .card{background:rgba(255,255,255,0.03);border:1px solid rgba(168,85,247,0.2);padding:35px;border-radius:20px;backdrop-filter:blur(15px);position:relative;overflow:hidden;transition:0.4s}
 .tilt:hover{transform:perspective(1000px) rotateX(5deg) rotateY(-5deg) scale(1.05)}
-.brillo{position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent 30%,rgba(255,255,255,0.1)50%,transparent 70%);transform:rotate(45deg)}
-.card:hover.brillo{left:100%}
 .card.pro{border:2px solid #00F5FF;box-shadow:0 0 50px rgba(0,245,255,0.3)}
 .ribbon{position:absolute;top:15px;right:-30px;background:#FF00FF;padding:5px 30px;transform:rotate(45deg);font-size:11px;font-weight:900}
 .price{font-size:3.2em;font-weight:900;color:#00F5FF;margin:15px 0}
