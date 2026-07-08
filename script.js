@@ -1,18 +1,15 @@
-let pais='PEN', precioBase=0;
-function abrirSelectorPais(){document.getElementById('selectorPais').focus()}
-function abrirPago(n,p){precioBase=p;document.getElementById('popupPago').style.display='flex';document.getElementById('nombrePlan').innerText=n;cambiarPais()}
+let pais='PEN',precio=0;
+function abrirSelectorPais(){document.getElementById('pais').focus()}
+function abrirPago(n,p){precio=p;document.getElementById('popup').style.display='flex';document.getElementById('nomPlan').innerText=n;cambiarPais()}
 function cambiarPais(){
-  pais=document.getElementById('selectorPais').value;
-  let s='S/', pf=precioBase;
-  if(pais=='MXN'){s='$';pf=precioBase*5.5}
-  if(pais=='CLP'){s='$';pf=precioBase*1000}
-  if(pais=='COP'){s='$';pf=precioBase*1300}
+  pais=document.getElementById('pais').value;let s='S/',pf=precio;
+  if(pais=='MXN'){s='$';pf=precio*5.5}if(pais=='CLP'){s='$';pf=precio*1000}if(pais=='COP'){s='$';pf=precio*1300}
   document.getElementById('btnPais').innerText='PAÍS: '+pais;
-  document.getElementById('precioConvertido').innerText=s+Math.round(pf).toLocaleString();
-  document.getElementById('pago-yape').style.display=pais=='PEN'?'flex':'none';
+  document.getElementById('precio').innerText=s+Math.round(pf).toLocaleString();
+  document.getElementById('yapeBox').style.display=pais=='PEN'?'flex':'none';
 }
-function cerrarPago(){document.getElementById('popupPago').style.display='none'}
+function cerrarPago(){document.getElementById('popup').style.display='none'}
 function copiar(id){navigator.clipboard.writeText(document.getElementById(id).innerText);alert('Copiado')}
-const musica=document.getElementById('musicaFondo');musica.volume=0.2;let ini=false;
-document.body.addEventListener('click',()=>{if(!ini){musica.play().catch(()=>{});ini=true}});
-function toggleMusica(){const b=document.getElementById('btnMusica');if(musica.paused){musica.play();b.innerText='🔊'}else{musica.pause();b.innerText='🔇'}}
+const m=document.getElementById('musica');m.volume=0.2;let ini=false;
+document.body.onclick=()=>{if(!ini){m.play();ini=true}};
+function toggleMusica(){const b=document.getElementById('btnMusica');if(m.paused){m.play();b.innerText='🔊'}else{m.pause();b.innerText='🔇'}}
