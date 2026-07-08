@@ -1,38 +1,50 @@
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter', sans-serif}
-body{background:#0a0a0a;color:#fff}
-.bg-ondas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;background: radial-gradient(circle at 20% 50%, rgba(255,215,0,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(255,0,0,0.1) 0%, transparent 50%);filter: blur(60px); animation: mover 15s infinite alternate}
-@keyframes mover{0%{transform:translate(-10%,-10%)}100%{transform:translate(10%,10%)}}
-.container{max-width:1100px;margin:auto;padding:20px}
-nav{display:flex;justify-content:space-between;padding:20px 0}
-.logo{font-size:1.8em;font-weight:900}.logo span{color:#FFD700}
-#btnPais{background:#111;border:1px solid #333;color:#FFD700;padding:10px 18px;border-radius:8px;cursor:pointer}
-header{text-align:center;padding:100px 20px}
-.tag{display:inline-block;background:linear-gradient(90deg,#FFD700,#FF0000);padding:8px 15px;border-radius:20px;font-size:12px;font-weight:900;color:#000}
-header h1{font-size:3.5em;font-weight:900;margin:20px 0} header h1 span{color:#FFD700}
-header p{color:#aaa;font-size:1.2em;max-width:600px;margin:0 auto 30px}
-.btn-main{background:#FFD700;color:#000;padding:16px 35px;border-radius:10px;text-decoration:none;font-weight:900}
-.btn-ghost{border:1px solid #FFD700;color:#FFD700;padding:14px 33px;border-radius:10px;text-decoration:none;font-weight:900;margin-left:10px}
-.planes{padding:80px 0}.planes h2{text-align:center;font-size:2.5em;margin-bottom:40px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
-.card{background:#111;border:1px solid #222;padding:30px;border-radius:15px;text-align:center;transition:0.3s}
-.card:hover{transform:translateY(-10px);border-color:#FFD700}
-.card.pro{border:2px solid #FFD700;position:relative}
-.top{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#FFD700;color:#000;padding:5px 12px;border-radius:10px;font-size:11px;font-weight:900}
-.price{font-size:2.8em;font-weight:900;color:#FFD700;margin:15px 0}
-.card button{width:100%;padding:14px;background:#FFD700;color:#000;border:none;border-radius:10px;font-weight:900;cursor:pointer}
-#btnMusica{position:fixed;bottom:20px;right:20px;width:50px;height:50px;border-radius:50%;background:#FFD700;color:#000;border:none;font-size:20px;cursor:pointer}
+let pais='PEN',precioBase=0,metodoSel='';
 
-/* MODAL NUEVO */
-.popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);justify-content:center;align-items:center;z-index:999}
-.modal{display:flex;width:900px;max-width:95%;background:#0f0f0f;border:1px solid #333;border-radius:15px;overflow:hidden}
-.modal-left{flex:1.5;padding:30px}.modal-right{flex:1;background:#111;padding:30px;border-left:1px solid #222}
-.close{float:right;font-size:28px;cursor:pointer}
-.res-plan{display:flex;justify-content:space-between;background:#1a1a1a;padding:15px;border-radius:10px;margin:15px 0}
-.res-plan h3{color:#FFD700}
-select{width:100%;padding:12px;background:#1a1a1a;color:#fff;border:1px solid #333;border-radius:8px;margin:10px 0}
-.metodo{background:#1a1a1a;padding:12px;border-radius:8px;margin:8px 0;border:2px solid #222;cursor:pointer}
-.metodo.sel{border-color:#FFD700}
-.tarjeta-visual{background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;padding:20px;border-radius:12px;margin-bottom:20px}
-.tarjeta-visual.chip{width:40px;height:30px;background:#000;border-radius:5px;margin:10px 0}
-.btn-pagar{width:100%;padding:15px;background:#FFD700;color:#000;border:none;border-radius:10px;font-weight:900;font-size:16px;margin-top:15px;cursor:pointer}
-@media(max-width:900px){.modal{flex-direction:column}.cards{grid-template-columns:1fr}}
+const pagosData = {
+  PEN: [{nombre:'Yape', num:'936994155'}], // SOLO YAPE
+  MXN: [{nombre:'Prex', num:'12249975'},{nombre:'Global66', num:'@CRIROJ1855'}], // DEMAS
+  CLP: [{nombre:'Prex', num:'12249975'},{nombre:'Global66', num:'@CRIROJ1855'}],
+  COP: [{nombre:'Prex', num:'12249975'},{nombre:'Global66', num:'@CRIROJ1855'}]
+};
+
+function abrirPago(n,p){
+  precioBase=p;document.getElementById('popup').style.display='flex';
+  document.getElementById('nomPlan').innerText=n;cambiarPais()
+}
+
+function cambiarPais(){
+  pais=document.getElementById('pais').value;
+  document.getElementById('btnPais').innerText= pais=='PEN'?'🇵🇪 PERÚ':'🌎 '+pais;
+
+  // Cambiar precio
+  document.querySelectorAll('.price').forEach(el=>{
+    el.innerText = el.getAttribute(`data-${pais.toLowerCase()}`);
+  });
+  document.getElementById('precio').innerText = document.querySelector('.card.pro.price').getAttribute(`data-${pais.toLowerCase()}`);
+
+  // Renderizar pagos según regla
+  let html='';
+  pagosData[pais].forEach(p=>{
+    html+=`<div class="metodo" onclick="seleccionar(this,'${p.num}')"><b>${p.nombre}</b><small>${p.num}</small></div>`;
+  });
+  document.getElementById('metodosPago').innerHTML=html;
+  document.getElementById('numTarjeta').innerText = pagosData[pais][0].num;
+}
+
+function seleccionar(el,num){
+  document.querySelectorAll('.metodo').forEach(m=>m.classList.remove('sel'));
+  el.classList.add('sel');metodoSel=num;
+  document.getElementById('numTarjeta').innerText = num;
+}
+
+function enviarWsp(){
+  if(!metodoSel){alert('Elige un método de pago');return}
+  let msg=`Hola, pagué el plan ${document.getElementById('nomPlan').innerText} por ${metodoSel}. Envío captura.`;
+  window.open(`https://wa.me/51936994155?text=${encodeURIComponent(msg)}`,'_blank');
+}
+function cerrarPago(){document.getElementById('popup').style.display='none'}
+
+// MÚSICA
+const m=document.getElementById('musica');m.volume=0.1;let ini=false;
+document.body.onclick=()=>{if(!ini){m.play().catch(()=>{});ini=true}};
+function toggleMusica(){const b=document.getElementById('btnMusica');if(m.paused){m.play();b.innerText='🔊'}else{m.pause();b.innerText='🔇'}}
