@@ -5,39 +5,33 @@ body,html{font-family:'Arial',sans-serif;background:#000;color:#fff;overflow-x:h
 .container{max-width:1100px;margin:0 auto;padding:20px;position:relative;z-index:1}
 
 .logo{font-size:2.8em;font-weight:900;color:#FFD700;text-align:center;text-shadow:0 0 20px #FFD700;margin-bottom:10px}
-#btnPais{background:#111;color:#FFD700;border:2px solid #FFD700;padding:12px 20px;border-radius:12px;display:block;margin:10px auto;cursor:pointer;font-weight:900;font-size:16px;transition:0.3s}
-#btnPais:hover{background:#FFD700;color:#000}
-.garantia{background:#FFD700;color:#000;padding:16px;border-radius:14px;text-align:center;font-weight:900;margin:20px 0;font-size:15px;border:2px solid #FFD700}
-.btn{background:linear-gradient(90deg,#FFD700,#FFA500);color:#000;padding:18px 35px;border-radius:50px;text-decoration:none;font-weight:900;display:block;width:90%;max-width:300px;margin:20px auto;text-align:center;font-size:16px;box-shadow:0 0 20px #FFD700}
+#btnPais{background:#111;color:#FFD700;border:2px solid #FFD700 !important;padding:12px 20px;border-radius:12px;display:block;margin:10px auto;cursor:pointer;font-weight:900;font-size:16px}
+.garantia{background:#FFD700;color:#000;padding:16px;border-radius:14px;text-align:center;font-weight:900;margin:20px 0;font-size:15px;border:2px solid #FFD700 !important}
+.btn{background:#FFD700;color:#000;padding:18px 35px;border-radius:50px;text-decoration:none;font-weight:900;display:block;width:90%;max-width:300px;margin:20px auto;text-align:center;font-size:16px;box-shadow:0 0 20px #FFD700;border:none !important}
 
 .titulo{text-align:center;font-size:2.2em;color:#FFD700;margin:40px 0 20px;text-shadow:0 0 10px #FFD700}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:#111;padding:30px;border-radius:18px;text-align:center;border:2px solid #FFD700;transition:0.3s}
-.card:hover{box-shadow:0 0 20px #FFD700}
-.card.destacado{border:3px solid #FFD700;transform:scale(1.05);position:relative;box-shadow:0 0 30px #FFD700}
+.card{background:#111 !important;padding:30px;border-radius:18px;text-align:center;border:2px solid #FFD700 !important}
+.card.destacado{background:#111 !important;border:3px solid #FFD700 !important;transform:scale(1.05);position:relative;box-shadow:0 0 30px #FFD700 !important}
 .etiqueta{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#FFD700;color:#000;padding:5px 15px;border-radius:20px;font-weight:900;font-size:12px}
 .card h3{color:#FFD700;font-size:1.4em;margin-bottom:15px}
 .precio{font-size:3em;font-weight:900;color:#fff;margin:20px 0}
-.btn-comprar{background:#FFD700;color:#000;border:none;padding:15px;width:100%;border-radius:12px;font-weight:900;font-size:16px;cursor:pointer;transition:0.3s}
-.btn-comprar:hover{background:#FFA500}
+.btn-comprar{background:#FFD700 !important;color:#000 !important;border:none !important;padding:15px;width:100%;border-radius:12px;font-weight:900;font-size:16px;cursor:pointer}
 
-#btnMusica{position:fixed;bottom:20px;right:20px;background:#FFD700;border:none;border-radius:50%;width:60px;height:60px;font-size:28px;cursor:pointer;z-index:999;color:#000;box-shadow:0 0 20px #FFD700}
+#btnMusica{position:fixed;bottom:20px;right:20px;background:#FFD700 !important;border:none !important;border-radius:50%;width:60px;height:60px;font-size:28px;cursor:pointer;z-index:999;color:#000 !important;box-shadow:0 0 20px #FFD700}
 
 .popup{display:none;position:fixed;z-index:1000;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.95);justify-content:center;align-items:center}
-.popup-content{background:#000;padding:30px;border-radius:20px;width:95%;max-width:500px;border:3px solid #FFD700;max-height:90vh;overflow-y:auto}
+.popup-content{background:#000 !important;padding:30px;border-radius:20px;width:95%;max-width:500px;border:3px solid #FFD700 !important}
 .cerrar{float:right;font-size:32px;cursor:pointer;color:#FFD700}
 .popup-content h2{color:#FFD700;text-align:center;margin-bottom:20px}
 .popup-content label{color:#FFD700;font-weight:900}
-.popup-content select{width:100%;padding:15px;margin:15px 0;background:#111;color:#fff;border:2px solid #FFD700;border-radius:10px;font-size:16px}
+.popup-content select{width:100%;padding:15px;margin:15px 0;background:#111;color:#fff;border:2px solid #FFD700 !important;border-radius:10px;font-size:16px}
 .total{font-size:2em;text-align:center;color:#FFD700;margin:20px 0;font-weight:900}
-.pagos{background:#111;padding:15px;border-radius:10px;margin:15px 0;border:1px solid #FFD700}
-.pagos p{margin:8px 0}
+.pagos{background:#111 !important;padding:15px;border-radius:10px;margin:15px 0;border:1px solid #FFD700 !important}
 
-/* DISEÑO PARA CELULAR */
 @media (max-width: 768px){
   .grid{grid-template-columns:1fr}
   .logo{font-size:2em}
   .card.destacado{transform:scale(1)}
   .precio{font-size:2.5em}
   .container{padding:15px}
-}
