@@ -3,14 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SYNCRA AI | Automatiza tu WhatsApp</title>
-<link rel="stylesheet" href="style.css?v=21">
+<title>NEONET AI | Sistema de Venta Neural</title>
+<link rel="stylesheet" href="style.css?v=22">
 </head>
 <body>
+  <div class="grid-bg"></div>
+  <div class="scanline"></div>
 
   <div class="container">
     <nav>
-      <div class="logo">SYNCRA<span>AI</span></div>
+      <div class="logo glitch" data-text="NEONET.AI">NEONET<span>.AI</span></div>
       <div class="nav-actions">
         <select id="paisTop" onchange="cambiarPaisTop()"><option value="PEN">🇵🇪 PEN</option><option value="MXN">🇲🇽 MXN</option><option value="CLP">🇨🇱 CLP</option><option value="COP">🇨🇴 COP</option></select>
         <button id="btnMusica" onclick="toggleMusica()">🔊</button>
@@ -18,39 +20,40 @@
     </nav>
 
     <header>
-      <h1>Convierte cada chat<br><span>en una venta</span></h1>
-      <p>SYNCRA es el cerebro de IA para tu WhatsApp. Atiende 1000 clientes a la vez.</p>
+      <div class="tag">// SISTEMA_ACTIVO</div>
+      <h1>Hackea tus <span>Ventas</span><br>con Inteligencia Neural</h1>
+      <p>NEONET es el bot que piensa, vende y escala. Conectado 24/7 a la red.</p>
       <div class="cta">
-        <a href="https://wa.me/51936994155" class="btn-blue">Empezar Gratis</a>
-        <a href="#planes" class="btn-white">Ver Precios</a>
+        <a href="https://wa.me/51936994155" class="btn-neon">CONECTAR AHORA</a>
+        <a href="#planes" class="btn-outline">ACCEDER A PROTOCOLOS</a>
       </div>
     </header>
 
     <section id="planes" class="planes">
-      <h2>Planes Simples</h2>
+      <h2>// SELECCIONA TU NIVEL DE ACCESO</h2>
       <div class="cards">
-        <div class="card"><h3>Básico</h3><div class="price" data-pen="S/7" data-mxn="$130" data-clp="$7000" data-cop="$28000">S/7</div><button onclick="abrirPago('Básico',7)">Elegir</button></div>
-        <div class="card pro"><h3>Pro</h3><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('Pro',30)">Elegir</button></div>
-        <div class="card"><h3>Tienda</h3><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('Tienda',30)">Elegir</button></div>
+        <div class="card"><div class="card-header">PROTOCOLO // BASIC</div><p>Para empezar en la red</p><div class="price" data-pen="S/7" data-mxn="$130" data-clp="$7000" data-cop="$28000">S/7</div><button onclick="abrirPago('BASIC',7)">INYECTAR</button></div>
+        <div class="card elite"><div class="card-header">PROTOCOLO // OMEGA</div><p>Acceso total al sistema</p><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('OMEGA',30)">INYECTAR</button></div>
+        <div class="card"><div class="card-header">PROTOCOLO // COMERCIO</div><p>Tienda + IA Neural</p><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('COMERCIO',30)">INYECTAR</button></div>
       </div>
     </section>
   </div>
 
-  <!-- CHECKOUT BLANCO MINIMALISTA -->
+  <!-- CHECKOUT CYBERPUNK -->
   <div id="popup" class="popup">
-    <div class="modal-white">
-      <span class="close" onclick="cerrarPago()">×</span>
-      <h2>Completa tu compra</h2>
-      <div class="resumen"><b id="nomPlan"></b><span id="precio"></span></div>
-      <label>País</label>
-      <select id="pais" onchange="cambiarPais()"><option value="PEN">Perú</option><option value="MXN">México</option><option value="CLP">Chile</option><option value="COP">Colombia</option></select>
-      <label>Pagar con</label>
+    <div class="modal-cyber">
+      <div class="modal-header">// TERMINAL_DE_PAGO</div>
+      <span class="close" onclick="cerrarPago()">[X]</span>
+      <div class="resumen">> PLAN: <span id="nomPlan"></span> | COSTO: <span id="precio"></span></div>
+      <label>> SELECCIONA_PAIS:</label>
+      <select id="pais" onchange="cambiarPais()"><option value="PEN">PERU</option><option value="MXN">MEXICO</option><option value="CLP">CHILE</option><option value="COP">COLOMBIA</option></select>
+      <label>> METODO_DE_TRANSFERENCIA:</label>
       <div id="metodosPago"></div>
-      <button class="btn-final" onclick="enviarWsp()">Enviar comprobante por WhatsApp</button>
+      <button class="btn-final" onclick="enviarWsp()">> ENVIAR_COMPROBANTE.exe</button>
     </div>
   </div>
 
   <audio id="musica" src="Musica.mp3" loop></audio>
-<script src="script.js?v=21"></script>
+<script src="script.js?v=22"></script>
 </body>
 </html>
