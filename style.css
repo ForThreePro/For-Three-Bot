@@ -1,38 +1,47 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter', sans-serif}
-body{background:#0a0a0a;color:#fff}
-.bg-ondas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;background: radial-gradient(circle at 20% 50%, rgba(255,215,0,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(255,0,0,0.1) 0%, transparent 50%);filter: blur(60px); animation: mover 15s infinite alternate}
-@keyframes mover{0%{transform:translate(-10%,-10%)}100%{transform:translate(10%,10%)}}
-.container{max-width:1100px;margin:auto;padding:20px}
-nav{display:flex;justify-content:space-between;padding:20px 0}
-.logo{font-size:1.8em;font-weight:900}.logo span{color:#FFD700}
-#btnPais{background:#111;border:1px solid #333;color:#FFD700;padding:10px 18px;border-radius:8px;cursor:pointer}
-header{text-align:center;padding:100px 20px}
-.tag{display:inline-block;background:linear-gradient(90deg,#FFD700,#FF0000);padding:8px 15px;border-radius:20px;font-size:12px;font-weight:900;color:#000}
-header h1{font-size:3.5em;font-weight:900;margin:20px 0} header h1 span{color:#FFD700}
-header p{color:#aaa;font-size:1.2em;max-width:600px;margin:0 auto 30px}
-.btn-main{background:#FFD700;color:#000;padding:16px 35px;border-radius:10px;text-decoration:none;font-weight:900}
-.btn-ghost{border:1px solid #FFD700;color:#FFD700;padding:14px 33px;border-radius:10px;text-decoration:none;font-weight:900;margin-left:10px}
-.planes{padding:80px 0}.planes h2{text-align:center;font-size:2.5em;margin-bottom:40px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
-.card{background:#111;border:1px solid #222;padding:30px;border-radius:15px;text-align:center;transition:0.3s}
-.card:hover{transform:translateY(-10px);border-color:#FFD700}
-.card.pro{border:2px solid #FFD700;position:relative}
-.top{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#FFD700;color:#000;padding:5px 12px;border-radius:10px;font-size:11px;font-weight:900}
-.price{font-size:2.8em;font-weight:900;color:#FFD700;margin:15px 0}
-.card button{width:100%;padding:14px;background:#FFD700;color:#000;border:none;border-radius:10px;font-weight:900;cursor:pointer}
-#btnMusica{position:fixed;bottom:20px;right:20px;width:50px;height:50px;border-radius:50%;background:#FFD700;color:#000;border:none;font-size:20px;cursor:pointer}
+body{background:#000;color:#E5E5E5}
+.bg-lux{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;background:radial-gradient(ellipse at top, rgba(212,175,55,0.1) 0%, transparent 70%)}
 
-/* MODAL NUEVO */
-.popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);justify-content:center;align-items:center;z-index:999}
-.modal{display:flex;width:900px;max-width:95%;background:#0f0f0f;border:1px solid #333;border-radius:15px;overflow:hidden}
-.modal-left{flex:1.5;padding:30px}.modal-right{flex:1;background:#111;padding:30px;border-left:1px solid #222}
-.close{float:right;font-size:28px;cursor:pointer}
-.res-plan{display:flex;justify-content:space-between;background:#1a1a1a;padding:15px;border-radius:10px;margin:15px 0}
-.res-plan h3{color:#FFD700}
-select{width:100%;padding:12px;background:#1a1a1a;color:#fff;border:1px solid #333;border-radius:8px;margin:10px 0}
-.metodo{background:#1a1a1a;padding:12px;border-radius:8px;margin:8px 0;border:2px solid #222;cursor:pointer}
-.metodo.sel{border-color:#FFD700}
-.tarjeta-visual{background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;padding:20px;border-radius:12px;margin-bottom:20px}
-.tarjeta-visual.chip{width:40px;height:30px;background:#000;border-radius:5px;margin:10px 0}
-.btn-pagar{width:100%;padding:15px;background:#FFD700;color:#000;border:none;border-radius:10px;font-weight:900;font-size:16px;margin-top:15px;cursor:pointer}
-@media(max-width:900px){.modal{flex-direction:column}.cards{grid-template-columns:1fr}}
+.container{max-width:1200px;margin:auto;padding:20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:25px 0;border-bottom:1px solid #1a1a1a}
+.logo{font-size:2em;font-weight:300;letter-spacing:3px}.logo span{color:#D4AF37;font-weight:900}
+.nav-actions{display:flex;gap:10px}
+#btnPais,#btnMusica{background:#111;border:1px solid #333;color:#D4AF37;padding:10px 18px;border-radius:8px;cursor:pointer}
+
+header{text-align:center;padding:120px 20px}
+.kicker{color:#D4AF37;font-size:12px;letter-spacing:4px;margin-bottom:20px}
+header h1{font-size:3.5em;font-weight:700;line-height:1.1}
+header h1 span{background:linear-gradient(90deg,#D4AF37,#FFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+header p{color:#888;font-size:1.2em;max-width:650px;margin:20px auto 30px}
+.btn-gold{background:#D4AF37;color:#000;padding:18px 40px;border-radius:8px;text-decoration:none;font-weight:900;font-size:16px}
+.logos{margin-top:40px;color:#555}
+
+.planes{padding:100px 0}.planes h2{text-align:center;font-size:2.5em;margin-bottom:50px;font-weight:300}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.card{background:#0a0a0a;border:1px solid #1a1a1a;padding:40px 30px;border-radius:12px;text-align:center;transition:0.4s}
+.card:hover{border-color:#D4AF37;transform:translateY(-5px)}
+.card.elite{border:1px solid #D4AF37;position:relative}
+.elite-tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#D4AF37;color:#000;padding:6px 15px;font-size:11px;font-weight:900}
+.card h3{font-size:1.5em;font-weight:700}.card p{color:#666;margin:8px 0 20px}
+.price{font-size:3em;font-weight:900;color:#D4AF37;margin:20px 0}
+.card button{width:100%;padding:15px;background:#111;border:1px solid #D4AF37;color:#D4AF37;border-radius:8px;font-weight:900;cursor:pointer}
+.card button:hover{background:#D4AF37;color:#000}
+
+/* MODAL LUXURY */
+.popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);justify-content:center;align-items:center;z-index:999}
+.modal-lux{width:900px;max-width:95%;background:#0a0a0a;border:1px solid #D4AF37;border-radius:12px}
+.modal-head{display:flex;justify-content:space-between;padding:25px;border-bottom:1px solid #1a1a1a}
+.modal-head h2{color:#D4AF37}.close{font-size:28px;cursor:pointer}
+.modal-body{display:flex}
+.col1{flex:1.5;padding:30px}.col2{flex:1;background:#050505;padding:30px;border-left:1px solid #1a1a1a}
+.resumen{display:flex;justify-content:space-between;background:#111;padding:15px;border-radius:8px;margin-bottom:20px}
+.resumen b{color:#D4AF37;font-size:1.5em}
+label{color:#666;font-size:12px;display:block;margin:15px 0 8px}
+select{width:100%;padding:12px;background:#111;color:#fff;border:1px solid #333;border-radius:8px}
+.metodo{background:#111;padding:14px;border-radius:8px;margin:8px 0;border:1px solid #222;cursor:pointer}
+.metodo.sel{border-color:#D4AF37}
+.card-visual{background:#D4AF37;color:#000;padding:20px;border-radius:10px;margin:20px 0}
+.card-visual p{font-size:12px}.card-visual div{font-size:1.3em;font-weight:900;letter-spacing:2px}
+.btn-final{width:100%;padding:16px;background:#D4AF37;color:#000;border:none;border-radius:8px;font-weight:900;font-size:16px;cursor:pointer}
+.nota{color:#666;font-size:13px;margin:15px 0}
+@media(max-width:900px){.modal-body{flex-direction:column}.cards{grid-template-columns:1fr}}
