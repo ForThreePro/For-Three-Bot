@@ -1,8 +1,9 @@
 let pais='PEN',precioBase=0,metodoSel='',planSel='';
 
+// TUS DATOS DE PAGO
 const pagosData = {
-  PEN: [{nombre:'Yape', num:'936994155'}], // SOLO YAPE
-  MXN: [{nombre:'Prex', num:'12249975'},{nombre:'Global66', num:'@CRIROJ1855'}],
+  PEN: [{nombre:'Yape', num:'936994155'}], // SOLO YAPE PARA PERU
+  MXN: [{nombre:'Prex', num:'12249975'},{nombre:'Global66', num:'@CRIROJ1855'}], // DEMAS PAISES
   CLP: [{nombre:'Prex', num:'12249975'},{nombre:'Global66', num:'@CRIROJ1855'}],
   COP: [{nombre:'Prex', num:'12249975'},{nombre:'Global66', num:'@CRIROJ1855'}]
 };
@@ -12,7 +13,7 @@ function abrirPago(n,p){
   document.getElementById('popup').style.display='flex';
   document.getElementById('nomPlan').innerText=n;
   document.getElementById('pais').value = pais;
-  cambiarPais();
+  cambiarPais(); // Cargar precios y metodos al abrir
 }
 
 function cambiarPaisTop(){
@@ -25,13 +26,17 @@ function cambiarPaisTop(){
 function cambiarPais(){
   pais=document.getElementById('pais').value;
   document.getElementById('paisTop').value = pais;
-  document.getElementById('precio').innerText = document.querySelector(`.pro .price`).getAttribute(`data-${pais.toLowerCase()}`);
+  
+  // Cambiar precio del modal
+  document.getElementById('precio').innerText = document.querySelector(`.pro.price`).getAttribute(`data-${pais.toLowerCase()}`);
 
+  // Renderizar métodos de pago según país
   let html='';
-  pagosData.forEach(p=>{
+  pagosData[pais].forEach(p=>{ // AQUI ESTABA EL ERROR. Ahora si recorre el array del pais
     html+=`<div class="metodo" onclick="seleccionar(this,'${p.num}')"><b>${p.nombre}</b> - ${p.num}</div>`;
   });
   document.getElementById('metodosPago').innerHTML=html;
+  metodoSel = ''; // Resetear selección
 }
 
 function seleccionar(el,num){
