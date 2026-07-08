@@ -11,12 +11,8 @@ function mostrarSlide(n){
 }
 
 function irSlide(n){slideActual = n; mostrarSlide(slideActual)}
-
-function autoSlide(){
-  slideActual = (slideActual + 1) % slides.length;
-  mostrarSlide(slideActual);
-}
-setInterval(autoSlide, 3000); // Cambia cada 3 segundos
+function autoSlide(){slideActual = (slideActual + 1) % slides.length; mostrarSlide(slideActual)}
+setInterval(autoSlide, 3000);
 
 function pedir(producto, precio){
   let msg=`Hola! Quiero pedir: ${producto} - S/${precio}. ¿Hacen delivery?`;
