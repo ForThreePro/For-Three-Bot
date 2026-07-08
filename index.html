@@ -3,83 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rayo Prem Bot | Yallico</title>
-<link rel="stylesheet" href="style.css?v=13">
+<title>Nexus Bot | by Yallico</title>
+<link rel="stylesheet" href="style.css?v=14">
 </head>
 <body>
-  <img class="fondo" src="./Fondo.gif" alt="fondo">
+  <div class="grid-fondo"></div>
   
   <div class="container">
+    <nav>
+      <div class="brand">NEXUS<span>BOT</span></div>
+      <button id="btnPais" onclick="abrirSelectorPais()">🌎 PERÚ</button>
+    </nav>
+
     <header>
-      <div class="logo">⚡ RAYO PREM BOT</div>
-      <p class="by">by YALLICO</p>
-      <button id="btnPais" onclick="abrirSelectorPais()">PAÍS: PERÚ</button>
-      <div class="garantia">⚡ 7 DÍAS DE GARANTÍA TOTAL O TE DEVUELVO TU DINERO ⚡</div>
-      <a href="https://wa.me/51936994155" class="btn-wa">HABLAR CON YALLICO</a>
+      <h1>Automatiza tu WhatsApp<br><span>al Nivel Dios</span></h1>
+      <p>Los bots más rápidos y estables del mercado. Activación inmediata.</p>
+      <a href="https://wa.me/51936994155" class="btn-main">Hablar con un Asesor</a>
+      <div class="trust">✓ Soporte 24/7  ✓ Garantía 7 días  ✓ Activación en 5 min</div>
     </header>
 
-    <section class="planes">
-      <h2>ELIGE TU PLAN</h2>
-      <div class="grid">
-        <div class="card"><h3>BASIC</h3><p class="desc">Para empezar</p><p class="precio">S/7</p><button onclick="abrirPago('BASIC',7)">COMPRAR AHORA</button></div>
-        <div class="card pro"><div class="badge">MÁS VENDIDO</div><h3>PREM</h3><p class="desc">El más completo</p><p class="precio">S/30</p><button onclick="abrirPago('PREM',30)">COMPRAR AHORA</button></div>
-        <div class="card"><h3>WEB PRO</h3><p class="desc">Tu tienda online</p><p class="precio">S/30</p><button onclick="abrirPago('WEB PRO',30)">COMPRAR AHORA</button></div>
+    <section class="precios">
+      <h2>Planes Nexus</h2>
+      <div class="cards">
+        <div class="card"><h3>Starter</h3><p>Ideal para empezar</p><div class="price">$7</div><ul><li>Respuestas Auto</li><li>24/7 Online</li></ul><button onclick="abrirPago('Starter',7)">Adquirir</button></div>
+        <div class="card pro"><span class="tag">RECOMENDADO</span><h3>Pro</h3><p>El más vendido</p><div class="price">$30</div><ul><li>Todo Starter</li><li>Menú + DB</li><li>Flujos Avanzados</li></ul><button onclick="abrirPago('Pro',30)">Adquirir</button></div>
+        <div class="card"><h3>WebStore</h3><p>Tu tienda online</p><div class="price">$30</div><ul><li>Landing Pro</li><li>Pasarela Pagos</li><li>Dominio Gratis</li></ul><button onclick="abrirPago('WebStore',30)">Adquirir</button></div>
       </div>
     </section>
   </div>
 
-  <!-- SECCIÓN PAGOS NUEVA -->
+  <!-- CHECKOUT NUEVO -->
   <div id="popup" class="popup">
-    <div class="modal-pagos">
-      <span class="close" onclick="cerrarPago()">×</span>
-      <div class="header-pago">
-        <h2>Finalizar Compra</h2>
-        <p id="nomPlan"></p>
-      </div>
-      
-      <div class="resumen">
-        <div>
-          <label>País</label>
-          <select id="pais" onchange="cambiarPais()">
-            <option value="PEN">🇵🇪 Perú</option><option value="MXN">🇲🇽 México</option>
-            <option value="CLP">🇨🇱 Chile</option><option value="COP">🇨🇴 Colombia</option>
-          </select>
-        </div>
-        <div class="total-final">
-          <span>TOTAL A PAGAR</span>
-          <h1 id="precio">S/0</h1>
-        </div>
-      </div>
+    <div class="checkout">
+      <div class="checkout-left">
+        <span class="close" onclick="cerrarPago()">×</span>
+        <h2>Resumen de Compra</h2>
+        <div class="item"><p id="nomPlan"></p><h3 id="precio">$0</h3></div>
+        
+        <h3>Selecciona tu país</h3>
+        <select id="pais" onchange="cambiarPais()">
+          <option value="PEN">🇵🇪 Perú</option><option value="MXN">🇲🇽 México</option>
+          <option value="CLP">🇨🇱 Chile</option><option value="COP">🇨🇴 Colombia</option>
+        </select>
 
-      <h3 class="titulo-metodos">1. Transfiere a una de estas cuentas</h3>
-      <div class="metodos-grid">
-        <div class="metodo-card" id="yapeCard">
-          <div class="metodo-head"><span class="icon">💛</span><b>Yape</b></div>
-          <div class="dato"><p id="yape">936994155</p><button onclick="copiar('yape')">Copiar</button></div>
-          <small>Yallico Rojas</small>
+        <h3>Método de Pago</h3>
+        <div class="metodos">
+          <div class="metodo" id="yapeMetodo" onclick="seleccionar(this)">
+            <input type="radio" name="pago"><img src="https://i.imgur.com/4L1tN9g.png"><div><b>Yape/Plin</b><small>936994155</small></div>
+          </div>
+          <div class="metodo" onclick="seleccionar(this)">
+            <input type="radio" name="pago"><img src="https://i.imgur.com/8KQz9mL.png"><div><b>Prex Card</b><small>12249975</small></div>
+          </div>
+          <div class="metodo" onclick="seleccionar(this)">
+            <input type="radio" name="pago"><img src="https://i.imgur.com/3bV1z2w.png"><div><b>Global66</b><small>@CRIROJ1855</small></div>
+          </div>
         </div>
-        <div class="metodo-card">
-          <div class="metodo-head"><span class="icon">💳</span><b>Prex</b></div>
-          <div class="dato"><p id="prex">12249975</p><button onclick="copiar('prex')">Copiar</button></div>
-          <small>Cuenta Prex</small>
-        </div>
-        <div class="metodo-card">
-          <div class="metodo-head"><span class="icon">🌎</span><b>Global66</b></div>
-          <div class="dato"><p id="global">@CRIROJ1855</p><button onclick="copiar('global')">Copiar</button></div>
-          <small>Usuario Global</small>
-        </div>
+        <button class="btn-pagar" onclick="irWhatsapp()">Pagar y Enviar Comprobante</button>
       </div>
-
-      <div class="paso-final">
-        <h3>2. Envía tu captura</h3>
-        <p>Te activo en menos de 5 minutos</p>
-        <a href="https://wa.me/51936994155" target="_blank" class="btn-wsp">ENVIAR POR WHATSAPP</a>
+      <div class="checkout-right">
+        <h3>Instrucciones</h3>
+        <p>1. Selecciona tu método de pago</p>
+        <p>2. Realiza la transferencia</p>
+        <p>3. Dale click al botón para enviar captura</p>
+        <div class="seguro">🔒 Pago 100% Seguro</div>
       </div>
     </div>
   </div>
 
   <audio id="musica" src="Musica.mp3" loop></audio>
   <button id="btnMusica" onclick="toggleMusica()">🔊</button>
-<script src="script.js?v=13"></script>
+<script src="script.js?v=14"></script>
 </body>
 </html>
