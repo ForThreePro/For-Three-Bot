@@ -27,9 +27,29 @@ async function actualizarContador() {
 }
 actualizarContador();
 
-// TASAS ARREGLADAS
-const tasas = {PEN: 1, MXN: 5.14, CLP: 285.71, COP: 1028.57, USD: 0.33, ARS: 457.14, PYG: 1885.71, BOB: 3.14};
-const simbolos = {PEN: 'S/', MXN: '$', CLP: '$', COP: '$', USD: 'US$', ARS: '$', PYG: '₲', BOB: 'Bs'};
+// PRECIOS FIJOS QUE ME DISTE
+const precios = {
+ 7: { // Bot Basic
+    PEN: {sim: 'S/', precio: '7.00'},
+    MXN: {sim: '$', precio: '37.00'},
+    CLP: {sim: '$', precio: '2,000'},
+    COP: {sim: '$', precio: '7,200'},
+    USD: {sim: 'US$', precio: '2.50'},
+    ARS: {sim: '$', precio: '3,200'},
+    PYG: {sim: '₲', precio: '13,200'},
+    BOB: {sim: 'Bs', precio: '22.00'}
+  },
+  30: { // Bot Prem y Web Pro
+    PEN: {sim: 'S/', precio: '30.00'},
+    MXN: {sim: '$', precio: '160.50'},
+    CLP: {sim: '$', precio: '8,500'},
+    COP: {sim: '$', precio: '31,500'},
+    USD: {sim: 'US$', precio: '9.00'},
+    ARS: {sim: '$', precio: '14,141.28'},
+    PYG: {sim: '₲', precio: '54,544.60'},
+    BOB: {sim: 'Bs', precio: '90.43'}
+  }
+};
 
 function abrirPago(nombre, precio){
   precioBase = parseFloat(precio);
@@ -41,12 +61,12 @@ function abrirPago(nombre, precio){
 
 function cambiarPais(){
   const pais = document.getElementById('selectorPais').value;
-  const tasa = tasas[pais]; // <-- AQUI ESTABA EL ERROR
-  const precioConvertido = (precioBase * tasa).toFixed(2);
-  const precioFormateado = parseFloat(precioConvertido).toLocaleString('es-PE', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-  document.getElementById('precioConvertido').innerText = `${simbolos[pais]}${precioFormateado} ${pais}`;
-  
-  let mensaje = `Hola Yallico, ya pagué ${nombrePlanActual} de ${simbolos[pais]}${precioFormateado} ${pais}. Aquí mi captura:`;
+  const data = precios[precioBase]; // agarra 7 o 30
+  const paisData = data;
+
+  document.getElementById('precioConvertido').innerText = `${paisData.sim}${paisData.precio} ${pais}`;
+
+  let mensaje = `Hola Yallico, ya pagué ${nombrePlanActual} de ${paisData.sim}${paisData.precio} ${pais}. Aquí mi captura:`;
   document.getElementById('btnWhats').href = `https://wa.me/51936994155?text=${encodeURIComponent(mensaje)}`;
 }
 
@@ -54,9 +74,9 @@ function cerrarPago(){ document.getElementById('popupPago').style.display = 'non
 function copiar(texto){ navigator.clipboard.writeText(texto); alert("✅ Copiado: " + texto); }
 window.onclick = function(event) { if (event.target == document.getElementById('popupPago')) { cerrarPago(); } }
 
-// MÚSICA ARREGLADA PARA GITHUB
+// MÚSICA
 const musica = document.getElementById('musicaFondo');
-musica.volume = 0.3; // más bajita para que no moleste
+musica.volume = 0.3;
 let musicaIniciada = false;
 
 document.body.addEventListener('click', () => {
@@ -68,11 +88,6 @@ document.body.addEventListener('click', () => {
 
 function toggleMusica(){
   const btn = document.getElementById('btnMusica');
-  if(musica.paused){ 
-    musica.play(); 
-    btn.innerText = '🔊'; 
-  } else { 
-    musica.pause(); 
-    btn.innerText = '🔇'; 
-  }
+  if(musica.paused){ musica.play(); btn.innerText = '🔊'; }
+  else { musica.pause(); btn.innerText = '🔇'; }
 }
