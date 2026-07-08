@@ -1,50 +1,31 @@
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter', sans-serif}
-body{background:#030303;color:#F0F0F0}
-.bg-obsidiana{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;background:radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.1) 0%, transparent 70%)}
-
-.container{max-width:1200px;margin:auto;padding:20px}
-nav{display:flex;justify-content:space-between;align-items:center;padding:25px 0;border-bottom:1px solid #111}
-.logo{font-size:2em;font-weight:200;letter-spacing:4px}.logo span{color:#D4AF37;font-weight:900}
+*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif}
+body{background:#F5F5F7;color:#1D1D1F}
+.container{max-width:1000px;margin:auto;padding:20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font-size:1.8em;font-weight:700}.logo span{color:#0071E3}
 .nav-actions{display:flex;gap:10px}
-#btnPais,#btnMusica{background:#0a0a0a;border:1px solid #222;color:#D4AF37;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:700}
+#paisTop,#btnMusica{background:#fff;border:1px solid #D2D2D7;padding:8px 14px;border-radius:8px;cursor:pointer}
 
-header{text-align:center;padding:120px 20px}
-.kicker{color:#D4AF37;font-size:12px;letter-spacing:5px;margin-bottom:20px}
-header h1{font-size:4em;font-weight:700;line-height:1.1}
-header h1 span{background:linear-gradient(90deg,#D4AF37,#FFFFFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-header p{color:#888;font-size:1.2em;max-width:650px;margin:20px auto 30px}
-.cta{display:flex;gap:15px;justify-content:center}
-.btn-gold{background:#D4AF37;color:#000;padding:18px 40px;border-radius:8px;text-decoration:none;font-weight:900;font-size:16px;transition:0.3s}
-.btn-gold:hover{transform:scale(1.05);box-shadow:0 0 30px rgba(212,175,55,0.4)}
-.btn-outline{border:2px solid #D4AF37;color:#D4AF37;padding:16px 38px;border-radius:8px;text-decoration:none;font-weight:900}
-.social-proof{margin-top:40px;color:#555;font-size:14px}
+header{text-align:center;padding:100px 20px}
+header h1{font-size:3.5em;font-weight:700;line-height:1.1}
+header h1 span{color:#0071E3}
+header p{color:#6E6E73;font-size:1.3em;max-width:600px;margin:20px auto 30px}
+.btn-blue{background:#0071E3;color:#fff;padding:14px 30px;border-radius:980px;text-decoration:none;font-weight:600}
+.btn-white{border:1px solid #0071E3;color:#0071E3;padding:12px 28px;border-radius:980px;text-decoration:none;font-weight:600;margin-left:10px}
 
-.planes{padding:100px 0}.planes h2{text-align:center;font-size:2.5em;margin-bottom:50px;font-weight:300}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
-.card{background:#0a0a0a;border:1px solid #1a1a1a;padding:40px 30px;border-radius:12px;text-align:center;transition:0.4s}
-.card:hover{border-color:#D4AF37;transform:translateY(-8px)}
-.card.elite{border:2px solid #D4AF37;position:relative;box-shadow:0 0 40px rgba(212,175,55,0.15)}
-.elite-tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#D4AF37;color:#000;padding:6px 15px;font-size:11px;font-weight:900;border-radius:20px}
-.price{font-size:3em;font-weight:900;color:#D4AF37;margin:20px 0}
-.card button{width:100%;padding:15px;background:#111;border:1px solid #D4AF37;color:#D4AF37;border-radius:8px;font-weight:900;cursor:pointer;font-size:16px}
-.card button:hover{background:#D4AF37;color:#000}
+.planes{padding:80px 0}.planes h2{text-align:center;font-size:2.5em;margin-bottom:40px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.card{background:#fff;border:1px solid #D2D2D7;padding:30px;border-radius:18px;text-align:center}
+.card.pro{border:2px solid #0071E3}
+.price{font-size:2.5em;font-weight:700;color:#1D1D1F;margin:15px 0}
+.card button{width:100%;padding:12px;background:#0071E3;color:#fff;border:none;border-radius:8px;font-weight:600;cursor:pointer}
 
-/* MODAL LUXURY */
-.popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.98);justify-content:center;align-items:center;z-index:999;padding:20px}
-.modal-lux{width:900px;max-width:95%;background:#050505;border:1px solid #D4AF37;border-radius:12px}
-.modal-head{display:flex;justify-content:space-between;padding:25px;border-bottom:1px solid #111}
-.modal-head h2{color:#D4AF37;font-weight:300}.close{font-size:28px;cursor:pointer;color:#666}
-.modal-body{display:flex}
-.col1{flex:1.5;padding:30px}.col2{flex:1;background:#030303;padding:30px;border-left:1px solid #111}
-.resumen{display:flex;justify-content:space-between;background:#0a0a0a;padding:15px;border-radius:8px;margin-bottom:20px}
-.resumen b{color:#D4AF37;font-size:1.5em}
-label{color:#666;font-size:12px;display:block;margin:15px 0 8px}
-select{width:100%;padding:12px;background:#0a0a0a;color:#fff;border:1px solid #222;border-radius:8px}
-.metodo{background:#0a0a0a;padding:14px;border-radius:8px;margin:8px 0;border:1px solid #222;cursor:pointer}
-.metodo.sel{border-color:#D4AF37;background:rgba(212,175,55,0.05)}
-.card-visual{background:#D4AF37;color:#000;padding:20px;border-radius:10px;margin:20px 0;text-align:center}
-.card-visual p{font-size:12px;font-weight:700}.card-visual div{font-size:1.3em;font-weight:900;letter-spacing:2px;margin-top:5px}
-.btn-final{width:100%;padding:16px;background:#D4AF37;color:#000;border:none;border-radius:8px;font-weight:900;font-size:16px;cursor:pointer}
-.btn-final:hover{filter:brightness(1.1)}
-.nota{color:#666;font-size:13px;margin:10px 0}
-@media(max-width:900px){.modal-body{flex-direction:column}.cards{grid-template-columns:1fr}.cta{flex-direction:column}}
+/* MODAL BLANCO */
+.popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);justify-content:center;align-items:center;z-index:999}
+.modal-white{width:500px;max-width:90%;background:#fff;border-radius:18px;padding:30px;position:relative}
+.close{position:absolute;top:15px;right:20px;font-size:24px;cursor:pointer}
+.resumen{display:flex;justify-content:space-between;background:#F5F5F7;padding:15px;border-radius:12px;margin:15px 0}
+select{width:100%;padding:12px;border:1px solid #D2D2D7;border-radius:8px;margin:10px 0}
+.metodo{background:#F5F5F7;padding:14px;border-radius:12px;margin:8px 0;border:2px solid transparent;cursor:pointer}
+.metodo.sel{border-color:#0071E3}
+.btn-final{width:100%;padding:14px;background:#0071E3;color:#fff;border:none;border-radius:8px;font-weight:600;margin-top:15px;cursor:pointer}
