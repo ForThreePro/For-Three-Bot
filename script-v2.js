@@ -40,11 +40,11 @@ function abrirPago(nombre, precio){
 
 function cambiarPais(){
   const pais = document.getElementById('selectorPais').value;
-  const precioConvertido = (precioBase * tasas[pais]).toFixed(2);
+  const precioConvertido = (precioBase * tasas).toFixed(2);
   const precioFormateado = parseFloat(precioConvertido).toLocaleString('es-PE', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-  document.getElementById('precioConvertido').innerText = `${simbolos[pais]}${precioFormateado} ${pais}`;
+  document.getElementById('precioConvertido').innerText = `${simbolos}${precioFormateado} ${pais}`;
   
-  let mensaje = `Hola Yallico, ya pagué ${nombrePlanActual} de ${simbolos[pais]}${precioFormateado} ${pais}. Aquí mi captura:`;
+  let mensaje = `Hola Yallico, ya pagué ${nombrePlanActual} de ${simbolos}${precioFormateado} ${pais}. Aquí mi captura:`;
   document.getElementById('btnWhats').href = `https://wa.me/51936994155?text=${encodeURIComponent(mensaje)}`;
 }
 
