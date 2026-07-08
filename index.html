@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rayo Prem Bot by Yallico</title>
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
   <img id="videoFondo" src="./Fondo.gif">
@@ -40,17 +40,40 @@
         <option value="COP">🇨🇴 Colombia - COP</option>
       </select>
       <p class="total">Total: <span id="precioConvertido">S/0</span></p>
+      
+      <div class="pagos-titulo">⚡ MÉTODOS DE PAGO ⚡</div>
       <div class="pagos">
-        <p><b>Yape:</b> 936994155</p>
-        <p><b>Prex:</b> 12249975</p>
-        <p><b>Global66:</b> @CRIROJ1855</p>
+        <div class="metodo-pago">
+          <div class="metodo-info">
+            <span class="metodo-nombre">💛 Yape</span>
+            <span class="metodo-numero" id="yape">936994155</span>
+          </div>
+          <button class="btn-copiar" onclick="copiar('yape')">COPIAR</button>
+        </div>
+
+        <div class="metodo-pago">
+          <div class="metodo-info">
+            <span class="metodo-nombre">💳 Prex</span>
+            <span class="metodo-numero" id="prex">12249975</span>
+          </div>
+          <button class="btn-copiar" onclick="copiar('prex')">COPIAR</button>
+        </div>
+
+        <div class="metodo-pago">
+          <div class="metodo-info">
+            <span class="metodo-nombre">🌎 Global66</span>
+            <span class="metodo-numero" id="global">@CRIROJ1855</span>
+          </div>
+          <button class="btn-copiar" onclick="copiar('global')">COPIAR</button>
+        </div>
       </div>
+
       <a id="btnWhats" href="https://wa.me/51936994155" target="_blank" class="btn">ENVIAR CAPTURA A WHATSAPP</a>
     </div>
   </div>
 
   <audio id="musicaFondo" src="./Musica.mp3" loop></audio>
   <button id="btnMusica" onclick="toggleMusica()">🔊</button>
-<script src="script.js?v=3"></script>
+<script src="script.js?v=4"></script>
 </body>
 </html>
