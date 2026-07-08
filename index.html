@@ -4,11 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dulces Zoe | Chocotejas Artesanales</title>
-<link rel="stylesheet" href="style.css?v=1">
+<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
   <div class="container">
     <nav><div class="logo">🍫 Dulces<span> Zoe</span></div></nav>
+
+    <!-- CARRUSEL -->
+    <section class="carrusel">
+      <div class="slides">
+        <div class="slide active" style="background-image:url('https://placehold.co/1200x500/F8BBD0/5D4037?text=Caja+Zoe+12+unid')"></div>
+        <div class="slide" style="background-image:url('https://placehold.co/1200x500/FCE4EC/5D4037?text=Chocotejas+Premium')"></div>
+        <div class="slide" style="background-image:url('https://placehold.co/1200x500/F8BBD0/5D4037?text=Mani+Garapiñado')"></div>
+      </div>
+      <div class="dots">
+        <span class="dot active" onclick="irSlide(0)"></span>
+        <span class="dot" onclick="irSlide(1)"></span>
+        <span class="dot" onclick="irSlide(2)"></span>
+      </div>
+    </section>
 
     <header>
       <h1>Chocotejas artesanales<br><span>hechas con amor</span></h1>
@@ -25,6 +39,6 @@
       </div>
     </section>
   </div>
-<script src="script.js?v=1"></script>
+<script src="script.js?v=2"></script>
 </body>
 </html>
