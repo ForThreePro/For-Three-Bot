@@ -1,57 +1,53 @@
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI', sans-serif}
-body{background:#050510;color:#fff;overflow-x:hidden}
-
-/* FONDO GRID CYBER */
-.grid-fondo{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;
-background-image: linear-gradient(#0a0a2a 1px, transparent 1px), linear-gradient(90deg, #0a0a2a 1px, transparent 1px);
-background-size: 40px 40px; animation: mover 20s linear infinite}
-@keyframes mover{0%{transform:translate(0,0)}100%{transform:translate(40px,40px)}}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins', sans-serif}
+body{background:#03030a;color:#fff;overflow-x:hidden}
+#particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1}
 
 .container{max-width:1200px;margin:auto;padding:20px}
-nav{display:flex;justify-content:space-between;align-items:center;padding:15px 0}
-.brand{font-size:1.8em;font-weight:900;color:#fff}
-.brand span{color:#8A2BE2}
-#btnPais{background:rgba(138,43,226,0.2);color:#fff;border:1px solid #8A2BE2;padding:10px 18px;border-radius:20px;cursor:pointer}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font-size:1.9em;font-weight:900}.logo span{color:#00F5FF}
+.nav-right{display:flex;gap:10px}
+#btnPais,#btnMusica{background:rgba(255,255,255,0.05);border:1px solid rgba(0,245,255,0.3);color:#fff;padding:10px 16px;border-radius:12px;cursor:pointer;backdrop-filter:blur(10px)}
 
-header{text-align:center;padding:80px 20px}
-header h1{font-size:3.5em;font-weight:900}
-header h1 span{background:linear-gradient(90deg,#00BFFF,#8A2BE2,#FF00FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-header p{color:#aaa;font-size:1.2em;margin:20px 0}
-.btn-main{background:linear-gradient(90deg,#00BFFF,#8A2BE2);color:#fff;padding:18px 40px;border-radius:12px;text-decoration:none;font-weight:900;font-size:18px;display:inline-block}
-.trust{color:#888;margin-top:20px;font-size:14px}
+header{text-align:center;padding:100px 20px}
+.badge{display:inline-block;background:linear-gradient(90deg,#00F5FF,#A855F7);padding:8px 16px;border-radius:20px;font-size:12px;font-weight:900;margin-bottom:20px}
+header h1{font-size:3.8em;font-weight:900;line-height:1.1}
+header h1 span{background:linear-gradient(90deg,#00F5FF,#A855F7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+header p{color:#aaa;font-size:1.2em;margin:20px auto;max-width:600px}
+.cta{display:flex;gap:15px;justify-content:center;margin:30px 0}
+.btn-main{background:linear-gradient(90deg,#00F5FF,#A855F7);color:#000;padding:16px 35px;border-radius:12px;text-decoration:none;font-weight:900}
+.btn-ghost{border:2px solid #A855F7;color:#fff;padding:14px 33px;border-radius:12px;text-decoration:none;font-weight:900}
+.stats{display:flex;justify-content:center;gap:40px;margin-top:50px}
+.stats b{font-size:1.8em;color:#00F5FF;display:block}.stats span{color:#777;font-size:13px}
 
-.precios{padding:60px 0}
-.precios h2{text-align:center;font-size:2.5em;margin-bottom:40px}
+.planes{padding:80px 0}#planes h2{text-align:center;font-size:2.5em;margin-bottom:50px}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
-.card{background:#0f0f1f;border:1px solid #222;padding:30px;border-radius:15px;position:relative}
-.card.pro{border:2px solid #8A2BE2;box-shadow:0 0 30px rgba(138,43,226,0.5)}
-.tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#00BFFF,#8A2BE2);padding:6px 15px;border-radius:20px;font-size:12px;font-weight:900}
-.card h3{font-size:1.5em}
-.card p{color:#aaa;margin:8px 0 15px}
-.price{font-size:2.8em;font-weight:900;color:#00BFFF}
-.card ul{list-style:none;margin:15px 0}
-.card li{padding:5px 0;color:#ccc}
-.card button{width:100%;padding:14px;background:#111;border:1px solid #8A2BE2;color:#fff;border-radius:10px;font-weight:900;cursor:pointer}
-.card button:hover{background:#8A2BE2}
+.card{background:rgba(255,255,255,0.03);border:1px solid rgba(168,85,247,0.2);padding:30px;border-radius:20px;backdrop-filter:blur(10px);position:relative;transition:0.4s}
+.card:hover{transform:translateY(-10px);border-color:#00F5FF}
+.card.pro{border:2px solid #00F5FF;box-shadow:0 0 40px rgba(0,245,255,0.2)}
+.ribbon{position:absolute;top:-12px;right:20px;background:linear-gradient(90deg,#A855F7,#FF00FF);padding:6px 12px;border-radius:20px;font-size:11px;font-weight:900}
+.icon{font-size:2.5em;margin-bottom:10px}
+.price{font-size:3em;font-weight:900;color:#00F5FF;margin:15px 0}
+.card ul{list-style:none;margin:20px 0} .card li{padding:6px 0;color:#ccc}
+.card button{width:100%;padding:14px;background:#111;border:1px solid #A855F7;color:#fff;border-radius:10px;font-weight:900;cursor:pointer}
+.card button:hover{background:#A855F7;color:#000}
 
-#btnMusica{position:fixed;bottom:20px;right:20px;width:50px;height:50px;border-radius:50%;background:#8A2BE2;color:#fff;border:none;font-size:20px;cursor:pointer}
+.popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;z-index:999;padding:20px}
+.checkout-glass{background:rgba(10,10,20,0.7);border:1px solid rgba(0,245,255,0.3);border-radius:20px;width:100%;max-width:950px;backdrop-filter:blur(20px);overflow:hidden}
+.close{float:right;font-size:28px;color:#aaa;cursor:pointer;padding:20px}
+.checkout-header{padding:25px 30px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.checkout-header h2{color:#00F5FF}.checkout-header p{color:#aaa}
+.checkout-body{display:flex}
+.col-izq{flex:1.5;padding:30px}.col-der{flex:1;background:rgba(0,0,0,0.3);padding:30px;border-left:1px solid rgba(255,255,255,0.1)}
+label{color:#aaa;font-size:13px;display:block;margin:15px 0 8px}
+.plan-resumen{display:flex;justify-content:space-between;align-items:center;background:rgba(0,245,255,0.1);padding:15px;border-radius:12px;margin-bottom:15px}
+.plan-resumen h2{color:#00F5FF;font-size:2em}
+select{width:100%;padding:12px;background:#111;color:#fff;border:1px solid #333;border-radius:10px}
+.metodos{display:flex;flex-direction:column;gap:10px}
+.metodo{display:flex;align-items:center;gap:12px;background:#111;padding:14px;border-radius:12px;border:2px solid #222;cursor:pointer}
+.metodo.seleccionado{border-color:#00F5FF;background:rgba(0,245,255,0.05)}
+.metodo img{width:35px}.metodo b{color:#fff}.metodo small{color:#aaa}
+.paso{display:flex;gap:12px;margin:15px 0}.paso span{background:#A855F7;color:#000;width:25px;height:25px;border-radius:50%;display:grid;place-items:center;font-weight:900}
+.btn-final{width:100%;padding:16px;background:linear-gradient(90deg,#00F5FF,#A855F7);color:#000;border:none;border-radius:12px;font-weight:900;font-size:16px;margin-top:15px;cursor:pointer}
+.seguro{margin-top:15px;padding:12px;background:rgba(0,245,255,0.1);border-radius:10px;text-align:center;font-size:13px;color:#00F5FF}
 
-/* CHECKOUT NUEVO */
-.popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);justify-content:center;align-items:center;z-index:999;padding:20px}
-.checkout{display:flex;width:100%;max-width:900px;background:#0a0a1a;border:1px solid #8A2BE2;border-radius:15px;overflow:hidden}
-.checkout-left{flex:2;padding:30px}
-.checkout-right{flex:1;background:#111;padding:30px;border-left:1px solid #222}
-.close{float:right;font-size:28px;color:#aaa;cursor:pointer}
-.checkout h2,h3{color:#fff;margin-bottom:15px}
-.item{display:flex;justify-content:space-between;background:#111;padding:15px;border-radius:10px;margin-bottom:20px}
-.item h3{color:#00BFFF;font-size:1.8em}
-.checkout select{width:100%;padding:12px;background:#111;color:#fff;border:1px solid #333;border-radius:8px;margin-bottom:20px}
-.metodos{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
-.metodo{display:flex;align-items:center;gap:10px;background:#111;padding:12px;border-radius:10px;border:2px solid #222;cursor:pointer}
-.metodo.seleccionado{border-color:#00BFFF}
-.metodo img{width:35px}
-.metodo small{color:#aaa;display:block}
-.btn-pagar{width:100%;padding:16px;background:linear-gradient(90deg,#00BFFF,#8A2BE2);color:#fff;border:none;border-radius:10px;font-weight:900;font-size:16px;cursor:pointer}
-.seguro{margin-top:20px;padding:15px;background:rgba(0,191,255,0.1);border-radius:10px;text-align:center;color:#00BFFF}
-
-@media(max-width:900px){.checkout{flex-direction:column}.cards{grid-template-columns:1fr}}
+@media(max-width:900px){.checkout-body{flex-direction:column}.cards{grid-template-columns:1fr}}
