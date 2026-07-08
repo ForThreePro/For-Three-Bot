@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OMNIA AI | Asistente Ejecutivo WhatsApp</title>
+<title>OMNIA AI | Asistente Ejecutivo para WhatsApp</title>
 <link rel="stylesheet" href="style.css?v=20">
 </head>
 <body>
-  <div class="bg-glow"></div>
+  <div class="bg-obsidiana"></div>
 
   <div class="container">
     <nav>
@@ -19,26 +19,27 @@
     </nav>
 
     <header>
-      <div class="kicker">INTELIGENCIA ARTIFICIAL EJECUTIVA</div>
-      <h1>Tu equipo de ventas<br><span>que nunca duerme</span></h1>
-      <p>OMNIA responde, califica y vende por WhatsApp. Activación en 5 minutos.</p>
+      <div class="kicker">LA IA EJECUTIVA #1 EN LATAM</div>
+      <h1>Escala tu empresa<br><span>sin contratar personal</span></h1>
+      <p>OMNIA es tu fuerza de ventas 24/7. Responde, califica y cierra por WhatsApp en segundos.</p>
       <div class="cta">
-        <a href="https://wa.me/51936994155" class="btn-gold">Quiero mi IA Ahora</a>
-        <a href="#planes" class="btn-outline">Ver Inversión</a>
+        <a href="https://wa.me/51936994155" class="btn-gold">Solicitar Implementación</a>
+        <a href="#planes" class="btn-outline">Ver Planes</a>
       </div>
+      <div class="social-proof">+300 Empresas facturan 7 cifras con OMNIA</div>
     </header>
 
     <section id="planes" class="planes">
-      <h2>Elige tu Plan</h2>
+      <h2>Inversión Estratégica</h2>
       <div class="cards">
-        <div class="card"><h3>Core</h3><p>Para empezar</p><div class="price" data-pen="S/7" data-mxn="$130" data-clp="$7000" data-cop="$28000">S/7</div><button onclick="abrirPago('Core',7)">Activar</button></div>
-        <div class="card elite"><div class="elite-tag">MÁS VENDIDO</div><h3>Elite</h3><p>Para escalar</p><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('Elite',30)">Activar</button></div>
-        <div class="card"><h3>Commerce</h3><p>Tienda + Bot</p><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('Commerce',30)">Activar</button></div>
+        <div class="card"><h3>Core</h3><p>Para emprendedores</p><div class="price" data-pen="S/7" data-mxn="$130" data-clp="$7000" data-cop="$28000">S/7</div><button onclick="abrirPago('Core',7)">Adquirir</button></div>
+        <div class="card elite"><div class="elite-tag">ENTERPRISE</div><h3>Elite</h3><p>Para escalar a 7 cifras</p><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('Elite',30)">Adquirir</button></div>
+        <div class="card"><h3>Commerce</h3><p>Tienda + IA Integrada</p><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('Commerce',30)">Adquirir</button></div>
       </div>
     </section>
   </div>
 
-  <!-- CHECKOUT LUXURY -->
+  <!-- CHECKOUT LUXURY TIPO STRIPE -->
   <div id="popup" class="popup">
     <div class="modal-lux">
       <div class="modal-head">
@@ -59,10 +60,10 @@
           <div id="metodosPago"></div>
         </div>
         <div class="col2">
-          <div class="card-visual"><p>OMNIA PAY</p><div id="numPago"></div></div>
-          <p class="nota">1. Transfiere al método seleccionado</p>
-          <p class="nota">2. Envía tu comprobante para activación inmediata</p>
-          <button class="btn-final" onclick="enviarWsp()">Enviar Comprobante por WhatsApp</button>
+          <div class="card-visual"><p>OMNIA PAY</p><div id="numPago">Seleccione un método</div></div>
+          <p class="nota">1. Realice la transferencia</p>
+          <p class="nota">2. Envíe su comprobante para activación en 5 min</p>
+          <button class="btn-final" onclick="enviarWsp()">Enviar Comprobante</button>
         </div>
       </div>
     </div>
