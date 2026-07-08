@@ -13,7 +13,7 @@ function abrirPago(n,p){
   document.getElementById('popup').style.display='flex';
   document.getElementById('nomPlan').innerText=n;
   document.getElementById('pais').value = pais;
-  cambiarPais();
+  cambiarPais(); // Forzar que cargue al abrir
 }
 
 function cambiarPaisTop(){
@@ -26,13 +26,20 @@ function cambiarPaisTop(){
 function cambiarPais(){
   pais=document.getElementById('pais').value;
   document.getElementById('paisTop').value = pais;
-  document.getElementById('precio').innerText = document.querySelector(`.pro .price`).getAttribute(`data-${pais.toLowerCase()}`);
 
+  // Cambiar precio del modal
+  const precioEl = document.querySelector(`.pro.price`);
+  document.getElementById('precio').innerText = precioEl.getAttribute(`data-${pais.toLowerCase()}`);
+
+  // Renderizar métodos de pago según país - CORREGIDO
   let html='';
-  pagosData.forEach(p=>{
+  const metodosDelPais = pagosData[pais]; // Obtenemos el array del país
+
+  metodosDelPais.forEach(p=>{ // Ahora sí recorre el array
     html+=`<div class="metodo" onclick="seleccionar(this,'${p.num}')"><b>${p.nombre}</b><br><small>${p.num}</small></div>`;
   });
   document.getElementById('metodosPago').innerHTML=html;
+  metodoSel = ''; // Resetear
 }
 
 function seleccionar(el,num){
