@@ -13,7 +13,7 @@ function abrirPago(n,p){
   document.getElementById('popup').style.display='flex';
   document.getElementById('nomPlan').innerText=n;
   document.getElementById('pais').value = pais;
-  cambiarPais(); // Forzar que cargue al abrir
+  cambiarPais(); 
 }
 
 function cambiarPaisTop(){
@@ -26,20 +26,17 @@ function cambiarPaisTop(){
 function cambiarPais(){
   pais=document.getElementById('pais').value;
   document.getElementById('paisTop').value = pais;
+  document.getElementById('precio').innerText = document.querySelector(`.pro .price`).getAttribute(`data-${pais.toLowerCase()}`);
 
-  // Cambiar precio del modal
-  const precioEl = document.querySelector(`.pro.price`);
-  document.getElementById('precio').innerText = precioEl.getAttribute(`data-${pais.toLowerCase()}`);
-
-  // Renderizar métodos de pago según país - CORREGIDO
+  // ARREGLO: Ahora sí agarramos el array del país
   let html='';
-  const metodosDelPais = pagosData[pais]; // Obtenemos el array del país
-
-  metodosDelPais.forEach(p=>{ // Ahora sí recorre el array
+  const metodos = pagosData; // <-- ESTA ERA LA LÍNEA MALA
+  
+  metodos.forEach(p=>{
     html+=`<div class="metodo" onclick="seleccionar(this,'${p.num}')"><b>${p.nombre}</b><br><small>${p.num}</small></div>`;
   });
   document.getElementById('metodosPago').innerHTML=html;
-  metodoSel = ''; // Resetear
+  metodoSel = '';
 }
 
 function seleccionar(el,num){
