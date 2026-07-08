@@ -1,4 +1,4 @@
-console.log("Rayo Prem Bot v4 Cargado");
+console.log("Rayo Prem Bot v5 Cargado");
 let pais = 'PEN';
 let precioBase = 0;
 
@@ -24,6 +24,14 @@ function cambiarPais(){
   
   document.getElementById('btnPais').innerText = '⚡ País: ' + pais;
   document.getElementById('precioConvertido').innerText = simbolo + Math.round(precioFinal).toLocaleString();
+  
+  // OCULTAR YAPE SI NO ES PERÚ
+  const yapeDiv = document.getElementById('pago-yape');
+  if(pais === 'PEN'){
+    yapeDiv.style.display = 'flex';
+  } else {
+    yapeDiv.style.display = 'none';
+  }
 }
 
 function cerrarPago(){ 
