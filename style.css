@@ -1,46 +1,65 @@
-*{margin:0;padding:0;font-family:Arial}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif}
 body{overflow-x:hidden}
 
-/* FONDO GIF A FULL */
-.fondo{
-  position:fixed;top:0;left:0;width:100%;height:100%;
-  object-fit:cover;z-index:-1;
+/* FONDO GIF */
+.fondo{position:fixed;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1}
+
+.container{max-width:1100px;margin:auto;padding:20px}
+
+/* HEADER */
+.logo{text-align:center;font-size:3.2em;font-weight:900;color:#FFD700;text-shadow:0 3px 10px #000}
+.by{text-align:center;color:#FFD700;font-weight:900;text-shadow:0 2px 5px #000;margin-bottom:15px}
+#btnPais{display:block;margin:10px auto;padding:12px 25px;background:rgba(0,0,0,0.8);color:#FFD700;border:3px solid #FFD700;border-radius:25px;font-weight:900;cursor:pointer;backdrop-filter:blur(5px)}
+.garantia{background:rgba(255,215,0,0.95);color:#000;text-align:center;padding:16px;border-radius:12px;font-weight:900;margin:20px 0;border:3px solid #000}
+.btn-wa{display:block;width:320px;margin:20px auto;padding:18px;background:rgba(255,215,0,0.95);color:#000;text-align:center;text-decoration:none;font-weight:900;border-radius:30px;border:3px solid #000;font-size:17px}
+
+/* PLANES */
+.planes h2{text-align:center;font-size:2.5em;color:#FFD700;text-shadow:0 3px 10px #000;margin:50px 0 30px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.card{background:rgba(0,0,0,0.75);padding:35px 25px;border-radius:18px;text-align:center;border:3px solid #FFD700;backdrop-filter:blur(8px);transition:0.3s}
+.card:hover{transform:translateY(-8px)}
+.card.pro{border:4px solid #FFD700;transform:scale(1.08);position:relative}
+.badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#FFD700;color:#000;padding:7px 18px;border-radius:15px;font-weight:900;font-size:12px}
+.card h3{color:#FFD700;font-size:1.7em;text-shadow:0 2px 5px #000}
+.desc{color:#ccc;font-size:14px;margin:8px 0 15px}
+.precio{font-size:3em;font-weight:900;margin:15px 0;color:#fff;text-shadow:0 3px 8px #000}
+.card button{width:100%;padding:15px;background:#FFD700;color:#000;border:none;border-radius:12px;font-weight:900;font-size:16px;cursor:pointer}
+
+#btnMusica{position:fixed;bottom:25px;right:25px;width:60px;height:60px;border-radius:50%;background:#FFD700;color:#000;border:3px solid #000;font-size:26px;cursor:pointer;z-index:99}
+
+/* SECCIÓN PAGOS NUEVA */
+.popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);justify-content:center;align-items:center;z-index:999;padding:20px}
+.modal-pagos{background:#000;border:3px solid #FFD700;border-radius:20px;width:100%;max-width:500px;max-height:90vh;overflow-y:auto}
+.header-pago{background:#FFD700;color:#000;padding:20px;border-radius:17px 17px 0 0;text-align:center}
+.header-pago h2{font-size:1.6em;font-weight:900}
+.header-pago p{font-size:1.2em;font-weight:700}
+.resumen{display:flex;justify-content:space-between;gap:15px;padding:20px}
+.resumen label{color:#aaa;font-size:13px}
+.resumen select{width:100%;padding:10px;margin-top:5px;background:#111;color:#fff;border:2px solid #FFD700;border-radius:10px;font-size:15px}
+.total-final{text-align:right}
+.total-final span{color:#aaa;font-size:13px}
+.total-final h1{color:#FFD700;font-size:2.3em}
+
+.titulo-metodos{color:#FFD700;padding:0 20px 10px;font-size:15px;font-weight:900}
+.metodos-grid{padding:0 20px 20px;display:flex;flex-direction:column;gap:12px}
+.metodo-card{background:#111;border:2px solid #333;border-radius:12px;padding:15px;transition:0.3s}
+.metodo-card:hover{border-color:#FFD700}
+.metodo-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.metodo-head .icon{font-size:20px}
+.metodo-head b{color:#FFD700;font-size:16px}
+.metodo-card .dato{display:flex;justify-content:space-between;align-items:center}
+.metodo-card .dato p{color:#fff;font-size:15px;font-weight:700;letter-spacing:1px}
+.metodo-card .dato button{background:#FFD700;color:#000;border:none;padding:8px 12px;border-radius:8px;font-weight:900;cursor:pointer}
+.metodo-card small{color:#777;font-size:12px}
+
+.paso-final{background:#111;margin:0 20px 20px;padding:18px;border-radius:12px;border:2px dashed #FFD700;text-align:center}
+.paso-final h3{color:#FFD700;margin-bottom:5px}
+.paso-final p{color:#aaa;font-size:13px;margin-bottom:15px}
+.btn-wsp{display:block;width:100%;padding:16px;background:#25D366;color:#fff;text-align:center;text-decoration:none;font-weight:900;border-radius:12px;font-size:16px}
+
+@media(max-width:768px){
+  .grid{grid-template-columns:1fr}
+  .card.pro{transform:scale(1)}
+  .logo{font-size:2.4em}
+  .resumen{flex-direction:column}
 }
-
-.container{max-width:1000px;margin:auto;padding:20px}
-
-/* TEXTO CON SOMBRA PARA QUE SE VEA SOBRE EL GIF */
-.logo{text-align:center;font-size:3.2em;font-weight:900;color:#FFD700;text-shadow:0 0 10px #000, 0 0 20px #000}
-.by{text-align:center;color:#FFD700;font-weight:900;text-shadow:0 0 5px #000;margin-bottom:15px}
-#btnPais{display:block;margin:10px auto;padding:12px 25px;background:rgba(0,0,0,0.7);color:#FFD700;border:3px solid #FFD700;border-radius:25px;font-weight:900;cursor:pointer;backdrop-filter:blur(5px)}
-.garantia{background:rgba(255,215,0,0.95);color:#000;text-align:center;padding:15px;border-radius:12px;font-weight:900;margin:20px 0;border:3px solid #000}
-.btn-wa{display:block;width:300px;margin:20px auto;padding:16px;background:rgba(255,215,0,0.95);color:#000;text-align:center;text-decoration:none;font-weight:900;border-radius:30px;border:3px solid #000}
-
-.planes h2{text-align:center;font-size:2.4em;color:#FFD700;text-shadow:0 0 10px #000;margin:40px 0}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:rgba(0,0,0,0.75);padding:30px;border-radius:15px;text-align:center;border:3px solid #FFD700;backdrop-filter:blur(8px)}
-.card.pro{border:4px solid #FFD700;transform:scale(1.1);position:relative}
-.badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#FFD700;color:#000;padding:6px 15px;border-radius:15px;font-weight:900;font-size:12px}
-.card h3{color:#FFD700;font-size:1.6em;text-shadow:0 0 5px #000}
-.precio{font-size:2.8em;font-weight:900;margin:15px 0;color:#fff;text-shadow:0 0 8px #000}
-.card button{width:100%;padding:14px;background:#FFD700;color:#000;border:none;border-radius:10px;font-weight:900;font-size:16px;cursor:pointer}
-
-#btnMusica{position:fixed;bottom:20px;right:20px;width:55px;height:55px;border-radius:50%;background:#FFD700;color:#000;border:3px solid #000;font-size:24px;cursor:pointer;z-index:99}
-
-/* MODAL DE PAGOS */
-.popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);justify-content:center;align-items:center;z-index:999}
-.modal{background:rgba(0,0,0,0.9);padding:30px;border-radius:20px;width:90%;max-width:480px;border:3px solid #FFD700;backdrop-filter:blur(10px)}
-.close{float:right;font-size:30px;color:#FFD700;cursor:pointer}
-.modal h2{color:#FFD700;text-align:center;margin-bottom:15px}
-.modal label{color:#FFD700}
-.modal select{width:100%;padding:12px;margin:8px 0 15px;background:#111;color:#fff;border:2px solid #FFD700;border-radius:10px}
-.total-box{background:rgba(255,215,0,0.1);border:2px solid #FFD700;border-radius:12px;padding:15px;text-align:center;margin:15px 0}
-.total-box p{color:#FFD700}
-.total-box h1{color:#FFD700;font-size:2.5em}
-.modal h3{color:#FFD700;margin:15px 0 10px}
-.lista-pagos .item-pago{display:flex;justify-content:space-between;align-items:center;background:rgba(17,17,17,0.8);padding:12px;border-radius:10px;margin:10px 0;border:2px solid #FFD700}
-.item-pago b{color:#FFD700}
-.item-pago p{color:#fff}
-.item-pago button{padding:8px 12px;background:#FFD700;color:#000;border:none;border-radius:8px;font-weight:900;cursor:pointer}
-
-@media(max-width:768px){.grid{grid-template-columns:1fr}.card.pro{transform:scale(1)}}
