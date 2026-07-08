@@ -3,65 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEXORA AI | Automatización WhatsApp</title>
-<link rel="stylesheet" href="style.css?v=18">
+<title>OMNIA AI | La IA Ejecutiva para WhatsApp</title>
+<link rel="stylesheet" href="style.css?v=19">
 </head>
 <body>
-  <div class="bg-ondas"></div>
+  <div class="bg-lux"></div>
 
   <div class="container">
     <nav>
-      <div class="logo">NEXORA<span>AI</span></div>
-      <button id="btnPais" onclick="abrirSelectorPais()">🇵🇪 PERÚ</button>
+      <div class="logo">OMNIA<span>AI</span></div>
+      <div class="nav-actions">
+        <button id="btnPais">🇵🇪 PER</button>
+        <button id="btnMusica" onclick="toggleMusica()">🔊</button>
+      </div>
     </nav>
 
     <header>
-      <span class="tag">LA IA #1 PARA VENDER EN WHATSAPP</span>
-      <h1>Automatiza. Vende. Escala.<br><span>Sin contratar personal</span></h1>
-      <p>NEXORA responde, califica y cierra ventas 24/7. Activación en 5 minutos.</p>
+      <div class="kicker">EXCLUSIVO PARA EMPRESAS</div>
+      <h1>Automatiza tu fuerza de ventas<br><span>con Inteligencia Artificial</span></h1>
+      <p>OMNIA es el asistente ejecutivo que convierte conversaciones en ventas. 24/7. Sin errores.</p>
       <div class="cta">
-        <a href="https://wa.me/51936994155" class="btn-main">Hablar con Asesor</a>
-        <a href="#planes" class="btn-ghost">Ver Precios</a>
+        <a href="https://wa.me/51936994155" class="btn-gold">Solicitar Demo Privada</a>
       </div>
+      <div class="logos">Confían en nosotros: <b>+300 Empresas</b></div>
     </header>
 
     <section id="planes" class="planes">
-      <h2>Planes Nexora</h2>
+      <h2>Inversión</h2>
       <div class="cards">
-        <div class="card"><h3>Inicio</h3><div class="price" data-pen="S/7" data-mxn="$130" data-clp="$7000" data-cop="$28000">S/7</div><ul><li>Auto-respuestas</li><li>500 msg/mes</li></ul><button onclick="abrirPago('Inicio',7)">Comprar</button></div>
-        <div class="card pro"><span class="top">RECOMENDADO</span><h3>Empresarial</h3><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><ul><li>Ilimitado</li><li>Base de Datos</li><li>Flujos IA</li></ul><button onclick="abrirPago('Empresarial',30)">Comprar</button></div>
-        <div class="card"><h3>Tienda Pro</h3><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><ul><li>Landing + Bot</li><li>Dominio Gratis</li></ul><button onclick="abrirPago('Tienda Pro',30)">Comprar</button></div>
+        <div class="card"><h3>Core</h3><p>Para equipos pequeños</p><div class="price" data-pen="S/7" data-mxn="$130" data-clp="$7000" data-cop="$28000">S/7</div><button onclick="abrirPago('Core',7)">Adquirir Acceso</button></div>
+        <div class="card elite"><div class="elite-tag">ENTERPRISE</div><h3>Elite</h3><p>Para escalar a 7 cifras</p><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('Elite',30)">Adquirir Acceso</button></div>
+        <div class="card"><h3>Commerce</h3><p>Tienda + IA Integrada</p><div class="price" data-pen="S/30" data-mxn="$550" data-clp="$30000" data-cop="$120000">S/30</div><button onclick="abrirPago('Commerce',30)">Adquirir Acceso</button></div>
       </div>
     </section>
   </div>
 
-  <!-- CHECKOUT TIPO STRIPE -->
+  <!-- CHECKOUT LUXURY -->
   <div id="popup" class="popup">
-    <div class="modal">
-      <div class="modal-left">
-        <h2>Resumen</h2>
-        <div class="res-plan"><p id="nomPlan"></p><h3 id="precio"></h3></div>
-        <label>País</label>
-        <select id="pais" onchange="cambiarPais()"><option value="PEN">🇵🇪 Perú</option><option value="MXN">🇲🇽 México</option><option value="CLP">🇨🇱 Chile</option><option value="COP">🇨🇴 Colombia</option></select>
-        <h3>Paga con</h3>
-        <div id="metodosPago" class="metodos"></div>
-      </div>
-      <div class="modal-right">
+    <div class="modal-lux">
+      <div class="modal-head">
+        <h2>Finalizar Inversión</h2>
         <span class="close" onclick="cerrarPago()">×</span>
-        <div class="tarjeta-visual">
-          <p>NEXORA AI</p><div class="chip"></div>
-          <h4 id="numTarjeta">**** **** **** ****</h4>
-          <span>YALLICO ROJAS</span>
+      </div>
+      <div class="modal-body">
+        <div class="col1">
+          <div class="resumen"><span id="nomPlan"></span><b id="precio"></b></div>
+          <label>País de Facturación</label>
+          <select id="pais" onchange="cambiarPais()"><option value="PEN">Perú</option><option value="MXN">México</option><option value="CLP">Chile</option><option value="COP">Colombia</option></select>
+          <label>Método de Pago</label>
+          <div id="metodosPago"></div>
         </div>
-        <p class="nota">1. Transfiere al método de arriba</p>
-        <p class="nota">2. Envía captura por WhatsApp</p>
-        <button class="btn-pagar" onclick="enviarWsp()">Finalizar Compra</button>
+        <div class="col2">
+          <div class="card-visual"><p>OMNIA PAY</p><div id="numPago"></div></div>
+          <p class="nota">Tras realizar el pago, envía tu comprobante para activación inmediata.</p>
+          <button class="btn-final" onclick="enviarWsp()">Enviar Comprobante</button>
+        </div>
       </div>
     </div>
   </div>
 
   <audio id="musica" src="Musica.mp3" loop></audio>
-  <button id="btnMusica" onclick="toggleMusica()">🔊</button>
-<script src="script.js?v=18"></script>
+<script src="script.js?v=19"></script>
 </body>
 </html>
