@@ -27,28 +27,10 @@ async function actualizarContador() {
 }
 actualizarContador();
 
-// PRECIOS FIJOS QUE ME DISTE
+// PRECIOS FIJOS
 const precios = {
- 7: { // Bot Basic
-    PEN: {sim: 'S/', precio: '7.00'},
-    MXN: {sim: '$', precio: '37.00'},
-    CLP: {sim: '$', precio: '2,000'},
-    COP: {sim: '$', precio: '7,200'},
-    USD: {sim: 'US$', precio: '2.50'},
-    ARS: {sim: '$', precio: '3,200'},
-    PYG: {sim: '₲', precio: '13,200'},
-    BOB: {sim: 'Bs', precio: '22.00'}
-  },
-  30: { // Bot Prem y Web Pro
-    PEN: {sim: 'S/', precio: '30.00'},
-    MXN: {sim: '$', precio: '160.50'},
-    CLP: {sim: '$', precio: '8,500'},
-    COP: {sim: '$', precio: '31,500'},
-    USD: {sim: 'US$', precio: '9.00'},
-    ARS: {sim: '$', precio: '14,141.28'},
-    PYG: {sim: '₲', precio: '54,544.60'},
-    BOB: {sim: 'Bs', precio: '90.43'}
-  }
+ 7: { PEN: {sim: 'S/', precio: '7.00'}, MXN: {sim: '$', precio: '37.00'}, CLP: {sim: '$', precio: '2,000'}, COP: {sim: '$', precio: '7,200'}, USD: {sim: 'US$', precio: '2.50'}, ARS: {sim: '$', precio: '3,200'}, PYG: {sim: '₲', precio: '13,200'}, BOB: {sim: 'Bs', precio: '22.00'} },
+ 30: { PEN: {sim: 'S/', precio: '30.00'}, MXN: {sim: '$', precio: '160.50'}, CLP: {sim: '$', precio: '8,500'}, COP: {sim: '$', precio: '31,500'}, USD: {sim: 'US$', precio: '9.00'}, ARS: {sim: '$', precio: '14,141.28'}, PYG: {sim: '₲', precio: '54,544.60'}, BOB: {sim: 'Bs', precio: '90.43'} }
 };
 
 function abrirPago(nombre, precio){
@@ -61,7 +43,7 @@ function abrirPago(nombre, precio){
 
 function cambiarPais(){
   const pais = document.getElementById('selectorPais').value;
-  const data = precios[precioBase]; // agarra 7 o 30
+  const data = precios[precioBase]; 
   const paisData = data;
 
   document.getElementById('precioConvertido').innerText = `${paisData.sim}${paisData.precio} ${pais}`;
@@ -72,18 +54,14 @@ function cambiarPais(){
 
 function cerrarPago(){ document.getElementById('popupPago').style.display = 'none'; }
 function copiar(texto){ navigator.clipboard.writeText(texto); alert("✅ Copiado: " + texto); }
-window.onclick = function(event) { if (event.target == document.getElementById('popupPago')) { cerrarPago(); } }
+window.onclick = function(event) { if (event.target == document.getElementById('popupPago')) { cerrarPago(); }
 
-// MÚSICA
 const musica = document.getElementById('musicaFondo');
 musica.volume = 0.3;
 let musicaIniciada = false;
 
 document.body.addEventListener('click', () => {
-  if(!musicaIniciada){
-    musica.play().catch(err => console.log("Musica bloqueada:", err));
-    musicaIniciada = true;
-  }
+  if(!musicaIniciada){ musica.play().catch(err => {}); musicaIniciada = true; }
 });
 
 function toggleMusica(){
