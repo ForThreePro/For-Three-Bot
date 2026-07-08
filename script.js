@@ -28,15 +28,14 @@ function cambiarPais(){
   document.getElementById('paisTop').value = pais;
   document.getElementById('precio').innerText = document.querySelector(`.pro .price`).getAttribute(`data-${pais.toLowerCase()}`);
 
-  // ARREGLO: Ahora sí agarramos el array del país
+  // ARREGLADO: Ahora sí carga los métodos
   let html='';
-  const metodos = pagosData; // <-- ESTA ERA LA LÍNEA MALA
+  const metodos = pagosData; // Agarra el array del país
   
   metodos.forEach(p=>{
     html+=`<div class="metodo" onclick="seleccionar(this,'${p.num}')"><b>${p.nombre}</b><br><small>${p.num}</small></div>`;
   });
   document.getElementById('metodosPago').innerHTML=html;
-  metodoSel = '';
 }
 
 function seleccionar(el,num){
@@ -46,12 +45,7 @@ function seleccionar(el,num){
 
 function enviarWsp(){
   if(!metodoSel){alert('Selecciona un método de pago');return}
-  let msg=`Hola, quiero activar AURA AI plan ${planSel}. Realicé el pago a ${metodoSel}. Adjunto comprobante.`;
+  let msg=`Hola! Quiero pedir: ${planSel}. Realicé el pago a ${metodoSel}. ¿A qué dirección lo envío?`;
   window.open(`https://wa.me/51936994155?text=${encodeURIComponent(msg)}`,'_blank');
 }
 function cerrarPago(){document.getElementById('popup').style.display='none'}
-
-// MÚSICA
-const m=document.getElementById('musica');m.volume=0.08;let ini=false;
-document.body.onclick=()=>{if(!ini){m.play().catch(()=>{});ini=true}};
-function toggleMusica(){const b=document.getElementById('btnMusica');if(m.paused){m.play();b.innerText='🔊'}else{m.pause();b.innerText='🔇'}}
