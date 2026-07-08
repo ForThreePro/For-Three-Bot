@@ -1,4 +1,4 @@
-console.log("Rayo Prem Bot v5 Cargado");
+console.log("Rayo Prem Bot v6 Cargado");
 let pais = 'PEN';
 let precioBase = 0;
 
