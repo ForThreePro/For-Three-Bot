@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rayo Prem Bot | Yallico</title>
-<link rel="stylesheet" href="style.css?v=12">
+<link rel="stylesheet" href="style.css?v=13">
 </head>
 <body>
   <img class="fondo" src="./Fondo.gif" alt="fondo">
@@ -14,46 +14,72 @@
       <div class="logo">⚡ RAYO PREM BOT</div>
       <p class="by">by YALLICO</p>
       <button id="btnPais" onclick="abrirSelectorPais()">PAÍS: PERÚ</button>
-      <div class="garantia">⚡ 7 DÍAS DE GARANTÍA TOTAL ⚡</div>
+      <div class="garantia">⚡ 7 DÍAS DE GARANTÍA TOTAL O TE DEVUELVO TU DINERO ⚡</div>
       <a href="https://wa.me/51936994155" class="btn-wa">HABLAR CON YALLICO</a>
     </header>
 
     <section class="planes">
       <h2>ELIGE TU PLAN</h2>
       <div class="grid">
-        <div class="card"><h3>BASIC</h3><p class="precio">S/7</p><button onclick="abrirPago('BASIC',7)">COMPRAR</button></div>
-        <div class="card pro"><div class="badge">TOP</div><h3>PREM</h3><p class="precio">S/30</p><button onclick="abrirPago('PREM',30)">COMPRAR</button></div>
-        <div class="card"><h3>WEB PRO</h3><p class="precio">S/30</p><button onclick="abrirPago('WEB PRO',30)">COMPRAR</button></div>
+        <div class="card"><h3>BASIC</h3><p class="desc">Para empezar</p><p class="precio">S/7</p><button onclick="abrirPago('BASIC',7)">COMPRAR AHORA</button></div>
+        <div class="card pro"><div class="badge">MÁS VENDIDO</div><h3>PREM</h3><p class="desc">El más completo</p><p class="precio">S/30</p><button onclick="abrirPago('PREM',30)">COMPRAR AHORA</button></div>
+        <div class="card"><h3>WEB PRO</h3><p class="desc">Tu tienda online</p><p class="precio">S/30</p><button onclick="abrirPago('WEB PRO',30)">COMPRAR AHORA</button></div>
       </div>
     </section>
   </div>
 
-  <!-- PAGOS NUEVO -->
+  <!-- SECCIÓN PAGOS NUEVA -->
   <div id="popup" class="popup">
-    <div class="modal">
+    <div class="modal-pagos">
       <span class="close" onclick="cerrarPago()">×</span>
-      <h2>Pagar: <span id="nomPlan"></span></h2>
-      
-      <label>País</label>
-      <select id="pais" onchange="cambiarPais()">
-        <option value="PEN">🇵🇪 Perú</option><option value="MXN">🇲🇽 México</option>
-        <option value="CLP">🇨🇱 Chile</option><option value="COP">🇨🇴 Colombia</option>
-      </select>
-
-      <div class="total-box"><p>TOTAL</p><h1 id="precio">S/0</h1></div>
-
-      <h3>Métodos de Pago</h3>
-      <div class="lista-pagos">
-        <div class="item-pago" id="yapeItem"><div><b>💛 Yape</b><p id="yape">936994155</p></div><button onclick="copiar('yape')">Copiar</button></div>
-        <div class="item-pago"><div><b>💳 Prex</b><p id="prex">12249975</p></div><button onclick="copiar('prex')">Copiar</button></div>
-        <div class="item-pago"><div><b>🌎 Global66</b><p id="global">@CRIROJ1855</p></div><button onclick="copiar('global')">Copiar</button></div>
+      <div class="header-pago">
+        <h2>Finalizar Compra</h2>
+        <p id="nomPlan"></p>
       </div>
-      <a href="https://wa.me/51936994155" target="_blank" class="btn-wa">ENVIAR CAPTURA</a>
+      
+      <div class="resumen">
+        <div>
+          <label>País</label>
+          <select id="pais" onchange="cambiarPais()">
+            <option value="PEN">🇵🇪 Perú</option><option value="MXN">🇲🇽 México</option>
+            <option value="CLP">🇨🇱 Chile</option><option value="COP">🇨🇴 Colombia</option>
+          </select>
+        </div>
+        <div class="total-final">
+          <span>TOTAL A PAGAR</span>
+          <h1 id="precio">S/0</h1>
+        </div>
+      </div>
+
+      <h3 class="titulo-metodos">1. Transfiere a una de estas cuentas</h3>
+      <div class="metodos-grid">
+        <div class="metodo-card" id="yapeCard">
+          <div class="metodo-head"><span class="icon">💛</span><b>Yape</b></div>
+          <div class="dato"><p id="yape">936994155</p><button onclick="copiar('yape')">Copiar</button></div>
+          <small>Yallico Rojas</small>
+        </div>
+        <div class="metodo-card">
+          <div class="metodo-head"><span class="icon">💳</span><b>Prex</b></div>
+          <div class="dato"><p id="prex">12249975</p><button onclick="copiar('prex')">Copiar</button></div>
+          <small>Cuenta Prex</small>
+        </div>
+        <div class="metodo-card">
+          <div class="metodo-head"><span class="icon">🌎</span><b>Global66</b></div>
+          <div class="dato"><p id="global">@CRIROJ1855</p><button onclick="copiar('global')">Copiar</button></div>
+          <small>Usuario Global</small>
+        </div>
+      </div>
+
+      <div class="paso-final">
+        <h3>2. Envía tu captura</h3>
+        <p>Te activo en menos de 5 minutos</p>
+        <a href="https://wa.me/51936994155" target="_blank" class="btn-wsp">ENVIAR POR WHATSAPP</a>
+      </div>
     </div>
   </div>
 
   <audio id="musica" src="Musica.mp3" loop></audio>
   <button id="btnMusica" onclick="toggleMusica()">🔊</button>
-<script src="script.js?v=12"></script>
+<script src="script.js?v=13"></script>
 </body>
 </html>
