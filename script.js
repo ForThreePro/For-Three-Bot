@@ -31,7 +31,6 @@ function abrirPago(nombre, precio){
   
   let mensaje = `Hola Yallico, ya pagué ${nombre} de S/${precio}. Aquí mi captura:`;
   document.getElementById('btnWhats').href = `https://wa.me/51936994155?text=${encodeURIComponent(mensaje)}`;
-  document.getElementById('btnYape').href = `https://wa.me/51936994155?text=${encodeURIComponent(mensaje)}`;
 }
 
 function cerrarPago(){ document.getElementById('popupPago').style.display = 'none'; }
