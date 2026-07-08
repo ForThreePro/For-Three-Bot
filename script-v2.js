@@ -27,7 +27,8 @@ async function actualizarContador() {
 }
 actualizarContador();
 
-const tasas = {PEN: 1, MXN: 5.1429, CLP: 285.71, COP: 1028.57, USD: 0.3333, ARS: 457.14, PYG: 1885.71, BOB: 3.1429};
+// TASAS ARREGLADAS
+const tasas = {PEN: 1, MXN: 5.14, CLP: 285.71, COP: 1028.57, USD: 0.33, ARS: 457.14, PYG: 1885.71, BOB: 3.14};
 const simbolos = {PEN: 'S/', MXN: '$', CLP: '$', COP: '$', USD: 'US$', ARS: '$', PYG: '₲', BOB: 'Bs'};
 
 function abrirPago(nombre, precio){
@@ -40,11 +41,12 @@ function abrirPago(nombre, precio){
 
 function cambiarPais(){
   const pais = document.getElementById('selectorPais').value;
-  const precioConvertido = (precioBase * tasas).toFixed(2);
+  const tasa = tasas[pais]; // <-- AQUI ESTABA EL ERROR
+  const precioConvertido = (precioBase * tasa).toFixed(2);
   const precioFormateado = parseFloat(precioConvertido).toLocaleString('es-PE', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-  document.getElementById('precioConvertido').innerText = `${simbolos}${precioFormateado} ${pais}`;
+  document.getElementById('precioConvertido').innerText = `${simbolos[pais]}${precioFormateado} ${pais}`;
   
-  let mensaje = `Hola Yallico, ya pagué ${nombrePlanActual} de ${simbolos}${precioFormateado} ${pais}. Aquí mi captura:`;
+  let mensaje = `Hola Yallico, ya pagué ${nombrePlanActual} de ${simbolos[pais]}${precioFormateado} ${pais}. Aquí mi captura:`;
   document.getElementById('btnWhats').href = `https://wa.me/51936994155?text=${encodeURIComponent(mensaje)}`;
 }
 
@@ -52,18 +54,25 @@ function cerrarPago(){ document.getElementById('popupPago').style.display = 'non
 function copiar(texto){ navigator.clipboard.writeText(texto); alert("✅ Copiado: " + texto); }
 window.onclick = function(event) { if (event.target == document.getElementById('popupPago')) { cerrarPago(); } }
 
-// MÚSICA ARREGLADA AL 50%
+// MÚSICA ARREGLADA PARA GITHUB
 const musica = document.getElementById('musicaFondo');
-musica.volume = 0.5;
+musica.volume = 0.3; // más bajita para que no moleste
 let musicaIniciada = false;
 
-window.addEventListener('load', () => { musica.play().catch(() => {}); });
 document.body.addEventListener('click', () => {
-  if(!musicaIniciada){ musica.play(); musicaIniciada = true; }
+  if(!musicaIniciada){
+    musica.play().catch(err => console.log("Musica bloqueada:", err));
+    musicaIniciada = true;
+  }
 });
 
 function toggleMusica(){
   const btn = document.getElementById('btnMusica');
-  if(musica.paused){ musica.play(); btn.innerText = '🔊'; } 
-  else { musica.pause(); btn.innerText = '🔇'; }
+  if(musica.paused){ 
+    musica.play(); 
+    btn.innerText = '🔊'; 
+  } else { 
+    musica.pause(); 
+    btn.innerText = '🔇'; 
+  }
 }
