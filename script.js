@@ -1,10 +1,8 @@
-console.log("Rayo Prem Bot v6 Cargado");
+console.log("Rayo Prem Bot v8 Cyber Cargado");
 let pais = 'PEN';
 let precioBase = 0;
 
-function abrirSelectorPais(){ 
-  document.getElementById('selectorPais').focus(); 
-}
+function abrirSelectorPais(){ document.getElementById('selectorPais').focus(); }
 
 function abrirPago(nombre, precio){ 
   precioBase = precio;
@@ -22,21 +20,14 @@ function cambiarPais(){
   if(pais === 'CLP'){ simbolo = '$'; precioFinal = precioBase * 1000; }
   if(pais === 'COP'){ simbolo = '$'; precioFinal = precioBase * 1300; }
   
-  document.getElementById('btnPais').innerText = '⚡ País: ' + pais;
+  document.getElementById('btnPais').innerText = '🌍 PAÍS: ' + pais;
   document.getElementById('precioConvertido').innerText = simbolo + Math.round(precioFinal).toLocaleString();
   
-  // OCULTAR YAPE SI NO ES PERÚ
   const yapeDiv = document.getElementById('pago-yape');
-  if(pais === 'PEN'){
-    yapeDiv.style.display = 'flex';
-  } else {
-    yapeDiv.style.display = 'none';
-  }
+  yapeDiv.style.display = pais === 'PEN' ? 'flex' : 'none';
 }
 
-function cerrarPago(){ 
-  document.getElementById('popupPago').style.display = 'none'; 
-}
+function cerrarPago(){ document.getElementById('popupPago').style.display = 'none'; }
 
 function copiar(id){
   let texto = document.getElementById(id).innerText;
@@ -45,23 +36,15 @@ function copiar(id){
 }
 
 const musica = document.getElementById('musicaFondo'); 
-musica.volume = 0.3;
+musica.volume = 0.2;
 let musicaIniciada = false;
 
 document.body.addEventListener('click', () => { 
-  if(!musicaIniciada){ 
-    musica.play().catch(err => {}); 
-    musicaIniciada = true; 
-  } 
+  if(!musicaIniciada){ musica.play().catch(err => {}); musicaIniciada = true; } 
 });
 
 function toggleMusica(){ 
   const btn = document.getElementById('btnMusica'); 
-  if(musica.paused){ 
-    musica.play(); 
-    btn.innerText = '🔊'; 
-  } else { 
-    musica.pause(); 
-    btn.innerText = '🔇'; 
-  } 
+  if(musica.paused){ musica.play(); btn.innerText = '🔊'; } 
+  else { musica.pause(); btn.innerText = '🔇'; } 
 }
