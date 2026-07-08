@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rayo Prem Bot by Yallico</title>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -20,28 +21,27 @@
     <section class="planes">
       <h2 class="titulo">ELIGE TU PLAN</h2>
       <div class="grid">
-        <div class="card"><h3>Rayo Bot Basic</h3><div class="precio">S/7</div><button onclick="abrirPago('Rayo Bot Basic',7)">LO QUIERO</button></div>
-        <div class="card destacado"><h3>Rayo Bot Prem</h3><div class="precio">S/30</div><button onclick="abrirPago('Rayo Bot Prem',30)">LO QUIERO</button></div>
-        <div class="card"><h3>Rayo Web Pro</h3><div class="precio">S/30</div><button onclick="abrirPago('Rayo Bot Web Pro',30)">LO QUIERO</button></div>
+        <div class="card"><h3>Rayo Bot Basic</h3><div class="precio">S/7</div><button class="btn-comprar" onclick="abrirPago('Rayo Bot Basic',7)">LO QUIERO</button></div>
+        <div class="card destacado"><div class="etiqueta">MÁS VENDIDO</div><h3>Rayo Bot Prem</h3><div class="precio">S/30</div><button class="btn-comprar" onclick="abrirPago('Rayo Bot Prem',30)">LO QUIERO</button></div>
+        <div class="card"><h3>Rayo Web Pro</h3><div class="precio">S/30</div><button class="btn-comprar" onclick="abrirPago('Rayo Bot Web Pro',30)">LO QUIERO</button></div>
       </div>
     </section>
   </div>
 
   <div id="popupPago" class="popup">
     <div class="popup-content">
-      <span onclick="cerrarPago()">&times;</span>
+      <span class="cerrar" onclick="cerrarPago()">&times;</span>
       <h2>Compra: <span id="nombrePlan"></span></h2>
+      <label>Elige tu país:</label>
       <select id="selectorPais" onchange="cambiarPais()">
-        <option value="PEN">🇵🇪 Perú</option>
-        <option value="MXN">🇲🇽 México</option>
-        <option value="CLP">🇨🇱 Chile</option>
-        <option value="COP">🇨🇴 Colombia</option>
+        <option value="PEN">🇵🇪 Perú - PEN</option>
+        <option value="MXN">🇲🇽 México - MXN</option>
+        <option value="CLP">🇨🇱 Chile - CLP</option>
+        <option value="COP">🇨🇴 Colombia - COP</option>
       </select>
-      <p>Total: <span id="precioConvertido"></span></p>
-      <div>Yape: 936994155</div>
-      <div>Prex: 12249975</div>
-      <div>Global66: @CRIROJ1855</div>
-      <a id="btnWhats" href="#">ENVIAR CAPTURA</a>
+      <p class="total">Total: <span id="precioConvertido"></span></p>
+      <div class="pagos"><p><b>Yape:</b> 936994155</p><p><b>Prex:</b> 12249975</p><p><b>Global66:</b> @CRIROJ1855</p></div>
+      <a id="btnWhats" href="#" class="btn">ENVIAR CAPTURA A WHATSAPP</a>
     </div>
   </div>
 
