@@ -3,114 +3,160 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TEAM NIGHTWISH | Checkout</title>
+<title>TEAM NIGHTWISH | Tienda</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@300;600&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
   body{background:#000;color:#fff;font-family:'Exo 2';}
   
-  .container{max-width:900px;margin:0 auto;padding:40px 20px;}
-  h2{font-family:'Orbitron';text-align:center;font-size:2.2rem;color:#00BFFF;margin-bottom:30px;}
+  .container{max-width:1200px;margin:0 auto;padding:40px 20px;}
+  h2{font-family:'Orbitron';text-align:center;font-size:2.5rem;color:#00BFFF;margin-bottom:50px;}
   
-  /* RESUMEN PEDIDO */
-  .resumen{background:rgba(0,191,255,0.1);border:1px solid #00BFFF;border-radius:15px;padding:20px;margin-bottom:30px;text-align:center;}
-  .resumen h3{color:#00BFFF;font-family:'Orbitron';}
-  .precio-final{font-size:2.5rem;color:#00BFFF;font-weight:900;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:30px;}
+  .card{background:rgba(0,191,255,0.05);backdrop-filter:blur(15px);border:1px solid rgba(0,191,255,0.3);border-radius:20px;padding:25px;text-align:center;transition:0.4s;}
+  .card:hover{transform:translateY(-10px);border-color:#00BFFF;box-shadow:0 0 30px rgba(0,191,255,0.5);}
+  .card img{width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:15px;background:linear-gradient(45deg,#00BFFF,#001a33);}
   
-  /* TABS PAGOS */
-  .tabs{display:flex;justify-content:center;gap:10px;margin-bottom:30px;flex-wrap:wrap;}
-  .tab-btn{padding:12px 24px;background:#001a33;border:2px solid #00BFFF;color:#00BFFF;border-radius:10px;font-family:'Orbitron';cursor:pointer;transition:0.3s;}
-  .tab-btn.active{background:#00BFFF;color:#000;box-shadow:0 0 20px #00BFFF;}
+  .precio{font-size:2rem;color:#00BFFF;font-weight:900;font-family:'Orbitron';margin:10px 0;}
+  .btn{padding:12px 24px;background:#00BFFF;color:#000;font-weight:bold;border-radius:8px;border:none;cursor:pointer;font-family:'Orbitron';transition:0.3s;width:100%;}
+  .btn:hover{box-shadow:0 0 20px #00BFFF;}
   
-  .tab-content{display:none;background:rgba(0,191,255,0.05);border:1px solid #00BFFF;border-radius:20px;padding:30px;}
-  .tab-content.active{display:block;animation:fadeIn 0.4s;}
-  @keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+  /* CARRITO */
+  .carrito-btn{position:fixed;top:20px;right:20px;background:#00BFFF;color:#000;padding:15px;border-radius:50%;font-size:1.5rem;z-index:99;cursor:pointer;}
+  .contador{position:absolute;top:-5px;right:-5px;background:red;color:#fff;border-radius:50%;width:20px;height:20px;font-size:0.8rem;display:flex;align-items:center;justify-content:center;}
   
-  /* PASOS */
-  .pasos{display:flex;justify-content:space-between;margin-bottom:25px;}
-  .paso{text-align:center;flex:1;}
-  .paso-num{width:40px;height:40px;background:#00BFFF;color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-weight:bold;font-family:'Orbitron';}
+  /* CHECKOUT */
+  .popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.98);justify-content:center;align-items:center;z-index:999;overflow-y:auto;}
+  .popup-content{background:#0a0a0a;border:2px solid #00BFFF;border-radius:20px;padding:30px;max-width:600px;width:90%;}
   
-  /* DATOS COPIAR */
-  .dato-box{background:#000;border:1px dashed #00BFFF;border-radius:10px;padding:15px;margin:15px 0;display:flex;justify-content:space-between;align-items:center;}
-  .dato-text{font-size:1.1rem;}
-  .btn-copiar{background:#00BFFF;color:#000;border:none;padding:8px 16px;border-radius:6px;font-weight:bold;cursor:pointer;font-family:'Orbitron';}
-  .btn-copiar:hover{box-shadow:0 0 15px #00BFFF;}
+  .tabs{display:flex;gap:10px;margin-bottom:20px;}
+  .tab-btn{flex:1;padding:12px;background:#001a33;border:2px solid #00BFFF;color:#00BFFF;border-radius:10px;cursor:pointer;font-family:'Orbitron';}
+  .tab-btn.active{background:#00BFFF;color:#000;}
+  .tab-content{display:none;}.tab-content.active{display:block;}
   
-  /* QR */
-  .qr-box{text-align:center;margin:20px 0;}
-  .qr-box img{width:180px;height:180px;background:#fff;padding:10px;border-radius:10px;}
-  
-  .btn-wsp{display:block;width:100%;padding:16px;background:linear-gradient(45deg,#00BFFF,#0080ff);color:#000;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-family:'Orbitron';margin-top:20px;font-size:1.1rem;}
-  .btn-wsp:hover{box-shadow:0 0 30px #00BFFF;}
-  
-  .popup{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);display:flex;justify-content:center;align-items:center;z-index:999;}
+  .dato-box{background:#000;border:1px dashed #00BFFF;border-radius:10px;padding:15px;margin:15px 0;display:flex;justify-content:space-between;}
+  .btn-copiar{background:#00BFFF;color:#000;border:none;padding:8px 16px;border-radius:6px;font-weight:bold;cursor:pointer;}
 </style>
 </head>
 <body>
 
-<div class="popup">
-  <div class="container">
-    <h2>COMPLETA TU PAGO</h2>
-    
-    <!-- RESUMEN -->
-    <div class="resumen">
-      <h3 id="nombre-plan">COMBO FULL</h3>
-      <div class="precio-final" id="precio-plan">S/45</div>
+<!-- CARRITO -->
+<div class="carrito-btn" onclick="abrirCheckout()">🛒<span class="contador" id="cont">0</span></div>
+
+<!-- SECCIÓN PRODUCTOS -->
+<section class="container">
+  <h2>PRODUCTOS DIGITALES</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="" alt="">
+      <h3>BOT WHATSAPP BÁSICO</h3>
+      <p>Respuestas automáticas + Bienvenida</p>
+      <div class="precio">S/7</div>
+      <button class="btn" onclick="agregarCarrito('BOT BÁSICO', 7)">AGREGAR</button>
     </div>
-    
-    <!-- PASOS -->
-    <div class="pasos">
-      <div class="paso"><div class="paso-num">1</div><p>Elige método</p></div>
-      <div class="paso"><div class="paso-num">2</div><p>Paga</p></div>
-      <div class="paso"><div class="paso-num">3</div><p>Envía comprobante</p></div>
+    <div class="card">
+      <img src="" alt="">
+      <h3>PLANTILLA WEB 1 SECCIÓN</h3>
+      <p>Landing page que convierte</p>
+      <div class="precio">S/35</div>
+      <button class="btn" onclick="agregarCarrito('WEB 1 SECCIÓN', 35)">AGREGAR</button>
     </div>
+    <div class="card">
+      <img src="" alt="">
+      <h3>BOT CON IA GPT</h3>
+      <p>Responde como humano 24/7</p>
+      <div class="precio">S/30</div>
+      <button class="btn" onclick="agregarCarrito('BOT CON IA', 30)">AGREGAR</button>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN PLANES -->
+<section class="container">
+  <h2>PLANES MENSUALES</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>PLAN STARTER</h3>
+      <p>Soporte + 2 actualizaciones/mes</p>
+      <div class="precio">S/15/mes</div>
+      <button class="btn" onclick="agregarCarrito('PLAN STARTER', 15)">SUSCRIBIRME</button>
+    </div>
+    <div class="card">
+      <h3>PLAN ELITE</h3>
+      <p>Soporte 24/7 + Actualizaciones ilimitadas</p>
+      <div class="precio">S/45/mes</div>
+      <button class="btn" onclick="agregarCarrito('PLAN ELITE', 45)">SUSCRIBIRME</button>
+    </div>
+  </div>
+</section>
+
+<!-- CHECKOUT POPUP -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <h2 style="color:#00BFFF;font-family:Orbitron;text-align:center;">FINALIZAR COMPRA</h2>
     
-    <!-- TABS -->
+    <div id="lista-carrito" style="margin:20px 0;"></div>
+    <h3 style="text-align:right;">Total: <span id="total" style="color:#00BFFF;">S/0</span></h3>
+    
+    <h3 style="color:#00BFFF;margin:20px 0;">MÉTODOS DE PAGO</h3>
     <div class="tabs">
       <button class="tab-btn active" onclick="abrirTab('yape')">Yape</button>
       <button class="tab-btn" onclick="abrirTab('global')">Global66</button>
       <button class="tab-btn" onclick="abrirTab('prex')">Prex</button>
     </div>
     
-    <!-- TAB YAPE -->
     <div id="yape" class="tab-content active">
-      <h3 style="color:#00BFFF;margin-bottom:15px;">Paga con Yape</h3>
-      <div class="qr-box">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=936994155" alt="QR Yape">
-        <p style="font-size:0.9rem;color:#aaa;">Escanea o copia el número</p>
-      </div>
       <div class="dato-box">
-        <div class="dato-text">936 994 155 - Cristhofer Rojas</div>
+        <span>936 994 155 - Cristhofer Rojas</span>
         <button class="btn-copiar" onclick="copiar('936994155', this)">COPIAR</button>
       </div>
     </div>
-    
-    <!-- TAB GLOBAL66 -->
     <div id="global" class="tab-content">
-      <h3 style="color:#00BFFF;margin-bottom:15px;">Paga con Global66</h3>
       <div class="dato-box">
-        <div class="dato-text">global66@teamnightwish.com</div>
+        <span>global66@teamnightwish.com</span>
         <button class="btn-copiar" onclick="copiar('global66@teamnightwish.com', this)">COPIAR</button>
       </div>
-      <p style="font-size:0.9rem;color:#aaa;">Titular: Cristhofer Rojas</p>
     </div>
-    
-    <!-- TAB PREX -->
     <div id="prex" class="tab-content">
-      <h3 style="color:#00BFFF;margin-bottom:15px;">Paga con Prex</h3>
       <div class="dato-box">
-        <div class="dato-text">936 994 155</div>
+        <span>936 994 155</span>
         <button class="btn-copiar" onclick="copiar('936994155', this)">COPIAR</button>
       </div>
-      <p style="font-size:0.9rem;color:#aaa;">Titular: Cristhofer Rojas</p>
     </div>
     
-    <a id="btn-wsp" href="https://wa.me/51936994155?text=Hola%20pagué%20el%20COMBO%20FULL%20por%20S/45.%20Aquí%20está%20mi%20comprobante:" class="btn-wsp">📲 ENVIAR COMPROBANTE POR WHATSAPP</a>
+    <a id="btn-wsp" href="#" class="btn" style="display:block;text-align:center;margin-top:20px;">ENVIAR COMPROBANTE</a>
+    <button class="btn" style="background:transparent;color:#fff;border:1px solid #fff;margin-top:10px;" onclick="cerrarCheckout()">Cerrar</button>
   </div>
 </div>
 
 <script>
+  let carrito = [];
+  
+  function agregarCarrito(nombre, precio){
+    carrito.push({nombre, precio});
+    document.getElementById('cont').innerText = carrito.length;
+    alert('✓ ' + nombre + ' agregado');
+  }
+  
+  function abrirCheckout(){
+    if(carrito.length === 0){alert('Tu carrito está vacío'); return;}
+    document.getElementById('popup').style.display = 'flex';
+    
+    let lista = '';
+    let total = 0;
+    carrito.forEach(item=>{
+      lista += `<p>${item.nombre} - S/${item.precio}</p>`;
+      total += item.precio;
+    });
+    document.getElementById('lista-carrito').innerHTML = lista;
+    document.getElementById('total').innerText = 'S/' + total;
+    
+    let productos = carrito.map(i=>i.nombre).join(', ');
+    document.getElementById('btn-wsp').href = `https://wa.me/51936994155?text=Hola%20quiero%20pagar:%20${productos}.%20Total:%20S/${total}.%20Aquí%20mi%20comprobante:`;
+  }
+  
+  function cerrarCheckout(){document.getElementById('popup').style.display = 'none';}
+  
   function abrirTab(id){
     document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
@@ -120,17 +166,8 @@
   
   function copiar(texto, btn){
     navigator.clipboard.writeText(texto);
-    let original = btn.innerText;
     btn.innerText = '✓ COPIADO';
-    btn.style.background = '#00ff00';
-    setTimeout(()=>{btn.innerText = original; btn.style.background = '#00BFFF';}, 1500);
-  }
-  
-  // Para conectar con tus botones de planes
-  function cargarPlan(plan, precio){
-    document.getElementById('nombre-plan').innerText = plan;
-    document.getElementById('precio-plan').innerText = 'S/' + precio;
-    document.getElementById('btn-wsp').href = `https://wa.me/51936994155?text=Hola%20pagué%20el%20${plan}%20por%20S/${precio}.%20Aquí%20está%20mi%20comprobante:`;
+    setTimeout(()=>{btn.innerText = 'COPIAR';}, 1500);
   }
 </script>
 
