@@ -3,68 +3,120 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dulces Zoe | Chocotejas Artesanales</title>
-<link rel="stylesheet" href="style.css?v=3">
+<title>TEAM NIGHTWISH | Automatización y Talento</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI', sans-serif;}
+  body{background:#000;color:#fff;line-height:1.6;}
+  
+  .container{max-width:1100px;margin:0 auto;padding:20px;}
+  
+  /* HERO */
+  .hero{text-align:center;padding:80px 20px;background:linear-gradient(180deg, #000 0%, #001a33 100%);border-bottom:2px solid #00BFFF;}
+  .hero h1{font-size:2.8rem;color:#00BFFF;text-shadow:0 0 15px #00BFFF;margin-bottom:15px;}
+  .hero p{font-size:1.2rem;color:#ccc;margin-bottom:30px;}
+  .btn{display:inline-block;padding:14px 28px;background:#00BFFF;color:#000;font-weight:bold;border-radius:8px;text-decoration:none;margin:8px;box-shadow:0 0 15px #00BFFF;transition:0.3s;}
+  .btn:hover{transform:scale(1.05);box-shadow:0 0 25px #00BFFF;}
+  
+  /* SECCIONES */
+  section{padding:60px 20px;}
+  h2{text-align:center;color:#00BFFF;font-size:2rem;margin-bottom:40px;text-shadow:0 0 10px #00BFFF;}
+  
+  /* SERVICIOS */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));gap:25px;}
+  .card{background:#0a0a0a;border:1px solid #00BFFF;border-radius:12px;padding:25px;text-align:center;transition:0.3s;}
+  .card:hover{box-shadow:0 0 20px #00BFFF;transform:translateY(-5px);}
+  .card h3{color:#00BFFF;margin-bottom:10px;}
+  
+  /* PRECIOS */
+  .precios .card{position:relative;}
+  .precio{font-size:2.2rem;color:#00BFFF;font-weight:bold;margin:15px 0;}
+  .destacado{border:2px solid #00BFFF;box-shadow:0 0 30px #00BFFF;}
+  .badge{position:absolute;top:-12px;right:20px;background:#00BFFF;color:#000;padding:5px 12px;border-radius:20px;font-size:0.8rem;font-weight:bold;}
+  
+  /* PAGOS */
+  .pagos{text-align:center;background:#0a0a0a;border-radius:12px;padding:30px;border:1px solid #00BFFF;}
+  .pagos p{margin:10px 0;font-size:1.1rem;}
+  .yape{color:#00BFFF;font-weight:bold;font-size:1.2rem;}
+  
+  /* FOOTER */
+  footer{text-align:center;padding:30px;background:#001a33;border-top:2px solid #00BFFF;}
+  footer a{color:#00BFFF;text-decoration:none;}
+</style>
 </head>
 <body>
-  <div class="container">
-    <nav><div class="logo">🍫 Dulces<span> Zoe</span></div></nav>
 
-    <!-- CARRUSEL -->
-    <section class="carrusel">
-      <div class="slides">
-        <div class="slide active" style="background-image:url('https://placehold.co/1200x500/F8BBD0/5D4037?text=Dulces+Zoe+Chocotejas')"></div>
-        <div class="slide" style="background-image:url('https://placehold.co/1200x500/FCE4EC/5D4037?text=Hechas+con+Amor')"></div>
-        <div class="slide" style="background-image:url('https://placehold.co/1200x500/F8BBD0/5D4037?text=Envios+a+todo+Peru')"></div>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>TEAM NIGHTWISH</h1>
+    <p>Automatiza tu negocio 24/7</p>
+    <p>Bots para grupos, Bots personalizados y Páginas Web</p>
+    <a href="https://chat.whatsapp.com/GdBFa3UqUvzBFx4kXJtjGN" class="btn">Cotiza tu Bot/Web</a>
+    <a href="https://chat.whatsapp.com/GdBFa3UqUvzBFx4kXJtjGN" class="btn">Trabaja con nosotros</a>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="container">
+    <h2>Nuestros Servicios</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🤖 Bots para Grupos</h3>
+        <p>Moderación 24/7, bienvenida automática, anti-spam</p>
       </div>
-      <div class="dots">
-        <span class="dot active" onclick="irSlide(0)"></span>
-        <span class="dot" onclick="irSlide(1)"></span>
-        <span class="dot" onclick="irSlide(2)"></span>
+      <div class="card">
+        <h3>⚡ Bots Personalizados</h3>
+        <p>Con API, respuestas con IA y 100% a tu medida</p>
       </div>
-    </section>
-
-    <header>
-      <h1>Chocotejas artesanales<br><span>hechas con amor</span></h1>
-      <p>Chocolate premium + maní crocante + manjar. Envíos a todo Perú.</p>
-      <a href="#productos" class="btn-main">Ver productos</a>
-    </header>
-
-    <section id="productos" class="productos">
-      <h2>Nuestras Delicias</h2>
-      <div class="cards">
-
-        <!-- PRODUCTO 1 -->
-        <div class="card">
-          <img src="https://placehold.co/400x300/F8BBD0/5D4037?text=Chocotejas+Clasicas" alt="Chocotejas Clásicas">
-          <h3>Chocotejas Clásicas</h3>
-          <p>Manjar blanco + maní crocante + baño de chocolate</p>
-          <div class="price">S/25</div>
-          <button onclick="pedir('Chocotejas Clásicas',25)">Pedir por WhatsApp</button>
-        </div>
-
-        <!-- PRODUCTO 2 -->
-        <div class="card pro">
-          <div class="badge">Premium</div>
-          <img src="https://placehold.co/400x300/F8BBD0/5D4037?text=Con+Chinchin+Pecana" alt="Chocotejas con Chinchin">
-          <h3>Chocotejas con Chinchín + Pecana</h3>
-          <p>La más pedida. Crocantría de chinchín + pecana entera</p>
-          <div class="price">S/35</div>
-          <button onclick="pedir('Chocotejas Chinchin Pecana',35)">Pedir por WhatsApp</button>
-        </div>
-
-        <!-- PRODUCTO 3 -->
-        <div class="card">
-          <img src="https://placehold.co/400x300/F8BBD0/5D4037?text=Kilo+Mani+Dulce" alt="Kilo Maní Dulce">
-          <h3>Kilo de Maní Dulce</h3>
-          <p>Garapiñado casero. Dulce y crocante</p>
-          <div class="price">S/30</div>
-          <button onclick="pedir('Kilo Maní Dulce',30)">Pedir por WhatsApp</button>
-        </div>
-
+      <div class="card">
+        <h3>🌐 Páginas Web</h3>
+        <p>Rápidas, modernas y que convierten visitas en clientes</p>
       </div>
-    </section>
-  </div>
-<script src="script.js?v=3"></script>
+    </div>
+  </section>
+
+  <!-- PRECIOS -->
+  <section class="container precios">
+    <h2>Planes y Precios</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>BOTS PARA GRUPOS</h3>
+        <div class="precio">S/7</div>
+        <p>✅ Bienvenida automática<br>✅ Respuestas básicas<br>✅ Moderación anti-spam</p>
+      </div>
+      <div class="card">
+        <h3>BOT PERSONALIZADO</h3>
+        <div class="precio">S/30</div>
+        <p>✅ Todo lo anterior<br>✅ Integración por API<br>✅ Respuestas con IA<br>✅ Panel de control</p>
+      </div>
+      <div class="card">
+        <h3>PÁGINA WEB</h3>
+        <div class="precio">S/35</div>
+        <p>✅ Diseño negro + azul neón<br>✅ 1 página responsive<br>✅ Botón a WhatsApp</p>
+      </div>
+      <div class="card destacado">
+        <div class="badge">MÁS VENDIDO</div>
+        <h3>COMBO FULL</h3>
+        <div class="precio">S/45</div>
+        <p>✅ Bot + Página Web<br>✅ Branding con tu logo<br>✅ Soporte 1 mes</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGOS -->
+  <section class="container">
+    <h2>Métodos de Pago</h2>
+    <div class="pagos">
+      <p><b>Yape:</b> <span class="yape">936 994 155</span> - Cristhofer Rojas</p>
+      <p><b>Global66</b></p>
+      <p><b>Prex</b></p>
+      <a href="https://chat.whatsapp.com/GdBFa3UqUvzBFx4kXJtjGN" class="btn" style="margin-top:20px;">Cotizar ahora</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><b>TEAM NIGHTWISH</b> | Automatización y Talento</p>
+    <p><a href="https://chat.whatsapp.com/GdBFa3UqUvzBFx4kXJtjGN">Únete al grupo</a></p>
+  </footer>
+
 </body>
 </html>
