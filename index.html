@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TEAM NIGHTWISH | Tienda Elite</title>
+<title>TEAM NIGHTWISH | Tienda</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@300;600&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -12,47 +12,32 @@
   .container{max-width:1200px;margin:0 auto;padding:60px 20px;}
   h2{font-family:'Orbitron';text-align:center;font-size:2.5rem;color:#00BFFF;margin-bottom:50px;}
   
-  /* PRODUCTOS */
   .grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:30px;}
   .card{background:rgba(0,191,255,0.05);backdrop-filter:blur(15px);border:1px solid rgba(0,191,255,0.3);border-radius:20px;padding:30px;text-align:center;transition:0.4s;}
   .card:hover{transform:translateY(-10px);border-color:#00BFFF;box-shadow:0 0 30px rgba(0,191,255,0.5);}
-  .card img{width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:15px;background:linear-gradient(45deg,#00BFFF,#001a33);}
   
   .precio{font-size:2.5rem;color:#00BFFF;font-weight:900;font-family:'Orbitron';margin:15px 0;}
   .btn{padding:14px 28px;background:linear-gradient(45deg,#00BFFF,#0080ff);color:#000;font-weight:bold;border-radius:10px;border:none;cursor:pointer;font-family:'Orbitron';transition:0.3s;width:100%;font-size:1rem;}
   .btn:hover{box-shadow:0 0 30px #00BFFF;transform:scale(1.05);}
   
-  /* POPUP CHECKOUT */
   .popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.98);justify-content:center;align-items:center;z-index:999;overflow-y:auto;}
-  .popup-content{background:#0a0a0a;border:2px solid #00BFFF;border-radius:20px;padding:35px;max-width:600px;width:90%;margin:20px auto;}
+  .popup-content{background:#0a0a0a;border:2px solid #00BFFF;border-radius:20px;padding:35px;max-width:600px;width:90%;}
   
-  /* RESUMEN */
   .resumen{background:rgba(0,191,255,0.1);border:1px solid #00BFFF;border-radius:15px;padding:20px;margin-bottom:25px;text-align:center;}
-  .resumen h3{color:#00BFFF;font-family:'Orbitron';}
-  .precio-final{font-size:2.5rem;color:#00BFFF;font-weight:900;}
+  .precio-final{font-size:2.5rem;color:#00BFFF;font-weight:900;font-family:'Orbitron';}
   
-  /* PASOS */
-  .pasos{display:flex;justify-content:space-between;margin-bottom:25px;}
-  .paso{text-align:center;flex:1;}
-  .paso-num{width:40px;height:40px;background:#00BFFF;color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-weight:bold;font-family:'Orbitron';}
-  
-  /* TABS */
-  .tabs{display:flex;justify-content:center;gap:10px;margin-bottom:25px;flex-wrap:wrap;}
-  .tab-btn{padding:12px 24px;background:#001a33;border:2px solid #00BFFF;color:#00BFFF;border-radius:10px;font-family:'Orbitron';cursor:pointer;transition:0.3s;}
+  .tabs{display:flex;justify-content:center;gap:10px;margin-bottom:25px;}
+  .tab-btn{padding:12px 24px;background:#001a33;border:2px solid #00BFFF;color:#00BFFF;border-radius:10px;font-family:'Orbitron';cursor:pointer;}
   .tab-btn.active{background:#00BFFF;color:#000;box-shadow:0 0 20px #00BFFF;}
   
   .tab-content{display:none;background:rgba(0,191,255,0.05);border:1px solid #00BFFF;border-radius:20px;padding:25px;}
-  .tab-content.active{display:block;animation:fadeIn 0.4s;}
-  @keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+  .tab-content.active{display:block;}
   
-  /* DATOS COPIAR */
   .dato-box{background:#000;border:1px dashed #00BFFF;border-radius:10px;padding:15px;margin:15px 0;display:flex;justify-content:space-between;align-items:center;}
-  .dato-text{font-size:1.1rem;}
   .btn-copiar{background:#00BFFF;color:#000;border:none;padding:8px 16px;border-radius:6px;font-weight:bold;cursor:pointer;font-family:'Orbitron';}
   
-  /* QR */
   .qr-box{text-align:center;margin:20px 0;}
-  .qr-box img{width:180px;height:180px;background:#fff;padding:10px;border-radius:10px;}
+  .qr-box img{width:200px;height:200px;background:#fff;padding:10px;border-radius:15px;border:3px solid #00BFFF;}
   
   .btn-wsp{display:block;width:100%;padding:16px;background:linear-gradient(45deg,#00BFFF,#0080ff);color:#000;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-family:'Orbitron';margin-top:20px;font-size:1.1rem;}
   .btn-cerrar{background:transparent;color:#fff;border:1px solid #fff;width:100%;padding:14px;border-radius:10px;margin-top:10px;font-family:'Orbitron';cursor:pointer;}
@@ -60,33 +45,29 @@
 </head>
 <body>
 
-<!-- SECCIÓN PRODUCTOS -->
+<!-- PRODUCTOS -->
 <section class="container">
   <h2>ELIGE TU PRODUCTO</h2>
   <div class="grid">
     <div class="card">
-      <img src="" alt="">
       <h3>🤖 BOT WHATSAPP BÁSICO</h3>
       <p>Respuestas automáticas + Anti-spam</p>
       <div class="precio">S/7</div>
       <button class="btn" onclick="abrirPago('BOT WHATSAPP BÁSICO', '7')">COMPRAR</button>
     </div>
     <div class="card">
-      <img src="" alt="">
       <h3>⚡ BOT CON IA GPT</h3>
       <p>Responde como humano 24/7 + API</p>
       <div class="precio">S/30</div>
       <button class="btn" onclick="abrirPago('BOT CON IA GPT', '30')">COMPRAR</button>
     </div>
     <div class="card">
-      <img src="" alt="">
       <h3>🌐 WEB 1 SECCIÓN</h3>
       <p>Landing page que convierte</p>
       <div class="precio">S/35</div>
       <button class="btn" onclick="abrirPago('WEB 1 SECCIÓN', '35')">COMPRAR</button>
     </div>
     <div class="card" style="border:2px solid #00BFFF;">
-      <img src="" alt="">
       <h3>🔥 COMBO FULL</h3>
       <p>Bot + Web + Soporte 30 días</p>
       <div class="precio">S/45</div>
@@ -95,59 +76,50 @@
   </div>
 </section>
 
-<!-- POPUP DE PAGO -->
+<!-- POPUP PAGO -->
 <div class="popup" id="popup">
   <div class="popup-content">
-    <h2 style="color:#00BFFF;font-family:Orbitron;text-align:center;margin-bottom:20px;">COMPLETA TU PAGO</h2>
+    <h2 style="color:#00BFFF;font-family:Orbitron;text-align:center;">COMPLETA TU PAGO</h2>
     
-    <!-- RESUMEN -->
     <div class="resumen">
       <h3 id="nombre-producto">PRODUCTO</h3>
       <div class="precio-final" id="precio-producto">S/0</div>
     </div>
     
-    <!-- PASOS -->
-    <div class="pasos">
-      <div class="paso"><div class="paso-num">1</div><p>Elige método</p></div>
-      <div class="paso"><div class="paso-num">2</div><p>Paga</p></div>
-      <div class="paso"><div class="paso-num">3</div><p>Envía comprobante</p></div>
-    </div>
-    
-    <!-- TABS -->
     <div class="tabs">
       <button class="tab-btn active" onclick="abrirTab('yape')">Yape</button>
       <button class="tab-btn" onclick="abrirTab('global')">Global66</button>
       <button class="tab-btn" onclick="abrirTab('prex')">Prex</button>
     </div>
     
-    <!-- TAB YAPE -->
+    <!-- YAPE CON NÚMERO -->
     <div id="yape" class="tab-content active">
       <h3 style="color:#00BFFF;margin-bottom:15px;">Paga con Yape</h3>
       <div class="qr-box">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=936994155" alt="QR Yape">
-        <p style="font-size:0.9rem;color:#aaa;">Escanea o copia el número</p>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=936994155" alt="QR Yape">
+        <p style="font-size:0.9rem;color:#aaa;margin-top:10px;">Escanea → Te sale directo mi Yape</p>
       </div>
       <div class="dato-box">
-        <div class="dato-text">936 994 155 - Cristhofer Rojas</div>
+        <div><b>936 994 155</b> - Cristhofer Rojas</div>
         <button class="btn-copiar" onclick="copiar('936994155', this)">COPIAR</button>
       </div>
     </div>
     
-    <!-- TAB GLOBAL66 -->
+    <!-- GLOBAL66 -->
     <div id="global" class="tab-content">
       <h3 style="color:#00BFFF;margin-bottom:15px;">Paga con Global66</h3>
       <div class="dato-box">
-        <div class="dato-text">global66@teamnightwish.com</div>
+        <div>global66@teamnightwish.com</div>
         <button class="btn-copiar" onclick="copiar('global66@teamnightwish.com', this)">COPIAR</button>
       </div>
       <p style="font-size:0.9rem;color:#aaa;">Titular: Cristhofer Rojas</p>
     </div>
     
-    <!-- TAB PREX -->
+    <!-- PREX -->
     <div id="prex" class="tab-content">
       <h3 style="color:#00BFFF;margin-bottom:15px;">Paga con Prex</h3>
       <div class="dato-box">
-        <div class="dato-text">936 994 155</div>
+        <div>936 994 155</div>
         <button class="btn-copiar" onclick="copiar('936994155', this)">COPIAR</button>
       </div>
       <p style="font-size:0.9rem;color:#aaa;">Titular: Cristhofer Rojas</p>
@@ -177,10 +149,9 @@
   
   function copiar(texto, btn){
     navigator.clipboard.writeText(texto);
-    let original = btn.innerText;
     btn.innerText = '✓ COPIADO';
     btn.style.background = '#00ff00';
-    setTimeout(()=>{btn.innerText = original; btn.style.background = '#00BFFF';}, 1500);
+    setTimeout(()=>{btn.innerText = 'COPIAR'; btn.style.background = '#00BFFF';}, 1500);
   }
 </script>
 
