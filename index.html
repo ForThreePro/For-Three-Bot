@@ -3,119 +3,85 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TEAM NIGHTWISH | Automatización y Talento</title>
+<title>TEAM NIGHTWISH | Automatización Elite</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Exo+2:wght@300;500&display=swap" rel="stylesheet">
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI', sans-serif;}
-  body{background:#000;color:#fff;line-height:1.6;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#000;color:#fff;font-family:'Exo 2', sans-serif;overflow-x:hidden;}
   
-  .container{max-width:1100px;margin:0 auto;padding:20px;}
+  /* FONDO ANIMADO */
+  body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 50% 50%, #001a33 0%, #000 70%);z-index:-1;}
+  
+  .container{max-width:1200px;margin:0 auto;padding:20px;}
   
   /* HERO */
-  .hero{text-align:center;padding:80px 20px;background:linear-gradient(180deg, #000 0%, #001a33 100%);border-bottom:2px solid #00BFFF;}
-  .hero h1{font-size:2.8rem;color:#00BFFF;text-shadow:0 0 15px #00BFFF;margin-bottom:15px;}
-  .hero p{font-size:1.2rem;color:#ccc;margin-bottom:30px;}
-  .btn{display:inline-block;padding:14px 28px;background:#00BFFF;color:#000;font-weight:bold;border-radius:8px;text-decoration:none;margin:8px;box-shadow:0 0 15px #00BFFF;transition:0.3s;}
-  .btn:hover{transform:scale(1.05);box-shadow:0 0 25px #00BFFF;}
+  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 20px;}
+  .hero h1{font-family:'Orbitron', sans-serif;font-size:3.5rem;color:#00BFFF;text-shadow:0 0 20px #00BFFF, 0 0 40px #00BFFF;animation:pulse 2s infinite;}
+  .hero p{font-size:1.3rem;color:#aaa;margin:20px 0;}
+  @keyframes pulse{0%,100%{text-shadow:0 0 20px #00BFFF;}50%{text-shadow:0 0 40px #00BFFF, 0 0 60px #00BFFF;}}
   
-  /* SECCIONES */
-  section{padding:60px 20px;}
-  h2{text-align:center;color:#00BFFF;font-size:2rem;margin-bottom:40px;text-shadow:0 0 10px #00BFFF;}
+  .btn{padding:16px 32px;background:transparent;border:2px solid #00BFFF;color:#00BFFF;font-weight:bold;border-radius:8px;text-decoration:none;margin:10px;transition:0.3s;font-family:'Orbitron';}
+  .btn:hover{background:#00BFFF;color:#000;box-shadow:0 0 30px #00BFFF;transform:scale(1.05);}
   
-  /* SERVICIOS */
-  .grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));gap:25px;}
-  .card{background:#0a0a0a;border:1px solid #00BFFF;border-radius:12px;padding:25px;text-align:center;transition:0.3s;}
-  .card:hover{box-shadow:0 0 20px #00BFFF;transform:translateY(-5px);}
-  .card h3{color:#00BFFF;margin-bottom:10px;}
+  /* CARDS GLASS */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:30px;margin-top:40px;}
+  .card{background:rgba(0, 191, 255, 0.05);backdrop-filter:blur(10px);border:1px solid rgba(0, 191, 255, 0.3);border-radius:16px;padding:30px;transition:0.4s;}
+  .card:hover{border-color:#00BFFF;box-shadow:0 0 30px rgba(0,191,255,0.5);transform:translateY(-10px);}
+  .card h3{font-family:'Orbitron';color:#00BFFF;font-size:1.4rem;margin-bottom:15px;}
   
-  /* PRECIOS */
-  .precios .card{position:relative;}
-  .precio{font-size:2.2rem;color:#00BFFF;font-weight:bold;margin:15px 0;}
-  .destacado{border:2px solid #00BFFF;box-shadow:0 0 30px #00BFFF;}
-  .badge{position:absolute;top:-12px;right:20px;background:#00BFFF;color:#000;padding:5px 12px;border-radius:20px;font-size:0.8rem;font-weight:bold;}
+  h2{font-family:'Orbitron';text-align:center;font-size:2.5rem;color:#00BFFF;margin-bottom:50px;text-shadow:0 0 15px #00BFFF;}
+  section{padding:80px 20px;}
   
-  /* PAGOS */
-  .pagos{text-align:center;background:#0a0a0a;border-radius:12px;padding:30px;border:1px solid #00BFFF;}
-  .pagos p{margin:10px 0;font-size:1.1rem;}
-  .yape{color:#00BFFF;font-weight:bold;font-size:1.2rem;}
+  .precio{font-size:2.8rem;color:#00BFFF;font-weight:800;margin:20px 0;font-family:'Orbitron';}
+  .destacado{background:rgba(0, 191, 255, 0.1);border:2px solid #00BFFF;box-shadow:0 0 40px rgba(0,191,255,0.6);}
   
-  /* FOOTER */
-  footer{text-align:center;padding:30px;background:#001a33;border-top:2px solid #00BFFF;}
-  footer a{color:#00BFFF;text-decoration:none;}
+  .pagos{background:rgba(0,191,255,0.05);border:1px solid #00BFFF;border-radius:20px;padding:40px;text-align:center;}
+  .yape{font-size:1.5rem;color:#00BFFF;font-weight:800;}
+  
+  footer{padding:40px;text-align:center;border-top:1px solid rgba(0,191,255,0.3);}
 </style>
 </head>
 <body>
 
-  <!-- HERO -->
   <section class="hero">
     <h1>TEAM NIGHTWISH</h1>
-    <p>Automatiza tu negocio 24/7</p>
-    <p>Bots para grupos, Bots personalizados y Páginas Web</p>
-    <a href="https://chat.whatsapp.com/GdBFa3UqUvzBFx4kXJtjGN" class="btn">Cotiza tu Bot/Web</a>
-    <a href="https://chat.whatsapp.com/GdBFa3UqUvzBFx4kXJtjGN" class="btn">Trabaja con nosotros</a>
-  </section>
-
-  <!-- SERVICIOS -->
-  <section class="container">
-    <h2>Nuestros Servicios</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>🤖 Bots para Grupos</h3>
-        <p>Moderación 24/7, bienvenida automática, anti-spam</p>
-      </div>
-      <div class="card">
-        <h3>⚡ Bots Personalizados</h3>
-        <p>Con API, respuestas con IA y 100% a tu medida</p>
-      </div>
-      <div class="card">
-        <h3>🌐 Páginas Web</h3>
-        <p>Rápidas, modernas y que convierten visitas en clientes</p>
-      </div>
+    <p>Automatiza tu negocio 24/7 con Inteligencia Artificial</p>
+    <p>Bots • Webs • Integraciones API</p>
+    <div>
+      <a href="https://chat.whatsapp.com/GdBFa3UqUvzBFx4kXJtjGN" class="btn">COTIZAR AHORA</a>
+      <a href="https://chat.whatsapp.com/GdBFa3UqUvzBFx4kXJtjGN" class="btn">ÚNETE AL TEAM</a>
     </div>
   </section>
 
-  <!-- PRECIOS -->
-  <section class="container precios">
-    <h2>Planes y Precios</h2>
+  <section class="container">
+    <h2>SERVICIOS</h2>
     <div class="grid">
-      <div class="card">
-        <h3>BOTS PARA GRUPOS</h3>
-        <div class="precio">S/7</div>
-        <p>✅ Bienvenida automática<br>✅ Respuestas básicas<br>✅ Moderación anti-spam</p>
-      </div>
-      <div class="card">
-        <h3>BOT PERSONALIZADO</h3>
-        <div class="precio">S/30</div>
-        <p>✅ Todo lo anterior<br>✅ Integración por API<br>✅ Respuestas con IA<br>✅ Panel de control</p>
-      </div>
-      <div class="card">
-        <h3>PÁGINA WEB</h3>
-        <div class="precio">S/35</div>
-        <p>✅ Diseño negro + azul neón<br>✅ 1 página responsive<br>✅ Botón a WhatsApp</p>
-      </div>
-      <div class="card destacado">
-        <div class="badge">MÁS VENDIDO</div>
-        <h3>COMBO FULL</h3>
-        <div class="precio">S/45</div>
-        <p>✅ Bot + Página Web<br>✅ Branding con tu logo<br>✅ Soporte 1 mes</p>
-      </div>
+      <div class="card"><h3>🤖 BOTS GRUPOS</h3><p>Moderación 24/7, anti-spam, bienvenida automática</p></div>
+      <div class="card"><h3>⚡ BOTS PERSONALIZADOS</h3><p>Con IA, API, panel de control y respuestas inteligentes</p></div>
+      <div class="card"><h3>🌐 PÁGINAS WEB</h3><p>Diseño futurista, responsive y que convierte</p></div>
     </div>
   </section>
 
-  <!-- PAGOS -->
   <section class="container">
-    <h2>Métodos de Pago</h2>
+    <h2>PLANES</h2>
+    <div class="grid">
+      <div class="card"><h3>BÁSICO</h3><div class="precio">S/7</div><p>Bot para grupos</p></div>
+      <div class="card"><h3>PERSONALIZADO</h3><div class="precio">S/30</div><p>Bot con IA + API</p></div>
+      <div class="card"><h3>WEB</h3><div class="precio">S/35</div><p>Página 1 sección</p></div>
+      <div class="card destacado"><h3>COMBO FULL</h3><div class="precio">S/45</div><p>Bot + Web + Soporte</p></div>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>PAGOS</h2>
     <div class="pagos">
-      <p><b>Yape:</b> <span class="yape">936 994 155</span> - Cristhofer Rojas</p>
-      <p><b>Global66</b></p>
-      <p><b>Prex</b></p>
-      <a href="https://chat.whatsapp.com/GdBFa3UqUvzBFx4kXJtjGN" class="btn" style="margin-top:20px;">Cotizar ahora</a>
+      <p><b>Yape:</b> <span class="yape">936 994 155</span><br>Cristhofer Rojas</p>
+      <p><b>Global66</b> | <b>Prex</b></p>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    <p><b>TEAM NIGHTWISH</b> | Automatización y Talento</p>
-    <p><a href="https://chat.whatsapp.com/GdBFa3UqUvzBFx4kXJtjGN">Únete al grupo</a></p>
+    <p>© 2026 TEAM NIGHTWISH | Automatización y Talento</p>
   </footer>
 
 </body>
