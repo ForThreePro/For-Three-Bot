@@ -9,45 +9,43 @@
   *{margin:0;padding:0;box-sizing:border-box;}
   body{background:#000;color:#fff;font-family:'Exo 2';}
   
-  nav{background:#001a33;padding:20px;text-align:center;border-bottom:2px solid #00BFFF;}
-  nav a{color:#00BFFF;font-family:'Orbitron';text-decoration:none;font-size:1.2rem;}
+  nav{background:#001a1a;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #00ff88;}
+  nav img{height:50px;filter:drop-shadow(0 0 10px #00ff88);}
+  nav a{color:#00ff88;font-family:'Orbitron';text-decoration:none;font-size:1rem;}
   
   .container{max-width:1200px;margin:0 auto;padding:60px 20px;}
-  h2{font-family:'Orbitron';text-align:center;font-size:2.5rem;color:#00BFFF;margin-bottom:50px;}
+  h2{font-family:'Orbitron';text-align:center;font-size:2.5rem;color:#00ff88;margin-bottom:50px;text-shadow:0 0 20px #00ff88;}
   
   .grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:30px;}
-  .card{background:rgba(0,191,255,0.05);backdrop-filter:blur(15px);border:1px solid rgba(0,191,255,0.3);border-radius:20px;padding:30px;text-align:center;transition:0.4s;}
-  .card:hover{transform:translateY(-10px);border-color:#00BFFF;box-shadow:0 0 30px rgba(0,191,255,0.5);}
+  .card{background:rgba(0,255,136,0.05);backdrop-filter:blur(15px);border:1px solid rgba(0,255,136,0.3);border-radius:20px;padding:30px;text-align:center;transition:0.4s;}
+  .card:hover{transform:translateY(-10px);border-color:#00ff88;box-shadow:0 0 30px rgba(0,255,136,0.5);}
   
-  .precio{font-size:2.5rem;color:#00BFFF;font-weight:900;font-family:'Orbitron';margin:15px 0;}
-  .btn{padding:14px 28px;background:linear-gradient(45deg,#00BFFF,#0080ff);color:#000;font-weight:bold;border-radius:10px;border:none;cursor:pointer;font-family:'Orbitron';width:100%;font-size:1rem;}
-  .btn:hover{box-shadow:0 0 30px #00BFFF;transform:scale(1.05);}
+  .precio{font-size:2.5rem;color:#00ff88;font-weight:900;font-family:'Orbitron';margin:15px 0;}
+  .btn{padding:14px 28px;background:linear-gradient(45deg,#00ff88,#00BFFF);color:#000;font-weight:bold;border-radius:10px;border:none;cursor:pointer;font-family:'Orbitron';width:100%;font-size:1rem;z-index:10;position:relative;}
+  .btn:hover{box-shadow:0 0 30px #00ff88;transform:scale(1.05);}
   
   /* POPUP */
   .popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.98);justify-content:center;align-items:center;z-index:999;}
-  .popup-content{background:#0a0a0a;border:2px solid #00BFFF;border-radius:20px;padding:35px;max-width:600px;width:90%;}
-  
-  .resumen{background:rgba(0,191,255,0.1);border:1px solid #00BFFF;border-radius:15px;padding:20px;margin-bottom:25px;text-align:center;}
-  .precio-final{font-size:2.5rem;color:#00BFFF;font-weight:900;font-family:'Orbitron';}
-  
+  .popup-content{background:#0a0a0a;border:2px solid #00ff88;border-radius:20px;padding:35px;max-width:600px;width:90%;}
+  .resumen{background:rgba(0,255,136,0.1);border:1px solid #00ff88;border-radius:15px;padding:20px;margin-bottom:25px;text-align:center;}
+  .precio-final{font-size:2.5rem;color:#00ff88;font-weight:900;font-family:'Orbitron';}
   .tabs{display:flex;justify-content:center;gap:10px;margin-bottom:25px;}
-  .tab-btn{padding:12px 24px;background:#001a33;border:2px solid #00BFFF;color:#00BFFF;border-radius:10px;font-family:'Orbitron';cursor:pointer;}
-  .tab-btn.active{background:#00BFFF;color:#000;}
-  
-  .tab-content{display:none;background:rgba(0,191,255,0.05);border:1px solid #00BFFF;border-radius:20px;padding:25px;}
+  .tab-btn{padding:12px 24px;background:#001a1a;border:2px solid #00ff88;color:#00ff88;border-radius:10px;font-family:'Orbitron';cursor:pointer;}
+  .tab-btn.active{background:#00ff88;color:#000;}
+  .tab-content{display:none;background:rgba(0,255,136,0.05);border:1px solid #00ff88;border-radius:20px;padding:25px;}
   .tab-content.active{display:block;}
-  
-  .dato-box{background:#000;border:1px dashed #00BFFF;border-radius:10px;padding:15px;margin:15px 0;display:flex;justify-content:space-between;}
-  .btn-copiar{background:#00BFFF;color:#000;border:none;padding:8px 16px;border-radius:6px;font-weight:bold;cursor:pointer;font-family:'Orbitron';}
+  .dato-box{background:#000;border:1px dashed #00ff88;border-radius:10px;padding:15px;margin:15px 0;display:flex;justify-content:space-between;}
+  .btn-copiar{background:#00ff88;color:#000;border:none;padding:8px 16px;border-radius:6px;font-weight:bold;cursor:pointer;font-family:'Orbitron';}
   .qr-box{text-align:center;margin:20px 0;}
-  .qr-box img{width:200px;height:200px;background:#fff;padding:10px;border-radius:15px;border:3px solid #00BFFF;}
-  .btn-wsp{display:block;width:100%;padding:16px;background:linear-gradient(45deg,#00BFFF,#0080ff);color:#000;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-family:'Orbitron';margin-top:20px;}
+  .qr-box img{width:200px;height:200px;background:#fff;padding:10px;border-radius:15px;border:3px solid #00ff88;}
+  .btn-wsp{display:block;width:100%;padding:16px;background:linear-gradient(45deg,#00ff88,#00BFFF);color:#000;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-family:'Orbitron';margin-top:20px;}
   .btn-cerrar{background:transparent;color:#fff;border:1px solid #fff;width:100%;padding:14px;border-radius:10px;margin-top:10px;font-family:'Orbitron';cursor:pointer;}
 </style>
 </head>
 <body>
 
 <nav>
+  <img src="logo.png" alt="Team Nightwish">
   <a href="index.html">← VOLVER AL INICIO</a>
 </nav>
 
@@ -72,7 +70,7 @@
       <div class="precio">S/35</div>
       <button class="btn" onclick="abrirPago('WEB 1 SECCIÓN', '35')">COMPRAR</button>
     </div>
-    <div class="card" style="border:2px solid #00BFFF;">
+    <div class="card" style="border:2px solid #00ff88;">
       <h3>🔥 COMBO FULL</h3>
       <p>Bot + Web + Soporte 30 días</p>
       <div class="precio">S/45</div>
@@ -84,7 +82,7 @@
 <!-- POPUP DE PAGO -->
 <div class="popup" id="popup">
   <div class="popup-content">
-    <h2 style="color:#00BFFF;font-family:Orbitron;text-align:center;">COMPLETA TU PAGO</h2>
+    <h2 style="color:#00ff88;font-family:Orbitron;text-align:center;">COMPLETA TU PAGO</h2>
     
     <div class="resumen">
       <h3 id="nombre-producto">PRODUCTO</h3>
@@ -92,13 +90,13 @@
     </div>
     
     <div class="tabs">
-      <button class="tab-btn active" onclick="abrirTab('yape')">Yape</button>
-      <button class="tab-btn" onclick="abrirTab('global')">Global66</button>
-      <button class="tab-btn" onclick="abrirTab('prex')">Prex</button>
+      <button class="tab-btn active" onclick="abrirTab(event, 'yape')">Yape</button>
+      <button class="tab-btn" onclick="abrirTab(event, 'global')">Global66</button>
+      <button class="tab-btn" onclick="abrirTab(event, 'prex')">Prex</button>
     </div>
     
     <div id="yape" class="tab-content active">
-      <h3 style="color:#00BFFF;">Paga con Yape</h3>
+      <h3 style="color:#00ff88;">Paga con Yape</h3>
       <div class="qr-box">
         <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=936994155">
       </div>
@@ -109,3 +107,50 @@
     </div>
     
     <div id="global" class="tab-content">
+      <div class="dato-box"><div>global66@teamnightwish.com</div><button class="btn-copiar" onclick="copiar('global66@teamnightwish.com', this)">COPIAR</button></div>
+    </div>
+    
+    <div id="prex" class="tab-content">
+      <div class="dato-box"><div>936 994 155</div><button class="btn-copiar" onclick="copiar('936994155', this)">COPIAR</button></div>
+    </div>
+    
+    <a id="btn-wsp" href="#" class="btn-wsp">📲 ENVIAR COMPROBANTE</a>
+    <button class="btn-cerrar" onclick="cerrarPago()">Cerrar</button>
+  </div>
+</div>
+
+<script>
+  function abrirPago(producto, precio){
+    document.getElementById('popup').style.display = 'flex';
+    document.getElementById('nombre-producto').innerText = producto;
+    document.getElementById('precio-producto').innerText = 'S/' + precio;
+    document.getElementById('btn-wsp').href = `https://wa.me/51936994155?text=Hola%20pagué%20el%20${producto}%20por%20S/${precio}.%20Aquí%20está%20mi%20comprobante:`;
+    document.body.style.overflow = 'hidden'; // Bloquear scroll
+  }
+  
+  function cerrarPago(){
+    document.getElementById('popup').style.display = 'none';
+    document.body.style.overflow = 'auto'; // Activar scroll
+  }
+  
+  function abrirTab(evt, id){
+    document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    evt.currentTarget.classList.add('active');
+  }
+  
+  function copiar(texto, btn){
+    navigator.clipboard.writeText(texto);
+    btn.innerText = '✓ COPIADO';
+    setTimeout(()=>{btn.innerText = 'COPIAR';}, 1500);
+  }
+  
+  // Cerrar popup al dar click afuera
+  document.getElementById('popup').addEventListener('click', function(e){
+    if(e.target === this) cerrarPago();
+  });
+</script>
+
+</body>
+</html>
