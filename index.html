@@ -7,82 +7,97 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Exo+2:wght@300;500&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{background:#000;color:#fff;font-family:'Exo 2', sans-serif;overflow-x:hidden;}
-  
-  /* FONDO ANIMADO */
+  body{background:#000;color:#fff;font-family:'Exo 2', sans-serif;}
   body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 50% 50%, #001a33 0%, #000 70%);z-index:-1;}
   
   .container{max-width:1200px;margin:0 auto;padding:20px;}
+  .hero{min-height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
+  .hero h1{font-family:'Orbitron';font-size:3rem;color:#00BFFF;text-shadow:0 0 20px #00BFFF;animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{text-shadow:0 0 20px #00BFFF;}50%{text-shadow:0 0 40px #00BFFF;}}
   
-  /* HERO */
-  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 20px;}
-  .hero h1{font-family:'Orbitron', sans-serif;font-size:3.5rem;color:#00BFFF;text-shadow:0 0 20px #00BFFF, 0 0 40px #00BFFF;animation:pulse 2s infinite;}
-  .hero p{font-size:1.3rem;color:#aaa;margin:20px 0;}
-  @keyframes pulse{0%,100%{text-shadow:0 0 20px #00BFFF;}50%{text-shadow:0 0 40px #00BFFF, 0 0 60px #00BFFF;}}
+  .btn{padding:14px 28px;background:#00BFFF;color:#000;font-weight:bold;border-radius:8px;text-decoration:none;border:none;cursor:pointer;font-family:'Orbitron';transition:0.3s;display:inline-block;margin-top:15px;}
+  .btn:hover{box-shadow:0 0 25px #00BFFF;transform:scale(1.05);}
   
-  .btn{padding:16px 32px;background:transparent;border:2px solid #00BFFF;color:#00BFFF;font-weight:bold;border-radius:8px;text-decoration:none;margin:10px;transition:0.3s;font-family:'Orbitron';}
-  .btn:hover{background:#00BFFF;color:#000;box-shadow:0 0 30px #00BFFF;transform:scale(1.05);}
-  
-  /* CARDS GLASS */
   .grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:30px;margin-top:40px;}
-  .card{background:rgba(0, 191, 255, 0.05);backdrop-filter:blur(10px);border:1px solid rgba(0, 191, 255, 0.3);border-radius:16px;padding:30px;transition:0.4s;}
-  .card:hover{border-color:#00BFFF;box-shadow:0 0 30px rgba(0,191,255,0.5);transform:translateY(-10px);}
-  .card h3{font-family:'Orbitron';color:#00BFFF;font-size:1.4rem;margin-bottom:15px;}
+  .card{background:rgba(0, 191, 255, 0.05);backdrop-filter:blur(10px);border:1px solid rgba(0, 191, 255, 0.3);border-radius:16px;padding:30px;text-align:center;}
+  .card:hover{border-color:#00BFFF;box-shadow:0 0 30px rgba(0,191,255,0.5);}
+  .precio{font-size:2.5rem;color:#00BFFF;font-weight:800;font-family:'Orbitron';margin:15px 0;}
+  h2{font-family:'Orbitron';text-align:center;font-size:2.2rem;color:#00BFFF;margin-bottom:40px;}
+  section{padding:60px 20px;}
   
-  h2{font-family:'Orbitron';text-align:center;font-size:2.5rem;color:#00BFFF;margin-bottom:50px;text-shadow:0 0 15px #00BFFF;}
-  section{padding:80px 20px;}
-  
-  .precio{font-size:2.8rem;color:#00BFFF;font-weight:800;margin:20px 0;font-family:'Orbitron';}
-  .destacado{background:rgba(0, 191, 255, 0.1);border:2px solid #00BFFF;box-shadow:0 0 40px rgba(0,191,255,0.6);}
-  
-  .pagos{background:rgba(0,191,255,0.05);border:1px solid #00BFFF;border-radius:20px;padding:40px;text-align:center;}
-  .yape{font-size:1.5rem;color:#00BFFF;font-weight:800;}
-  
-  footer{padding:40px;text-align:center;border-top:1px solid rgba(0,191,255,0.3);}
+  /* POPUP */
+  .popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);justify-content:center;align-items:center;z-index:999;}
+  .popup-content{background:#0a0a0a;border:2px solid #00BFFF;border-radius:20px;padding:30px;max-width:400px;text-align:center;box-shadow:0 0 40px #00BFFF;}
+  .popup h3{color:#00BFFF;font-family:'Orbitron';margin-bottom:20px;}
+  .yape{font-size:1.4rem;color:#00BFFF;font-weight:800;}
+  .close{margin-top:20px;background:transparent;border:1px solid #fff;color:#fff;}
 </style>
 </head>
 <body>
 
   <section class="hero">
     <h1>TEAM NIGHTWISH</h1>
-    <p>Automatiza tu negocio 24/7 con Inteligencia Artificial</p>
-    <p>Bots • Webs • Integraciones API</p>
-    <div>
-      <a href="https://chat.whatsapp.com/GdBFa3UqUvzBFx4kXJtjGN" class="btn">COTIZAR AHORA</a>
-      <a href="https://chat.whatsapp.com/GdBFa3UqUvzBFx4kXJtjGN" class="btn">ÚNETE AL TEAM</a>
-    </div>
+    <p>Automatiza tu negocio 24/7</p>
   </section>
 
   <section class="container">
-    <h2>SERVICIOS</h2>
+    <h2>ELIGE TU PLAN</h2>
     <div class="grid">
-      <div class="card"><h3>🤖 BOTS GRUPOS</h3><p>Moderación 24/7, anti-spam, bienvenida automática</p></div>
-      <div class="card"><h3>⚡ BOTS PERSONALIZADOS</h3><p>Con IA, API, panel de control y respuestas inteligentes</p></div>
-      <div class="card"><h3>🌐 PÁGINAS WEB</h3><p>Diseño futurista, responsive y que convierte</p></div>
+      <div class="card">
+        <h3>BÁSICO</h3>
+        <div class="precio">S/7</div>
+        <p>Bot para grupos</p>
+        <button class="btn" onclick="abrirPopup('BÁSICO', '7')">COMPRAR</button>
+      </div>
+      <div class="card">
+        <h3>PERSONALIZADO</h3>
+        <div class="precio">S/30</div>
+        <p>Bot con IA + API</p>
+        <button class="btn" onclick="abrirPopup('PERSONALIZADO', '30')">COMPRAR</button>
+      </div>
+      <div class="card">
+        <h3>WEB</h3>
+        <div class="precio">S/35</div>
+        <p>Página 1 sección</p>
+        <button class="btn" onclick="abrirPopup('WEB', '35')">COMPRAR</button>
+      </div>
+      <div class="card">
+        <h3>COMBO FULL</h3>
+        <div class="precio">S/45</div>
+        <p>Bot + Web + Soporte</p>
+        <button class="btn" onclick="abrirPopup('COMBO FULL', '45')">COMPRAR</button>
+      </div>
     </div>
   </section>
 
-  <section class="container">
-    <h2>PLANES</h2>
-    <div class="grid">
-      <div class="card"><h3>BÁSICO</h3><div class="precio">S/7</div><p>Bot para grupos</p></div>
-      <div class="card"><h3>PERSONALIZADO</h3><div class="precio">S/30</div><p>Bot con IA + API</p></div>
-      <div class="card"><h3>WEB</h3><div class="precio">S/35</div><p>Página 1 sección</p></div>
-      <div class="card destacado"><h3>COMBO FULL</h3><div class="precio">S/45</div><p>Bot + Web + Soporte</p></div>
-    </div>
-  </section>
-
-  <section class="container">
-    <h2>PAGOS</h2>
-    <div class="pagos">
+  <!-- POPUP DE PAGOS -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h3 id="titulo-plan">Pagar Plan</h3>
+      <p><b>Monto:</b> <span id="monto" style="color:#00BFFF;font-size:1.3rem;"></span></p>
+      <br>
+      <h3>MÉTODOS DE PAGO</h3>
       <p><b>Yape:</b> <span class="yape">936 994 155</span><br>Cristhofer Rojas</p>
-      <p><b>Global66</b> | <b>Prex</b></p>
+      <p><b>Global66</b></p>
+      <p><b>Prex</b></p>
+      <br>
+      <p style="font-size:0.9rem;color:#aaa;">Paga y envíanos tu comprobante por WhatsApp</p>
+      <a id="btn-wsp" href="#" class="btn">ENVIAR COMPROBANTE</a>
+      <button class="btn close" onclick="cerrarPopup()">Cerrar</button>
     </div>
-  </section>
+  </div>
 
-  <footer>
-    <p>© 2026 TEAM NIGHTWISH | Automatización y Talento</p>
-  </footer>
+<script>
+  function abrirPopup(plan, precio){
+    document.getElementById('popup').style.display = 'flex';
+    document.getElementById('titulo-plan').innerText = 'Pagar: ' + plan;
+    document.getElementById('monto').innerText = 'S/' + precio;
+    document.getElementById('btn-wsp').href = `https://wa.me/51936994155?text=Hola%20pagué%20el%20plan%20${plan}%20por%20S/${precio}.%20Aquí%20está%20mi%20comprobante:`;
+  }
+  function cerrarPopup(){
+    document.getElementById('popup').style.display = 'none';
+  }
+</script>
 
 </body>
 </html>
