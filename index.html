@@ -9,26 +9,51 @@
   *{margin:0;padding:0;box-sizing:border-box;}
   body{background:#000;color:#fff;font-family:'Exo 2';overflow:hidden;}
   
-  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;background:radial-gradient(circle at center, rgba(0,191,255,0.2) 0%, #000 70%);}
-  .hero h1{font-family:'Orbitron';font-size:4rem;color:#00BFFF;text-shadow:0 0 40px #00BFFF;margin-bottom:20px;animation:glow 2s infinite alternate;}
-  @keyframes glow{from{text-shadow:0 0 20px #00BFFF;}to{text-shadow:0 0 50px #00BFFF;}}
-  .hero p{font-size:1.4rem;color:#aaa;margin-bottom:40px;max-width:650px;}
-  .btn{padding:18px 40px;background:linear-gradient(45deg,#00BFFF,#0080ff);color:#000;font-weight:bold;border-radius:12px;text-decoration:none;border:none;font-family:'Orbitron';font-size:1.1rem;transition:0.3s;box-shadow:0 0 25px #00BFFF;}
-  .btn:hover{transform:scale(1.1);box-shadow:0 0 45px #00BFFF;}
+  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;background:radial-gradient(circle at center, rgba(0,255,150,0.15) 0%, #000 70%);}
   
-  /* Efecto partículas */
-  .particula{position:absolute;width:4px;height:4px;background:#00BFFF;border-radius:50%;animation:float 6s infinite;}
-  @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-30px);}}
+  .logo{width:320px;max-width:80%;margin-bottom:30px;animation:float 3s ease-in-out infinite;filter:drop-shadow(0 0 30px #00ff88);}
+  @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);}}
+  
+  .hero p{font-size:1.3rem;color:#aaa;margin-bottom:40px;max-width:650px;}
+  .btn{padding:18px 40px;background:linear-gradient(45deg,#00ff88,#00BFFF);color:#000;font-weight:bold;border-radius:12px;text-decoration:none;border:none;font-family:'Orbitron';font-size:1.1rem;transition:0.3s;box-shadow:0 0 25px #00ff88;}
+  .btn:hover{transform:scale(1.1);box-shadow:0 0 45px #00ff88;}
+  
+  .btn-musica{position:fixed;bottom:20px;right:20px;background:#00ff88;color:#000;border:none;padding:12px 20px;border-radius:50px;font-family:'Orbitron';cursor:pointer;z-index:999;}
 </style>
 </head>
 <body>
 
 <div class="hero">
-  <h1>TEAM NIGHTWISH</h1>
+  <img src="logo.png" alt="Team Nightwish" class="logo">
   <p>Automatizamos tu negocio con Bots de WhatsApp y Páginas Web que venden 24/7. 
   <br>Deja de responder lo mismo y empieza a vender dormido.</p>
   <a href="productos.html" class="btn">ENTRAR A LA TIENDA →</a>
 </div>
+
+<!-- MÚSICA -->
+<audio id="musica" loop>
+  <source src="Musica.mp3" type="audio/mpeg">
+</audio>
+<button class="btn-musica" onclick="toggleMusica()">🔊 MUSICA</button>
+
+<script>
+  function toggleMusica(){
+    let audio = document.getElementById('musica');
+    let btn = document.querySelector('.btn-musica');
+    if(audio.paused){
+      audio.play();
+      btn.innerText = '🔇 MUSICA';
+    } else {
+      audio.pause();
+      btn.innerText = '🔊 MUSICA';
+    }
+  }
+  // Autoplay al hacer click en cualquier lado por políticas del navegador
+  document.body.addEventListener('click', function iniciarMusica(){
+    document.getElementById('musica').play().catch(()=>{});
+    document.body.removeEventListener('click', iniciarMusica);
+  }, {once:true});
+</script>
 
 </body>
 </html>
