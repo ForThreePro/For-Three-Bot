@@ -4,94 +4,116 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TEAM NIGHTWISH | Automatización Elite</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Exo+2:wght@300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@300;600&display=swap" rel="stylesheet">
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{background:#000;color:#fff;font-family:'Exo 2', sans-serif;overflow-x:hidden;}
-
-  /* FONDO MATRIX */
-  canvas{position:fixed;top:0;left:0;z-index:-1;opacity:0.3;}
-
- .container{max-width:1200px;margin:0 auto;padding:20px;position:relative;z-index:1;}
- .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
- .hero h1{font-family:'Orbitron';font-size:3.5rem;color:#00BFFF;text-shadow:0 0 20px #00BFFF;animation:glow 2s infinite;}
-  @keyframes glow{0%,100%{text-shadow:0 0 20px #00BFFF;}50%{text-shadow:0 0 40px #00BFFF;}}
-
- .btn{padding:14px 28px;background:#00BFFF;color:#000;font-weight:bold;border-radius:8px;text-decoration:none;border:none;cursor:pointer;font-family:'Orbitron';transition:0.3s;display:inline-block;margin:10px;}
- .btn:hover{box-shadow:0 0 30px #00BFFF;transform:scale(1.05);}
-
- .grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:30px;}
- .card{background:rgba(0, 191, 255, 0.05);backdrop-filter:blur(10px);border:1px solid rgba(0, 191, 255, 0.3);border-radius:16px;padding:30px;text-align:center;transition:0.4s;}
- .card:hover{border-color:#00BFFF;box-shadow:0 0 30px rgba(0,191,255,0.5);transform:translateY(-10px);}
- .precio{font-size:2.5rem;color:#00BFFF;font-weight:800;font-family:'Orbitron';margin:15px 0;}
-  h2{font-family:'Orbitron';text-align:center;font-size:2.2rem;color:#00BFFF;margin-bottom:40px;}
-  section{padding:80px 20px;}
-
-  /* DATOS PARA COPIAR */
- .dato-pago{background:#001a33;padding:12px;border-radius:8px;margin:10px 0;cursor:pointer;border:1px dashed #00BFFF;transition:0.3s;}
- .dato-pago:hover{background:#00BFFF;color:#000;}
- .copiado{color:#00ff00;font-size:0.8rem;display:none;}
-
-  /* POPUP */
- .popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);justify-content:center;align-items:center;z-index:999;}
- .popup-content{background:#0a0a0a;border:2px solid #00BFFF;border-radius:20px;padding:30px;max-width:450px;text-align:center;box-shadow:0 0 40px #00BFFF;}
-
-  /* WHATSAPP FLOTANTE */
- .wsp-float{position:fixed;bottom:20px;right:20px;background:#00BFFF;padding:15px;border-radius:50%;box-shadow:0 0 20px #00BFFF;z-index:998;}
+  *{margin:0;padding:0;box-sizing:border-box;cursor:none;}
+  body{background:#000;color:#fff;font-family:'Exo 2';overflow-x:hidden;}
+  
+  /* CURSOR PERSONALIZADO */
+  .cursor{position:fixed;width:20px;height:20px;border:2px solid #00BFFF;border-radius:50%;pointer-events:none;z-index:9999;transition:0.1s;}
+  
+  /* PANTALLA DE CARGA */
+  #loader{position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:9999;display:flex;justify-content:center;align-items:center;}
+  #loader h1{font-family:'Orbitron';font-size:3rem;color:#00BFFF;animation:glitch 1s infinite;}
+  @keyframes glitch{0%{text-shadow:2px 0 #ff00ff;}50%{text-shadow:-2px 0 #00BFFF;}100%{text-shadow:2px 0 #ff00ff;}}
+  
+  .container{max-width:1200px;margin:0 auto;padding:20px;}
+  section{padding:100px 20px;}
+  
+  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
+  .hero h1{font-family:'Orbitron';font-size:4rem;color:#00BFFF;text-shadow:0 0 30px #00BFFF;margin-bottom:20px;}
+  
+  .btn{padding:16px 32px;background:linear-gradient(45deg,#00BFFF,#0080ff);color:#000;font-weight:bold;border-radius:10px;text-decoration:none;border:none;font-family:'Orbitron';transition:0.3s;display:inline-block;margin:10px;box-shadow:0 0 20px #00BFFF;}
+  .btn:hover{transform:scale(1.1);box-shadow:0 0 40px #00BFFF;}
+  
+  .grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:30px;}
+  .card{background:rgba(0,191,255,0.05);backdrop-filter:blur(15px);border:1px solid rgba(0,191,255,0.3);border-radius:20px;padding:35px;text-align:center;transition:0.5s;}
+  .card:hover{transform:translateY(-15px);border-color:#00BFFF;box-shadow:0 0 40px rgba(0,191,255,0.6);}
+  
+  .precio{font-size:3rem;color:#00BFFF;font-weight:900;font-family:'Orbitron';}
+  h2{font-family:'Orbitron';text-align:center;font-size:2.5rem;color:#00BFFF;margin-bottom:50px;}
+  
+  .dato-pago{background:#001a33;padding:15px;border-radius:10px;margin:10px 0;cursor:pointer;border:1px dashed #00BFFF;}
+  .dato-pago:hover{background:#00BFFF;color:#000;}
+  
+  .popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.98);justify-content:center;align-items:center;z-index:999;}
+  .popup-content{background:#0a0a0a;border:2px solid #00BFFF;border-radius:20px;padding:35px;max-width:450px;text-align:center;box-shadow:0 0 50px #00BFFF;}
+  
+  .testimonio{font-style:italic;color:#aaa;margin-top:15px;}
+  .wsp-float{position:fixed;bottom:25px;right:25px;background:#00BFFF;padding:18px;border-radius:50%;box-shadow:0 0 25px #00BFFF;z-index:998;font-size:1.5rem;}
 </style>
 </head>
 <body>
-<canvas id="matrix"></canvas>
+<div class="cursor"></div>
+
+<!-- LOADER -->
+<div id="loader"><h1>TEAM NIGHTWISH</h1></div>
 
   <section class="hero">
     <h1>TEAM NIGHTWISH</h1>
-    <p>Automatización y Talento 24/7</p>
-    <div>
-      <a href="#planes" class="btn">VER PLANES</a>
-      <a href="#trabaja" class="btn">TRABAJA CON NOSOTROS</a>
-    </div>
+    <p style="font-size:1.4rem;color:#aaa;margin-bottom:30px;">Convertimos tu negocio en una máquina 24/7</p>
+    <a href="#planes" class="btn">VER PLANES</a>
+    <a href="#trabaja" class="btn">ÚNETE AL TEAM</a>
   </section>
 
   <section class="container" id="planes">
-    <h2>ELIGE TU PLAN</h2>
+    <h2>ELIGE TU ARMAMENTO</h2>
     <div class="grid">
-      <div class="card"><h3>BÁSICO</h3><div class="precio">S/7</div><p>Bot para grupos</p><button class="btn" onclick="abrirPopup('BÁSICO', '7')">COMPRAR</button></div>
-      <div class="card"><h3>PERSONALIZADO</h3><div class="precio">S/30</div><p>Bot con IA + API</p><button class="btn" onclick="abrirPopup('PERSONALIZADO', '30')">COMPRAR</button></div>
-      <div class="card"><h3>WEB</h3><div class="precio">S/35</div><p>Página 1 sección</p><button class="btn" onclick="abrirPopup('WEB', '35')">COMPRAR</button></div>
-      <div class="card"><h3>COMBO FULL</h3><div class="precio">S/45</div><p>Bot + Web + Soporte</p><button class="btn" onclick="abrirPopup('COMBO FULL', '45')">COMPRAR</button></div>
+      <div class="card">
+        <h3>🤖 BÁSICO</h3>
+        <div class="precio" data-target="7">S/0</div>
+        <p>Bot para grupos + Anti-spam</p>
+        <button class="btn" onclick="abrirPopup('BÁSICO', '7')">COMPRAR</button>
+      </div>
+      <div class="card">
+        <h3>⚡ PERSONALIZADO</h3>
+        <div class="precio" data-target="30">S/0</div>
+        <p>Bot con IA + API + Panel</p>
+        <button class="btn" onclick="abrirPopup('PERSONALIZADO', '30')">COMPRAR</button>
+      </div>
+      <div class="card">
+        <h3>🌐 WEB ELITE</h3>
+        <div class="precio" data-target="35">S/0</div>
+        <p>Página que convierte</p>
+        <button class="btn" onclick="abrirPopup('WEB', '35')">COMPRAR</button>
+      </div>
+      <div class="card" style="border:2px solid #00BFFF;">
+        <h3>🔥 COMBO FULL</h3>
+        <div class="precio" data-target="45">S/0</div>
+        <p>Bot + Web + Soporte 30 días</p>
+        <button class="btn" onclick="abrirPopup('COMBO FULL', '45')">COMPRAR</button>
+      </div>
     </div>
   </section>
 
-  <!-- SECCIÓN TRABAJA CON NOSOTROS -->
+  <section class="container">
+    <h2>RESULTADOS REALES</h2>
+    <div class="grid">
+      <div class="card"><h3>+300% Ventas</h3><p class="testimonio">"El bot responde mientras duermo"</p></div>
+      <div class="card"><h3>-80% Tiempo</h3><p class="testimonio">"Ya no contesto lo mismo 100 veces"</p></div>
+    </div>
+  </section>
+
   <section class="container" id="trabaja">
     <h2>TRABAJA CON NOSOTROS</h2>
     <div class="card">
-      <p>¿Eres programador, diseñador o vendedor? Únete a TEAM NIGHTWISH</p>
-      <p>Gana comisiones por cada venta + Proyectos propios</p>
+      <p style="font-size:1.2rem;">Buscamos programadores, diseñadores y closers</p>
+      <p>Gana 40% de comisión por cada venta</p>
       <a href="https://chat.whatsapp.com/GdBFa3UqUvzBFx4kXJtjGN" class="btn">POSTULAR AHORA</a>
     </div>
   </section>
 
-  <!-- POPUP DE PAGOS -->
+  <!-- POPUP -->
   <div class="popup" id="popup">
     <div class="popup-content">
-      <h3 id="titulo-plan">Pagar Plan</h3>
-      <p><b>Monto:</b> <span id="monto" style="color:#00BFFF;font-size:1.3rem;"></span></p>
-      <br>
+      <h3 id="titulo-plan" style="font-family:Orbitron;color:#00BFFF;">Pagar Plan</h3>
+      <p><b>Monto:</b> <span id="monto" style="color:#00BFFF;font-size:1.5rem;"></span></p><br>
       <h3>MÉTODOS DE PAGO</h3>
-
-      <p><b>Yape:</b></p>
-      <div class="dato-pago" onclick="copiar('936994155')">936 994 155 - Cristhofer Rojas</div>
-
-      <p><b>Global66:</b></p>
-      <div class="dato-pago" onclick="copiar('global66@teamnightwish.com')">global66@teamnightwish.com</div>
-
-      <p><b>Prex:</b></p>
-      <div class="dato-pago" onclick="copiar('936994155')">936 994 155 - Prex</div>
-
-      <span class="copiado" id="msg-copiado">¡Copiado!</span>
-      <br><br>
-      <a id="btn-wsp" href="#" class="btn">ENVIAR COMPROBANTE POR WSP</a>
+      <p><b>Yape:</b></p><div class="dato-pago" onclick="copiar('936994155')">936 994 155 - Cristhofer Rojas</div>
+      <p><b>Global66:</b></p><div class="dato-pago" onclick="copiar('global66@teamnightwish.com')">global66@teamnightwish.com</div>
+      <p><b>Prex:</b></p><div class="dato-pago" onclick="copiar('936994155')">936 994 155 - Prex</div>
+      <span id="msg-copiado" style="color:#00ff00;display:none;">¡Copiado!</span><br><br>
+      <a id="btn-wsp" href="#" class="btn">ENVIAR COMPROBANTE</a>
       <button class="btn" style="background:transparent;color:#fff;border:1px solid #fff;" onclick="cerrarPopup()">Cerrar</button>
     </div>
   </div>
@@ -99,7 +121,23 @@
   <a href="https://wa.me/51936994155" class="wsp-float">💬</a>
 
 <script>
-  // POPUP
+  // QUITAR LOADER
+  window.addEventListener('load', ()=>{setTimeout(()=>{document.getElementById('loader').style.display='none';},1500); animarPrecios();});
+  
+  // CURSOR
+  const cursor = document.querySelector('.cursor');
+  document.addEventListener('mousemove', e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';});
+  
+  // CONTADOR PRECIOS
+  function animarPrecios(){
+    document.querySelectorAll('.precio').forEach(el=>{
+      let target = +el.dataset.target;
+      let count = 0;
+      let int = setInterval(()=>{count++;el.innerText='S/'+count;if(count>=target)clearInterval(int);},30);
+    });
+  }
+  
+  // POPUP Y COPIAR
   function abrirPopup(plan, precio){
     document.getElementById('popup').style.display = 'flex';
     document.getElementById('titulo-plan').innerText = 'Pagar: ' + plan;
@@ -107,32 +145,11 @@
     document.getElementById('btn-wsp').href = `https://wa.me/51936994155?text=Hola%20pagué%20el%20plan%20${plan}%20por%20S/${precio}.%20Aquí%20está%20mi%20comprobante:`;
   }
   function cerrarPopup(){document.getElementById('popup').style.display = 'none';}
-
-  // COPIAR
   function copiar(texto){
     navigator.clipboard.writeText(texto);
     document.getElementById('msg-copiado').style.display = 'block';
     setTimeout(()=>{document.getElementById('msg-copiado').style.display = 'none';}, 1500);
   }
-
-  // FONDO MATRIX
-  const canvas = document.getElementById('matrix');
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  let drops = Array(Math.floor(canvas.width/14)).fill(1);
-  function draw(){
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#00BFFF';
-    ctx.font = '14px monospace';
-    drops.forEach((y, i)=>{
-      ctx.fillText(String.fromCharCode(0x30A0 + Math.random()*96), i*14, y*14);
-      if(y*14 > canvas.height && Math.random() > 0.975) drops[i] = 0;
-      drops[i]++;
-    });
-  }
-  setInterval(draw, 33);
 </script>
 
 </body>
