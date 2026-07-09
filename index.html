@@ -11,7 +11,7 @@
   
   .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;background:radial-gradient(circle at center, rgba(0,255,150,0.15) 0%, #000 70%);}
   
-  .logo{width:320px;max-width:80%;margin-bottom:30px;animation:float 3s ease-in-out infinite;filter:drop-shadow(0 0 30px #00ff88);}
+  .titulo{font-family:'Orbitron';font-size:4.5rem;color:#00ff88;text-shadow:0 0 40px #00ff88;margin-bottom:20px;animation:float 3s ease-in-out infinite;}
   @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);}}
   
   .hero p{font-size:1.3rem;color:#aaa;margin-bottom:40px;max-width:650px;}
@@ -24,33 +24,50 @@
 <body>
 
 <div class="hero">
-  <img src="logo.png" alt="Team Nightwish" class="logo">
+  <h1 class="titulo">TEAM NIGHTWISH</h1>
   <p>Automatizamos tu negocio con Bots de WhatsApp y Páginas Web que venden 24/7. 
   <br>Deja de responder lo mismo y empieza a vender dormido.</p>
   <a href="productos.html" class="btn">ENTRAR A LA TIENDA →</a>
 </div>
 
-<!-- MÚSICA -->
-<audio id="musica" loop>
-  <source src="Musica.mp3" type="audio/mpeg">
-</audio>
+<!-- MÚSICA GLOBAL -->
+<audio id="musica" loop></audio>
 <button class="btn-musica" onclick="toggleMusica()">🔊 MUSICA</button>
 
 <script>
+  let audio = document.getElementById('musica');
+  audio.src = 'Musica.mp3';
+  
+  window.onload = () => {
+    let tiempo = localStorage.getItem('tiempoMusica');
+    let estado = localStorage.getItem('estadoMusica');
+    if(tiempo) audio.currentTime = tiempo;
+    if(estado === 'on') audio.play();
+    actualizarBoton();
+  }
+  
+  setInterval(() => {
+    localStorage.setItem('tiempoMusica', audio.currentTime);
+  }, 1000);
+  
   function toggleMusica(){
-    let audio = document.getElementById('musica');
-    let btn = document.querySelector('.btn-musica');
     if(audio.paused){
       audio.play();
-      btn.innerText = '🔇 MUSICA';
+      localStorage.setItem('estadoMusica', 'on');
     } else {
       audio.pause();
-      btn.innerText = '🔊 MUSICA';
+      localStorage.setItem('estadoMusica', 'off');
     }
+    actualizarBoton();
   }
-  // Autoplay al hacer click en cualquier lado por políticas del navegador
+  
+  function actualizarBoton(){
+    let btn = document.querySelector('.btn-musica');
+    btn.innerText = audio.paused ? '🔊 MUSICA' : '🔇 MUSICA';
+  }
+  
   document.body.addEventListener('click', function iniciarMusica(){
-    document.getElementById('musica').play().catch(()=>{});
+    if(audio.paused && localStorage.getItem('estadoMusica') !== 'off') audio.play();
     document.body.removeEventListener('click', iniciarMusica);
   }, {once:true});
 </script>
