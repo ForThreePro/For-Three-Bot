@@ -8,21 +8,21 @@
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
   body{background:#000;color:#fff;font-family:'Exo 2';}
-  
+
   nav{background:#001a1a;padding:20px;text-align:center;border-bottom:2px solid #00ff88;}
   nav a{color:#00ff88;font-family:'Orbitron';text-decoration:none;font-size:1.3rem;text-shadow:0 0 15px #00ff88;}
-  
+
   .container{max-width:1200px;margin:0 auto;padding:60px 20px;}
   h2{font-family:'Orbitron';text-align:center;font-size:2.5rem;color:#00ff88;margin-bottom:50px;text-shadow:0 0 20px #00ff88;}
-  
+
   .grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:30px;}
   .card{background:rgba(0,255,136,0.05);backdrop-filter:blur(15px);border:1px solid rgba(0,255,136,0.3);border-radius:20px;padding:30px;text-align:center;transition:0.4s;}
   .card:hover{transform:translateY(-10px);border-color:#00ff88;box-shadow:0 0 30px rgba(0,255,136,0.5);}
-  
+
   .precio{font-size:2.5rem;color:#00ff88;font-weight:900;font-family:'Orbitron';margin:15px 0;}
   .btn{padding:14px 28px;background:linear-gradient(45deg,#00ff88,#00BFFF);color:#000;font-weight:bold;border-radius:10px;border:none;cursor:pointer;font-family:'Orbitron';width:100%;font-size:1rem;}
   .btn:hover{box-shadow:0 0 30px #00ff88;transform:scale(1.05);}
-  
+
   .popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.98);justify-content:center;align-items:center;z-index:999;}
   .popup-content{background:#0a0a0a;border:2px solid #00ff88;border-radius:20px;padding:35px;max-width:600px;width:90%;}
   .resumen{background:rgba(0,255,136,0.1);border:1px solid #00ff88;border-radius:15px;padding:20px;margin-bottom:25px;text-align:center;}
@@ -51,6 +51,10 @@
   <h2>ELIGE TU PRODUCTO</h2>
   <div class="grid">
     <div class="card"><h3>🤖 BOT WHATSAPP BÁSICO</h3><p>Respuestas automáticas + Anti-spam</p><div class="precio">S/7</div><button class="btn" onclick="abrirPago('BOT WHATSAPP BÁSICO', '7')">COMPRAR</button></div>
+    
+    <!-- NUEVO PRODUCTO -->
+    <div class="card"><h3>⚙️ BOT PERSONALIZADO BÁSICO</h3><p>Tu bot con comandos y logo personalizado</p><div class="precio">S/20</div><button class="btn" onclick="abrirPago('BOT PERSONALIZADO BÁSICO', '20')">COMPRAR</button></div>
+    
     <div class="card"><h3>⚡ BOT CON IA GPT</h3><p>Responde como humano 24/7 + API</p><div class="precio">S/30</div><button class="btn" onclick="abrirPago('BOT CON IA GPT', '30')">COMPRAR</button></div>
     <div class="card"><h3>🌐 WEB 1 SECCIÓN</h3><p>Landing page que convierte</p><div class="precio">S/35</div><button class="btn" onclick="abrirPago('WEB 1 SECCIÓN', '35')">COMPRAR</button></div>
     <div class="card" style="border:2px solid #00ff88;"><h3>🔥 COMBO FULL</h3><p>Bot + Web + Soporte 30 días</p><div class="precio">S/45</div><button class="btn" onclick="abrirPago('COMBO FULL', '45')">COMPRAR</button></div>
