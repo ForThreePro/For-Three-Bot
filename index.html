@@ -6,147 +6,251 @@
 <title>Team Nightwish | Bots y Webs Personalizadas</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-  body { background: #050510; }
-  .glow { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
-  .lightning-bg {
-    background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
-  }
+  body { background: #030308; }
+ .glow { box-shadow: 0 0 25px rgba(0, 195, 255, 0.4); }
+ .lightning { background: linear-gradient(180deg, rgba(0,195,255,0.1) 0%, transparent 100%); }
+ .modal { display: none; }
+ .modal.active { display: flex; }
 </style>
 </head>
-<body class="text-white font-sans lightning-bg">
+<body class="text-white font-sans lightning">
 
 <!-- HEADER -->
-<header class="text-center py-16 px-4">
-  <h1 class="text-5xl md:text-7xl font-bold mb-4">⚡ TEAM NIGHTWISH ⚡</h1>
-  <p class="text-xl text-blue-300">Bots Personalizados | Webs Premium | Hosting 24/7</p>
-  <p class="text-sm text-gray-400 mt-2">El trueno que potencia tu negocio</p>
+<header class="text-center py-20 px-4">
+  <h1 class="text-6xl font-extrabold mb-3 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">TEAM NIGHTWISH</h1>
+  <p class="text-lg text-cyan-300">⚡ Potenciamos tu negocio con Bots y Webs ⚡</p>
 </header>
 
 <!-- PRODUCTOS -->
-<section class="max-w-6xl mx-auto px-4 py-12">
-  <h2 class="text-3xl font-bold text-center mb-12">NUESTROS PRODUCTOS</h2>
-  
-  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-    
-    <!-- BASIC -->
-    <div class="bg-gray-900/50 p-6 rounded-xl border-blue-500/30 hover:glow transition">
-      <h3 class="text-2xl font-bold text-blue-400 mb-2">Bot Basic</h3>
-      <p class="text-4xl font-bold mb-4">$20 <span class="text-sm text-gray-400">USD</span></p>
-      <ul class="space-y-2 text-sm mb-6">
-        <li>✅ Bot 100% Funcional</li>
-        <li>✅ Activo 24/7</li>
-        <li>✅ 1 Mes Gratis Hosting</li>
-        <li>✅ Diseño A Tu Gusto</li>
+<section class="max-w-7xl mx-auto px-4 py-10">
+  <h2 class="text-3xl font-bold text-center mb-10">ELIGE TU PRODUCTO</h2>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+
+    <!-- BASIC GRUPO NUEVO -->
+    <div class="bg-[#0a0a14] p-6 rounded-2xl border-2 border-green-400 glow">
+      <span class="absolute bg-green-400 text-black text-xs font-bold px-3 py-1 rounded-full">NUEVO</span>
+      <h3 class="text-2xl font-bold text-green-400 mb-2 mt-4">Bot Basic Grupo</h3>
+      <p class="text-5xl font-bold mb-4">$7</p>
+      <ul class="space-y-2 text-sm mb-6 text-gray-300">
+        <li>✓ Bot Activo 24/7</li>
+        <li>✓ El Mejor Producto Para Tu Grupo</li>
+        <li>✓ Juegos, Música, Bienvenidas</li>
+        <li>✓ Permanente</li>
       </ul>
-      <button class="w-full bg-blue-600 hover:bg-blue-700 py-2 rounded-lg font-bold">Comprar Ahora</button>
+      <button onclick="abrirModal('Bot Basic Grupo', 7, true)" class="w-full bg-green-600 hover:bg-green-500 py-3 rounded-lg font-bold">Comprar Ahora</button>
+    </div>
+
+    <!-- BASIC -->
+    <div class="bg-[#0a0a14] p-6 rounded-2xl border-cyan-500/20 hover:border-cyan-400 transition">
+      <h3 class="text-2xl font-bold text-cyan-400 mb-2">Bot Basic</h3>
+      <p class="text-5xl font-bold mb-4">$20</p>
+      <ul class="space-y-2 text-sm mb-6 text-gray-300">
+        <li>✓ Bot 100% Funcional</li>
+        <li>✓ Activo 24/7</li>
+        <li>✓ 1 Mes Gratis Hosting</li>
+        <li>✓ Diseño A Tu Gusto</li>
+      </ul>
+      <button onclick="abrirModal('Bot Basic', 20, false)" class="w-full bg-cyan-600 hover:bg-cyan-500 py-3 rounded-lg font-bold">Comprar Ahora</button>
     </div>
 
     <!-- PREMIUM BOT -->
-    <div class="bg-gray-900/50 p-6 rounded-xl border-2 border-yellow-400 glow relative">
-      <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-black text-xs font-bold px-3 py-1 rounded-full">MÁS VENDIDO</span>
+    <div class="bg-[#0a0a14] p-6 rounded-2xl border-2 border-yellow-400 glow relative">
+      <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-black text-xs font-bold px-3 py-1 rounded-full">RECOMENDADO</span>
       <h3 class="text-2xl font-bold text-yellow-400 mb-2">Bot Premium</h3>
-      <p class="text-4xl font-bold mb-4">$30 <span class="text-sm text-gray-400">USD</span></p>
-      <ul class="space-y-2 text-sm mb-6">
-        <li>✅ Bot 100% Funcional</li>
-        <li>✅ Diseño A Tu Gusto</li>
-        <li>✅ 1 Mes Gratis Hosting</li>
-        <li>✅ Activo 24/7</li>
-        <li>✅ Creación De Comandos Personalizados</li>
+      <p class="text-5xl font-bold mb-4">$30</p>
+      <ul class="space-y-2 text-sm mb-6 text-gray-300">
+        <li>✓ Bot 100% Funcional</li>
+        <li>✓ Diseño A Tu Gusto</li>
+        <li>✓ 1 Mes Gratis Hosting</li>
+        <li>✓ Activo 24/7</li>
+        <li>✓ Comandos Personalizados</li>
       </ul>
-      <button class="w-full bg-yellow-400 hover:bg-yellow-500 text-black py-2 rounded-lg font-bold">Comprar Ahora</button>
+      <button onclick="abrirModal('Bot Premium', 30, false)" class="w-full bg-yellow-400 hover:bg-yellow-300 text-black py-3 rounded-lg font-bold">Comprar Ahora</button>
     </div>
 
     <!-- WEB PREMIUM -->
-    <div class="bg-gray-900/50 p-6 rounded-xl border-purple-500/30 hover:glow transition">
+    <div class="bg-[#0a0a14] p-6 rounded-2xl border-purple-500/20 hover:border-purple-400 transition">
       <h3 class="text-2xl font-bold text-purple-400 mb-2">Web Premium</h3>
-      <p class="text-4xl font-bold mb-4">$35 <span class="text-sm text-gray-400">USD</span></p>
-      <ul class="space-y-2 text-sm mb-6">
-        <li>✅ Diseño A Tu Gusto</li>
-        <li>✅ 0 Caídas Ideal Para Ventas</li>
-        <li>✅ 100% Funcional</li>
+      <p class="text-5xl font-bold mb-4">$35</p>
+      <ul class="space-y-2 text-sm mb-6 text-gray-300">
+        <li>✓ Diseño A Tu Gusto</li>
+        <li>✓ 0 Caídas Ideal Para Ventas</li>
+        <li>✓ 100% Funcional</li>
       </ul>
-      <button class="w-full bg-purple-600 hover:bg-purple-700 py-2 rounded-lg font-bold">Comprar Ahora</button>
+      <button onclick="abrirModal('Web Premium', 35, false)" class="w-full bg-purple-600 hover:bg-purple-500 py-3 rounded-lg font-bold">Comprar Ahora</button>
     </div>
 
     <!-- HOSTING -->
-    <div class="bg-gray-900/50 p-6 rounded-xl border border-green-500/30 hover:glow transition">
+    <div class="bg-[#0a0a14] p-6 rounded-2xl border-green-500/20 hover:border-green-400 transition">
       <h3 class="text-2xl font-bold text-green-400 mb-2">Hosting 24/7</h3>
-      <p class="text-4xl font-bold mb-4">$10 <span class="text-sm text-gray-400">USD/mes</span></p>
-      <ul class="space-y-2 text-sm mb-6">
-        <li>✅ 24/7 Activo</li>
-        <li>✅ Sin Caídas</li>
-        <li>✅ Ideal Para Ventas De Bots</li>
+      <p class="text-5xl font-bold mb-4">$10<span class="text-base">/mes</span></p>
+      <ul class="space-y-2 text-sm mb-6 text-gray-300">
+        <li>✓ 24/7 Activo</li>
+        <li>✓ Sin Caídas</li>
+        <li>✓ Ideal Para Ventas De Bots</li>
       </ul>
-      <button class="w-full bg-green-600 hover:bg-green-700 py-2 rounded-lg font-bold">Contratar</button>
+      <button onclick="abrirModal('Hosting 24/7', 10, false)" class="w-full bg-green-600 hover:bg-green-500 py-3 rounded-lg font-bold">Contratar</button>
     </div>
 
   </div>
 </section>
 
 <!-- POR QUÉ NOSOTROS -->
-<section class="bg-gray-900/30 py-16 px-4">
-  <div class="max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-6">¿POR QUÉ COMPRARME Y RECOMENDARME?</h2>
+<section class="py-16 px-4">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-8">¿POR QUÉ ELEGIR TEAM NIGHTWISH?</h2>
     <div class="grid md:grid-cols-3 gap-6 text-left">
-      <div class="bg-gray-800/50 p-5 rounded-lg">
-        <h3 class="font-bold text-blue-400 mb-2">⚡ Entrega Rápida</h3>
-        <p class="text-sm text-gray-300">Tu bot o web listo en 24-48h. Sin vueltas, sin excusas.</p>
+      <div class="bg-[#0a0a14] p-5 rounded-xl border-cyan-500/20">
+        <h3 class="font-bold text-cyan-400 mb-2">⚡ Entrega Express</h3>
+        <p class="text-sm text-gray-400">Tu proyecto listo en 24-48h. Cumplimos o devolvemos.</p>
       </div>
-      <div class="bg-gray-800/50 p-5 rounded-lg">
-        <h3 class="font-bold text-blue-400 mb-2">⚡ Soporte Real</h3>
-        <p class="text-sm text-gray-300">Te ayudo post-venta. Si algo falla, lo arreglo. Punto.</p>
+      <div class="bg-[#0a0a14] p-5 rounded-xl border-cyan-500/20">
+        <h3 class="font-bold text-cyan-400 mb-2">⚡ Soporte VIP</h3>
+        <p class="text-sm text-gray-400">Te respondo al instante. Arreglo cualquier falla.</p>
       </div>
-      <div class="bg-gray-800/50 p-5 rounded-lg">
-        <h3 class="font-bold text-blue-400 mb-2">⚡ Calidad Garantizada</h3>
-        <p class="text-sm text-gray-300">Código limpio, diseños únicos y bots que no se caen.</p>
+      <div class="bg-[#0a0a14] p-5 rounded-xl border-cyan-500/20">
+        <h3 class="font-bold text-cyan-400 mb-2">⚡ Calidad Pro</h3>
+        <p class="text-sm text-gray-400">Código optimizado y diseños únicos que venden.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MÉTODOS DE PAGO -->
-<section class="max-w-4xl mx-auto px-4 py-16">
-  <h2 class="text-3xl font-bold text-center mb-8">MÉTODOS DE PAGO</h2>
-  <div class="grid md:grid-cols-3 gap-6">
-    
-    <div class="bg-violet-900/40 p-6 rounded-xl border-violet-500/50">
-      <h3 class="text-xl font-bold mb-3">Yape</h3>
-      <p class="text-sm"><b>Número:</b> +51 936 994 155</p>
-      <p class="text-sm"><b>Nombre:</b> Cristhofer Rojas</p>
+<!-- MODAL DE PAGO -->
+<div id="modalPago" class="modal fixed inset-0 bg-black/80 backdrop-blur-sm z-50 items-center justify-center p-4">
+  <div class="bg-[#0a0a14] w-full max-w-2xl rounded-2xl border-cyan-500/30 p-6 max-h-[90vh] overflow-y-auto">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-2xl font-bold">Finalizar Compra</h2>
+      <button onclick="cerrarModal()" class="text-2xl">×</button>
     </div>
 
-    <div class="bg-blue-900/40 p-6 rounded-xl border border-blue-500/50">
-      <h3 class="text-xl font-bold mb-3">PrexPex</h3>
-      <p class="text-sm"><b>CCI:</b> 12249975</p>
-      <p class="text-sm"><b>Nombre:</b> Cristhofer Yhair Rojas Huarcaya</p>
+    <p class="mb-4">Estás comprando: <b id="productoNombre" class="text-cyan-400"></b> - <b id="productoPrecio" class="text-yellow-400"></b>$</p>
+
+    <!-- MÉTODOS DE PAGO -->
+    <div class="mb-6">
+      <h3 class="font-bold mb-3">1. Elige tu método de pago</h3>
+      <div class="grid gap-3">
+        <label class="flex items-center p-3 bg-[#12121f] rounded-lg cursor-pointer hover:border-cyan-400 border">
+          <input type="radio" name="pago" value="Yape" class="mr-3">
+          <div>
+            <p class="font-bold">Yape</p>
+            <p class="text-sm text-gray-400">+51 936 994 155 - Cristhofer Rojas</p>
+          </div>
+        </label>
+        <label class="flex items-center p-3 bg-[#12121f] rounded-lg cursor-pointer hover:border-cyan-400 border">
+          <input type="radio" name="pago" value="PrexPex" class="mr-3">
+          <div>
+            <p class="font-bold">PrexPex</p>
+            <p class="text-sm text-gray-400">CCI: 12249975 - Cristhofer Yhair Rojas Huarcaya</p>
+          </div>
+        </label>
+        <label class="flex items-center p-3 bg-[#12121f] rounded-lg cursor-pointer hover:border-cyan-400 border">
+          <input type="radio" name="pago" value="Global66" class="mr-3">
+          <div>
+            <p class="font-bold">Global66</p>
+            <p class="text-sm text-gray-400">@CRIROJ1855</p>
+          </div>
+        </label>
+      </div>
     </div>
 
-    <div class="bg-green-900/40 p-6 rounded-xl border-green-500/50">
-      <h3 class="text-xl font-bold mb-3">Global66</h3>
-      <p class="text-sm"><b>Usuario:</b> @CRIROJ1855</p>
+    <!-- FORMULARIO -->
+    <div class="mb-6">
+      <h3 class="font-bold mb-3">2. Completa tus datos</h3>
+      <input id="nombre" type="text" placeholder="Nombre completo" class="w-full p-3 mb-3 bg-[#12121f] rounded-lg border border-gray-700">
+      <input id="whatsapp" type="text" placeholder="WhatsApp con código país" class="w-full p-3 mb-3 bg-[#12121f] rounded-lg border-gray-700">
+      <input id="correo" type="email" placeholder="Correo electrónico" class="w-full p-3 mb-3 bg-[#12121f] rounded-lg border-gray-700">
+
+      <!-- CAMPO EXTRA SOLO PARA BOT GRUPO -->
+      <div id="campoGrupo" class="hidden">
+        <input id="linkGrupo" type="text" placeholder="Link Del Grupo" class="w-full p-3 mb-3 bg-[#12121f] rounded-lg border-green-500">
+      </div>
+
+      <textarea id="detalles" placeholder="Detalles: Diseño que quieres, nombre del bot, etc" class="w-full p-3 bg-[#12121f] rounded-lg border-gray-700 h-24"></textarea>
     </div>
 
+    <button onclick="enviarPedido()" class="w-full bg-cyan-600 hover:bg-cyan-500 py-3 rounded-lg font-bold text-lg">Enviar Pedido por WhatsApp</button>
+    <p class="text-xs text-gray-400 mt-3">*Después de pagar envía tu comprobante*</p>
   </div>
-  <p class="text-center text-xs text-gray-400 mt-6">*Envía tu comprobante al WhatsApp después de pagar*</p>
-</section>
+</div>
 
 <!-- ACLARACIONES -->
-<section class="bg-gray-900/30 py-12 px-4">
+<section class="bg-[#0a0a14] py-12 px-4">
   <div class="max-w-3xl mx-auto">
-    <h2 class="text-2xl font-bold text-center mb-6">ACLARACIONES IMPORTANTES</h2>
+    <h2 class="text-2xl font-bold text-center mb-6">ACLARACIONES</h2>
     <ul class="space-y-3 text-sm text-gray-300">
-      <li>⚡ <b>Diseño A Tu Gusto:</b> Me envías referencias y lo hacemos idéntico o mejor.</li>
-      <li>⚡ <b>Hosting 1 Mes Gratis:</b> Después puedes renovar por $10/mes o usar el tuyo.</li>
-      <li>⚡ <b>0 Caídas:</b> Servidores optimizados para que tu web/bot no se caiga en ventas.</li>
-      <li>⚡ <b>Comandos Personalizados:</b> En Premium creamos lo que pidas, desde 0.</li>
+      <li>⚡ <b>Bot Basic Grupo $7:</b> Permanente. Incluye Juegos, Música y Bienvenidas 24/7</li>
+      <li>⚡ <b>Diseño A Tu Gusto:</b> Mándame referencias y lo clonamos.</li>
+      <li>⚡ <b>Hosting 1 Mes Gratis:</b> Luego $10/mes o usa tu propio hosting.</li>
+      <li>⚡ <b>0 Caídas:</b> Servidores estables para que vendas sin parar.</li>
     </ul>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="text-center py-8 text-gray-500 text-sm">
-  <p>© 2026 Team Nightwish. Potenciando negocios con tecnología ⚡</p>
+  <p>© 2026 Team Nightwish ⚡ El trueno de tu negocio</p>
 </footer>
+
+<script>
+let productoActual = '';
+let precioActual = 0;
+let necesitaLink = false;
+
+function abrirModal(producto, precio, linkGrupo) {
+  productoActual = producto;
+  precioActual = precio;
+  necesitaLink = linkGrupo;
+  document.getElementById('productoNombre').innerText = producto;
+  document.getElementById('productoPrecio').innerText = precio;
+
+  // Mostrar campo de link solo si es Bot Grupo
+  if(linkGrupo){
+    document.getElementById('campoGrupo').classList.remove('hidden');
+  } else {
+    document.getElementById('campoGrupo').classList.add('hidden');
+  }
+
+  document.getElementById('modalPago').classList.add('active');
+}
+
+function cerrarModal() {
+  document.getElementById('modalPago').classList.remove('active');
+}
+
+function enviarPedido() {
+  let metodo = document.querySelector('input[name="pago"]:checked');
+  let nombre = document.getElementById('nombre').value;
+  let whatsapp = document.getElementById('whatsapp').value;
+  let correo = document.getElementById('correo').value;
+  let linkGrupo = document.getElementById('linkGrupo').value;
+  let detalles = document.getElementById('detalles').value;
+
+  if(!metodo ||!nombre ||!whatsapp) {
+    alert('Completa método de pago, nombre y WhatsApp');
+    return;
+  }
+
+  if(necesitaLink &&!linkGrupo) {
+    alert('Debes colocar el Link Del Grupo');
+    return;
+  }
+
+  let mensaje = `⚡ NUEVO PEDIDO TEAM NIGHTWISH ⚡%0A%0A`;
+  mensaje += `*Producto:* ${productoActual} - $${precioActual}%0A`;
+  mensaje += `*Método de Pago:* ${metodo.value}%0A%0A`;
+  mensaje += `*Datos del Cliente:*%0A`;
+  mensaje += `Nombre: ${nombre}%0A`;
+  mensaje += `WhatsApp: ${whatsapp}%0A`;
+  mensaje += `Correo: ${correo}%0A`;
+  if(necesitaLink) mensaje += `*Link Del Grupo:* ${linkGrupo}%0A`;
+  mensaje += `Detalles: ${detalles}%0A%0A`;
+  mensaje += `*Ya realicé el pago y adjunto comprobante*`;
+
+  window.open(`https://wa.me/51936994155?text=${mensaje}`, '_blank');
+  cerrarModal();
+}
+</script>
 
 </body>
 </html>
