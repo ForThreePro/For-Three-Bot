@@ -10,7 +10,6 @@
   body { font-family: 'Outfit', sans-serif; background: #0b0c0f; color: #e5e7eb; }
   .gradient-text { background: linear-gradient(90deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
   .card { background: #12141a; border: 1px solid #1f2430; }
-  .tab-btn.active { background: #3b82f6; color: white; }
   .modal { display: none; }
   .modal.active { display: flex; }
 </style>
@@ -36,15 +35,15 @@
   <a href="#productos" class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-xl font-bold">Explorar Productos</a>
 </section>
 
-<!-- POR QUE NOSOTROS -->
+<!-- POR QUE COMPRARNOS -->
 <section id="porque" class="py-16 px-4">
   <div class="max-w-6xl mx-auto">
-    <h3 class="text-3xl font-bold text-center mb-12">Ventajas de trabajar con nosotros</h3>
+    <h3 class="text-3xl font-bold text-center mb-12">¿Por qué elegir Team Nightwish?</h3>
     <div class="grid md:grid-cols-4 gap-6">
       <div class="card p-6 rounded-2xl text-center">
         <div class="text-3xl mb-3">⚡</div>
         <h4 class="font-bold">Entrega Express</h4>
-        <p class="text-sm text-gray-400 mt-2">Listo en 24-48h</p>
+        <p class="text-sm text-gray-400 mt-2">Listo en 24-48h garantizado</p>
       </div>
       <div class="card p-6 rounded-2xl text-center">
         <div class="text-3xl mb-3">🛡️</div>
@@ -72,7 +71,7 @@
     <div class="grid md:grid-cols-3 gap-6">
 
       <!-- BOT BASIC GRUPO -->
-      <div class="card rounded-2xl p-6">
+      <div class="card rounded-2xl p-6 hover:border-green-500 transition">
         <span class="bg-green-500/20 text-green-400 text-xs px-3 py-1 rounded-full">NUEVO</span>
         <h4 class="text-2xl font-bold mt-4">Bot Basic Grupo</h4>
         <p class="text-4xl font-extrabold text-green-400 mt-2">$7</p>
@@ -81,7 +80,7 @@
           <li>✓ Juegos + Música + Bienvenidas</li>
           <li>✓ Permanente</li>
         </ul>
-        <button onclick="abrirModal('Bot Basic Grupo', 7, true)" class="w-full mt-6 bg-green-600 hover:bg-green-700 py-3 rounded-xl font-bold">Comprar</button>
+        <button onclick="abrirModal('Bot Basic Grupo', 7, true)" class="w-full mt-6 bg-green-600 hover:bg-green-700 py-3 rounded-xl font-bold">Comprar Ahora</button>
       </div>
 
       <!-- BOT PREMIUM -->
@@ -94,11 +93,11 @@
           <li>✓ Diseño Exclusivo</li>
           <li>✓ 1 Mes Hosting Gratis</li>
         </ul>
-        <button onclick="abrirModal('Bot Premium', 30, false)" class="w-full mt-6 bg-blue-600 hover:bg-blue-700 py-3 rounded-xl font-bold">Comprar</button>
+        <button onclick="abrirModal('Bot Premium', 30, false)" class="w-full mt-6 bg-blue-600 hover:bg-blue-700 py-3 rounded-xl font-bold">Comprar Ahora</button>
       </div>
 
       <!-- WEB PREMIUM -->
-      <div class="card rounded-2xl p-6">
+      <div class="card rounded-2xl p-6 hover:border-purple-500 transition">
         <h4 class="text-2xl font-bold mt-4">Web Premium</h4>
         <p class="text-4xl font-extrabold text-purple-400 mt-2">$35</p>
         <ul class="text-sm text-gray-400 mt-4 space-y-2">
@@ -106,11 +105,11 @@
           <li>✓ 0 Caídas</li>
           <li>✓ 100% Responsive</li>
         </ul>
-        <button onclick="abrirModal('Web Premium', 35, false)" class="w-full mt-6 bg-purple-600 hover:bg-purple-700 py-3 rounded-xl font-bold">Comprar</button>
+        <button onclick="abrirModal('Web Premium', 35, false)" class="w-full mt-6 bg-purple-600 hover:bg-purple-700 py-3 rounded-xl font-bold">Comprar Ahora</button>
       </div>
 
       <!-- BOT BASIC -->
-      <div class="card rounded-2xl p-6">
+      <div class="card rounded-2xl p-6 hover:border-gray-500 transition">
         <h4 class="text-2xl font-bold mt-4">Bot Basic</h4>
         <p class="text-4xl font-extrabold mt-2">$20<span class="text-sm text-gray-400">/mes</span></p>
         <ul class="text-sm text-gray-400 mt-4 space-y-2">
@@ -118,11 +117,11 @@
           <li>✓ 24/7 Activo</li>
           <li>✓ Hosting Incluido</li>
         </ul>
-        <button onclick="abrirModal('Bot Basic', 20, false)" class="w-full mt-6 bg-gray-700 hover:bg-gray-600 py-3 rounded-xl font-bold">Comprar</button>
+        <button onclick="abrirModal('Bot Basic', 20, false)" class="w-full mt-6 bg-gray-700 hover:bg-gray-600 py-3 rounded-xl font-bold">Comprar Ahora</button>
       </div>
 
       <!-- HOSTING -->
-      <div class="card rounded-2xl p-6">
+      <div class="card rounded-2xl p-6 hover:border-gray-500 transition">
         <h4 class="text-2xl font-bold mt-4">Hosting 24/7</h4>
         <p class="text-4xl font-extrabold mt-2">$10<span class="text-sm text-gray-400">/mes</span></p>
         <ul class="text-sm text-gray-400 mt-4 space-y-2">
@@ -140,7 +139,7 @@
 <!-- ACLARACIONES -->
 <section class="py-16 px-4 bg-[#12141a]">
   <div class="max-w-4xl mx-auto">
-    <h3 class="text-2xl font-bold text-center mb-8">A tener en cuenta</h3>
+    <h3 class="text-2xl font-bold text-center mb-8">Aclaraciones Importantes</h3>
     <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-400">
       <div class="card p-4 rounded-xl">✓ Diseño 100% personalizado según tu marca</div>
       <div class="card p-4 rounded-xl">✓ Hosting gratis el primer mes en bots</div>
@@ -164,80 +163,140 @@
         <p class="mt-3 text-gray-400">Sí. Si no entregamos en 48h te devolvemos el 100%.</p>
       </details>
       <details class="card p-5 rounded-xl">
-        <summary class="font-semibold cursor-pointer">¿Puedo pagar con otro método?</summary>
-        <p class="mt-3 text-gray-400">Solo Yape, PrexPex y Global66 por ahora.</p>
+        <summary class="font-semibold cursor-pointer">¿Puedo pedir cambios después?</summary>
+        <p class="mt-3 text-gray-400">Claro. Tienes 3 correcciones gratis en los primeros 7 días.</p>
+      </details>
+      <details class="card p-5 rounded-xl">
+        <summary class="font-semibold cursor-pointer">¿Qué métodos de pago aceptan?</summary>
+        <p class="mt-3 text-gray-400">Yape, PrexPex y Global66.</p>
       </details>
     </div>
   </div>
 </section>
 
-<!-- MODAL DE PAGO NUEVO -->
+<!-- MODAL DE PAGO NUEVO DISEÑO CHECKOUT -->
 <div id="modalCompra" class="modal fixed inset-0 bg-black/80 z-50 items-center justify-center p-4">
-  <div class="bg-[#12141a] w-full max-w-lg rounded-2xl p-6 border border-[#1f2430]">
-    <div class="flex justify-between mb-4">
-      <h2 class="text-2xl font-bold" id="modalTitulo"></h2>
-      <button onclick="cerrarModal()" class="text-3xl text-gray-500">×</button>
+  <div class="bg-[#12141a] w-full max-w-2xl rounded-2xl p-6 border-[#1f2430] max-h- overflow-y-auto">
+    
+    <!-- HEADER -->
+    <div class="flex justify-between mb-6">
+      <div>
+        <h2 class="text-2xl font-bold" id="modalTitulo"></h2>
+        <p class="text-gray-400">Completa tu pago de <span class="text-2xl font-bold text-green-400" id="modalPrecio"></span></p>
+      </div>
+      <button onclick="cerrarModal()" class="text-3xl text-gray-500 hover:text-white">×</button>
     </div>
 
-    <p class="text-gray-400 mb-4">Total: <span class="text-2xl font-bold text-green-400" id="modalPrecio"></span></p>
-
-    <!-- TABS DE PAGO -->
-    <div class="flex gap-2 mb-4">
-      <button onclick="cambiarTab('yape')" id="btn-yape" class="tab-btn active flex-1 py-2 rounded-lg">Yape</button>
-      <button onclick="cambiarTab('prex')" id="btn-prex" class="tab-btn flex-1 py-2 rounded-lg bg-[#1f2430]">PrexPex</button>
-      <button onclick="cambiarTab('global')" id="btn-global" class="tab-btn flex-1 py-2 rounded-lg bg-[#1f2430]">Global66</button>
-    </div>
-
-    <!-- CONTENIDO TABS -->
-    <div id="tab-yape" class="tab-content">
-      <div class="bg-[#0b0c0f] p-4 rounded-xl text-center">
-        <p class="text-sm text-gray-400">Escanea o copia el número</p>
-        <p id="numYape" class="text-2xl font-bold my-3">936 994 155</p>
-        <p class="text-sm text-gray-400 mb-3">Cristhofer Rojas</p>
-        <button onclick="copiarNum('numYape')" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg font-semibold">Copiar Número</button>
+    <!-- PASOS -->
+    <div class="flex items-center justify-between mb-6 text-sm">
+      <div class="flex items-center gap-2 text-blue-400">
+        <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center font-bold">1</div>
+        <span>Pagar</span>
+      </div>
+      <div class="flex-1 h-0.5 bg-[#1f2430] mx-2"></div>
+      <div class="flex items-center gap-2 text-gray-500">
+        <div class="w-8 h-8 rounded-full bg-[#1f2430] flex items-center justify-center font-bold">2</div>
+        <span>Confirmar</span>
       </div>
     </div>
 
-    <div id="tab-prex" class="tab-content hidden">
-      <div class="bg-[#0b0c0f] p-4 rounded-xl text-center">
-        <p class="text-sm text-gray-400">Copia el CCI</p>
-        <p id="numPrex" class="text-2xl font-bold my-3">12249975</p>
-        <p class="text-sm text-gray-400 mb-3">Cristhofer Yhair Rojas Huarcaya</p>
-        <button onclick="copiarNum('numPrex')" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg font-semibold">Copiar CCI</button>
+    <!-- OPCIONES DE PAGO -->
+    <h3 class="font-semibold mb-3">Selecciona tu método de pago</h3>
+    <div class="grid gap-3 mb-6">
+
+      <!-- YAPE -->
+      <div class="card p-4 rounded-xl border-2 border-purple-500">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center font-bold text-xl">Y</div>
+            <div>
+              <p class="font-bold">Yape</p>
+              <p class="text-sm text-gray-400">Transferencia inmediata</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 bg-[#0b0c0f] p-3 rounded-lg flex items-center justify-between">
+          <div>
+            <p class="text-xs text-gray-500">Número</p>
+            <p id="numYape" class="text-lg font-bold">936 994 155</p>
+            <p class="text-xs text-gray-500">Cristhofer Rojas</p>
+          </div>
+          <button onclick="copiarNum('numYape')" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-semibold">Copiar</button>
+        </div>
       </div>
+
+      <!-- PREXPEX -->
+      <div class="card p-4 rounded-xl border-[#1f2430]">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center font-bold text-xl">P</div>
+            <div>
+              <p class="font-bold">PrexPex</p>
+              <p class="text-sm text-gray-400">Transferencia bancaria</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 bg-[#0b0c0f] p-3 rounded-lg flex items-center justify-between">
+          <div>
+            <p class="text-xs text-gray-500">CCI</p>
+            <p id="numPrex" class="text-lg font-bold">12249975</p>
+            <p class="text-xs text-gray-500">Cristhofer Yhair Rojas Huarcaya</p>
+          </div>
+          <button onclick="copiarNum('numPrex')" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-semibold">Copiar</button>
+        </div>
+      </div>
+
+      <!-- GLOBAL66 -->
+      <div class="card p-4 rounded-xl border-[#1f2430]">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center font-bold text-xl">G</div>
+            <div>
+              <p class="font-bold">Global66</p>
+              <p class="text-sm text-gray-400">Pago internacional</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 bg-[#0b0c0f] p-3 rounded-lg flex items-center justify-between">
+          <div>
+            <p class="text-xs text-gray-500">Usuario</p>
+            <p id="numGlobal" class="text-lg font-bold">@CRIROJ1855</p>
+          </div>
+          <button onclick="copiarNum('numGlobal')" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-semibold">Copiar</button>
+        </div>
+      </div>
+
     </div>
 
-    <div id="tab-global" class="tab-content hidden">
-      <div class="bg-[#0b0c0f] p-4 rounded-xl text-center">
-        <p class="text-sm text-gray-400">Copia el usuario</p>
-        <p id="numGlobal" class="text-2xl font-bold my-3">@CRIROJ1855</p>
-        <button onclick="copiarNum('numGlobal')" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg font-semibold">Copiar Usuario</button>
-      </div>
+    <!-- ALERTA -->
+    <div class="bg-blue-500/10 border-blue-500/30 p-3 rounded-lg text-sm mb-6">
+      ⚠️ Después de pagar, envía tu comprobante por WhatsApp para activar tu producto al instante.
     </div>
 
     <!-- FORM SOLO BOT GRUPO -->
-    <div id="seccionDetalles" class="hidden mt-6">
-      <h3 class="font-semibold mb-3">Datos del grupo</h3>
+    <div id="seccionDetalles" class="hidden">
+      <h3 class="font-semibold mb-3">Datos para configurar tu bot</h3>
       <input id="nombre" type="text" placeholder="Tu nombre" class="w-full p-3 mb-3 bg-[#0b0c0f] border-[#1f2430] rounded-lg">
-      <input id="whatsapp" type="text" placeholder="Tu WhatsApp" class="w-full p-3 mb-3 bg-[#0b0c0f] border-[#1f2430] rounded-lg">
-      <input id="linkGrupo" type="text" placeholder="Link Del Grupo" class="w-full p-3 mb-3 bg-[#0b0c0f] border-[#1f2430] rounded-lg">
-      <textarea id="detalles" placeholder="Detalles adicionales" class="w-full p-3 mb-4 bg-[#0b0c0f] border-[#1f2430] rounded-lg h-20"></textarea>
+      <input id="whatsapp" type="text" placeholder="Tu WhatsApp" class="w-full p-3 mb-3 bg-[#0b0c0f] border border-[#1f2430] rounded-lg">
+      <input id="linkGrupo" type="text" placeholder="Link Del Grupo" class="w-full p-3 mb-3 bg-[#0b0c0f] border-green-500 rounded-lg">
+      <textarea id="detalles" placeholder="Detalles adicionales" class="w-full p-3 mb-4 bg-[#0b0c0f] border border-[#1f2430] rounded-lg h-20"></textarea>
     </div>
 
-    <button onclick="finalizarCompra()" class="w-full mt-4 bg-green-600 hover:bg-green-700 py-3 rounded-xl font-bold">Confirmar Pedido por WhatsApp</button>
+    <button onclick="finalizarCompra()" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 py-4 rounded-xl font-bold text-lg">Ya pagué, confirmar pedido</button>
   </div>
 </div>
 
 <!-- FOOTER -->
 <footer class="border-t border-[#1f2430] py-10 text-center text-gray-500 text-sm">
-  <p>© 2026 Team Nightwish. Tecnología que impulsa ventas.</p>
+  <h4 class="text-xl font-bold mb-2 gradient-text">Team Nightwish</h4>
+  <p>Tecnología que impulsa ventas</p>
+  <p class="mt-4">© 2026 Team Nightwish. Todos los derechos reservados.</p>
 </footer>
 
 <script>
 let productoSel = '';
 let precioSel = 0;
 let necesitaDetalles = false;
-let tabActiva = 'yape';
 
 function abrirModal(producto, precio, detalles) {
   productoSel = producto;
@@ -246,7 +305,12 @@ function abrirModal(producto, precio, detalles) {
   document.getElementById('modalTitulo').innerText = producto;
   document.getElementById('modalPrecio').innerText = `$${precio}`;
   
-  document.getElementById('seccionDetalles').classList.toggle('hidden', !detalles);
+  if(detalles){
+    document.getElementById('seccionDetalles').classList.remove('hidden');
+  } else {
+    document.getElementById('seccionDetalles').classList.add('hidden');
+  }
+
   document.getElementById('modalCompra').classList.add('active');
 }
 
@@ -254,22 +318,15 @@ function cerrarModal() {
   document.getElementById('modalCompra').classList.remove('active');
 }
 
-function cambiarTab(tab) {
-  document.querySelectorAll('.tab-content').forEach(e => e.classList.add('hidden'));
-  document.querySelectorAll('.tab-btn').forEach(e => e.classList.remove('active', 'bg-blue-600', 'text-white'));
-  document.querySelectorAll('.tab-btn').forEach(e => e.classList.add('bg-[#1f2430]'));
-  
-  document.getElementById(`tab-${tab}`).classList.remove('hidden');
-  document.getElementById(`btn-${tab}`).classList.add('active', 'bg-blue-600', 'text-white');
-  document.getElementById(`btn-${tab}`).classList.remove('bg-[#1f2430]');
-  tabActiva = tab;
-}
-
 function copiarNum(id) {
   let texto = document.getElementById(id).innerText;
   navigator.clipboard.writeText(texto);
   event.target.innerText = 'Copiado ✓';
-  setTimeout(() => { event.target.innerText = 'Copiar Número'; }, 1500);
+  event.target.classList.add('bg-green-600');
+  setTimeout(() => { 
+    event.target.innerText = 'Copiar'; 
+    event.target.classList.remove('bg-green-600');
+  }, 1500);
 }
 
 function finalizarCompra() {
@@ -280,11 +337,14 @@ function finalizarCompra() {
     let whatsapp = document.getElementById('whatsapp').value;
     let link = document.getElementById('linkGrupo').value;
     let detalles = document.getElementById('detalles').value;
-    if(!nombre ||!whatsapp ||!link){ alert('Completa todos los campos'); return; }
+    if(!nombre ||!whatsapp ||!link){ alert('Completa nombre, WhatsApp y Link del Grupo'); return; }
     mensaje += `*Datos:*%0ANombre: ${nombre}%0AWhatsApp: ${whatsapp}%0ALink: ${link}%0ADetalles: ${detalles}%0A%0A`;
   }
 
-  mensaje += `*Pago por:* ${tabActiva.toUpperCase()}%0A`;
+  mensaje += `*Métodos de pago disponibles:*%0A`;
+  mensaje += `Yape: 936 994 155%0A`;
+  mensaje += `PrexPex: 12249975%0A`;
+  mensaje += `Global66: @CRIROJ1855%0A%0A`;
   mensaje += `Ya envié el comprobante.`;
 
   window.open(`https://wa.me/51936994155?text=${mensaje}`, '_blank');
