@@ -1,76 +1,97 @@
 // ANIMACIÓN SCROLL
 const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){entry.target.classList.add('show')}
-  })
+  entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show')}})
 },{threshold:0.1});
 document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
 
-// POPUP DE PAGOS
+// POPUP
 function openPopup(product, price) {
   document.getElementById('popupProduct').innerText = product;
   document.getElementById('popupPrice').innerText = price;
-  
   let mensaje = `Hola%20Whois%20quiero%20comprar:%20${encodeURIComponent(product)}%20-${encodeURIComponent(price)}`;
-  
   document.getElementById('btnYape').href = `https://wa.me/51936994155?text=${mensaje}%20Pago%20con:%20Yape`;
   document.getElementById('btnPrex').href = `https://wa.me/51936994155?text=${mensaje}%20Pago%20con:%20Prex`;
   document.getElementById('btnGlobal').href = `https://wa.me/51936994155?text=${mensaje}%20Pago%20con:%20Global66`;
-  
   document.getElementById('paymentPopup').classList.add('active');
 }
+function closePopup() {document.getElementById('paymentPopup').classList.remove('active');}
+document.getElementById('paymentPopup').addEventListener('click', function(e) {if(e.target === this) closePopup();});
 
-function closePopup() {
-  document.getElementById('paymentPopup').classList.remove('active');
-}
-
-document.getElementById('paymentPopup').addEventListener('click', function(e) {
-  if(e.target === this) closePopup();
-});
-
-// SISTEMA DE TICKETS A WHATSAPP
+// TICKETS
 function sendTicket(e) {
   e.preventDefault();
-  
   let name = document.getElementById('ticketName').value;
   let wa = document.getElementById('ticketWhatsapp').value;
   let type = document.getElementById('ticketType').value;
   let id = document.getElementById('ticketId').value || 'No tiene';
   let msg = document.getElementById('ticketMessage').value;
   let fecha = new Date().toLocaleString('es-PE');
-  
-  let ticket = `🚨 *NUEVO TICKET DE SOPORTE* 🚨%0A%0A`;
-  ticket += `*Fecha:* ${fecha}%0A`;
-  ticket += `*Nombre:* ${name}%0A`;
-  ticket += `*WhatsApp:* ${wa}%0A`;
-  ticket += `*Tipo:* ${type}%0A`;
-  ticket += `*ID Compra:* ${id}%0A%0A`;
-  ticket += `*PROBLEMA:*%0A${msg}%0A%0A`;
-  ticket += `_Responder a este ticket_`;
-  
+  let ticket = `🚨 *NUEVO TICKET* 🚨%0A%0A*Fecha:* ${fecha}%0A*Nombre:* ${name}%0A*WhatsApp:* ${wa}%0A*Tipo:* ${type}%0A*ID:* ${id}%0A%0A*PROBLEMA:*%0A${msg}`;
   window.open(`https://wa.me/51936994155?text=${ticket}`, '_blank');
-  
-  alert('✅ Ticket enviado! Te responderé por WhatsApp en menos de 2 horas ⚡');
+  alert('✅ Ticket enviado! Te respondo en menos de 2 horas ⚡');
   e.target.reset();
 }
 
-// MÚSICA DE FONDO
-let music = document.getElementById('bgMusic');
-let musicBtn = document.getElementById('musicBtn');
-let isPlaying = false;
+// SPOTIFY PLAYER + ECUALIZADOR
+let audio = document.getElementById('bgMusic');
+let playBtn = document.getElementById('playBtn');
+let progressBar = document.getElementById('progressBar');
+let volumeBar = document.getElementById('volumeBar');
+let currentTimeEl = document.getElementById('currentTime');
+let durationEl = document.getElementById('duration');
+let bars = document.querySelectorAll('.bar');
 
-function toggleMusic() {
-  if(isPlaying){
-    music.pause();
-    musicBtn.innerText = '🔇';
-    musicBtn.classList.add('muted');
-  } else {
-    music.play();
-    musicBtn.innerText = '🔊';
-    musicBtn.classList.remove('muted');
+let audioContext, analyser, dataArray;
+
+// Iniciar audio context al dar click
+function initAudio() {
+  if(!audioContext){
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    analyser = audioContext.createAnalyser();
+    let source = audioContext.createMediaElementSource(audio);
+    source.connect(analyser);
+    analyser.connect(audioContext.destination);
+    analyser.fftSize = 64;
+    dataArray = new Uint8Array(analyser.frequencyBinCount);
   }
-  isPlaying = !isPlaying;
 }
 
-// Volumen bajito
-music.volume = 0.6;
+function toggleMusic() {
+  initAudio();
+  if(audio.paused){
+    audio.play();
+    playBtn.innerText = '⏸';
+    animateEqualizer();
+  } else {
+    audio.pause();
+    playBtn.innerText = '▶';
+  }
+}
+
+// ECUALIZADOR ANIMADO
+function animateEqualizer() {
+  if(audio.paused) return;
+  analyser.getByteFrequencyData(dataArray);
+  bars.forEach((bar, i) => {
+    let value = dataArray[i * 2];
+    bar.style.height = `${value / 4}px`;
+  });
+  requestAnimationFrame(animateEqualizer);
+}
+
+// PROGRESO Y TIEMPO
+audio.addEventListener('timeupdate', () => {
+  let progress = (audio.currentTime / audio.duration) * 100;
+  progressBar.value = progress;
+  currentTimeEl.innerText = formatTime(audio.currentTime);
+});
+audio.addEventListener('loadedmetadata', () => {durationEl.innerText = formatTime(audio.duration);});
+progressBar.addEventListener('input', () => {audio.currentTime = (progressBar.value / 100) * audio.duration;});
+volumeBar.addEventListener('input', () => {audio.volume = volumeBar.value / 100;});
+function formatTime(seconds) {
+  if(isNaN(seconds)) return "0:00";
+  let min = Math.floor(seconds / 60);
+  let sec = Math.floor(seconds % 60);
+  return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+}
+audio.volume = 0.5;
