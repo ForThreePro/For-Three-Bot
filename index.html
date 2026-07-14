@@ -5,85 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Whois Yallico ⚡ | Tienda Oficial</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{background:#02020A;color:#fff;font-family:'Poppins',sans-serif}
-    
-    .hero{min-height:100vh;background: linear-gradient(rgba(0,10,30,0.85), rgba(0,0,0,0.95)), url('banner.jpg') no-repeat center center/cover;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 20px 40px;}
-    header{padding:20px 10%;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,0.7);position:fixed;width:100%;top:0;z-index:10;backdrop-filter:blur(15px);border-bottom:1px solid #003366}
-    header h1{font-family:'Orbitron',sans-serif;font-size:1.5rem;font-weight:800;color:#00D5FF;text-shadow:0 0 15px #00D5FF}
-    nav{display:flex;gap:25px}
-    nav a{color:#fff;text-decoration:none;font-weight:600;transition:0.3s}
-    nav a:hover{color:#00D5FF}
-    
-    .btn{background:linear-gradient(135deg,#00D5FF 0%,#0066FF 100%);padding:16px 40px;border-radius:15px;color:#000;text-decoration:none;font-weight:800;font-family:'Orbitron',sans-serif;font-size:1.1rem;transition:0.3s;border:none;cursor:pointer;display:inline-block;margin:10px}
-    .btn:hover{transform:scale(1.08);box-shadow:0 0 35px #00D5FF}
-    .btn-buy{background:linear-gradient(135deg,#00FF88 0%,#00CC66 100%);color:#000;padding:14px 30px;font-size:1rem}
-    .btn-buy:hover{box-shadow:0 0 25px #00FF88}
-    
-    .hero h2{font-family:'Orbitron',sans-serif;font-size:3.5rem;font-weight:800;margin-bottom:20px;color:#00D5FF;text-shadow:0 0 25px #00D5FF}
-    section{padding:100px 10%}
-    .section-title{font-family:'Orbitron',sans-serif;font-size:2.8rem;text-align:center;color:#00D5FF;margin-bottom:60px;text-shadow:0 0 20px #00D5FF}
-    
-    .shop{background:linear-gradient(135deg,#001a0d 0%,#000 100%);border-top:3px solid #00FF88;border-bottom:3px solid #00FF88}
-    .shop-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:35px;max-width:1200px;margin:0 auto}
-    .product-card{background:linear-gradient(145deg,rgba(0,255,136,0.1),rgba(0,20,40,0.9));padding:35px;border-radius:25px;border:2px solid #00FF88;text-align:center;transition:0.3s;position:relative}
-    .product-card:hover{transform:scale(1.05);box-shadow:0 0 40px #00FF8866}
-    .product-badge{position:absolute;top:-15px;right:20px;background:#FFD700;color:#000;padding:8px 15px;border-radius:20px;font-weight:800;font-size:0.8rem;font-family:'Orbitron',sans-serif}
-    .product-price{font-family:'Orbitron',sans-serif;font-size:3rem;color:#00FF88;margin:20px 0}
-    .product-price span{font-size:1rem;color:#aaa}
-    .product-features{list-style:none;text-align:left;margin:25px 0}
-    .product-features li{margin:10px 0;color:#ccc}
-    .product-features li::before{content:"✓ ";color:#00FF88;font-weight:800}
-    
-    /* POPUP DE PAGOS */
-    .popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:999;display:none;justify-content:center;align-items:center;backdrop-filter:blur(10px)}
-    .popup-overlay.active{display:flex;animation:fadeIn 0.3s}
-    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-    
-    .popup-content{background:linear-gradient(145deg,#0a0a1a,#001a0d);padding:40px;border-radius:25px;border:2px solid #00FF88;max-width:500px;width:90%;position:relative;animation:slideUp 0.4s}
-    @keyframes slideUp{from{transform:translateY(50px);opacity:0}to{transform:translateY(0);opacity:1}}
-    
-    .popup-close{position:absolute;top:15px;right:20px;font-size:2rem;color:#00FF88;cursor:pointer;font-family:'Orbitron',sans-serif}
-    .popup-close:hover{color:#fff}
-    
-    .popup-title{font-family:'Orbitron',sans-serif;font-size:1.8rem;color:#00FF88;margin-bottom:10px;text-align:center}
-    .popup-product{font-size:1.2rem;color:#fff;margin-bottom:20px;text-align:center}
-    .popup-price{font-family:'Orbitron',sans-serif;font-size:2.5rem;color:#00FF88;text-align:center;margin-bottom:30px}
-    
-    .payment-methods-popup{display:flex;flex-direction:column;gap:15px}
-    .payment-btn{background:rgba(0,255,136,0.1);border:2px solid #00FF88;padding:20px;border-radius:15px;color:#fff;text-decoration:none;display:flex;align-items:center;gap:15px;transition:0.3s;font-weight:600;font-size:1.1rem}
-    .payment-btn:hover{background:rgba(0,255,136,0.2);transform:scale(1.02)}
-    .payment-icon{font-size:2rem}
-    
-    .popup-note{margin-top:25px;padding:15px;background:rgba(0,213,255,0.1);border-radius:10px;border:1px solid #00D5FF;text-align:center;font-size:0.9rem;color:#ccc}
-    
-    .faq{background:linear-gradient(180deg,#000 0%,#02020A 100%)}
-    .faq-container{max-width:900px;margin:0 auto}
-    .faq-item{background:rgba(10,10,26,0.8);margin-bottom:20px;border-radius:15px;border:1px solid #003366;overflow:hidden}
-    .faq-question{padding:25px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Orbitron',sans-serif;font-size:1.1rem;color:#00D5FF}
-    .faq-question span{font-size:1.5rem;transition:0.3s}
-    .faq-answer{padding:0 25px;max-height:0;overflow:hidden;transition:0.4s}
-    .faq-answer p{padding-bottom:25px;color:#ccc;line-height:1.8}
-    .faq-item.active .faq-answer{max-height:300px}
-    .faq-item.active .faq-question span{transform:rotate(45deg)}
-    
-    .contact{background:#02020A;text-align:center}
-    .contact-grid{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:40px}
-    .contact-item{background:linear-gradient(145deg,rgba(10,10,26,0.9),rgba(0,20,40,0.9));padding:30px;border-radius:15px;border:1px solid #003366;min-width:280px}
-    footer{padding:40px;text-align:center;color:#666;background:#000;border-top:1px solid #003366;font-family:'Orbitron',sans-serif}
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
     <h1>⚡ WHOIS YALLICO</h1>
     <nav>
-      <a href="#features">Bot</a>
       <a href="#shop">Tienda</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contacto</a>
+      <a href="#testimonials">Testimonios</a>
+      <a href="#updates">Updates</a>
+      <a href="#tickets">Soporte</a>
     </nav>
   </header>
 
@@ -96,10 +28,10 @@
 
   <!-- TIENDA -->
   <section class="shop" id="shop">
-    <h2 class="section-title" style="color:#00FF88">TIENDA OFICIAL ⚡</h2>
+    <h2 class="section-title fade-in" style="color:#00FF88">TIENDA OFICIAL ⚡</h2>
     <div class="shop-grid">
       
-      <div class="product-card">
+      <div class="product-card fade-in">
         <h3>Bot Para Grupo</h3>
         <div class="product-price">S/ 7<span> Permanente</span></div>
         <ul class="product-features">
@@ -110,7 +42,7 @@
         <button class="btn btn-buy" onclick="openPopup('Bot Para Grupo', 'S/ 7')">COMPRAR AHORA</button>
       </div>
 
-      <div class="product-card">
+      <div class="product-card fade-in">
         <div class="product-badge">POPULAR</div>
         <h3>Bot Personalizado Básico</h3>
         <div class="product-price">S/ 20</div>
@@ -122,7 +54,7 @@
         <button class="btn btn-buy" onclick="openPopup('Bot Personalizado Básico', 'S/ 20')">COMPRAR AHORA</button>
       </div>
 
-      <div class="product-card">
+      <div class="product-card fade-in">
         <div class="product-badge">PREMIUM</div>
         <h3>Bot Personalizado Premium</h3>
         <div class="product-price">S/ 30</div>
@@ -134,7 +66,7 @@
         <button class="btn btn-buy" onclick="openPopup('Bot Personalizado Premium', 'S/ 30')">COMPRAR AHORA</button>
       </div>
 
-      <div class="product-card">
+      <div class="product-card fade-in">
         <h3>Página Web</h3>
         <div class="product-price">S/ 35</div>
         <ul class="product-features">
@@ -145,7 +77,7 @@
         <button class="btn btn-buy" onclick="openPopup('Página Web', 'S/ 35')">COMPRAR AHORA</button>
       </div>
 
-      <div class="product-card">
+      <div class="product-card fade-in">
         <h3>Hosting Bot Mensual</h3>
         <div class="product-price">S/ 10<span>/mes</span></div>
         <ul class="product-features">
@@ -156,7 +88,7 @@
         <button class="btn btn-buy" onclick="openPopup('Hosting Bot Mensual', 'S/ 10')">COMPRAR AHORA</button>
       </div>
 
-      <div class="product-card">
+      <div class="product-card fade-in">
         <div class="product-badge">AHORRA 20%</div>
         <h3>Hosting Bot Trimestral</h3>
         <div class="product-price">S/ 30<span>/3 meses</span></div>
@@ -167,7 +99,7 @@
         <button class="btn btn-buy" onclick="openPopup('Hosting Bot Trimestral', 'S/ 30')">COMPRAR AHORA</button>
       </div>
 
-      <div class="product-card">
+      <div class="product-card fade-in">
         <div class="product-badge">MEJOR PRECIO</div>
         <h3>Hosting Bot 6 Meses</h3>
         <div class="product-price">S/ 60<span>/6 meses</span></div>
@@ -181,31 +113,81 @@
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="faq" id="faq">
-    <h2 class="section-title">PREGUNTAS FRECUENTES</h2>
-    <div class="faq-container">
-      <div class="faq-item">
-        <div class="faq-question">¿Cómo compro? <span>+</span></div>
-        <div class="faq-answer"><p>Dale a "COMPRAR AHORA", elige tu método de pago, paga y envíame el comprobante por WhatsApp.</p></div>
+  <!-- TESTIMONIOS -->
+  <section class="testimonials" id="testimonials">
+    <h2 class="section-title fade-in">LO QUE DICEN NUESTROS CLIENTES</h2>
+    <div class="testi-grid">
+      <div class="testi-card fade-in">
+        <img src="https://via.placeholder.com/80" class="testi-img" alt="Cliente">
+        <p>"El mejor bot que he usado. El soporte es increíble y responde rápido"</p>
+        <div class="testi-stars">★★★</div>
+        <h4>@Cliente1</h4>
       </div>
+      <div class="testi-card fade-in">
+        <img src="https://via.placeholder.com/80" class="testi-img" alt="Cliente">
+        <p>"Me hizo mi bot personalizado en 24h. Calidad 10/10 recomendado"</p>
+        <div class="testi-stars">★★★</div>
+        <h4>@Cliente2</h4>
+      </div>
+      <div class="testi-card fade-in">
+        <img src="https://via.placeholder.com/80" class="testi-img" alt="Cliente">
+        <p>"El hosting va 24/7 sin caídas. Vale cada sol"</p>
+        <div class="testi-stars">★★★★★</div>
+        <h4>@Cliente3</h4>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:30px;color:#aaa">Mándame el link de las fotos y las reemplazo</p>
+  </section>
+
+  <!-- ÚLTIMAS ACTUALIZACIONES -->
+  <section class="updates" id="updates">
+    <h2 class="section-title fade-in">ÚLTIMAS ACTUALIZACIONES</h2>
+    <div class="update-item fade-in">
+      <div class="update-date">15 ABR 2026</div>
+      <h3>⚡ +50 Comandos Nuevos</h3>
+      <p>Agregamos comandos de IA, juegos nuevos y mejoras en descargas</p>
+    </div>
+    <div class="update-item fade-in">
+      <div class="update-date">10 ABR 2026</div>
+      <h3>🎭 Sistema de Stickers Mejorado</h3>
+      <p>Ahora puedes hacer stickers animados más rápido</p>
+    </div>
+    <div class="update-item fade-in">
+      <div class="update-date">05 ABR 2026</div>
+      <h3>🤖 IA GPT-4 Integrada</h3>
+      <p>El bot ahora usa GPT-4 para respuestas más inteligentes</p>
     </div>
   </section>
 
-  <!-- CONTACTO -->
-  <section class="contact" id="contact">
-    <h2 class="section-title">CONTACTO OFICIAL</h2>
-    <div class="contact-grid">
-      <div class="contact-item">
-        <h3 style="color:#00D5FF">📱 WhatsApp</h3>
-        <a href="https://wa.me/51936994155" style="color:#00D5FF;text-decoration:none;font-size:1.2rem">+51 936 994 155</a>
-      </div>
-    </div>
+  <!-- SISTEMA DE TICKETS -->
+  <section class="tickets" id="tickets">
+    <h2 class="section-title fade-in">SOPORTE - ABRIR TICKET ⚡</h2>
+    <form class="ticket-form fade-in" onsubmit="sendTicket(event)">
+      <label>Tu Nombre:</label>
+      <input type="text" id="ticketName" placeholder="Ej: Juan Perez" required>
+      
+      <label>Tu WhatsApp:</label>
+      <input type="text" id="ticketWhatsapp" placeholder="Ej: 936994155" required>
+      
+      <label>Tipo de Consulta:</label>
+      <select id="ticketType" required>
+        <option value="">Selecciona una opción</option>
+        <option value="Compra/Pago">💰 Compra / Pago</option>
+        <option value="Problema con Bot">🤖 Problema con Bot</option>
+        <option value="Hosting Caído">🖥️ Hosting Caído</option>
+        <option value="Bot Personalizado">⚡ Bot Personalizado</option>
+        <option value="Otro">📝 Otro</option>
+      </select>
+      
+      <label>ID de Compra - Opcional:</label>
+      <input type="text" id="ticketId" placeholder="Ej: Si ya compraste pon el producto">
+      
+      <label>Describe tu problema:</label>
+      <textarea id="ticketMessage" rows="5" placeholder="Explica detalladamente tu problema..." required></textarea>
+      
+      <button type="submit" class="btn btn-buy">ENVIAR TICKET A WHATSAPP</button>
+    </form>
   </section>
-
-  <footer>
-    <p>© 2026 WHOIS YALLICO ⚡ | TIENDA OFICIAL</p>
-  </footer>
 
   <!-- POPUP DE PAGOS -->
   <div class="popup-overlay" id="paymentPopup">
@@ -216,72 +198,30 @@
       <div class="popup-price" id="popupPrice">S/ 0</div>
       
       <div class="payment-methods-popup">
-        <a href="https://wa.me/51936994155?text=Hola%20quiero%20pagar%20con%20Yape" class="payment-btn" target="_blank">
+        <a href="#" id="btnYape" class="payment-btn" target="_blank">
           <span class="payment-icon">💜</span>
-          <div>
-            <div>Pagar con Yape</div>
-            <small>+51 936 994 155</small>
-          </div>
+          <div><div>Pagar con Yape</div><small>+51 936 994 155</small></div>
         </a>
-        
-        <a href="https://wa.me/51936994155?text=Hola%20quiero%20pagar%20con%20Prex" class="payment-btn" target="_blank">
+        <a href="#" id="btnPrex" class="payment-btn" target="_blank">
           <span class="payment-icon">💳</span>
-          <div>
-            <div>Pagar con Prex</div>
-            <small>Te envío el link</small>
-          </div>
+          <div><div>Pagar con Prex</div><small>Te envío el link</small></div>
         </a>
-        
-        <a href="https://wa.me/51936994155?text=Hola%20quiero%20pagar%20con%20Global66" class="payment-btn" target="_blank">
+        <a href="#" id="btnGlobal" class="payment-btn" target="_blank">
           <span class="payment-icon">🌎</span>
-          <div>
-            <div>Pagar con Global66</div>
-            <small>Para pagos internacionales</small>
-          </div>
+          <div><div>Pagar con Global66</div><small>Internacional</small></div>
         </a>
       </div>
-      
-      <div class="popup-note">
-        📝 Después de pagar envía tu comprobante por WhatsApp para activar tu compra al instante
-      </div>
+      <div class="popup-note">📝 Después de pagar envía tu comprobante por WhatsApp</div>
     </div>
   </div>
 
-  <script>
-    let currentProduct = '';
-    let currentPrice = '';
-    
-    function openPopup(product, price) {
-      currentProduct = product;
-      currentPrice = price;
-      document.getElementById('popupProduct').innerText = product;
-      document.getElementById('popupPrice').innerText = price;
-      
-      // Actualizar links de WhatsApp con el producto
-      document.querySelectorAll('.payment-btn').forEach(btn => {
-        let method = btn.querySelector('div div').innerText;
-        btn.href = `https://wa.me/51936994155?text=Hola%20Whois%20quiero%20comprar:%20${encodeURIComponent(product)}%20-${encodeURIComponent(price)}%20Pago%20con:%20${encodeURIComponent(method)}`;
-      });
-      
-      document.getElementById('paymentPopup').classList.add('active');
-    }
-    
-    function closePopup() {
-      document.getElementById('paymentPopup').classList.remove('active');
-    }
-    
-    // Cerrar popup al hacer click fuera
-    document.getElementById('paymentPopup').addEventListener('click', function(e) {
-      if(e.target === this) closePopup();
-    });
-    
-    // FAQ
-    document.querySelectorAll('.faq-question').forEach(item => {
-      item.addEventListener('click', () => {
-        item.parentElement.classList.toggle('active');
-      });
-    });
-  </script>
+  <!-- BOTON FLOTANTE -->
+  <a href="https://wa.me/51936994155" class="whatsapp-float" target="_blank">💬</a>
 
+  <footer>
+    <p>© 2026 WHOIS YALLICO ⚡ | TIENDA OFICIAL | EL TRUENO EN TU WHATSAPP</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
