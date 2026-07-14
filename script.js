@@ -27,6 +27,54 @@ function sendTicket(e) {
   e.target.reset();
 }
 
+// CHATBOT
+function toggleChat(){document.getElementById('chatBox').classList.toggle('active')}
+function sendChat(){
+  let input = document.getElementById('chatInput');
+  let msg = input.value.toLowerCase();
+  if(msg === '') return;
+  addMsg(msg, 'user');
+  input.value = '';
+  setTimeout(()=>{
+    let reply = getBotReply(msg);
+    addMsg(reply, 'bot');
+  }, 600);
+}
+function addMsg(text, type){
+  let div = document.createElement('div');
+  div.className = type + '-msg';
+  div.innerText = text;
+  document.getElementById('chatMessages').appendChild(div);
+  document.getElementById('chatMessages').scrollTop = 9999;
+}
+function getBotReply(msg){
+  if(msg.includes('precio') || msg.includes('cuanto')){
+    return 'Estos son los precios ⚡\nBot: S/7 - S/30\nWeb: S/35\nHosting: S/10/mes\nEscribe "comprar" para ver los links';
+  }
+  if(msg.includes('bot')){
+    return 'Tenemos 3 tipos de Bot:\n1. Grupo S/7\n2. Básico S/20\n3. Premium S/30\n¿Quieres que te pase el de S/20?';
+  }
+  if(msg.includes('hosting')){
+    return 'Hosting 24/7 ⚡\nMensual: S/10\nTrimestral: S/30\n6 Meses: S/60\nIncluye soporte VIP';
+  }
+  if(msg.includes('web')){
+    return 'Páginas Web por S/35 ⚡\nResponsive + Entrega 48h + Diseño pro\n¿Quieres ver ejemplos?';
+  }
+  if(msg.includes('comprar') || msg.includes('pagar')){
+    return 'Dale click a "COMPRAR AHORA" en cualquier producto y te mando a WhatsApp para pagar con Yape, Prex o Global66 💜';
+  }
+  if(msg.includes('soporte')){
+    return 'Baja a la sección SOPORTE y llena el ticket. Te respondo en menos de 2 horas ⚡';
+  }
+  return 'No te entendí bro 😅 Escribe: precio, bot, hosting, web o soporte';
+}
+
+// ESTADO SERVIDOR ACTUALIZABLE
+setInterval(()=>{
+  document.getElementById('botStatus').innerText = 'Online ' + new Date().toLocaleTimeString('es-PE');
+}, 30000);
+
+// REPRODUCTOR
 let audio = document.getElementById('bgMusic');
 let playBtn = document.getElementById('playBtn');
 let progressBar = document.getElementById('progressBar');
