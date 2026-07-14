@@ -3,67 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Whois Yallico ⚡ | Rayo Prem Bot</title>
-  <meta name="description" content="Whois Yallico - Creador de Rayo Prem Bot. El mejor bot de WhatsApp.">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Whois Yallico ⚡ | Tienda Oficial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{background:#02020A;color:#fff;font-family:'Poppins',sans-serif;overflow-x:hidden}
+    body{background:#02020A;color:#fff;font-family:'Poppins',sans-serif}
     
-    /* RAYOS ANIMADOS */
-    .lightning{position:absolute;top:0;left:0;width:100%;height:100vh;pointer-events:none;z-index:1}
-    .lightning span{position:absolute;width:2px;height:100px;background:linear-gradient(transparent,#00D5FF,#fff,#00D5FF,transparent);animation:fall 3s linear infinite;opacity:0}
-    @keyframes fall{0%{transform:translateY(-100px);opacity:0}10%{opacity:1}100%{transform:translateY(100vh);opacity:0}}
-    
-    .hero{
-      height:100vh;position:relative;
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('banner.jpg') no-repeat center center/cover;
-      display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;overflow:hidden
-    }
-    
-    header{padding:20px 10%;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,0.5);position:fixed;width:100%;top:0;z-index:10;backdrop-filter:blur(10px)}
+    .hero{min-height:100vh;background: linear-gradient(rgba(0,10,30,0.85), rgba(0,0,0,0.95)), url('banner.jpg') no-repeat center center/cover;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 20px 40px;}
+    header{padding:20px 10%;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,0.7);position:fixed;width:100%;top:0;z-index:10;backdrop-filter:blur(15px);border-bottom:1px solid #003366}
     header h1{font-family:'Orbitron',sans-serif;font-size:1.5rem;font-weight:800;color:#00D5FF;text-shadow:0 0 15px #00D5FF}
-    nav a{color:#fff;text-decoration:none;margin:0 15px;font-weight:600;transition:0.3s}
+    nav{display:flex;gap:25px}
+    nav a{color:#fff;text-decoration:none;font-weight:600;transition:0.3s}
     nav a:hover{color:#00D5FF}
     
-    .btn{background:linear-gradient(135deg,#00D5FF 0%,#0066FF 100%);padding:15px 35px;border-radius:15px;color:#000;text-decoration:none;font-weight:800;font-family:'Orbitron',sans-serif;font-size:1.1rem;transition:0.3s;border:none;cursor:pointer;display:inline-block}
+    .btn{background:linear-gradient(135deg,#00D5FF 0%,#0066FF 100%);padding:16px 40px;border-radius:15px;color:#000;text-decoration:none;font-weight:800;font-family:'Orbitron',sans-serif;font-size:1.1rem;transition:0.3s;border:none;cursor:pointer;display:inline-block;margin:10px}
     .btn:hover{transform:scale(1.08);box-shadow:0 0 35px #00D5FF}
-    .btn-premium{background:linear-gradient(135deg,#FFD700 0%,#FF8C00 100%)}
-    .btn-premium:hover{box-shadow:0 0 35px #FFD700}
+    .btn-buy{background:linear-gradient(135deg,#00FF88 0%,#00CC66 100%);color:#000;padding:14px 30px;font-size:1rem}
+    .btn-buy:hover{box-shadow:0 0 25px #00FF88}
     
-    .hero h2{font-family:'Orbitron',sans-serif;font-size:4rem;font-weight:800;margin-bottom:20px;color:#00D5FF;text-shadow:0 0 20px #00D5FF;z-index:2}
-    .hero p{font-size:1.3rem;color:#ddd;margin-bottom:40px;z-index:2}
-    
-    /* CONTADOR */
-    .stats{display:flex;gap:40px;margin-top:30px;z-index:2;flex-wrap:wrap;justify-content:center}
-    .stat{text-align:center}
-    .stat h4{font-family:'Orbitron',sans-serif;font-size:2.5rem;color:#00D5FF}
-    .stat p{color:#aaa}
-    
+    .hero h2{font-family:'Orbitron',sans-serif;font-size:3.5rem;font-weight:800;margin-bottom:20px;color:#00D5FF;text-shadow:0 0 25px #00D5FF}
     section{padding:100px 10%}
-    .section-title{font-family:'Orbitron',sans-serif;font-size:2.5rem;text-align:center;color:#00D5FF;margin-bottom:50px;text-shadow:0 0 15px #00D5FF}
+    .section-title{font-family:'Orbitron',sans-serif;font-size:2.8rem;text-align:center;color:#00D5FF;margin-bottom:60px;text-shadow:0 0 20px #00D5FF}
     
-    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
-    .card{background:rgba(10,10,26,0.8);padding:30px;border-radius:20px;border:1px solid #003366;transition:0.3s;backdrop-filter:blur(5px)}
-    .card:hover{border-color:#00D5FF;transform:translateY(-10px);box-shadow:0 0 30px #00D5FF55}
-    .card h3{font-family:'Orbitron',sans-serif;margin-bottom:15px;color:#00D5FF;font-size:1.3rem}
+    .shop{background:linear-gradient(135deg,#001a0d 0%,#000 100%);border-top:3px solid #00FF88;border-bottom:3px solid #00FF88}
+    .shop-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:35px;max-width:1200px;margin:0 auto}
+    .product-card{background:linear-gradient(145deg,rgba(0,255,136,0.1),rgba(0,20,40,0.9));padding:35px;border-radius:25px;border:2px solid #00FF88;text-align:center;transition:0.3s;position:relative}
+    .product-card:hover{transform:scale(1.05);box-shadow:0 0 40px #00FF8866}
+    .product-badge{position:absolute;top:-15px;right:20px;background:#FFD700;color:#000;padding:8px 15px;border-radius:20px;font-weight:800;font-size:0.8rem;font-family:'Orbitron',sans-serif}
+    .product-price{font-family:'Orbitron',sans-serif;font-size:3rem;color:#00FF88;margin:20px 0}
+    .product-price span{font-size:1rem;color:#aaa}
+    .product-features{list-style:none;text-align:left;margin:25px 0}
+    .product-features li{margin:10px 0;color:#ccc}
+    .product-features li::before{content:"✓ ";color:#00FF88;font-weight:800}
     
-    .about{background:linear-gradient(180deg,#02020A 0%,#000 100%)}
-    .about-content{display:flex;gap:50px;align-items:center;flex-wrap:wrap;justify-content:center}
-    .about-text{max-width:600px}
-    .about-text h3{font-family:'Orbitron',sans-serif;color:#00D5FF;font-size:1.8rem;margin-bottom:20px}
-    .about-text p{font-size:1.1rem;line-height:1.8;color:#ccc;margin-bottom:15px}
+    /* POPUP DE PAGOS */
+    .popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:999;display:none;justify-content:center;align-items:center;backdrop-filter:blur(10px)}
+    .popup-overlay.active{display:flex;animation:fadeIn 0.3s}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
     
-    .projects{background:#000}
-    .project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}
+    .popup-content{background:linear-gradient(145deg,#0a0a1a,#001a0d);padding:40px;border-radius:25px;border:2px solid #00FF88;max-width:500px;width:90%;position:relative;animation:slideUp 0.4s}
+    @keyframes slideUp{from{transform:translateY(50px);opacity:0}to{transform:translateY(0);opacity:1}}
     
-    .premium{background:linear-gradient(135deg,#1a1a00 0%,#000 100%);text-align:center;border-top:2px solid #FFD700;border-bottom:2px solid #FFD700}
+    .popup-close{position:absolute;top:15px;right:20px;font-size:2rem;color:#00FF88;cursor:pointer;font-family:'Orbitron',sans-serif}
+    .popup-close:hover{color:#fff}
+    
+    .popup-title{font-family:'Orbitron',sans-serif;font-size:1.8rem;color:#00FF88;margin-bottom:10px;text-align:center}
+    .popup-product{font-size:1.2rem;color:#fff;margin-bottom:20px;text-align:center}
+    .popup-price{font-family:'Orbitron',sans-serif;font-size:2.5rem;color:#00FF88;text-align:center;margin-bottom:30px}
+    
+    .payment-methods-popup{display:flex;flex-direction:column;gap:15px}
+    .payment-btn{background:rgba(0,255,136,0.1);border:2px solid #00FF88;padding:20px;border-radius:15px;color:#fff;text-decoration:none;display:flex;align-items:center;gap:15px;transition:0.3s;font-weight:600;font-size:1.1rem}
+    .payment-btn:hover{background:rgba(0,255,136,0.2);transform:scale(1.02)}
+    .payment-icon{font-size:2rem}
+    
+    .popup-note{margin-top:25px;padding:15px;background:rgba(0,213,255,0.1);border-radius:10px;border:1px solid #00D5FF;text-align:center;font-size:0.9rem;color:#ccc}
+    
+    .faq{background:linear-gradient(180deg,#000 0%,#02020A 100%)}
+    .faq-container{max-width:900px;margin:0 auto}
+    .faq-item{background:rgba(10,10,26,0.8);margin-bottom:20px;border-radius:15px;border:1px solid #003366;overflow:hidden}
+    .faq-question{padding:25px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Orbitron',sans-serif;font-size:1.1rem;color:#00D5FF}
+    .faq-question span{font-size:1.5rem;transition:0.3s}
+    .faq-answer{padding:0 25px;max-height:0;overflow:hidden;transition:0.4s}
+    .faq-answer p{padding-bottom:25px;color:#ccc;line-height:1.8}
+    .faq-item.active .faq-answer{max-height:300px}
+    .faq-item.active .faq-question span{transform:rotate(45deg)}
     
     .contact{background:#02020A;text-align:center}
     .contact-grid{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:40px}
-    .contact-item{background:rgba(10,10,26,0.8);padding:25px;border-radius:15px;border:1px solid #003366;min-width:250px}
-    footer{padding:30px;text-align:center;color:#666;background:#000;border-top:1px solid #003366;font-family:'Orbitron',sans-serif}
+    .contact-item{background:linear-gradient(145deg,rgba(10,10,26,0.9),rgba(0,20,40,0.9));padding:30px;border-radius:15px;border:1px solid #003366;min-width:280px}
+    footer{padding:40px;text-align:center;color:#666;background:#000;border-top:1px solid #003366;font-family:'Orbitron',sans-serif}
   </style>
 </head>
 <body>
@@ -72,109 +81,115 @@
     <h1>⚡ WHOIS YALLICO</h1>
     <nav>
       <a href="#features">Bot</a>
-      <a href="#about">Sobre mí</a>
-      <a href="#projects">Proyectos</a>
-      <a href="#premium">Premium</a>
+      <a href="#shop">Tienda</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contacto</a>
     </nav>
   </header>
 
-  <!-- HERO CON FONDO + RAYOS + CONTADOR -->
+  <!-- HERO -->
   <section class="hero">
-    <div class="lightning">
-      <span style="left:10%;animation-delay:0s"></span>
-      <span style="left:30%;animation-delay:1s"></span>
-      <span style="left:50%;animation-delay:0.5s"></span>
-      <span style="left:70%;animation-delay:1.5s"></span>
-      <span style="left:90%;animation-delay:0.2s"></span>
-    </div>
-    
-    <h2>WHOIS YALLICO ⚡</h2>
-    <p>Creador de Rayo Prem Bot y Proyectos Web</p>
-    <a href="#features" class="btn">CONOCER MÁS</a>
-    
-    <div class="stats">
-      <div class="stat">
-        <h4 id="users">0</h4>
-        <p>Usuarios</p>
+    <h2>RAYO PREM BOT ⚡</h2>
+    <p>El trueno en tu WhatsApp. Bots, Webs y Hosting al mejor precio</p>
+    <a href="#shop" class="btn btn-buy">VER TIENDA</a>
+  </section>
+
+  <!-- TIENDA -->
+  <section class="shop" id="shop">
+    <h2 class="section-title" style="color:#00FF88">TIENDA OFICIAL ⚡</h2>
+    <div class="shop-grid">
+      
+      <div class="product-card">
+        <h3>Bot Para Grupo</h3>
+        <div class="product-price">S/ 7<span> Permanente</span></div>
+        <ul class="product-features">
+          <li>Bot listo para usar</li>
+          <li>200+ Comandos</li>
+          <li>Soporte básico</li>
+        </ul>
+        <button class="btn btn-buy" onclick="openPopup('Bot Para Grupo', 'S/ 7')">COMPRAR AHORA</button>
       </div>
-      <div class="stat">
-        <h4 id="groups">0</h4>
-        <p>Grupos</p>
+
+      <div class="product-card">
+        <div class="product-badge">POPULAR</div>
+        <h3>Bot Personalizado Básico</h3>
+        <div class="product-price">S/ 20</div>
+        <ul class="product-features">
+          <li>Bot con tu nombre y logo</li>
+          <li>Comandos personalizados</li>
+          <li>Soporte 1 mes</li>
+        </ul>
+        <button class="btn btn-buy" onclick="openPopup('Bot Personalizado Básico', 'S/ 20')">COMPRAR AHORA</button>
       </div>
-      <div class="stat">
-        <h4>200+</h4>
-        <p>Comandos</p>
+
+      <div class="product-card">
+        <div class="product-badge">PREMIUM</div>
+        <h3>Bot Personalizado Premium</h3>
+        <div class="product-price">S/ 30</div>
+        <ul class="product-features">
+          <li>Sistema de economía</li>
+          <li>Panel de administración</li>
+          <li>Soporte prioritario 3 meses</li>
+        </ul>
+        <button class="btn btn-buy" onclick="openPopup('Bot Personalizado Premium', 'S/ 30')">COMPRAR AHORA</button>
       </div>
+
+      <div class="product-card">
+        <h3>Página Web</h3>
+        <div class="product-price">S/ 35</div>
+        <ul class="product-features">
+          <li>Diseño responsive</li>
+          <li>Optimizada para móviles</li>
+          <li>Entrega en 48h</li>
+        </ul>
+        <button class="btn btn-buy" onclick="openPopup('Página Web', 'S/ 35')">COMPRAR AHORA</button>
+      </div>
+
+      <div class="product-card">
+        <h3>Hosting Bot Mensual</h3>
+        <div class="product-price">S/ 10<span>/mes</span></div>
+        <ul class="product-features">
+          <li>24/7 Activo</li>
+          <li>CPU y RAM dedicada</li>
+          <li>Soporte técnico</li>
+        </ul>
+        <button class="btn btn-buy" onclick="openPopup('Hosting Bot Mensual', 'S/ 10')">COMPRAR AHORA</button>
+      </div>
+
+      <div class="product-card">
+        <div class="product-badge">AHORRA 20%</div>
+        <h3>Hosting Bot Trimestral</h3>
+        <div class="product-price">S/ 30<span>/3 meses</span></div>
+        <ul class="product-features">
+          <li>Precio especial</li>
+          <li>Prioridad en soporte</li>
+        </ul>
+        <button class="btn btn-buy" onclick="openPopup('Hosting Bot Trimestral', 'S/ 30')">COMPRAR AHORA</button>
+      </div>
+
+      <div class="product-card">
+        <div class="product-badge">MEJOR PRECIO</div>
+        <h3>Hosting Bot 6 Meses</h3>
+        <div class="product-price">S/ 60<span>/6 meses</span></div>
+        <ul class="product-features">
+          <li>Ahorra 40%</li>
+          <li>Soporte VIP</li>
+        </ul>
+        <button class="btn btn-buy" onclick="openPopup('Hosting Bot 6 Meses', 'S/ 60')">COMPRAR AHORA</button>
+      </div>
+
     </div>
   </section>
 
-  <!-- BOT -->
-  <section class="features" id="features">
-    <h2 class="section-title" style="grid-column:1/-1">RAYO PREM BOT</h2>
-    <div class="card">
-      <h3>🎭 STICKERS</h3>
-      <p>.s .bratv .qc .wm .emojimix<br>Crea stickers de imagen, video y texto</p>
-    </div>
-    <div class="card">
-      <h3>📥 DESCARGAS</h3>
-      <p>.ytmp4 .ytmp3 .tiktok .ig<br>Videos y música en HD</p>
-    </div>
-    <div class="card">
-      <h3>🤖 IA PREMIUM</h3>
-      <p>.ai .gpt .img<br>Inteligencia artificial y generación de imágenes</p>
-    </div>
-    <div class="card">
-      <h3>🎮 DIVERSIÓN</h3>
-      <p>.ppt .ruleta .top<br>Juegos para tu grupo 24/7</p>
-    </div>
-  </section>
-
-  <!-- QUIEN SOY YO -->
-  <section class="about" id="about">
-    <h2 class="section-title">¿QUIÉN SOY YO?</h2>
-    <div class="about-content">
-      <div class="about-text">
-        <h3>Whois Yallico ⚡</h3>
-        <p>Soy un <b>creador de WhatsApp Bots</b> y desarrollador de proyectos web.</p>
-        <p>Me dedico a crear herramientas que hacen más fácil y divertida la experiencia en WhatsApp. <b>Rayo Prem Bot</b> es mi proyecto principal con +200 comandos.</p>
-        <p>También desarrollo <b>páginas web, sistemas y bots personalizados</b> para grupos y comunidades.</p>
-        <p>Mi objetivo: Traer "el trueno" a tu WhatsApp ⚡</p>
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <h2 class="section-title">PREGUNTAS FRECUENTES</h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">¿Cómo compro? <span>+</span></div>
+        <div class="faq-answer"><p>Dale a "COMPRAR AHORA", elige tu método de pago, paga y envíame el comprobante por WhatsApp.</p></div>
       </div>
     </div>
-  </section>
-
-  <!-- PROYECTOS -->
-  <section class="projects" id="projects">
-    <h2 class="section-title">MIS PROYECTOS</h2>
-    <div class="project-grid">
-      <div class="card">
-        <h3>⚡ Rayo Prem Bot</h3>
-        <p>Bot de WhatsApp con stickers, descargas, IA, juegos y más. El más completo.</p>
-      </div>
-      <div class="card">
-        <h3>🌐 Páginas Web</h3>
-        <p>Diseño y desarrollo de webs para bots, tiendas y proyectos personales.</p>
-      </div>
-      <div class="card">
-        <h3>🛠️ Sistemas Personalizados</h3>
-        <p>Creación de bots y sistemas a medida para grupos y empresas.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PREMIUM -->
-  <section class="premium" id="premium">
-    <h2 class="section-title" style="color:#FFD700">RAYO PREM PREMIUM ⚡</h2>
-    <p style="font-size:1.2rem;margin-bottom:30px">Desbloquea todas las funciones sin límites</p>
-    <div class="features" style="max-width:800px;margin:0 auto">
-      <div class="card" style="border-color:#FFD700">
-        <h3 style="color:#FFD700">Beneficios Premium</h3>
-        <p>✓ Descargas ilimitadas<br>✓ Sin cooldown<br>✓ Comandos exclusivos<br>✓ Soporte prioritario</p>
-      </div>
-    </div>
-    <a href="https://wa.me/51936994155?text=Quiero%20Premium" class="btn btn-premium" style="margin-top:30px">COMPRAR PREMIUM</a>
-    <p style="margin-top:20px;color:#aaa">Yape | Global66 | Prex</p>
   </section>
 
   <!-- CONTACTO -->
@@ -183,35 +198,88 @@
     <div class="contact-grid">
       <div class="contact-item">
         <h3 style="color:#00D5FF">📱 WhatsApp</h3>
-        <a href="https://wa.me/51936994155" style="color:#00D5FF;text-decoration:none;font-size:1.1rem">+51 936 994 155</a>
-      </div>
-      <div class="contact-item">
-        <h3 style="color:#00D5FF">📷 Instagram</h3>
-        <a href="https://instagram.com/whois.yallico" style="color:#00D5FF;text-decoration:none;font-size:1.1rem">@whois.yallico</a>
+        <a href="https://wa.me/51936994155" style="color:#00D5FF;text-decoration:none;font-size:1.2rem">+51 936 994 155</a>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>© 2026 WHOIS YALLICO ⚡ | RAYO PREM BOT</p>
+    <p>© 2026 WHOIS YALLICO ⚡ | TIENDA OFICIAL</p>
   </footer>
 
+  <!-- POPUP DE PAGOS -->
+  <div class="popup-overlay" id="paymentPopup">
+    <div class="popup-content">
+      <span class="popup-close" onclick="closePopup()">×</span>
+      <h3 class="popup-title">COMPLETAR COMPRA</h3>
+      <p class="popup-product" id="popupProduct">Producto</p>
+      <div class="popup-price" id="popupPrice">S/ 0</div>
+      
+      <div class="payment-methods-popup">
+        <a href="https://wa.me/51936994155?text=Hola%20quiero%20pagar%20con%20Yape" class="payment-btn" target="_blank">
+          <span class="payment-icon">💜</span>
+          <div>
+            <div>Pagar con Yape</div>
+            <small>+51 936 994 155</small>
+          </div>
+        </a>
+        
+        <a href="https://wa.me/51936994155?text=Hola%20quiero%20pagar%20con%20Prex" class="payment-btn" target="_blank">
+          <span class="payment-icon">💳</span>
+          <div>
+            <div>Pagar con Prex</div>
+            <small>Te envío el link</small>
+          </div>
+        </a>
+        
+        <a href="https://wa.me/51936994155?text=Hola%20quiero%20pagar%20con%20Global66" class="payment-btn" target="_blank">
+          <span class="payment-icon">🌎</span>
+          <div>
+            <div>Pagar con Global66</div>
+            <small>Para pagos internacionales</small>
+          </div>
+        </a>
+      </div>
+      
+      <div class="popup-note">
+        📝 Después de pagar envía tu comprobante por WhatsApp para activar tu compra al instante
+      </div>
+    </div>
+  </div>
+
   <script>
-    // CONTADOR ANIMADO
-    function animateCounter(id, end) {
-      let start = 0;
-      let duration = 2000;
-      let increment = end / (duration / 16);
-      let obj = document.getElementById(id);
-      let timer = setInterval(() => {
-        start += increment;
-        if(start >= end) { start = end; clearInterval(timer); }
-        obj.innerHTML = Math.floor(start).toLocaleString();
-      }, 16);
+    let currentProduct = '';
+    let currentPrice = '';
+    
+    function openPopup(product, price) {
+      currentProduct = product;
+      currentPrice = price;
+      document.getElementById('popupProduct').innerText = product;
+      document.getElementById('popupPrice').innerText = price;
+      
+      // Actualizar links de WhatsApp con el producto
+      document.querySelectorAll('.payment-btn').forEach(btn => {
+        let method = btn.querySelector('div div').innerText;
+        btn.href = `https://wa.me/51936994155?text=Hola%20Whois%20quiero%20comprar:%20${encodeURIComponent(product)}%20-${encodeURIComponent(price)}%20Pago%20con:%20${encodeURIComponent(method)}`;
+      });
+      
+      document.getElementById('paymentPopup').classList.add('active');
     }
-    window.addEventListener('load', () => {
-      animateCounter('users', 15420); // Cambia por tus números reales
-      animateCounter('groups', 3280);
+    
+    function closePopup() {
+      document.getElementById('paymentPopup').classList.remove('active');
+    }
+    
+    // Cerrar popup al hacer click fuera
+    document.getElementById('paymentPopup').addEventListener('click', function(e) {
+      if(e.target === this) closePopup();
+    });
+    
+    // FAQ
+    document.querySelectorAll('.faq-question').forEach(item => {
+      item.addEventListener('click', () => {
+        item.parentElement.classList.toggle('active');
+      });
     });
   </script>
 
