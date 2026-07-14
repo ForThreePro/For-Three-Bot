@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Whois Yallico ⚡ | Tienda Oficial</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -13,6 +13,7 @@
     <h1>⚡ WHOIS YALLICO</h1>
     <nav>
       <a href="#shop">Tienda</a>
+      <a href="#faq">FAQ</a>
       <a href="#testimonials">Testimonios</a>
       <a href="#updates">Updates</a>
       <a href="#tickets">Soporte</a>
@@ -25,7 +26,6 @@
     <a href="#shop" class="btn btn-buy">VER TIENDA</a>
   </section>
 
-  <!-- ESTADO DEL SERVIDOR NUEVO -->
   <section class="server-status">
     <h3>⚡ ESTADO DEL SERVIDOR</h3>
     <div class="status-grid">
@@ -57,6 +57,18 @@
     </div>
   </section>
 
+  <section class="faq" id="faq">
+    <h2 class="section-title fade-in">PREGUNTAS FRECUENTES</h2>
+    <div class="faq-container">
+      <div class="faq-item fade-in"><button class="faq-question">¿Cómo instalo el bot? ⚡</button><div class="faq-answer"><p>En menos de 5 min. Te envío el QR, lo escaneas y queda listo. Si compraste hosting yo mismo lo subo 24/7</p></div></div>
+      <div class="faq-item fade-in"><button class="faq-question">¿El hosting se cae o tiene lag?</button><div class="faq-answer"><p>No bro. Tenemos servidor dedicado 24/7 con 99.9% de uptime. Si se cae te devolvemos ese día.</p></div></div>
+      <div class="faq-item fade-in"><button class="faq-question">¿Qué métodos de pago aceptan?</button><div class="faq-answer"><p>Yape, Plin, Prex, Global66 y Transferencia. Todo llega a tu WhatsApp al pagar 💜</p></div></div>
+      <div class="faq-item fade-in"><button class="faq-question">¿El bot tiene garantía?</button><div class="faq-answer"><p>Sí. 7 días de garantía. Si no te gusta te devolvemos el 100% o te damos otro bot.</p></div></div>
+      <div class="faq-item fade-in"><button class="faq-question">¿Cuántos comandos tiene el bot?</button><div class="faq-answer"><p>200+ comandos: IA, stickers, juegos, economía, admin, anti-link y mucho más. Cada mes metemos 10 nuevos.</p></div></div>
+      <div class="faq-item fade-in"><button class="faq-question">¿Puedo personalizar mi bot?</button><div class="faq-answer"><p>Claro! En el plan Básico y Premium le ponemos tu nombre, logo y comandos exclusivos para ti.</p></div></div>
+    </div>
+  </section>
+
   <section class="updates" id="updates">
     <h2 class="section-title fade-in">ÚLTIMAS ACTUALIZACIONES</h2>
     <div class="update-item fade-in"><div class="update-date">15 ABR 2026</div><h3>⚡ +50 Comandos Nuevos</h3><p>Agregamos comandos de IA y juegos nuevos</p></div>
@@ -69,8 +81,7 @@
     <form class="ticket-form fade-in" onsubmit="sendTicket(event)">
       <label>Tu Nombre:</label><input type="text" id="ticketName" required>
       <label>Tu WhatsApp:</label><input type="text" id="ticketWhatsapp" required>
-      <label>Tipo de Consulta:</label>
-      <select id="ticketType" required><option value="">Selecciona</option><option>Compra/Pago</option><option>Problema con Bot</option><option>Hosting Caído</option><option>Otro</option></select>
+      <label>Tipo de Consulta:</label><select id="ticketType" required><option value="">Selecciona</option><option>Compra/Pago</option><option>Problema con Bot</option><option>Hosting Caído</option><option>Otro</option></select>
       <label>ID Compra:</label><input type="text" id="ticketId">
       <label>Describe tu problema:</label><textarea id="ticketMessage" rows="5" required></textarea>
       <button type="submit" class="btn btn-buy">ENVIAR TICKET A WHATSAPP</button>
@@ -94,21 +105,11 @@
 
   <a href="https://wa.me/51936994155" class="whatsapp-float" target="_blank">💬</a>
 
-  <!-- CHATBOT NUEVO -->
   <div class="chatbot-btn" onclick="toggleChat()">💬</div>
   <div class="chatbot-box" id="chatBox">
-    <div class="chat-header">
-      <span>⚡ RAYO BOT</span>
-      <span onclick="toggleChat()" style="cursor:pointer">×</span>
-    </div>
-    <div class="chat-messages" id="chatMessages">
-      <div class="bot-msg">Hola! Soy Rayo Bot ⚡ ¿En qué te ayudo? 
-      Escribe: precio, bot, hosting, web</div>
-    </div>
-    <div class="chat-input">
-      <input type="text" id="chatInput" placeholder="Escribe aquí..." onkeypress="if(event.key==='Enter') sendChat()">
-      <button onclick="sendChat()">➤</button>
-    </div>
+    <div class="chat-header"><span>⚡ RAYO BOT</span><span onclick="toggleChat()" style="cursor:pointer">×</span></div>
+    <div class="chat-messages" id="chatMessages"><div class="bot-msg">Hola! Soy Rayo Bot ⚡ ¿En qué te ayudo? Escribe: precio, bot, hosting, web</div></div>
+    <div class="chat-input"><input type="text" id="chatInput" placeholder="Escribe aquí..." onkeypress="if(event.key==='Enter') sendChat()"><button onclick="sendChat()">➤</button></div>
   </div>
 
   <div class="spotify-player">
