@@ -1,10 +1,6 @@
-// ANIMACIÓN SCROLL
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show')}})
-},{threshold:0.1});
+const observer = new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show')}})},{threshold:0.1});
 document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
 
-// POPUP
 function openPopup(product, price) {
   document.getElementById('popupProduct').innerText = product;
   document.getElementById('popupPrice').innerText = price;
@@ -17,7 +13,6 @@ function openPopup(product, price) {
 function closePopup() {document.getElementById('paymentPopup').classList.remove('active');}
 document.getElementById('paymentPopup').addEventListener('click', function(e) {if(e.target === this) closePopup();});
 
-// TICKETS
 function sendTicket(e) {
   e.preventDefault();
   let name = document.getElementById('ticketName').value;
@@ -32,7 +27,6 @@ function sendTicket(e) {
   e.target.reset();
 }
 
-// SPOTIFY PLAYER + ECUALIZADOR
 let audio = document.getElementById('bgMusic');
 let playBtn = document.getElementById('playBtn');
 let progressBar = document.getElementById('progressBar');
@@ -40,46 +34,27 @@ let volumeBar = document.getElementById('volumeBar');
 let currentTimeEl = document.getElementById('currentTime');
 let durationEl = document.getElementById('duration');
 let bars = document.querySelectorAll('.bar');
-
 let audioContext, analyser, dataArray;
 
-// Iniciar audio context al dar click
 function initAudio() {
   if(!audioContext){
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
     analyser = audioContext.createAnalyser();
     let source = audioContext.createMediaElementSource(audio);
-    source.connect(analyser);
-    analyser.connect(audioContext.destination);
-    analyser.fftSize = 64;
-    dataArray = new Uint8Array(analyser.frequencyBinCount);
+    source.connect(analyser); analyser.connect(audioContext.destination);
+    analyser.fftSize = 64; dataArray = new Uint8Array(analyser.frequencyBinCount);
   }
 }
-
 function toggleMusic() {
   initAudio();
-  if(audio.paused){
-    audio.play();
-    playBtn.innerText = '⏸';
-    animateEqualizer();
-  } else {
-    audio.pause();
-    playBtn.innerText = '▶';
-  }
-}
-
-// ECUALIZADOR ANIMADO
+  if(audio.paused){audio.play();playBtn.innerText = '⏸';animateEqualizer();} 
+  else {audio.pause();playBtn.innerText = '▶';}
 function animateEqualizer() {
   if(audio.paused) return;
   analyser.getByteFrequencyData(dataArray);
-  bars.forEach((bar, i) => {
-    let value = dataArray[i * 2];
-    bar.style.height = `${value / 4}px`;
-  });
+  bars.forEach((bar, i) => {let value = dataArray[i * 2]; bar.style.height = `${value / 4}px`;});
   requestAnimationFrame(animateEqualizer);
 }
-
-// PROGRESO Y TIEMPO
 audio.addEventListener('timeupdate', () => {
   let progress = (audio.currentTime / audio.duration) * 100;
   progressBar.value = progress;
@@ -88,10 +63,5 @@ audio.addEventListener('timeupdate', () => {
 audio.addEventListener('loadedmetadata', () => {durationEl.innerText = formatTime(audio.duration);});
 progressBar.addEventListener('input', () => {audio.currentTime = (progressBar.value / 100) * audio.duration;});
 volumeBar.addEventListener('input', () => {audio.volume = volumeBar.value / 100;});
-function formatTime(seconds) {
-  if(isNaN(seconds)) return "0:00";
-  let min = Math.floor(seconds / 60);
-  let sec = Math.floor(seconds % 60);
-  return `${min}:${sec < 10 ? '0' : ''}${sec}`;
-}
-audio.volume = 0.5;
+function formatTime(seconds) {if(isNaN(seconds)) return "0:00"; let min = Math.floor(seconds / 60); let sec = Math.floor(seconds % 60); return `${min}:${sec < 10 ? '0' : ''}${sec}`;}
+audio.volume = 0.3;
