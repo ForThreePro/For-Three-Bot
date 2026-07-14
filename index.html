@@ -25,6 +25,16 @@
     <a href="#shop" class="btn btn-buy">VER TIENDA</a>
   </section>
 
+  <!-- ESTADO DEL SERVIDOR NUEVO -->
+  <section class="server-status">
+    <h3>⚡ ESTADO DEL SERVIDOR</h3>
+    <div class="status-grid">
+      <div class="status-item"><div class="status-dot online"></div><p>Bot Principal</p><span id="botStatus">Online</span></div>
+      <div class="status-item"><div class="status-dot online"></div><p>Hosting</p><span id="hostStatus">Online 24/7</span></div>
+      <div class="status-item"><div class="status-dot online"></div><p>Web</p><span>Online</span></div>
+    </div>
+  </section>
+
   <section class="shop" id="shop">
     <h2 class="section-title fade-in" style="color:#00FF88">TIENDA OFICIAL ⚡</h2>
     <div class="shop-grid">
@@ -84,7 +94,23 @@
 
   <a href="https://wa.me/51936994155" class="whatsapp-float" target="_blank">💬</a>
 
-  <!-- REPRODUCTOR SPOTIFY SIN ECUALIZADOR -->
+  <!-- CHATBOT NUEVO -->
+  <div class="chatbot-btn" onclick="toggleChat()">💬</div>
+  <div class="chatbot-box" id="chatBox">
+    <div class="chat-header">
+      <span>⚡ RAYO BOT</span>
+      <span onclick="toggleChat()" style="cursor:pointer">×</span>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="bot-msg">Hola! Soy Rayo Bot ⚡ ¿En qué te ayudo? 
+      Escribe: precio, bot, hosting, web</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="chatInput" placeholder="Escribe aquí..." onkeypress="if(event.key==='Enter') sendChat()">
+      <button onclick="sendChat()">➤</button>
+    </div>
+  </div>
+
   <div class="spotify-player">
     <audio id="bgMusic" loop><source src="Musica.mp3" type="audio/mpeg"></audio>
     <div class="spotify-top">
