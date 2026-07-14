@@ -15,11 +15,11 @@ function openPopup(product, price) {
   document.getElementById('btnPrex').href = `https://wa.me/51936994155?text=${mensaje}%20Pago%20con:%20Prex`;
   document.getElementById('btnGlobal').href = `https://wa.me/51936994155?text=${mensaje}%20Pago%20con:%20Global66`;
   document.getElementById('paymentPopup').classList.add('active');
-  document.body.style.overflow = 'hidden'; // Bloquea scroll en móvil
+  document.body.style.overflow = 'hidden';
 }
 function closePopup() {
   document.getElementById('paymentPopup').classList.remove('active');
-  document.body.style.overflow = 'auto'; // Reactiva scroll
+  document.body.style.overflow = 'auto';
 }
 document.getElementById('paymentPopup').addEventListener('click', function(e) {
   if(e.target === this) closePopup();
@@ -45,71 +45,10 @@ document.querySelectorAll('.faq-question').forEach(button => {
   button.addEventListener('click', () => {
     const faqItem = button.parentElement;
     const isActive = faqItem.classList.contains('active');
-    
-    // Cierra todos
-    document.querySelectorAll('.faq-item').forEach(item => {
-      item.classList.remove('active');
-    });
-    
-    // Abre solo el que clickeaste
-    if(!isActive){
-      faqItem.classList.add('active');
-    }
+    document.querySelectorAll('.faq-item').forEach(item => {item.classList.remove('active');});
+    if(!isActive){faqItem.classList.add('active');}
   });
 });
-
-// CHATBOT
-function toggleChat(){
-  document.getElementById('chatBox').classList.toggle('active');
-  document.getElementById('chatInput').focus(); // Abre teclado en móvil
-}
-
-function sendChat(){
-  let input = document.getElementById('chatInput');
-  let msg = input.value.toLowerCase().trim();
-  if(msg === '') return;
-  
-  addMsg(msg, 'user');
-  input.value = '';
-  
-  setTimeout(()=>{
-    let reply = getBotReply(msg);
-    addMsg(reply, 'bot');
-  }, 600);
-}
-
-function addMsg(text, type){
-  let div = document.createElement('div');
-  div.className = type + '-msg';
-  div.innerText = text;
-  document.getElementById('chatMessages').appendChild(div);
-  document.getElementById('chatMessages').scrollTop = 9999;
-}
-
-function getBotReply(msg){
-  if(msg.includes('precio') || msg.includes('cuanto')){
-    return 'Estos son los precios ⚡\n\nBot: S/7 - S/30\nWeb: S/35\nHosting: S/10/mes\n\nEscribe "comprar" para ver los links';
-  }
-  if(msg.includes('bot')){
-    return 'Tenemos 3 tipos de Bot:\n\n1. Grupo S/7\n2. Básico S/20\n3. Premium S/30\n¿Quieres que te pase el de S/20?';
-  }
-  if(msg.includes('hosting')){
-    return 'Hosting 24/7 ⚡\n\nMensual: S/10\nTrimestral: S/30\n6 Meses: S/60\n\nIncluye soporte VIP y 99.9% uptime';
-  }
-  if(msg.includes('web')){
-    return 'Páginas Web por S/35 ⚡\n\nResponsive + Entrega 48h + Diseño pro\n¿Quieres ver ejemplos?';
-  }
-  if(msg.includes('comprar') || msg.includes('pagar')){
-    return 'Dale click a "COMPRAR AHORA" en cualquier producto y te mando a WhatsApp para pagar con Yape, Prex o Global66 💜';
-  }
-  if(msg.includes('soporte') || msg.includes('problema')){
-    return 'Baja a la sección SOPORTE y llena el ticket. Te respondo en menos de 2 horas ⚡';
-  }
-  if(msg.includes('faq') || msg.includes('pregunta')){
-    return 'Baja a la sección FAQ y ahí están todas las respuestas 👇';
-  }
-  return 'No te entendí bro 😅 Escribe: precio, bot, hosting, web, faq o soporte';
-}
 
 // ESTADO SERVIDOR ACTUALIZABLE
 setInterval(()=>{
@@ -135,7 +74,6 @@ function toggleMusic() {
   }
 }
 
-// PROGRESO Y TIEMPO
 audio.addEventListener('timeupdate', () => {
   if(!isNaN(audio.duration)){
     let progress = (audio.currentTime / audio.duration) * 100;
@@ -164,14 +102,3 @@ function formatTime(seconds) {
 }
 
 audio.volume = 0.3;
-
-// Cerrar chatbot al tocar fuera en móvil
-document.addEventListener('click', function(e) {
-  let chatBox = document.getElementById('chatBox');
-  let chatBtn = document.querySelector('.chatbot-btn');
-  if(chatBox.classList.contains('active') && !chatBox.contains(e.target) && !chatBtn.contains(e.target)){
-    if(window.innerWidth < 769){
-      chatBox.classList.remove('active');
-    }
-  }
-});
