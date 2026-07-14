@@ -33,28 +33,17 @@ let progressBar = document.getElementById('progressBar');
 let volumeBar = document.getElementById('volumeBar');
 let currentTimeEl = document.getElementById('currentTime');
 let durationEl = document.getElementById('duration');
-let bars = document.querySelectorAll('.bar');
-let audioContext, analyser, dataArray;
 
-function initAudio() {
-  if(!audioContext){
-    audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    analyser = audioContext.createAnalyser();
-    let source = audioContext.createMediaElementSource(audio);
-    source.connect(analyser); analyser.connect(audioContext.destination);
-    analyser.fftSize = 64; dataArray = new Uint8Array(analyser.frequencyBinCount);
+function toggleMusic() {
+  if(audio.paused){
+    audio.play();
+    playBtn.innerText = '⏸';
+  } else {
+    audio.pause();
+    playBtn.innerText = '▶';
   }
 }
-function toggleMusic() {
-  initAudio();
-  if(audio.paused){audio.play();playBtn.innerText = '⏸';animateEqualizer();} 
-  else {audio.pause();playBtn.innerText = '▶';}
-function animateEqualizer() {
-  if(audio.paused) return;
-  analyser.getByteFrequencyData(dataArray);
-  bars.forEach((bar, i) => {let value = dataArray[i * 2]; bar.style.height = `${value / 4}px`;});
-  requestAnimationFrame(animateEqualizer);
-}
+
 audio.addEventListener('timeupdate', () => {
   let progress = (audio.currentTime / audio.duration) * 100;
   progressBar.value = progress;
