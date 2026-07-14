@@ -84,11 +84,12 @@
 
   <a href="https://wa.me/51936994155" class="whatsapp-float" target="_blank">💬</a>
 
+  <!-- REPRODUCTOR SPOTIFY SIN ECUALIZADOR -->
   <div class="spotify-player">
-    <audio id="bgMusic" loop crossorigin="anonymous"><source src="Musica.mp3" type="audio/mpeg"></audio>
+    <audio id="bgMusic" loop><source src="Musica.mp3" type="audio/mpeg"></audio>
     <div class="spotify-top">
       <div class="spotify-left"><img src="banner.jpg" alt="Cover" class="spotify-cover"><div class="spotify-info"><div class="spotify-song">Rayo Prem Beat</div><div class="spotify-artist">Whois Yallico</div></div></div>
-      <div class="spotify-center"><button onclick="toggleMusic()" id="playBtn">▶</button><div class="equalizer" id="equalizer"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div></div>
+      <div class="spotify-center"><button onclick="toggleMusic()" id="playBtn">▶</button></div>
     </div>
     <div class="spotify-bottom"><span id="currentTime">0:00</span><input type="range" id="progressBar" value="0" max="100"><span id="duration">0:00</span></div>
     <div class="spotify-right"><span>🔊</span><input type="range" id="volumeBar" min="0" max="100" value="30"></div>
