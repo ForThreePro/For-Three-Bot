@@ -8,37 +8,61 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    body{background:#02020A;color:#fff;font-family:'Poppins',sans-serif}
+    html{scroll-behavior:smooth}
+    body{background:#02020A;color:#fff;font-family:'Poppins',sans-serif;overflow-x:hidden}
     
-    /* FONDO CON TU BANNER */
+    /* RAYOS ANIMADOS */
+    .lightning{position:absolute;top:0;left:0;width:100%;height:100vh;pointer-events:none;z-index:1}
+    .lightning span{position:absolute;width:2px;height:100px;background:linear-gradient(transparent,#00D5FF,#fff,#00D5FF,transparent);animation:fall 3s linear infinite;opacity:0}
+    @keyframes fall{0%{transform:translateY(-100px);opacity:0}10%{opacity:1}100%{transform:translateY(100vh);opacity:0}}
+    
     .hero{
-      height:100vh;
+      height:100vh;position:relative;
       background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('banner.jpg') no-repeat center center/cover;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      padding:20px;
+      display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;overflow:hidden
     }
     
     header{padding:20px 10%;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,0.5);position:fixed;width:100%;top:0;z-index:10;backdrop-filter:blur(10px)}
-    header h1{font-family:'Orbitron',sans-serif;font-size:1.6rem;font-weight:800;color:#00D5FF;text-shadow:0 0 15px #00D5FF}
-    .btn{background:linear-gradient(135deg,#00D5FF 0%,#0066FF 100%);padding:15px 35px;border-radius:15px;color:#000;text-decoration:none;font-weight:800;font-family:'Orbitron',sans-serif;font-size:1.1rem;transition:0.3s;border:none;cursor:pointer}
+    header h1{font-family:'Orbitron',sans-serif;font-size:1.5rem;font-weight:800;color:#00D5FF;text-shadow:0 0 15px #00D5FF}
+    nav a{color:#fff;text-decoration:none;margin:0 15px;font-weight:600;transition:0.3s}
+    nav a:hover{color:#00D5FF}
+    
+    .btn{background:linear-gradient(135deg,#00D5FF 0%,#0066FF 100%);padding:15px 35px;border-radius:15px;color:#000;text-decoration:none;font-weight:800;font-family:'Orbitron',sans-serif;font-size:1.1rem;transition:0.3s;border:none;cursor:pointer;display:inline-block}
     .btn:hover{transform:scale(1.08);box-shadow:0 0 35px #00D5FF}
+    .btn-premium{background:linear-gradient(135deg,#FFD700 0%,#FF8C00 100%)}
+    .btn-premium:hover{box-shadow:0 0 35px #FFD700}
     
-    .hero h2{font-family:'Orbitron',sans-serif;font-size:4rem;font-weight:800;margin-bottom:20px;color:#00D5FF;text-shadow:0 0 20px #00D5FF, 0 0 40px #00D5FF}
-    .hero p{font-size:1.3rem;color:#ddd;margin-bottom:40px;text-shadow:0 0 10px #000}
+    .hero h2{font-family:'Orbitron',sans-serif;font-size:4rem;font-weight:800;margin-bottom:20px;color:#00D5FF;text-shadow:0 0 20px #00D5FF;z-index:2}
+    .hero p{font-size:1.3rem;color:#ddd;margin-bottom:40px;z-index:2}
     
-    .features{padding:100px 10%;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;background:#02020A}
+    /* CONTADOR */
+    .stats{display:flex;gap:40px;margin-top:30px;z-index:2;flex-wrap:wrap;justify-content:center}
+    .stat{text-align:center}
+    .stat h4{font-family:'Orbitron',sans-serif;font-size:2.5rem;color:#00D5FF}
+    .stat p{color:#aaa}
+    
+    section{padding:100px 10%}
+    .section-title{font-family:'Orbitron',sans-serif;font-size:2.5rem;text-align:center;color:#00D5FF;margin-bottom:50px;text-shadow:0 0 15px #00D5FF}
+    
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
     .card{background:rgba(10,10,26,0.8);padding:30px;border-radius:20px;border:1px solid #003366;transition:0.3s;backdrop-filter:blur(5px)}
     .card:hover{border-color:#00D5FF;transform:translateY(-10px);box-shadow:0 0 30px #00D5FF55}
     .card h3{font-family:'Orbitron',sans-serif;margin-bottom:15px;color:#00D5FF;font-size:1.3rem}
     
-    .creator{background:#000;padding:80px 10%;text-align:center}
-    .creator h2{font-family:'Orbitron',sans-serif;color:#00D5FF;font-size:2.5rem;margin-bottom:20px;text-shadow:0 0 15px #00D5FF}
+    .about{background:linear-gradient(180deg,#02020A 0%,#000 100%)}
+    .about-content{display:flex;gap:50px;align-items:center;flex-wrap:wrap;justify-content:center}
+    .about-text{max-width:600px}
+    .about-text h3{font-family:'Orbitron',sans-serif;color:#00D5FF;font-size:1.8rem;margin-bottom:20px}
+    .about-text p{font-size:1.1rem;line-height:1.8;color:#ccc;margin-bottom:15px}
+    
+    .projects{background:#000}
+    .project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}
+    
+    .premium{background:linear-gradient(135deg,#1a1a00 0%,#000 100%);text-align:center;border-top:2px solid #FFD700;border-bottom:2px solid #FFD700}
+    
+    .contact{background:#02020A;text-align:center}
     .contact-grid{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:40px}
-    .contact-item{background:rgba(10,10,26,0.8);padding:25px;border-radius:15px;border:1px solid #003366;min-width:250px;backdrop-filter:blur(5px)}
+    .contact-item{background:rgba(10,10,26,0.8);padding:25px;border-radius:15px;border:1px solid #003366;min-width:250px}
     footer{padding:30px;text-align:center;color:#666;background:#000;border-top:1px solid #003366;font-family:'Orbitron',sans-serif}
   </style>
 </head>
@@ -46,24 +70,55 @@
 
   <header>
     <h1>⚡ WHOIS YALLICO</h1>
-    <a href="https://wa.me/51936994155" class="btn">USAR BOT</a>
+    <nav>
+      <a href="#features">Bot</a>
+      <a href="#about">Sobre mí</a>
+      <a href="#projects">Proyectos</a>
+      <a href="#premium">Premium</a>
+      <a href="#contact">Contacto</a>
+    </nav>
   </header>
 
-  <!-- SECCIÓN HERO CON FONDO -->
+  <!-- HERO CON FONDO + RAYOS + CONTADOR -->
   <section class="hero">
-    <h2>RAYO PREM BOT ⚡</h2>
-    <p>El trueno en tu WhatsApp. +200 comandos. Stickers, Descargas, IA y más.</p>
-    <a href="#features" class="btn">EXPLORAR COMANDOS</a>
+    <div class="lightning">
+      <span style="left:10%;animation-delay:0s"></span>
+      <span style="left:30%;animation-delay:1s"></span>
+      <span style="left:50%;animation-delay:0.5s"></span>
+      <span style="left:70%;animation-delay:1.5s"></span>
+      <span style="left:90%;animation-delay:0.2s"></span>
+    </div>
+    
+    <h2>WHOIS YALLICO ⚡</h2>
+    <p>Creador de Rayo Prem Bot y Proyectos Web</p>
+    <a href="#features" class="btn">CONOCER MÁS</a>
+    
+    <div class="stats">
+      <div class="stat">
+        <h4 id="users">0</h4>
+        <p>Usuarios</p>
+      </div>
+      <div class="stat">
+        <h4 id="groups">0</h4>
+        <p>Grupos</p>
+      </div>
+      <div class="stat">
+        <h4>200+</h4>
+        <p>Comandos</p>
+      </div>
+    </div>
   </section>
 
+  <!-- BOT -->
   <section class="features" id="features">
+    <h2 class="section-title" style="grid-column:1/-1">RAYO PREM BOT</h2>
     <div class="card">
       <h3>🎭 STICKERS</h3>
       <p>.s .bratv .qc .wm .emojimix<br>Crea stickers de imagen, video y texto</p>
     </div>
     <div class="card">
       <h3>📥 DESCARGAS</h3>
-      <p>.ytmp4 .ytmp3 .tiktok .ig .fb<br>Videos y música en HD</p>
+      <p>.ytmp4 .ytmp3 .tiktok .ig<br>Videos y música en HD</p>
     </div>
     <div class="card">
       <h3>🤖 IA PREMIUM</h3>
@@ -71,15 +126,60 @@
     </div>
     <div class="card">
       <h3>🎮 DIVERSIÓN</h3>
-      <p>.ppt .ruleta .top .tictactoe<br>Juegos para tu grupo 24/7</p>
+      <p>.ppt .ruleta .top<br>Juegos para tu grupo 24/7</p>
     </div>
   </section>
 
-  <section class="creator">
-    <h2>CREADOR OFICIAL</h2>
-    <p style="font-size:1.3rem;margin-bottom:10px"><b>Whois Yallico</b></p>
-    <p style="color:#aaa;margin-bottom:30px">Desarrollador de Rayo Prem Bot</p>
-    
+  <!-- QUIEN SOY YO -->
+  <section class="about" id="about">
+    <h2 class="section-title">¿QUIÉN SOY YO?</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <h3>Whois Yallico ⚡</h3>
+        <p>Soy un <b>creador de WhatsApp Bots</b> y desarrollador de proyectos web.</p>
+        <p>Me dedico a crear herramientas que hacen más fácil y divertida la experiencia en WhatsApp. <b>Rayo Prem Bot</b> es mi proyecto principal con +200 comandos.</p>
+        <p>También desarrollo <b>páginas web, sistemas y bots personalizados</b> para grupos y comunidades.</p>
+        <p>Mi objetivo: Traer "el trueno" a tu WhatsApp ⚡</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section class="projects" id="projects">
+    <h2 class="section-title">MIS PROYECTOS</h2>
+    <div class="project-grid">
+      <div class="card">
+        <h3>⚡ Rayo Prem Bot</h3>
+        <p>Bot de WhatsApp con stickers, descargas, IA, juegos y más. El más completo.</p>
+      </div>
+      <div class="card">
+        <h3>🌐 Páginas Web</h3>
+        <p>Diseño y desarrollo de webs para bots, tiendas y proyectos personales.</p>
+      </div>
+      <div class="card">
+        <h3>🛠️ Sistemas Personalizados</h3>
+        <p>Creación de bots y sistemas a medida para grupos y empresas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREMIUM -->
+  <section class="premium" id="premium">
+    <h2 class="section-title" style="color:#FFD700">RAYO PREM PREMIUM ⚡</h2>
+    <p style="font-size:1.2rem;margin-bottom:30px">Desbloquea todas las funciones sin límites</p>
+    <div class="features" style="max-width:800px;margin:0 auto">
+      <div class="card" style="border-color:#FFD700">
+        <h3 style="color:#FFD700">Beneficios Premium</h3>
+        <p>✓ Descargas ilimitadas<br>✓ Sin cooldown<br>✓ Comandos exclusivos<br>✓ Soporte prioritario</p>
+      </div>
+    </div>
+    <a href="https://wa.me/51936994155?text=Quiero%20Premium" class="btn btn-premium" style="margin-top:30px">COMPRAR PREMIUM</a>
+    <p style="margin-top:20px;color:#aaa">Yape | Global66 | Prex</p>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contact" id="contact">
+    <h2 class="section-title">CONTACTO OFICIAL</h2>
     <div class="contact-grid">
       <div class="contact-item">
         <h3 style="color:#00D5FF">📱 WhatsApp</h3>
@@ -89,16 +189,31 @@
         <h3 style="color:#00D5FF">📷 Instagram</h3>
         <a href="https://instagram.com/whois.yallico" style="color:#00D5FF;text-decoration:none;font-size:1.1rem">@whois.yallico</a>
       </div>
-      <div class="contact-item">
-        <h3 style="color:#00D5FF">💳 Métodos de Pago</h3>
-        <p>Yape | Global66 | Prex</p>
-      </div>
     </div>
   </section>
 
   <footer>
     <p>© 2026 WHOIS YALLICO ⚡ | RAYO PREM BOT</p>
   </footer>
+
+  <script>
+    // CONTADOR ANIMADO
+    function animateCounter(id, end) {
+      let start = 0;
+      let duration = 2000;
+      let increment = end / (duration / 16);
+      let obj = document.getElementById(id);
+      let timer = setInterval(() => {
+        start += increment;
+        if(start >= end) { start = end; clearInterval(timer); }
+        obj.innerHTML = Math.floor(start).toLocaleString();
+      }, 16);
+    }
+    window.addEventListener('load', () => {
+      animateCounter('users', 15420); // Cambia por tus números reales
+      animateCounter('groups', 3280);
+    });
+  </script>
 
 </body>
 </html>
