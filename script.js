@@ -53,3 +53,24 @@ function sendTicket(e) {
   alert('✅ Ticket enviado! Te responderé por WhatsApp en menos de 2 horas ⚡');
   e.target.reset();
 }
+
+// MÚSICA DE FONDO
+let music = document.getElementById('bgMusic');
+let musicBtn = document.getElementById('musicBtn');
+let isPlaying = false;
+
+function toggleMusic() {
+  if(isPlaying){
+    music.pause();
+    musicBtn.innerText = '🔇';
+    musicBtn.classList.add('muted');
+  } else {
+    music.play();
+    musicBtn.innerText = '🔊';
+    musicBtn.classList.remove('muted');
+  }
+  isPlaying = !isPlaying;
+}
+
+// Volumen bajito
+music.volume = 0.6;
