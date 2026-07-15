@@ -3,154 +3,160 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rayo Prem Bot ⚡ | Whois Yallico</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Whois Yallico | Soluciones Digitales</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="bg-overlay"></div>
+  <div class="bg-gradient"></div>
 
   <header>
-    <h1>⚡ RAYO PREM</h1>
+    <h1>Whois<span>Yallico</span></h1>
     <nav>
-      <a href="#shop">Tienda</a>
-      <a href="#commands">Comandos</a>
-      <a href="https://wa.me/51936994155" target="_blank">Soporte</a>
+      <a href="#services">Servicios</a>
+      <a href="#pricing">Precios</a>
+      <a href="https://wa.me/51936994155" target="_blank">Contacto</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h2 class="title-glow">Rayo Prem <span>Bot</span></h2>
-    <p class="subtitle">El Mejor Bot para WhatsApp del Perú 🇵🇪</p>
+    <h2 class="hero-title">Soluciones Digitales<br><span>para tu Negocio</span></h2>
+    <p class="hero-subtitle">Bots de WhatsApp, Páginas Web y Hosting Profesional. Hecho en Perú 🇵🇪</p>
     
-    <div class="info-badges">
-      <a href="https://wa.me/51936994155" class="badge" target="_blank">📱 +51 936 994 155</a>
-      <a href="https://instagram.com/whois.yallico" class="badge" target="_blank">📸 @whois.yallico</a>
+    <div class="hero-info">
+      <div>📱 +51 936 994 155</div>
+      <div>📸 @whois.yallico</div>
     </div>
 
-    <div class="payments">Aceptamos: 💜 Yape | 💳 Prex</div>
-
-    <a href="#shop" class="btn-main">VER TIENDA ⚡</a>
-    <div class="warning">⚠️ No se realizan reembolsos</div>
+    <a href="#pricing" class="btn-primary">Ver Servicios</a>
+    <div class="warning">* No se realizan reembolsos</div>
   </section>
 
-  <div class="divider"></div>
+  <section class="services" id="services">
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="icon">🤖</div>
+        <h3>Bots para WhatsApp</h3>
+        <p>Automatiza tu negocio con +200 comandos, economía, juegos y más.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🌐</div>
+        <h3>Páginas Web</h3>
+        <p>Diseño responsive y moderno. Entrega en 48 horas.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">☁️</div>
+        <h3>Hosting 24/7</h3>
+        <p>Mantén tu bot online todo el día con soporte técnico incluido.</p>
+      </div>
+    </div>
+  </section>
 
-  <section class="shop" id="shop">
-    <h2 class="section-title">ELIGE TU PODER</h2>
-    <div class="cards-grid">
+  <section class="pricing" id="pricing">
+    <h2 class="section-title">Elige tu Plan</h2>
+    <div class="pricing-grid">
       
-      <div class="card" style="--delay:0.1s">
-        <h3>Bot Para Grupo</h3>
-        <div class="price">S/ 7</div>
-        <ul><li>✓ 200+ Comandos</li><li>✓ Para Grupos</li></ul>
-        <button onclick="openPopup('Bot Para Grupo', 'S/ 7')">COMPRAR</button>
+      <div class="plan">
+        <h3>Bot Grupo</h3>
+        <div class="plan-price">S/ 7</div>
+        <ul><li>200+ Comandos</li><li>Para Grupos</li><li>Soporte básico</li></ul>
+        <button onclick="openPopup('Bot Grupo', 'S/ 7')">Contratar</button>
       </div>
 
-      <div class="card" style="--delay:0.2s">
-        <h3>Bot Personalizado Básico</h3>
-        <div class="price">S/ 20</div>
-        <ul><li>✓ Nombre y Logo</li><li>✓ Soporte 1 mes</li></ul>
-        <button onclick="openPopup('Bot Básico', 'S/ 20')">COMPRAR</button>
+      <div class="plan">
+        <h3>Bot Básico</h3>
+        <div class="plan-price">S/ 20</div>
+        <ul><li>Nombre y Logo</li><li>Personalizado</li><li>Soporte 1 mes</li></ul>
+        <button onclick="openPopup('Bot Básico', 'S/ 20')">Contratar</button>
       </div>
 
-      <div class="card featured" style="--delay:0.3s">
-        <div class="tag">MÁS VENDIDO</div>
-        <h3>Bot Personalizado Premium</h3>
-        <div class="price">S/ 30</div>
-        <ul><li>✓ Economía + Panel</li><li>✓ Soporte 3 meses</li><li>✓ Anti-Ban</li></ul>
-        <button onclick="openPopup('Bot Premium', 'S/ 30')">COMPRAR</button>
+      <div class="plan featured">
+        <div class="badge">Recomendado</div>
+        <h3>Bot Premium</h3>
+        <div class="plan-price">S/ 30</div>
+        <ul><li>Economía + Panel</li><li>Anti-Ban</li><li>Soporte 3 meses</li></ul>
+        <button onclick="openPopup('Bot Premium', 'S/ 30')">Contratar</button>
       </div>
 
-      <div class="card" style="--delay:0.4s">
+      <div class="plan">
         <h3>Página Web</h3>
-        <div class="price">S/ 35</div>
-        <ul><li>✓ Diseño Responsive</li><li>✓ Entrega 48h</li></ul>
-        <button onclick="openPopup('Página Web', 'S/ 35')">COMPRAR</button>
+        <div class="plan-price">S/ 35</div>
+        <ul><li>Diseño Responsive</li><li>Entrega 48h</li><li>Dominio incluido</li></ul>
+        <button onclick="openPopup('Página Web', 'S/ 35')">Contratar</button>
       </div>
 
-      <div class="card" style="--delay:0.5s">
-        <h3>Hosting Bot Mensual</h3>
-        <div class="price">S/ 10</div>
-        <ul><li>✓ 24/7 Online</li><li>✓ Soporte técnico</li></ul>
-        <button onclick="openPopup('Hosting 1 Mes', 'S/ 10')">COMPRAR</button>
+      <div class="plan">
+        <h3>Hosting 1 Mes</h3>
+        <div class="plan-price">S/ 10</div>
+        <ul><li>24/7 Online</li><li>Soporte técnico</li><li>Reinicio automático</li></ul>
+        <button onclick="openPopup('Hosting 1 Mes', 'S/ 10')">Contratar</button>
       </div>
 
-      <div class="card" style="--delay:0.6s">
-        <h3>Hosting Bot 3 Meses</h3>
-        <div class="price">S/ 30</div>
-        <ul><li>✓ Ahorra 20%</li><li>✓ Prioridad</li></ul>
-        <button onclick="openPopup('Hosting 3 Meses', 'S/ 30')">COMPRAR</button>
-      </div>
-
-      <div class="card" style="--delay:0.7s">
-        <h3>Hosting Bot 6 Meses</h3>
-        <div class="price">S/ 60</div>
-        <ul><li>✓ Ahorra 40%</li><li>✓ Soporte VIP</li></ul>
-        <button onclick="openPopup('Hosting 6 Meses', 'S/ 60')">COMPRAR</button>
+      <div class="plan">
+        <h3>Hosting 6 Meses</h3>
+        <div class="plan-price">S/ 60</div>
+        <ul><li>Ahorra 40%</li><li>Soporte VIP</li><li>Prioridad</li></ul>
+        <button onclick="openPopup('Hosting 6 Meses', 'S/ 60')">Contratar</button>
       </div>
 
     </div>
   </section>
-
-  <div class="divider"></div>
 
   <section class="commands" id="commands">
-    <h2 class="section-title">+200 COMANDOS</h2>
-    <input type="text" id="commandSearch" placeholder="Busca: sticker, ia, play..." class="command-search">
-    <div class="cmd-grid" id="commandsGrid">
-      <div class="cmd-item">.sticker</div><div class="cmd-item">.ia</div><div class="cmd-item">.play</div>
-      <div class="cmd-item">.economia</div><div class="cmd-item">.juego</div><div class="cmd-item">.menu</div>
+    <h2 class="section-title">Comandos Disponibles</h2>
+    <input type="text" id="commandSearch" placeholder="Busca un comando..." class="search-input">
+    <div class="cmd-container" id="commandsGrid">
+      <span>.sticker</span><span>.ia</span><span>.play</span><span>.economia</span>
+      <span>.juego</span><span>.menu</span><span>.kick</span><span>.antiporn</span>
     </div>
   </section>
 
-  <!-- POPUP PRO CON PESTAÑAS -->
+  <!-- POPUP CORPORATIVO -->
   <div class="popup" id="paymentPopup">
     <div class="popup-box">
       <span class="close" onclick="closePopup()">×</span>
-      <h3>💳 FINALIZAR PAGO</h3>
+      <h3>Finalizar Compra</h3>
       <p id="popupProduct" class="popup-product"></p>
       <div class="popup-price" id="popupPrice"></div>
 
       <div class="tabs">
-        <button class="tab-btn active" onclick="showTab('yape')">💜 Yape</button>
-        <button class="tab-btn" onclick="showTab('prex')">💳 Prex</button>
+        <button class="tab-btn active" onclick="showTab('yape')">Yape</button>
+        <button class="tab-btn" onclick="showTab('prex')">Prex</button>
       </div>
 
-      <!-- TAB YAPE -->
       <div class="tab-content active" id="tab-yape">
         <div class="pay-card">
-          <div class="pay-label">Número Yape</div>
-          <div class="pay-number">
+          <label>Número Yape</label>
+          <div class="pay-row">
             <span>936 994 155</span>
-            <button onclick="copyText('936994155')">📋</button>
+            <button onclick="copyText('936994155')">Copiar</button>
           </div>
-          <div class="pay-label">Nombre</div>
+          <label>Nombre</label>
           <div class="pay-name">Cristhofer Rojas Huarcaya</div>
         </div>
       </div>
 
-      <!-- TAB PREX -->
       <div class="tab-content" id="tab-prex">
         <div class="pay-card">
-          <div class="pay-label">Número Prex</div>
-          <div class="pay-number">
+          <label>Número Prex</label>
+          <div class="pay-row">
             <span>12249975</span>
-            <button onclick="copyText('12249975')">📋</button>
+            <button onclick="copyText('12249975')">Copiar</button>
           </div>
-          <div class="pay-label">Nombre</div>
+          <label>Nombre</label>
           <div class="pay-name">Cristhofer Rojas Huarcaya</div>
         </div>
       </div>
 
       <div class="steps">
-        <p>1. Realiza el pago</p>
-        <p>2. Toma captura</p>
-        <p>3. Envía por WhatsApp</p>
+        <p><b>1.</b> Realiza el pago</p>
+        <p><b>2.</b> Toma captura</p>
+        <p><b>3.</b> Envía por WhatsApp</p>
       </div>
 
-      <a href="#" id="btnConfirmar" class="pay-btn" target="_blank">✅ ENVIAR CAPTURA</a>
+      <a href="#" id="btnConfirmar" class="btn-primary" target="_blank">Enviar Captura por WhatsApp</a>
     </div>
   </div>
 
@@ -158,12 +164,11 @@
 
   <div class="music-bar">
     <audio id="bgMusic" loop><source src="Musica.mp3" type="audio/mpeg"></audio>
-    <img src="banner.jpg">
-    <div class="song-info"><div>Tech Beat</div><small>Whois Yallico</small></div>
+    <div class="song-info"><div>Background Music</div><small>Whois Yallico</small></div>
     <button onclick="toggleMusic()" id="playBtn">▶</button>
   </div>
 
-  <footer>© 2026 RAYO PREM BOT | @whois.yallico</footer>
+  <footer>© 2026 Whois Yallico. Todos los derechos reservados.</footer>
   <script src="script.js"></script>
 </body>
 </html>
