@@ -1,6 +1,16 @@
 const observer = new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show')}})},{threshold:0.1});
 document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
 
+// RAYOS ANIMADOS
+for(let i=0; i<15; i++){
+  let ray = document.createElement('div');
+  ray.className = 'ray';
+  ray.style.left = Math.random()*100 + '%';
+  ray.style.animationDuration = (3+Math.random()*3) + 's';
+  ray.style.animationDelay = Math.random()*2 + 's';
+  document.getElementById('rays').appendChild(ray);
+}
+
 function updateCountdown() {
   let end = new Date().getTime() + 24*60*60*1000;
   setInterval(()=>{
@@ -13,7 +23,7 @@ function updateCountdown() {
 }
 updateCountdown();
 
-const sales = ["Juan de Lima compró Bot Premium", "Maria de Arequipa compró Hosting", "Luis de Trujillo compró Web"];
+const sales = ["Juan de Lima adquirió Bot Premium", "Maria de Arequipa adquirió Hosting", "Luis de Trujillo adquirió Web"];
 let i = 0;
 setInterval(()=>{document.getElementById('liveSales').innerText = `🔥 ${sales[i]} hace ${Math.floor(Math.random()*5)+1} min`; i = (i+1)%sales.length}, 7000);
 
@@ -21,12 +31,6 @@ document.getElementById('commandSearch').addEventListener('input', e=>{
   let s = e.target.value.toLowerCase();
   document.querySelectorAll('.command-card').forEach(c=>{c.style.display = c.innerText.toLowerCase().includes(s) ? 'block' : 'none'});
 });
-
-let exitShown = false;
-document.addEventListener('mouseleave', e=>{if(e.clientY < 0 && !exitShown){document.getElementById('exitPopup').classList.add('active'); exitShown = true}});
-function closeExit(){document.getElementById('exitPopup').classList.remove('active')}
-
-for(let j=0; j<20; j++){let p = document.createElement('div'); p.style.cssText = `position:fixed;width:2px;height:2px;background:#00D5FF;left:${Math.random()*100}%;top:-10px;animation:fall ${4+Math.random()*4}s linear infinite`; document.getElementById('particles').appendChild(p)}
 
 function openPopup(product, price) {
   document.getElementById('popupProduct').innerText = product;
@@ -45,7 +49,7 @@ function sendTicket(e) {
   e.preventDefault();
   let t = `🚨 *TICKET* 🚨%0A*Nombre:* ${ticketName.value}%0A*WhatsApp:* ${ticketWhatsapp.value}%0A*Tipo:* ${ticketType.value}%0A*Mensaje:* ${ticketMessage.value}`;
   window.open(`https://wa.me/51936994155?text=${t}`, '_blank');
-  alert('✅ Enviado! Respondo en 2h ⚡');
+  alert('✅ Enviado! Respondo en 2h');
   e.target.reset();
 }
 
