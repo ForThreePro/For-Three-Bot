@@ -18,7 +18,7 @@
     <nav>
       <a href="#services">Servicios</a>
       <a href="#pricing">Planes</a>
-      <a href="#music">Música</a>
+      <a href="#music">Playlist</a>
       <a href="#contact">Contacto</a>
     </nav>
   </header>
@@ -97,33 +97,37 @@
     </div>
   </section>
 
-  <!-- SECCIÓN MÚSICA -->
+  <!-- PLAYLIST SPOTIFY -->
   <section class="music-section glass-section" id="music">
     <h2>Mi Playlist 🎵</h2>
 
-    <div class="music-player-pro glass">
-      <div class="player-main">
-        <img id="cover" src="https://placehold.co/120x120/A78BFA/0D0B14?text=♪" alt="cover">
-        <div class="player-info">
-          <h3 id="songTitle">Cargando...</h3>
-          <p id="songArtist">Whois Yallico</p>
-          <div class="player-controls">
-            <button onclick="prevSong()">⏮</button>
-            <button onclick="toggleMusicPro()" id="playBtnPro">▶</button>
-            <button onclick="nextSong()">⏭</button>
-          </div>
-          <audio id="audioPlayer"></audio>
+    <div class="spotify-player glass">
+      <!-- Now Playing -->
+      <div class="now-playing">
+        <img id="cover" src="https://placehold.co/250x250/A78BFA/0D0B14?text=♪" alt="cover">
+        <h3 id="songTitle">Cargando...</h3>
+        <p id="songArtist">Whois Yallico</p>
+
+        <!-- Barra de progreso -->
+        <div class="progress-container" onclick="seekMusic(event)">
+          <div class="progress-bar" id="progressBar"></div>
         </div>
+        <div class="time-info">
+          <span id="currentTime">0:00</span>
+          <span id="duration">0:00</span>
+        </div>
+
+        <!-- Controles -->
+        <div class="player-controls">
+          <button onclick="prevSong()">⏮</button>
+          <button onclick="toggleMusicPro()" id="playBtnPro" class="play-btn">▶</button>
+          <button onclick="nextSong()">⏭</button>
+        </div>
+        <audio id="audioPlayer"></audio>
       </div>
 
+      <!-- Lista -->
       <div class="playlist" id="playlist"></div>
-
-      <div class="lyrics-box">
-        <h4>Letra</h4>
-        <div id="lyrics" class="lyrics-text">
-          Selecciona una canción para ver la letra
-        </div>
-      </div>
     </div>
   </section>
 
