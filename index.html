@@ -3,40 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Whois Yallico ⚡ | Tienda Oficial</title>
+  <title>Whois Yallico ⚡ | Soluciones Tech</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <div class="rays-bg" id="rays"></div>
 
   <div class="offer-banner">
     ⚡ OFERTA 48H: 20% OFF ⚡ 
     <span id="countdown">23:59:59</span>
   </div>
 
+  <div class="trust-bar">
+    <span>✅ Pago Seguro</span>
+    <span>⚡ Entrega 5 min</span>
+    <span>🔒 Garantía 7 días</span>
+    <span>💬 Soporte 24/7</span>
+  </div>
+
   <header>
     <h1>⚡ WHOIS YALLICO</h1>
     <nav>
       <a href="#shop">Tienda</a>
+      <a href="#why">¿Por qué?</a>
       <a href="#commands">Comandos</a>
       <a href="#faq">FAQ</a>
-      <a href="#testimonials">Testimonios</a>
       <a href="#tickets">Soporte</a>
     </nav>
   </header>
 
   <section class="hero">
     <h2>RAYO PREM BOT ⚡</h2>
-    <p>El trueno en tu WhatsApp. Bots, Webs y Hosting al mejor precio</p>
-    <a href="#shop" class="btn btn-buy">VER TIENDA</a>
+    <p>Soluciones tecnológicas profesionales para tu WhatsApp</p>
+    <a href="#shop" class="btn btn-primary">VER TIENDA</a>
+    <a href="https://wa.me/51936994155?text=Hola%20quiero%20PROBAR%20el%20bot%20demo%20⚡" class="btn btn-secondary" target="_blank">PROBAR DEMO GRATIS</a>
   </section>
 
   <div class="live-sales" id="liveSales">
-    🔥 Juan de Lima compró Bot Premium
+    🔥 Juan de Lima adquirió Bot Premium
   </div>
 
   <section class="server-status">
-    <h3>⚡ ESTADO DEL SERVIDOR</h3>
+    <h3>⚡ ESTADO DE SISTEMAS</h3>
     <div class="status-grid">
       <div class="status-item"><div class="status-dot online"></div><p>Bot</p><span id="botStatus">Online</span></div>
       <div class="status-item"><div class="status-dot online"></div><p>Hosting</p><span>24/7</span></div>
@@ -44,21 +54,31 @@
     </div>
   </section>
 
+  <!-- ¿POR QUÉ NOSOTROS? -->
+  <section class="why-us" id="why">
+    <h2 class="section-title fade-in">¿POR QUÉ WHOIS YALLICO? ⚡</h2>
+    <div class="why-grid">
+      <div class="why-card fade-in"><div class="why-icon">⚡</div><h3>Entrega Inmediata</h3><p>Tu bot listo en menos de 5 minutos</p></div>
+      <div class="why-card fade-in"><div class="why-icon">🔒</div><h3>Garantía Total</h3><p>7 días de garantía o devolución</p></div>
+      <div class="why-card fade-in"><div class="why-icon">💬</div><h3>Soporte Humano</h3><p>Atención directa por WhatsApp</p></div>
+    </div>
+  </section>
+
   <section class="shop" id="shop">
-    <h2 class="section-title fade-in" style="color:#00FF88">TIENDA OFICIAL ⚡</h2>
+    <h2 class="section-title fade-in" style="color:#00BFFF">TIENDA OFICIAL</h2>
     <div class="shop-grid">
-      <div class="product-card fade-in"><h3>Bot Grupo</h3><div class="product-price">S/ 7<span> Permanente</span></div><ul class="product-features"><li>200+ Comandos</li><li>Soporte básico</li></ul><button class="btn btn-buy" onclick="openPopup('Bot Para Grupo', 'S/ 7')">COMPRAR</button></div>
-      <div class="product-card fade-in"><div class="product-badge">POPULAR</div><h3>Bot Básico</h3><div class="product-price">S/ 20</div><ul class="product-features"><li>Nombre y logo</li><li>Soporte 1 mes</li></ul><button class="btn btn-buy" onclick="openPopup('Bot Personalizado Básico', 'S/ 20')">COMPRAR</button></div>
-      <div class="product-card fade-in"><div class="product-badge">PREMIUM</div><h3>Bot Premium</h3><div class="product-price">S/ 30</div><ul class="product-features"><li>Economía + Panel</li><li>Soporte 3 meses</li></ul><button class="btn btn-buy" onclick="openPopup('Bot Personalizado Premium', 'S/ 30')">COMPRAR</button></div>
-      <div class="product-card fade-in"><h3>Página Web</h3><div class="product-price">S/ 35</div><ul class="product-features"><li>Responsive</li><li>Entrega 48h</li></ul><button class="btn btn-buy" onclick="openPopup('Página Web', 'S/ 35')">COMPRAR</button></div>
-      <div class="product-card fade-in"><h3>Hosting Mensual</h3><div class="product-price">S/ 10<span>/mes</span></div><ul class="product-features"><li>24/7 Activo</li><li>Soporte técnico</li></ul><button class="btn btn-buy" onclick="openPopup('Hosting Bot Mensual', 'S/ 10')">COMPRAR</button></div>
-      <div class="product-card fade-in"><div class="product-badge">-20%</div><h3>Hosting 3 Meses</h3><div class="product-price">S/ 30</div><ul class="product-features"><li>Precio especial</li><li>Prioridad</li></ul><button class="btn btn-buy" onclick="openPopup('Hosting Bot Trimestral', 'S/ 30')">COMPRAR</button></div>
-      <div class="product-card fade-in"><div class="product-badge">-40%</div><h3>Hosting 6 Meses</h3><div class="product-price">S/ 60</div><ul class="product-features"><li>Ahorra más</li><li>Soporte VIP</li></ul><button class="btn btn-buy" onclick="openPopup('Hosting Bot 6 Meses', 'S/ 60')">COMPRAR</button></div>
+      <div class="product-card fade-in"><h3>Bot Grupo</h3><div class="product-price">S/ 7<span> Permanente</span></div><ul class="product-features"><li>200+ Comandos</li><li>Soporte básico</li></ul><button class="btn btn-primary" onclick="openPopup('Bot Para Grupo', 'S/ 7')">COMPRAR</button></div>
+      <div class="product-card fade-in"><div class="product-badge">POPULAR</div><h3>Bot Básico</h3><div class="product-price">S/ 20</div><ul class="product-features"><li>Nombre y logo</li><li>Soporte 1 mes</li></ul><button class="btn btn-primary" onclick="openPopup('Bot Personalizado Básico', 'S/ 20')">COMPRAR</button></div>
+      <div class="product-card fade-in"><div class="product-badge">PREMIUM</div><h3>Bot Premium</h3><div class="product-price">S/ 30</div><ul class="product-features"><li>Economía + Panel</li><li>Soporte 3 meses</li></ul><button class="btn btn-primary" onclick="openPopup('Bot Personalizado Premium', 'S/ 30')">COMPRAR</button></div>
+      <div class="product-card fade-in"><h3>Página Web</h3><div class="product-price">S/ 35</div><ul class="product-features"><li>Responsive</li><li>Entrega 48h</li></ul><button class="btn btn-primary" onclick="openPopup('Página Web', 'S/ 35')">COMPRAR</button></div>
+      <div class="product-card fade-in"><h3>Hosting Mensual</h3><div class="product-price">S/ 10<span>/mes</span></div><ul class="product-features"><li>24/7 Activo</li><li>Soporte técnico</li></ul><button class="btn btn-primary" onclick="openPopup('Hosting Bot Mensual', 'S/ 10')">COMPRAR</button></div>
+      <div class="product-card fade-in"><div class="product-badge">-20%</div><h3>Hosting 3 Meses</h3><div class="product-price">S/ 30</div><ul class="product-features"><li>Precio especial</li><li>Prioridad</li></ul><button class="btn btn-primary" onclick="openPopup('Hosting Bot Trimestral', 'S/ 30')">COMPRAR</button></div>
+      <div class="product-card fade-in"><div class="product-badge">-40%</div><h3>Hosting 6 Meses</h3><div class="product-price">S/ 60</div><ul class="product-features"><li>Ahorra más</li><li>Soporte VIP</li></ul><button class="btn btn-primary" onclick="openPopup('Hosting Bot 6 Meses', 'S/ 60')">COMPRAR</button></div>
     </div>
   </section>
 
   <section class="commands" id="commands">
-    <h2 class="section-title fade-in">200+ COMANDOS ⚡</h2>
+    <h2 class="section-title fade-in">200+ COMANDOS</h2>
     <input type="text" id="commandSearch" placeholder="Buscar comando... ej: sticker" class="command-search">
     <div class="commands-grid" id="commandsGrid">
       <div class="command-card fade-in"><h4>.sticker</h4><p>Imagen a sticker</p></div>
@@ -72,33 +92,24 @@
     </div>
   </section>
 
-  <section class="testimonials" id="testimonials">
-    <h2 class="section-title fade-in">TESTIMONIOS</h2>
-    <div class="testi-grid">
-      <div class="testi-card fade-in"><img src="https://via.placeholder.com/60" class="testi-img"><p>"El mejor bot. Soporte 10/10"</p><div class="testi-stars">★★★</div><h4>@Cliente1</h4></div>
-      <div class="testi-card fade-in"><img src="https://via.placeholder.com/60" class="testi-img"><p>"Me lo hizo en 24h"</p><div class="testi-stars">★★★</div><h4>@Cliente2</h4></div>
-      <div class="testi-card fade-in"><img src="https://via.placeholder.com/60" class="testi-img"><p>"Hosting sin caídas"</p><div class="testi-stars">★★★</div><h4>@Cliente3</h4></div>
-    </div>
-  </section>
-
   <section class="faq" id="faq">
     <h2 class="section-title fade-in">PREGUNTAS FRECUENTES</h2>
     <div class="faq-container">
       <div class="faq-item fade-in"><button class="faq-question">¿Cómo instalo el bot? ⚡</button><div class="faq-answer"><p>En 5 min. Te envío QR y queda listo. Con hosting yo lo subo 24/7</p></div></div>
       <div class="faq-item fade-in"><button class="faq-question">¿El hosting se cae?</button><div class="faq-answer"><p>No. 99.9% uptime. Si se cae te devolvemos ese día.</p></div></div>
-      <div class="faq-item fade-in"><button class="faq-question">¿Métodos de pago?</button><div class="faq-answer"><p>Yape, Plin, Prex, Global66. Te llega a WhatsApp al pagar 💜</p></div></div>
+      <div class="faq-item fade-in"><button class="faq-question">¿Métodos de pago?</button><div class="faq-answer"><p>Yape, Plin, Prex, Global66. Te llega a WhatsApp al pagar</p></div></div>
       <div class="faq-item fade-in"><button class="faq-question">¿Tiene garantía?</button><div class="faq-answer"><p>Sí. 7 días. Si no te gusta devolución 100%.</p></div></div>
     </div>
   </section>
 
   <section class="tickets" id="tickets">
-    <h2 class="section-title fade-in">SOPORTE ⚡</h2>
+    <h2 class="section-title fade-in">SOPORTE TÉCNICO</h2>
     <form class="ticket-form fade-in" onsubmit="sendTicket(event)">
       <label>Nombre:</label><input type="text" id="ticketName" required>
       <label>WhatsApp:</label><input type="text" id="ticketWhatsapp" required>
       <label>Tipo:</label><select id="ticketType" required><option value="">Selecciona</option><option>Compra</option><option>Problema Bot</option><option>Hosting</option><option>Otro</option></select>
       <label>Mensaje:</label><textarea id="ticketMessage" rows="4" required></textarea>
-      <button type="submit" class="btn btn-buy">ENVIAR TICKET</button>
+      <button type="submit" class="btn btn-primary">ENVIAR TICKET</button>
     </form>
   </section>
 
@@ -114,28 +125,18 @@
     </div>
   </div>
 
-  <div class="exit-popup" id="exitPopup">
-    <div class="exit-content">
-      <span class="exit-close" onclick="closeExit()">×</span>
-      <h3>⚡ ESPERA!</h3>
-      <p>10% OFF: <span class="exit-code">RAYO10</span></p>
-      <a href="#shop" onclick="closeExit()" class="btn btn-buy">USAR DESCUENTO</a>
-    </div>
-  </div>
-
   <a href="https://wa.me/51936994155" class="whatsapp-float" target="_blank">💬</a>
-  <div class="particles" id="particles"></div>
 
   <div class="spotify-player">
     <audio id="bgMusic" loop><source src="Musica.mp3" type="audio/mpeg"></audio>
     <div class="spotify-top">
-      <div class="spotify-left"><img src="banner.jpg" class="spotify-cover"><div><div class="spotify-song">Rayo Prem Beat</div><div class="spotify-artist">Whois Yallico</div></div></div>
+      <div class="spotify-left"><img src="banner.jpg" class="spotify-cover"><div><div class="spotify-song">Tech Beat</div><div class="spotify-artist">Whois Yallico</div></div></div>
       <button onclick="toggleMusic()" id="playBtn">▶</button>
     </div>
     <div class="spotify-bottom"><span id="currentTime">0:00</span><input type="range" id="progressBar" value="0" max="100"><span id="duration">0:00</span></div>
   </div>
 
-  <footer><p>© 2026 WHOIS YALLICO ⚡ TIENDA OFICIAL</p></footer>
+  <footer><p>© 2026 WHOIS YALLICO | SOLUCIONES TECNOLÓGICAS</p></footer>
   <script src="script.js"></script>
 </body>
 </html>
