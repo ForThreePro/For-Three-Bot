@@ -4,137 +4,124 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rayo Prem Bot ⚡ | Whois Yallico</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="offer-banner">
-    ⚡ EL MEJOR BOT PARA WHATSAPP ⚡ 
-    <span id="countdown">23:59:59</span>
-  </div>
+  <div class="stars"></div>
 
   <header>
     <h1>⚡ RAYO PREM BOT</h1>
-    <nav>
-      <a href="#shop">Tienda</a>
-      <a href="#why">Beneficios</a>
-      <a href="#commands">Comandos</a>
-      <a href="#faq">Info</a>
-    </nav>
   </header>
 
+  <!-- HERO ESTILO BANNER -->
   <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h2 class="title-ice">Rayo Prem <span>Bot</span></h2>
-      <p>Bot para WhatsApp • El Mejor</p>
-      
-      <div class="hero-info">
-        <a href="https://wa.me/51936994155" class="info-pill" target="_blank">📱 +51 936 994 155</a>
-        <a href="https://instagram.com/whois.yallico" class="info-pill" target="_blank">📸 @whois.yallico</a>
-      </div>
-
-      <div class="hero-info">
-        <div class="info-pill">💳 Yape | Global66 | Prex</div>
-      </div>
-
-      <a href="#shop" class="btn btn-ice">COMPRAR AHORA ⚡</a>
-      <a href="https://wa.me/51936994155?text=Hola%20quiero%20PROBAR%20el%20bot%20demo" class="btn btn-glass" target="_blank">PROBAR DEMO</a>
-
-      <div class="warning-note">⚠️ No se realizan reembolsos</div>
+    <h2 class="title-glow">Rayo Prem <span>Bot</span></h2>
+    <p class="subtitle">El Mejor Bot para WhatsApp</p>
+    
+    <div class="info-badges">
+      <a href="https://wa.me/51936994155" class="badge">📱 +51 936 994 155</a>
+      <a href="https://instagram.com/whois.yallico" class="badge">📸 @whois.yallico</a>
+      <div class="badge">💳 Yape | Prex | Global66</div>
     </div>
+
+    <a href="#shop" class="btn-main">COMPRAR AHORA</a>
+    <div class="note">⚠️ No se realizan reembolsos</div>
   </section>
 
-  <div class="live-sales" id="liveSales">🔥 Alguien acaba de comprar Bot Premium</div>
-
-  <section class="why-us" id="why">
-    <h2 class="section-title">¿POR QUÉ RAYO PREM? ⚡</h2>
-    <div class="why-grid">
-      <div class="why-card"><div class="why-icon">⚡</div><h3>200+ Comandos</h3><p>IA, Juegos, Economía y más</p></div>
-      <div class="why-card"><div class="why-icon">🛡️</div><h3>Anti-Ban</h3><p>Sistema de protección incluido</p></div>
-      <div class="why-card"><div class="why-icon">💬</div><h3>Soporte 24/7</h3><p>Te ayudo directo por WhatsApp</p></div>
-    </div>
-  </section>
-
-  <!-- TIENDA CON TODOS LOS 7 PRODUCTOS -->
+  <!-- PRODUCTOS TIPO CARTAS ANIME -->
   <section class="shop" id="shop">
-    <h2 class="section-title">TIENDA RAYO PREM</h2>
-    <div class="shop-grid">
-      <div class="product-card"><h3>Bot Para Grupo</h3><div class="product-price">S/ 7<span> Permanente</span></div><ul class="product-features"><li>200+ Comandos</li><li>Soporte básico</li></ul><button class="btn btn-ice" onclick="openPopup('Bot Para Grupo', 'S/ 7')">COMPRAR</button></div>
+    <h2 class="section-title">ELIGE TU PODER ⚡</h2>
+    <div class="cards-grid">
       
-      <div class="product-card"><h3>Bot Personalizado Básico</h3><div class="product-price">S/ 20</div><ul class="product-features"><li>Nombre y logo</li><li>Soporte 1 mes</li></ul><button class="btn btn-ice" onclick="openPopup('Bot Personalizado Básico', 'S/ 20')">COMPRAR</button></div>
-      
-      <div class="product-card popular"><div class="product-badge">EL MEJOR</div><h3>Bot Personalizado Premium</h3><div class="product-price">S/ 30</div><ul class="product-features"><li>Economía + Panel</li><li>Soporte 3 meses</li></ul><button class="btn btn-ice" onclick="openPopup('Bot Personalizado Premium', 'S/ 30')">COMPRAR</button></div>
-      
-      <div class="product-card"><h3>Página Web</h3><div class="product-price">S/ 35</div><ul class="product-features"><li>Responsive</li><li>Entrega 48h</li></ul><button class="btn btn-ice" onclick="openPopup('Página Web', 'S/ 35')">COMPRAR</button></div>
-      
-      <div class="product-card"><h3>Hosting Bot Mensual</h3><div class="product-price">S/ 10<span>/mes</span></div><ul class="product-features"><li>24/7 Activo</li><li>Soporte técnico</li></ul><button class="btn btn-ice" onclick="openPopup('Hosting Bot Mensual', 'S/ 10')">COMPRAR</button></div>
-      
-      <div class="product-card"><h3>Hosting Bot 3 Meses</h3><div class="product-price">S/ 30</div><ul class="product-features"><li>Ahorra 20%</li><li>Prioridad</li></ul><button class="btn btn-ice" onclick="openPopup('Hosting Bot 3 Meses', 'S/ 30')">COMPRAR</button></div>
-      
-      <div class="product-card"><h3>Hosting Bot 6 Meses</h3><div class="product-price">S/ 60</div><ul class="product-features"><li>Ahorra 40%</li><li>Soporte VIP</li></ul><button class="btn btn-ice" onclick="openPopup('Hosting Bot 6 Meses', 'S/ 60')">COMPRAR</button></div>
-    </div>
-  </section>
-
-  <section class="commands" id="commands">
-    <h2 class="section-title">ALGUNOS COMANDOS ⚡</h2>
-    <input type="text" id="commandSearch" placeholder="Busca tu comando..." class="command-search">
-    <div class="commands-grid" id="commandsGrid">
-      <div class="command-card"><h4>.sticker</h4><p>Imagen a sticker</p></div>
-      <div class="command-card"><h4>.ia</h4><p>Chatea con GPT-4</p></div>
-      <div class="command-card"><h4>.play</h4><p>Descarga música</p></div>
-      <div class="command-card"><h4>.economia</h4><p>Dinero y banco</p></div>
-    </div>
-  </section>
-
-  <section class="faq" id="faq">
-    <h2 class="section-title">INFO IMPORTANTE</h2>
-    <div class="faq-container">
-      <div class="faq-item"><button class="faq-question">¿Cómo pago? 💳</button><div class="faq-answer"><p>Yape, Global66, Prex. Envío captura y te entrego en 5 min</p></div></div>
-      <div class="faq-item"><button class="faq-question">¿Hay reembolso? ⚠️</button><div class="faq-answer"><p>No se realizan reembolsos. Revisa bien antes de comprar</p></div></div>
-      <div class="faq-item"><button class="faq-question">¿Cómo contacto? 📱</button><div class="faq-answer"><p>WhatsApp: +51 936 994 155 | IG: @whois.yallico</p></div></div>
-    </div>
-  </section>
-
-  <!-- POPUP DE PAGO -->
-  <div class="popup-overlay" id="paymentPopup">
-    <div class="popup-content">
-      <span class="popup-close" onclick="closePopup()">×</span>
-      <h3 class="popup-title">COMPLETAR COMPRA</h3>
-      <p id="popupProduct">Producto</p>
-      <div class="popup-price" id="popupPrice">S/ 0</div>
-      <a href="#" id="btnYape" class="payment-btn" target="_blank">💜 Pagar Yape</a>
-      <a href="#" id="btnPrex" class="payment-btn" target="_blank">💳 Pagar Prex</a>
-      <a href="#" id="btnGlobal" class="payment-btn" target="_blank">🌎 Pagar Global66</a>
-    </div>
-  </div>
-
-  <a href="https://wa.me/51936994155" class="whatsapp-float" target="_blank">💬</a>
-
-  <!-- PLAYER TIPO SPOTIFY -->
-  <div class="spotify-player">
-    <audio id="bgMusic" loop>
-      <source src="Musica.mp3" type="audio/mpeg">
-    </audio>
-    <div class="spotify-top">
-      <div class="spotify-left">
-        <img src="banner.jpg" class="spotify-cover">
-        <div>
-          <div class="spotify-song">Tech Beat</div>
-          <div class="spotify-artist">Whois Yallico</div>
-        </div>
+      <div class="card">
+        <div class="card-glow"></div>
+        <h3>Bot Grupo</h3>
+        <div class="price">S/ 7</div>
+        <ul><li>200+ Comandos</li><li>Para Grupos</li></ul>
+        <button onclick="openPopup('Bot Grupo', 'S/ 7')">OBTENER</button>
       </div>
-      <button onclick="toggleMusic()" id="playBtn">▶</button>
+
+      <div class="card featured">
+        <div class="card-glow"></div>
+        <div class="tag">EL MEJOR</div>
+        <h3>Bot Premium</h3>
+        <div class="price">S/ 30</div>
+        <ul><li>Economía + Panel</li><li>Soporte 3 meses</li></ul>
+        <button onclick="openPopup('Bot Premium', 'S/ 30')">OBTENER</button>
+      </div>
+
+      <div class="card">
+        <div class="card-glow"></div>
+        <h3>Bot Básico</h3>
+        <div class="price">S/ 20</div>
+        <ul><li>Nombre y logo</li><li>Soporte 1 mes</li></ul>
+        <button onclick="openPopup('Bot Básico', 'S/ 20')">OBTENER</button>
+      </div>
+
+      <div class="card">
+        <div class="card-glow"></div>
+        <h3>Página Web</h3>
+        <div class="price">S/ 35</div>
+        <ul><li>Responsive</li><li>Entrega 48h</li></ul>
+        <button onclick="openPopup('Web', 'S/ 35')">OBTENER</button>
+      </div>
+
+      <div class="card">
+        <div class="card-glow"></div>
+        <h3>Hosting 1 Mes</h3>
+        <div class="price">S/ 10</div>
+        <ul><li>24/7 Online</li></ul>
+        <button onclick="openPopup('Hosting 1 Mes', 'S/ 10')">OBTENER</button>
+      </div>
+
+      <div class="card">
+        <div class="card-glow"></div>
+        <h3>Hosting 6 Meses</h3>
+        <div class="price">S/ 60</div>
+        <ul><li>Ahorra 40%</li><li>Soporte VIP</li></ul>
+        <button onclick="openPopup('Hosting 6 Meses', 'S/ 60')">OBTENER</button>
+      </div>
+
     </div>
-    <div class="spotify-bottom">
-      <span id="currentTime">0:00</span>
-      <input type="range" id="progressBar" value="0" max="100">
-      <span id="duration">0:00</span>
+  </section>
+
+  <!-- COMANDOS -->
+  <section class="commands">
+    <h2 class="section-title">COMANDOS ÉPICOS</h2>
+    <div class="cmd-tags">
+      <span>.sticker</span><span>.ia</span><span>.play</span><span>.economia</span>
+      <span>.juego</span><span>.antiporn</span><span>.menu</span><span>.kick</span>
+    </div>
+  </section>
+
+  <!-- POPUP -->
+  <div class="popup" id="paymentPopup">
+    <div class="popup-box">
+      <span class="close" onclick="closePopup()">×</span>
+      <h3>COMPLETAR COMPRA</h3>
+      <p id="popupProduct"></p>
+      <div class="popup-price" id="popupPrice"></div>
+      <a href="#" id="btnYape" class="pay-btn">💜 Yape</a>
+      <a href="#" id="btnPrex" class="pay-btn">💳 Prex</a>
+      <a href="#" id="btnGlobal" class="pay-btn">🌎 Global66</a>
     </div>
   </div>
 
-  <footer><p>© 2026 RAYO PREM BOT | @whois.yallico</p></footer>
+  <a href="https://wa.me/51936994155" class="wa-btn">💬</a>
+
+  <!-- PLAYER SPOTIFY -->
+  <div class="music-bar">
+    <audio id="bgMusic" loop><source src="Musica.mp3" type="audio/mpeg"></audio>
+    <img src="banner.jpg">
+    <div class="song-info">
+      <div>Tech Beat</div>
+      <small>Whois Yallico</small>
+    </div>
+    <button onclick="toggleMusic()" id="playBtn">▶</button>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
