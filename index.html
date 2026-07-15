@@ -105,27 +105,52 @@
     </div>
   </section>
 
-  <!-- POPUP CON TUS DATOS -->
+  <!-- POPUP PRO CON PESTAÑAS -->
   <div class="popup" id="paymentPopup">
     <div class="popup-box">
       <span class="close" onclick="closePopup()">×</span>
-      <h3>FINALIZAR COMPRA</h3>
-      <p id="popupProduct"></p>
+      <h3>💳 FINALIZAR PAGO</h3>
+      <p id="popupProduct" class="popup-product"></p>
       <div class="popup-price" id="popupPrice"></div>
-      
-      <div class="payment-data">
-        <h4>💜 YAPE</h4>
-        <p><b>Número:</b> 936 994 155</p>
-        <p><b>Nombre:</b> Cristhofer Rojas Huarcaya</p>
+
+      <div class="tabs">
+        <button class="tab-btn active" onclick="showTab('yape')">💜 Yape</button>
+        <button class="tab-btn" onclick="showTab('prex')">💳 Prex</button>
       </div>
 
-      <div class="payment-data">
-        <h4>💳 PREX</h4>
-        <p><b>Número:</b> 12249975</p>
-        <p><b>Nombre:</b> Cristhofer Rojas Huarcaya</p>
+      <!-- TAB YAPE -->
+      <div class="tab-content active" id="tab-yape">
+        <div class="pay-card">
+          <div class="pay-label">Número Yape</div>
+          <div class="pay-number">
+            <span>936 994 155</span>
+            <button onclick="copyText('936994155')">📋</button>
+          </div>
+          <div class="pay-label">Nombre</div>
+          <div class="pay-name">Cristhofer Rojas Huarcaya</div>
+        </div>
       </div>
 
-      <a href="#" id="btnConfirmar" class="pay-btn" target="_blank">✅ ENVIAR CAPTURA POR WHATSAPP</a>
+      <!-- TAB PREX -->
+      <div class="tab-content" id="tab-prex">
+        <div class="pay-card">
+          <div class="pay-label">Número Prex</div>
+          <div class="pay-number">
+            <span>12249975</span>
+            <button onclick="copyText('12249975')">📋</button>
+          </div>
+          <div class="pay-label">Nombre</div>
+          <div class="pay-name">Cristhofer Rojas Huarcaya</div>
+        </div>
+      </div>
+
+      <div class="steps">
+        <p>1. Realiza el pago</p>
+        <p>2. Toma captura</p>
+        <p>3. Envía por WhatsApp</p>
+      </div>
+
+      <a href="#" id="btnConfirmar" class="pay-btn" target="_blank">✅ ENVIAR CAPTURA</a>
     </div>
   </div>
 
