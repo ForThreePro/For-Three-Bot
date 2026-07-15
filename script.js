@@ -1,8 +1,8 @@
 // BUSCADOR
 document.getElementById('commandSearch').addEventListener('input', e=>{
   let s = e.target.value.toLowerCase();
-  document.querySelectorAll('.cmd-item').forEach(c=>{
-    c.style.display = c.innerText.toLowerCase().includes(s) ? 'block' : 'none'
+  document.querySelectorAll('.cmd-container span').forEach(c=>{
+    c.style.display = c.innerText.toLowerCase().includes(s) ? 'inline-block' : 'none'
   });
 });
 
@@ -21,7 +21,7 @@ function openPopup(product, price) {
   
   document.getElementById('paymentPopup').classList.add('active');
   document.body.style.overflow = 'hidden';
-  showTab('yape'); // Siempre abre en Yape
+  showTab('yape');
 }
 function closePopup() {
   document.getElementById('paymentPopup').classList.remove('active');
@@ -31,7 +31,7 @@ document.getElementById('paymentPopup').addEventListener('click', e=>{
   if(e.target.id === 'paymentPopup') closePopup()
 })
 
-// CAMBIAR PESTAÑAS
+// TABS
 function showTab(tab) {
   document.querySelectorAll('.tab-btn').forEach(btn=>btn.classList.remove('active'));
   document.querySelectorAll('.tab-content').forEach(content=>content.classList.remove('active'));
@@ -40,10 +40,10 @@ function showTab(tab) {
   document.getElementById(`tab-${tab}`).classList.add('active');
 }
 
-// COPIAR NUMERO
+// COPIAR
 function copyText(text) {
   navigator.clipboard.writeText(text);
-  alert('✅ Número copiado: ' + text);
+  alert('✅ Copiado: ' + text);
 }
 
 // MUSICA
@@ -53,4 +53,4 @@ function toggleMusic() {
   if(audio.paused){audio.play();playBtn.innerText = '⏸'} 
   else {audio.pause();playBtn.innerText = '▶'}
 }
-audio.volume = 0.25;
+audio.volume = 0.2;
