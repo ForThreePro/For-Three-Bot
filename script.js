@@ -7,7 +7,7 @@ function buildPlaylist() {
   playlist.forEach((song, i) => {
     container.innerHTML += `
       <div class="song-item" onclick="playSong(${i})">
-        <span>${i+1}</span>
+        <img src="${song.cover}" alt="">
         <div>
           <b>${song.title}</b>
           <p>${song.artist}</p>
@@ -24,7 +24,6 @@ function loadSong(index) {
   document.getElementById('songTitle').innerText = song.title;
   document.getElementById('songArtist').innerText = song.artist;
   document.getElementById('cover').src = song.cover;
-  document.getElementById('lyrics').innerText = song.lyrics;
   audio.src = song.src;
 
   document.querySelectorAll('.song-item').forEach((item, i)=>{
@@ -58,15 +57,33 @@ function prevSong() {
   playSong(currentSong);
 }
 
+// Barra de progreso
+audio.addEventListener('timeupdate', () => {
+  const progress = (audio.currentTime / audio.duration) * 100;
+  document.getElementById('progressBar').style.width = progress + '%';
+
+  document.getElementById('currentTime').innerText = formatTime(audio.currentTime);
+  document.getElementById('duration').innerText = formatTime(audio.duration);
+});
+
+function seekMusic(e) {
+  const width = e.currentTarget.clientWidth;
+  const clickX = e.offsetX;
+  const duration = audio.duration;
+  audio.currentTime = (clickX / width) * duration;
+}
+
+function formatTime(seconds) {
+  if(isNaN(seconds)) return "0:00";
+  const mins = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+  return `${mins}:${secs < 10? '0' : ''}${secs}`;
+}
+
 audio.addEventListener('ended', nextSong);
 
 // MODAL PAGO
-let producto = "";
-let precio = "";
-
 function openModal(prod, prec) {
-  producto = prod;
-  precio = prec;
   document.getElementById('modalProduct').innerText = prod;
   document.getElementById('modalPrice').innerText = prec;
 
