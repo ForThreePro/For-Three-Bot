@@ -76,20 +76,46 @@ nav a{color:#fff;text-decoration:none;font-weight:600;font-size:0.8rem}
 .cmd-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .cmd-item{background:rgba(0,213,255,0.1);border:1px solid #00D5FF;padding:10px;border-radius:12px;font-family:'Orbitron',sans-serif;font-size:0.75rem;text-align:center}
 
-/* POPUP CON DATOS */
+/* POPUP PRO */
 .popup{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);display:none;justify-content:center;align-items:center;z-index:999;backdrop-filter:blur(10px)}
 .popup.active{display:flex}
-.popup-box{background:rgba(10,20,60,0.95);padding:30px;border-radius:24px;border:2px solid #00D5FF;width:90%;max-width:380px;max-height:90vh;overflow-y:auto}
+.popup-box{background:rgba(10,20,60,0.95);padding:25px;border-radius:24px;border:2px solid #00D5FF;width:90%;max-width:400px;max-height:90vh;overflow-y:auto}
 .close{float:right;font-size:2rem;color:#00D5FF;cursor:pointer}
-.popup-box h3{font-family:'Orbitron',sans-serif;color:#00D5FF;text-align:center;margin-bottom:15px}
-.popup-price{font-family:'Orbitron',sans-serif;font-size:2.5rem;color:#FFD700;text-align:center;margin:15px 0}
+.popup-box h3{font-family:'Orbitron',sans-serif;color:#00D5FF;text-align:center;margin-bottom:10px}
+.popup-product{color:#B0E0FF;text-align:center;font-size:0.9rem;margin-bottom:5px}
+.popup-price{font-family:'Orbitron',sans-serif;font-size:2.5rem;color:#FFD700;text-align:center;margin:10px 0}
 
-.payment-data{
-  background:rgba(0,213,255,0.1);border:1px solid #00D5FF;
-  padding:15px;border-radius:15px;margin:12px 0;text-align:left
+.tabs{display:flex;gap:10px;margin:20px 0}
+.tab-btn{
+  flex:1;padding:12px;border-radius:12px;border:2px solid #00D5FF;
+  background:rgba(0,213,255,0.1);color:#00D5FF;font-weight:700;
+  font-family:'Orbitron',sans-serif;font-size:0.85rem;cursor:pointer;transition:0.3s
 }
-.payment-data h4{color:#00D5FF;margin-bottom:8px;font-family:'Orbitron',sans-serif}
-.payment-data p{font-size:0.85rem;margin:4px 0;color:#E0F0FF}
+.tab-btn.active{background:linear-gradient(90deg,#00D5FF,#0064FF);color:#001440}
+.tab-content{display:none}
+.tab-content.active{display:block}
+
+.pay-card{
+  background:rgba(0,213,255,0.1);border:2px solid #00D5FF;
+  border-radius:16px;padding:20px;margin-bottom:15px
+}
+.pay-label{font-size:0.7rem;color:#B0E0FF;margin-bottom:5px}
+.pay-number{
+  display:flex;justify-content:space-between;align-items:center;
+  background:rgba(0,0,0,0.3);padding:12px;border-radius:10px;
+  font-family:'Orbitron',sans-serif;font-size:1.2rem;color:#FFD700;margin-bottom:12px
+}
+.pay-number button{
+  background:#00D5FF;border:none;width:35px;height:35px;border-radius:10px;
+  font-size:1.1rem;cursor:pointer
+}
+.pay-name{font-weight:700;font-size:1rem;color:#fff}
+
+.steps{
+  background:rgba(255,215,0,0.1);border:1px solid #FFD700;
+  border-radius:12px;padding:12px;margin:15px 0;font-size:0.8rem
+}
+.steps p{margin:5px 0;color:#FFD700}
 
 .pay-btn{background:linear-gradient(90deg,#00D5FF,#0064FF);padding:14px;border-radius:50px;color:#001440;text-decoration:none;display:block;text-align:center;margin:10px 0;font-weight:800}
 
