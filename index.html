@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Whois Yallico | Playlist</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <title>Whois Yallico | Servicios Digitales</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,66 +15,152 @@
     <div class="logo">Whois<span>Yallico</span></div>
     <nav>
       <a href="#services">Servicios</a>
+      <a href="#pricing">Precios</a>
+      <a href="#support">Soporte</a>
       <a href="#music">Playlist</a>
-      <a href="#contact">Contacto</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Bots, Webs y<br><span>Hosting Pro</span></h1>
-    <p>Automatiza tu negocio con tecnología</p>
-    <a href="#pricing" class="btn">Ver Planes</a>
+    <h1>Soluciones Digitales<br><span>Para tu Negocio</span></h1>
+    <p>Bots, Páginas Web y Hosting Profesional</p>
+    <a href="#pricing" class="btn">Ver Catálogo</a>
   </section>
 
+  <!-- CATEGORÍAS ORDENADAS -->
   <section id="services">
-    <h2>Servicios</h2>
-    <div class="cards">
-      <div class="card">
-        <div class="icon">🤖</div>
+    <h2>Categorías</h2>
+    <div class="categories">
+      <div class="cat" onclick="scrollToSection('bots')">
+        <div class="cat-icon">🤖</div>
         <h3>Bots WhatsApp</h3>
-        <p>+200 comandos, economía, juegos</p>
       </div>
-      <div class="card">
-        <div class="icon">🌐</div>
-        <h3>Desarrollo Web</h3>
-        <p>Páginas rápidas y modernas</p>
+      <div class="cat" onclick="scrollToSection('webs')">
+        <div class="cat-icon">🌐</div>
+        <h3>Páginas Web</h3>
       </div>
-      <div class="card">
-        <div class="icon">☁️</div>
-        <h3>Hosting 24/7</h3>
-        <p>Tu bot siempre online</p>
+      <div class="cat" onclick="scrollToSection('hosting')">
+        <div class="cat-icon">☁️</div>
+        <h3>Hosting</h3>
       </div>
     </div>
   </section>
 
-  <section id="pricing">
-    <h2>Planes</h2>
+  <!-- SECCIÓN BOT -->
+  <section id="bots">
+    <h2>🤖 Bots WhatsApp</h2>
     <div class="price-cards">
       <div class="price-card">
         <h3>Bot Grupo</h3>
         <div class="price">S/ 7</div>
-        <button onclick="openModal('Bot Grupo', 'S/ 7')">Comprar</button>
+        <ul><li>200+ Comandos</li><li>Para Grupos</li><li>Actualizaciones</li></ul>
+        <button onclick="openModal('Bot Grupo', 'S/ 7')">Adquirir</button>
       </div>
+
+      <div class="price-card">
+        <h3>Bot Básico</h3>
+        <div class="price">S/ 20</div>
+        <ul><li>Personalizado</li><li>Soporte 1 mes</li><li>Instalación</li></ul>
+        <button onclick="openModal('Bot Básico', 'S/ 20')">Adquirir</button>
+      </div>
+
       <div class="price-card featured">
-        <span class="tag">TOP</span>
+        <span class="tag">RECOMENDADO</span>
         <h3>Bot Premium</h3>
         <div class="price">S/ 30</div>
-        <button onclick="openModal('Bot Premium', 'S/ 30')">Comprar</button>
-      </div>
-      <div class="price-card">
-        <h3>Web + Hosting</h3>
-        <div class="price">S/ 45</div>
-        <button onclick="openModal('Web + Hosting', 'S/ 45')">Comprar</button>
+        <ul><li>Economía + Panel</li><li>Anti-Ban</li><li>Soporte 3 meses</li></ul>
+        <button onclick="openModal('Bot Premium', 'S/ 30')">Adquirir</button>
       </div>
     </div>
   </section>
 
-  <!-- PLAYLIST SPOTIFY -->
+  <!-- SECCIÓN WEB -->
+  <section id="webs">
+    <h2>🌐 Páginas Web</h2>
+    <div class="price-cards">
+      <div class="price-card">
+        <h3>Página Web</h3>
+        <div class="price">S/ 35</div>
+        <ul><li>Diseño Responsive</li><li>Entrega 48h</li><li>Dominio.com incluido</li></ul>
+        <button onclick="openModal('Página Web', 'S/ 35')">Adquirir</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN HOSTING -->
+  <section id="hosting">
+    <h2>☁️ Hosting</h2>
+    <div class="price-cards">
+      <div class="price-card">
+        <h3>Hosting 1 Mes</h3>
+        <div class="price">S/ 10</div>
+        <ul><li>24/7 Online</li><li>Soporte técnico</li><li>CPU ilimitado</li></ul>
+        <button onclick="openModal('Hosting 1 Mes', 'S/ 10')">Adquirir</button>
+      </div>
+
+      <div class="price-card">
+        <h3>Hosting 6 Meses</h3>
+        <div class="price">S/ 60</div>
+        <ul><li>Ahorra 40%</li><li>Soporte VIP</li><li>Backup semanal</li></ul>
+        <button onclick="openModal('Hosting 6 Meses', 'S/ 60')">Adquirir</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN TICKETS SOPORTE -->
+  <section id="support">
+    <h2>🎫 Soporte Técnico</h2>
+    <p class="sub">¿Tienes un problema? Abre un ticket y te ayudamos</p>
+
+    <div class="support-box">
+      <form id="ticketForm" onsubmit="sendTicket(event)">
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" id="ticketName" required placeholder="Tu nombre">
+        </div>
+
+        <div class="form-group">
+          <label>WhatsApp</label>
+          <input type="text" id="ticketWhatsapp" required placeholder="936 994 155">
+        </div>
+
+        <div class="form-group">
+          <label>Tipo de Problema</label>
+          <select id="ticketType" required>
+            <option value="">Selecciona...</option>
+            <option value="Bot">Problema con Bot</option>
+            <option value="Web">Problema con Página Web</option>
+            <option value="Hosting">Problema con Hosting</option>
+            <option value="Pago">Problema con Pago</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Describe tu problema</label>
+          <textarea id="ticketDesc" rows="4" required placeholder="Explica detalladamente tu problema..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Enviar Ticket</button>
+      </form>
+
+      <div class="support-info">
+        <h3>Horario de Atención</h3>
+        <p>📅 Lunes a Domingo</p>
+        <p>🕐 9:00 AM - 11:00 PM</p>
+        <p>⚡ Respuesta en menos de 2 horas</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAYLIST -->
   <section id="music">
-    <h2>Mi Playlist</h2>
+    <h2>🎵 Mi Playlist</h2>
     <div class="player">
       <div class="now">
-        <img id="cover" src="https://placehold.co/300x300/1DB954/000?text=♪" alt="">
+        <div class="cover-wrap">
+          <img id="cover" src="https://placehold.co/300x300/1DB954/000?text=♪" alt="">
+        </div>
         <h3 id="songTitle">Cargando...</h3>
         <p id="songArtist">Whois Yallico</p>
 
@@ -98,7 +184,7 @@
     </div>
   </section>
 
-  <!-- MODAL -->
+  <!-- MODAL PAGO -->
   <div class="modal" id="paymentModal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">×</span>
@@ -125,9 +211,9 @@
     </div>
   </div>
 
-  <footer id="contact">
+  <footer>
     <p>📱 +51 936 994 155 | 📸 @whois.yallico</p>
-    <p>© 2026 Whois Yallico</p>
+    <p>© 2026 Whois Yallico - Todos los derechos reservados</p>
   </footer>
 
   <script src="music.js"></script>
