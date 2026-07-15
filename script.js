@@ -1,56 +1,45 @@
-// BUSCADOR
-document.getElementById('commandSearch').addEventListener('input', e=>{
-  let s = e.target.value.toLowerCase();
-  document.querySelectorAll('.cmd-container span').forEach(c=>{
-    c.style.display = c.innerText.toLowerCase().includes(s) ? 'inline-block' : 'none'
-  });
-});
+let producto = "";
+let precio = "";
 
-let productoActual = "";
-let precioActual = "";
-
-// POPUP
-function openPopup(product, price) {
-  productoActual = product;
-  precioActual = price;
-  document.getElementById('popupProduct').innerText = product;
-  document.getElementById('popupPrice').innerText = price;
+function openModal(prod, prec) {
+  producto = prod;
+  precio = prec;
+  document.getElementById('modalProduct').innerText = prod;
+  document.getElementById('modalPrice').innerText = prec;
   
-  let mensaje = `Hola! Quiero comprar:%0A*Producto:* ${product}%0A*Precio:* ${price}%0A%0A*Ya realicé el pago*%0AAdjunto captura`;
-  document.getElementById('btnConfirmar').href = `https://wa.me/51936994155?text=${mensaje}`;
+  let msg = `Hola! Quiero comprar:%0A*${prod}* - *${prec}*%0A%0AYa realicé el pago. Adjunto captura.`;
+  document.getElementById('btnWhatsapp').href = `https://wa.me/51936994155?text=${msg}`;
   
-  document.getElementById('paymentPopup').classList.add('active');
+  document.getElementById('paymentModal').classList.add('active');
   document.body.style.overflow = 'hidden';
-  showTab('yape');
 }
-function closePopup() {
-  document.getElementById('paymentPopup').classList.remove('active');
+
+function closeModal() {
+  document.getElementById('paymentModal').classList.remove('active');
   document.body.style.overflow = 'auto';
 }
-document.getElementById('paymentPopup').addEventListener('click', e=>{
-  if(e.target.id === 'paymentPopup') closePopup()
+
+document.getElementById('paymentModal').addEventListener('click', e=>{
+  if(e.target.id === 'paymentModal') closeModal()
 })
 
-// TABS
-function showTab(tab) {
-  document.querySelectorAll('.tab-btn').forEach(btn=>btn.classList.remove('active'));
-  document.querySelectorAll('.tab-content').forEach(content=>content.classList.remove('active'));
+function selectMethod(method) {
+  document.querySelectorAll('.method-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.payment-info').forEach(i=>i.style.display='none');
   
-  document.querySelector(`.tab-btn:nth-child(${tab==='yape'?1:2})`).classList.add('active');
-  document.getElementById(`tab-${tab}`).classList.add('active');
+  event.target.closest('.method-btn').classList.add('active');
+  document.getElementById(`info-${method}`).style.display = 'block';
 }
 
-// COPIAR
-function copyText(text) {
+function copy(text) {
   navigator.clipboard.writeText(text);
-  alert('✅ Copiado: ' + text);
+  alert('✅ Copiado');
 }
 
-// MUSICA
 let audio = document.getElementById('bgMusic');
 let playBtn = document.getElementById('playBtn');
 function toggleMusic() {
   if(audio.paused){audio.play();playBtn.innerText = '⏸'} 
   else {audio.pause();playBtn.innerText = '▶'}
 }
-audio.volume = 0.2;
+audio.volume = 0.15;
