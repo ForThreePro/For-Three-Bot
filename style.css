@@ -1,4 +1,5 @@
 *{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   background: url('banner.jpg') no-repeat center fixed;
   background-size: cover;
@@ -11,15 +12,11 @@ body::before{
   z-index:-1;
 }
 
-/* ESTRELLAS ANIMADAS */
-.stars{position:fixed;width:100%;height:100%;background:transparent;z-index:-1}
-.stars::after{content:'';position:absolute;width:2px;height:2px;background:#fff;box-shadow:0 0 10px #00D5FF;animation:twinkle 3s infinite}
-
-header{padding:15px;text-align:center;background:rgba(0,0,0,0.3);backdrop-filter:blur(10px)}
+header{padding:15px;text-align:center;background:rgba(0,0,0,0.4);backdrop-filter:blur(10px);position:sticky;top:0;z-index:10}
 header h1{font-family:'Orbitron',sans-serif;color:#00D5FF;font-size:1.2rem;text-shadow:0 0 20px #00D5FF}
 
 .hero{text-align:center;padding:60px 20px}
-.title-glow{font-family:'Orbitron',sans-serif;font-size:3rem;color:#00D5FF;text-shadow:0 0 30px #00D5FF, 0 0 60px #0064FF}
+.title-glow{font-family:'Orbitron',sans-serif;font-size:2.8rem;color:#00D5FF;text-shadow:0 0 30px #00D5FF, 0 0 60px #0064FF}
 .title-glow span{color:#FFD700;text-shadow:0 0 30px #FFD700}
 .subtitle{font-size:1.1rem;margin:10px 0 25px;color:#E6F7FF}
 
@@ -31,37 +28,41 @@ header h1{font-family:'Orbitron',sans-serif;color:#00D5FF;font-size:1.2rem;text-
   padding:15px 40px;border-radius:50px;color:#001440;
   font-family:'Orbitron',sans-serif;font-weight:800;font-size:1rem;
   border:none;display:inline-block;margin:20px 0;
-  box-shadow:0 0 30px rgba(0,213,255,0.6);
+  box-shadow:0 0 20px rgba(0,213,255,0.5);text-decoration:none;
 }
 .note{background:rgba(255,0,100,0.3);border:2px solid #FF0064;padding:8px;border-radius:12px;margin-top:15px;font-size:0.8rem;color:#FFD700}
 
 .section-title{text-align:center;font-family:'Orbitron',sans-serif;font-size:1.8rem;color:#00D5FF;margin-bottom:30px;text-shadow:0 0 20px #00D5FF}
 
-/* CARTAS ANIME */
+/* CARTAS SIN BRILLO */
 .shop{padding:40px 15px}
 .cards-grid{display:grid;grid-template-columns:1fr;gap:20px}
 .card{
   background:rgba(0,20,80,0.6);border:2px solid #00D5FF;
   border-radius:20px;padding:20px;text-align:center;
-  position:relative;backdrop-filter:blur(15px);
-  transition:0.3s;
+  backdrop-filter:blur(15px);
+  transition: transform 0.2s;
 }
-.card:hover{transform:translateY(-5px);box-shadow:0 0 30px #00D5FF}
-.card-glow{position:absolute;top:-2px;left:-2px;right:-2px;bottom:-2px;background:linear-gradient(45deg,#00D5FF,#FFD700);border-radius:20px;z-index:-1;opacity:0;transition:0.3s}
-.card:hover .card-glow{opacity:1}
-.card.featured{border:3px solid #FFD700}
+.card:active{transform:scale(0.97)} /* Solo se hunde poquito */
+
+.card.featured{border:3px solid #FFD700;position:relative}
 .tag{position:absolute;top:-10px;right:10px;background:#FFD700;color:#001440;padding:5px 12px;border-radius:20px;font-size:0.6rem;font-weight:800}
 .card h3{color:#00D5FF;font-size:1.1rem;margin-bottom:10px}
 .price{font-family:'Orbitron',sans-serif;font-size:2rem;color:#FFD700;margin:10px 0}
-.card ul{list-style:none;margin:15px 0}
+.card ul{list-style:none;margin:15px 0;text-align:left}
 .card li{margin:5px 0;font-size:0.85rem}
+.card li::before{content:"✓ ";color:#00D5FF}
 .card button{
-  background:#00D5FF;color:#001440;border:none;padding:12px;width:100%;
+  background:linear-gradient(45deg,#00D5FF,#0064FF);
+  color:#001440;border:none;padding:12px;width:100%;
   border-radius:50px;font-weight:800;font-family:'Orbitron',sans-serif;
+  transition:0.2s;
 }
+.card button:active{transform:scale(0.95)}
 
 /* COMANDOS */
 .commands{padding:40px 15px}
+.command-search{width:100%;padding:12px;border-radius:50px;background:rgba(0,0,0,0.5);border:2px solid #00D5FF;color:#fff;font-size:0.9rem;margin-bottom:15px}
 .cmd-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
 .cmd-tags span{background:rgba(0,213,255,0.3);border:2px solid #00D5FF;padding:8px 15px;border-radius:50px;font-family:'Orbitron',sans-serif;font-size:0.8rem}
 
@@ -70,26 +71,28 @@ header h1{font-family:'Orbitron',sans-serif;color:#00D5FF;font-size:1.2rem;text-
 .popup.active{display:flex}
 .popup-box{background:rgba(0,20,80,0.95);padding:25px;border-radius:20px;border:3px solid #00D5FF;width:90%;max-width:350px;backdrop-filter:blur(20px)}
 .close{float:right;font-size:2rem;color:#00D5FF;cursor:pointer}
+.popup-box h3{font-family:'Orbitron',sans-serif;color:#00D5FF;text-align:center;margin-bottom:10px}
 .popup-price{font-family:'Orbitron',sans-serif;font-size:2rem;color:#FFD700;text-align:center;margin:10px 0}
 .pay-btn{background:rgba(0,213,255,0.2);border:2px solid #00D5FF;padding:12px;border-radius:50px;color:#fff;text-decoration:none;display:block;text-align:center;margin:8px 0}
 
 /* WHATSAPP */
-.wa-btn{position:fixed;bottom:90px;right:15px;background:#00D5FF;width:55px;height:55px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:#001440;z-index:100;box-shadow:0 0 30px #00D5FF;text-decoration:none}
+.wa-btn{position:fixed;bottom:90px;right:15px;background:#00D5FF;width:55px;height:55px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:#001440;z-index:100;box-shadow:0 0 20px #00D5FF;text-decoration:none}
 
 /* PLAYER SPOTIFY */
 .music-bar{
   position:fixed;bottom:0;left:0;width:100%;height:70px;
   background:rgba(0,0,0,0.8);border-top:2px solid #00D5FF;
   display:flex;align-items:center;padding:0 15px;gap:10px;
-  backdrop-filter:blur(15px)
+  backdrop-filter:blur(15px);z-index:99
 }
 .music-bar img{width:45px;height:45px;border-radius:8px;border:2px solid #00D5FF}
 .song-info{flex:1;font-size:0.8rem}
 .song-info small{color:#aaa;font-size:0.6rem}
-.music-bar button{background:#00D5FF;border:none;width:40px;height:40px;border-radius:50%;color:#001440;font-weight:800}
+.music-bar button{background:#00D5FF;border:none;width:40px;height:40px;border-radius:50%;color:#001440;font-weight:800;font-size:1.1rem}
+
+footer{padding:20px;text-align:center;color:#E6F7FF;background:rgba(0,0,0,0.5);margin-bottom:70px}
 
 @media(min-width:769px){
   .cards-grid{grid-template-columns:repeat(3,1fr)}
   .title-glow{font-size:4.5rem}
   .info-badges{flex-direction:row;justify-content:center}
-}
