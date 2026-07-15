@@ -3,188 +3,131 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Whois Yallico | Digital Solutions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <title>Whois Yallico | Playlist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="bg-blur"></div>
-  <div class="gradient-orb orb1"></div>
-  <div class="gradient-orb orb2"></div>
+  <div class="bg"></div>
 
-  <header class="glass">
+  <header>
     <div class="logo">Whois<span>Yallico</span></div>
     <nav>
       <a href="#services">Servicios</a>
-      <a href="#pricing">Planes</a>
       <a href="#music">Playlist</a>
       <a href="#contact">Contacto</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Transforma tu Negocio<br>con <span>Tecnología</span></h1>
-    <p>Bots de WhatsApp, Desarrollos Web y Hosting Profesional</p>
-    <a href="#pricing" class="btn-glass">Explorar Servicios</a>
+    <h1>Bots, Webs y<br><span>Hosting Pro</span></h1>
+    <p>Automatiza tu negocio con tecnología</p>
+    <a href="#pricing" class="btn">Ver Planes</a>
   </section>
 
-  <section class="services glass-section" id="services">
-    <h2>Lo que hacemos</h2>
-    <div class="service-cards">
-      <div class="s-card glass">
-        <h3>🤖 Bots WhatsApp</h3>
-        <p>Automatización completa con +200 comandos, economía y juegos</p>
+  <section id="services">
+    <h2>Servicios</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">🤖</div>
+        <h3>Bots WhatsApp</h3>
+        <p>+200 comandos, economía, juegos</p>
       </div>
-      <div class="s-card glass">
-        <h3>🌐 Desarrollo Web</h3>
-        <p>Páginas modernas, rápidas y 100% responsivas</p>
+      <div class="card">
+        <div class="icon">🌐</div>
+        <h3>Desarrollo Web</h3>
+        <p>Páginas rápidas y modernas</p>
       </div>
-      <div class="s-card glass">
-        <h3>☁️ Hosting Pro</h3>
-        <p>Servidores 24/7 para mantener tu bot siempre online</p>
+      <div class="card">
+        <div class="icon">☁️</div>
+        <h3>Hosting 24/7</h3>
+        <p>Tu bot siempre online</p>
       </div>
     </div>
   </section>
 
-  <section class="pricing" id="pricing">
-    <h2>Planes y Precios</h2>
-    <div class="price-grid">
-
-      <div class="price-card glass">
+  <section id="pricing">
+    <h2>Planes</h2>
+    <div class="price-cards">
+      <div class="price-card">
         <h3>Bot Grupo</h3>
         <div class="price">S/ 7</div>
-        <ul><li>200+ Comandos</li><li>Para Grupos</li></ul>
-        <button onclick="openModal('Bot Grupo', 'S/ 7')">Adquirir</button>
+        <button onclick="openModal('Bot Grupo', 'S/ 7')">Comprar</button>
       </div>
-
-      <div class="price-card glass">
-        <h3>Bot Básico</h3>
-        <div class="price">S/ 20</div>
-        <ul><li>Personalizado</li><li>Soporte 1 mes</li></ul>
-        <button onclick="openModal('Bot Básico', 'S/ 20')">Adquirir</button>
-      </div>
-
-      <div class="price-card glass featured">
-        <div class="ribbon">TOP</div>
+      <div class="price-card featured">
+        <span class="tag">TOP</span>
         <h3>Bot Premium</h3>
         <div class="price">S/ 30</div>
-        <ul><li>Economía + Panel</li><li>Anti-Ban</li><li>Soporte 3 meses</li></ul>
-        <button onclick="openModal('Bot Premium', 'S/ 30')">Adquirir</button>
+        <button onclick="openModal('Bot Premium', 'S/ 30')">Comprar</button>
       </div>
-
-      <div class="price-card glass">
-        <h3>Página Web</h3>
-        <div class="price">S/ 35</div>
-        <ul><li>Diseño Responsive</li><li>Entrega 48h</li></ul>
-        <button onclick="openModal('Página Web', 'S/ 35')">Adquirir</button>
+      <div class="price-card">
+        <h3>Web + Hosting</h3>
+        <div class="price">S/ 45</div>
+        <button onclick="openModal('Web + Hosting', 'S/ 45')">Comprar</button>
       </div>
-
-      <div class="price-card glass">
-        <h3>Hosting 1 Mes</h3>
-        <div class="price">S/ 10</div>
-        <ul><li>24/7 Online</li><li>Soporte técnico</li></ul>
-        <button onclick="openModal('Hosting 1 Mes', 'S/ 10')">Adquirir</button>
-      </div>
-
-      <div class="price-card glass">
-        <h3>Hosting 6 Meses</h3>
-        <div class="price">S/ 60</div>
-        <ul><li>Ahorra 40%</li><li>Soporte VIP</li></ul>
-        <button onclick="openModal('Hosting 6 Meses', 'S/ 60')">Adquirir</button>
-      </div>
-
     </div>
   </section>
 
   <!-- PLAYLIST SPOTIFY -->
-  <section class="music-section glass-section" id="music">
-    <h2>Mi Playlist 🎵</h2>
-
-    <div class="spotify-player glass">
-      <!-- Now Playing -->
-      <div class="now-playing">
-        <img id="cover" src="https://placehold.co/250x250/A78BFA/0D0B14?text=♪" alt="cover">
+  <section id="music">
+    <h2>Mi Playlist</h2>
+    <div class="player">
+      <div class="now">
+        <img id="cover" src="https://placehold.co/300x300/1DB954/000?text=♪" alt="">
         <h3 id="songTitle">Cargando...</h3>
         <p id="songArtist">Whois Yallico</p>
 
-        <!-- Barra de progreso -->
-        <div class="progress-container" onclick="seekMusic(event)">
-          <div class="progress-bar" id="progressBar"></div>
+        <div class="progress" onclick="seekMusic(event)">
+          <div id="progressBar"></div>
         </div>
-        <div class="time-info">
+        <div class="time">
           <span id="currentTime">0:00</span>
           <span id="duration">0:00</span>
         </div>
 
-        <!-- Controles -->
-        <div class="player-controls">
+        <div class="controls">
           <button onclick="prevSong()">⏮</button>
-          <button onclick="toggleMusicPro()" id="playBtnPro" class="play-btn">▶</button>
+          <button onclick="toggleMusicPro()" id="playBtnPro" class="play">▶</button>
           <button onclick="nextSong()">⏭</button>
         </div>
         <audio id="audioPlayer"></audio>
       </div>
 
-      <!-- Lista -->
-      <div class="playlist" id="playlist"></div>
+      <div class="list" id="playlist"></div>
     </div>
   </section>
 
-  <!-- MODAL PAGO -->
+  <!-- MODAL -->
   <div class="modal" id="paymentModal">
-    <div class="modal-content glass">
-      <span class="close-modal" onclick="closeModal()">×</span>
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">×</span>
+      <h3>Completar Pedido</h3>
+      <p id="modalProduct"></p>
+      <div id="modalPrice"></div>
 
-      <div class="modal-header">
-        <h3>Completar Pedido</h3>
-        <p id="modalProduct"></p>
-        <div id="modalPrice"></div>
+      <div class="pay">
+        <button class="pay-btn active" onclick="selectMethod('yape')">💜 Yape</button>
+        <button class="pay-btn" onclick="selectMethod('prex')">💳 Prex</button>
       </div>
 
-      <div class="payment-methods">
-        <button class="method-btn active" onclick="selectMethod('yape')">
-          <div>💜</div>
-          <span>Yape</span>
-        </button>
-        <button class="method-btn" onclick="selectMethod('prex')">
-          <div>💳</div>
-          <span>Prex</span>
-        </button>
+      <div id="info-yape">
+        <p><b>Número:</b> 936 994 155 <button onclick="copy('936994155')">Copiar</button></p>
+        <p><b>Titular:</b> Cristhofer Rojas Huarcaya</p>
       </div>
 
-      <div class="payment-info" id="info-yape">
-        <div class="info-row">
-          <label>Número</label>
-          <div><span>936 994 155</span><button onclick="copy('936994155')">Copiar</button></div>
-        </div>
-        <div class="info-row">
-          <label>Titular</label>
-          <div>Cristhofer Rojas Huarcaya</div>
-        </div>
+      <div id="info-prex" style="display:none">
+        <p><b>Número:</b> 12249975 <button onclick="copy('12249975')">Copiar</button></p>
+        <p><b>Titular:</b> Cristhofer Rojas Huarcaya</p>
       </div>
 
-      <div class="payment-info" id="info-prex" style="display:none">
-        <div class="info-row">
-          <label>Número</label>
-          <div><span>12249975</span><button onclick="copy('12249975')">Copiar</button></div>
-        </div>
-        <div class="info-row">
-          <label>Titular</label>
-          <div>Cristhofer Rojas Huarcaya</div>
-        </div>
-      </div>
-
-      <a href="#" id="btnWhatsapp" class="btn-whatsapp" target="_blank">Enviar Comprobante</a>
+      <a href="#" id="btnWhatsapp" target="_blank">Enviar Comprobante</a>
     </div>
   </div>
 
   <footer id="contact">
-    <div class="footer-content">
-      <div>📱 +51 936 994 155</div>
-      <div>📸 @whois.yallico</div>
-    </div>
-    <p>© 2026 Whois Yallico. Todos los derechos reservados.</p>
+    <p>📱 +51 936 994 155 | 📸 @whois.yallico</p>
+    <p>© 2026 Whois Yallico</p>
   </footer>
 
   <script src="music.js"></script>
