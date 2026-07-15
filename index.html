@@ -24,7 +24,6 @@
     </nav>
   </header>
 
-  <!-- HERO CON TU BANNER -->
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -43,9 +42,7 @@
       <a href="#shop" class="btn btn-ice">COMPRAR AHORA ⚡</a>
       <a href="https://wa.me/51936994155?text=Hola%20quiero%20PROBAR%20el%20bot%20demo" class="btn btn-glass" target="_blank">PROBAR DEMO</a>
 
-      <div class="warning-note">
-        ⚠️ No se realizan reembolsos
-      </div>
+      <div class="warning-note">⚠️ No se realizan reembolsos</div>
     </div>
   </section>
 
@@ -60,12 +57,23 @@
     </div>
   </section>
 
+  <!-- TIENDA CON TODOS LOS 7 PRODUCTOS -->
   <section class="shop" id="shop">
     <h2 class="section-title">TIENDA RAYO PREM</h2>
     <div class="shop-grid">
-      <div class="product-card"><h3>Bot Grupo</h3><div class="product-price">S/ 7<span> Permanente</span></div><button class="btn btn-ice" onclick="openPopup('Bot Grupo', 'S/ 7')">COMPRAR</button></div>
-      <div class="product-card popular"><div class="product-badge">EL MEJOR</div><h3>Bot Premium</h3><div class="product-price">S/ 30</div><button class="btn btn-ice" onclick="openPopup('Bot Premium', 'S/ 30')">COMPRAR</button></div>
-      <div class="product-card"><h3>Hosting 6 Meses</h3><div class="product-price">S/ 60</div><button class="btn btn-ice" onclick="openPopup('Hosting 6 Meses', 'S/ 60')">COMPRAR</button></div>
+      <div class="product-card"><h3>Bot Para Grupo</h3><div class="product-price">S/ 7<span> Permanente</span></div><ul class="product-features"><li>200+ Comandos</li><li>Soporte básico</li></ul><button class="btn btn-ice" onclick="openPopup('Bot Para Grupo', 'S/ 7')">COMPRAR</button></div>
+      
+      <div class="product-card"><h3>Bot Personalizado Básico</h3><div class="product-price">S/ 20</div><ul class="product-features"><li>Nombre y logo</li><li>Soporte 1 mes</li></ul><button class="btn btn-ice" onclick="openPopup('Bot Personalizado Básico', 'S/ 20')">COMPRAR</button></div>
+      
+      <div class="product-card popular"><div class="product-badge">EL MEJOR</div><h3>Bot Personalizado Premium</h3><div class="product-price">S/ 30</div><ul class="product-features"><li>Economía + Panel</li><li>Soporte 3 meses</li></ul><button class="btn btn-ice" onclick="openPopup('Bot Personalizado Premium', 'S/ 30')">COMPRAR</button></div>
+      
+      <div class="product-card"><h3>Página Web</h3><div class="product-price">S/ 35</div><ul class="product-features"><li>Responsive</li><li>Entrega 48h</li></ul><button class="btn btn-ice" onclick="openPopup('Página Web', 'S/ 35')">COMPRAR</button></div>
+      
+      <div class="product-card"><h3>Hosting Bot Mensual</h3><div class="product-price">S/ 10<span>/mes</span></div><ul class="product-features"><li>24/7 Activo</li><li>Soporte técnico</li></ul><button class="btn btn-ice" onclick="openPopup('Hosting Bot Mensual', 'S/ 10')">COMPRAR</button></div>
+      
+      <div class="product-card"><h3>Hosting Bot 3 Meses</h3><div class="product-price">S/ 30</div><ul class="product-features"><li>Ahorra 20%</li><li>Prioridad</li></ul><button class="btn btn-ice" onclick="openPopup('Hosting Bot 3 Meses', 'S/ 30')">COMPRAR</button></div>
+      
+      <div class="product-card"><h3>Hosting Bot 6 Meses</h3><div class="product-price">S/ 60</div><ul class="product-features"><li>Ahorra 40%</li><li>Soporte VIP</li></ul><button class="btn btn-ice" onclick="openPopup('Hosting Bot 6 Meses', 'S/ 60')">COMPRAR</button></div>
     </div>
   </section>
 
@@ -89,6 +97,7 @@
     </div>
   </section>
 
+  <!-- POPUP DE PAGO -->
   <div class="popup-overlay" id="paymentPopup">
     <div class="popup-content">
       <span class="popup-close" onclick="closePopup()">×</span>
@@ -102,6 +111,29 @@
   </div>
 
   <a href="https://wa.me/51936994155" class="whatsapp-float" target="_blank">💬</a>
+
+  <!-- PLAYER TIPO SPOTIFY -->
+  <div class="spotify-player">
+    <audio id="bgMusic" loop>
+      <source src="Musica.mp3" type="audio/mpeg">
+    </audio>
+    <div class="spotify-top">
+      <div class="spotify-left">
+        <img src="banner.jpg" class="spotify-cover">
+        <div>
+          <div class="spotify-song">Tech Beat</div>
+          <div class="spotify-artist">Whois Yallico</div>
+        </div>
+      </div>
+      <button onclick="toggleMusic()" id="playBtn">▶</button>
+    </div>
+    <div class="spotify-bottom">
+      <span id="currentTime">0:00</span>
+      <input type="range" id="progressBar" value="0" max="100">
+      <span id="duration">0:00</span>
+    </div>
+  </div>
+
   <footer><p>© 2026 RAYO PREM BOT | @whois.yallico</p></footer>
   <script src="script.js"></script>
 </body>
