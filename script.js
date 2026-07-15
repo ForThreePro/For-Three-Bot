@@ -1,16 +1,6 @@
 const observer = new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show')}})},{threshold:0.1});
 document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
 
-// RAYOS ANIMADOS
-for(let i=0; i<15; i++){
-  let ray = document.createElement('div');
-  ray.className = 'ray';
-  ray.style.left = Math.random()*100 + '%';
-  ray.style.animationDuration = (3+Math.random()*3) + 's';
-  ray.style.animationDelay = Math.random()*2 + 's';
-  document.getElementById('rays').appendChild(ray);
-}
-
 function updateCountdown() {
   let end = new Date().getTime() + 24*60*60*1000;
   setInterval(()=>{
