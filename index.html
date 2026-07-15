@@ -4,121 +4,137 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rayo Prem Bot ⚡ | Whois Yallico</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <div class="bg-overlay"></div>
+
   <header>
-    <h1>⚡ RAYO PREM BOT</h1>
+    <h1>⚡ RAYO PREM</h1>
+    <nav>
+      <a href="#shop">Tienda</a>
+      <a href="#commands">Comandos</a>
+      <a href="https://wa.me/51936994155" target="_blank">Soporte</a>
+    </nav>
   </header>
 
-  <!-- HERO ESTILO BANNER -->
   <section class="hero">
     <h2 class="title-glow">Rayo Prem <span>Bot</span></h2>
-    <p class="subtitle">El Mejor Bot para WhatsApp</p>
+    <p class="subtitle">El Mejor Bot para WhatsApp del Perú 🇵🇪</p>
     
     <div class="info-badges">
       <a href="https://wa.me/51936994155" class="badge" target="_blank">📱 +51 936 994 155</a>
       <a href="https://instagram.com/whois.yallico" class="badge" target="_blank">📸 @whois.yallico</a>
-      <div class="badge">💳 Yape | Prex | Global66</div>
     </div>
 
-    <a href="#shop" class="btn-main">COMPRAR AHORA</a>
-    <div class="note">⚠️ No se realizan reembolsos</div>
+    <div class="payments">Aceptamos: 💜 Yape | 💳 Prex</div>
+
+    <a href="#shop" class="btn-main">VER TIENDA ⚡</a>
+    <div class="warning">⚠️ No se realizan reembolsos</div>
   </section>
 
-  <!-- PRODUCTOS -->
+  <div class="divider"></div>
+
   <section class="shop" id="shop">
-    <h2 class="section-title">ELIGE TU PODER ⚡</h2>
+    <h2 class="section-title">ELIGE TU PODER</h2>
     <div class="cards-grid">
       
-      <div class="card">
+      <div class="card" style="--delay:0.1s">
         <h3>Bot Para Grupo</h3>
         <div class="price">S/ 7</div>
-        <ul><li>200+ Comandos</li><li>Soporte básico</li></ul>
-        <button onclick="openPopup('Bot Para Grupo', 'S/ 7')">OBTENER</button>
+        <ul><li>✓ 200+ Comandos</li><li>✓ Para Grupos</li></ul>
+        <button onclick="openPopup('Bot Para Grupo', 'S/ 7')">COMPRAR</button>
       </div>
 
-      <div class="card">
+      <div class="card" style="--delay:0.2s">
         <h3>Bot Personalizado Básico</h3>
         <div class="price">S/ 20</div>
-        <ul><li>Nombre y logo</li><li>Soporte 1 mes</li></ul>
-        <button onclick="openPopup('Bot Básico', 'S/ 20')">OBTENER</button>
+        <ul><li>✓ Nombre y Logo</li><li>✓ Soporte 1 mes</li></ul>
+        <button onclick="openPopup('Bot Básico', 'S/ 20')">COMPRAR</button>
       </div>
 
-      <div class="card featured">
-        <div class="tag">EL MEJOR</div>
+      <div class="card featured" style="--delay:0.3s">
+        <div class="tag">MÁS VENDIDO</div>
         <h3>Bot Personalizado Premium</h3>
         <div class="price">S/ 30</div>
-        <ul><li>Economía + Panel</li><li>Soporte 3 meses</li></ul>
-        <button onclick="openPopup('Bot Premium', 'S/ 30')">OBTENER</button>
+        <ul><li>✓ Economía + Panel</li><li>✓ Soporte 3 meses</li><li>✓ Anti-Ban</li></ul>
+        <button onclick="openPopup('Bot Premium', 'S/ 30')">COMPRAR</button>
       </div>
 
-      <div class="card">
+      <div class="card" style="--delay:0.4s">
         <h3>Página Web</h3>
         <div class="price">S/ 35</div>
-        <ul><li>Responsive</li><li>Entrega 48h</li></ul>
-        <button onclick="openPopup('Página Web', 'S/ 35')">OBTENER</button>
+        <ul><li>✓ Diseño Responsive</li><li>✓ Entrega 48h</li></ul>
+        <button onclick="openPopup('Página Web', 'S/ 35')">COMPRAR</button>
       </div>
 
-      <div class="card">
+      <div class="card" style="--delay:0.5s">
         <h3>Hosting Bot Mensual</h3>
         <div class="price">S/ 10</div>
-        <ul><li>24/7 Online</li><li>Soporte técnico</li></ul>
-        <button onclick="openPopup('Hosting 1 Mes', 'S/ 10')">OBTENER</button>
+        <ul><li>✓ 24/7 Online</li><li>✓ Soporte técnico</li></ul>
+        <button onclick="openPopup('Hosting 1 Mes', 'S/ 10')">COMPRAR</button>
       </div>
 
-      <div class="card">
+      <div class="card" style="--delay:0.6s">
         <h3>Hosting Bot 3 Meses</h3>
         <div class="price">S/ 30</div>
-        <ul><li>Ahorra 20%</li><li>Prioridad</li></ul>
-        <button onclick="openPopup('Hosting 3 Meses', 'S/ 30')">OBTENER</button>
+        <ul><li>✓ Ahorra 20%</li><li>✓ Prioridad</li></ul>
+        <button onclick="openPopup('Hosting 3 Meses', 'S/ 30')">COMPRAR</button>
       </div>
 
-      <div class="card">
+      <div class="card" style="--delay:0.7s">
         <h3>Hosting Bot 6 Meses</h3>
         <div class="price">S/ 60</div>
-        <ul><li>Ahorra 40%</li><li>Soporte VIP</li></ul>
-        <button onclick="openPopup('Hosting 6 Meses', 'S/ 60')">OBTENER</button>
+        <ul><li>✓ Ahorra 40%</li><li>✓ Soporte VIP</li></ul>
+        <button onclick="openPopup('Hosting 6 Meses', 'S/ 60')">COMPRAR</button>
       </div>
 
     </div>
   </section>
 
-  <!-- COMANDOS -->
-  <section class="commands">
-    <h2 class="section-title">COMANDOS ÉPICOS</h2>
-    <input type="text" id="commandSearch" placeholder="Busca tu comando..." class="command-search">
-    <div class="cmd-tags" id="commandsGrid">
-      <span>.sticker</span><span>.ia</span><span>.play</span><span>.economia</span>
-      <span>.juego</span><span>.antiporn</span><span>.menu</span><span>.kick</span>
+  <div class="divider"></div>
+
+  <section class="commands" id="commands">
+    <h2 class="section-title">+200 COMANDOS</h2>
+    <input type="text" id="commandSearch" placeholder="Busca: sticker, ia, play..." class="command-search">
+    <div class="cmd-grid" id="commandsGrid">
+      <div class="cmd-item">.sticker</div><div class="cmd-item">.ia</div><div class="cmd-item">.play</div>
+      <div class="cmd-item">.economia</div><div class="cmd-item">.juego</div><div class="cmd-item">.menu</div>
     </div>
   </section>
 
-  <!-- POPUP -->
+  <!-- POPUP CON TUS DATOS -->
   <div class="popup" id="paymentPopup">
     <div class="popup-box">
       <span class="close" onclick="closePopup()">×</span>
-      <h3>COMPLETAR COMPRA</h3>
+      <h3>FINALIZAR COMPRA</h3>
       <p id="popupProduct"></p>
       <div class="popup-price" id="popupPrice"></div>
-      <a href="#" id="btnYape" class="pay-btn" target="_blank">💜 Yape</a>
-      <a href="#" id="btnPrex" class="pay-btn" target="_blank">💳 Prex</a>
-      <a href="#" id="btnGlobal" class="pay-btn" target="_blank">🌎 Global66</a>
+      
+      <div class="payment-data">
+        <h4>💜 YAPE</h4>
+        <p><b>Número:</b> 936 994 155</p>
+        <p><b>Nombre:</b> Cristhofer Rojas Huarcaya</p>
+      </div>
+
+      <div class="payment-data">
+        <h4>💳 PREX</h4>
+        <p><b>Número:</b> 12249975</p>
+        <p><b>Nombre:</b> Cristhofer Rojas Huarcaya</p>
+      </div>
+
+      <a href="#" id="btnConfirmar" class="pay-btn" target="_blank">✅ ENVIAR CAPTURA POR WHATSAPP</a>
     </div>
   </div>
 
   <a href="https://wa.me/51936994155" class="wa-btn" target="_blank">💬</a>
 
-  <!-- PLAYER SPOTIFY -->
   <div class="music-bar">
     <audio id="bgMusic" loop><source src="Musica.mp3" type="audio/mpeg"></audio>
     <img src="banner.jpg">
-    <div class="song-info">
-      <div>Tech Beat</div>
-      <small>Whois Yallico</small>
-    </div>
+    <div class="song-info"><div>Tech Beat</div><small>Whois Yallico</small></div>
     <button onclick="toggleMusic()" id="playBtn">▶</button>
   </div>
 
