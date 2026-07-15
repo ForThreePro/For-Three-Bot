@@ -18,6 +18,7 @@
     <nav>
       <a href="#services">Servicios</a>
       <a href="#pricing">Planes</a>
+      <a href="#music">Música</a>
       <a href="#contact">Contacto</a>
     </nav>
   </header>
@@ -49,7 +50,7 @@
   <section class="pricing" id="pricing">
     <h2>Planes y Precios</h2>
     <div class="price-grid">
-      
+
       <div class="price-card glass">
         <h3>Bot Grupo</h3>
         <div class="price">S/ 7</div>
@@ -96,11 +97,41 @@
     </div>
   </section>
 
-  <!-- MODAL NUEVO -->
+  <!-- SECCIÓN MÚSICA -->
+  <section class="music-section glass-section" id="music">
+    <h2>Mi Playlist 🎵</h2>
+
+    <div class="music-player-pro glass">
+      <div class="player-main">
+        <img id="cover" src="https://placehold.co/120x120/A78BFA/0D0B14?text=♪" alt="cover">
+        <div class="player-info">
+          <h3 id="songTitle">Cargando...</h3>
+          <p id="songArtist">Whois Yallico</p>
+          <div class="player-controls">
+            <button onclick="prevSong()">⏮</button>
+            <button onclick="toggleMusicPro()" id="playBtnPro">▶</button>
+            <button onclick="nextSong()">⏭</button>
+          </div>
+          <audio id="audioPlayer"></audio>
+        </div>
+      </div>
+
+      <div class="playlist" id="playlist"></div>
+
+      <div class="lyrics-box">
+        <h4>Letra</h4>
+        <div id="lyrics" class="lyrics-text">
+          Selecciona una canción para ver la letra
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL PAGO -->
   <div class="modal" id="paymentModal">
     <div class="modal-content glass">
       <span class="close-modal" onclick="closeModal()">×</span>
-      
+
       <div class="modal-header">
         <h3>Completar Pedido</h3>
         <p id="modalProduct"></p>
@@ -152,12 +183,7 @@
     <p>© 2026 Whois Yallico. Todos los derechos reservados.</p>
   </footer>
 
-  <div class="music-player glass">
-    <audio id="bgMusic" loop><source src="Musica.mp3" type="audio/mpeg"></audio>
-    <button onclick="toggleMusic()" id="playBtn">▶</button>
-    <span>Background Music</span>
-  </div>
-
+  <script src="music.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
