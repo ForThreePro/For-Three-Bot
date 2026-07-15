@@ -9,8 +9,6 @@
 </head>
 <body>
 
-  <div class="stars"></div>
-
   <header>
     <h1>⚡ RAYO PREM BOT</h1>
   </header>
@@ -21,8 +19,8 @@
     <p class="subtitle">El Mejor Bot para WhatsApp</p>
     
     <div class="info-badges">
-      <a href="https://wa.me/51936994155" class="badge">📱 +51 936 994 155</a>
-      <a href="https://instagram.com/whois.yallico" class="badge">📸 @whois.yallico</a>
+      <a href="https://wa.me/51936994155" class="badge" target="_blank">📱 +51 936 994 155</a>
+      <a href="https://instagram.com/whois.yallico" class="badge" target="_blank">📸 @whois.yallico</a>
       <div class="badge">💳 Yape | Prex | Global66</div>
     </div>
 
@@ -30,55 +28,56 @@
     <div class="note">⚠️ No se realizan reembolsos</div>
   </section>
 
-  <!-- PRODUCTOS TIPO CARTAS ANIME -->
+  <!-- PRODUCTOS -->
   <section class="shop" id="shop">
     <h2 class="section-title">ELIGE TU PODER ⚡</h2>
     <div class="cards-grid">
       
       <div class="card">
-        <div class="card-glow"></div>
-        <h3>Bot Grupo</h3>
+        <h3>Bot Para Grupo</h3>
         <div class="price">S/ 7</div>
-        <ul><li>200+ Comandos</li><li>Para Grupos</li></ul>
-        <button onclick="openPopup('Bot Grupo', 'S/ 7')">OBTENER</button>
+        <ul><li>200+ Comandos</li><li>Soporte básico</li></ul>
+        <button onclick="openPopup('Bot Para Grupo', 'S/ 7')">OBTENER</button>
+      </div>
+
+      <div class="card">
+        <h3>Bot Personalizado Básico</h3>
+        <div class="price">S/ 20</div>
+        <ul><li>Nombre y logo</li><li>Soporte 1 mes</li></ul>
+        <button onclick="openPopup('Bot Básico', 'S/ 20')">OBTENER</button>
       </div>
 
       <div class="card featured">
-        <div class="card-glow"></div>
         <div class="tag">EL MEJOR</div>
-        <h3>Bot Premium</h3>
+        <h3>Bot Personalizado Premium</h3>
         <div class="price">S/ 30</div>
         <ul><li>Economía + Panel</li><li>Soporte 3 meses</li></ul>
         <button onclick="openPopup('Bot Premium', 'S/ 30')">OBTENER</button>
       </div>
 
       <div class="card">
-        <div class="card-glow"></div>
-        <h3>Bot Básico</h3>
-        <div class="price">S/ 20</div>
-        <ul><li>Nombre y logo</li><li>Soporte 1 mes</li></ul>
-        <button onclick="openPopup('Bot Básico', 'S/ 20')">OBTENER</button>
-      </div>
-
-      <div class="card">
-        <div class="card-glow"></div>
         <h3>Página Web</h3>
         <div class="price">S/ 35</div>
         <ul><li>Responsive</li><li>Entrega 48h</li></ul>
-        <button onclick="openPopup('Web', 'S/ 35')">OBTENER</button>
+        <button onclick="openPopup('Página Web', 'S/ 35')">OBTENER</button>
       </div>
 
       <div class="card">
-        <div class="card-glow"></div>
-        <h3>Hosting 1 Mes</h3>
+        <h3>Hosting Bot Mensual</h3>
         <div class="price">S/ 10</div>
-        <ul><li>24/7 Online</li></ul>
+        <ul><li>24/7 Online</li><li>Soporte técnico</li></ul>
         <button onclick="openPopup('Hosting 1 Mes', 'S/ 10')">OBTENER</button>
       </div>
 
       <div class="card">
-        <div class="card-glow"></div>
-        <h3>Hosting 6 Meses</h3>
+        <h3>Hosting Bot 3 Meses</h3>
+        <div class="price">S/ 30</div>
+        <ul><li>Ahorra 20%</li><li>Prioridad</li></ul>
+        <button onclick="openPopup('Hosting 3 Meses', 'S/ 30')">OBTENER</button>
+      </div>
+
+      <div class="card">
+        <h3>Hosting Bot 6 Meses</h3>
         <div class="price">S/ 60</div>
         <ul><li>Ahorra 40%</li><li>Soporte VIP</li></ul>
         <button onclick="openPopup('Hosting 6 Meses', 'S/ 60')">OBTENER</button>
@@ -90,7 +89,8 @@
   <!-- COMANDOS -->
   <section class="commands">
     <h2 class="section-title">COMANDOS ÉPICOS</h2>
-    <div class="cmd-tags">
+    <input type="text" id="commandSearch" placeholder="Busca tu comando..." class="command-search">
+    <div class="cmd-tags" id="commandsGrid">
       <span>.sticker</span><span>.ia</span><span>.play</span><span>.economia</span>
       <span>.juego</span><span>.antiporn</span><span>.menu</span><span>.kick</span>
     </div>
@@ -103,13 +103,13 @@
       <h3>COMPLETAR COMPRA</h3>
       <p id="popupProduct"></p>
       <div class="popup-price" id="popupPrice"></div>
-      <a href="#" id="btnYape" class="pay-btn">💜 Yape</a>
-      <a href="#" id="btnPrex" class="pay-btn">💳 Prex</a>
-      <a href="#" id="btnGlobal" class="pay-btn">🌎 Global66</a>
+      <a href="#" id="btnYape" class="pay-btn" target="_blank">💜 Yape</a>
+      <a href="#" id="btnPrex" class="pay-btn" target="_blank">💳 Prex</a>
+      <a href="#" id="btnGlobal" class="pay-btn" target="_blank">🌎 Global66</a>
     </div>
   </div>
 
-  <a href="https://wa.me/51936994155" class="wa-btn">💬</a>
+  <a href="https://wa.me/51936994155" class="wa-btn" target="_blank">💬</a>
 
   <!-- PLAYER SPOTIFY -->
   <div class="music-bar">
@@ -122,6 +122,7 @@
     <button onclick="toggleMusic()" id="playBtn">▶</button>
   </div>
 
+  <footer>© 2026 RAYO PREM BOT | @whois.yallico</footer>
   <script src="script.js"></script>
 </body>
 </html>
