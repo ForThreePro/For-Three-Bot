@@ -1,14 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+
 :root{
   --morado:#8b00ff;
-  --fucsia:#d400ff;
-  --neon:#ff00ff;
+  --fucsia:#ff00ff;
+  --neon:#d400ff;
   --oscuro:#0a0014;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial}
 body{background:var(--oscuro);color:#fff;scroll-behavior:smooth}
 
-/* PORTADA CON TU IMAGEN Y EFECTO MORADO */
+/* PORTADA */
 header{
   height:100vh;
   background:linear-gradient(rgba(10,0,20,0.85), rgba(139,0,255,0.5)), 
@@ -16,14 +18,43 @@ header{
   display:flex;flex-direction:column;justify-content:center;align-items:center;
   text-align:center;padding:20px
 }
-h1{
-  font-size:70px;margin-bottom:15px;color:#ff00ff;
-  text-shadow:0 0 20px #ff00ff, 0 0 40px #8b00ff, 0 0 60px #d400ff;
-  letter-spacing:3px;font-weight:900
+
+/* TEXTO NEON IGUAL A TU IMAGEN */
+.titulo-neon{
+  font-family: 'Poppins', sans-serif;
+  font-size:90px;
+  color:#ff00ff;
+  margin-bottom:20px;
+  font-style:italic;
+  text-shadow:
+    0 0 10px #ff00ff,
+    0 0 20px #ff00ff,
+    0 0 40px #d400ff,
+    0 0 80px #8b00ff,
+    0 0 120px #8b00ff;
+  animation: brillo 2s ease-in-out infinite alternate;
 }
+
+@keyframes brillo{
+  from{
+    text-shadow:
+      0 0 10px #ff00ff,
+      0 0 20px #ff00ff,
+      0 0 40px #d400ff,
+      0 0 80px #8b00ff;
+  }
+  to{
+    text-shadow:
+      0 0 20px #ff00ff,
+      0 0 40px #ff00ff,
+      0 0 80px #d400ff,
+      0 0 120px #8b00ff,
+      0 0 160px #8b00ff;
+  }
+}
+
 header p{font-size:23px;margin-bottom:35px;color:#e0b3ff;max-width:600px}
 
-/* BOTON NEON */
 .btn{
   background:linear-gradient(135deg,#8b00ff,#ff00ff);
   color:#fff;padding:20px 50px;border-radius:15px;
@@ -37,7 +68,6 @@ section{padding:90px 20px}
 h2{text-align:center;font-size:38px;margin-bottom:50px;color:#ff00ff;text-shadow:0 0 15px #8b00ff}
 .cta{background:#05000a;text-align:center}
 
-/* CARDS MORADAS */
 .cards{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;max-width:1300px;margin:auto}
 .card{
   background:rgba(139,0,255,0.08);
@@ -49,7 +79,6 @@ h2{text-align:center;font-size:38px;margin-bottom:50px;color:#ff00ff;text-shadow
 .card:hover{transform:translateY(-12px);box-shadow:0 10px 40px rgba(255,0,255,0.4)}
 .card h3{color:#ff00ff;margin-bottom:15px;font-size:24px}
 
-/* COMANDOS */
 #comandos{background:#05000a}
 .comandos-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:25px;max-width:1200px;margin:auto}
 .categoria{
@@ -68,7 +97,6 @@ h2{text-align:center;font-size:38px;margin-bottom:50px;color:#ff00ff;text-shadow
   margin-right:10px;font-size:14px;box-shadow:0 0 10px #ff00ff
 }
 
-/* PLANES */
 #precios{background:var(--oscuro)}
 .planes{display:flex;gap:25px;justify-content:center;flex-wrap:wrap;max-width:1200px;margin:auto;position:relative}
 .plan{
