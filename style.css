@@ -4,12 +4,14 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial}
 body{background:var(--oscuro);color:#fff;scroll-behavior:smooth;overflow-x:hidden}
 
+/* ICONOS FLOTANTES */
 .social-float{position:fixed;bottom:20px;right:20px;display:flex;flex-direction:column;gap:12px;z-index:999}
 .float-btn{width:55px;height:55px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#8b00ff,#ff00ff);box-shadow:0 0 20px rgba(255,0,255,0.6);transition:0.3s;animation:flotar 2s ease-in-out infinite}
 .float-btn svg{width:28px;height:28px;color:#fff}
 .float-btn:hover{transform:scale(1.15);box-shadow:0 0 40px rgba(255,0,255,1)}
 @keyframes flotar{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
+/* HEADER */
 header{
   height:450px;width:95%;max-width:1400px;margin:20px auto;border-radius:25px;overflow:hidden;
   background:linear-gradient(rgba(10,0,20,0.85), rgba(139,0,255,0.5)), 
@@ -36,11 +38,13 @@ section{padding:70px 20px}
 h2{text-align:center;font-size:38px;margin-bottom:40px;color:#ff00ff;text-shadow:0 0 15px #8b00ff}
 .cta{background:#05000a;text-align:center}
 
+/* CARDS BENEFICIOS */
 .cards{display:flex;gap:25px;justify-content:center;flex-wrap:wrap;max-width:1300px;margin:auto}
 .card{background:rgba(139,0,255,0.08);backdrop-filter:blur(12px);border:1px solid rgba(255,0,255,0.4);padding:35px 25px;border-radius:20px;width:340px;transition:0.3s;text-align:center}
 .card:hover{transform:translateY(-10px);box-shadow:0 10px 40px rgba(255,0,255,0.4)}
 .card h3{color:#ff00ff;margin-bottom:15px;font-size:22px}
 
+/* COMANDOS */
 #comandos{background:#05000a}
 .comandos-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:20px;max-width:1200px;margin:auto}
 .categoria{background:rgba(139,0,255,0.1);border:1px solid rgba(255,0,255,0.4);border-radius:18px;padding:25px;transition:0.3s}
@@ -50,12 +54,13 @@ h2{text-align:center;font-size:38px;margin-bottom:40px;color:#ff00ff;text-shadow
 .categoria li{padding:10px 0;border-bottom:1px solid rgba(255,0,255,0.15);font-size:15px}
 .cmd{background:#ff00ff;color:#0a0014;padding:3px 8px;border-radius:5px;font-weight:bold;font-family:'Courier New';margin-right:8px;font-size:13px;box-shadow:0 0 8px #ff00ff}
 
+/* PRECIOS */
 #precios{background:var(--oscuro)}
 .planes{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;max-width:1200px;margin:auto;position:relative}
 .plan{background:linear-gradient(180deg, rgba(139,0,255,0.15), rgba(139,0,255,0.05));border:2px solid rgba(255,0,255,0.4);border-radius:18px;padding:35px 25px;width:300px;text-align:center;transition:0.3s;position:relative}
 .plan:hover{border-color:#ff00ff;transform:scale(1.05);box-shadow:0 0 30px rgba(255,0,255,0.5)}
 .plan h3{font-size:24px;color:#ff00ff;margin-bottom:10px}
-.precio{font-size:40px;font-weight:bold;color:#fff;margin:18px 0;text-shadow:0 0 10px #ff00ff}
+.precio{font-size:40px;font-weight:bold;color:#fff;margin:10px 0;text-shadow:0 0 10px #ff00ff}
 .precio span{font-size:16px;color:#d400ff}
 .plan ul{list-style:none;text-align:left;margin:20px 0}
 .plan ul li{padding:9px 0;border-bottom:1px solid rgba(255,0,255,0.2);font-size:15px}
@@ -70,22 +75,54 @@ footer{text-align:center;padding:40px 20px;background:#030005;color:#d400ff;bord
 @keyframes aparecer{from{transform:scale(0.8);opacity:0}to{transform:scale(1);opacity:1}}
 .cerrar{color:#ff00ff;position:absolute;top:15px;right:20px;font-size:35px;font-weight:bold;cursor:pointer;line-height:20px;z-index:1001;}
 .cerrar:hover{color:#fff}
+
+.alerta-pago{
+  background:linear-gradient(135deg, #ff00ff, #8b00ff);
+  color:#fff;
+  padding:12px;
+  border-radius:10px;
+  text-align:center;
+  font-weight:bold;
+  margin-bottom:15px;
+  animation:parpadeo 1.5s infinite;
+  font-size:15px;
+}
+@keyframes parpadeo{0%,100%{opacity:1}50%{opacity:0.6}}
+
 .popup-content h2{color:#ff00ff;text-align:center;margin-bottom:10px;font-size:26px;padding-right:30px;}
 .plan-seleccionado{text-align:center;background:rgba(255,0,255,0.1);padding:12px;border-radius:10px;margin-bottom:20px;color:#ff00ff;font-weight:bold;font-size:16px;border:1px solid rgba(255,0,255,0.3);}
+
 .metodos-pago{margin:20px 0}
 .metodos-pago h3{color:#ff00ff;margin-bottom:12px;font-size:18px}
 .pago-opcion{display:flex;align-items:center;gap:12px;background:rgba(139,0,255,0.1);padding:12px;border-radius:12px;margin-bottom:10px;border:1px solid rgba(255,0,255,0.3)}
 .pago-icon{font-size:26px;min-width:30px}
 .pago-opcion strong{color:#fff;font-size:15px;display:block}
 .pago-opcion p{color:#d400ff;font-size:13px;margin:2px 0 0 0}
+
 #formCompra h3{color:#ff00ff;margin:20px 0 12px;font-size:18px}
-#formCompra input, #formCompra textarea{width:100%;padding:14px;margin-bottom:12px;background:rgba(139,0,255,0.1);border:1px solid rgba(255,0,255,0.4);border-radius:10px;color:#fff;font-size:15px;font-family:'Segoe UI';box-sizing:border-box;}
+#formCompra input, #formCompra textarea, .campo-select{
+  width:100%;
+  padding:14px;
+  margin-bottom:12px;
+  background:rgba(139,0,255,0.1);
+  border:1px solid rgba(255,0,255,0.4);
+  border-radius:10px;
+  color:#fff;
+  font-size:15px;
+  font-family:'Segoe UI';
+  box-sizing:border-box;
+}
 #formCompra input::placeholder, #formCompra textarea::placeholder{color:#a855f7}
-#formCompra input:focus, #formCompra textarea:focus{outline:none;border-color:#ff00ff;box-shadow:0 0 10px rgba(255,0,255,0.5)}
+#formCompra input:focus, #formCompra textarea:focus, .campo-select:focus{
+  outline:none;
+  border-color:#ff00ff;
+  box-shadow:0 0 10px rgba(255,0,255,0.5)
+}
+.campo-select option{background:#1a0033;color:#fff}
 #formCompra textarea{resize:vertical;min-height:80px}
 #formCompra .btn{width:100%;margin-top:10px;font-size:16px}
 
-/* RESPONSIVE */
+/* RESPONSIVE TABLET */
 @media (max-width: 768px){
   header{height:380px;width:92%;margin:15px auto;border-radius:20px}
   .titulo-neon{font-size:42px;margin-bottom:10px}
@@ -102,6 +139,8 @@ footer{text-align:center;padding:40px 20px;background:#030005;color:#d400ff;bord
   .float-btn{width:50px;height:50px}
   .float-btn svg{width:24px;height:24px}
 }
+
+/* RESPONSIVE CELULAR */
 @media (max-width: 480px){
   header{height:320px}
   .titulo-neon{font-size:34px}
@@ -112,4 +151,6 @@ footer{text-align:center;padding:40px 20px;background:#030005;color:#d400ff;bord
   .popup{padding:10px 5px}
   .popup-content{padding:20px 15px;margin:10px auto}
   .popup-content h2{font-size:22px}
+  .plan-seleccionado{font-size:14px;padding:10px}
+  .pago-opcion{padding:10px}
 }
