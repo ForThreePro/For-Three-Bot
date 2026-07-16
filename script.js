@@ -1,4 +1,4 @@
-const MI_NUMERO = "51TU_NUMERO";
+const MI_NUMERO = "51936994155";
 
 document.getElementById('btnMain').href = `https://wa.me/${MI_NUMERO}`;
 
