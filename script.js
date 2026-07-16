@@ -120,7 +120,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 });
 
-document.querySelectorAll('.card, .plan, .categoria').forEach(el => {
+document.querySelectorAll('.card, .plan, .categoria, .testi, .faq-item').forEach(el => {
   el.style.opacity = 0;
   el.style.transform = 'translateY(30px)';
   el.style.transition = '0.6s';
