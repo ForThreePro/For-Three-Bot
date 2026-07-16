@@ -1,61 +1,33 @@
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial}
-body{background:#050510;color:#fff;scroll-behavior:smooth}
+// Cambia tu número aquí
+const MI_NUMERO = "51TU_NUMERO";
 
-/* PORTADA CON TU IMAGEN */
-header{
-  height:100vh;
-  background:linear-gradient(rgba(5,5,16,0.85), rgba(0,150,255,0.3)), 
-             url('https://cdn.fbsbx.com/v/t65.102178-21/748513685_894578186476342_3556847221729382265_n.jpg/Cyber_Bot_HD_1080x1080.jpg?_nc_ht=cdn.fbsbx.com&_nc_ohc=ExMNybO5SeAQ7kNvwE-81RU&sdl=0&ccb=14-4&oh=00_AQCcUgZXmtHUNojyoEabTIWGb7qcubYlLO26Wc7Pc18GsA&oe=6A5AF397&_nc_sid=4ee932') center/cover;
-  display:flex;flex-direction:column;justify-content:center;align-items:center;
-  text-align:center;padding:20px
-}
-h1{font-size:60px;margin-bottom:15px;text-shadow:0 0 30px #0096ff;color:#00d4ff;letter-spacing:2px}
-header p{font-size:23px;margin-bottom:35px;color:#e0e0e0;max-width:600px}
+// Botón principal
+document.getElementById('btnMain').href = `https://wa.me/${MI_NUMERO}`;
 
-/* BOTON */
-.btn{
-  background:linear-gradient(135deg,#0096ff,#00d4ff);
-  color:#050510;padding:20px 50px;border-radius:15px;
-  text-decoration:none;font-weight:bold;font-size:19px;
-  box-shadow:0 0 35px rgba(0,212,255,0.7);
-  transition:0.3s;display:inline-block;border:none;cursor:pointer
-}
-.btn:hover{transform:scale(1.08)}
+// Botones de comprar
+document.querySelectorAll('.comprar').forEach(boton => {
+  boton.addEventListener('click', () => {
+    const plan = boton.getAttribute('data-plan');
+    const mensaje = `Hola! Quiero comprar el plan: ${plan}`;
+    window.open(`https://wa.me/${MI_NUMERO}?text=${encodeURIComponent(mensaje)}`, '_blank');
+  });
+});
 
-/* SECCIONES */
-section{padding:90px 20px}
-h2{text-align:center;font-size:38px;margin-bottom:50px;color:#00d4ff}
-.cta{background:#030308;text-align:center}
+// Efecto de aparición al hacer scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+});
 
-/* CARDS BENEFICIOS */
-.cards{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;max-width:1300px;margin:auto}
-.card{
-  background:rgba(0,212,255,0.06);
-  backdrop-filter:blur(12px);
-  border:1px solid rgba(0,212,255,0.4);
-  padding:45px 35px;border-radius:25px;width:340px;
-  transition:0.3s;text-align:center
-}
-.card:hover{transform:translateY(-12px);box-shadow:0 10px 40px rgba(0,212,255,0.3)}
-.card h3{color:#00d4ff;margin-bottom:15px;font-size:24px}
+document.querySelectorAll('.card, .plan').forEach(el => {
+  el.style.opacity = 0;
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = '0.6s';
+  observer.observe(el);
+});
 
-/* PLANES */
-#precios{background:#030308}
-.planes{display:flex;gap:25px;justify-content:center;flex-wrap:wrap;max-width:1200px;margin:auto;position:relative}
-.plan{
-  background:linear-gradient(180deg, rgba(0,212,255,0.1), rgba(0,212,255,0.03));
-  border:2px solid rgba(0,212,255,0.3);
-  border-radius:20px;padding:40px 30px;width:300px;text-align:center;
-  transition:0.3s;position:relative
-}
-.plan:hover{border-color:#00d4ff;transform:scale(1.05)}
-.plan h3{font-size:26px;color:#00d4ff;margin-bottom:10px}
-.precio{font-size:45px;font-weight:bold;color:#fff;margin:20px 0}
-.precio span{font-size:18px;color:#aaa}
-.plan ul{list-style:none;text-align:left;margin:25px 0}
-.plan ul li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.1)}
-.destacado{border-color:#00d4ff;box-shadow:0 0 40px rgba(0,212,255,0.4)}
-.etiqueta{background:#00d4ff;color:#000;padding:5px 15px;border-radius:20px;font-size:12px;font-weight:bold;position:absolute;top:-15px;left:50%;transform:translateX(-50%)}
-
-/* FOOTER */
-footer{text-align:center;padding:50px;background:#020204;color:#777}
+console.log("CYBER BOT HD cargado correctamente ⚡");
