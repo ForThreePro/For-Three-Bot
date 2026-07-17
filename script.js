@@ -23,6 +23,7 @@ document.querySelectorAll('.comprar').forEach(boton => {
     generarCampos(planSeleccionado);
     popup.style.display = 'block';
     document.body.style.overflow = 'hidden';
+    window.scrollTo({top: 0, behavior: 'smooth'}); // Subir al tope en cel
   });
 });
 
@@ -70,7 +71,7 @@ function generarCampos(plan){
 
   if(plan === "Hosting"){
     camposDinamicos.innerHTML = `
-      <p style="color:#00f5ff;text-align:center;margin-bottom:15px">Escríbenos por WhatsApp para configurar tu hosting</p>
+      <p style="color:#00f5ff;text-align:center;margin-bottom:15px;font-size:14px">Escríbenos por WhatsApp para configurar tu hosting</p>
     `;
   }
 }
@@ -113,10 +114,10 @@ ${datosExtras}
     window.open(datosPagoActual.link, '_blank');
     setTimeout(() => {
       window.open(`https://wa.me/${MI_NUMERO}?text=${encodeURIComponent(mensaje)}`, '_blank');
-    }, 800);
+    }, 600);
   }
 
-  // FLUJO 2: Si eligió YAPE/GLOBAL/PREX -> Solo WhatsApp
+  // FLUJO 2: Si eligió YAPE/PREX -> Solo WhatsApp
   else {
     window.open(`https://wa.me/${MI_NUMERO}?text=${encodeURIComponent(mensaje)}`, '_blank');
   }
@@ -126,7 +127,7 @@ ${datosExtras}
   document.getElementById('formCompra').reset();
 });
 
-// ANIMACIÓN AL HACER SCROLL
+// ANIMACIÓN AL HACER SCROLL - OPTIMIZADO PARA CEL
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
@@ -134,11 +135,11 @@ const observer = new IntersectionObserver((entries) => {
       entry.target.style.transform = 'translateY(0)';
     }
   });
-});
+}, { threshold: 0.1 }); // Se activa más rápido en cel
 
 document.querySelectorAll('.card, .plan, .categoria, .testi, .faq-item').forEach(el => {
   el.style.opacity = 0;
-  el.style.transform = 'translateY(30px)';
-  el.style.transition = '0.6s';
+  el.style.transform = 'translateY(20px)'; // Menos distancia en cel
+  el.style.transition = '0.5s';
   observer.observe(el);
 });
