@@ -24,7 +24,6 @@ function actualizarBotonesPago() {
     }
   });
 
-  // Actualizar textos "Total con Tarjeta"
   document.getElementById('total-grupo-mensual').textContent = `Total con Tarjeta: S/${PAGOS["Bot Para Grupo Mensual"].total}`;
   document.getElementById('total-grupo-permanente').textContent = `Total con Tarjeta: S/${PAGOS["Bot Para Grupo Permanente"].total}`;
   document.getElementById('total-bot-basic').textContent = `Total con Tarjeta: S/${PAGOS["Bot Personalizado Basic"].total}`;
