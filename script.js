@@ -1,6 +1,6 @@
 const MI_NUMERO = "51936994155";
 let planSeleccionado = "";
-let linkPago = "";
+let datosPagoActual = {};
 
 document.getElementById('btnMain').href = `https://wa.me/${MI_NUMERO}`;
 
@@ -9,17 +9,24 @@ const cerrar = document.querySelector('.cerrar');
 const planTexto = document.querySelector('.plan-seleccionado');
 const camposDinamicos = document.getElementById('camposDinamicos');
 
+// CARGAR DATOS AL INICIO
+document.addEventListener('DOMContentLoaded', () => {
+  actualizarBotonesPago();
+});
+
+// ABRIR POPUP AL DAR CLICK EN COMPRAR
 document.querySelectorAll('.comprar').forEach(boton => {
   boton.addEventListener('click', () => {
     planSeleccionado = boton.getAttribute('data-plan');
-    linkPago = boton.getAttribute('data-link');
-    planTexto.innerHTML = `Plan: ${planSeleccionado} <br><a href="${linkPago}" target="_blank" style="color:#00f5ff;text-decoration:underline">💳 Pagar con Tarjeta Aquí</a>`;
+    datosPagoActual = obtenerDatosPago(planSeleccionado);
+    planTexto.innerHTML = `Plan: ${planSeleccionado} <br> <span style="color:#00f5ff">Total con Tarjeta: S/${datosPagoActual.total}</span>`;
     generarCampos(planSeleccionado);
     popup.style.display = 'block';
     document.body.style.overflow = 'hidden';
   });
 });
 
+// CERRAR POPUP
 cerrar.onclick = () => {
   popup.style.display = 'none';
   document.body.style.overflow = 'auto';
@@ -32,6 +39,7 @@ window.onclick = (e) => {
   }
 }
 
+// GENERAR CAMPOS SEGÚN EL PLAN
 function generarCampos(plan){
   camposDinamicos.innerHTML = "";
 
@@ -67,8 +75,11 @@ function generarCampos(plan){
   }
 }
 
+// ENVIAR FORMULARIO
 document.getElementById('formCompra').addEventListener('submit', (e) => {
   e.preventDefault();
+
+  const metodoPago = document.querySelector('input[name="metodo"]:checked').value;
 
   let datosExtras = "";
   if(planSeleccionado.includes("Bot Para Grupo")){
@@ -85,22 +96,37 @@ document.getElementById('formCompra').addEventListener('submit', (e) => {
   }
 
   const mensaje = `*NUEVO PEDIDO CYBER BOT*
-  
+
 *Plan:* ${planSeleccionado}
-*Link de Pago MP:* ${linkPago}
+*Precio:* S/${datosPagoActual.precio}
+*Comisión Tarjeta:* S/${datosPagoActual.comision}
+*Total:* S/${datosPagoActual.total}
+*Link de Pago MP:* ${datosPagoActual.link}
 ${datosExtras}
 *Nombre:* ${document.getElementById('nombre').value}
 *WhatsApp:* ${document.getElementById('whatsapp').value}
 *Nota:* ${document.getElementById('nota').value || 'Ninguna'}
+*Método de Pago:* ${metodoPago.toUpperCase()}`;
 
-Método de Pago: Tarjeta MP / Yape / Global66 / Prex`;
+  // FLUJO 1: Si eligió TARJETA -> Abre MP + Te avisa por WA
+  if(metodoPago === 'tarjeta'){
+    window.open(datosPagoActual.link, '_blank');
+    setTimeout(() => {
+      window.open(`https://wa.me/${MI_NUMERO}?text=${encodeURIComponent(mensaje)}`, '_blank');
+    }, 800);
+  }
 
-  window.open(`https://wa.me/${MI_NUMERO}?text=${encodeURIComponent(mensaje)}`, '_blank');
+  // FLUJO 2: Si eligió YAPE/GLOBAL/PREX -> Solo WhatsApp
+  else {
+    window.open(`https://wa.me/${MI_NUMERO}?text=${encodeURIComponent(mensaje)}`, '_blank');
+  }
+
   popup.style.display = 'none';
   document.body.style.overflow = 'auto';
   document.getElementById('formCompra').reset();
 });
 
+// ANIMACIÓN AL HACER SCROLL
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
