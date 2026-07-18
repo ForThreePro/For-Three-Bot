@@ -1,89 +1,56 @@
-document.addEventListener('DOMContentLoaded', function() {
-  
-let planActual = {}; 
-const MI_NUMERO = "51936994155";
-const popup = document.getElementById('popupPago'); 
-const cerrar = document.querySelector('.cerrar');
-const planInfo = document.querySelector('.plan-info'); 
-const datosPago = document.getElementById('datosPago'); 
-const camposExtra = document.getElementById('camposExtra');
+let pedidos = JSON.parse(localStorage.getItem('pedidosCyber')) || [];
 
-// ABRIR POPUP AL DAR COMPRAR
-document.querySelectorAll('.comprar').forEach(boton => {
-  boton.addEventListener('click', () => {
-    const plan = boton.closest('.plan');
-    planActual = { 
-      nombre: plan.dataset.plan, 
-      precio: plan.dataset.precio, 
-      comision: plan.dataset.comision, 
-      link: plan.dataset.link, 
-      total: (parseFloat(plan.dataset.precio) + parseFloat(plan.dataset.comision)).toFixed(2) 
+function mostrarForm(id) {
+  document.getElementById('form-'+id).style.display = 'block';
+}
+
+function enviarPedido(producto, id) {
+  const nombre = document.getElementById('nombre-'+id).value;
+  const wp = document.getElementById('wp-'+id).value;
+  const file = document.getElementById('captura-'+id).files[0];
+
+  if(!nombre ||!wp ||!file) return alert('Completa todos los campos');
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const nuevoPedido = {
+      id: Date.now(),
+      producto, nombre, wp,
+      captura: e.target.result,
+      fecha: new Date().toLocaleString()
     };
-    planInfo.innerHTML = `<strong>${planActual.nombre}</strong> <br> Precio: S/${planActual.precio}`;
-    generarCamposExtra(planActual.nombre); 
-    mostrarDatosPago('tarjeta'); 
-    popup.style.display = 'block'; 
-    document.body.style.overflow = 'hidden';
-  });
-});
-
-cerrar.onclick = () => { popup.style.display = 'none'; document.body.style.overflow = 'auto'; }
-window.onclick = (e) => { if(e.target == popup){ popup.style.display = 'none'; document.body.style.overflow = 'auto'; } }
-
-function generarCamposExtra(nombrePlan){
-  camposExtra.innerHTML = "";
-  if(nombrePlan.includes("Bot Para Grupo")){
-    camposExtra.innerHTML = `<h3 style="color:var(--neon);margin-bottom:12px">1. Datos del Grupo</h3><input type="text" id="nombreCliente" placeholder="Tu Nombre *" required><input type="text" id="linkGrupo" placeholder="Link del Grupo *" required>`;
+    pedidos.push(nuevoPedido);
+    localStorage.setItem('pedidosCyber', JSON.stringify(pedidos));
+    alert('Pedido enviado! Te contactaremos pronto 🐱');
+    location.reload();
   }
+  reader.readAsDataURL(file);
 }
 
-document.querySelectorAll('input[name="metodo"]').forEach(radio => { 
-  radio.addEventListener('change', (e) => { mostrarDatosPago(e.target.value); }); 
-});
-
-function mostrarDatosPago(metodo){
-  if(metodo === 'tarjeta'){
-    datosPago.innerHTML = `<h4>💳 Pago con Tarjeta</h4><p><strong>Total:</strong> S/${planActual.total}</p><p><strong>Comisión:</strong> S/${planActual.comision}</p><button type="button" class="btn" id="btnPagarTarjeta" style="width:100%">PAGAR CON TARJETA</button>`;
-    document.getElementById('btnPagarTarjeta').onclick = pagarTarjeta;
-  }
-  if(metodo === 'yape'){
-    datosPago.innerHTML = `<h4>📱 Pago con Yape</h4><p><strong>Total:</strong> S/${planActual.precio}</p><p><strong>Número:</strong> 936 994 155 <button class="copiar-btn" onclick="copiar('936994155')">Copiar</button></p><p><strong>Nombre:</strong> Cristhofer Rojas Huarcaya</p><img src="https://files.evogb.win/kc99Pp.jpg" alt="QR Yape"><p style="font-size:12px;color:#c9a0ff">Envía el comprobante por WhatsApp</p>`;
-  }
-  if(metodo === 'prex'){
-    datosPago.innerHTML = `<h4>🏦 Pago con Prex</h4><p><strong>Total:</strong> S/${planActual.precio}</p><p><strong>Número:</strong> 12249975 <button class="copiar-btn" onclick="copiar('12249975')">Copiar</button></p><p><strong>Nombre:</strong> Cristhofer Rojas Huarcaya</p><p style="font-size:12px;color:#c9a0ff">Envía el comprobante por WhatsApp</p>`;
-  }
+// SOLO FUNCIONA EN admin.html
+if(window.location.pathname.includes('admin.html')){
+  cargarPedidos();
 }
 
-window.copiar = function(texto){ navigator.clipboard.writeText(texto); alert("✅ Número copiado: " + texto); }
+function cargarPedidos() {
+  const lista = document.getElementById('listaPedidos');
+  if(!lista) return;
+  if(pedidos.length === 0) return lista.innerHTML = '<p>No hay pedidos aún</p>';
 
-function pagarTarjeta(){
-  if(planActual.nombre.includes("Bot Para Grupo")){
-    const nombre = document.getElementById('nombreCliente').value; const link = document.getElementById('linkGrupo').value;
-    if(!nombre || !link){ alert("⚠️ Completa Nombre y Link del Grupo primero"); return; }
-  }
-  window.open(planActual.link, '_blank');
-  alert("✅ Te abrimos Mercado Pago. Después escríbenos por WhatsApp con tu comprobante");
-  popup.style.display = 'none'; document.body.style.overflow = 'auto';
+  lista.innerHTML = pedidos.map(p => `
+    <div class="pedido">
+      <b>Producto:</b> ${p.producto}<br>
+      <b>Cliente:</b> ${p.nombre}<br>
+      <b>WhatsApp:</b> ${p.wp}<br>
+      <b>Fecha:</b> ${p.fecha}<br>
+      <img src="${p.captura}">
+      <button onclick="borrarPedido(${p.id})" class="btn" style="background:red; width:auto; margin-top:10px;">Marcar como atendido</button>
+    </div>
+  `).join('');
 }
 
-document.getElementById('formPedido').addEventListener('submit', (e) => {
-  e.preventDefault(); 
-  const metodo = document.querySelector('input[name="metodo"]:checked').value;
-  if(metodo === 'tarjeta') return;
-
-  let mensaje = `*NUEVO PEDIDO CYBER BOT*\n\n*Plan:* ${planActual.nombre}\n*Precio:* S/${planActual.precio}\n`;
-  if(planActual.nombre.includes("Bot Para Grupo")){
-    const nombre = document.getElementById('nombreCliente').value; const link = document.getElementById('linkGrupo').value;
-    if(!nombre || !link){ alert("⚠️ Completa Nombre y Link del Grupo"); return; }
-    mensaje += `*Nombre:* ${nombre}\n*Link Grupo:* ${link}\n`;
-  }
-  mensaje += `*Método:* ${metodo.toUpperCase()}\n\nAdjunto comprobante de pago`;
-  window.open(`https://wa.me/${MI_NUMERO}?text=${encodeURIComponent(mensaje)}`, '_blank');
-  popup.style.display = 'none'; document.body.style.overflow = 'auto'; e.target.reset();
-});
-
-let contador = 3; setInterval(() => { if(contador > 1) contador--; document.getElementById('contador').textContent = contador; }, 10000);
-
-}); // FIN DOMContentLoaded
-
-function toggleMenu(){ document.querySelector('.menu').classList.toggle('active'); }
+function borrarPedido(id) {
+  pedidos = pedidos.filter(p => p.id!== id);
+  localStorage.setItem('pedidosCyber', JSON.stringify(pedidos));
+  cargarPedidos();
+}
