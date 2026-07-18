@@ -1,29 +1,29 @@
-:root {
-  --neon: #a855f7;
-  --dark: #0f0a1a;
-  --card: #1a1125;
-}
-* { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', sans-serif; }
-body { background: var(--dark); color: #fff; background-image: radial-gradient(circle at 20% 50%, #a855f733 0%, transparent 50%); }
-header { text-align:center; padding:40px 20px; border-bottom: 2px solid var(--neon); box-shadow: 0 0 20px var(--neon); }
-header img { width:120px; border-radius:20px; box-shadow: 0 0 30px var(--neon); }
-h1 { color: var(--neon); margin:15px 0; font-size:2.5em; text-shadow: 0 0 10px var(--neon); }
-.container { max-width:1100px; margin:40px auto; padding:20px; }
-.grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:25px; }
-.card { background: var(--card); border: 1px solid var(--neon); border-radius:15px; padding:25px; transition:0.3s; box-shadow: 0 0 15px #a855f722; }
-.card:hover { transform: translateY(-5px); box-shadow: 0 0 25px var(--neon); }
-.card h3 { color: var(--neon); margin-bottom:10px; }
-.price { font-size:1.8em; font-weight:bold; color:#fff; }
-.comision { font-size:0.9em; color:#aaa; }
-.btn { display:block; width:100%; padding:12px; margin-top:15px; background: var(--neon); color:#000; text-align:center; text-decoration:none; border-radius:10px; font-weight:bold; transition:0.3s; cursor:pointer; border:none; }
-.btn:hover { background:#c084fc; box-shadow:0 0 15px var(--neon); }
+:root { --neon: #a855f7; --dark: #0f0a1a; --card: #1a1125; }
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', sans-serif; -webkit-tap-highlight-color: transparent; }
+body { background: var(--dark); color: #fff; padding-bottom: 50px; }
+header { text-align:center; padding:25px 15px; border-bottom: 2px solid var(--neon); box-shadow: 0 0 20px var(--neon); }
+header img { width:90px; border-radius:20px; box-shadow: 0 0 30px var(--neon); }
+h1 { color: var(--neon); margin:10px 0; font-size:1.8em; text-shadow: 0 0 10px var(--neon); }
+.btn-group { display:flex; gap:10px; justify-content:center; margin-top:10px; }
+.container { max-width:100%; margin:20px auto; padding:15px; }
+.grid { display:grid; grid-template-columns: 1fr; gap:20px; } /* 1 columna en cel */
+@media(min-width:768px){.grid { grid-template-columns: repeat(2, 1fr); } } /* 2 columnas en tablet/pc */
+.card { background: var(--card); border: 1px solid var(--neon); border-radius:15px; padding:20px; }
+.card h3 { color: var(--neon); margin-bottom:10px; font-size:1.2em; }
+.price { font-size:1.6em; font-weight:bold; color:#fff; }
+.comision { font-size:0.85em; color:#aaa; margin-bottom:10px; }
+.btn { display:block; width:100%; padding:14px; margin-top:10px; background: var(--neon); color:#000; text-align:center; text-decoration:none; border-radius:10px; font-weight:bold; cursor:pointer; border:none; font-size:1em; }
+.btn-sm { width:auto; padding:10px 15px; font-size:0.9em; }
+.btn-dark { background:#333; color:#fff; }
 .btn-yape { background:#8b5cf6; color:#fff; }
-.copy-btn { background:#333; font-size:0.9em; padding:8px; }
-.section-title { text-align:center; font-size:2em; margin:50px 0 20px; color:var(--neon); }
-.pago-box { background:var(--card); padding:20px; border-radius:15px; border:1px dashed var(--neon); text-align:center; margin:20px 0; }
-.qr { width:200px; margin:15px auto; display:block; border-radius:10px; }
-.form-pago { display:none; margin-top:15px; }
-.form-pago input { width:100%; padding:10px; margin:5px 0; background:#2a1a3a; border:1px solid var(--neon); color:#fff; border-radius:8px; }
-.pedido { background:#2a1a3a; padding:15px; margin:10px 0; border-radius:10px; border:1px solid var(--neon); }
-.pedido img { max-width:200px; border-radius:8px; margin-top:10px; }
-footer { text-align:center; padding:30px; margin-top:50px; border-top:1px solid var(--neon); }
+.section-title { text-align:center; font-size:1.5em; margin:30px 0 15px; color:var(--neon); }
+.pago-box { background:var(--card); padding:20px; border-radius:15px; border:1px dashed var(--neon); text-align:center; margin:15px 0; }
+.qr { width:180px; max-width:80%; margin:15px auto; display:block; border-radius:10px; }
+.form-pago { display:none; margin-top:15px; animation:fadeIn 0.3s; }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+.form-pago label { font-size:0.9em; color:#aaa; display:block; margin-top:5px; }
+.form-pago input { width:100%; padding:12px; margin:8px 0; background:#2a1a3a; border:1px solid var(--neon); color:#fff; border-radius:8px; font-size:1em; }
+.copy-btn { background:#333; font-size:0.9em; padding:8px 15px; width:auto; display:inline-block; }
+.pedido { background:#2a1a3a; padding:15px; margin:10px 0; border-radius:10px; border:1px solid var(--neon); word-break: break-word; }
+.pedido img { width:100%; max-width:300px; border-radius:8px; margin-top:10px; }
+footer { text-align:center; padding:20px; margin-top:30px; border-top:1px solid var(--neon); font-size:0.9em; }
