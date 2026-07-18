@@ -3,85 +3,85 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cyber Bot - Servicios Digitales</title>
+<title>CYBER BOT | Bots y Servicios Digitales Pro</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="bg-glow"></div>
+<div class="bg-anim"></div>
 
-<nav>
+<nav class="glass">
   <div class="logo">
-    <img src="https://files.evogb.win/Yd5g8R.jpg" alt="Cyber Bot">
-    <h1>CYBER BOT</h1>
+    <img src="https://files.evogb.win/Yd5g8R.jpg" alt="CYBER BOT">
+    <h1>CYBER<span>BOT</span></h1>
   </div>
-  <button onclick="window.location.href='admin.html'" class="btn-admin">🔒 Admin</button>
+  <div class="nav-links">
+    <a href="#bots">Bots</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#testimonios">Testimonios</a>
+    <button onclick="toggleTheme()" class="btn-theme">🌙</button>
+    <button onclick="window.location.href='admin.html'" class="btn-admin">🔒 Admin</button>
+  </div>
 </nav>
 
 <header class="hero">
-  <h2>Bots de WhatsApp y Servicios Digitales</h2>
-  <p>Automatiza tu negocio con tecnología de nivel PRO</p>
-  <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk" class="btn btn-glow">👥 Grupo de Pruebas</a>
+  <h2>Automatiza tu negocio con <span>IA y WhatsApp</span></h2>
+  <p>Bots 24/7 + Páginas Web + Hosting. Entrega en 1 hora</p>
+  <div class="hero-btns">
+    <button onclick="document.getElementById('bots').scrollIntoView()" class="btn btn-glow">Ver Catálogo</button>
+    <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk" class="btn btn-outline">👥 Grupo Gratis</a>
+  </div>
+  <div class="stats">
+    <div><h3>+350</h3><p>Clientes</p></div>
+    <div><h3>24/7</h3><p>Soporte</p></div>
+    <div><h3>1h</h3><p>Entrega</p></div>
+  </div>
+  <div class="ventas-live">
+    <p>🔴 <span id="contador-ventas">347</span> bots vendidos este mes</p>
+  </div>
 </header>
 
 <main class="container">
-  <h2 class="section-title">🤖 BOTS PARA GRUPO</h2>
-  <div class="grid">
-    <div class="card">
-      <div class="card-tag">POPULAR</div>
-      <h3>Bot Grupo Mensual</h3>
-      <p class="desc">Para grupos activos. Renovación mensual.</p>
-      <p class="price">S/ 5.00</p>
-      <button onclick="abrirPopup('Bot Grupo Mensual S/5', 'https://mpago.la/2UBqiPc')" class="btn btn-glow">Adquirir</button>
+  <section id="bots">
+    <h2 class="section-title">🤖 BOTS PARA WHATSAPP</h2>
+    <div class="grid">
+      <div class="card glass"><div class="card-tag">MÁS VENDIDO</div><div class="card-icon">👥</div><h3>Bot Grupo Mensual</h3><p class="desc">Anti-link, comandos, bienvenida, juegos. Ideal para grupos activos.</p><ul class="features"><li>✓ 50+ Comandos</li><li>✓ Soporte</li><li>✓ Actualizaciones</li></ul><p class="price">S/ 5.00<span>/mes</span></p><button onclick="abrirPopup('Bot Grupo Mensual S/5', 'https://mpago.la/2UBqiPc')" class="btn btn-glow">Adquirir Ahora</button></div>
+      <div class="card glass"><div class="card-icon">♾️</div><h3>Bot Grupo Permanente</h3><p class="desc">Pago único. Bot para tu grupo de por vida sin renovaciones.</p><ul class="features"><li>✓ Todo Ilimitado</li><li>✓ Sin Renovación</li></ul><p class="price">S/ 7.00</p><button onclick="abrirPopup('Bot Grupo Permanente S/7', 'https://mpago.la/2p3QEsk')" class="btn btn-glow">Adquirir Ahora</button></div>
+      <div class="card glass"><div class="card-icon">⚙️</div><h3>Bot Basic</h3><p class="desc">Auto-respuesta, comandos personalizados, logo.</p><ul class="features"><li>✓ 20 Comandos</li><li>✓ 1 Admin</li></ul><p class="price">S/ 20.00</p><button onclick="abrirPopup('Bot Basic S/20', 'https://mpago.la/26UCJzP')" class="btn btn-glow">Adquirir Ahora</button></div>
+      <div class="card glass card-premium"><div class="card-tag">PREMIUM</div><div class="card-icon">🚀</div><h3>Bot Premium</h3><p class="desc">Todo ilimitado + Panel Web + Base de Datos + Soporte 24/7</p><ul class="features"><li>✓ Ilimitado</li><li>✓ Panel Admin</li><li>✓ Hosting Gratis 1 mes</li></ul><p class="price">S/ 30.00</p><button onclick="abrirPopup('Bot Premium S/30', 'https://mpago.la/2rBoK8k')" class="btn btn-glow">Adquirir Ahora</button></div>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>Bot Grupo Permanente</h3>
-      <p class="desc">Pago único. Para siempre.</p>
-      <p class="price">S/ 7.00</p>
-      <button onclick="abrirPopup('Bot Grupo Permanente S/7', 'https://mpago.la/2p3QEsk')" class="btn btn-glow">Adquirir</button>
+  <section id="servicios">
+    <h2 class="section-title">🌐 SERVICIOS DIGITALES</h2>
+    <div class="grid">
+      <div class="card glass"><div class="card-icon">☁️</div><h3>Hosting 24/7</h3><p class="desc">Tu bot online todo el día sin caídas</p><p class="price">S/ 10.00<span>/mes</span></p><button onclick="abrirPopup('Hosting S/10', 'https://mpago.la/1W7Nbi6')" class="btn btn-glow">Adquirir</button></div>
+      <div class="card glass"><div class="card-icon">💻</div><h3>Página Web</h3><p class="desc">Landing + Tienda como esta. Diseño PRO</p><p class="price">S/ 35.00</p><button onclick="abrirPopup('Página Web S/35', 'https://mpago.la/16MBw3m')" class="btn btn-glow">Adquirir</button></div>
     </div>
-  </div>
+  </section>
 
-  <h2 class="section-title">⚙️ BOTS PERSONALIZADOS</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Bot Basic</h3>
-      <p class="desc">Comandos básicos + Auto-respuesta</p>
-      <p class="price">S/ 20.00</p>
-      <button onclick="abrirPopup('Bot Basic S/20', 'https://mpago.la/26UCJzP')" class="btn btn-glow">Adquirir</button>
+  <section id="testimonios">
+    <h2 class="section-title">💬 LO QUE DICEN NUESTROS CLIENTES</h2>
+    <div class="grid-testimonios">
+      <div class="testi glass"><p>"El bot me salvó. Ahora administro 5 grupos sin hacer nada"</p><h4>- Kevin G.</h4></div>
+      <div class="testi glass"><p>"Me entregaron en 30min y el soporte es de 10. Recomendado"</p><h4>- Maria L.</h4></div>
+      <div class="testi glass"><p>"La página web está hermosa. Vendí 3 bots el primer día"</p><h4>- Jhon D.</h4></div>
     </div>
-    <div class="card card-premium">
-      <div class="card-tag">PREMIUM</div>
-      <h3>Bot Premium</h3>
-      <p class="desc">Todo ilimitado + Soporte 24/7 + Panel</p>
-      <p class="price">S/ 30.00</p>
-      <button onclick="abrirPopup('Bot Premium S/30', 'https://mpago.la/2rBoK8k')" class="btn btn-glow">Adquirir</button>
-    </div>
-  </div>
-
-  <h2 class="section-title">🌐 SERVICIOS DIGITALES</h2>
-  <div class="grid">
-    <div class="card"><h3>Servidor Hosting</h3><p class="desc">Para mantener tu bot 24/7 online</p><p class="price">S/ 10.00</p><button onclick="abrirPopup('Hosting S/10', 'https://mpago.la/1W7Nbi6')" class="btn btn-glow">Adquirir</button></div>
-    <div class="card"><h3>Página Web</h3><p class="desc">Landing + Tienda como esta</p><p class="price">S/ 35.00</p><button onclick="abrirPopup('Página Web S/35', 'https://mpago.la/16MBw3m')" class="btn btn-glow">Adquirir</button></div>
-  </div>
+  </section>
 </main>
+
+<!-- CHAT FLOTANTE WHATSAPP -->
+<a href="https://wa.me/51936994155" target="_blank" class="whatsapp-float">💬</a>
 
 <!-- POPUP DE PAGO -->
 <div id="popup-pago" class="popup">
-  <div class="popup-content">
+  <div class="popup-content glass">
     <span class="close" onclick="cerrarPopup()">&times;</span>
     <h2 id="popup-titulo">Adquirir Producto</h2>
     <p id="popup-precio" class="price"></p>
-
     <div class="metodos-pago">
       <h3>Elige tu método de pago</h3>
-
-      <a id="btn-tarjeta" class="btn-metodo tarjeta" target="_blank">
-        💳 Pagar con Tarjeta
-      </a>
-
-      <div class="divider">O</div>
-
+      <a id="btn-tarjeta" class="btn-metodo tarjeta" target="_blank">💳 Pagar con Tarjeta</a>
+      <div class="divider"><span>O</span></div>
       <div class="yape-box">
         <h4>📱 Pagar con Yape / Prex</h4>
         <div class="datos-yape">
@@ -90,7 +90,6 @@
           <p><b>Prex:</b> 12249975 <button onclick="copiar('12249975')">Copiar</button></p>
           <p class="nombre">Nombre: Cristhofer Rojas Huarcaya</p>
         </div>
-
         <form id="form-comprobante">
           <input type="text" id="nombre-cliente" placeholder="Tu nombre completo" required>
           <input type="tel" id="wp-cliente" placeholder="Tu WhatsApp 9xxxxxxx" required>
@@ -103,10 +102,21 @@
   </div>
 </div>
 
-<footer>
-  <p>© 2026 Cyber Bot | Soporte: 936 994 155</p>
-</footer>
+<!-- POPUP DE OFERTA -->
+<div id="popup-oferta" class="popup-oferta">
+  <div class="popup-oferta-content glass">
+    <span class="close-oferta" onclick="cerrarOferta()">&times;</span>
+    <h2>🔥 OFERTA FLASH 24H 🔥</h2>
+    <p>Bot Premium + Hosting 1 mes</p>
+    <h3 class="precio-oferta">S/ 25.00 <span>S/ 40.00</span></h3>
+    <p class="timer">Se acaba en: <span id="countdown">23:59:59</span></p>
+    <button onclick="abrirPopup('Oferta Premium+Hosting S/25', 'https://mpago.la/2rBoK8k')" class="btn btn-glow">Aprovechar Oferta</button>
+  </div>
+</div>
 
+<footer class="glass">
+  <p>© 2026 CYBER BOT | Soporte: 936 994 155</p>
+</footer>
 <script src="script.js"></script>
 </body>
 </html>
