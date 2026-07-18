@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CYBER BOT - Bots WhatsApp y Servicios Digitales</title>
+  <link rel="icon" href="https://files.evogb.win/Yd5g8R.jpg">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -30,7 +31,7 @@
       <a href="#precios" class="btn">VER PLANES</a>
       <a href="https://wa.me/51936994155" class="btn btn-outline" target="_blank">WHATSAPP</a>
     </div>
-    <img src="https://cdn.fbsbx.com/v/t65.102178-21/749403136_2315265715677921_4676691575960866447_n.jpg/Portada_WhatsApp_Business_CyberBot_ANTI_1128x640.jpg" alt="Cyber Bot">
+    <img src="https://files.evogb.win/Yd5g8R.jpg" alt="Cyber Bot Logo">
   </header>
 
   <section id="servicios" class="servicios">
@@ -105,16 +106,19 @@
       <h2>Finalizar Compra</h2>
       <p class="plan-info"></p>
 
-      <div class="metodos-pago">
-        <h3>1. Elige Método de Pago</h3>
-        <label class="pago-opcion"><input type="radio" name="metodo" value="tarjeta" checked><div class="pago-icon">💳</div><div><strong>Tarjeta - Mercado Pago</strong><p>Pago inmediato con comisión</p></div></label>
-        <label class="pago-opcion"><input type="radio" name="metodo" value="yape"><div class="pago-icon">📱</div><div><strong>Yape</strong><p>Transferencia directa</p></div></label>
-        <label class="pago-opcion"><input type="radio" name="metodo" value="prex"><div class="pago-icon">🏦</div><div><strong>Prex</strong><p>Transferencia directa</p></div></label>
-      </div>
+      <form id="formPedido">
+        <div id="camposExtra"></div>
 
-      <div id="datosPago"></div>
+        <div class="metodos-pago">
+          <h3>2. Elige Método de Pago</h3>
+          <label class="pago-opcion"><input type="radio" name="metodo" value="tarjeta" checked><div class="pago-icon">💳</div><div><strong>Tarjeta - Mercado Pago</strong><p>Pago inmediato con comisión</p></div></label>
+          <label class="pago-opcion"><input type="radio" name="metodo" value="yape"><div class="pago-icon">📱</div><div><strong>Yape</strong><p>Transferencia directa</p></div></label>
+          <label class="pago-opcion"><input type="radio" name="metodo" value="prex"><div class="pago-icon">🏦</div><div><strong>Prex</strong><p>Transferencia directa</p></div></label>
+        </div>
 
-      <button class="btn" id="btnConfirmar">CONFIRMAR PEDIDO</button>
+        <div id="datosPago"></div>
+        <button type="submit" class="btn" id="btnConfirmar">CONFIRMAR PEDIDO</button>
+      </form>
     </div>
   </div>
 
