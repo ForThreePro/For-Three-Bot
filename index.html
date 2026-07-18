@@ -31,30 +31,14 @@
       <h3>Bot Grupo Mensual</h3>
       <p class="desc">Para grupos activos. Renovación mensual.</p>
       <p class="price">S/ 5.00</p>
-      <a href="https://mpago.la/2UBqiPc" class="btn">Pagar con Tarjeta</a>
-      <button onclick="mostrarForm('mensual')" class="btn btn-outline">Pagar con Yape</button>
-      <div id="form-mensual" class="form-pago">
-        <input type="text" placeholder="Tu nombre completo" id="nombre-mensual">
-        <input type="tel" placeholder="Tu WhatsApp 9xxxxxxx" id="wp-mensual">
-        <label>Subir captura de Yape/Prex:</label>
-        <input type="file" id="captura-mensual" accept="image/*">
-        <button onclick="enviarPedido('Bot Grupo Mensual S/5','mensual')" class="btn">Enviar Comprobante</button>
-      </div>
+      <button onclick="abrirPopup('Bot Grupo Mensual S/5', 'https://mpago.la/2UBqiPc')" class="btn btn-glow">Adquirir</button>
     </div>
 
     <div class="card">
       <h3>Bot Grupo Permanente</h3>
       <p class="desc">Pago único. Para siempre.</p>
       <p class="price">S/ 7.00</p>
-      <a href="https://mpago.la/2p3QEsk" class="btn">Pagar con Tarjeta</a>
-      <button onclick="mostrarForm('permanente')" class="btn btn-outline">Pagar con Yape</button>
-      <div id="form-permanente" class="form-pago">
-        <input type="text" placeholder="Tu nombre completo" id="nombre-permanente">
-        <input type="tel" placeholder="Tu WhatsApp 9xxxxxxx" id="wp-permanente">
-        <label>Subir captura de Yape/Prex:</label>
-        <input type="file" id="captura-permanente" accept="image/*">
-        <button onclick="enviarPedido('Bot Grupo Permanente S/7','permanente')" class="btn">Enviar Comprobante</button>
-      </div>
+      <button onclick="abrirPopup('Bot Grupo Permanente S/7', 'https://mpago.la/2p3QEsk')" class="btn btn-glow">Adquirir</button>
     </div>
   </div>
 
@@ -64,43 +48,60 @@
       <h3>Bot Basic</h3>
       <p class="desc">Comandos básicos + Auto-respuesta</p>
       <p class="price">S/ 20.00</p>
-      <a href="https://mpago.la/26UCJzP" class="btn">Pagar Tarjeta</a>
-      <button onclick="mostrarForm('basic')" class="btn btn-outline">Pagar Yape</button>
-      <div id="form-basic" class="form-pago"><input type="text" placeholder="Tu nombre" id="nombre-basic"><input type="tel" placeholder="Tu WhatsApp" id="wp-basic"><input type="file" id="captura-basic" accept="image/*"><button onclick="enviarPedido('Bot Basic S/20','basic')" class="btn">Enviar</button></div>
+      <button onclick="abrirPopup('Bot Basic S/20', 'https://mpago.la/26UCJzP')" class="btn btn-glow">Adquirir</button>
     </div>
     <div class="card card-premium">
       <div class="card-tag">PREMIUM</div>
       <h3>Bot Premium</h3>
       <p class="desc">Todo ilimitado + Soporte 24/7 + Panel</p>
       <p class="price">S/ 30.00</p>
-      <a href="https://mpago.la/2rBoK8k" class="btn btn-glow">Pagar Tarjeta</a>
-      <button onclick="mostrarForm('premium')" class="btn btn-outline">Pagar Yape</button>
-      <div id="form-premium" class="form-pago"><input type="text" placeholder="Tu nombre" id="nombre-premium"><input type="tel" placeholder="Tu WhatsApp" id="wp-premium"><input type="file" id="captura-premium" accept="image/*"><button onclick="enviarPedido('Bot Premium S/30','premium')" class="btn">Enviar</button></div>
+      <button onclick="abrirPopup('Bot Premium S/30', 'https://mpago.la/2rBoK8k')" class="btn btn-glow">Adquirir</button>
     </div>
   </div>
 
   <h2 class="section-title">🌐 SERVICIOS DIGITALES</h2>
   <div class="grid">
-    <div class="card"><h3>Servidor Hosting</h3><p class="desc">Para mantener tu bot 24/7 online</p><p class="price">S/ 10.00</p><a href="https://mpago.la/1W7Nbi6" class="btn">Pagar Tarjeta</a><button onclick="mostrarForm('hosting')" class="btn btn-outline">Pagar Yape</button><div id="form-hosting" class="form-pago"><input type="text" placeholder="Tu nombre" id="nombre-hosting"><input type="tel" placeholder="Tu WhatsApp" id="wp-hosting"><input type="file" id="captura-hosting" accept="image/*"><button onclick="enviarPedido('Hosting S/10','hosting')" class="btn">Enviar</button></div></div>
-    <div class="card"><h3>Página Web</h3><p class="desc">Landing + Tienda como esta</p><p class="price">S/ 35.00</p><a href="https://mpago.la/16MBw3m" class="btn">Pagar Tarjeta</a><button onclick="mostrarForm('web')" class="btn btn-outline">Pagar Yape</button><div id="form-web" class="form-pago"><input type="text" placeholder="Tu nombre" id="nombre-web"><input type="tel" placeholder="Tu WhatsApp" id="wp-web"><input type="file" id="captura-web" accept="image/*"><button onclick="enviarPedido('Página Web S/35','web')" class="btn">Enviar</button></div></div>
-  </div>
-
-  <h2 class="section-title">💳 PAGO SEGURO</h2>
-  <div class="pago-container">
-    <div class="pago-box">
-      <h3>Yape</h3>
-      <img src="https://files.evogb.win/kc99Pp.jpg" class="qr">
-      <p><b id="yape-num">936 994 155</b> <button class="btn copy-btn" onclick="copiar('936994155','yape-num')">Copiar</button></p>
-      <p class="nombre">Cristhofer Rojas Huarcaya</p>
-    </div>
-    <div class="pago-box">
-      <h3>Prex</h3>
-      <p class="price-big">12249975</p>
-      <button class="btn copy-btn" onclick="copiar('12249975','prex-num')">Copiar Prex</button>
-      <p class="nombre" id="prex-num">Cristhofer Rojas Huarcaya</p>
-    </div>
+    <div class="card"><h3>Servidor Hosting</h3><p class="desc">Para mantener tu bot 24/7 online</p><p class="price">S/ 10.00</p><button onclick="abrirPopup('Hosting S/10', 'https://mpago.la/1W7Nbi6')" class="btn btn-glow">Adquirir</button></div>
+    <div class="card"><h3>Página Web</h3><p class="desc">Landing + Tienda como esta</p><p class="price">S/ 35.00</p><button onclick="abrirPopup('Página Web S/35', 'https://mpago.la/16MBw3m')" class="btn btn-glow">Adquirir</button></div>
   </div>
 </main>
+
+<!-- POPUP DE PAGO -->
+<div id="popup-pago" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="cerrarPopup()">&times;</span>
+    <h2 id="popup-titulo">Adquirir Producto</h2>
+    <p id="popup-precio" class="price"></p>
+
+    <div class="metodos-pago">
+      <h3>Elige tu método de pago</h3>
+
+      <a id="btn-tarjeta" class="btn-metodo tarjeta" target="_blank">
+        💳 Pagar con Tarjeta
+      </a>
+
+      <div class="divider">O</div>
+
+      <div class="yape-box">
+        <h4>📱 Pagar con Yape / Prex</h4>
+        <div class="datos-yape">
+          <img src="https://files.evogb.win/kc99Pp.jpg" class="qr">
+          <p><b>Yape:</b> 936 994 155 <button onclick="copiar('936994155')">Copiar</button></p>
+          <p><b>Prex:</b> 12249975 <button onclick="copiar('12249975')">Copiar</button></p>
+          <p class="nombre">Nombre: Cristhofer Rojas Huarcaya</p>
+        </div>
+
+        <form id="form-comprobante">
+          <input type="text" id="nombre-cliente" placeholder="Tu nombre completo" required>
+          <input type="tel" id="wp-cliente" placeholder="Tu WhatsApp 9xxxxxxx" required>
+          <label>Subir captura de pago:</label>
+          <input type="file" id="captura-cliente" accept="image/*" required>
+          <button type="submit" class="btn">Enviar Comprobante</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 <footer>
   <p>© 2026 Cyber Bot | Soporte: 936 994 155</p>
