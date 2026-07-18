@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CYBER BOT - Bots WhatsApp y Servicios Digitales</title>
+  <meta name="description" content="CYBER BOT - Bots de WhatsApp 24/7, Páginas Web y Hosting. Automatiza tu negocio desde S/5">
+  <title>CYBER BOT - Bots WhatsApp 24/7 | Páginas Web | Hosting</title>
   <link rel="icon" href="https://files.evogb.win/Yd5g8R.jpg">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -17,8 +18,9 @@
     <div class="logo">CYBER <span>BOT</span></div>
     <ul class="menu">
       <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#porque">Beneficios</a></li>
       <li><a href="#precios">Precios</a></li>
-      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
     <div class="menu-btn" onclick="toggleMenu()">☰</div>
@@ -26,16 +28,32 @@
 
   <header id="inicio" class="hero">
     <div class="hero-text">
-      <h1>CYBER BOT</h1>
-      <p>Bots de WhatsApp 24/7 + Páginas Web + Hosting. Automatiza y vende más.</p>
-      <a href="#precios" class="btn">VER PLANES</a>
-      <a href="https://wa.me/51936994155" class="btn btn-outline" target="_blank">WHATSAPP</a>
+      <h1>Automatiza y <span>Vende 24/7</span></h1>
+      <p>Bots de WhatsApp con IA + Páginas Web Pro + Hosting estable. Todo para escalar tu negocio.</p>
+      <div class="hero-btns">
+        <a href="#precios" class="btn">VER PLANES</a>
+        <a href="https://wa.me/51936994155" class="btn btn-outline" target="_blank">WHATSAPP</a>
+      </div>
+      <div class="stats">
+        <div><strong>+500</strong><p>Bots Activos</p></div>
+        <div><strong>24/7</strong><p>Soporte</p></div>
+        <div><strong>99.9%</strong><p>Uptime</p></div>
+      </div>
     </div>
-    <img src="https://files.evogb.win/Yd5g8R.jpg" alt="Cyber Bot Logo">
+    <img src="https://files.evogb.win/Yd5g8R.jpg" alt="Cyber Bot Logo" class="logo-hero">
   </header>
 
+  <section id="porque" class="porque">
+    <h2>¿Por qué CYBER BOT?</h2>
+    <div class="cards">
+      <div class="card"><h3>⚡ Instalación Rápida</h3><p>Tu bot listo en menos de 30 minutos. Sin complicaciones.</p></div>
+      <div class="card"><h3>🤖 IA Integrada</h3><p>Responde como humano. Descargas, juegos, admin y más.</p></div>
+      <div class="card"><h3>🛡️ Soporte Real</h3><p>Te ayudo por WhatsApp cuando lo necesites. Sin bots.</p></div>
+    </div>
+  </section>
+
   <section id="servicios" class="servicios">
-    <h2>¿Qué ofrecemos?</h2>
+    <h2>Servicios</h2>
     <div class="cards">
       <div class="card"><h3>🤖 Bot WhatsApp</h3><p>+200 Comandos. Descargas, IA, Admin, Juegos. Atención automática 24/7</p></div>
       <div class="card"><h3>🌐 Páginas Web</h3><p>Landing pro, responsive. Dominio gratis 1 año. Lista en 3 días.</p></div>
@@ -74,6 +92,7 @@
       </div>
 
       <div class="plan destacado" data-plan="Bot Personalizado Premium" data-precio="30" data-comision="3.52" data-link="https://mpago.la/2rBoK8k">
+        <span class="etiqueta">VIP</span>
         <h3>Bot Personalizado Premium</h3>
         <div class="precio">S/30</div>
         <p class="total">Total Tarjeta: S/33.52</p>
@@ -100,22 +119,35 @@
     </div>
   </section>
 
+  <section id="faq" class="faq">
+    <h2>Preguntas Frecuentes</h2>
+    <div class="faq-item">
+      <h3>¿En cuánto tiempo entregan el bot?</h3>
+      <p>Bot de grupo: inmediato. Bot personalizado: 24 a 48 horas.</p>
+    </div>
+    <div class="faq-item">
+      <h3>¿El bot se cae?</h3>
+      <p>No. Con el Hosting de S/10 va 99.9% activo las 24 horas.</p>
+    </div>
+    <div class="faq-item">
+      <h3>¿Dan soporte después de la compra?</h3>
+      <p>Sí. 1 mes en Basic, 3 meses en Premium. Por WhatsApp directo.</p>
+    </div>
+  </section>
+
   <div id="popupPago" class="popup">
     <div class="popup-content">
       <span class="cerrar">&times;</span>
       <h2>Finalizar Compra</h2>
       <p class="plan-info"></p>
-
       <form id="formPedido">
         <div id="camposExtra"></div>
-
         <div class="metodos-pago">
           <h3>2. Elige Método de Pago</h3>
           <label class="pago-opcion"><input type="radio" name="metodo" value="tarjeta" checked><div class="pago-icon">💳</div><div><strong>Tarjeta - Mercado Pago</strong><p>Pago inmediato con comisión</p></div></label>
           <label class="pago-opcion"><input type="radio" name="metodo" value="yape"><div class="pago-icon">📱</div><div><strong>Yape</strong><p>Transferencia directa</p></div></label>
           <label class="pago-opcion"><input type="radio" name="metodo" value="prex"><div class="pago-icon">🏦</div><div><strong>Prex</strong><p>Transferencia directa</p></div></label>
         </div>
-
         <div id="datosPago"></div>
         <button type="submit" class="btn" id="btnConfirmar">CONFIRMAR PEDIDO</button>
       </form>
@@ -123,14 +155,14 @@
   </div>
 
   <section id="contacto" class="contacto">
-    <h2>Contáctame</h2>
-    <p>¿Dudas? Escríbeme y te ayudo a elegir el mejor plan</p>
+    <h2>¿Listo para empezar?</h2>
+    <p>Escalemos tu negocio con automatización</p>
     <a href="https://wa.me/51936994155" target="_blank" class="btn">HABLAR POR WHATSAPP</a>
     <p class="info">WhatsApp: +51 936 994 155 | IG: @whois.yallico</p>
   </section>
 
+  <a href="https://wa.me/51936994155" class="whatsapp-flotante" target="_blank">💬</a>
   <footer><p>© 2026 CYBER BOT. No se realizan reembolsos.</p></footer>
-
   <script src="script.js"></script>
 </body>
 </html>
