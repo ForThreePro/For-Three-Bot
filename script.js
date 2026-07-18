@@ -47,10 +47,10 @@ function mostrarDatosPago(metodo){
     document.getElementById('btnPagarTarjeta').onclick = pagarTarjeta;
   }
   if(metodo === 'yape'){
-    datosPago.innerHTML = `<h4>📱 Pago con Yape</h4><p><strong>Total:</strong> S/${planActual.precio}</p><p><strong>Número:</strong> 936 994 155 <button class="copiar-btn" onclick="copiar('936994155')">Copiar</button></p><p><strong>Nombre:</strong> Cristhofer Rojas Huarcaya</p><img src="https://files.evogb.win/kc99Pp.jpg" alt="QR Yape">`;
+    datosPago.innerHTML = `<h4>📱 Pago con Yape</h4><p><strong>Total:</strong> S/${planActual.precio}</p><p><strong>Número:</strong> 936 994 155 <button class="copiar-btn" onclick="copiar('936994155')">Copiar</button></p><p><strong>Nombre:</strong> Cristhofer Rojas Huarcaya</p><img src="https://files.evogb.win/kc99Pp.jpg" alt="QR Yape"><p style="font-size:12px;color:#c9a0ff">Envía el comprobante por WhatsApp</p>`;
   }
   if(metodo === 'prex'){
-    datosPago.innerHTML = `<h4>🏦 Pago con Prex</h4><p><strong>Total:</strong> S/${planActual.precio}</p><p><strong>Número:</strong> 12249975 <button class="copiar-btn" onclick="copiar('12249975')">Copiar</button></p><p><strong>Nombre:</strong> Cristhofer Rojas Huarcaya</p>`;
+    datosPago.innerHTML = `<h4>🏦 Pago con Prex</h4><p><strong>Total:</strong> S/${planActual.precio}</p><p><strong>Número:</strong> 12249975 <button class="copiar-btn" onclick="copiar('12249975')">Copiar</button></p><p><strong>Nombre:</strong> Cristhofer Rojas Huarcaya</p><p style="font-size:12px;color:#c9a0ff">Envía el comprobante por WhatsApp</p>`;
   }
 }
 
