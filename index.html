@@ -68,35 +68,64 @@
 
 <a href="https://wa.me/51936994155" target="_blank" class="whatsapp-float">💬</a>
 
+<!-- POPUP DE PAGO NUEVO DISEÑO -->
 <div id="popup-pago" class="popup">
   <div class="popup-content glass">
     <span class="close" onclick="cerrarPopup()">&times;</span>
-    <h2 id="popup-titulo">Adquirir Producto</h2>
-    <p id="popup-precio" class="price"></p>
-    <div class="metodos-pago">
-      <h3>Elige tu método de pago</h3>
-      <a id="btn-tarjeta" class="btn-metodo tarjeta" target="_blank">💳 Pagar con Tarjeta</a>
-      <div class="divider"><span>O</span></div>
-      <div class="yape-box">
-        <h4>📱 Pagar con Yape / Prex</h4>
-        <div class="datos-yape">
-          <img src="https://files.evogb.win/kc99Pp.jpg" class="qr">
-          <p><b>Yape:</b> 936 994 155 <button onclick="copiar('936994155')">Copiar</button></p>
-          <p><b>Prex:</b> 12249975 <button onclick="copiar('12249975')">Copiar</button></p>
-          <p class="nombre">Nombre: Cristhofer Rojas Huarcaya</p>
-        </div>
-        <form id="form-comprobante">
-          <input type="text" id="nombre-cliente" placeholder="Tu nombre completo" required>
-          <input type="tel" id="wp-cliente" placeholder="Tu WhatsApp 9xxxxxxx" required>
-          <label>Subir captura de pago:</label>
-          <input type="file" id="captura-cliente" accept="image/*" required>
-          <button type="submit" class="btn">Enviar Comprobante</button>
-        </form>
+    
+    <div class="popup-header">
+      <div class="popup-icon">🛒</div>
+      <h2 id="popup-titulo">Finalizar Compra</h2>
+      <p id="popup-precio" class="price"></p>
+    </div>
+
+    <div class="tabs-pago">
+      <button class="tab-btn active" onclick="cambiarTab('tarjeta')">💳 Tarjeta</button>
+      <button class="tab-btn" onclick="cambiarTab('yape')">📱 Yape/Prex</button>
+    </div>
+
+    <!-- TAB TARJETA -->
+    <div id="tab-tarjeta" class="tab-content active">
+      <p class="tab-desc">Pago seguro con Mercado Pago</p>
+      <a id="btn-tarjeta" class="btn-metodo tarjeta" target="_blank">
+        Pagar Ahora con Tarjeta
+      </a>
+      <div class="seguridad">
+        <p>🔒 Pago 100% seguro y protegido</p>
       </div>
     </div>
+
+    <!-- TAB YAPE -->
+    <div id="tab-yape" class="tab-content">
+      <p class="tab-desc">Transfiere y envía tu captura</p>
+      <div class="yape-box-nuevo">
+        <img src="https://files.evogb.win/kc99Pp.jpg" class="qr">
+        <div class="dato-pago">
+          <span>Yape</span>
+          <b>936 994 155</b>
+          <button onclick="copiar('936994155')">Copiar</button>
+        </div>
+        <div class="dato-pago">
+          <span>Prex</span>
+          <b>12249975</b>
+          <button onclick="copiar('12249975')">Copiar</button>
+        </div>
+        <p class="nombre">A nombre de: Cristhofer Rojas Huarcaya</p>
+      </div>
+
+      <form id="form-comprobante">
+        <input type="text" id="nombre-cliente" placeholder="Tu nombre completo" required>
+        <input type="tel" id="wp-cliente" placeholder="Tu WhatsApp 9xxxxxxx" required>
+        <label>📎 Subir captura de pago</label>
+        <input type="file" id="captura-cliente" accept="image/*" required>
+        <button type="submit" class="btn">✅ Confirmar Pago</button>
+      </form>
+    </div>
+
   </div>
 </div>
 
+<!-- POPUP DE OFERTA -->
 <div id="popup-oferta" class="popup-oferta">
   <div class="popup-oferta-content glass">
     <span class="close-oferta" onclick="cerrarOferta()">&times;</span>
