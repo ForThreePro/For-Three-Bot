@@ -25,7 +25,7 @@ document.querySelectorAll('input[name="metodo"]').forEach(radio => { radio.addEv
 
 function mostrarDatosPago(metodo){
   if(metodo === 'tarjeta'){
-    datosPago.innerHTML = `<h4>💳 Pago con Tarjeta</h4><p><strong>Total:</strong> S/${planActual.total}</p><p><strong>Comisión:</strong> S/${planActual.comision}</p><a href="${planActual.link}" target="_blank" class="btn" style="width:100%;text-align:center">PAGAR CON TARJETA</a>`;
+    datosPago.innerHTML = `<h4>💳 Pago con Tarjeta</h4><p><strong>Total:</strong> S/${planActual.total}</p><p><strong>Comisión:</strong> S/${planActual.comision}</p><button type="button" class="btn" onclick="pagarTarjeta()" style="width:100%">PAGAR CON TARJETA</button>`;
   }
   if(metodo === 'yape'){
     datosPago.innerHTML = `<h4>📱 Pago con Yape</h4><p><strong>Total:</strong> S/${planActual.precio}</p><p><strong>Número:</strong> 936 994 155 <button class="copiar-btn" onclick="copiar('936994155')">Copiar</button></p><p><strong>Nombre:</strong> Cristhofer Rojas Huarcaya</p><img src="https://files.evogb.win/kc99Pp.jpg" alt="QR Yape"><p style="font-size:12px;color:#c9a0ff">Envía el comprobante por WhatsApp</p>`;
@@ -37,15 +37,32 @@ function mostrarDatosPago(metodo){
 
 function copiar(texto){ navigator.clipboard.writeText(texto); alert("✅ Número copiado: " + texto); }
 
+function pagarTarjeta(){
+  // Validar campos si es bot de grupo
+  if(planActual.nombre.includes("Bot Para Grupo")){
+    const nombre = document.getElementById('nombreCliente').value; const link = document.getElementById('linkGrupo').value;
+    if(!nombre || !link){ alert("⚠️ Completa Nombre y Link del Grupo primero"); return; }
+  }
+  // Abrir Mercado Pago en nueva pestaña
+  window.open(planActual.link, '_blank');
+  alert("✅ Te abrimos Mercado Pago. Después escríbenos por WhatsApp con tu comprobante");
+  popup.style.display = 'none'; document.body.style.overflow = 'auto';
+}
+
 document.getElementById('formPedido').addEventListener('submit', (e) => {
-  e.preventDefault(); const metodo = document.querySelector('input[name="metodo"]:checked').value;
+  e.preventDefault(); 
+  const metodo = document.querySelector('input[name="metodo"]:checked').value;
+  
+  // SI ES TARJETA YA SE PAGO ARRIBA, NO HACER NADA
+  if(metodo === 'tarjeta') return;
+
   let mensaje = `*NUEVO PEDIDO CYBER BOT*\n\n*Plan:* ${planActual.nombre}\n*Precio:* S/${planActual.precio}\n`;
   if(planActual.nombre.includes("Bot Para Grupo")){
     const nombre = document.getElementById('nombreCliente').value; const link = document.getElementById('linkGrupo').value;
     if(!nombre || !link){ alert("⚠️ Completa Nombre y Link del Grupo"); return; }
     mensaje += `*Nombre:* ${nombre}\n*Link Grupo:* ${link}\n`;
   }
-  mensaje += `*Método:* ${metodo.toUpperCase()}\n\nMe interesa este plan`;
+  mensaje += `*Método:* ${metodo.toUpperCase()}\n\nAdjunto comprobante de pago`;
   window.open(`https://wa.me/${MI_NUMERO}?text=${encodeURIComponent(mensaje)}`, '_blank');
   popup.style.display = 'none'; document.body.style.overflow = 'auto'; e.target.reset();
 });
