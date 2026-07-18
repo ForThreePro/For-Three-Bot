@@ -7,24 +7,19 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header>
-  <h1>🔒 PANEL ADMIN</h1>
-  <button onclick="window.location.href='index.html'" class="btn btn-dark" style="width:auto;">← Volver Tienda</button>
-</header>
-
-<div class="container">
+<div class="bg-glow"></div>
+<nav>
+  <div class="logo"><h1>🔒 PANEL ADMIN</h1></div>
+  <button onclick="window.location.href='index.html'" class="btn-admin">← Tienda</button>
+</nav>
+<main class="container">
   <h2 class="section-title">Pedidos Pendientes</h2>
   <div id="listaPedidos"></div>
-</div>
-
+</main>
 <script src="script.js"></script>
 <script>
   const pass = prompt('Contraseña Admin:');
-  if(pass!== 'cyber2026'){ // CAMBIA ESTA CONTRASEÑA
-    alert('Contraseña incorrecta');
-    window.location.href='index.html';
-  }
+  if(pass!== 'cyber2026'){ alert('Contraseña incorrecta'); window.location.href='index.html'; }
 </script>
 </body>
 </html>
