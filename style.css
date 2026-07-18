@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap');
-:root{--morado:#8b00ff;--neon:#d400ff;--oscuro:#0a0014;}
+:root{--morado:#8b00ff;--neon:#d400ff;--verde:#00ff88;--oscuro:#0a0014;}
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins', sans-serif}
 body{background:var(--oscuro);color:#fff;scroll-behavior:smooth}
 
@@ -30,6 +30,8 @@ body{background:var(--oscuro);color:#fff;scroll-behavior:smooth}
 .btn{background:linear-gradient(135deg,#8b00ff,#d400ff);color:#fff;padding:14px 32px;border-radius:12px;text-decoration:none;font-weight:700;transition:0.3s;display:inline-block;border:none;cursor:pointer;box-shadow:0 0 20px rgba(212,0,255,0.5)}
 .btn:hover{transform:translateY(-3px);box-shadow:0 0 40px rgba(212,0,255,1)}
 .btn-outline{background:transparent;border:2px solid var(--neon);color:var(--neon)}
+.btn-verde{background:linear-gradient(135deg,#00ff88,#00d4aa);color:#000;box-shadow:0 0 20px rgba(0,255,136,0.5)}
+.btn-verde:hover{box-shadow:0 0 40px rgba(0,255,136,1)}
 
 section{padding:80px 8%}
 h2{text-align:center;font-size:36px;margin-bottom:15px;color:var(--neon);text-shadow:0 0 15px var(--neon)}
@@ -88,7 +90,9 @@ h2{text-align:center;font-size:36px;margin-bottom:15px;color:var(--neon);text-sh
 .contacto .info{margin-top:20px;color:#c9a0ff}
 
 .whatsapp-flotante{position:fixed;bottom:25px;right:25px;background:linear-gradient(135deg,#8b00ff,#d400ff);color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;text-decoration:none;box-shadow:0 0 30px rgba(212,0,255,0.8);z-index:999;animation:bounce 2s infinite}
+.grupo-flotante{position:fixed;bottom:25px;right:95px;background:linear-gradient(135deg,#00ff88,#00d4aa);color:#000;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 0 30px rgba(0,255,136,0.8);z-index:999;animation:bounce 2s infinite}
 @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.grupo-flotante:hover, .whatsapp-flotante:hover{transform:scale(1.1)}
 
 footer{text-align:center;padding:30px;background:#05000a;color:#8b00ff;border-top:1px solid rgba(212,0,255,0.3)}
 
@@ -102,3 +106,4 @@ footer{text-align:center;padding:30px;background:#05000a;color:#8b00ff;border-to
   .planes{flex-direction:column;align-items:center}
   .plan{width:90%}
   .stats{gap:15px}
+  .grupo-flotante{right:25px;bottom:95px}
