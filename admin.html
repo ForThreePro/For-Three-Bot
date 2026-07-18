@@ -9,12 +9,14 @@
 <body>
 <div class="bg-anim"></div>
 <nav class="glass">
-  <div class="logo"><h1>🔒 PANEL ADMIN CYBER BOT</h1></div>
-  <button onclick="window.location.href='index.html'" class="btn-admin">← Tienda</button>
-  <button onclick="cargarPedidos()" class="btn-admin">🔄 Actualizar</button>
+  <div class="logo"><h1>🔒 ADMIN</h1></div>
+  <div class="nav-buttons">
+    <button onclick="window.location.href='index.html'" class="btn-admin">←</button>
+    <button onclick="cargarPedidos()" class="btn-admin">🔄</button>
+  </div>
 </nav>
 <main class="container">
-  <h2 class="section-title">Pedidos Pendientes</h2>
+  <h2 class="section-title">Pedidos</h2>
   <div id="listaPedidos"><p style="text-align:center;">Cargando...</p></div>
 </main>
 <script src="script.js"></script>
