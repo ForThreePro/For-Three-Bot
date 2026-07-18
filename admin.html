@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel Admin - Cyber Bot</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🔒 PANEL ADMIN CYBER BOT</h1>
+  <button onclick="window.location.href='index.html'" class="btn" style="width:auto; background:red;">Volver a Tienda</button>
+</header>
+
+<div class="container">
+  <div id="listaPedidos"></div>
+</div>
+
+<script src="script.js"></script>
+<script>
+  const pass = prompt('Contraseña Admin:');
+  if(pass!== 'cyber2026'){ // CAMBIA ESTA CONTRASEÑA
+    alert('Contraseña incorrecta');
+    window.location.href='index.html';
+  }
+</script>
+</body>
+</html>
