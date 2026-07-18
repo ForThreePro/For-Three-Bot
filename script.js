@@ -21,7 +21,7 @@ if(localStorage.getItem('theme') === 'light' && document.querySelector('.btn-the
   document.querySelector('.btn-theme').innerText = '☀️';
 }
 
-// CONTADOR DE VENTAS FALSO PERO REALISTA
+// CONTADOR DE VENTAS
 let ventas = parseInt(localStorage.getItem('ventasCyber')) || 347;
 if(document.getElementById('contador-ventas')) document.getElementById('contador-ventas').innerText = ventas;
 setInterval(() => {
@@ -61,18 +61,28 @@ function iniciarContador() {
   }, 1000);
 }
 
-// CODIGO DE PAGO Y ADMIN
+// CODIGO DE PAGO
 function abrirPopup(producto, linkTarjeta) {
   productoActual = producto;
   document.getElementById('popup-titulo').innerText = producto;
   document.getElementById('popup-precio').innerText = 'S/ ' + producto.split('S/')[1];
   document.getElementById('btn-tarjeta').href = linkTarjeta;
   document.getElementById('popup-pago').style.display = 'block';
+  // Resetear a tab tarjeta
+  cambiarTab('tarjeta');
 }
 function cerrarPopup() {
   document.getElementById('popup-pago').style.display = 'none';
   document.getElementById('form-comprobante').reset();
 }
+
+function cambiarTab(tab) {
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('tab-' + tab).classList.add('active');
+}
+
 window.onclick = function(event) { 
   if (event.target == document.getElementById('popup-pago')) cerrarPopup();
   if (event.target == document.getElementById('popup-oferta')) cerrarOferta();
