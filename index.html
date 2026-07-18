@@ -2,87 +2,108 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Cyber Bot - Bots de WhatsApp</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Bot - Servicios Digitales</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="bg-glow"></div>
 
-<header>
-  <img src="https://files.evogb.win/Yd5g8R.jpg" alt="Cyber Bot">
-  <h1>CYBER BOT</h1>
-  <p>Bots de WhatsApp y Servicios Digitales</p>
-  <div class="btn-group">
-    <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk" class="btn btn-sm">👥 Grupo Pruebas</a>
-    <button onclick="window.location.href='admin.html'" class="btn btn-sm btn-dark">🔒 Admin</button>
+<nav>
+  <div class="logo">
+    <img src="https://files.evogb.win/Yd5g8R.jpg" alt="Cyber Bot">
+    <h1>CYBER BOT</h1>
   </div>
+  <button onclick="window.location.href='admin.html'" class="btn-admin">🔒 Admin</button>
+</nav>
+
+<header class="hero">
+  <h2>Bots de WhatsApp y Servicios Digitales</h2>
+  <p>Automatiza tu negocio con tecnología de nivel PRO</p>
+  <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk" class="btn btn-glow">👥 Grupo de Pruebas</a>
 </header>
 
-<div class="container">
-
+<main class="container">
   <h2 class="section-title">🤖 BOTS PARA GRUPO</h2>
   <div class="grid">
     <div class="card">
-      <h3>Bot Para Grupo Mensual</h3>
+      <div class="card-tag">POPULAR</div>
+      <h3>Bot Grupo Mensual</h3>
+      <p class="desc">Para grupos activos. Renovación mensual.</p>
       <p class="price">S/ 5.00</p>
-      <p class="comision">Comisión: S/ 1.56</p>
       <a href="https://mpago.la/2UBqiPc" class="btn">Pagar con Tarjeta</a>
-      <button onclick="mostrarForm('mensual')" class="btn btn-yape">Pagar con Yape/Prex</button>
+      <button onclick="mostrarForm('mensual')" class="btn btn-outline">Pagar con Yape</button>
       <div id="form-mensual" class="form-pago">
         <input type="text" placeholder="Tu nombre completo" id="nombre-mensual">
         <input type="tel" placeholder="Tu WhatsApp 9xxxxxxx" id="wp-mensual">
-        <label>Subir captura de pago:</label>
+        <label>Subir captura de Yape/Prex:</label>
         <input type="file" id="captura-mensual" accept="image/*">
-        <button onclick="enviarPedido('Bot Mensual S/5','mensual')" class="btn">Enviar Comprobante</button>
+        <button onclick="enviarPedido('Bot Grupo Mensual S/5','mensual')" class="btn">Enviar Comprobante</button>
       </div>
     </div>
 
     <div class="card">
-      <h3>Bot Para Grupo Permanente</h3>
+      <h3>Bot Grupo Permanente</h3>
+      <p class="desc">Pago único. Para siempre.</p>
       <p class="price">S/ 7.00</p>
-      <p class="comision">Comisión: S/ 2.53</p>
       <a href="https://mpago.la/2p3QEsk" class="btn">Pagar con Tarjeta</a>
-      <button onclick="mostrarForm('permanente')" class="btn btn-yape">Pagar con Yape/Prex</button>
+      <button onclick="mostrarForm('permanente')" class="btn btn-outline">Pagar con Yape</button>
       <div id="form-permanente" class="form-pago">
         <input type="text" placeholder="Tu nombre completo" id="nombre-permanente">
         <input type="tel" placeholder="Tu WhatsApp 9xxxxxxx" id="wp-permanente">
-        <label>Subir captura de pago:</label>
+        <label>Subir captura de Yape/Prex:</label>
         <input type="file" id="captura-permanente" accept="image/*">
-        <button onclick="enviarPedido('Bot Permanente S/7','permanente')" class="btn">Enviar Comprobante</button>
+        <button onclick="enviarPedido('Bot Grupo Permanente S/7','permanente')" class="btn">Enviar Comprobante</button>
       </div>
     </div>
   </div>
 
   <h2 class="section-title">⚙️ BOTS PERSONALIZADOS</h2>
   <div class="grid">
-    <div class="card"><h3>Bot Personalizado Basic</h3><p class="price">S/ 20.00</p><p class="comision">Comisión: S/ 2.09</p><a href="https://mpago.la/26UCJzP" class="btn">Pagar Tarjeta</a><button onclick="mostrarForm('basic')" class="btn btn-yape">Pagar Yape/Prex</button><div id="form-basic" class="form-pago"><input type="text" placeholder="Tu nombre" id="nombre-basic"><input type="tel" placeholder="Tu WhatsApp" id="wp-basic"><input type="file" id="captura-basic" accept="image/*"><button onclick="enviarPedido('Bot Basic S/20','basic')" class="btn">Enviar</button></div></div>
-    <div class="card"><h3>Bot Personalizado Premium</h3><p class="price">S/ 30.00</p><p class="comision">Comisión: S/ 3.52</p><a href="https://mpago.la/2rBoK8k" class="btn">Pagar Tarjeta</a><button onclick="mostrarForm('premium')" class="btn btn-yape">Pagar Yape/Prex</button><div id="form-premium" class="form-pago"><input type="text" placeholder="Tu nombre" id="nombre-premium"><input type="tel" placeholder="Tu WhatsApp" id="wp-premium"><input type="file" id="captura-premium" accept="image/*"><button onclick="enviarPedido('Bot Premium S/30','premium')" class="btn">Enviar</button></div></div>
+    <div class="card">
+      <h3>Bot Basic</h3>
+      <p class="desc">Comandos básicos + Auto-respuesta</p>
+      <p class="price">S/ 20.00</p>
+      <a href="https://mpago.la/26UCJzP" class="btn">Pagar Tarjeta</a>
+      <button onclick="mostrarForm('basic')" class="btn btn-outline">Pagar Yape</button>
+      <div id="form-basic" class="form-pago"><input type="text" placeholder="Tu nombre" id="nombre-basic"><input type="tel" placeholder="Tu WhatsApp" id="wp-basic"><input type="file" id="captura-basic" accept="image/*"><button onclick="enviarPedido('Bot Basic S/20','basic')" class="btn">Enviar</button></div>
+    </div>
+    <div class="card card-premium">
+      <div class="card-tag">PREMIUM</div>
+      <h3>Bot Premium</h3>
+      <p class="desc">Todo ilimitado + Soporte 24/7 + Panel</p>
+      <p class="price">S/ 30.00</p>
+      <a href="https://mpago.la/2rBoK8k" class="btn btn-glow">Pagar Tarjeta</a>
+      <button onclick="mostrarForm('premium')" class="btn btn-outline">Pagar Yape</button>
+      <div id="form-premium" class="form-pago"><input type="text" placeholder="Tu nombre" id="nombre-premium"><input type="tel" placeholder="Tu WhatsApp" id="wp-premium"><input type="file" id="captura-premium" accept="image/*"><button onclick="enviarPedido('Bot Premium S/30','premium')" class="btn">Enviar</button></div>
+    </div>
   </div>
 
   <h2 class="section-title">🌐 SERVICIOS DIGITALES</h2>
   <div class="grid">
-    <div class="card"><h3>Servidor Hosting</h3><p class="price">S/ 10.00</p><p class="comision">Comisión: S/ 1.66</p><a href="https://mpago.la/1W7Nbi6" class="btn">Pagar Tarjeta</a><button onclick="mostrarForm('hosting')" class="btn btn-yape">Pagar Yape/Prex</button><div id="form-hosting" class="form-pago"><input type="text" placeholder="Tu nombre" id="nombre-hosting"><input type="tel" placeholder="Tu WhatsApp" id="wp-hosting"><input type="file" id="captura-hosting" accept="image/*"><button onclick="enviarPedido('Hosting S/10','hosting')" class="btn">Enviar</button></div></div>
-    <div class="card"><h3>Página Web</h3><p class="price">S/ 35.00</p><p class="comision">Comisión: S/ 2.73</p><a href="https://mpago.la/16MBw3m" class="btn">Pagar Tarjeta</a><button onclick="mostrarForm('web')" class="btn btn-yape">Pagar Yape/Prex</button><div id="form-web" class="form-pago"><input type="text" placeholder="Tu nombre" id="nombre-web"><input type="tel" placeholder="Tu WhatsApp" id="wp-web"><input type="file" id="captura-web" accept="image/*"><button onclick="enviarPedido('Página Web S/35','web')" class="btn">Enviar</button></div></div>
+    <div class="card"><h3>Servidor Hosting</h3><p class="desc">Para mantener tu bot 24/7 online</p><p class="price">S/ 10.00</p><a href="https://mpago.la/1W7Nbi6" class="btn">Pagar Tarjeta</a><button onclick="mostrarForm('hosting')" class="btn btn-outline">Pagar Yape</button><div id="form-hosting" class="form-pago"><input type="text" placeholder="Tu nombre" id="nombre-hosting"><input type="tel" placeholder="Tu WhatsApp" id="wp-hosting"><input type="file" id="captura-hosting" accept="image/*"><button onclick="enviarPedido('Hosting S/10','hosting')" class="btn">Enviar</button></div></div>
+    <div class="card"><h3>Página Web</h3><p class="desc">Landing + Tienda como esta</p><p class="price">S/ 35.00</p><a href="https://mpago.la/16MBw3m" class="btn">Pagar Tarjeta</a><button onclick="mostrarForm('web')" class="btn btn-outline">Pagar Yape</button><div id="form-web" class="form-pago"><input type="text" placeholder="Tu nombre" id="nombre-web"><input type="tel" placeholder="Tu WhatsApp" id="wp-web"><input type="file" id="captura-web" accept="image/*"><button onclick="enviarPedido('Página Web S/35','web')" class="btn">Enviar</button></div></div>
   </div>
 
-  <h2 class="section-title">💳 MÉTODOS DE PAGO</h2>
-  <div class="pago-box">
-    <h3>Yape</h3>
-    <img src="https://files.evogb.win/kc99Pp.jpg" class="qr">
-    <p><b id="yape-num">936 994 155</b> <button class="btn copy-btn" onclick="copiar('936994155','yape-num')">Copiar</button></p>
-    <p>Nombre: Cristhofer Rojas Huarcaya</p>
+  <h2 class="section-title">💳 PAGO SEGURO</h2>
+  <div class="pago-container">
+    <div class="pago-box">
+      <h3>Yape</h3>
+      <img src="https://files.evogb.win/kc99Pp.jpg" class="qr">
+      <p><b id="yape-num">936 994 155</b> <button class="btn copy-btn" onclick="copiar('936994155','yape-num')">Copiar</button></p>
+      <p class="nombre">Cristhofer Rojas Huarcaya</p>
+    </div>
+    <div class="pago-box">
+      <h3>Prex</h3>
+      <p class="price-big">12249975</p>
+      <button class="btn copy-btn" onclick="copiar('12249975','prex-num')">Copiar Prex</button>
+      <p class="nombre" id="prex-num">Cristhofer Rojas Huarcaya</p>
+    </div>
   </div>
-
-  <div class="pago-box">
-    <h3>Prex</h3>
-    <p><b id="prex-num">12249975</b> <button class="btn copy-btn" onclick="copiar('12249975','prex-num')">Copiar</button></p>
-    <p>Nombre: Cristhofer Rojas Huarcaya</p>
-  </div>
-
-</div>
+</main>
 
 <footer>
-  <p>© 2026 Cyber Bot | Después de pagar por Yape/Prex sube tu captura aquí</p>
+  <p>© 2026 Cyber Bot | Soporte: 936 994 155</p>
 </footer>
 
 <script src="script.js"></script>
