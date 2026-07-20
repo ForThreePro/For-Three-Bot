@@ -28,34 +28,44 @@ body{background:var(--bg); color:var(--text); font-family:'Inter', sans-serif; l
 
 /* PRODUCTOS */
 .products-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:30px; padding:0 20px; margin-bottom:120px;}
-.product-card{background:var(--card); border:1px solid var(--border); border-radius:28px; padding:35px; transition:0.3s; position:relative;}
+.product-card{background:var(--card); border:1px solid var(--border); border-radius:28px; padding:35px; transition:0.3s; position:relative; display:flex; flex-direction:column;}
 .product-card:hover{transform:translateY(-8px); box-shadow:0 20px 60px rgba(0,0,0,0.1);}
 .product-badge{position:absolute; top:20px; right:20px; background:var(--accent); color:#fff; padding:6px 12px; border-radius:20px; font-size:0.75em; font-weight:700;}
 .product-card h3{font-size:1.6em; font-weight:700; margin-bottom:15px;}
 .price{font-size:3em; font-weight:900; color:var(--text); margin:20px 0 10px;}
-.comision{color:var(--text-dim); font-size:0.95em; margin-bottom:25px;}
-.btn-primary{width:100%; background:var(--accent); color:#fff; border:none; padding:14px; border-radius:12px; font-size:1em; font-weight:700; cursor:pointer; transition:0.2s;}
+.comision{color:var(--text-dim); font-size:0.95em; margin-bottom:20px;}
+.features{list-style:none; margin:10px 0 25px; padding:0; flex-grow:1;}
+.features li{padding:8px 0; color:var(--text-dim); font-size:0.95em;}
+.btn-primary{width:100%; background:var(--accent); color:#fff; border:none; padding:14px; border-radius:12px; font-size:1em; font-weight:700; cursor:pointer; transition:0.2s; margin-top:auto;}
 .btn-primary:hover{background:var(--accent-hover); transform:scale(1.02);}
 
 /* BENEFICIOS */
 .benefits{background:var(--card); padding:80px 0; text-align:center; border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin-bottom:100px;}
 .benefits h3{font-size:2em; font-weight:700; margin-bottom:20px;}
 
-/* ABOUT / TESTIMONIOS */
+/* ABOUT */
 .about-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:40px; margin-bottom:120px; text-align:center;}
 .about-item h4{font-size:1.5em; font-weight:700; margin-bottom:15px;}
-.testi-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:30px; margin-bottom:120px;}
-.testi-card{background:var(--card); border:1px solid var(--border); padding:30px; border-radius:20px; font-size:1.1em;}
+.about-item p{color:var(--text-dim); font-size:1.1em;}
+
+/* ACLARACION */
+.aclaracion{margin-bottom:100px;}
+.aclaracion-box{background:var(--card); border:1px solid var(--border); padding:35px; border-radius:20px;}
+.aclaracion-box p{margin-bottom:15px; font-size:1.1em; line-height:1.6;}
+.aclaracion-box b{color:var(--accent);}
+
+/* FAQ */
+.faq{margin-bottom:120px;}
+.faq-item{background:var(--card); border:1px solid var(--border); padding:25px; border-radius:16px; margin-bottom:15px; transition:0.2s;}
+.faq-item:hover{border-color:var(--accent);}
+.faq-item h4{font-size:1.2em; font-weight:700; margin-bottom:10px;}
+.faq-item p{color:var(--text-dim); font-size:1.05em; line-height:1.6;}
 
 /* AFILIADOS */
 .affiliate{background:var(--card); padding:60px; border-radius:28px; text-align:center; margin-bottom:100px; border:1px solid var(--border);}
 .affiliate h2{font-size:2.2em; font-weight:800; margin-bottom:15px;}
-.affiliate button{background:#000; color:#fff; border:none; padding:16px 32px; border-radius:12px; font-weight:700; font-size:1em; cursor:pointer; margin-top:20px;}
-
-/* FAQ */
-.faq{margin-bottom:120px;}
-.faq-item{background:var(--card); border:1px solid var(--border); padding:25px; border-radius:16px; margin-bottom:15px;}
-.faq-item h4{font-size:1.2em; font-weight:700; margin-bottom:10px;}
+.affiliate button{background:#000; color:#fff; border:none; padding:16px 32px; border-radius:12px; font-weight:700; font-size:1em; cursor:pointer; margin-top:20px; transition:0.2s;}
+.affiliate button:hover{background:#333; transform:scale(1.05);}
 
 /* MODAL CHECKOUT */
 .modal{display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); backdrop-filter:blur(10px); justify-content:center; align-items:center; z-index:999;}
@@ -112,17 +122,22 @@ body{background:var(--bg); color:var(--text); font-family:'Inter', sans-serif; l
 .command-card{background:var(--card); border:1px solid var(--border); padding:25px; border-radius:20px; transition:0.2s; cursor:pointer;}
 .command-card:active{transform:scale(0.98); background:#f5f5f7;}
 .command-card h3{font-size:1.4em; font-weight:700; font-family:'Courier New', monospace; color:var(--accent);}
-.tag{background:#f5f5f7; color:var(--text-dim); padding:6px 12px; border-radius:12px; font-size:0.8em; font-weight:600;}
+.command-card p{color:var(--text-dim); margin:10px 0;}
+.tag{background:#f5f5f7; color:var(--text-dim); padding:6px 12px; border-radius:12px; font-size:0.8em; font-weight:600; display:inline-block; margin-top:10px;}
 
 /* BOTON FLOTANTE */
 .whatsapp-float{position:fixed; bottom:25px; right:25px; background:#25D366; color:#fff; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:2em; text-decoration:none; box-shadow:0 4px 20px rgba(0,0,0,0.15); transition:0.3s;}
 .whatsapp-float:hover{transform:scale(1.1);}
 
+/* FOOTER */
 .footer{text-align:center; padding:60px 0; color:var(--text-dim); border-top:1px solid var(--border);}
+.footer a{text-decoration:none;}
 
+/* RESPONSIVE */
 @media (max-width: 768px){
     .hero h2{font-size:2.5em;}
     .products-grid, .commands-grid{grid-template-columns:1fr;}
     .brand p{display:none;}
     .modal-box{padding:25px;}
+    .section-title{font-size:2.2em;}
 }
