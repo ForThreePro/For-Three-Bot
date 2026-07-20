@@ -3,41 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CYBER BOT v3.1.5 - Whois Yallico</title>
+<title>Planes - CYBER BOT</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<img src="banner.jpg" alt="Cyber Bot" class="banner">
-
 <div class="container">
-    <h1 id="titulo">ᯇ 𝗖𝗬𝗕𝗘𝗥 𝗕𝗢𝗧 💻 ୧</h1>
-    
-    <div class="stats">
-        <p style="text-align:center; margin-bottom:20px; font-size:1.1em">> <span class="tag">"Sistema conectado, domina el chat"</span></p>
-        <div class="stats-grid">
-            <div class="stat">👥 <b>Usuarios:</b> 1139</div>
-            <div class="stat">📜 <b>Comandos:</b> 44</div>
-            <div class="stat">💾 <b>RAM:</b> 65.99MB</div>
-            <div class="stat">🌐 <b>Servidor:</b> 125.71GB</div>
+    <h1>🛒 PRODUCTOS CYBER BOT</h1>
+    <a href="index.html" class="btn" style="margin-bottom:20px">← Volver al Inicio</a>
+
+    <h2 class="categoria-titulo">🤖 BOTS PERSONALIZADOS</h2>
+    <div class="planes-grid">
+        <div class="plan-card">
+            <div class="plan-header">BOT BÁSICO</div>
+            <div class="plan-precio">S/20</div>
+            <ul>
+                <li>✅ 20 Comandos Básicos</li>
+                <li>✅ Anti-link + Welcome</li>
+                <li>✅ Menú Personalizado</li>
+            </ul>
+            <button onclick="mostrarPago('BOT BÁSICO S/20')" class="btn-plan">Adquirir</button>
         </div>
-        <p style="text-align:center; margin-top:20px" id="fecha-hora"></p>
+
+        <div class="plan-card destacado">
+            <div class="plan-badge">MÁS VENDIDO</div>
+            <div class="plan-header">BOT PREMIUM</div>
+            <div class="plan-precio">S/30</div>
+            <ul>
+                <li>✅ Todos los 44 Comandos</li>
+                <li>✅ IA: GPT4, Gemini, Claude</li>
+                <li>✅ Descargas: YT, TikTok, Spotify</li>
+            </ul>
+            <button onclick="mostrarPago('BOT PREMIUM S/30')" class="btn-plan">Adquirir</button>
+        </div>
     </div>
 
-    <div class="btn-group">
-        <a href="comandos.html" class="btn">💻 Ver Comandos</a>
-        <a href="planes.html" class="btn">🛒 Ver Planes</a>
+    <h2 class="categoria-titulo">👥 BOTS PARA GRUPOS</h2>
+    <div class="planes-grid">
+        <div class="plan-card">
+            <div class="plan-header">BOT GRUPO MENSUAL</div>
+            <div class="plan-precio">S/5 <span>/mes</span></div>
+            <ul>
+                <li>✅ Bot en 1 Grupo</li>
+                <li>✅ Comandos de Admin</li>
+                <li>✅ Anti-spam + Anti-link</li>
+            </ul>
+            <button onclick="mostrarPago('BOT GRUPO MENSUAL S/5')" class="btn-plan">Adquirir</button>
+        </div>
+
+        <div class="plan-card">
+            <div class="plan-header">BOT GRUPO PERMANENTE</div>
+            <div class="plan-precio">S/7 <span>/único</span></div>
+            <ul>
+                <li>✅ Bot en 1 Grupo</li>
+                <li>✅ Pago único, sin renovar</li>
+            </ul>
+            <button onclick="mostrarPago('BOT GRUPO PERMANENTE S/7')" class="btn-plan">Adquirir</button>
+        </div>
     </div>
 
-    <div class="footer">
-        <p>🤖 <b>BOT:</b> CYBER BOT</p>
-        <p>⚡ <b>Creador:</b> Whois Yallico 👑</p>
-        <p>💻 <b>Versión:</b> 3.1.5 Cyber Clean</p>
-        <p>🌐 <b>Web:</b> https://forthreepro.github.io/Whois-Yallico</p>
+    <h2 class="categoria-titulo">🌐 SERVICIOS WEB</h2>
+    <div class="planes-grid">
+        <div class="plan-card">
+            <div class="plan-header">HOSTING SERVIDOR</div>
+            <div class="plan-precio">S/10 <span>/mes</span></div>
+            <ul>
+                <li>✅ Servidor 24/7 Online</li>
+                <li>✅ 125GB Almacenamiento</li>
+                <li>✅ Sin caídas</li>
+            </ul>
+            <button onclick="mostrarPago('HOSTING S/10')" class="btn-plan">Adquirir</button>
+        </div>
+
+        <div class="plan-card">
+            <div class="plan-header">PÁGINA WEB</div>
+            <div class="plan-precio">S/35 <span>/único</span></div>
+            <ul>
+                <li>✅ Diseño Cyber Responsive</li>
+                <li>✅ Dominio GitHub Pages</li>
+                <li>✅ Entrega en 24h</li>
+            </ul>
+            <button onclick="mostrarPago('PÁGINA WEB S/35')" class="btn-plan">Adquirir</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- POPUP MÉTODOS DE PAGO -->
+<div id="popupPago" class="popup">
+    <div class="popup-content">
+        <span class="cerrar" onclick="cerrarPago()">&times;</span>
+        <h2>💳 Finalizar Compra</h2>
+        <p id="productoSeleccionado"></p>
+        <h3>Métodos de Pago:</h3>
+        <div class="metodos-pago">
+            <div class="metodo" onclick="pagar('Tarjeta')">💳 Tarjeta</div>
+            <div class="metodo" onclick="pagar('Yape')">📱 Yape</div>
+            <div class="metodo" onclick="pagar('Global66')">🌍 Global66</div>
+            <div class="metodo" onclick="pagar('Prexpex')">💰 Prexpex</div>
+        </div>
+        <p style="color:#888; font-size:0.9em">* Al elegir un método te contacto por WhatsApp</p>
     </div>
 </div>
 
-<script src="script.js"></script>
+<script>
+let productoActual = '';
+function mostrarPago(producto) {
+    productoActual = producto;
+    document.getElementById('productoSeleccionado').innerText = `Producto: ${producto}`;
+    document.getElementById('popupPago').style.display = 'flex';
+}
+function cerrarPago() {
+    document.getElementById('popupPago').style.display = 'none';
+}
+function pagar(metodo) {
+    let mensaje = `Hola Whois Yallico! Quiero comprar: ${productoActual}. Método de pago: ${metodo}`;
+    window.open(`https://wa.me/51936994155?text=${encodeURIComponent(mensaje)}`, '_blank');
+    cerrarPago();
+}
+</script>
 </body>
 </html>
