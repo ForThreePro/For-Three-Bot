@@ -23,8 +23,9 @@
         </div>
         <div class="nav-actions">
             <input type="text" id="search" placeholder="Buscar producto...">
+            <a href="comandos.html" class="btn-wa">Ver Comandos</a>
             <button id="theme-btn">◐</button>
-            <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk?s=cl&p=a&ilr=0&amv=1" target="_blank" class="btn-wa">Grupo Pruebas</a>
+            <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk?s=cl&p=a&ilr=0&amv=1" target="_blank" class="btn-wa">Grupo</a>
         </div>
     </div>
 </header>
@@ -33,13 +34,6 @@
     <div class="container">
         <h2 id="typing-text"></h2>
         <p>Soluciones digitales premium con soporte y garantía</p>
-    </div>
-</section>
-
-<section class="container">
-    <div class="offer-banner">
-        <h3>🔥 OFERTA ESTA SEMANA: Usa cupón <b>CYBER10</b> para 10% OFF</h3>
-        <div id="countdown">02d : 15h : 33m : 10s</div>
     </div>
 </section>
 
@@ -255,17 +249,6 @@ function updateTotal() {
     document.getElementById('modal-total').innerText = total.toFixed(2);
 }
 function copyText(text) { navigator.clipboard.writeText(text); alert("Copiado: " + text); }
-
-// CONTADOR
-const countDownDate = new Date().getTime() + (3 * 24 * 60 * 60 * 1000);
-setInterval(function() {
-  const distance = countDownDate - new Date().getTime();
-  const d = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const s = Math.floor((distance % (1000 * 60)) / 1000);
-  document.getElementById("countdown").innerHTML = d + "d : " + h + "h : " + m + "m : " + s + "s";
-}, 1000);
 
 // POPUP SALIDA
 let exitShown = false;
