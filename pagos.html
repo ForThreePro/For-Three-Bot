@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagos - CYBER BOT</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>MÉTODOS DE PAGO</h1>
+    <a href="index.html" class="btn btn-outline">< INICIO</a>
+
+    <!-- PLANES CON LINK MERCADO PAGO -->
+    <div class="card">
+        <h2 style="font-family:Space Grotesk; color:var(--morado-light); margin-bottom:20px">PLANES DISPONIBLES</h2>
+        
+        <div class="plan">
+            <h2>Bot Para Grupo Mensual</h2>
+            <div class="plan-price">S/ 5.00</div>
+            <p style="color:var(--text-dim); margin:10px 0">Método: Tarjeta • Comisión: S/ 1.56</p>
+            <a href="https://mpago.la/2UBqiPc" target="_blank" class="btn">PAGAR CON TARJETA</a>
+        </div>
+
+        <div class="plan">
+            <h2>Bot Para Grupo Permanente</h2>
+            <div class="plan-price">S/ 7.00</div>
+            <p style="color:var(--text-dim); margin:10px 0">Método: Tarjeta • Comisión: S/ 2.53</p>
+            <a href="https://mpago.la/2p3QEsk" target="_blank" class="btn">PAGAR CON TARJETA</a>
+        </div>
+
+        <div class="plan">
+            <h2>Bot Personalizado Basic</h2>
+            <div class="plan-price">S/ 20.00</div>
+            <p style="color:var(--text-dim); margin:10px 0">Método: Tarjeta • Comisión: S/ 2.09</p>
+            <a href="https://mpago.la/26UCJzP" target="_blank" class="btn">PAGAR CON TARJETA</a>
+        </div>
+
+        <div class="plan">
+            <h2>Bot Personalizado Premium</h2>
+            <div class="plan-price">S/ 30.00</div>
+            <p style="color:var(--text-dim); margin:10px 0">Método: Tarjeta • Comisión: S/ 3.52</p>
+            <a href="https://mpago.la/2rBoK8k" target="_blank" class="btn">PAGAR CON TARJETA</a>
+        </div>
+
+        <div class="plan">
+            <h2>Servidor Hosting</h2>
+            <div class="plan-price">S/ 10.00</div>
+            <p style="color:var(--text-dim); margin:10px 0">Método: Tarjeta • Comisión: S/ 1.66</p>
+            <a href="https://mpago.la/1W7Nbi6" target="_blank" class="btn">PAGAR CON TARJETA</a>
+        </div>
+
+        <div class="plan">
+            <h2>Página Web</h2>
+            <div class="plan-price">S/ 35.00</div>
+            <p style="color:var(--text-dim); margin:10px 0">Método: Tarjeta • Comisión: S/ 2.73</p>
+            <a href="https://mpago.la/16MBw3m" target="_blank" class="btn">PAGAR CON TARJETA</a>
+        </div>
+    </div>
+
+    <!-- YAPE -->
+    <div class="card">
+        <h2 style="font-family:Space Grotesk; color:var(--morado-light); margin-bottom:20px">PAGO POR YAPE</h2>
+        <div class="info-grid">
+            <div class="info-item">NÚMERO 
+                <span id="yapeNum">936 994 155</span>
+                <button onclick="copiar('936994155')" class="btn" style="padding:8px 16px; font-size:0.85em; margin-top:10px">COPIAR</button>
+            </div>
+            <div class="info-item">NOMBRE 
+                <span>Cristhofer Rojas Huarcaya</span>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:20px">
+            <img src="https://files.evogb.win/kc99Pp.jpg" alt="QR Yape" style="max-width:220px; border-radius:16px; border:2px solid var(--morado)">
+        </div>
+    </div>
+
+    <!-- PREX -->
+    <div class="card">
+        <h2 style="font-family:Space Grotesk; color:var(--morado-light); margin-bottom:20px">PAGO POR PREX</h2>
+        <div class="info-grid">
+            <div class="info-item">NÚMERO 
+                <span id="prexNum">12249975</span>
+                <button onclick="copiar('12249975')" class="btn" style="padding:8px 16px; font-size:0.85em; margin-top:10px">COPIAR</button>
+            </div>
+            <div class="info-item">NOMBRE 
+                <span>Cristhofer Rojas Huarcaya</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- GRUPO PRUEBAS -->
+    <div class="card" style="text-align:center">
+        <h2 style="font-family:Space Grotesk; color:var(--morado-light); margin-bottom:20px">GRUPO DE PRUEBAS</h2>
+        <p style="color:var(--text-dim); margin-bottom:20px">Prueba el bot antes de comprar</p>
+        <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk?s=cl&p=a&ilr=0&amv=1" target="_blank" class="btn">UNIRSE AL GRUPO</a>
+    </div>
+
+    <!-- LOGO CYBER -->
+    <div class="card" style="text-align:center">
+        <img src="https://files.evogb.win/Yd5g8R.jpg" alt="Cyber Bot" style="max-width:300px; border-radius:20px">
+    </div>
+
+    <div class="footer">
+        <p>1 - CYBER BOT</p>
+        <p>2 - BOT DE WHATSAPP Y SERVICIOS DIGITALES</p>
+        <p>3 - MORADO NEON</p>
+    </div>
+</div>
+
+<script>
+function copiar(texto){
+    navigator.clipboard.writeText(texto);
+    alert("Copiado: " + texto);
+}
+</script>
+
+</body>
+</html>
