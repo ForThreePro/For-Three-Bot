@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cyber Bot - The future of automation</title>
+<title>Cyber Bot - El futuro de la automatización</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,36 +12,36 @@
     <div class="logo">Cyber Bot</div>
     <div class="nav-links">
         <a href="#productos">Productos</a>
-        <a href="#pagos">Pagos</a>
         <a href="#soporte">Soporte</a>
+        <button id="theme-toggle" class="btn-icon">🌙</button>
         <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk" target="_blank" class="btn-nav">Grupo WhatsApp</a>
     </div>
+    <button id="menu-toggle" class="btn-icon mobile-only">☰</button>
 </nav>
 
 <section class="hero">
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="container">
-        <p class="created-by">Created by Whois Yallico</p>
-        <h1>The future of<br>automation.</h1>
-        <p class="subtitle">Ultimate Cyber Bot solutions to transform your WhatsApp into an automation powerhouse. Bots, hosting and web development.</p>
+        <p class="created-by">Creado por Whois Yallico</p>
+        <h1>El futuro de<br>la automatización.</h1>
+        <p class="subtitle">Soluciones Cyber Bot para transformar tu WhatsApp en una máquina de ventas. Bots, hosting y desarrollo web.</p>
         
         <div class="search-box">
-            <input type="text" placeholder="Search products...">
+            <input type="text" placeholder="Buscar productos...">
         </div>
 
         <div class="hero-tags">
-            <span>⚡ Instant Delivery</span>
-            <span>🔒 Secure Payments</span>
-            <span>💬 24/7 Support</span>
+            <span>⚡ Entrega Inmediata</span>
+            <span>🔒 Pagos Seguros</span>
+            <span>💬 Soporte 24/7</span>
         </div>
     </div>
 </section>
 
 <section id="productos" class="container">
     <div class="section-header">
-        <h2>Cyber Bot Products</h2>
-        <a href="#">Explore all ></a>
+        <h2>Productos Cyber Bot</h2>
     </div>
     <div class="grid-3">
 
@@ -52,7 +52,7 @@
                 <h3>Bot Grupo Mensual</h3>
                 <div class="price-row">
                     <span class="price">S/ 5</span>
-                    <a href="https://mpago.la/2UBqiPc" class="btn-buy">Buy Now</a>
+                    <button class="btn-buy" onclick="openPopup('Bot Grupo Mensual', 'S/ 5', 'https://mpago.la/2UBqiPc')">Comprar</button>
                 </div>
             </div>
         </div>
@@ -64,7 +64,7 @@
                 <h3>Bot Grupo Permanente</h3>
                 <div class="price-row">
                     <span class="price">S/ 7</span>
-                    <a href="https://mpago.la/2p3QEsk" class="btn-buy">Buy Now</a>
+                    <button class="btn-buy" onclick="openPopup('Bot Grupo Permanente', 'S/ 7', 'https://mpago.la/2p3QEsk')">Comprar</button>
                 </div>
             </div>
         </div>
@@ -72,11 +72,11 @@
         <div class="product-card">
             <div class="product-img">⚙️</div>
             <div class="product-info">
-                <p class="category">Custom</p>
+                <p class="category">Personalizado</p>
                 <h3>Bot Básico Personalizado</h3>
                 <div class="price-row">
                     <span class="price">S/ 20</span>
-                    <a href="https://mpago.la/26UCJzP" class="btn-buy">Buy Now</a>
+                    <button class="btn-buy" onclick="openPopup('Bot Básico Personalizado', 'S/ 20', 'https://mpago.la/26UCJzP')">Comprar</button>
                 </div>
             </div>
         </div>
@@ -88,7 +88,7 @@
                 <h3>Bot Premium Personalizado</h3>
                 <div class="price-row">
                     <span class="price">S/ 30</span>
-                    <a href="https://mpago.la/2rBoK8k" class="btn-buy">Buy Now</a>
+                    <button class="btn-buy" onclick="openPopup('Bot Premium Personalizado', 'S/ 30', 'https://mpago.la/2rBoK8k')">Comprar</button>
                 </div>
             </div>
         </div>
@@ -100,7 +100,7 @@
                 <h3>Página Web</h3>
                 <div class="price-row">
                     <span class="price">S/ 35</span>
-                    <a href="https://mpago.la/16MBw3m" class="btn-buy">Buy Now</a>
+                    <button class="btn-buy" onclick="openPopup('Página Web', 'S/ 35', 'https://mpago.la/16MBw3m')">Comprar</button>
                 </div>
             </div>
         </div>
@@ -112,7 +112,7 @@
                 <h3>Hosting Server Mensual</h3>
                 <div class="price-row">
                     <span class="price">S/ 10</span>
-                    <a href="https://mpago.la/1W7Nbi6" class="btn-buy">Buy Now</a>
+                    <button class="btn-buy" onclick="openPopup('Hosting Server Mensual', 'S/ 10', 'https://mpago.la/1W7Nbi6')">Comprar</button>
                 </div>
             </div>
         </div>
@@ -120,47 +120,91 @@
     </div>
 </section>
 
-<section id="pagos" class="container">
-    <h2>Payment Methods</h2>
-    <div class="grid-3">
-        <div class="info-card">
-            <h3>💳 Card</h3>
-            <p>Pay instantly with Mercado Pago links on each product</p>
-        </div>
-        <div class="info-card">
-            <h3>📱 Yape</h3>
-            <p>+51 936 994 155<br>Cristhofer Rojas Huarcaya</p>
-            <img src="https://files.evogb.win/kc99Pp.jpg" class="qr">
-        </div>
-        <div class="info-card">
-            <h3>💰 Prex</h3>
-            <p>12249975<br>Cristhofer Rojas Huarcaya</p>
-        </div>
-    </div>
-</section>
+<!-- POPUP DE PAGOS -->
+<div id="payment-popup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <h2>Completar Compra</h2>
+        <p id="popup-product">Producto: </p>
+        <p id="popup-price">Precio: </p>
+        
+        <h3>Métodos de Pago</h3>
+        <div class="pay-options">
+            <a id="mpago-link" href="#" target="_blank" class="pay-btn">💳 Pagar con Tarjeta</a>
+            
+            <div class="pay-card">
+                <h4>📱 Yape</h4>
+                <p>+51 936 994 155<br>Cristhofer Rojas Huarcaya</p>
+                <img src="https://files.evogb.win/kc99Pp.jpg" class="qr">
+                <a id="yape-wa" href="#" target="_blank" class="btn-whatsapp">✅ Ya pagué por Yape</a>
+            </div>
 
-<section class="cta-banner">
-    <h2>Want unlimited support for<br>all your bots?</h2>
-    <p>Get priority support and updates for all products</p>
-    <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk" class="btn-primary">Join WhatsApp Group</a>
-</section>
+            <div class="pay-card">
+                <h4>💰 Prex</h4>
+                <p>12249975<br>Cristhofer Rojas Huarcaya</p>
+                <a id="prex-wa" href="#" target="_blank" class="btn-whatsapp">✅ Ya pagué por Prex</a>
+            </div>
+        </div>
+        <p class="note">Adjunta tu captura de pago en WhatsApp</p>
+    </div>
+</div>
 
 <section id="soporte" class="container notice">
-    <h3>⚠️ Important Clarification</h3>
+    <h3>⚠️ Aclaración Importante</h3>
     <ul>
-        <li><b>Activation:</b> Send payment screenshot via Yape/Prex to WhatsApp</li>
-        <li><b>Delivery:</b> Group bots: Instant. Custom bots & Web: 24h</li>
-        <li><b>Warranty:</b> Free repair or 100% refund if there are issues</li>
-        <li><b>Support:</b> Only through the official WhatsApp group</li>
-        <li><b>Note:</b> Card prices include Mercado Pago fees. No refunds for change of mind</li>
+        <li><b>Activación:</b> Enviar captura de pago por Yape/Prex al WhatsApp</li>
+        <li><b>Entrega:</b> Bots de grupo: Inmediato. Personalizados y Web: 24h</li>
+        <li><b>Garantía:</b> Reparación gratis o devolución 100% si hay fallas</li>
+        <li><b>Soporte:</b> Solo por el grupo oficial de WhatsApp</li>
+        <li><b>Nota:</b> Precios con tarjeta ya incluyen comisión. Sin devoluciones por cambio de opinión</li>
     </ul>
 </section>
 
 <footer>
     <div class="container">
-        <p>© 2026 Cyber Bot. Created by Whois Yallico</p>
+        <p>© 2026 Cyber Bot. Creado por Whois Yallico</p>
     </div>
 </footer>
+
+<script>
+let currentProduct = '';
+let currentPrice = '';
+
+// MODO OSCURO/CLARO
+const toggle = document.getElementById('theme-toggle');
+toggle.onclick = () => {
+    document.body.classList.toggle('light-mode');
+    toggle.textContent = document.body.classList.contains('light-mode') ? '🌙' : '☀️';
+}
+
+// POPUP
+function openPopup(product, price, link) {
+    currentProduct = product;
+    currentPrice = price;
+    document.getElementById('payment-popup').style.display = 'flex';
+    document.getElementById('popup-product').innerText = 'Producto: ' + product;
+    document.getElementById('popup-price').innerText = 'Precio: ' + price;
+    document.getElementById('mpago-link').href = link;
+    
+    // Link de WhatsApp con mensaje automático
+    const mensaje = `Hola! Ya realicé el pago de ${product} por ${price}. Adjunto captura.`;
+    const waLink = `https://wa.me/51936994155?text=${encodeURIComponent(mensaje)}`;
+    document.getElementById('yape-wa').href = waLink;
+    document.getElementById('prex-wa').href = waLink;
+}
+
+function closePopup() {
+    document.getElementById('payment-popup').style.display = 'none';
+}
+window.onclick = (e) => {
+    if(e.target == document.getElementById('payment-popup')) closePopup();
+}
+
+// MENU MOBILE
+document.getElementById('menu-toggle').onclick = () => {
+    document.querySelector('.nav-links').classList.toggle('show');
+}
+</script>
 
 </body>
 </html>
