@@ -91,6 +91,25 @@ body{background:var(--bg); color:var(--text); font-family:'Inter', sans-serif; l
 
 @keyframes fadeIn{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:translateY(0)}}
 
+/* PARA COPIAR NUMERO/USUARIO */
+.copy-text{
+    background: rgba(0,113,227,0.1);
+    padding: 4px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--accent);
+    transition: 0.2s;
+    display: inline-block;
+}
+.copy-text:hover{
+    background: rgba(0,113,227,0.2);
+    transform: scale(1.03);
+}
+.copy-text:active{
+    transform: scale(0.95);
+}
+
 /* ARREGLO BOTON PAGO - QUITAR SUBRAYADO */
 .payment-details a,
 .payment-details button,
