@@ -1,58 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comandos | Cyber Bot</title><link rel="stylesheet" href="style.css"></head>
-<body><div class="bg-effects"></div>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comandos | Cyber Bot</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<header class="navbar"><div class="container nav-wrap">
-<div class="brand"><img src="https://files.evogb.win/Yd5g8R.jpg"><h1>Cyber Bot</h1></div>
-<a href="index.html" class="btn-wa">← Tienda</a></div></header>
+<header class="navbar">
+    <div class="container nav-wrap">
+        <div class="brand">
+            <img src="https://files.evogb.win/Yd5g8R.jpg" alt="Cyber Bot">
+            <h1>Cyber Bot</h1>
+        </div>
+        <a href="index.html" class="btn-wa">← Volver a Tienda</a>
+    </div>
+</header>
 
-<section class="hero"><h2 id="typing-text"></h2></section>
+<section class="hero">
+    <div class="container">
+        <h2>Comandos del Bot</h2>
+        <p>47 comandos para automatizar todo</p>
+    </div>
+</section>
 
 <main class="container">
-<div class="search-wrapper"><input type="text" id="search-command" placeholder="🔍 Buscar comando..."></div>
-<div class="categories-filter">
-<button onclick="filterCat('all')" class="cat-btn active">🌌 Todos</button>
-<button onclick="filterCat('GRUPOS')" class="cat-btn">💻 Grupos</button>
-<button onclick="filterCat('DOWNLOADER')" class="cat-btn">📥 Downloader</button>
-<button onclick="filterCat('FUN')" class="cat-btn">🎭 Fun</button>
-<button onclick="filterCat('CONFIG')" class="cat-btn">⚙️ Config</button>
-<button onclick="filterCat('TOOLS')" class="cat-btn">🛠️ Tools</button>
-</div>
+    <div class="search-wrapper">
+        <input type="text" id="search-command" placeholder="🔍 Buscar comando:.play,.kick,.ban...">
+    </div>
 
-<div class="commands-grid" id="commands-grid">
-<!-- GRUPOS -->
-<div class="command-card" data-cat="GRUPOS" onclick="touchEffect(this)"><h3>.promote</h3><p>Dar admin a un usuario</p><span class="tag">GRUPOS</span></div>
-<div class="command-card" data-cat="GRUPOS" onclick="touchEffect(this)"><h3>.kick @user</h3><p>Expulsar a un usuario</p><span class="tag">GRUPOS</span></div>
-<div class="command-card" data-cat="GRUPOS" onclick="touchEffect(this)"><h3>.link</h3><p>Mostrar link del grupo</p><span class="tag">GRUPOS</span></div>
-<!-- DOWNLOADER -->
-<div class="command-card" data-cat="DOWNLOADER" onclick="touchEffect(this)"><h3>.play</h3><p>Descargar música</p><span class="tag">DOWNLOADER</span></div>
-<div class="command-card" data-cat="DOWNLOADER" onclick="touchEffect(this)"><h3>.ytmp4</h3><p>Descargar video YT</p><span class="tag">DOWNLOADER</span></div>
-<!-- FUN -->
-<div class="command-card" data-cat="FUN" onclick="touchEffect(this)"><h3>.gay @user</h3><p>Medidor de gay</p><span class="tag">FUN</span></div>
-<div class="command-card" data-cat="FUN" onclick="touchEffect(this)"><h3>.top</h3><p>Top de activos</p><span class="tag">FUN</span></div>
-<!-- CONFIG -->
-<div class="command-card" data-cat="CONFIG" onclick="touchEffect(this)"><h3>.antilink on/off</h3><p>Anti link</p><span class="tag">CONFIG</span></div>
-<!-- TOOLS -->
-<div class="command-card" data-cat="TOOLS" onclick="touchEffect(this)"><h3>.removebg</h3><p>Quitar fondo</p><span class="tag">TOOLS</span></div>
-</div>
+    <div class="categories-filter">
+        <button onclick="filterCat('all')" class="cat-btn active">Todos</button>
+        <button onclick="filterCat('GRUPOS')" class="cat-btn">Grupos</button>
+        <button onclick="filterCat('DOWNLOADER')" class="cat-btn">Downloader</button>
+        <button onclick="filterCat('FUN')" class="cat-btn">Fun</button>
+        <button onclick="filterCat('SORTEOS')" class="cat-btn">Sorteos</button>
+        <button onclick="filterCat('CONFIG')" class="cat-btn">Config</button>
+        <button onclick="filterCat('TOOLS')" class="cat-btn">Tools</button>
+    </div>
+
+    <div class="commands-grid" id="commands-grid">
+        <!-- GRUPOS -->
+        <div class="command-card" data-cat="GRUPOS" onclick="touchEffect(this)"><h3>.promote</h3><p>Dar admin a un usuario</p><span class="tag">GRUPOS</span></div>
+        <div class="command-card" data-cat="GRUPOS" onclick="touchEffect(this)"><h3>.demote</h3><p>Quitar admin a un usuario</p><span class="tag">GRUPOS</span></div>
+        <div class="command-card" data-cat="GRUPOS" onclick="touchEffect(this)"><h3>.kick @user</h3><p>Expulsar a un usuario</p><span class="tag">GRUPOS</span></div>
+        <div class="command-card" data-cat="GRUPOS" onclick="touchEffect(this)"><h3>.link</h3><p>Mostrar link del grupo</p><span class="tag">GRUPOS</span></div>
+        <div class="command-card" data-cat="GRUPOS" onclick="touchEffect(this)"><h3>.mute @user</h3><p>Silenciar a un usuario</p><span class="tag">GRUPOS</span></div>
+        <div class="command-card" data-cat="GRUPOS" onclick="touchEffect(this)"><h3>.todos <texto></h3><p>Mencionar a todos</p><span class="tag">GRUPOS</span></div>
+
+        <!-- DOWNLOADER -->
+        <div class="command-card" data-cat="DOWNLOADER" onclick="touchEffect(this)"><h3>.play</h3><p>Descargar música por nombre</p><span class="tag">DOWNLOADER</span></div>
+        <div class="command-card" data-cat="DOWNLOADER" onclick="touchEffect(this)"><h3>.ytmp3</h3><p>Descargar audio de YouTube</p><span class="tag">DOWNLOADER</span></div>
+        <div class="command-card" data-cat="DOWNLOADER" onclick="touchEffect(this)"><h3>.ytmp4</h3><p>Descargar video de YouTube</p><span class="tag">DOWNLOADER</span></div>
+        <div class="command-card" data-cat="DOWNLOADER" onclick="touchEffect(this)"><h3>.tiktok</h3><p>Descargar video de TikTok</p><span class="tag">DOWNLOADER</span></div>
+        <div class="command-card" data-cat="DOWNLOADER" onclick="touchEffect(this)"><h3>.ig</h3><p>Descargar video de Instagram</p><span class="tag">DOWNLOADER</span></div>
+
+        <!-- FUN -->
+        <div class="command-card" data-cat="FUN" onclick="touchEffect(this)"><h3>.gay @user</h3><p>Medidor de gay</p><span class="tag">FUN</span></div>
+        <div class="command-card" data-cat="FUN" onclick="touchEffect(this)"><h3>.piropo @tag</h3><p>Enviar un piropo</p><span class="tag">FUN</span></div>
+        <div class="command-card" data-cat="FUN" onclick="touchEffect(this)"><h3>.top</h3><p>Top de los más activos</p><span class="tag">FUN</span></div>
+
+        <!-- SORTEOS -->
+        <div class="command-card" data-cat="SORTEOS" onclick="touchEffect(this)"><h3>.v</h3><p>Ver lista de sorteo</p><span class="tag">SORTEOS</span></div>
+        <div class="command-card" data-cat="SORTEOS" onclick="touchEffect(this)"><h3>.list Nombre / Numero</h3><p>Agregar a la lista</p><span class="tag">SORTEOS</span></div>
+
+        <!-- CONFIG -->
+        <div class="command-card" data-cat="CONFIG" onclick="touchEffect(this)"><h3>.antilink on/off</h3><p>Activar anti link</p><span class="tag">CONFIG</span></div>
+        <div class="command-card" data-cat="CONFIG" onclick="touchEffect(this)"><h3>.welcome on/off</h3><p>Mensaje de bienvenida</p><span class="tag">CONFIG</span></div>
+
+        <!-- TOOLS -->
+        <div class="command-card" data-cat="TOOLS" onclick="touchEffect(this)"><h3>.removebg</h3><p>Quitar fondo de imagen</p><span class="tag">TOOLS</span></div>
+        <div class="command-card" data-cat="TOOLS" onclick="touchEffect(this)"><h3>.tourl</h3><p>Convertir imagen a link</p><span class="tag">TOOLS</span></div>
+    </div>
 </main>
 
-<footer style="text-align:center; padding:40px; color:var(--text-dim);">Toca un comando para ver el efecto</footer>
+<footer class="footer">
+    <div class="container"><p>Toca un comando para ver el efecto | ¿Dudas? <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk" target="_blank" style="color:var(--accent);">Soporte</a></p></div>
+</footer>
 
 <script>
-const text2="Comandos del Bot"; let j=0;
-function typeWriter2(){ if(j<text2.length){ document.getElementById("typing-text").innerHTML+=text2.charAt(j); j++; setTimeout(typeWriter2,50); } }
-window.onload=typeWriter2;
-
-// SOLO EFECTO VISUAL AL TOCAR
 function touchEffect(element){
-    element.style.transform = 'scale(0.95)';
-    element.style.borderColor = 'var(--neon)';
+    element.style.transform = 'scale(0.98)';
+    element.style.background = '#f5f5f7';
     setTimeout(() => {
         element.style.transform = '';
-        element.style.borderColor = '';
+        element.style.background = '';
     }, 200);
 }
 
@@ -71,4 +104,5 @@ function filterCat(category){
     });
 }
 </script>
-</body></html>
+</body>
+</html>
