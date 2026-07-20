@@ -1,61 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
 :root {
-    --bg: #050510; --glass: rgba(20,20,40,0.4); --neon: #00f5ff; --text: #e0e0ff;
+    --bg: #0a0a0f; --card: #13131f; --border: #2a2a40;
+    --neon: #a855f7; --neon-glow: rgba(168, 85, 247, 0.5);
+    --text: #f1f1f5; --text-dim: #a1a1aa;
 }
 body.light {
-    --bg: #f0f0ff; --glass: rgba(255,255,255,0.6); --neon: #7c3aed; --text: #111;
+    --bg: #f8f7ff; --card: #ffffff; --border: #e5e5f0;
+    --text: #1a1a2e; --text-dim: #52525b; --neon-glow: rgba(168, 85, 247, 0.2);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: var(--bg); color: var(--text); font-family: 'Orbitron', sans-serif; overflow-x: hidden; }
+body { background: var(--bg); color: var(--text); font-family: 'Poppins', sans-serif; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-.grid-bg {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background-image: linear-gradient(var(--neon) 1px, transparent 1px), linear-gradient(90deg, var(--neon) 1px, transparent 1px);
-    background-size: 50px 50px; opacity: 0.1; z-index: -1;
+.bg-effects {
+    position: fixed; width: 100%; height: 100%; z-index: -1;
+    background: radial-gradient(circle at 20% 50%, var(--neon-glow) 0%, transparent 50%);
 }
 
-.top-nav { display: flex; justify-content: space-between; padding: 20px 5%; backdrop-filter: blur(10px); border-bottom: 1px solid var(--neon); }
-.logo-neon { font-size: 1.8em; font-weight: 900; color: var(--neon); text-shadow: 0 0 10px var(--neon); }
-.logo-neon span { color: var(--text); }
-.top-nav nav { display: flex; gap: 20px; align-items: center; }
-.top-nav a { color: var(--text); text-decoration: none; }
-#theme-btn { background: none; border: 1px solid var(--neon); color: var(--neon); padding: 8px 12px; border-radius: 50%; cursor: pointer; font-size: 1.2em; }
+.navbar { background: rgba(10,10,15,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+.nav-wrap { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+.brand { display: flex; align-items: center; gap: 15px; }
+.brand img { width: 50px; height: 50px; border-radius: 12px; border: 2px solid var(--neon); }
+.brand h1 { font-size: 1.5em; color: var(--neon); }
+.brand p { font-size: 0.8em; color: var(--text-dim); }
+.nav-actions { display: flex; gap: 15px; align-items: center; }
+#theme-btn { background: var(--card); border: 1px solid var(--border); color: var(--neon); width: 40px; height: 40px; border-radius: 10px; cursor: pointer; font-size: 1.2em; }
+.btn-wa { background: var(--neon); color: #fff; padding: 10px 18px; border-radius: 10px; text-decoration: none; font-weight: 600; }
 
-.hero-glass { text-align: center; padding: 120px 20px; }
-.hero-glass h1 { font-size: 3.5em; color: var(--neon); text-shadow: 0 0 20px var(--neon); margin-bottom: 20px; }
-.hero-glass p { font-size: 1.2em; margin-bottom: 30px; }
-.cta-btn { background: transparent; border: 2px solid var(--neon); color: var(--neon); padding: 15px 40px; text-decoration: none; font-weight: 700; transition: 0.3s; }
-.cta-btn:hover { background: var(--neon); color: var(--bg); box-shadow: 0 0 30px var(--neon); }
+.hero { text-align: center; padding: 80px 0; }
+.hero h2 { font-size: 2.8em; margin-bottom: 10px; }
+.hero p { font-size: 1.2em; color: var(--text-dim); }
 
-.store-container { padding: 80px 5%; }
-.section-title { text-align: center; font-size: 2em; color: var(--neon); margin-bottom: 50px; }
-.cards-wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+.section-title { font-size: 2em; text-align: center; margin: 60px 0 30px; }
+.products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 80px; }
 
-.glass-card { 
-    background: var(--glass); backdrop-filter: blur(15px); border: 1px solid var(--neon); 
-    border-radius: 15px; padding: 25px; transition: 0.4s; 
+.product-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 25px;
+    position: relative; transition: 0.3s;
 }
-.glass-card:hover { transform: translateY(-10px); box-shadow: 0 0 40px var(--neon); }
-.glass-card.pro { border: 2px solid #ff00ff; }
-.card-header { font-size: 0.8em; color: var(--neon); margin-bottom: 10px; }
-.glass-card h3 { font-size: 1.3em; margin-bottom: 20px; }
-.price-tag { font-size: 2em; font-weight: 700; color: var(--neon); margin-bottom: 20px; }
-.buy-btn { width: 100%; background: var(--neon); color: var(--bg); border: none; padding: 12px; font-weight: 900; cursor: pointer; border-radius: 8px; }
+.product-card:hover { border-color: var(--neon); transform: translateY(-8px); box-shadow: 0 0 40px var(--neon-glow); }
+.product-card.featured { border: 2px solid var(--neon); }
+.product-badge {
+    position: absolute; top: -12px; right: 20px; background: var(--neon); color: #fff;
+    padding: 5px 12px; border-radius: 20px; font-size: 0.75em; font-weight: 700;
+}
+.badge-purple { background: #9333ea; }
+.product-card h3 { font-size: 1.3em; margin-bottom: 15px; }
+.price { font-size: 2.2em; font-weight: 800; color: var(--neon); }
+.comision { color: var(--text-dim); font-size: 0.9em; margin-bottom: 20px; }
+.btn-primary {
+    width: 100%; background: var(--neon); color: #fff; border: none; padding: 14px;
+    border-radius: 12px; font-size: 1em; font-weight: 700; cursor: pointer; transition: 0.2s;
+}
+.btn-primary:hover { background: #9333ea; box-shadow: 0 0 20px var(--neon-glow); }
 
-.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 999; }
-.modal-content { background: var(--glass); backdrop-filter: blur(20px); border: 2px solid var(--neon); padding: 30px; border-radius: 20px; width: 90%; max-width: 600px; }
-.close-x { float: right; font-size: 2em; cursor: pointer; color: var(--neon); }
-.payment-grid { display: grid; gap: 15px; margin-top: 20px; }
-.pay-option { border: 1px solid var(--neon); padding: 15px; border-radius: 10px; text-align: center; }
-.pay-option img { width: 100px; margin: 10px 0; }
-.confirm-btn, .pay-option a:first-child { display: block; background: var(--neon); color: var(--bg); padding: 12px; text-decoration: none; font-weight: 700; border-radius: 8px; margin-top: 10px; }
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); justify-content: center; align-items: center; z-index: 999; }
+.modal-box { background: var(--card); border: 1px solid var(--border); padding: 30px; border-radius: 20px; width: 90%; max-width: 550px; }
+.close-btn { float: right; font-size: 2em; cursor: pointer; color: var(--text-dim); }
+.summary { background: var(--bg); padding: 15px; border-radius: 12px; margin: 20px 0; }
+.summary p { margin: 5px 0; }
+.payment-method { border: 1px solid var(--border); padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+.payment-info p { margin: 8px 0; display: flex; justify-content: space-between; align-items: center; }
+.payment-info button { background: var(--neon); color: #fff; border: none; padding: 5px 10px; border-radius: 6px; cursor: pointer; font-size: 0.8em; }
+.qr-code { width: 120px; margin: 10px auto; display: block; border-radius: 10px; }
+.btn-payment { display: block; text-align: center; padding: 14px; border-radius: 10px; text-decoration: none; font-weight: 700; margin-top: 10px; color: #fff; }
+.btn-card { background: var(--neon); } .btn-yape { background: #7200a1; } .btn-prex { background: #00c853; }
+.modal-note { text-align: center; color: var(--text-dim); font-size: 0.9em; margin-top: 15px; }
 
-.info-panel { padding: 60px 5%; text-align: center; border-top: 1px solid var(--neon); }
-.footer-cyber { text-align: center; padding: 30px; border-top: 1px solid var(--neon); font-size: 0.9em; }
+.footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border); color: var(--text-dim); }
+.footer a { color: var(--neon); text-decoration: none; }
 
 @media (max-width: 768px) {
-    .hero-glass h1 { font-size: 2em; }
-    .top-nav nav { gap: 10px; }
+    .brand p { display: none; }
+    .hero h2 { font-size: 2em; }
+    .products-grid { grid-template-columns: 1fr; }
 }
