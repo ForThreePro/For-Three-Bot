@@ -1,0 +1,103 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Orbitron', sans-serif; 
+}
+
+body { 
+    background: #020210; 
+    color: #e0e0ff; 
+    background-image: 
+        linear-gradient(rgba(168, 85, 247, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(168, 85, 247, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove { 
+    0% { background-position: 0 0; } 
+    100% { background-position: 50px 50px; } 
+}
+
+.banner { 
+    width: 100%; 
+    max-height: 500px; 
+    object-fit: cover; 
+    border-bottom: 4px solid #a855f7; 
+    box-shadow: 0 0 30px #a855f780;
+}
+
+.container { 
+    max-width: 900px; 
+    margin: 0 auto; 
+    padding: 20px; 
+}
+
+h1 { 
+    text-align: center; 
+    font-size: 3em; 
+    font-weight: 900;
+    background: linear-gradient(90deg, #a855f7, #ec4899, #a855f7);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s linear infinite;
+    margin: 30px 0; 
+    text-shadow: 0 0 20px #a855f7;
+}
+
+@keyframes shine { 
+    to { background-position: 200% center; } 
+}
+
+.stats-box { 
+    background: rgba(17, 17, 34, 0.8); 
+    border: 2px solid #a855f7; 
+    border-radius: 15px; 
+    padding: 30px; 
+    margin: 30px 0;
+    box-shadow: 0 0 30px #a855f740;
+    backdrop-filter: blur(10px);
+}
+
+.frase {
+    text-align: center;
+    font-size: 1.2em;
+    color: #a855f7;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.info-item {
+    background: rgba(26, 26, 46, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #a855f7;
+    font-size: 1.1em;
+}
+
+.online {
+    color: #22c55e;
+    font-weight: 900;
+    text-shadow: 0 0 10px #22c55e;
+}
+
+.footer { 
+    text-align: center; 
+    padding: 40px 20px; 
+    color: #888; 
+    border-top: 2px solid #a855f7;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .info-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 2em; }
+}
