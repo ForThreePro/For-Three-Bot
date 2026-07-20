@@ -63,7 +63,7 @@ body{background:var(--bg); color:var(--text); font-family:'Inter', sans-serif; l
 .close-btn{float:right; font-size:2em; cursor:pointer; color:var(--text-dim); transition:0.2s;}
 .close-btn:hover{color:var(--text);}
 
-/* SELECTOR DE PAGO NUEVO */
+/* SELECTOR DE PAGO */
 .payment-methods{display:flex; flex-direction:column; gap:12px; margin-bottom:30px;}
 .payment-option{border:2px solid var(--border); border-radius:16px; padding:18px; cursor:pointer; transition:0.2s;}
 .payment-option:hover{border-color:var(--accent); background:#fafafa;}
@@ -80,6 +80,26 @@ body{background:var(--bg); color:var(--text); font-family:'Inter', sans-serif; l
 .qr-code{width:160px; margin:15px 0; border-radius:12px; border:1px solid var(--border);}
 
 @keyframes fadeIn{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:translateY(0)}}
+
+/* ARREGLO BOTON PAGO - QUITAR SUBRAYADO */
+.payment-details a,
+.payment-details button,
+.payment-details .btn-primary,
+.payment-details .btn-big{
+    text-decoration: none !important;
+    display: block;
+    text-align: center;
+    background: var(--accent);
+    color: #fff !important;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+.payment-details a:visited,
+.payment-details a:active{
+    color: #fff !important;
+    text-decoration: none !important;
+}
 
 /* COMANDOS */
 .search-wrapper{padding:0 20px; margin:60px 0 40px;}
