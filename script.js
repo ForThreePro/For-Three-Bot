@@ -21,15 +21,22 @@ if(document.getElementById('buscador')) {
     });
 }
 
-// Descripción de comandos
+// MOSTRAR DESCRIPCIÓN AL DAR CLICK - YA NO COPIA
 document.querySelectorAll('.command').forEach(cmd => {
     cmd.addEventListener('click', () => {
-        if(document.getElementById('descripcion')) {
-            const desc = cmd.getAttribute('data-desc');
-            document.getElementById('descripcion').innerHTML = `📌 <b>${cmd.textContent}</b><br>${desc}`;
-        }
-        navigator.clipboard.writeText(cmd.textContent);
-        cmd.style.background = '#9333ea';
-        setTimeout(() => cmd.style.background = 'rgba(26, 26, 46, 0.9)', 300);
+        const titulo = cmd.getAttribute('data-titulo');
+        const desc = cmd.getAttribute('data-desc');
+        
+        document.getElementById('info-comando').innerHTML = `
+            <h3>📌 ${titulo}</h3>
+            <p>${desc}</p>
+        `;
+        
+        // Efecto de selección
+        document.querySelectorAll('.command').forEach(c => c.classList.remove('activo'));
+        cmd.classList.add('activo');
+        
+        // Scroll hacia arriba para ver la info
+        document.getElementById('info-comando').scrollIntoView({ behavior: 'smooth' });
     });
 });
