@@ -5,268 +5,77 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cyber Bot | Bots de WhatsApp y Servicios Digitales</title>
 <meta name="description" content="Cyber Bot - Automatiza tu WhatsApp. Bots, Hosting y Páginas Web. Entrega inmediata y garantía.">
-<meta property="og:image" content="https://files.evogb.win/Yd5g8R.jpg">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <div class="bg-effects"></div>
 
 <header class="navbar">
     <div class="container nav-wrap">
         <div class="brand">
             <img src="https://files.evogb.win/Yd5g8R.jpg" alt="Cyber Bot">
-            <div>
-                <h1>Cyber Bot</h1>
-                <p>Bot de WhatsApp y Servicios Digitales</p>
-            </div>
+            <div><h1>Cyber Bot</h1><p>Servicios Digitales</p></div>
         </div>
         <div class="nav-actions">
-            <input type="text" id="search" placeholder="Buscar producto...">
-            <a href="comandos.html" class="btn-wa">Ver Comandos</a>
+            <input type="text" id="search" placeholder="Buscar servicio...">
+            <a href="comandos.html" class="btn-wa">📜 Comandos</a>
             <button id="theme-btn">◐</button>
-            <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk?s=cl&p=a&ilr=0&amv=1" target="_blank" class="btn-wa">Grupo</a>
         </div>
     </div>
 </header>
 
-<section class="hero">
-    <div class="container">
-        <h2 id="typing-text"></h2>
-        <p>Soluciones digitales premium con soporte y garantía</p>
-    </div>
-</section>
+<section class="hero"><div class="container"><h2 id="typing-text"></h2><p>Automatiza, vende y escala tu negocio</p></div></section>
 
 <main class="container">
-    <h2 class="section-title">Catálogo de Servicios</h2>
+    <h2 class="section-title">Nuestros Servicios</h2>
     <div class="products-grid" id="products">
-
         <div class="product-card" data-name="Bot Para Grupo Mensual" data-price="5">
-            <div class="product-badge">POPULAR</div>
-            <h3>Bot Para Grupo Mensual</h3>
-            <div class="price">S/ <span class="price-num">5.00</span></div>
-            <p class="comision">+ Comisión tarjeta: S/ 1.56</p>
+            <div class="product-badge">POPULAR</div><h3>Bot Para Grupo Mensual</h3>
+            <div class="price">S/ 5.00</div><p class="comision">+ Comisión: S/ 1.56</p>
             <button class="btn-primary" onclick="openCheckout('Bot Para Grupo Mensual', 5, 'S/ 1.56', 'https://mpago.la/2UBqiPc')">Comprar Ahora</button>
         </div>
-
         <div class="product-card featured" data-name="Bot Para Grupo Permanente" data-price="7">
-            <div class="product-badge badge-purple">RECOMENDADO</div>
-            <h3>Bot Para Grupo Permanente</h3>
-            <div class="price">S/ <span class="price-num">7.00</span></div>
-            <p class="comision">+ Comisión tarjeta: S/ 2.53</p>
-            <div class="upsell">🔥 Llévate Mensual + Permanente por S/ 10</div>
+            <div class="product-badge">RECOMENDADO</div><h3>Bot Para Grupo Permanente</h3>
+            <div class="price">S/ 7.00</div><p class="comision">+ Comisión: S/ 2.53</p>
+            <div class="upsell">🔥 Pack Mensual + Permanente S/ 10</div>
             <button class="btn-primary" onclick="openCheckout('Bot Para Grupo Permanente', 7, 'S/ 2.53', 'https://mpago.la/2p3QEsk')">Comprar Ahora</button>
         </div>
-
-        <div class="product-card" data-name="Bot Personalizado Basic" data-price="20">
-            <h3>Bot Personalizado Basic</h3>
-            <div class="price">S/ <span class="price-num">20.00</span></div>
-            <p class="comision">+ Comisión tarjeta: S/ 2.09</p>
-            <button class="btn-primary" onclick="openCheckout('Bot Personalizado Basic', 20, 'S/ 2.09', 'https://mpago.la/26UCJzP')">Comprar Ahora</button>
-        </div>
-
         <div class="product-card" data-name="Bot Personalizado Premium" data-price="30">
-            <h3>Bot Personalizado Premium</h3>
-            <div class="price">S/ <span class="price-num">30.00</span></div>
-            <p class="comision">+ Comisión tarjeta: S/ 3.52</p>
+            <h3>Bot Personalizado Premium</h3><div class="price">S/ 30.00</div><p class="comision">+ Comisión: S/ 3.52</p>
             <button class="btn-primary" onclick="openCheckout('Bot Personalizado Premium', 30, 'S/ 3.52', 'https://mpago.la/2rBoK8k')">Comprar Ahora</button>
         </div>
-
         <div class="product-card" data-name="Servidor Hosting" data-price="10">
-            <h3>Servidor Hosting</h3>
-            <div class="price">S/ <span class="price-num">10.00</span></div>
-            <p class="comision">+ Comisión tarjeta: S/ 1.66</p>
+            <h3>Servidor Hosting</h3><div class="price">S/ 10.00</div><p class="comision">+ Comisión: S/ 1.66</p>
             <button class="btn-primary" onclick="openCheckout('Servidor Hosting', 10, 'S/ 1.66', 'https://mpago.la/1W7Nbi6')">Comprar Ahora</button>
         </div>
-
         <div class="product-card" data-name="Página Web" data-price="35">
-            <h3>Página Web</h3>
-            <div class="price">S/ <span class="price-num">35.00</span></div>
-            <p class="comision">+ Comisión tarjeta: S/ 2.73</p>
+            <h3>Página Web Profesional</h3><div class="price">S/ 35.00</div><p class="comision">+ Comisión: S/ 2.73</p>
             <button class="btn-primary" onclick="openCheckout('Página Web', 35, 'S/ 2.73', 'https://mpago.la/16MBw3m')">Comprar Ahora</button>
         </div>
-
     </div>
 </main>
 
-<section class="about container">
-    <h2 class="section-title">¿Por qué Cyber Bot?</h2>
-    <div class="about-grid">
-        <div class="about-item"><h4>⚡ Experiencia</h4><p>+500 bots activos. Sabemos lo que hacemos.</p></div>
-        <div class="about-item"><h4>🛡️ Garantía Real</h4><p>Si falla te devolvemos el 100% sin preguntas.</p></div>
-        <div class="about-item"><h4>💬 Soporte Humano</h4><p>Te responde Cristhofer, no un robot.</p></div>
-    </div>
-</section>
-
-<section class="benefits">
-    <div class="container">
-        <h3>Métodos de Pago 100% Seguros</h3>
-        <div class="payment-logos">💳 Mercado Pago | 📱 Yape | 💰 Prex</div>
-    </div>
-</section>
-
-<section class="testimonials container">
-    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
-    <div class="testi-grid">
-        <div class="testi-card"><p>"Me activaron el bot en 5 minutos. Súper recomendado"</p><b>- Carlos R.</b></div>
-        <div class="testi-card"><p>"El soporte responde rapidísimo. El mejor bot del mercado"</p><b>- María L.</b></div>
-        <div class="testi-card"><p>"Mi grupo creció 300% con la automatización"</p><b>- Diego S.</b></div>
-    </div>
-</section>
-
-<section class="affiliate container">
-    <h2>Programa de Afiliados</h2>
-    <p>Gana <b>S/ 2</b> por cada venta que refieras. Comparte tu link y cobra por Yape.</p>
-    <button onclick="alert('Escríbenos al WhatsApp para activar tu link de afiliado')">Quiero ser Afiliado</button>
-</section>
-
-<section class="faq container">
-    <h2 class="section-title">Preguntas Frecuentes</h2>
-    <div class="faq-item"><h4>¿En cuánto tiempo me entregan?</h4><p>Bots de grupo: Inmediato. Personalizados y Web: Máximo 24 horas.</p></div>
-    <div class="faq-item"><h4>¿Tengo garantía?</h4><p>Sí. Si hay fallas te lo reparamos gratis o te devolvemos el 100%.</p></div>
-    <div class="faq-item"><h4>¿Cómo activo mi compra?</h4><p>Pagando por Yape/Prex envía la captura al WhatsApp. Con tarjeta se activa solo.</p></div>
-</section>
-
-<!-- MODAL DE PAGO -->
-<div id="checkout-modal" class="modal">
-    <div class="modal-box">
-        <span class="close-btn" onclick="closeCheckout()">&times;</span>
-        <h2>Finalizar Compra</h2>
-        <div class="summary">
-            <p id="modal-product-name"></p>
-            <p>Precio: S/ <span id="modal-product-price"></span></p>
-            <p>Comisión: <span id="modal-product-comision"></span></p>
-            <p>Total: S/ <span id="modal-total"></span></p>
-        </div>
-
-        <div class="coupon-box">
-            <input type="text" id="coupon" placeholder="Código de cupón">
-            <button onclick="applyCoupon()">Aplicar</button>
-        </div>
-
-        <h3>Métodos de Pago</h3>
-        <div class="payment-method">
-            <h4>💳 Tarjeta Débito/Crédito</h4>
-            <a id="card-payment-link" href="#" target="_blank" class="btn-payment btn-card">Pagar con Tarjeta</a>
-        </div>
-        <div class="payment-method">
-            <h4>📱 Yape</h4>
-            <div class="payment-info">
-                <p><b>Número:</b> <span>936 994 155</span> <button onclick="copyText('936994155')">Copiar</button></p>
-                <p><b>Nombre:</b> Cristhofer Rojas Huarcaya</p>
-                <img src="https://files.evogb.win/kc99Pp.jpg" class="qr-code">
-            </div>
-            <a id="yape-wa-link" href="#" target="_blank" class="btn-payment btn-yape">Ya pagué por Yape</a>
-        </div>
-        <div class="payment-method">
-            <h4>💰 Prex</h4>
-            <div class="payment-info">
-                <p><b>Número:</b> <span>12249975</span> <button onclick="copyText('12249975')">Copiar</button></p>
-                <p><b>Nombre:</b> Cristhofer Rojas Huarcaya</p>
-            </div>
-            <a id="prex-wa-link" href="#" target="_blank" class="btn-payment btn-prex">Ya pagué por Prex</a>
-        </div>
-    </div>
-</div>
-
-<!-- POPUP SALIDA -->
-<div id="exit-popup" class="exit-popup">
-    <div class="exit-box">
-        <span onclick="closeExit()">X</span>
-        <h2>¡ESPERA!</h2>
-        <p>Llévate <b>5% OFF</b> extra con el código: <b>ULTIMO</b></p>
-        <button onclick="closeExit()">Seguir Comprando</button>
-    </div>
-</div>
+<!-- MODAL -->
+<div id="checkout-modal" class="modal"><div class="modal-box"><span class="close-btn" onclick="closeCheckout()">&times;</span>
+<h2>Finalizar Compra</h2><div class="summary"><p id="modal-product-name"></p><p>Total: S/ <span id="modal-total"></span></p></div>
+<div class="coupon-box"><input type="text" id="coupon" placeholder="Código"><button onclick="applyCoupon()">Aplicar</button></div>
+<a id="card-payment-link" href="#" target="_blank" class="btn-primary">Pagar con Tarjeta</a></div></div>
 
 <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk?s=cl&p=a&ilr=0&amv=1" target="_blank" class="whatsapp-float">💬</a>
-<div id="notification" class="notification"></div>
-
-<footer class="footer">
-    <div class="container">
-        <p>© 2026 Cyber Bot. Todos los derechos reservados. Creado por Whois Yallico</p>
-    </div>
-</footer>
+<footer class="footer"><div class="container"><p>© 2026 Cyber Bot | Creado por Whois Yallico</p></div></footer>
 
 <script>
-const phone = "51936994155";
-let currentPrice = 0;
-let discount = 0;
-
-// ANIMACION ESCRIBIENDO
-const text = "Automatiza tu WhatsApp al siguiente nivel";
-let i = 0;
-function typeWriter() {
-    if (i < text.length) {
-        document.getElementById("typing-text").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 60);
-    }
-}
+const phone = "51936994155"; let currentPrice = 0; let discount = 0;
+const text = "Automatiza tu WhatsApp al siguiente nivel"; let i = 0;
+function typeWriter() { if (i < text.length) { document.getElementById("typing-text").innerHTML += text.charAt(i); i++; setTimeout(typeWriter, 50); } }
 window.onload = typeWriter;
-
-// TEMA
 if(localStorage.getItem('theme') === 'light') document.body.classList.add('light');
-document.getElementById('theme-btn').onclick = () => {
-    document.body.classList.toggle('light');
-    localStorage.setItem('theme', document.body.classList.contains('light')? 'light' : 'dark');
-};
-
-// BUSCADOR
-document.getElementById('search').onkeyup = (e) => {
-    let filter = e.target.value.toLowerCase();
-    document.querySelectorAll('.product-card').forEach(card => {
-        card.style.display = card.dataset.name.toLowerCase().includes(filter)? 'block' : 'none';
-    });
-}
-
-// CHECKOUT
-function openCheckout(name, price, comision, link) {
-    currentPrice = price;
-    document.getElementById('checkout-modal').style.display = 'flex';
-    document.getElementById('modal-product-name').innerText = name;
-    document.getElementById('modal-product-price').innerText = price.toFixed(2);
-    document.getElementById('modal-product-comision').innerText = comision;
-    updateTotal();
-    const message = `Hola! Realicé el pago de: ${name} - S/ ${price}. Adjunto captura.`;
-    const waLink = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    document.getElementById('yape-wa-link').href = waLink;
-    document.getElementById('prex-wa-link').href = waLink;
-    document.getElementById('card-payment-link').href = link;
-}
+document.getElementById('theme-btn').onclick = () => { document.body.classList.toggle('light'); localStorage.setItem('theme', document.body.classList.contains('light')? 'light' : 'dark'); };
+document.getElementById('search').onkeyup = (e) => { let filter = e.target.value.toLowerCase(); document.querySelectorAll('.product-card').forEach(card => { card.style.display = card.dataset.name.toLowerCase().includes(filter)? 'block' : 'none'; }); }
+function openCheckout(name, price, comision, link) { currentPrice = price; document.getElementById('checkout-modal').style.display = 'flex'; document.getElementById('modal-product-name').innerText = name; updateTotal(); document.getElementById('card-payment-link').href = link; }
 function closeCheckout() { document.getElementById('checkout-modal').style.display = 'none'; discount=0; }
-
-// CUPONES
-function applyCoupon() {
-    let code = document.getElementById('coupon').value.toUpperCase();
-    if(code === 'CYBER10') discount = 0.10;
-    if(code === 'ULTIMO') discount = 0.05;
-    updateTotal();
-    alert(discount > 0? "Cupón aplicado!" : "Cupón inválido");
-}
-function updateTotal() {
-    let total = currentPrice * (1 - discount);
-    document.getElementById('modal-total').innerText = total.toFixed(2);
-}
-function copyText(text) { navigator.clipboard.writeText(text); alert("Copiado: " + text); }
-
-// POPUP SALIDA
-let exitShown = false;
-document.addEventListener('mouseleave', (e) => {
-    if(e.clientY < 0 &&!exitShown) { document.getElementById('exit-popup').style.display='flex'; exitShown=true; }
-});
-function closeExit() { document.getElementById('exit-popup').style.display='none'; }
-
-// NOTIFICACION
-const names = ["Juan de Lima", "Ana de Arequipa", "Luis de Cusco"];
-const products = ["Bot Permanente", "Bot Basic", "Hosting"];
-setInterval(() => {
-    const notif = document.getElementById('notification');
-    notif.innerHTML = `🔔 ${names[Math.floor(Math.random()*3)]} acaba de comprar ${products[Math.floor(Math.random()*3)]}`;
-    notif.classList.add('show');
-    setTimeout(() => notif.classList.remove('show'), 4000);
-}, 20000);
+function applyCoupon() { let code = document.getElementById('coupon').value.toUpperCase(); if(code === 'CYBER10') discount = 0.10; updateTotal(); }
+function updateTotal() { let total = currentPrice * (1 - discount); document.getElementById('modal-total').innerText = total.toFixed(2); }
 </script>
-
 </body>
 </html>
