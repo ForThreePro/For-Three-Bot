@@ -1,69 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comandos | Cyber Bot</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="bg-effects"></div>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comandos | Cyber Bot</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="bg-effects"></div>
 
-<header class="navbar">
-    <div class="container nav-wrap">
-        <div class="brand">
-            <img src="https://files.evogb.win/Yd5g8R.jpg" alt="Cyber Bot">
-            <div><h1>Cyber Bot</h1><p>Wiki de Comandos</p></div>
-        </div>
-        <div class="nav-actions">
-            <a href="index.html" class="btn-wa">← Tienda</a>
-            <button id="theme-btn">◐</button>
-        </div>
-    </div>
-</header>
+<header class="navbar"><div class="container nav-wrap">
+<div class="brand"><img src="https://files.evogb.win/Yd5g8R.jpg"><h1>Cyber Bot</h1></div>
+<a href="index.html" class="btn-wa">← Tienda</a></div></header>
 
-<section class="hero"><div class="container"><h2 id="typing-text"></h2><p>47 comandos para dominar tu bot</p></div></section>
+<section class="hero"><h2 id="typing-text"></h2></section>
 
 <main class="container">
-    <div class="search-wrapper">
-        <input type="text" id="search-command" placeholder="🔍 Busca comando:.play,.kick,.ban...">
-        <span id="total-comandos">47 Comandos</span>
-    </div>
+<div class="search-wrapper"><input type="text" id="search-command" placeholder="🔍 Buscar comando..."></div>
+<div class="categories-filter">
+<button onclick="filterCat('all')" class="cat-btn active">🌌 Todos</button>
+<button onclick="filterCat('GRUPOS')" class="cat-btn">💻 Grupos</button>
+<button onclick="filterCat('DOWNLOADER')" class="cat-btn">📥 Downloader</button>
+<button onclick="filterCat('FUN')" class="cat-btn">🎭 Fun</button>
+<button onclick="filterCat('CONFIG')" class="cat-btn">⚙️ Config</button>
+<button onclick="filterCat('TOOLS')" class="cat-btn">🛠️ Tools</button>
+</div>
 
-    <div class="categories-filter">
-        <button onclick="filterCat('all')" class="cat-btn active">🌌 Todos</button>
-        <button onclick="filterCat('GRUPOS')" class="cat-btn">💻 Grupos</button>
-        <button onclick="filterCat('DOWNLOADER')" class="cat-btn">📥 Downloader</button>
-        <button onclick="filterCat('FUN')" class="cat-btn">🎭 Fun</button>
-        <button onclick="filterCat('SORTEOS')" class="cat-btn">🎲 Sorteos</button>
-        <button onclick="filterCat('CONFIG')" class="cat-btn">⚙️ Config</button>
-        <button onclick="filterCat('TOOLS')" class="cat-btn">🛠️ Tools</button>
-    </div>
-
-    <div class="commands-grid" id="commands-grid">
-        <!-- Pega aquí todos tus 47 comandos con la misma estructura de antes -->
-        <div class="command-card" data-cat="GRUPOS" onclick="copyCommand('.promote')"><h3>.promote</h3><p>Dar admin a un usuario</p><span class="tag">GRUPOS</span></div>
-        <div class="command-card" data-cat="GRUPOS" onclick="copyCommand('.kick @user')"><h3>.kick @user</h3><p>Expulsar a un usuario</p><span class="tag">GRUPOS</span></div>
-        <div class="command-card" data-cat="DOWNLOADER" onclick="copyCommand('.play')"><h3>.play</h3><p>Descargar música</p><span class="tag">DOWNLOADER</span></div>
-        <div class="command-card" data-cat="DOWNLOADER" onclick="copyCommand('.ytmp4')"><h3>.ytmp4</h3><p>Descargar video YT</p><span class="tag">DOWNLOADER</span></div>
-        <div class="command-card" data-cat="FUN" onclick="copyCommand('.gay *@user*')"><h3>.gay *@user*</h3><p>Medidor de gay</p><span class="tag">FUN</span></div>
-        <div class="command-card" data-cat="CONFIG" onclick="copyCommand('.antilink on/off')"><h3>.antilink on/off</h3><p>Anti link</p><span class="tag">CONFIG</span></div>
-        <div class="command-card" data-cat="TOOLS" onclick="copyCommand('.removebg')"><h3>.removebg</h3><p>Quitar fondo</p><span class="tag">TOOLS</span></div>
-    </div>
+<div class="commands-grid" id="commands-grid">
+<!-- GRUPOS -->
+<div class="command-card" data-cat="GRUPOS" onclick="touchEffect(this)"><h3>.promote</h3><p>Dar admin a un usuario</p><span class="tag">GRUPOS</span></div>
+<div class="command-card" data-cat="GRUPOS" onclick="touchEffect(this)"><h3>.kick @user</h3><p>Expulsar a un usuario</p><span class="tag">GRUPOS</span></div>
+<div class="command-card" data-cat="GRUPOS" onclick="touchEffect(this)"><h3>.link</h3><p>Mostrar link del grupo</p><span class="tag">GRUPOS</span></div>
+<!-- DOWNLOADER -->
+<div class="command-card" data-cat="DOWNLOADER" onclick="touchEffect(this)"><h3>.play</h3><p>Descargar música</p><span class="tag">DOWNLOADER</span></div>
+<div class="command-card" data-cat="DOWNLOADER" onclick="touchEffect(this)"><h3>.ytmp4</h3><p>Descargar video YT</p><span class="tag">DOWNLOADER</span></div>
+<!-- FUN -->
+<div class="command-card" data-cat="FUN" onclick="touchEffect(this)"><h3>.gay @user</h3><p>Medidor de gay</p><span class="tag">FUN</span></div>
+<div class="command-card" data-cat="FUN" onclick="touchEffect(this)"><h3>.top</h3><p>Top de activos</p><span class="tag">FUN</span></div>
+<!-- CONFIG -->
+<div class="command-card" data-cat="CONFIG" onclick="touchEffect(this)"><h3>.antilink on/off</h3><p>Anti link</p><span class="tag">CONFIG</span></div>
+<!-- TOOLS -->
+<div class="command-card" data-cat="TOOLS" onclick="touchEffect(this)"><h3>.removebg</h3><p>Quitar fondo</p><span class="tag">TOOLS</span></div>
+</div>
 </main>
 
-<div id="copy-alert">✅ Copiado</div>
-<footer class="footer"><div class="container"><p>¿Dudas? <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk?s=cl&p=a&ilr=0&amv=1" target="_blank">Soporte 24/7</a></p></div></footer>
+<footer style="text-align:center; padding:40px; color:var(--text-dim);">Toca un comando para ver el efecto</footer>
 
 <script>
-const text2 = "Comandos del Bot"; let j = 0;
-function typeWriter2() { if (j < text2.length) { document.getElementById("typing-text").innerHTML += text2.charAt(j); j++; setTimeout(typeWriter2, 50); } }
-window.onload = typeWriter2;
-if(localStorage.getItem('theme') === 'light') document.body.classList.add('light');
-document.getElementById('theme-btn').onclick = () => { document.body.classList.toggle('light'); localStorage.setItem('theme', document.body.classList.contains('light')? 'light' : 'dark'); };
-function copyCommand(cmd) { navigator.clipboard.writeText(cmd); const alert = document.getElementById('copy-alert'); alert.innerText = `✅ ${cmd}`; alert.classList.add('show'); setTimeout(() => alert.classList.remove('show'), 1500); }
-document.getElementById('search-command').onkeyup = (e) => { let filter = e.target.value.toLowerCase(); let count = 0; document.querySelectorAll('.command-card').forEach(card => { if(card.innerText.toLowerCase().includes(filter)) { card.style.display = 'block'; count++; } else { card.style.display = 'none'; } }); document.getElementById('total-comandos').innerText = count + " Comandos"; }
-function filterCat(category) { document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active')); event.target.classList.add('active'); let count = 0; document.querySelectorAll('.command-card').forEach(card => { if(category === 'all' || card.dataset.cat === category) { card.style.display = 'block'; count++; } else { card.style.display = 'none'; } }); document.getElementById('total-comandos').innerText = count + " Comandos"; }
+const text2="Comandos del Bot"; let j=0;
+function typeWriter2(){ if(j<text2.length){ document.getElementById("typing-text").innerHTML+=text2.charAt(j); j++; setTimeout(typeWriter2,50); } }
+window.onload=typeWriter2;
+
+// SOLO EFECTO VISUAL AL TOCAR
+function touchEffect(element){
+    element.style.transform = 'scale(0.95)';
+    element.style.borderColor = 'var(--neon)';
+    setTimeout(() => {
+        element.style.transform = '';
+        element.style.borderColor = '';
+    }, 200);
+}
+
+document.getElementById('search-command').onkeyup=(e)=>{
+    let filter=e.target.value.toLowerCase();
+    document.querySelectorAll('.command-card').forEach(card=>{
+        card.style.display=card.innerText.toLowerCase().includes(filter)?'block':'none';
+    });
+}
+
+function filterCat(category){
+    document.querySelectorAll('.cat-btn').forEach(btn=>btn.classList.remove('active'));
+    event.target.classList.add('active');
+    document.querySelectorAll('.command-card').forEach(card=>{
+        card.style.display=(category==='all'||card.dataset.cat===category)?'block':'none';
+    });
+}
 </script>
-</body>
-</html>
+</body></html>
