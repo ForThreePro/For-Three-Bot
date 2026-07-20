@@ -1,24 +1,22 @@
 function actualizarFechaHora() {
     const ahora = new Date();
-    const fechaEl = document.getElementById('fecha');
-    const horaEl = document.getElementById('hora');
-    if(fechaEl) fechaEl.innerText = ahora.toLocaleDateString('es-PE');
-    if(horaEl) horaEl.innerText = ahora.toLocaleTimeString('es-PE', {hour: '2-digit', minute:'2-digit'});
+    if(document.getElementById('fecha')) document.getElementById('fecha').innerText = ahora.toLocaleDateString('es-PE');
+    if(document.getElementById('hora')) document.getElementById('hora').innerText = ahora.toLocaleTimeString('es-PE', {hour: '2-digit', minute:'2-digit'});
 }
-setInterval(actualizarFechaHora, 1000); actualizarFechaHora();
+setInterval(actualizarFechaHora, 1000); 
+actualizarFechaHora();
 
 document.querySelectorAll('.cmd').forEach(item => {
     item.addEventListener('click', () => {
         navigator.clipboard.writeText(item.textContent);
-        let old = item.style.background;
-        item.style.background = '#e9d5ff';
-        setTimeout(() => { item.style.background = old; }, 300);
+        let original = item.style.background;
+        item.style.background = '#dbeafe';
+        setTimeout(() => { item.style.background = original; }, 300);
     });
 });
 
-const search = document.getElementById('searchCmd');
-if(search){
-    search.addEventListener('keyup', function() {
+if(document.getElementById('searchCmd')){
+    document.getElementById('searchCmd').addEventListener('keyup', function() {
         let filtro = this.value.toLowerCase();
         document.querySelectorAll('.cmd').forEach(item => {
             item.style.display = item.textContent.toLowerCase().includes(filtro)? 'block' : 'none';
@@ -37,7 +35,4 @@ function abrirModal(titulo, precio, comision, link){
 }
 function cerrarModal(){ document.getElementById('modalPago').style.display = 'none'; }
 function copiar(texto){ navigator.clipboard.writeText(texto); alert("Copiado: " + texto); }
-window.onclick = function(event) { 
-    const modal = document.getElementById('modalPago');
-    if (event.target == modal) cerrarModal(); 
-}
+window.onclick = function(event) { if (event.target == document.getElementById('modalPago')) cerrarModal(); }
