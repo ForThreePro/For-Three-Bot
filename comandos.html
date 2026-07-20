@@ -14,26 +14,40 @@
     <a href="index.html" class="btn" style="margin-bottom:20px">← Volver al Inicio</a>
 
     <input type="text" id="buscador" placeholder="🔍 Buscar comando...">
-    <div id="descripcion" class="descripcion-box">Haz click en un comando para ver para qué sirve 👇</div>
+    
+    <!-- AQUI SALE LA INFO DEL COMANDO -->
+    <div id="info-comando" class="info-comando">
+        <p>👆 Haz click en cualquier comando para ver su descripción</p>
+    </div>
 
     <div class="menu-section">
         <div class="menu-title">⚙️ CONFIG</div>
-        <div class="command" data-desc="Activa o desactiva anti-link en el grupo">.antilink &lt;on/off&gt;</div>
-        <div class="command" data-desc="Evita spam de mensajes seguidos">.antispam on/off</div>
-        <div class="command" data-desc="Mensaje de bienvenida automático">.welcome on/off</div>
+        <div class="command" data-titulo=".antilink on/off" data-desc="Activa o desactiva el anti-enlace. Si alguien manda un link será eliminado automáticamente.">.antilink &lt;on/off&gt;</div>
+        <div class="command" data-titulo=".antispam on/off" data-desc="Evita que los usuarios manden muchos mensajes seguidos. Anti-flood automático.">.antispam on/off</div>
+        <div class="command" data-titulo=".welcome on/off" data-desc="Envía un mensaje de bienvenida automático cuando alguien entra al grupo.">.welcome on/off</div>
+        <div class="command" data-titulo=".nsfw on/off" data-desc="Activa contenido +18 en el grupo. Solo para grupos de adultos.">.nsfw on/off</div>
     </div>
 
     <div class="menu-section">
         <div class="menu-title">📥 DOWNLOADER</div>
-        <div class="command" data-desc="Descarga música de YouTube">.play &lt;canción&gt;</div>
-        <div class="command" data-desc="Descarga video de YouTube">.ytmp4 &lt;link&gt;</div>
-        <div class="command" data-desc="Descarga videos de TikTok">.tiktok &lt;link&gt;</div>
+        <div class="command" data-titulo=".play <canción>" data-desc="Busca y descarga música de YouTube en MP3. Ej: .play bad bunny">.play &lt;canción&gt;</div>
+        <div class="command" data-titulo=".ytmp4 <link>" data-desc="Descarga videos de YouTube en MP4 con la mejor calidad.">.ytmp4 &lt;link&gt;</div>
+        <div class="command" data-titulo=".tiktok <link>" data-desc="Descarga videos de TikTok sin marca de agua.">.tiktok &lt;link&gt;</div>
+        <div class="command" data-titulo=".ig <link>" data-desc="Descarga fotos, videos e historias de Instagram.">.ig &lt;link&gt;</div>
     </div>
 
     <div class="menu-section">
         <div class="menu-title">🤖 INTELIGENCIA ARTIFICIAL</div>
-        <div class="command" data-desc="Habla con GPT-4">.gpt4 &lt;texto&gt;</div>
-        <div class="command" data-desc="Habla con Gemini de Google">.gemini &lt;texto&gt;</div>
+        <div class="command" data-titulo=".gpt4 <texto>" data-desc="Habla con ChatGPT-4. El más inteligente. Responde cualquier pregunta.">.gpt4 &lt;texto&gt;</div>
+        <div class="command" data-titulo=".gemini <texto>" data-desc="Habla con Gemini de Google. Muy bueno para programar y crear imágenes.">.gemini &lt;texto&gt;</div>
+        <div class="command" data-titulo=".claude <texto>" data-desc="Habla con Claude AI de Anthropic. Excelente para escribir textos largos.">.claude &lt;texto&gt;</div>
+    </div>
+
+    <div class="menu-section">
+        <div class="menu-title">🎭 FUN</div>
+        <div class="command" data-titulo=".piropo @tag" data-desc="Manda un piropo aleatorio al usuario que menciones.">.piropo @tag</div>
+        <div class="command" data-titulo=".gay @user" data-desc="Calcula que tan gay es la persona en porcentaje.">.gay @user</div>
+        <div class="command" data-titulo=".king @user" data-desc="Nombra al usuario como el rey del grupo con una imagen.">.king @user</div>
     </div>
 
     <div class="btn-group">
