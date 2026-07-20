@@ -3,202 +3,169 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cyber Bot - El futuro de la automatización</title>
+<title>Cyber Bot - Tienda Oficial</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="logo">Cyber Bot</div>
-    <div class="nav-links">
-        <a href="#productos">Productos</a>
-        <a href="#soporte">Soporte</a>
-        <button id="theme-toggle" class="btn-icon">🌙</button>
-        <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk" target="_blank" class="btn-nav">Grupo WhatsApp</a>
-    </div>
-    <button id="menu-toggle" class="btn-icon mobile-only">☰</button>
-</nav>
+<!-- TOP BAR -->
+<div class="topbar">
+    <div class="container">Envío de bots inmediato | Soporte 24/7 en WhatsApp</div>
+</div>
 
-<section class="hero">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
+<!-- HEADER -->
+<header class="header">
+    <div class="container header-top">
+        <div class="logo">Cyber Bot</div>
+        <div class="search">
+            <input type="text" placeholder="¿Qué buscas? Ej: Bot Grupo, Hosting...">
+            <button>🔍</button>
+        </div>
+        <div class="header-icons">
+            <button id="theme-toggle">🌙</button>
+            <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk" target="_blank">💬 Soporte</a>
+        </div>
+        <button id="menu-toggle" class="mobile-only">☰</button>
+    </div>
+    
+    <nav class="navbar">
+        <div class="container nav-links">
+            <a href="#productos">Todos los Productos</a>
+            <a href="#ofertas">Ofertas</a>
+            <a href="#pagos">Métodos de Pago</a>
+            <a href="#soporte">Ayuda</a>
+        </div>
+    </nav>
+</header>
+
+<!-- BANNER -->
+<section class="banner">
     <div class="container">
-        <p class="created-by">Creado por Whois Yallico</p>
-        <h1>El futuro de<br>la automatización.</h1>
-        <p class="subtitle">Soluciones Cyber Bot para transformar tu WhatsApp en una máquina de ventas. Bots, hosting y desarrollo web.</p>
-        
-        <div class="search-box">
-            <input type="text" placeholder="Buscar productos...">
-        </div>
-
-        <div class="hero-tags">
-            <span>⚡ Entrega Inmediata</span>
-            <span>🔒 Pagos Seguros</span>
-            <span>💬 Soporte 24/7</span>
-        </div>
+        <h1>El futuro de la automatización</h1>
+        <p>Bots, Hosting y Páginas Web al mejor precio</p>
+        <a href="#productos" class="btn-primary">Ver Productos</a>
     </div>
 </section>
 
+<!-- PRODUCTOS -->
 <section id="productos" class="container">
-    <div class="section-header">
-        <h2>Productos Cyber Bot</h2>
-    </div>
-    <div class="grid-3">
+    <h2 class="section-title">Productos Destacados</h2>
+    <div class="grid-4">
 
         <div class="product-card">
+            <span class="badge">MENSUAL</span>
             <div class="product-img">🤖</div>
-            <div class="product-info">
-                <p class="category">Bot</p>
-                <h3>Bot Grupo Mensual</h3>
-                <div class="price-row">
-                    <span class="price">S/ 5</span>
-                    <button class="btn-buy" onclick="openPopup('Bot Grupo Mensual', 'S/ 5', 'https://mpago.la/2UBqiPc')">Comprar</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card featured">
-            <div class="product-img">🤖</div>
-            <div class="product-info">
-                <p class="category">Bot</p>
-                <h3>Bot Grupo Permanente</h3>
-                <div class="price-row">
-                    <span class="price">S/ 7</span>
-                    <button class="btn-buy" onclick="openPopup('Bot Grupo Permanente', 'S/ 7', 'https://mpago.la/2p3QEsk')">Comprar</button>
-                </div>
-            </div>
+            <h3>Bot Grupo Mensual</h3>
+            <p class="price">S/ 5</p>
+            <button class="btn-buy" onclick="openPopup('Bot Grupo Mensual', 'S/ 5', 'https://mpago.la/2UBqiPc')">Comprar</button>
         </div>
 
         <div class="product-card">
+            <span class="badge badge-red">PERMANENTE</span>
+            <div class="product-img">🤖</div>
+            <h3>Bot Grupo Permanente</h3>
+            <p class="price">S/ 7</p>
+            <button class="btn-buy" onclick="openPopup('Bot Grupo Permanente', 'S/ 7', 'https://mpago.la/2p3QEsk')">Comprar</button>
+        </div>
+
+        <div class="product-card">
+            <span class="badge badge-blue">CUSTOM</span>
             <div class="product-img">⚙️</div>
-            <div class="product-info">
-                <p class="category">Personalizado</p>
-                <h3>Bot Básico Personalizado</h3>
-                <div class="price-row">
-                    <span class="price">S/ 20</span>
-                    <button class="btn-buy" onclick="openPopup('Bot Básico Personalizado', 'S/ 20', 'https://mpago.la/26UCJzP')">Comprar</button>
-                </div>
-            </div>
+            <h3>Bot Básico Personalizado</h3>
+            <p class="price">S/ 20</p>
+            <button class="btn-buy" onclick="openPopup('Bot Básico Personalizado', 'S/ 20', 'https://mpago.la/26UCJzP')">Comprar</button>
         </div>
 
         <div class="product-card">
+            <span class="badge badge-gold">PREMIUM</span>
             <div class="product-img">👑</div>
-            <div class="product-info">
-                <p class="category">Premium</p>
-                <h3>Bot Premium Personalizado</h3>
-                <div class="price-row">
-                    <span class="price">S/ 30</span>
-                    <button class="btn-buy" onclick="openPopup('Bot Premium Personalizado', 'S/ 30', 'https://mpago.la/2rBoK8k')">Comprar</button>
-                </div>
-            </div>
+            <h3>Bot Premium Personalizado</h3>
+            <p class="price">S/ 30</p>
+            <button class="btn-buy" onclick="openPopup('Bot Premium Personalizado', 'S/ 30', 'https://mpago.la/2rBoK8k')">Comprar</button>
         </div>
 
         <div class="product-card">
+            <span class="badge badge-purple">WEB</span>
             <div class="product-img">🌐</div>
-            <div class="product-info">
-                <p class="category">Web</p>
-                <h3>Página Web</h3>
-                <div class="price-row">
-                    <span class="price">S/ 35</span>
-                    <button class="btn-buy" onclick="openPopup('Página Web', 'S/ 35', 'https://mpago.la/16MBw3m')">Comprar</button>
-                </div>
-            </div>
+            <h3>Página Web</h3>
+            <p class="price">S/ 35</p>
+            <button class="btn-buy" onclick="openPopup('Página Web', 'S/ 35', 'https://mpago.la/16MBw3m')">Comprar</button>
         </div>
 
         <div class="product-card">
+            <span class="badge badge-green">HOSTING</span>
             <div class="product-img">🖥️</div>
-            <div class="product-info">
-                <p class="category">Hosting</p>
-                <h3>Hosting Server Mensual</h3>
-                <div class="price-row">
-                    <span class="price">S/ 10</span>
-                    <button class="btn-buy" onclick="openPopup('Hosting Server Mensual', 'S/ 10', 'https://mpago.la/1W7Nbi6')">Comprar</button>
-                </div>
-            </div>
+            <h3>Hosting Server Mensual</h3>
+            <p class="price">S/ 10</p>
+            <button class="btn-buy" onclick="openPopup('Hosting Server Mensual', 'S/ 10', 'https://mpago.la/1W7Nbi6')">Comprar</button>
         </div>
 
     </div>
 </section>
 
-<!-- POPUP DE PAGOS -->
+<!-- POPUP PAGOS -->
 <div id="payment-popup" class="popup">
     <div class="popup-content">
         <span class="close" onclick="closePopup()">&times;</span>
-        <h2>Completar Compra</h2>
-        <p id="popup-product">Producto: </p>
-        <p id="popup-price">Precio: </p>
+        <h2>Finalizar Compra</h2>
+        <p id="popup-product"></p>
+        <p id="popup-price" class="price-big"></p>
         
-        <h3>Métodos de Pago</h3>
-        <div class="pay-options">
-            <a id="mpago-link" href="#" target="_blank" class="pay-btn">💳 Pagar con Tarjeta</a>
-            
-            <div class="pay-card">
-                <h4>📱 Yape</h4>
-                <p>+51 936 994 155<br>Cristhofer Rojas Huarcaya</p>
-                <img src="https://files.evogb.win/kc99Pp.jpg" class="qr">
-                <a id="yape-wa" href="#" target="_blank" class="btn-whatsapp">✅ Ya pagué por Yape</a>
-            </div>
-
-            <div class="pay-card">
-                <h4>💰 Prex</h4>
-                <p>12249975<br>Cristhofer Rojas Huarcaya</p>
-                <a id="prex-wa" href="#" target="_blank" class="btn-whatsapp">✅ Ya pagué por Prex</a>
-            </div>
+        <h3>Elige tu método de pago</h3>
+        <a id="mpago-link" href="#" target="_blank" class="btn-pago btn-tarjeta">💳 Pagar con Tarjeta/Débito</a>
+        
+        <div class="pago-box">
+            <h4>📱 Yape</h4>
+            <p>+51 936 994 155 - Cristhofer Rojas</p>
+            <img src="https://files.evogb.win/kc99Pp.jpg" class="qr">
+            <a id="yape-wa" href="#" target="_blank" class="btn-pago btn-yape">✅ Ya pagué por Yape</a>
         </div>
-        <p class="note">Adjunta tu captura de pago en WhatsApp</p>
+
+        <div class="pago-box">
+            <h4>💰 Prex</h4>
+            <p>12249975 - Cristhofer Rojas</p>
+            <a id="prex-wa" href="#" target="_blank" class="btn-pago btn-prex">✅ Ya pagué por Prex</a>
+        </div>
     </div>
 </div>
 
-<section id="soporte" class="container notice">
-    <h3>⚠️ Aclaración Importante</h3>
-    <ul>
-        <li><b>Activación:</b> Enviar captura de pago por Yape/Prex al WhatsApp</li>
-        <li><b>Entrega:</b> Bots de grupo: Inmediato. Personalizados y Web: 24h</li>
-        <li><b>Garantía:</b> Reparación gratis o devolución 100% si hay fallas</li>
-        <li><b>Soporte:</b> Solo por el grupo oficial de WhatsApp</li>
-        <li><b>Nota:</b> Precios con tarjeta ya incluyen comisión. Sin devoluciones por cambio de opinión</li>
-    </ul>
+<!-- BENEFICIOS -->
+<section class="benefits">
+    <div class="container grid-3">
+        <div class="benefit"><h4>⚡ Entrega Inmediata</h4><p>Bots de grupo al instante</p></div>
+        <div class="benefit"><h4>🔒 Pago Seguro</h4><p>Mercado Pago + Yape + Prex</p></div>
+        <div class="benefit"><h4>🛡️ Garantía</h4><p>Devolución 100% si falla</p></div>
+    </div>
 </section>
 
 <footer>
     <div class="container">
-        <p>© 2026 Cyber Bot. Creado por Whois Yallico</p>
+        <p>© 2026 Cyber Bot | Creado por Whois Yallico | Soporte solo por WhatsApp</p>
     </div>
 </footer>
 
 <script>
-let currentProduct = '';
-let currentPrice = '';
-
-// MODO OSCURO/CLARO
+// MODO OSCURO
 const toggle = document.getElementById('theme-toggle');
+if(localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
 toggle.onclick = () => {
     document.body.classList.toggle('light-mode');
+    localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
     toggle.textContent = document.body.classList.contains('light-mode') ? '🌙' : '☀️';
 }
 
 // POPUP
 function openPopup(product, price, link) {
-    currentProduct = product;
-    currentPrice = price;
     document.getElementById('payment-popup').style.display = 'flex';
-    document.getElementById('popup-product').innerText = 'Producto: ' + product;
-    document.getElementById('popup-price').innerText = 'Precio: ' + price;
+    document.getElementById('popup-product').innerText = product;
+    document.getElementById('popup-price').innerText = price;
     document.getElementById('mpago-link').href = link;
-    
-    // Link de WhatsApp con mensaje automático
-    const mensaje = `Hola! Ya realicé el pago de ${product} por ${price}. Adjunto captura.`;
+    const mensaje = `Hola! Ya pagué ${product} por ${price}. Adjunto captura.`;
     const waLink = `https://wa.me/51936994155?text=${encodeURIComponent(mensaje)}`;
     document.getElementById('yape-wa').href = waLink;
     document.getElementById('prex-wa').href = waLink;
 }
-
-function closePopup() {
-    document.getElementById('payment-popup').style.display = 'none';
-}
-window.onclick = (e) => {
-    if(e.target == document.getElementById('payment-popup')) closePopup();
-}
+function closePopup() { document.getElementById('payment-popup').style.display = 'none'; }
 
 // MENU MOBILE
 document.getElementById('menu-toggle').onclick = () => {
