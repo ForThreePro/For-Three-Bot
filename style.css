@@ -33,9 +33,10 @@ body { background: var(--bg); color: var(--text); font-family: 'Poppins', sans-s
 .btn-wa { background: var(--neon); color: #fff; padding: 10px 18px; border-radius: 10px; text-decoration: none; font-weight: 600; transition: 0.3s; }
 .btn-wa:hover { background: #9333ea; }
 
-/* HERO */
+/* HERO CON ANIMACION */
 .hero { text-align: center; padding: 80px 0; }
-.hero h2 { font-size: 2.8em; margin-bottom: 10px; }
+#typing-text { font-size: 2.8em; margin-bottom: 10px; color: var(--neon); text-shadow: 0 0 20px var(--neon-glow); border-right: 3px solid var(--neon); white-space: nowrap; overflow: hidden; display: inline-block; animation: blink 0.7s infinite; }
+@keyframes blink { 50% { border-color: transparent; } }
 .hero p { font-size: 1.2em; color: var(--text-dim); }
 
 /* BANNER OFERTA */
@@ -149,7 +150,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Poppins', sans-s
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .brand p, #search { display: none; }
-    .hero h2 { font-size: 2em; }
+    #typing-text { font-size: 2em; white-space: normal; border-right: none; }
     .products-grid { grid-template-columns: 1fr; }
     #countdown { font-size: 1.5em; }
     .nav-wrap { flex-wrap: wrap; }
