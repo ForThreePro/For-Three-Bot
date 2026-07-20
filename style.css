@@ -1,235 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@400;600;700&display=swap');
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CYBER BOT - Whois Yallico</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-:root {
-    --morado: #a855f7;
-    --morado-glow: #c084fc;
-    --verde: #4ade80;
-    --bg: #000008;
-    --card: rgba(10, 5, 20, 0.8);
-}
+<img src="banner.jpg" alt="Cyber Bot" class="banner">
 
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-}
-body { 
-    background: radial-gradient(circle at 50% 0%, #1a0a2e 0%, var(--bg) 100%); 
-    color: #f0e6ff; 
-    font-family: 'Exo 2', sans-serif;
-    min-height: 100vh;
-    overflow-x: hidden;
-}
-body::before {
-    content: '';
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><line x1="0" y1="0" x2="100" y2="100" stroke="%23a855f7" stroke-width="0.5" opacity="0.1"/></svg>');
-    pointer-events: none;
-    z-index: -1;
-}
+<div class="container">
+    <h1>CYBER BOT</h1>
 
-.container { 
-    max-width: 1300px; 
-    margin: 0 auto; 
-    padding: 20px; 
-}
+    <div class="card">
+        <p style="text-align:center; color:var(--text-dim); margin-bottom:24px">Sistema conectado. Listo para dominar el chat.</p>
 
-.banner { 
-    width: 100%; 
-    height: 280px; 
-    object-fit: cover; 
-    border: 2px solid var(--morado);
-    border-radius: 15px;
-    box-shadow: 0 0 30px var(--morado);
-    margin-bottom: 30px;
-}
+        <div class="info-grid">
+            <div class="info-item">FECHA <span id="fecha"></span></div>
+            <div class="info-item">HORA <span id="hora"></span></div>
+            <div class="info-item">ESTADO <span class="online">ONLINE</span></div>
+            <div class="info-item">USUARIOS <span>1139</span></div>
+        </div>
 
-h1 { 
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.2em; 
-    font-weight: 900; 
-    color: var(--morado-glow); 
-    text-align: center;
-    margin: 25px 0; 
-    text-transform: uppercase; 
-    letter-spacing: 4px; 
-    text-shadow: 0 0 20px var(--morado);
-}
+        <div style="text-align:center; margin-top:32px">
+            <a href="faq.html" class="btn btn-outline">FAQ</a>
+            <a href="comandos.html" class="btn">COMANDOS</a>
+            <a href="planes.html" class="btn btn-outline">PLANES</a>
+        </div>
+    </div>
 
-/* CAJAS GLASS */
-.glass-box { 
-    background: var(--card); 
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(168,85,247,0.3); 
-    border-radius: 20px;
-    padding: 25px; 
-    margin: 25px 0; 
-    box-shadow: 0 8px 32px rgba(168,85,247,0.2);
-}
+    <div class="footer">
+        <p>CREADO POR WHOIS YALLICO • VERSION 3.1.5</p>
+    </div>
+</div>
 
-/* INFO GRID */
-.info-grid { 
-    display: grid; 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 15px; 
-}
-.info-item { 
-    background: rgba(0,0,0,0.4); 
-    padding: 15px; 
-    border-radius: 12px;
-    border: 1px solid rgba(168,85,247,0.2); 
-    text-align: center;
-    font-weight: 600;
-    font-size: 0.9em;
-}
-.online { color: var(--verde); text-shadow: 0 0 10px var(--verde); }
-
-/* BOTONES HOLO */
-.btn-holo { 
-    background: linear-gradient(90deg, transparent, rgba(168,85,247,0.2), transparent);
-    color: var(--morado-glow); 
-    padding: 15px 40px; 
-    border: 2px solid var(--morado); 
-    border-radius: 50px;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700; 
-    cursor: pointer; 
-    text-decoration: none; 
-    display: inline-block; 
-    font-size: 1em; 
-    letter-spacing: 2px; 
-    transition: all 0.4s; 
-    text-transform: uppercase;
-    position: relative;
-    overflow: hidden;
-    margin: 8px;
-}
-.btn-holo::before {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, var(--morado), transparent);
-    transition: 0.5s;
-}
-.btn-holo:hover::before { left: 100%; }
-.btn-holo:hover { 
-    box-shadow: 0 0 30px var(--morado); 
-    transform: scale(1.05);
-}
-
-/* FAQ */
-.faq-item-holo {
-    background: rgba(0,0,0,0.4);
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 15px;
-    border-left: 3px solid var(--morado);
-    transition: 0.3s;
-}
-.faq-item-holo:hover {
-    background: rgba(168,85,247,0.1);
-    transform: translateX(5px);
-}
-.faq-item-holo h3 {
-    font-family: 'Orbitron';
-    color: var(--morado);
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
-/* COMANDOS */
-.search-holo {
-    width: 100%;
-    background: rgba(0,0,0,0.5);
-    border: 2px solid var(--morado);
-    border-radius: 50px;
-    padding: 16px 25px;
-    color: #fff;
-    font-size: 1.1em;
-    font-family: 'Exo 2';
-    outline: none;
-    margin-bottom: 30px;
-    transition: 0.3s;
-}
-.search-holo:focus { box-shadow: 0 0 25px var(--morado); }
-
-.cmd-category {
-    margin: 30px 0;
-}
-.cmd-category-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.5em;
-    color: var(--morado);
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.cmd-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-.cmd-pill {
-    background: rgba(168,85,247,0.15);
-    border: 1px solid var(--morado);
-    border-radius: 50px;
-    padding: 12px 22px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
-    font-size: 0.95em;
-}
-.cmd-pill:hover {
-    background: var(--morado);
-    color: #000;
-    box-shadow: 0 0 20px var(--morado);
-    transform: translateY(-2px);
-}
-
-/* PLANES */
-.plan-card {
-    background: var(--card);
-    backdrop-filter: blur(10px);
-    border: 2px solid var(--morado);
-    border-radius: 20px;
-    padding: 30px;
-    margin: 25px 0;
-    text-align: center;
-    transition: 0.4s;
-}
-.plan-card:hover { 
-    transform: translateY(-8px); 
-    box-shadow: 0 15px 40px rgba(168,85,247,0.4); 
-}
-.plan-card h2 { 
-    font-family: 'Orbitron'; 
-    color: var(--morado); 
-    font-size: 1.6em; 
-    margin-bottom: 10px; 
-}
-.plan-price { 
-    font-size: 2.5em; 
-    color: var(--verde); 
-    font-weight: 900; 
-    margin: 15px 0; 
-}
-
-.footer { 
-    text-align: center; 
-    padding: 30px 0; 
-    color: #777; 
-    margin-top: 40px; 
-    border-top: 1px solid rgba(168,85,247,0.2);
-}
-
-/* RESPONSIVE */
-@media (min-width: 768px) {
-    .info-grid { grid-template-columns: repeat(4, 1fr); }
-    h1 { font-size: 3em; }
-    .banner { height: 350px; }
-    .cmd-pill { font-size: 1em; padding: 14px 25px; }
-}
+<script src="script.js"></script>
+</body>
+</html>
