@@ -1,18 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@400;600;700&display=swap');
 
 :root {
     --morado: #a855f7;
     --morado-glow: #c084fc;
+    --verde: #4ade80;
     --bg: #000008;
     --card: rgba(10, 5, 20, 0.8);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 body { 
     background: radial-gradient(circle at 50% 0%, #1a0a2e 0%, var(--bg) 100%); 
     color: #f0e6ff; 
     font-family: 'Exo 2', sans-serif;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 body::before {
     content: '';
@@ -24,7 +30,11 @@ body::before {
     z-index: -1;
 }
 
-.container { max-width: 1300px; margin: 0 auto; padding: 20px; }
+.container { 
+    max-width: 1300px; 
+    margin: 0 auto; 
+    padding: 20px; 
+}
 
 .banner { 
     width: 100%; 
@@ -48,6 +58,7 @@ h1 {
     text-shadow: 0 0 20px var(--morado);
 }
 
+/* CAJAS GLASS */
 .glass-box { 
     background: var(--card); 
     backdrop-filter: blur(10px);
@@ -58,6 +69,7 @@ h1 {
     box-shadow: 0 8px 32px rgba(168,85,247,0.2);
 }
 
+/* INFO GRID */
 .info-grid { 
     display: grid; 
     grid-template-columns: repeat(2, 1fr); 
@@ -70,9 +82,11 @@ h1 {
     border: 1px solid rgba(168,85,247,0.2); 
     text-align: center;
     font-weight: 600;
+    font-size: 0.9em;
 }
-.online { color: #4ade80; text-shadow: 0 0 10px #4ade80; }
+.online { color: var(--verde); text-shadow: 0 0 10px var(--verde); }
 
+/* BOTONES HOLO */
 .btn-holo { 
     background: linear-gradient(90deg, transparent, rgba(168,85,247,0.2), transparent);
     color: var(--morado-glow); 
@@ -90,6 +104,7 @@ h1 {
     text-transform: uppercase;
     position: relative;
     overflow: hidden;
+    margin: 8px;
 }
 .btn-holo::before {
     content: '';
@@ -105,6 +120,26 @@ h1 {
     transform: scale(1.05);
 }
 
+/* FAQ */
+.faq-item-holo {
+    background: rgba(0,0,0,0.4);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 15px;
+    border-left: 3px solid var(--morado);
+    transition: 0.3s;
+}
+.faq-item-holo:hover {
+    background: rgba(168,85,247,0.1);
+    transform: translateX(5px);
+}
+.faq-item-holo h3 {
+    font-family: 'Orbitron';
+    color: var(--morado);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
 /* COMANDOS */
 .search-holo {
     width: 100%;
@@ -114,8 +149,10 @@ h1 {
     padding: 16px 25px;
     color: #fff;
     font-size: 1.1em;
+    font-family: 'Exo 2';
     outline: none;
     margin-bottom: 30px;
+    transition: 0.3s;
 }
 .search-holo:focus { box-shadow: 0 0 25px var(--morado); }
 
@@ -144,11 +181,13 @@ h1 {
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
+    font-size: 0.95em;
 }
 .cmd-pill:hover {
     background: var(--morado);
     color: #000;
     box-shadow: 0 0 20px var(--morado);
+    transform: translateY(-2px);
 }
 
 /* PLANES */
@@ -162,13 +201,35 @@ h1 {
     text-align: center;
     transition: 0.4s;
 }
-.plan-card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(168,85,247,0.4); }
-.plan-card h2 { font-family: 'Orbitron'; color: var(--morado); font-size: 1.6em; margin-bottom: 10px; }
-.plan-price { font-size: 2.5em; color: #4ade80; font-weight: 900; margin: 15px 0; }
+.plan-card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 15px 40px rgba(168,85,247,0.4); 
+}
+.plan-card h2 { 
+    font-family: 'Orbitron'; 
+    color: var(--morado); 
+    font-size: 1.6em; 
+    margin-bottom: 10px; 
+}
+.plan-price { 
+    font-size: 2.5em; 
+    color: var(--verde); 
+    font-weight: 900; 
+    margin: 15px 0; 
+}
 
-.footer { text-align: center; padding: 30px 0; color: #777; margin-top: 40px; }
+.footer { 
+    text-align: center; 
+    padding: 30px 0; 
+    color: #777; 
+    margin-top: 40px; 
+    border-top: 1px solid rgba(168,85,247,0.2);
+}
 
+/* RESPONSIVE */
 @media (min-width: 768px) {
     .info-grid { grid-template-columns: repeat(4, 1fr); }
     h1 { font-size: 3em; }
+    .banner { height: 350px; }
+    .cmd-pill { font-size: 1em; padding: 14px 25px; }
 }
