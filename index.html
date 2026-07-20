@@ -2,144 +2,116 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>CYBER BOT | Bots y Servicios Digitales PRO</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CYBER BOT v3.1.5 - Whois Yallico</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="bg-anim"></div>
 
-<nav class="glass">
-  <div class="logo">
-    <img src="https://files.evogb.win/Yd5g8R.jpg" alt="CYBER BOT">
-    <h1>CYBER<span>BOT</span></h1>
-  </div>
-  <div class="nav-buttons">
-    <button onclick="toggleTheme()" class="btn-theme">🌙</button>
-    <button onclick="window.location.href='admin.html'" class="btn-admin">🔒</button>
-  </div>
-</nav>
+<img src="banner.jpg" alt="Cyber Bot" class="banner">
 
-<header class="hero">
-  <h2>Automatiza tu negocio con <span>IA y WhatsApp</span></h2>
-  <p>Bots 24/7 + Páginas Web + Hosting. Entrega en 1 hora</p>
-  <div class="hero-btns">
-    <button onclick="document.getElementById('bots').scrollIntoView()" class="btn btn-glow">Ver Catálogo</button>
-    <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk" class="btn btn-outline">👥 Grupo Gratis</a>
-  </div>
-  <div class="stats">
-    <div><h3>+350</h3><p>Clientes</p></div>
-    <div><h3>24/7</h3><p>Soporte</p></div>
-    <div><h3>1h</h3><p>Entrega</p></div>
-  </div>
-  <div class="ventas-live">
-    <p>🔴 <span id="contador-ventas">347</span> bots vendidos este mes</p>
-  </div>
-</header>
-
-<main class="container">
-  <section id="bots">
-    <h2 class="section-title">🤖 BOTS PARA WHATSAPP</h2>
-    <div class="grid">
-      <div class="card glass"><div class="card-tag">MÁS VENDIDO</div><div class="card-icon">👥</div><h3>Bot Grupo Mensual</h3><p class="desc">Anti-link, comandos, bienvenida, juegos. Ideal para grupos activos.</p><ul class="features"><li>✓ 50+ Comandos</li><li>✓ Soporte</li><li>✓ Actualizaciones</li></ul><p class="price">S/ 5.00<span>/mes</span></p><button onclick="abrirPopup('Bot Grupo Mensual S/5', 'https://mpago.la/2UBqiPc')" class="btn btn-glow">Adquirir Ahora</button></div>
-      <div class="card glass"><div class="card-icon">♾️</div><h3>Bot Grupo Permanente</h3><p class="desc">Pago único. Bot para tu grupo de por vida sin renovaciones.</p><ul class="features"><li>✓ Todo Ilimitado</li><li>✓ Sin Renovación</li></ul><p class="price">S/ 7.00</p><button onclick="abrirPopup('Bot Grupo Permanente S/7', 'https://mpago.la/2p3QEsk')" class="btn btn-glow">Adquirir Ahora</button></div>
-      <div class="card glass"><div class="card-icon">⚙️</div><h3>Bot Basic</h3><p class="desc">Auto-respuesta, comandos personalizados, logo.</p><ul class="features"><li>✓ 20 Comandos</li><li>✓ 1 Admin</li></ul><p class="price">S/ 20.00</p><button onclick="abrirPopup('Bot Basic S/20', 'https://mpago.la/26UCJzP')" class="btn btn-glow">Adquirir Ahora</button></div>
-      <div class="card glass card-premium"><div class="card-tag">PREMIUM</div><div class="card-icon">🚀</div><h3>Bot Premium</h3><p class="desc">Todo ilimitado + Panel Web + Base de Datos + Soporte 24/7</p><ul class="features"><li>✓ Ilimitado</li><li>✓ Panel Admin</li><li>✓ Hosting Gratis 1 mes</li></ul><p class="price">S/ 30.00</p><button onclick="abrirPopup('Bot Premium S/30', 'https://mpago.la/2rBoK8k')" class="btn btn-glow">Adquirir Ahora</button></div>
-    </div>
-  </section>
-
-  <section id="servicios">
-    <h2 class="section-title">🌐 SERVICIOS DIGITALES</h2>
-    <div class="grid">
-      <div class="card glass"><div class="card-icon">☁️</div><h3>Hosting 24/7</h3><p class="desc">Tu bot online todo el día sin caídas</p><p class="price">S/ 10.00<span>/mes</span></p><button onclick="abrirPopup('Hosting S/10', 'https://mpago.la/1W7Nbi6')" class="btn btn-glow">Adquirir</button></div>
-      <div class="card glass"><div class="card-icon">💻</div><h3>Página Web</h3><p class="desc">Landing + Tienda como esta. Diseño PRO</p><p class="price">S/ 35.00</p><button onclick="abrirPopup('Página Web S/35', 'https://mpago.la/16MBw3m')" class="btn btn-glow">Adquirir</button></div>
-    </div>
-  </section>
-
-  <section id="testimonios">
-    <h2 class="section-title">💬 TESTIMONIOS</h2>
-    <div class="grid-testimonios">
-      <div class="testi glass"><p>"El bot me salvó. Ahora administro 5 grupos sin hacer nada"</p><h4>- Kevin G.</h4></div>
-      <div class="testi glass"><p>"Me entregaron en 30min y el soporte es de 10. Recomendado"</p><h4>- Maria L.</h4></div>
-      <div class="testi glass"><p>"La página web está hermosa. Vendí 3 bots el primer día"</p><h4>- Jhon D.</h4></div>
-    </div>
-  </section>
-</main>
-
-<a href="https://wa.me/51936994155" target="_blank" class="whatsapp-float">💬</a>
-
-<!-- POPUP DE PAGO NUEVO DISEÑO -->
-<div id="popup-pago" class="popup">
-  <div class="popup-content glass">
-    <span class="close" onclick="cerrarPopup()">&times;</span>
+<div class="container">
+    <h1 id="titulo">ᯇ 𝗖𝗬𝗕𝗘𝗥 𝗕𝗢𝗧 💻 ୧</h1>
     
-    <div class="popup-header">
-      <div class="popup-icon">🛒</div>
-      <h2 id="popup-titulo">Finalizar Compra</h2>
-      <p id="popup-precio" class="price"></p>
-    </div>
-
-    <div class="tabs-pago">
-      <button class="tab-btn active" onclick="cambiarTab('tarjeta')">💳 Tarjeta</button>
-      <button class="tab-btn" onclick="cambiarTab('yape')">📱 Yape/Prex</button>
-    </div>
-
-    <!-- TAB TARJETA -->
-    <div id="tab-tarjeta" class="tab-content active">
-      <p class="tab-desc">Pago seguro con Mercado Pago</p>
-      <a id="btn-tarjeta" class="btn-metodo tarjeta" target="_blank">
-        Pagar Ahora con Tarjeta
-      </a>
-      <div class="seguridad">
-        <p>🔒 Pago 100% seguro y protegido</p>
-      </div>
-    </div>
-
-    <!-- TAB YAPE -->
-    <div id="tab-yape" class="tab-content">
-      <p class="tab-desc">Transfiere y envía tu captura</p>
-      <div class="yape-box-nuevo">
-        <img src="https://files.evogb.win/kc99Pp.jpg" class="qr">
-        <div class="dato-pago">
-          <span>Yape</span>
-          <b>936 994 155</b>
-          <button onclick="copiar('936994155')">Copiar</button>
+    <div class="stats">
+        <p style="text-align:center; margin-bottom:20px; font-size:1.1em">> <span class="tag">"Sistema conectado, domina el chat"</span></p>
+        <div class="stats-grid">
+            <div class="stat">👥 <b>Usuarios:</b> <span id="usuarios">1139</span></div>
+            <div class="stat">📜 <b>Comandos:</b> <span id="comandos">44</span></div>
+            <div class="stat">💾 <b>RAM:</b> <span id="ram">65.99MB</span></div>
+            <div class="stat">🌐 <b>Servidor:</b> <span id="servidor">125.71GB</span></div>
         </div>
-        <div class="dato-pago">
-          <span>Prex</span>
-          <b>12249975</b>
-          <button onclick="copiar('12249975')">Copiar</button>
-        </div>
-        <p class="nombre">A nombre de: Cristhofer Rojas Huarcaya</p>
-      </div>
-
-      <form id="form-comprobante">
-        <input type="text" id="nombre-cliente" placeholder="Tu nombre completo" required>
-        <input type="tel" id="wp-cliente" placeholder="Tu WhatsApp 9xxxxxxx" required>
-        <label>📎 Subir captura de pago</label>
-        <input type="file" id="captura-cliente" accept="image/*" required>
-        <button type="submit" class="btn">✅ Confirmar Pago</button>
-      </form>
+        <p style="text-align:center; margin-top:20px" id="fecha-hora"></p>
     </div>
 
-  </div>
+    <input type="text" id="buscador" placeholder="🔍 Buscar comando...">
+
+    <div class="menu-section">
+        <div class="menu-title">⚙️ CONFIG</div>
+        <div class="command">.antilink &lt;on/off&gt;</div>
+        <div class="command">.antispam on/off</div>
+        <div class="command">.modoadmin &lt;on/off&gt;</div>
+        <div class="command">.welcome on/off</div>
+        <div class="command">.detect on/off</div>
+        <div class="command">.antibot on/off</div>
+        <div class="command">.subbots on/off</div>
+        <div class="command">.nsfw on/off</div>
+        <div class="command">.audios on/off</div>
+        <div class="command">.antiprivado on/off</div>
+    </div>
+
+    <div class="menu-section">
+        <div class="menu-title">💻 MAIN</div>
+        <div class="command">.cambio &lt;Monedas&gt;</div>
+        <div class="command">.cleartmp</div>
+        <div class="command">.ram</div>
+        <div class="command">.cpu</div>
+        <div class="command">.info</div>
+        <div class="command">.uptime</div>
+    </div>
+
+    <div class="menu-section">
+        <div class="menu-title">🛠️ TOOLS</div>
+        <div class="command">.upscale .remini .removebg .quitafondo</div>
+        <div class="command">.upp .tourl .ver</div>
+    </div>
+
+    <div class="menu-section">
+        <div class="menu-title">📥 DOWNLOADER</div>
+        <div class="command">.play .play2 .ytmp3 .ytmp4</div>
+        <div class="command">.spotify .tiktok .tiktoksearch</div>
+        <div class="command">.ig .fb .mediafire</div>
+    </div>
+
+    <div class="menu-section">
+        <div class="menu-title">🤖 INTELIGENCIA ARTIFICIAL</div>
+        <div class="command">.claude &lt;texto&gt;</div>
+        <div class="command">.copilot &lt;texto&gt;</div>
+        <div class="command">.gemini &lt;texto&gt;</div>
+        <div class="command">.gpt4 &lt;texto&gt;</div>
+    </div>
+
+    <div class="menu-section">
+        <div class="menu-title">🎭 FUN</div>
+        <div class="command">.piropo @tag .gay @user .lesbiana @user .pajero @user</div>
+        <div class="command">.puto @user .puta @user .burro @user .chivo @user</div>
+        <div class="command">.king @user .zombie @user .simp @user .rata @user</div>
+        <div class="command">+40 comandos más de diversión</div>
+    </div>
+
+    <div class="menu-section">
+        <div class="menu-title">👥 GRUPOS</div>
+        <div class="command">.promote .demote .kick @user .mute @user .unmute @user</div>
+        <div class="command">.link .grupo abrir .grupo cerrar .todos &lt;texto&gt;</div>
+        <div class="command">.setwelcome &lt;mensaje&gt; .delwelcome .setbye &lt;mensaje&gt;</div>
+    </div>
+
+    <div class="menu-section">
+        <div class="menu-title">👑 OWNER</div>
+        <div class="command">.join &lt;link&gt;</div>
+        <div class="command">.autoadmin</div>
+        <div class="command">.restart</div>
+        <div class="command">.update</div>
+    </div>
+
+    <div class="btn-group">
+        <a href="https://wa.me/51936994155" target="_blank" class="btn">💬 WhatsApp</a>
+        <a href="https://instagram.com/whois.yallico" target="_blank" class="btn">📷 Instagram</a>
+        <a href="https://github.com/Forthreepro" target="_blank" class="btn">💻 GitHub</a>
+    </div>
+
+    <div class="footer">
+        <p>🤖 <b>BOT:</b> CYBER BOT</p>
+        <p>⚡ <b>Creador:</b> Whois Yallico 👑</p>
+        <p>💻 <b>Versión:</b> 3.1.5 Cyber Clean</p>
+        <p>🌐 <b>Web:</b> https://forthreepro.github.io/Whois-Yallico</p>
+        <br>
+        <p>• Métodos de Pago: <span class="tag">Yape | Global66 | Prex</span></p>
+        <p>• No se realizan reembolsos • Bot para whatsapp • El Mejor •</p>
+    </div>
 </div>
 
-<!-- POPUP DE OFERTA -->
-<div id="popup-oferta" class="popup-oferta">
-  <div class="popup-oferta-content glass">
-    <span class="close-oferta" onclick="cerrarOferta()">&times;</span>
-    <h2>🔥 OFERTA FLASH 24H 🔥</h2>
-    <p>Bot Premium + Hosting 1 mes</p>
-    <h3 class="precio-oferta">S/ 25.00 <span>S/ 40.00</span></h3>
-    <p class="timer">Se acaba en: <span id="countdown">23:59:59</span></p>
-    <button onclick="abrirPopup('Oferta Premium+Hosting S/25', 'https://mpago.la/2rBoK8k')" class="btn btn-glow">Aprovechar Oferta</button>
-  </div>
-</div>
-
-<footer class="glass">
-  <p>© 2026 CYBER BOT | Soporte: 936 994 155</p>
-</footer>
 <script src="script.js"></script>
 </body>
 </html>
