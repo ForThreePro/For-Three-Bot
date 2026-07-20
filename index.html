@@ -128,7 +128,7 @@
     <button onclick="window.open('https://wa.me/51936994155?text=Quiero ser afiliado', '_blank')">Quiero ser Afiliado</button>
 </section>
 
-<!-- MODAL CHECKOUT CON SELECTOR - ARREGLADO -->
+<!-- MODAL CHECKOUT CON SELECTOR -->
 <div id="checkout-modal" class="modal"><div class="modal-box">
 <span class="close-btn" onclick="closeCheckout()">×</span>
 <h2 style="font-size:2em; font-weight:800; margin-bottom:20px;">Finalizar Compra</h2>
@@ -204,7 +204,7 @@ function openCheckout(name, price, link){
     currentProduct=name;
     currentLink=link;
     selectedMethod='';
-    document.getElementById('checkout-modal').style.display='flex'; // ARREGLO CLAVE
+    document.getElementById('checkout-modal').style.display='flex';
     document.getElementById('modal-product-name').innerText=name;
     document.getElementById('modal-total').innerText=price.toFixed(2);
     document.getElementById('payment-content').innerHTML='';
@@ -237,7 +237,7 @@ function showPaymentContent(method){
     if(method === 'yape'){
         content = `
         <div class="payment-details">
-            <p><b>Número Yape:</b> 936 994 155</p>
+            <p><b>Número Yape:</b> <span class="copy-text" onclick="copyText('936994155')">936 994 155 📋</span></p>
             <p><b>Nombre:</b> Cristhofer Rojas Huarcaya</p>
             <img src="https://files.evogb.win/kc99Pp.jpg" class="qr-code">
             <p style="color:var(--text-dim); margin:15px 0;">1. Yapea el monto<br>2. Envía la captura</p>
@@ -248,7 +248,7 @@ function showPaymentContent(method){
     if(method === 'prex'){
         content = `
         <div class="payment-details">
-            <p><b>Número Prex:</b> 12249975</p>
+            <p><b>Número Prex:</b> <span class="copy-text" onclick="copyText('12249975')">12249975 📋</span></p>
             <p><b>Nombre:</b> Cristhofer Rojas Huarcaya</p>
             <p style="color:var(--text-dim); margin:15px 0;">1. Transfiere el monto<br>2. Envía la captura</p>
             <a href="${waLink}" target="_blank" class="btn-primary btn-big">Ya pagué por Prex</a>
@@ -258,7 +258,7 @@ function showPaymentContent(method){
     if(method === 'global66'){
         content = `
         <div class="payment-details">
-            <p><b>Usuario Global66:</b> @CRIROJ1855</p>
+            <p><b>Usuario Global66:</b> <span class="copy-text" onclick="copyText('@CRIROJ1855')">@CRIROJ1855 📋</span></p>
             <p><b>Nombre:</b> Cristhofer Rojas Huarcaya</p>
             <p style="background:rgba(0,113,227,0.1); padding:12px; border-radius:10px; margin:15px 0;"><b>Nota:</b> De Global66 a Global66</p>
             <p style="color:var(--text-dim); margin:15px 0;">1. Transfiere por Global66<br>2. Envía la captura</p>
@@ -267,6 +267,12 @@ function showPaymentContent(method){
     }
 
     document.getElementById('payment-content').innerHTML=content;
+}
+
+// FUNCION PARA COPIAR
+function copyText(text){
+    navigator.clipboard.writeText(text);
+    alert('✅ Copiado: ' + text);
 }
 </script>
 </body>
