@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cyber Bot | Bots de WhatsApp y Servicios Digitales</title>
+<meta name="description" content="Cyber Bot - Automatiza tu WhatsApp. Bots, Hosting y Páginas Web. Entrega inmediata y garantía.">
+<meta property="og:image" content="https://files.evogb.win/Yd5g8R.jpg">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,6 +22,7 @@
             </div>
         </div>
         <div class="nav-actions">
+            <input type="text" id="search" placeholder="Buscar producto...">
             <button id="theme-btn">◐</button>
             <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk?s=cl&p=a&ilr=0&amv=1" target="_blank" class="btn-wa">Grupo Pruebas</a>
         </div>
@@ -33,12 +36,18 @@
     </div>
 </section>
 
+<section class="container">
+    <div class="offer-banner">
+        <h3>🔥 OFERTA ESTA SEMANA: 10% OFF EN BOTS PREMIUM</h3>
+        <div id="countdown">02d : 15h : 33m : 10s</div>
+    </div>
+</section>
+
 <main class="container">
     <h2 class="section-title">Catálogo de Servicios</h2>
-    <div class="products-grid">
+    <div class="products-grid" id="products">
 
-        <!-- PRODUCTO 1 -->
-        <div class="product-card">
+        <div class="product-card" data-name="Bot Para Grupo Mensual">
             <div class="product-badge">POPULAR</div>
             <h3>Bot Para Grupo Mensual</h3>
             <div class="price">S/ 5.00</div>
@@ -46,8 +55,7 @@
             <button class="btn-primary" onclick="openCheckout('Bot Para Grupo Mensual', 'S/ 5.00', 'S/ 1.56', 'https://mpago.la/2UBqiPc')">Comprar Ahora</button>
         </div>
 
-        <!-- PRODUCTO 2 -->
-        <div class="product-card featured">
+        <div class="product-card featured" data-name="Bot Para Grupo Permanente">
             <div class="product-badge badge-purple">RECOMENDADO</div>
             <h3>Bot Para Grupo Permanente</h3>
             <div class="price">S/ 7.00</div>
@@ -55,32 +63,28 @@
             <button class="btn-primary" onclick="openCheckout('Bot Para Grupo Permanente', 'S/ 7.00', 'S/ 2.53', 'https://mpago.la/2p3QEsk')">Comprar Ahora</button>
         </div>
 
-        <!-- PRODUCTO 3 -->
-        <div class="product-card">
+        <div class="product-card" data-name="Bot Personalizado Basic">
             <h3>Bot Personalizado Basic</h3>
             <div class="price">S/ 20.00</div>
             <p class="comision">+ Comisión tarjeta: S/ 2.09</p>
             <button class="btn-primary" onclick="openCheckout('Bot Personalizado Basic', 'S/ 20.00', 'S/ 2.09', 'https://mpago.la/26UCJzP')">Comprar Ahora</button>
         </div>
 
-        <!-- PRODUCTO 4 -->
-        <div class="product-card">
+        <div class="product-card" data-name="Bot Personalizado Premium">
             <h3>Bot Personalizado Premium</h3>
             <div class="price">S/ 30.00</div>
             <p class="comision">+ Comisión tarjeta: S/ 3.52</p>
             <button class="btn-primary" onclick="openCheckout('Bot Personalizado Premium', 'S/ 30.00', 'S/ 3.52', 'https://mpago.la/2rBoK8k')">Comprar Ahora</button>
         </div>
 
-        <!-- PRODUCTO 5 -->
-        <div class="product-card">
+        <div class="product-card" data-name="Servidor Hosting">
             <h3>Servidor Hosting</h3>
             <div class="price">S/ 10.00</div>
             <p class="comision">+ Comisión tarjeta: S/ 1.66</p>
             <button class="btn-primary" onclick="openCheckout('Servidor Hosting', 'S/ 10.00', 'S/ 1.66', 'https://mpago.la/1W7Nbi6')">Comprar Ahora</button>
         </div>
 
-        <!-- PRODUCTO 6 -->
-        <div class="product-card">
+        <div class="product-card" data-name="Página Web">
             <h3>Página Web</h3>
             <div class="price">S/ 35.00</div>
             <p class="comision">+ Comisión tarjeta: S/ 2.73</p>
@@ -89,6 +93,30 @@
 
     </div>
 </main>
+
+<section class="benefits">
+    <div class="container benefits-grid">
+        <div class="benefit-item"><h4>⚡ Entrega Inmediata</h4><p>Bots de grupo al instante</p></div>
+        <div class="benefit-item"><h4>🛡️ Garantía 100%</h4><p>Devolución si falla</p></div>
+        <div class="benefit-item"><h4>💬 Soporte 24/7</h4><p>Te ayudamos siempre</p></div>
+    </div>
+</section>
+
+<section class="testimonials container">
+    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+    <div class="testi-grid">
+        <div class="testi-card"><p>"Me activaron el bot en 5 minutos. Súper recomendado"</p><b>- Carlos R.</b></div>
+        <div class="testi-card"><p>"El soporte responde rapidísimo. El mejor bot del mercado"</p><b>- María L.</b></div>
+        <div class="testi-card"><p>"Mi grupo creció 300% con la automatización"</p><b>- Diego S.</b></div>
+    </div>
+</section>
+
+<section class="faq container">
+    <h2 class="section-title">Preguntas Frecuentes</h2>
+    <div class="faq-item"><h4>¿En cuánto tiempo me entregan?</h4><p>Bots de grupo: Inmediato. Personalizados y Web: Máximo 24 horas.</p></div>
+    <div class="faq-item"><h4>¿Tengo garantía?</h4><p>Sí. Si hay fallas te lo reparamos gratis o te devolvemos el 100%.</p></div>
+    <div class="faq-item"><h4>¿Cómo activo mi compra?</h4><p>Pagando por Yape/Prex envía la captura al WhatsApp. Con tarjeta se activa solo.</p></div>
+</section>
 
 <!-- MODAL DE PAGO -->
 <div id="checkout-modal" class="modal">
@@ -102,26 +130,23 @@
         </div>
 
         <h3>Métodos de Pago</h3>
-        
         <div class="payment-method">
             <h4>💳 Tarjeta Débito/Crédito</h4>
             <a id="card-payment-link" href="#" target="_blank" class="btn-payment btn-card">Pagar con Tarjeta</a>
         </div>
-
         <div class="payment-method">
             <h4>📱 Yape</h4>
             <div class="payment-info">
-                <p><b>Número:</b> <span id="yape-num">936 994 155</span> <button onclick="copyText('936994155')">Copiar</button></p>
+                <p><b>Número:</b> <span>936 994 155</span> <button onclick="copyText('936994155')">Copiar</button></p>
                 <p><b>Nombre:</b> Cristhofer Rojas Huarcaya</p>
                 <img src="https://files.evogb.win/kc99Pp.jpg" class="qr-code">
             </div>
             <a id="yape-wa-link" href="#" target="_blank" class="btn-payment btn-yape">Ya pagué por Yape</a>
         </div>
-
         <div class="payment-method">
             <h4>💰 Prex</h4>
             <div class="payment-info">
-                <p><b>Número:</b> <span id="prex-num">12249975</span> <button onclick="copyText('12249975')">Copiar</button></p>
+                <p><b>Número:</b> <span>12249975</span> <button onclick="copyText('12249975')">Copiar</button></p>
                 <p><b>Nombre:</b> Cristhofer Rojas Huarcaya</p>
             </div>
             <a id="prex-wa-link" href="#" target="_blank" class="btn-payment btn-prex">Ya pagué por Prex</a>
@@ -130,43 +155,70 @@
     </div>
 </div>
 
+<a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk?s=cl&p=a&ilr=0&amv=1" target="_blank" class="whatsapp-float">💬</a>
+<div id="notification" class="notification"></div>
+
 <footer class="footer">
     <div class="container">
-        <p>© 2026 Cyber Bot. Todos los derechos reservados.</p>
+        <p>© 2026 Cyber Bot. Todos los derechos reservados. Creado por Whois Yallico</p>
         <p>Soporte exclusivo en nuestro <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk?s=cl&p=a&ilr=0&amv=1" target="_blank">Grupo Oficial</a></p>
     </div>
 </footer>
 
 <script>
 const phone = "51936994155";
-let currentProduct = "";
 
+// TEMA
+if(localStorage.getItem('theme') === 'light') document.body.classList.add('light');
+document.getElementById('theme-btn').onclick = () => {
+    document.body.classList.toggle('light');
+    localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+};
+
+// BUSCADOR
+document.getElementById('search').onkeyup = (e) => {
+    let filter = e.target.value.toLowerCase();
+    document.querySelectorAll('.product-card').forEach(card => {
+        card.style.display = card.dataset.name.toLowerCase().includes(filter) ? 'block' : 'none';
+    });
+}
+
+// CHECKOUT
 function openCheckout(name, price, comision, link) {
-    currentProduct = name;
     document.getElementById('checkout-modal').style.display = 'flex';
     document.getElementById('modal-product-name').innerText = name;
     document.getElementById('modal-product-price').innerText = price;
     document.getElementById('modal-product-comision').innerText = comision;
     document.getElementById('card-payment-link').href = link;
-    
     const message = `Hola! Realicé el pago de: ${name} - ${price}. Adjunto captura.`;
     const waLink = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     document.getElementById('yape-wa-link').href = waLink;
     document.getElementById('prex-wa-link').href = waLink;
 }
+function closeCheckout() { document.getElementById('checkout-modal').style.display = 'none'; }
+function copyText(text) { navigator.clipboard.writeText(text); alert("Copiado: " + text); }
 
-function closeCheckout() {
-    document.getElementById('checkout-modal').style.display = 'none';
-}
+// CONTADOR 3 DIAS
+const countDownDate = new Date().getTime() + (3 * 24 * 60 * 60 * 1000);
+setInterval(function() {
+  const now = new Date().getTime();
+  const distance = countDownDate - now;
+  const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const s = Math.floor((distance % (1000 * 60)) / 1000);
+  document.getElementById("countdown").innerHTML = d + "d : " + h + "h : " + m + "m : " + s + "s";
+}, 1000);
 
-function copyText(text) {
-    navigator.clipboard.writeText(text);
-    alert("Copiado: " + text);
-}
-
-document.getElementById('theme-btn').onclick = () => {
-    document.body.classList.toggle('light');
-};
+// NOTIFICACION FALSA DE COMPRA
+const names = ["Juan de Lima", "Ana de Arequipa", "Luis de Cusco", "Sofia de Trujillo"];
+const products = ["Bot Permanente", "Bot Basic", "Hosting"];
+setInterval(() => {
+    const notif = document.getElementById('notification');
+    notif.innerHTML = `🔔 ${names[Math.floor(Math.random()*4)]} acaba de comprar ${products[Math.floor(Math.random()*3)]}`;
+    notif.classList.add('show');
+    setTimeout(() => notif.classList.remove('show'), 4000);
+}, 15000);
 </script>
 
 </body>
