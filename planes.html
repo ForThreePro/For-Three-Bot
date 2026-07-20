@@ -5,14 +5,77 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Planes - CYBER BOT</title>
 <link rel="stylesheet" href="style.css">
+<style>
+/* MODAL POPUP */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(8px);
+    animation: fadeIn 0.3s;
+}
+.modal-content {
+    background: var(--card);
+    margin: 5% auto;
+    padding: 30px;
+    border: 1.5px solid var(--morado);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    animation: slideDown 0.3s;
+}
+@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+@keyframes slideDown { from {transform: translateY(-50px); opacity: 0;} to {transform: translateY(0); opacity: 1;} }
+
+.close {
+    color: var(--text-dim);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+.close:hover { color: var(--morado); }
+
+.metodo-pago {
+    background: rgba(168,85,247,0.08);
+    border: 1px solid rgba(168,85,247,0.2);
+    border-radius: 14px;
+    padding: 20px;
+    margin: 15px 0;
+}
+.metodo-pago h3 {
+    font-family: 'Space Grotesk';
+    color: var(--morado-light);
+    margin-bottom: 12px;
+}
+.btn-copiar {
+    background: transparent;
+    border: 1px solid var(--morado);
+    color: var(--morado);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-top: 8px;
+}
+.btn-copiar:hover { background: var(--morado); color: #000; }
+</style>
 </head>
 <body>
 
 <div class="container">
     <h1>PLANES Y SERVICIOS</h1>
     <a href="index.html" class="btn btn-outline">< INICIO</a>
-    <p style="text-align:center; color:var(--text-dim); margin-bottom:30px">Elige tu plan y paga al instante con Tarjeta, Yape o Prex</p>
+    <p style="text-align:center; color:var(--text-dim); margin-bottom:30px">Elige tu plan y paga al instante</p>
 
+    <!-- PLAN 1 -->
     <div class="plan">
         <h2>Bot Para Grupo Mensual</h2>
         <div class="plan-price">S/ 5.00</div>
@@ -20,27 +83,25 @@
             <li>Bot CYBER BOT en tu grupo</li>
             <li>100+ Comandos activos</li>
             <li>24/7 Online</li>
-            <li>Administración completa</li>
             <li>Soporte vía WhatsApp</li>
         </ul>
-        <p style="color:var(--text-dim); font-size:0.9em; margin-bottom:15px">Método: Tarjeta • Comisión: S/ 1.56</p>
-        <a href="https://mpago.la/2UBqiPc" target="_blank" class="btn">PAGAR S/ 5.00</a>
+        <button onclick="abrirModal('Bot Grupo Mensual', '5.00', '1.56', 'https://mpago.la/2UBqiPc')" class="btn">COMPRAR AHORA</button>
     </div>
 
+    <!-- PLAN 2 -->
     <div class="plan">
         <h2>Bot Para Grupo Permanente</h2>
         <div class="plan-price">S/ 7.00</div>
         <ul>
             <li>Bot CYBER BOT para siempre</li>
             <li>100+ Comandos activos</li>
-            <li>24/7 Online</li>
             <li>Actualizaciones gratis</li>
             <li>Soporte prioritario</li>
         </ul>
-        <p style="color:var(--text-dim); font-size:0.9em; margin-bottom:15px">Método: Tarjeta • Comisión: S/ 2.53</p>
-        <a href="https://mpago.la/2p3QEsk" target="_blank" class="btn">PAGAR S/ 7.00</a>
+        <button onclick="abrirModal('Bot Grupo Permanente', '7.00', '2.53', 'https://mpago.la/2p3QEsk')" class="btn">COMPRAR AHORA</button>
     </div>
 
+    <!-- PLAN 3 -->
     <div class="plan">
         <h2>Bot Personalizado Basic</h2>
         <div class="plan-price">S/ 20.00</div>
@@ -48,65 +109,48 @@
             <li>Bot con tu nombre y foto</li>
             <li>Comandos básicos incluidos</li>
             <li>Instalación y configuración</li>
-            <li>Entrega en 24 horas</li>
             <li>Soporte 7 días</li>
         </ul>
-        <p style="color:var(--text-dim); font-size:0.9em; margin-bottom:15px">Método: Tarjeta • Comisión: S/ 2.09</p>
-        <a href="https://mpago.la/26UCJzP" target="_blank" class="btn">PAGAR S/ 20.00</a>
+        <button onclick="abrirModal('Bot Personalizado Basic', '20.00', '2.09', 'https://mpago.la/26UCJzP')" class="btn">COMPRAR AHORA</button>
     </div>
 
+    <!-- PLAN 4 -->
     <div class="plan">
         <h2>Bot Personalizado Premium</h2>
         <div class="plan-price">S/ 30.00</div>
         <ul>
-            <li>Todo lo del Basic</li>
             <li>100+ Comandos completos</li>
-            <li>Comandos exclusivos personalizados</li>
+            <li>Comandos exclusivos</li>
             <li>Panel de control</li>
             <li>Soporte prioritario 30 días</li>
         </ul>
-        <p style="color:var(--text-dim); font-size:0.9em; margin-bottom:15px">Método: Tarjeta • Comisión: S/ 3.52</p>
-        <a href="https://mpago.la/2rBoK8k" target="_blank" class="btn">PAGAR S/ 30.00</a>
+        <button onclick="abrirModal('Bot Personalizado Premium', '30.00', '3.52', 'https://mpago.la/2rBoK8k')" class="btn">COMPRAR AHORA</button>
     </div>
 
+    <!-- PLAN 5 -->
     <div class="plan">
         <h2>Servidor Hosting</h2>
         <div class="plan-price">S/ 10.00 / MES</div>
         <ul>
             <li>Hosting para tu bot</li>
             <li>24/7 Online sin caídas</li>
-            <li>Reinicio automático</li>
             <li>2GB RAM / 10GB SSD</li>
             <li>Panel de control</li>
         </ul>
-        <p style="color:var(--text-dim); font-size:0.9em; margin-bottom:15px">Método: Tarjeta • Comisión: S/ 1.66</p>
-        <a href="https://mpago.la/1W7Nbi6" target="_blank" class="btn">PAGAR S/ 10.00</a>
+        <button onclick="abrirModal('Servidor Hosting', '10.00', '1.66', 'https://mpago.la/1W7Nbi6')" class="btn">COMPRAR AHORA</button>
     </div>
 
+    <!-- PLAN 6 -->
     <div class="plan">
         <h2>Página Web</h2>
         <div class="plan-price">S/ 35.00</div>
         <ul>
             <li>Página web como esta</li>
-            <li>Diseño Elegante Minimal Morado</li>
+            <li>Diseño Elegante Minimal</li>
             <li>Responsive para celular</li>
-            <li>4 Secciones: Inicio, FAQ, Comandos, Planes</li>
             <li>Entrega en 24 horas</li>
         </ul>
-        <p style="color:var(--text-dim); font-size:0.9em; margin-bottom:15px">Método: Tarjeta • Comisión: S/ 2.73</p>
-        <a href="https://mpago.la/16MBw3m" target="_blank" class="btn">PAGAR S/ 35.00</a>
-    </div>
-
-    <div class="card" style="text-align:center; margin-top:40px">
-        <h2 style="font-family:Space Grotesk; color:var(--morado-light)">¿Prefieres pagar por Yape o Prex?</h2>
-        <p style="color:var(--text-dim); margin:15px 0">Ve a la sección de pagos para ver QR y números</p>
-        <a href="pagos.html" class="btn btn-outline">VER OTROS MÉTODOS DE PAGO</a>
-    </div>
-
-    <div class="card" style="text-align:center">
-        <h2 style="font-family:Space Grotesk; color:var(--morado-light)">PRUEBA EL BOT GRATIS</h2>
-        <p style="color:var(--text-dim); margin:15px 0">Únete a nuestro grupo de pruebas antes de comprar</p>
-        <a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk?s=cl&p=a&ilr=0&amv=1" target="_blank" class="btn">UNIRSE AL GRUPO</a>
+        <button onclick="abrirModal('Página Web', '35.00', '2.73', 'https://mpago.la/16MBw3m')" class="btn">COMPRAR AHORA</button>
     </div>
 
     <div class="footer">
@@ -115,6 +159,71 @@
         <p>3 - MORADO NEON</p>
     </div>
 </div>
+
+<!-- MODAL POPUP -->
+<div id="modalPago" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="cerrarModal()">&times;</span>
+        <h2 id="modalTitulo" style="font-family:Space Grotesk; color:var(--morado-light); margin-bottom:10px"></h2>
+        <p style="color:var(--text-dim); margin-bottom:20px">Precio: <span id="modalPrecio" style="color:var(--morado); font-weight:700"></span> | Comisión: <span id="modalComision" style="color:var(--morado)"></span></p>
+
+        <!-- TARJETA -->
+        <div class="metodo-pago">
+            <h3>💳 PAGO CON TARJETA</h3>
+            <p>Pago instantáneo vía MercadoPago</p>
+            <a id="linkTarjeta" href="#" target="_blank" class="btn" style="margin-top:10px; display:inline-block">PAGAR CON TARJETA</a>
+        </div>
+
+        <!-- YAPE -->
+        <div class="metodo-pago">
+            <h3>📱 YAPE</h3>
+            <p><b>Número:</b> <span id="yapeNum">936 994 155</span></p>
+            <p><b>Nombre:</b> Cristhofer Rojas Huarcaya</p>
+            <button onclick="copiar('936994155')" class="btn-copiar">COPIAR NÚMERO</button>
+            <div style="text-align:center; margin-top:15px">
+                <img src="https://files.evogb.win/kc99Pp.jpg" alt="QR Yape" style="max-width:180px; border-radius:12px">
+            </div>
+        </div>
+
+        <!-- PREX -->
+        <div class="metodo-pago">
+            <h3>💰 PREX</h3>
+            <p><b>Número:</b> <span id="prexNum">12249975</span></p>
+            <p><b>Nombre:</b> Cristhofer Rojas Huarcaya</p>
+            <button onclick="copiar('12249975')" class="btn-copiar">COPIAR NÚMERO</button>
+        </div>
+
+        <p style="text-align:center; color:var(--text-dim); font-size:0.9em; margin-top:20px">
+            Después de pagar envía tu comprobante al WhatsApp
+        </p>
+    </div>
+</div>
+
+<script>
+function abrirModal(titulo, precio, comision, link){
+    document.getElementById('modalTitulo').innerText = titulo;
+    document.getElementById('modalPrecio').innerText = 'S/ ' + precio;
+    document.getElementById('modalComision').innerText = 'S/ ' + comision;
+    document.getElementById('linkTarjeta').href = link;
+    document.getElementById('modalPago').style.display = 'block';
+}
+
+function cerrarModal(){
+    document.getElementById('modalPago').style.display = 'none';
+}
+
+function copiar(texto){
+    navigator.clipboard.writeText(texto);
+    alert("Copiado: " + texto);
+}
+
+// Cerrar al click fuera
+window.onclick = function(event) {
+    if (event.target == document.getElementById('modalPago')) {
+        cerrarModal();
+    }
+}
+</script>
 
 </body>
 </html>
