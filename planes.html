@@ -11,7 +11,7 @@
 
 <div class="container">
     <h1>🛒 CATÁLOGO CYBER BOT</h1>
-    <a href="index.html" class="btn" style="margin-bottom:20px">← Volver</a>
+    <a href="index.html" class="btn" style="margin-bottom:20px">← Volver al Inicio</a>
 
     <div class="planes-grid">
         
@@ -22,10 +22,8 @@
                 <li>✅ 20 Comandos Básicos</li>
                 <li>✅ Anti-link + Welcome</li>
                 <li>✅ Menú Personalizado</li>
-                <li>✅ Soporte 24/7</li>
-                <li>❌ Sin IA</li>
             </ul>
-            <a href="https://wa.me/51936994155?text=Quiero+el+BOT+BASICO+S/20" class="btn-plan">Comprar</a>
+            <button onclick="comprar('BOT BÁSICO S/20')" class="btn-plan">Comprar</button>
         </div>
 
         <div class="plan-card destacado">
@@ -36,10 +34,8 @@
                 <li>✅ Todos los 44 Comandos</li>
                 <li>✅ IA: GPT4, Gemini, Claude</li>
                 <li>✅ Descargas: YT, TikTok, Spotify</li>
-                <li>✅ Menú + Banner Personalizado</li>
-                <li>✅ Prioridad en Soporte</li>
             </ul>
-            <a href="https://wa.me/51936994155?text=Quiero+el+BOT+PREMIUM+S/30" class="btn-plan">Comprar Ahora</a>
+            <button onclick="comprar('BOT PREMIUM S/30')" class="btn-plan">Comprar</button>
         </div>
 
         <div class="plan-card">
@@ -49,10 +45,8 @@
                 <li>✅ Bot en 1 Grupo</li>
                 <li>✅ Comandos de Admin</li>
                 <li>✅ Anti-spam + Anti-link</li>
-                <li>✅ Bienvenida + Despedida</li>
-                <li>✅ Renovación mensual</li>
             </ul>
-            <a href="https://wa.me/51936994155?text=Quiero+BOT+GRUPO+MENSUAL+S/5" class="btn-plan">Comprar</a>
+            <button onclick="comprar('BOT GRUPO MENSUAL S/5')" class="btn-plan">Comprar</button>
         </div>
 
         <div class="plan-card">
@@ -60,12 +54,9 @@
             <div class="plan-precio">S/7 <span>/único pago</span></div>
             <ul>
                 <li>✅ Bot en 1 Grupo</li>
-                <li>✅ Comandos de Admin</li>
-                <li>✅ Anti-spam + Anti-link</li>
-                <li>✅ Bienvenida + Despedida</li>
                 <li>✅ Pago único, sin renovar</li>
             </ul>
-            <a href="https://wa.me/51936994155?text=Quiero+BOT+GRUPO+PERMANENTE+S/7" class="btn-plan">Comprar</a>
+            <button onclick="comprar('BOT GRUPO PERMANENTE S/7')" class="btn-plan">Comprar</button>
         </div>
 
         <div class="plan-card">
@@ -73,33 +64,33 @@
             <div class="plan-precio">S/10 <span>/mes</span></div>
             <ul>
                 <li>✅ Servidor 24/7 Online</li>
-                <li>✅ Sin caídas</li>
                 <li>✅ 125GB Almacenamiento</li>
-                <li>✅ Soporte técnico</li>
-                <li>✅ Ideal para tu bot</li>
             </ul>
-            <a href="https://wa.me/51936994155?text=Quiero+HOSTING+S/10" class="btn-plan">Comprar</a>
+            <button onclick="comprar('HOSTING S/10')" class="btn-plan">Comprar</button>
         </div>
 
         <div class="plan-card">
             <div class="plan-header">💻 PÁGINA WEB</div>
             <div class="plan-precio">S/35 <span>/único pago</span></div>
             <ul>
-                <li>✅ Diseño Cyber como esta</li>
-                <li>✅ Responsive para celular</li>
-                <li>✅ Dominio GitHub Pages</li>
-                <li>✅ Buscador + Botones</li>
+                <li>✅ Diseño Cyber Responsive</li>
                 <li>✅ Entrega en 24h</li>
             </ul>
-            <a href="https://wa.me/51936994155?text=Quiero+PAGINA+WEB+S/35" class="btn-plan">Comprar</a>
+            <button onclick="comprar('PÁGINA WEB S/35')" class="btn-plan">Comprar</button>
         </div>
 
     </div>
 
     <div class="pago-info">
         <h2>💳 Métodos de Pago</h2>
-        <p><span class="tag">Yape</span> | <span class="tag">Global66</span> | <span class="tag">Prex</span></p>
-        <p style="color:#888; margin-top:10px">* No se realizan reembolsos</p>
+        <div class="metodos-pago">
+            <div class="metodo">💳 <b>Tarjeta</b></div>
+            <div class="metodo">📱 <b>Yape</b></div>
+            <div class="metodo">🌍 <b>Global66</b></div>
+            <div class="metodo">💰 <b>Prexpex</b></div>
+        </div>
+        <p style="color:#888; margin-top:15px">* Después de comprar te paso los datos de pago por WhatsApp</p>
+        <p style="color:#ff4444; margin-top:10px">* No se realizan reembolsos</p>
     </div>
 
     <div class="footer">
@@ -107,5 +98,11 @@
     </div>
 </div>
 
+<script>
+function comprar(producto) {
+    let mensaje = `Hola Whois Yallico! Quiero comprar: ${producto}`;
+    window.open(`https://wa.me/51936994155?text=${encodeURIComponent(mensaje)}`, '_blank');
+}
+</script>
 </body>
 </html>
