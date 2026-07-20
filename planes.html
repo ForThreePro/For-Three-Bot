@@ -10,98 +10,88 @@
 <body>
 
 <div class="container">
-    <h1>🛒 CATÁLOGO CYBER BOT</h1>
+    <h1>🛒 PRODUCTOS CYBER BOT</h1>
     <a href="index.html" class="btn" style="margin-bottom:20px">← Volver al Inicio</a>
 
+    <h2 class="categoria-titulo">🤖 BOTS PERSONALIZADOS</h2>
     <div class="planes-grid">
-        
         <div class="plan-card">
-            <div class="plan-header">🤖 BOT BÁSICO</div>
-            <div class="plan-precio">S/20 <span>/personalizado</span></div>
-            <ul>
-                <li>✅ 20 Comandos Básicos</li>
-                <li>✅ Anti-link + Welcome</li>
-                <li>✅ Menú Personalizado</li>
-            </ul>
-            <button onclick="comprar('BOT BÁSICO S/20')" class="btn-plan">Comprar</button>
+            <div class="plan-header">BOT BÁSICO</div>
+            <div class="plan-precio">S/20</div>
+            <ul><li>✅ 20 Comandos Básicos</li><li>✅ Anti-link + Welcome</li></ul>
+            <button onclick="mostrarPago('BOT BÁSICO S/20')" class="btn-plan">Adquirir</button>
         </div>
-
         <div class="plan-card destacado">
             <div class="plan-badge">MÁS VENDIDO</div>
-            <div class="plan-header">🤖 BOT PREMIUM</div>
-            <div class="plan-precio">S/30 <span>/personalizado</span></div>
-            <ul>
-                <li>✅ Todos los 44 Comandos</li>
-                <li>✅ IA: GPT4, Gemini, Claude</li>
-                <li>✅ Descargas: YT, TikTok, Spotify</li>
-            </ul>
-            <button onclick="comprar('BOT PREMIUM S/30')" class="btn-plan">Comprar</button>
+            <div class="plan-header">BOT PREMIUM</div>
+            <div class="plan-precio">S/30</div>
+            <ul><li>✅ 44 Comandos</li><li>✅ IA + Descargas</li></ul>
+            <button onclick="mostrarPago('BOT PREMIUM S/30')" class="btn-plan">Adquirir</button>
         </div>
+    </div>
 
+    <h2 class="categoria-titulo">👥 BOTS PARA GRUPOS</h2>
+    <div class="planes-grid">
         <div class="plan-card">
-            <div class="plan-header">👥 BOT GRUPO MENSUAL</div>
+            <div class="plan-header">BOT GRUPO MENSUAL</div>
             <div class="plan-precio">S/5 <span>/mes</span></div>
-            <ul>
-                <li>✅ Bot en 1 Grupo</li>
-                <li>✅ Comandos de Admin</li>
-                <li>✅ Anti-spam + Anti-link</li>
-            </ul>
-            <button onclick="comprar('BOT GRUPO MENSUAL S/5')" class="btn-plan">Comprar</button>
+            <ul><li>✅ Bot en 1 Grupo</li><li>✅ Admin Tools</li></ul>
+            <button onclick="mostrarPago('BOT GRUPO MENSUAL S/5')" class="btn-plan">Adquirir</button>
         </div>
-
         <div class="plan-card">
-            <div class="plan-header">👥 BOT GRUPO PERMANENTE</div>
-            <div class="plan-precio">S/7 <span>/único pago</span></div>
-            <ul>
-                <li>✅ Bot en 1 Grupo</li>
-                <li>✅ Pago único, sin renovar</li>
-            </ul>
-            <button onclick="comprar('BOT GRUPO PERMANENTE S/7')" class="btn-plan">Comprar</button>
+            <div class="plan-header">BOT GRUPO PERMANENTE</div>
+            <div class="plan-precio">S/7 <span>/único</span></div>
+            <ul><li>✅ Bot en 1 Grupo</li><li>✅ Pago único</li></ul>
+            <button onclick="mostrarPago('BOT GRUPO PERMANENTE S/7')" class="btn-plan">Adquirir</button>
         </div>
+    </div>
 
+    <h2 class="categoria-titulo">🌐 SERVICIOS WEB</h2>
+    <div class="planes-grid">
         <div class="plan-card">
-            <div class="plan-header">🌐 HOSTING SERVIDOR</div>
+            <div class="plan-header">HOSTING SERVIDOR</div>
             <div class="plan-precio">S/10 <span>/mes</span></div>
-            <ul>
-                <li>✅ Servidor 24/7 Online</li>
-                <li>✅ 125GB Almacenamiento</li>
-            </ul>
-            <button onclick="comprar('HOSTING S/10')" class="btn-plan">Comprar</button>
+            <ul><li>✅ 24/7 Online</li><li>✅ 125GB</li></ul>
+            <button onclick="mostrarPago('HOSTING S/10')" class="btn-plan">Adquirir</button>
         </div>
-
         <div class="plan-card">
-            <div class="plan-header">💻 PÁGINA WEB</div>
-            <div class="plan-precio">S/35 <span>/único pago</span></div>
-            <ul>
-                <li>✅ Diseño Cyber Responsive</li>
-                <li>✅ Entrega en 24h</li>
-            </ul>
-            <button onclick="comprar('PÁGINA WEB S/35')" class="btn-plan">Comprar</button>
+            <div class="plan-header">PÁGINA WEB</div>
+            <div class="plan-precio">S/35 <span>/único</span></div>
+            <ul><li>✅ Diseño Cyber</li><li>✅ Entrega 24h</li></ul>
+            <button onclick="mostrarPago('PÁGINA WEB S/35')" class="btn-plan">Adquirir</button>
         </div>
-
     </div>
+</div>
 
-    <div class="pago-info">
-        <h2>💳 Métodos de Pago</h2>
+<div id="popupPago" class="popup">
+    <div class="popup-content">
+        <span class="cerrar" onclick="cerrarPago()">&times;</span>
+        <h2>💳 Finalizar Compra</h2>
+        <p id="productoSeleccionado"></p>
+        <h3>Métodos de Pago:</h3>
         <div class="metodos-pago">
-            <div class="metodo">💳 <b>Tarjeta</b></div>
-            <div class="metodo">📱 <b>Yape</b></div>
-            <div class="metodo">🌍 <b>Global66</b></div>
-            <div class="metodo">💰 <b>Prexpex</b></div>
+            <div class="metodo" onclick="pagar('Tarjeta')">💳 Tarjeta</div>
+            <div class="metodo" onclick="pagar('Yape')">📱 Yape</div>
+            <div class="metodo" onclick="pagar('Global66')">🌍 Global66</div>
+            <div class="metodo" onclick="pagar('Prexpex')">💰 Prexpex</div>
         </div>
-        <p style="color:#888; margin-top:15px">* Después de comprar te paso los datos de pago por WhatsApp</p>
-        <p style="color:#ff4444; margin-top:10px">* No se realizan reembolsos</p>
-    </div>
-
-    <div class="footer">
-        <p>🤖 <b>CYBER BOT v3.1.5</b> | Creador: Whois Yallico 👑</p>
     </div>
 </div>
 
 <script>
-function comprar(producto) {
-    let mensaje = `Hola Whois Yallico! Quiero comprar: ${producto}`;
+let productoActual = '';
+function mostrarPago(producto) {
+    productoActual = producto;
+    document.getElementById('productoSeleccionado').innerText = `Producto: ${producto}`;
+    document.getElementById('popupPago').style.display = 'flex';
+}
+function cerrarPago() {
+    document.getElementById('popupPago').style.display = 'none';
+}
+function pagar(metodo) {
+    let mensaje = `Hola Whois Yallico! Quiero comprar: ${productoActual}. Método de pago: ${metodo}`;
     window.open(`https://wa.me/51936994155?text=${encodeURIComponent(mensaje)}`, '_blank');
+    cerrarPago();
 }
 </script>
 </body>
