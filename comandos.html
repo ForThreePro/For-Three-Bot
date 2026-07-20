@@ -15,49 +15,40 @@
 
     <input type="text" id="buscador" placeholder="🔍 Buscar comando...">
 
-    <div class="menu-section">
-        <div class="menu-title">⚙️ CONFIG</div>
-        <div class="command">.antilink &lt;on/off&gt;</div>
-        <div class="command">.antispam on/off</div>
-        <div class="command">.modoadmin &lt;on/off&gt;</div>
-        <div class="command">.welcome on/off</div>
-        <div class="command">.detect on/off</div>
-        <div class="command">.antibot on/off</div>
-        <div class="command">.subbots on/off</div>
-        <div class="command">.nsfw on/off</div>
-        <div class="command">.audios on/off</div>
-        <div class="command">.antiprivado on/off</div>
-    </div>
+    <div id="descripcion" class="descripcion-box">Haz click en un comando para ver para qué sirve 👇</div>
 
     <div class="menu-section">
-        <div class="menu-title">💻 MAIN</div>
-        <div class="command">.cambio &lt;Monedas&gt;</div>
-        <div class="command">.cleartmp</div>
-        <div class="command">.ram</div>
-        <div class="command">.cpu</div>
-        <div class="command">.info</div>
-        <div class="command">.uptime</div>
+        <div class="menu-title">⚙️ CONFIG</div>
+        <div class="command" data-desc="Activa o desactiva anti-link en el grupo">.antilink &lt;on/off&gt;</div>
+        <div class="command" data-desc="Evita spam de mensajes seguidos">.antispam on/off</div>
+        <div class="command" data-desc="Solo admins pueden usar comandos">.modoadmin &lt;on/off&gt;</div>
+        <div class="command" data-desc="Mensaje de bienvenida automático">.welcome on/off</div>
+        <div class="command" data-desc="Detecta entradas y salidas del grupo">.detect on/off</div>
     </div>
 
     <div class="menu-section">
         <div class="menu-title">📥 DOWNLOADER</div>
-        <div class="command">.play .play2 .ytmp3 .ytmp4</div>
-        <div class="command">.spotify .tiktok .ig .fb .mediafire</div>
+        <div class="command" data-desc="Descarga música de YouTube">.play &lt;canción&gt;</div>
+        <div class="command" data-desc="Descarga video de YouTube">.ytmp4 &lt;link&gt;</div>
+        <div class="command" data-desc="Descarga audio de YouTube">.ytmp3 &lt;link&gt;</div>
+        <div class="command" data-desc="Descarga videos de TikTok">.tiktok &lt;link&gt;</div>
+        <div class="command" data-desc="Descarga fotos/videos de Instagram">.ig &lt;link&gt;</div>
     </div>
 
     <div class="menu-section">
         <div class="menu-title">🤖 INTELIGENCIA ARTIFICIAL</div>
-        <div class="command">.claude &lt;texto&gt;</div>
-        <div class="command">.copilot &lt;texto&gt;</div>
-        <div class="command">.gemini &lt;texto&gt;</div>
-        <div class="command">.gpt4 &lt;texto&gt;</div>
+        <div class="command" data-desc="Habla con GPT-4">.gpt4 &lt;texto&gt;</div>
+        <div class="command" data-desc="Habla con Gemini de Google">.gemini &lt;texto&gt;</div>
+        <div class="command" data-desc="Habla con Claude AI">.claude &lt;texto&gt;</div>
+        <div class="command" data-desc="Habla con Copilot de Microsoft">.copilot &lt;texto&gt;</div>
     </div>
 
     <div class="menu-section">
         <div class="menu-title">🎭 FUN</div>
-        <div class="command">.piropo @tag .gay @user .lesbiana @user .puto @user</div>
-        <div class="command">.king @user .zombie @user .simp @user .rata @user</div>
-        <div class="command">+40 comandos más de diversión</div>
+        <div class="command" data-desc="Manda un piropo al usuario">.piropo @tag</div>
+        <div class="command" data-desc="Te dice que tan gay eres">.gay @user</div>
+        <div class="command" data-desc="Te dice que tan pro eres">.king @user</div>
+        <div class="command" data-desc="Te transforma en zombie">.zombie @user</div>
     </div>
 
     <div class="btn-group">
