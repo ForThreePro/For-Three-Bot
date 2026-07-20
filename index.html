@@ -6,17 +6,6 @@
 <title>Cyber Bot | Bots de WhatsApp y Servicios Digitales</title>
 <meta name="description" content="Cyber Bot - Automatiza tu WhatsApp. Bots, Hosting y Páginas Web. Entrega inmediata y garantía.">
 <meta property="og:image" content="https://files.evogb.win/Yd5g8R.jpg">
-
-<!-- PIXEL META - CAMBIA 123456789 POR TU ID -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '123456789'); fbq('track', 'PageView');
-</script>
-
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -42,7 +31,7 @@ fbq('init', '123456789'); fbq('track', 'PageView');
 
 <section class="hero">
     <div class="container">
-        <h2>Automatiza tu WhatsApp al siguiente nivel</h2>
+        <h2 id="typing-text"></h2>
         <p>Soluciones digitales premium con soporte y garantía</p>
     </div>
 </section>
@@ -104,7 +93,7 @@ fbq('init', '123456789'); fbq('track', 'PageView');
         </div>
 
     </div>
-</section>
+</main>
 
 <section class="about container">
     <h2 class="section-title">¿Por qué Cyber Bot?</h2>
@@ -210,6 +199,18 @@ const phone = "51936994155";
 let currentPrice = 0;
 let discount = 0;
 
+// ANIMACION ESCRIBIENDO
+const text = "Automatiza tu WhatsApp al siguiente nivel";
+let i = 0;
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("typing-text").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 60);
+    }
+}
+window.onload = typeWriter;
+
 // TEMA
 if(localStorage.getItem('theme') === 'light') document.body.classList.add('light');
 document.getElementById('theme-btn').onclick = () => {
@@ -227,7 +228,6 @@ document.getElementById('search').onkeyup = (e) => {
 
 // CHECKOUT
 function openCheckout(name, price, comision, link) {
-    fbq('track', 'InitiateCheckout'); // PIXEL
     currentPrice = price;
     document.getElementById('checkout-modal').style.display = 'flex';
     document.getElementById('modal-product-name').innerText = name;
