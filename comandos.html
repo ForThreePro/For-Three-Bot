@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comandos | Cyber Bot</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-effects"></div>
+
+<header class="navbar">
+    <div class="container nav-wrap">
+        <div class="brand">
+            <img src="https://files.evogb.win/Yd5g8R.jpg" alt="Cyber Bot">
+            <div>
+                <h1>Cyber Bot</h1>
+                <p>Lista de Comandos</p>
+            </div>
+        </div>
+        <div class="nav-actions">
+            <a href="index.html" class="btn-wa">← Tienda</a>
+            <button id="theme-btn">◐</button>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h2 id="typing-text"></h2>
+        <p>47 comandos para automatizar tu WhatsApp al máximo</p>
+    </div>
+</section>
+
+<main class="container">
+    <div class="search-wrapper">
+        <input type="text" id="search-command" placeholder="🔍 Busca un comando:.play,.kick,.sticker...">
+        <span id="total-comandos">47 Comandos</span>
+    </div>
+
+    <div class="categories-filter">
+        <button onclick="filterCat('all')" class="cat-btn active">🌌 Todos</button>
+        <button onclick="filterCat('GRUPOS')" class="cat-btn">💻 Grupos</button>
+        <button onclick="filterCat('DOWNLOADER')" class="cat-btn">📥 Downloader</button>
+        <button onclick="filterCat('FUN')" class="cat-btn">🎭 Fun</button>
+        <button onclick="filterCat('SORTEOS')" class="cat-btn">🎲 Sorteos</button>
+        <button onclick="filterCat('CONFIG')" class="cat-btn">⚙️ Config</button>
+        <button onclick="filterCat('TOOLS')" class="cat-btn">🛠️ Tools</button>
+    </div>
+
+    <div class="commands-grid" id="commands-grid">
+        <!-- GRUPOS -->
+        <div class="command-card" data-cat="GRUPOS" onclick="copyCommand('.promote')"><div class="cmd-header"><span class="cmd-icon">💻</span><span class="copy-hint">Click para copiar</span></div><h3>.promote</h3><p>Dar admin a un usuario</p><span class="tag">GRUPOS</span></div>
+        <div class="command-card" data-cat="GRUPOS" onclick="copyCommand('.demote')"><div class="cmd-header"><span class="cmd-icon">💻</span><span class="copy-hint">Click para copiar</span></div><h3>.demote</h3><p>Quitar admin a un usuario</p><span class="tag">GRUPOS</span></div>
+        <div class="command-card" data-cat="GRUPOS" onclick="copyCommand('.kick @user')"><div class="cmd-header"><span class="cmd-icon">💻</span><span class="copy-hint">Click para copiar</span></div><h3>.kick @user</h3><p>Expulsar a un usuario del grupo</p><span class="tag">GRUPOS</span></div>
+        <div class="command-card" data-cat="GRUPOS" onclick="copyCommand('.link')"><div class="cmd-header"><span class="cmd-icon">💻</span><span class="copy-hint">Click para copiar</span></div><h3>.link</h3><p>Mostrar link del grupo</p><span class="tag">GRUPOS</span></div>
+        <div class="command-card" data-cat="GRUPOS" onclick="copyCommand('.mute @user')"><div class="cmd-header"><span class="cmd-icon">💻</span><span class="copy-hint">Click para copiar</span></div><h3>.mute @user</h3><p>Silenciar a un usuario</p><span class="tag">GRUPOS</span></div>
+        <div class="command-card" data-cat="GRUPOS" onclick="copyCommand('.unmute @user')"><div class="cmd-header"><span class="cmd-icon">💻</span><span class="copy-hint">Click para copiar</span></div><h3>.unmute @user</h3><p>Quitar silencio a un usuario</p><span class="tag">GRUPOS</span></div>
+        <div class="command-card" data-cat="GRUPOS" onclick="copyCommand('.grupo abrir')"><div class="cmd-header"><span class="cmd-icon">💻</span><span class="copy-hint">Click para copiar</span></div><h3>.grupo abrir</h3><p>Abrir el grupo para todos</p><span class="tag">GRUPOS</span></div>
+        <div class="command-card" data-cat="GRUPOS" onclick="copyCommand('.grupo cerrar')"><div class="cmd-header"><span class="cmd-icon">💻</span><span class="copy-hint">Click para copiar</span></div><h3>.grupo cerrar</h3><p>Cerrar el grupo solo admins</p><span class="tag">GRUPOS</span></div>
+        <div class="command-card" data-cat="GRUPOS" onclick="copyCommand('.todos <texto>')"><div class="cmd-header"><span class="cmd-icon">💻</span><span class="copy-hint">Click para copiar</span></div><h3>.todos <texto></h3><p>Mencionar a todos del grupo</p><span class="tag">GRUPOS</span></div>
+
+        <!-- DOWNLOADER -->
+        <div class="command-card" data-cat="DOWNLOADER" onclick="copyCommand('.play')"><div class="cmd-header"><span class="cmd-icon">📥</span><span class="copy-hint">Click para copiar</span></div><h3>.play</h3><p>Descargar música por nombre</p><span class="tag">DOWNLOADER</span></div>
+        <div class="command-card" data-cat="DOWNLOADER" onclick="copyCommand('.play2')"><div class="cmd-header"><span class="cmd-icon">📥</span><span class="copy-hint">Click para copiar</span></div><h3>.play2</h3><p>Descargar música con opciones</p><span class="tag">DOWNLOADER</span></div>
+        <div class="command-card" data-cat="DOWNLOADER" onclick="copyCommand('.ytmp3')"><div class="cmd-header"><span class="cmd-icon">📥</span><span class="copy-hint">Click para copiar</span></div><h3>.ytmp3</h3><p>Descargar audio de YouTube</p><span class="tag">DOWNLOADER</span></div>
+        <div class="command-card" data-cat="DOWNLOADER" onclick="copyCommand('.ytmp4')"><div class="cmd-header"><span class="cmd-icon">📥</span><span class="copy-hint">Click para copiar</span></div><h3>.ytmp4</h3><p>Descargar video de YouTube</p><span class="tag">DOWNLOADER</span></div>
+        <div class="command-card" data-cat="DOWNLOADER" onclick="copyCommand('.spotify')"><div class="cmd-header"><span class="cmd-icon">📥</span><span class="copy-hint">Click para copiar</span></div><h3>.spotify</h3><p>Descargar música de Spotify</p><span class="tag">DOWNLOADER</span></div>
+        <div class="command-card" data-cat="DOWNLOADER" onclick="copyCommand('.tiktok')"><div class="cmd-header"><span class="cmd-icon">📥</span><span class="copy-hint">Click para copiar</span></div><h3>.tiktok</h3><p>Descargar video de TikTok</p><span class="tag">DOWNLOADER</span></div>
+        <div class="command-card" data-cat="DOWNLOADER" onclick="copyCommand('.tiktoksearch')"><div class="cmd-header"><span class="cmd-icon">📥</span><span class="copy-hint">Click para copiar</span></div><h3>.tiktoksearch</h3><p>Buscar videos de TikTok</p><span class="tag">DOWNLOADER</span></div>
+        <div class="command-card" data-cat="DOWNLOADER" onclick="copyCommand('.ig')"><div class="cmd-header"><span class="cmd-icon">📥</span><span class="copy-hint">Click para copiar</span></div><h3>.ig</h3><p>Descargar video de Instagram</p><span class="tag">DOWNLOADER</span></div>
+        <div class="command-card" data-cat="DOWNLOADER" onclick="copyCommand('.fb')"><div class="cmd-header"><span class="cmd-icon">📥</span><span class="copy-hint">Click para copiar</span></div><h3>.fb</h3><p>Descargar video de Facebook</p><span class="tag">DOWNLOADER</span></div>
+        <div class="command-card" data-cat="DOWNLOADER" onclick="copyCommand('.mediafire')"><div class="cmd-header"><span class="cmd-icon">📥</span><span class="copy-hint">Click para copiar</span></div><h3>.mediafire</h3><p>Descargar archivo de Mediafire</p><span class="tag">DOWNLOADER</span></div>
+
+        <!-- FUN -->
+        <div class="command-card" data-cat="FUN" onclick="copyCommand('.piropo @tag')"><div class="cmd-header"><span class="cmd-icon">🎭</span><span class="copy-hint">Click para copiar</span></div><h3>.piropo @tag</h3><p>Enviar un piropo</p><span class="tag">FUN</span></div>
+        <div class="command-card" data-cat="FUN" onclick="copyCommand('.gay *@user*')"><div class="cmd-header"><span class="cmd-icon">🎭</span><span class="copy-hint">Click para copiar</span></div><h3>.gay *@user*</h3><p>Medidor de gay</p><span class="tag">FUN</span></div>
+        <div class="command-card" data-cat="FUN" onclick="copyCommand('.lesbiana *@user*')"><div class="cmd-header"><span class="cmd-icon">🎭</span><span class="copy-hint">Click para copiar</span></div><h3>.lesbiana *@user*</h3><p>Medidor de lesbiana</p><span class="tag">FUN</span></div>
+        <div class="command-card" data-cat="FUN" onclick="copyCommand('.pajero *@user*')"><div class="cmd-header"><span class="cmd-icon">🎭</span><span class="copy-hint">Click para copiar</span></div><h3>.pajero *@user*</h3><p>Medidor de pajero</p><span class="tag">FUN</span></div>
+        <div class="command-card" data-cat="FUN" onclick="copyCommand('.pajera *@user*')"><div class="cmd-header"><span class="cmd-icon">🎭</span><span class="copy-hint">Click para copiar</span></div><h3>.pajera *@user*</h3><p>Medidor de pajera</p><span class="tag">FUN</span></div>
+        <div class="command-card" data-cat="FUN" onclick="copyCommand('.pata *@user*')"><div class="cmd-header"><span class="cmd-icon">🎭</span><span class="copy-hint">Click para copiar</span></div><h3>.pata *@user*</h3><p>Medidor de pata</p><span class="tag">FUN</span></div>
+        <div class="command-card" data-cat="FUN" onclick="copyCommand('.floro *@user*')"><div class="cmd-header"><span class="cmd-icon">🎭</span><span class="copy-hint">Click para copiar</span></div><h3>.floro *@user*</h3><p>Medidor de florero</p><span class="tag">FUN</span></div>
+        <div class="command-card" data-cat="FUN" onclick="copyCommand('.miserable *@user*')"><div class="cmd-header"><span class="cmd-icon">🎭</span><span class="copy-hint">Click para copiar</span></div><h3>.miserable *@user*</h3><p>Medidor de miserable</p><span class="tag">FUN</span></div>
+        <div class="command-card" data-cat="FUN" onclick="copyCommand('.gil *@user*')"><div class="cmd-header"><span class="cmd-icon">🎭</span><span class="copy-hint">Click para copiar</span></div><h3>.gil *@user*</h3><p>Medidor de gil</p><span class="tag">FUN</span></div>
+        <div class="command-card" data-cat="FUN" onclick="copyCommand('.gilasa *@user*')"><div class="cmd-header"><span class="cmd-icon">🎭</span><span class="copy-hint">Click para copiar</span></div><h3>.gilasa *@user*</h3><p>Medidor de gilasa</p><span class="tag">FUN</span></div>
+        <div class="command-card" data-cat="FUN" onclick="copyCommand('.lenteja *@user*')"><div class="cmd-header"><span class="cmd-icon">🎭</span><span class="copy-hint">Click para copiar</span></div><h3>.lenteja *@user*</h3><p>Medidor de lenteja</p><span class="tag">FUN</span></div>
+        <div class="command-card" data-cat="FUN" onclick="copyCommand('.chibolo *@user*')"><div class="cmd-header"><span class="cmd-icon">🎭</span><span class="copy-hint">Click para copiar</span></div><h3>.chibolo *@user*</h3><p>Medidor de chibolo</p><span class="tag">FUN</span></div>
+        <div class="command-card" data-cat="FUN" onclick="copyCommand('.chibola *@user*')"><div class="cmd-header"><span class="cmd-icon">🎭</span><span class="copy-hint">Click para copiar</span></div><h3>.chibola *@user*</h3><p>Medidor de chibola</p><span class="tag">FUN</span></div>
+        <div class="command-card" data-cat="FUN" onclick="copyCommand('.top')"><div class="cmd-header"><span class="cmd-icon">🎭</span><span class="copy-hint">Click para copiar</span></div><h3>.top</h3><p>Top de los más activos</p><span class="tag">FUN</span></div>
+
+        <!-- SORTEOS -->
+        <div class="command-card" data-cat="SORTEOS" onclick="copyCommand('.v')"><div class="cmd-header"><span class="cmd-icon">🎲</span><span class="copy-hint">Click para copiar</span></div><h3>.v</h3><p>Ver lista de sorteo</p><span class="tag">SORTEOS</span></div>
+        <div class="command-card" data-cat="SORTEOS" onclick="copyCommand('.list Nombre / Numero / Premio')"><div class="cmd-header"><span class="cmd-icon">🎲</span><span class="copy-hint">Click para copiar</span></div><h3>.list Nombre / Numero / Premio</h3><p>Agregar a la lista del sorteo</p><span class="tag">SORTEOS</span></div>
+        <div class="command-card" data-cat="SORTEOS" onclick="copyCommand('.extra Nombre / Numero / Premio')"><div class="cmd-header"><span class="cmd-icon">🎲</span><span class="copy-hint">Click para copiar</span></div><h3>.extra Nombre / Numero / Premio</h3><p>Agregar extra al sorteo</p><span class="tag">SORTEOS</span></div>
+        <div class="command-card" data-cat="SORTEOS" onclick="copyCommand('.delall')"><div class="cmd-header"><span class="cmd-icon">🎲</span><span class="copy-hint">Click para copiar</span></div><h3>.delall</h3><p>Borrar todo [Admin]</p><span class="tag">SORTEOS</span></div>
+
+        <!-- CONFIG -->
+        <div class="command-card" data-cat="CONFIG" onclick="copyCommand('.antilink <on/off>')"><div class="cmd-header"><span class="cmd-icon">⚙️</span><span class="copy-hint">Click para copiar</span></div><h3>.antilink <on/off></h3><p>Activar anti link</p><span class="tag">CONFIG</span></div>
+        <div class="command-card" data-cat="CONFIG" onclick="copyCommand('.antispam on/off')"><div class="cmd-header"><span class="cmd-icon">⚙️</span><span class="copy-hint">Click para copiar</span></div><h3>.antispam on/off</h3><p>Activar anti spam</p><span class="tag">CONFIG</span></div>
+        <div class="command-card" data-cat="CONFIG" onclick="copyCommand('.modoadmin <on/off>')"><div class="cmd-header"><span class="cmd-icon">⚙️</span><span class="copy-hint">Click para copiar</span></div><h3>.modoadmin <on/off></h3><p>Solo admins pueden usar el bot</p><span class="tag">CONFIG</span></div>
+        <div class="command-card" data-cat="CONFIG" onclick="copyCommand('.welcome on/off')"><div class="cmd-header"><span class="cmd-icon">⚙️</span><span class="copy-hint">Click para copiar</span></div><h3>.welcome on/off</h3><p>Mensaje de bienvenida</p><span class="tag">CONFIG</span></div>
+        <div class="command-card" data-cat="CONFIG" onclick="copyCommand('.detect on/off')"><div class="cmd-header"><span class="cmd-icon">⚙️</span><span class="copy-hint">Click para copiar</span></div><h3>.detect on/off</h3><p>Detectar entradas y salidas</p><span class="tag">CONFIG</span></div>
+        <div class="command-card" data-cat="CONFIG" onclick="copyCommand('.antibot on/off')"><div class="cmd-header"><span class="cmd-icon">⚙️</span><span class="copy-hint">Click para copiar</span></div><h3>.antibot on/off</h3><p>Anti bots en el grupo</p><span class="tag">CONFIG</span></div>
+        <div class="command-card" data-cat="CONFIG" onclick="copyCommand('.subbots on/off')"><div class="cmd-header"><span class="cmd-icon">⚙️</span><span class="copy-hint">Click para copiar</span></div><h3>.subbots on/off</h3><p>Activar sub bots</p><span class="tag">CONFIG</span></div>
+        <div class="command-card" data-cat="CONFIG" onclick="copyCommand('.nsfw on/off')"><div class="cmd-header"><span class="cmd-icon">⚙️</span><span class="copy-hint">Click para copiar</span></div><h3>.nsfw on/off</h3><p>Activar contenido NSFW</p><span class="tag">CONFIG</span></div>
+        <div class="command-card" data-cat="CONFIG" onclick="copyCommand('.audios on/off')"><div class="cmd-header"><span class="cmd-icon">⚙️</span><span class="copy-hint">Click para copiar</span></div><h3>.audios on/off</h3><p>Activar audios</p><span class="tag">CONFIG</span></div>
+        <div class="command-card" data-cat="CONFIG" onclick="copyCommand('.antiprivado on/off')"><div class="
