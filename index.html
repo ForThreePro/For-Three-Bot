@@ -74,61 +74,52 @@
     </div>
 </section>
 
-<section class="container about">
-    <h2 class="section-title">¿Por qué elegirnos?</h2>
-    <div class="about-grid">
-        <div class="about-item"><h4>⚡ Entrega Inmediata</h4><p>Bots de grupo activos en 5 minutos</p></div>
-        <div class="about-item"><h4>🛡️ Garantía Total</h4><p>Si falla te devolvemos el 100%</p></div>
-        <div class="about-item"><h4>💬 Soporte 24/7</h4><p>Te responde una persona real</p></div>
-    </div>
-</section>
-
-<section class="container">
-    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
-    <div class="testi-grid">
-        <div class="testi-card"><p>"Me activaron el bot en 5 minutos. El mejor servicio"</p><b>- Carlos R.</b></div>
-        <div class="testi-card"><p>"El soporte responde rapidísimo. 100% recomendado"</p><b>- María L.</b></div>
-        <div class="testi-card"><p>"Mi grupo creció 300% con la automatización"</p><b>- Diego S.</b></div>
-    </div>
-</section>
-
-<section class="container affiliate">
-    <h2>Programa de Afiliados</h2>
-    <p>Gana <b>S/ 2</b> por cada venta que refieras. Cobra por Yape.</p>
-    <button onclick="alert('Escríbenos al WhatsApp para activar tu link')">Quiero ser Afiliado</button>
-</section>
-
-<section class="container faq">
-    <h2 class="section-title">Preguntas Frecuentes</h2>
-    <div class="faq-item"><h4>¿En cuánto tiempo me entregan?</h4><p>Bots de grupo: Inmediato. Personalizados: Máximo 24 horas.</p></div>
-    <div class="faq-item"><h4>¿Tengo garantía?</h4><p>Sí. Si hay fallas te lo reparamos gratis o te devolvemos el 100%.</p></div>
-</section>
-
-<!-- MODAL CHECKOUT POR SECCIONES -->
+<!-- MODAL CHECKOUT NUEVO CON SELECTOR -->
 <div id="checkout-modal" class="modal"><div class="modal-box">
 <span class="close-btn" onclick="closeCheckout()">×</span>
 <h2 style="font-size:2em; font-weight:800; margin-bottom:20px;">Finalizar Compra</h2>
 <p id="modal-product-name" style="font-size:1.2em; margin-bottom:10px;"></p>
 <p style="font-size:2.5em; font-weight:900; margin-bottom:30px;">S/ <span id="modal-total"></span></p>
 
-<div class="payment-section">
-<h4>💳 1. Pagar con Tarjeta</h4>
-<p style="color:var(--text-dim); margin-bottom:15px;">Pago automático. Se activa al instante.</p>
-<a id="card-payment-link" href="#" target="_blank" class="btn-primary">Pagar con Mercado Pago</a>
+<h3 style="font-size:1.3em; font-weight:700; margin-bottom:20px;">Elige tu método de pago</h3>
+
+<div class="payment-methods">
+    <div class="payment-option" onclick="selectPayment('card')">
+        <input type="radio" name="payment" id="pay-card">
+        <label for="pay-card">
+            <span class="icon">💳</span>
+            <div>
+                <b>Tarjeta Débito/Crédito</b>
+                <p>Pago automático. Se activa al instante</p>
+            </div>
+        </label>
+    </div>
+
+    <div class="payment-option" onclick="selectPayment('yape')">
+        <input type="radio" name="payment" id="pay-yape">
+        <label for="pay-yape">
+            <span class="icon">📱</span>
+            <div>
+                <b>Yape</b>
+                <p>Transferencia directa. Envía captura</p>
+            </div>
+        </label>
+    </div>
+
+    <div class="payment-option" onclick="selectPayment('prex')">
+        <input type="radio" name="payment" id="pay-prex">
+        <label for="pay-prex">
+            <span class="icon">💰</span>
+            <div>
+                <b>Prex</b>
+                <p>Transferencia directa. Envía captura</p>
+            </div>
+        </label>
+    </div>
 </div>
 
-<div class="payment-section">
-<h4>📱 2. Pagar con Yape</h4>
-<p><b>Número:</b> 936 994 155<br><b>Nombre:</b> Cristhofer Rojas Huarcaya</p>
-<img src="https://files.evogb.win/kc99Pp.jpg" class="qr-code">
-<a id="yape-wa-link" href="#" target="_blank" class="btn-primary">Ya pagué por Yape</a>
-</div>
-
-<div class="payment-section">
-<h4>💰 3. Pagar con Prex</h4>
-<p><b>Número:</b> 12249975<br><b>Nombre:</b> Cristhofer Rojas Huarcaya</p>
-<a id="prex-wa-link" href="#" target="_blank" class="btn-primary">Ya pagué por Prex</a>
-</div>
+<!-- CONTENIDO DINAMICO SEGUN METODO -->
+<div id="payment-content"></div>
 
 </div></div>
 
@@ -140,18 +131,68 @@
 
 <script>
 let currentPrice=0;
+let currentProduct='';
+let currentLink='';
+let selectedMethod='';
+
 function openCheckout(name, price, link){
     currentPrice=price;
+    currentProduct=name;
+    currentLink=link;
+    selectedMethod='';
     document.getElementById('checkout-modal').style.display='flex';
     document.getElementById('modal-product-name').innerText=name;
     document.getElementById('modal-total').innerText=price.toFixed(2);
-    const message=`Hola! Pagué: ${name} - S/ ${price}. Adjunto captura.`;
-    const waLink=`https://wa.me/51936994155?text=${encodeURIComponent(message)}`;
-    document.getElementById('yape-wa-link').href=waLink;
-    document.getElementById('prex-wa-link').href=waLink;
-    document.getElementById('card-payment-link').href=link;
+    document.getElementById('payment-content').innerHTML='';
+    document.querySelectorAll('input[name="payment"]').forEach(i=>i.checked=false);
 }
-function closeCheckout(){ document.getElementById('checkout-modal').style.display='none'; }
+
+function closeCheckout(){ 
+    document.getElementById('checkout-modal').style.display='none'; 
+}
+
+function selectPayment(method){
+    selectedMethod=method;
+    document.getElementById('pay-'+method).checked=true;
+    showPaymentContent(method);
+}
+
+function showPaymentContent(method){
+    const message=`Hola! Pagué: ${currentProduct} - S/ ${currentPrice}. Adjunto captura.`;
+    const waLink=`https://wa.me/51936994155?text=${encodeURIComponent(message)}`;
+    let content='';
+
+    if(method === 'card'){
+        content = `
+        <div class="payment-details">
+            <p style="color:var(--text-dim); margin-bottom:15px;">Serás redirigido a Mercado Pago para completar tu pago de forma segura.</p>
+            <a href="${currentLink}" target="_blank" class="btn-primary btn-big">Pagar S/ ${currentPrice.toFixed(2)} con Tarjeta</a>
+        </div>`;
+    }
+
+    if(method === 'yape'){
+        content = `
+        <div class="payment-details">
+            <p><b>Número Yape:</b> 936 994 155</p>
+            <p><b>Nombre:</b> Cristhofer Rojas Huarcaya</p>
+            <img src="https://files.evogb.win/kc99Pp.jpg" class="qr-code">
+            <p style="color:var(--text-dim); margin:15px 0;">1. Yapea el monto<br>2. Envía la captura</p>
+            <a href="${waLink}" target="_blank" class="btn-primary btn-big">Ya pagué por Yape</a>
+        </div>`;
+    }
+
+    if(method === 'prex'){
+        content = `
+        <div class="payment-details">
+            <p><b>Número Prex:</b> 12249975</p>
+            <p><b>Nombre:</b> Cristhofer Rojas Huarcaya</p>
+            <p style="color:var(--text-dim); margin:15px 0;">1. Transfiere el monto<br>2. Envía la captura</p>
+            <a href="${waLink}" target="_blank" class="btn-primary btn-big">Ya pagué por Prex</a>
+        </div>`;
+    }
+
+    document.getElementById('payment-content').innerHTML=content;
+}
 </script>
 </body>
 </html>
