@@ -1,40 +1,243 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CYBER BOT - Whois Yallico</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap');
 
-<img src="banner.jpg" alt="Cyber Bot" class="banner">
+:root {
+    --morado: #a855f7;
+    --morado-light: #c084fc;
+    --bg: #0b0b0f;
+    --card: #12121a;
+    --text: #e5e5e7;
+    --text-dim: #8a8a9e;
+}
 
-<div class="container">
-    <h1>CYBER BOT</h1>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+}
 
-    <div class="card">
-        <p style="text-align:center; color:var(--text-dim); margin-bottom:24px">Sistema conectado. Listo para dominar el chat.</p>
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
 
-        <div class="info-grid">
-            <div class="info-item">FECHA <span id="fecha"></span></div>
-            <div class="info-item">HORA <span id="hora"></span></div>
-            <div class="info-item">ESTADO <span class="online">ONLINE</span></div>
-            <div class="info-item">USUARIOS <span>1139</span></div>
-        </div>
+.banner {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 24px;
+    margin-bottom: 50px;
+    filter: brightness(0.8) saturate(1.1);
+}
 
-        <div style="text-align:center; margin-top:32px">
-            <a href="faq.html" class="btn btn-outline">FAQ</a>
-            <a href="comandos.html" class="btn">COMANDOS</a>
-            <a href="planes.html" class="btn btn-outline">PLANES</a>
-        </div>
-    </div>
+h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.8em;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 50px 0;
+    letter-spacing: -1px;
+    color: var(--text);
+}
 
-    <div class="footer">
-        <p>CREADO POR WHOIS YALLICO • VERSION 3.1.5</p>
-    </div>
-</div>
+/* CARD */
+.card {
+    background: var(--card);
+    border: 1px solid rgba(168,85,247,0.1);
+    border-radius: 20px;
+    padding: 32px;
+    margin: 30px 0;
+    transition: 0.3s ease;
+}
+.card:hover {
+    border-color: rgba(168,85,247,0.3);
+    transform: translateY(-2px);
+}
 
-<script src="script.js"></script>
-</body>
-</html>
+/* INFO */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+.info-item {
+    background: rgba(168,85,247,0.05);
+    padding: 18px 20px;
+    border-radius: 14px;
+    border: 1px solid rgba(168,85,247,0.1);
+    font-size: 0.9em;
+    color: var(--text-dim);
+    font-weight: 600;
+}
+.info-item span {
+    display: block;
+    margin-top: 6px;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--text);
+}
+.online { color: #22c55e!important; }
+
+/* BOTONES */
+.btn {
+    background: var(--morado);
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    margin: 8px;
+    transition: 0.2s ease;
+    border: none;
+    font-size: 0.95em;
+    letter-spacing: 0.3px;
+}
+.btn:hover {
+    background: var(--morado-light);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(168,85,247,0.3);
+}
+.btn-outline {
+    background: transparent;
+    border: 1.5px solid rgba(168,85,247,0.3);
+    color: var(--morado-light);
+}
+.btn-outline:hover {
+    background: rgba(168,85,247,0.1);
+    border-color: var(--morado);
+}
+
+/* BUSCADOR */
+.search {
+    width: 100%;
+    background: var(--card);
+    border: 1.5px solid rgba(168,85,247,0.2);
+    border-radius: 14px;
+    padding: 16px 22px;
+    color: var(--text);
+    font-size: 1em;
+    font-family: 'Inter';
+    outline: none;
+    margin-bottom: 40px;
+    transition: 0.2s;
+}
+.search:focus {
+    border-color: var(--morado);
+    box-shadow: 0 0 0 4px rgba(168,85,247,0.1);
+}
+
+/* COMANDOS */
+.section-title {
+    font-family: 'Space Grotesk';
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--text);
+    margin: 40px 0 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cmd-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+}
+.cmd-item {
+    background: var(--card);
+    border: 1px solid rgba(168,85,247,0.1);
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-family: 'Space Grotesk';
+    font-weight: 500;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: 0.2s;
+    color: var(--text-dim);
+}
+.cmd-item:hover {
+    background: rgba(168,85,247,0.08);
+    border-color: var(--morado);
+    color: var(--text);
+    transform: translateX(4px);
+}
+
+/* FAQ */
+.faq-item {
+    background: var(--card);
+    padding: 24px;
+    margin: 16px 0;
+    border-radius: 16px;
+    border: 1px solid rgba(168,85,247,0.1);
+}
+.faq-item h3 {
+    font-family: 'Space Grotesk';
+    color: var(--morado-light);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+.faq-item p {
+    color: var(--text-dim);
+    line-height: 1.6;
+}
+
+/* PLANES */
+.plan {
+    background: var(--card);
+    border: 1.5px solid rgba(168,85,247,0.15);
+    border-radius: 20px;
+    padding: 36px 28px;
+    margin: 24px 0;
+    text-align: center;
+    transition: 0.3s;
+}
+.plan:hover {
+    border-color: var(--morado);
+    transform: translateY(-4px);
+}
+.plan h2 {
+    font-family: 'Space Grotesk';
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.plan-price {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--morado-light);
+    margin: 20px 0;
+}
+.plan ul {
+    list-style: none;
+    margin: 24px 0;
+    text-align: left;
+}
+.plan ul li {
+    padding: 10px 0;
+    color: var(--text-dim);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.plan ul li:before {
+    content: "✓ ";
+    color: var(--morado);
+    font-weight: 700;
+    margin-right: 8px;
+}
+
+.footer {
+    text-align: center;
+    padding: 50px 0 20px 0;
+    color: var(--text-dim);
+    font-size: 0.9em;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    margin-top: 60px;
+}
+
+@media (min-width: 768px) {
+   .info-grid { grid-template-columns: repeat(4, 1fr); }
+    h1 { font-size: 3.5em; }
+}
