@@ -70,11 +70,20 @@
 <section class="benefits">
     <div class="container">
         <h3>Pago 100% Seguro</h3>
-        <p>💳 Mercado Pago | 📱 Yape | 💰 Prex</p>
+        <p>💳 Tarjeta | 📱 Yape | 💰 Prex | 🌍 Global66</p>
     </div>
 </section>
 
-<!-- MODAL CHECKOUT NUEVO CON SELECTOR -->
+<section class="container about">
+    <h2 class="section-title">¿Por qué elegirnos?</h2>
+    <div class="about-grid">
+        <div class="about-item"><h4>⚡ Entrega Inmediata</h4><p>Bots de grupo activos en 5 minutos</p></div>
+        <div class="about-item"><h4>🛡️ Garantía Total</h4><p>Si falla te devolvemos el 100%</p></div>
+        <div class="about-item"><h4>💬 Soporte 24/7</h4><p>Te responde una persona real</p></div>
+    </div>
+</section>
+
+<!-- MODAL CHECKOUT CON SELECTOR -->
 <div id="checkout-modal" class="modal"><div class="modal-box">
 <span class="close-btn" onclick="closeCheckout()">×</span>
 <h2 style="font-size:2em; font-weight:800; margin-bottom:20px;">Finalizar Compra</h2>
@@ -113,6 +122,17 @@
             <div>
                 <b>Prex</b>
                 <p>Transferencia directa. Envía captura</p>
+            </div>
+        </label>
+    </div>
+
+    <div class="payment-option" onclick="selectPayment('global66')">
+        <input type="radio" name="payment" id="pay-global66">
+        <label for="pay-global66">
+            <span class="icon">🌍</span>
+            <div>
+                <b>Global66</b>
+                <p>Transferencia Global66 a Global66</p>
             </div>
         </label>
     </div>
@@ -166,7 +186,7 @@ function showPaymentContent(method){
         content = `
         <div class="payment-details">
             <p style="color:var(--text-dim); margin-bottom:15px;">Serás redirigido a Mercado Pago para completar tu pago de forma segura.</p>
-            <a href="${currentLink}" target="_blank" class="btn-primary btn-big">Pagar S/ ${currentPrice.toFixed(2)} con Tarjeta</a>
+            <button onclick="window.open('${currentLink}', '_blank')" class="btn-primary btn-big">Pagar S/ ${currentPrice.toFixed(2)} con Tarjeta</button>
         </div>`;
     }
 
@@ -191,8 +211,10 @@ function showPaymentContent(method){
         </div>`;
     }
 
-    document.getElementById('payment-content').innerHTML=content;
-}
-</script>
-</body>
-</html>
+    if(method === 'global66'){
+        content = `
+        <div class="payment-details">
+            <p><b>Usuario Global66:</b> @CRIROJ1855</p>
+            <p><b>Nombre:</b> Cristhofer Rojas Huarcaya</p>
+            <p style="background:rgba(0,113,227,0.1); padding:12px; border-radius:10px; margin:15px 0;"><b>Nota:</b> De Global66 a Global66</p>
+            <p style="color:var(--text-dim); margin:15px 0;">1. Transfi
