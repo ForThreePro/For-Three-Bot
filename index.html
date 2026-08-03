@@ -3,277 +3,259 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cyber Bot | Servicios Digitales Premium</title>
-<link rel="stylesheet" href="style.css">
+<title>Son Goku - El Guerrero Saiyan</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Orbitron:wght@500;700&display=swap');
+  
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    background: #000;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* PORTADA CON TU IMAGEN */
+  .hero {
+    position: relative;
+    height: 100vh;
+    background: url('https://files.evogb.win/f8g1F2.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(255,107,0,0.4) 100%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+  }
+
+  .stars {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 0;
+  }
+  .star {
+    position: absolute; background: white; border-radius: 50%;
+    animation: twinkle 2s infinite;
+  }
+  @keyframes twinkle { 0%,100% { opacity: 0; } 50% { opacity: 1; } }
+
+  .container {
+    position: relative; z-index: 1;
+    max-width: 1000px; margin: auto; padding: 20px;
+    background: linear-gradient(180deg, #0a0a2a 0%, #1a1a5e 100%);
+  }
+
+  h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 5rem; color: #ffd700;
+    text-shadow: 5px 5px 0px #ff0000, 0 0 30px #ff6b00;
+    letter-spacing: 4px;
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  /* Aura alrededor de Goku */
+  .goku-img {
+    width: 200px; height: 200px;
+    margin: 20px auto;
+    border-radius: 50%;
+    border: 4px solid #ffd700;
+    box-shadow: 0 0 40px #ffd700;
+    animation: aura 2s infinite alternate;
+  }
+  @keyframes aura {
+    0% { box-shadow: 0 0 40px #ffd700; }
+    100% { box-shadow: 0 0 80px #ff6b00, 0 0 120px #ffd700; }
+  }
+
+  /* Reproductor de música */
+  .music-player {
+    background: rgba(0,0,0,0.8);
+    border: 3px solid #ff6b00;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 400px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+  }
+  .btn-music {
+    background: linear-gradient(90deg, #ff0000, #ff6b00);
+    color: white; border: none;
+    padding: 15px 30px; border-radius: 50px;
+    font-family: 'Bangers', cursive; font-size: 1.3rem;
+    cursor: pointer; margin: 10px;
+    transition: 0.3s;
+  }
+  .btn-music:hover { transform: scale(1.1); box-shadow: 0 0 30px #ff6b00; }
+
+  section {
+    background: rgba(0,0,0,0.7);
+    border: 2px solid #ff6b00;
+    border-radius: 15px; padding: 30px;
+    margin: 30px 0; backdrop-filter: blur(5px);
+  }
+
+  h2 {
+    font-family: 'Bangers', cursive;
+    font-size: 2.5rem; color: #ff6b00;
+    margin-bottom: 20px; text-shadow: 3px 3px 0 #000;
+  }
+
+  .poderes {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px; margin-top: 20px;
+  }
+  .poder {
+    background: linear-gradient(135deg, #ff6b00, #ffd700);
+    color: #000; padding: 18px; border-radius: 12px;
+    font-weight: 700; text-align: center; font-size: 1.1rem;
+    transition: 0.3s; cursor: pointer;
+  }
+  .poder:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 0 25px #ffd700;
+  }
+
+  .btn-ki {
+    display: inline-block; margin: 15px 10px;
+    background: linear-gradient(90deg, #ff0000, #ff6b00);
+    color: white; padding: 18px 35px;
+    border-radius: 50px; text-decoration: none;
+    font-weight: 700; font-size: 1.2rem;
+    border: 3px solid #ffd700;
+    box-shadow: 0 0 25px rgba(255,107,0,0.6);
+    transition: 0.3s;
+  }
+  .btn-ki:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 50px #ff0000;
+  }
+
+  footer {
+    text-align: center; padding: 30px;
+    background: #000; margin-top: 30px;
+  }
+</style>
 </head>
 <body>
+  <div class="stars" id="stars"></div>
 
-<header class="navbar">
-    <div class="container nav-wrap">
-        <div class="brand">
-            <img src="https://files.evogb.win/Yd5g8R.jpg" alt="Cyber Bot">
-            <h1>Cyber Bot</h1>
-        </div>
-        <a href="comandos.html" class="btn-wa">Ver Comandos</a>
+  <!-- AUDIO -->
+  <audio id="gokuAudio" loop>
+    <source src="goku.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- PORTADA -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1>SON GOKU</h1>
+      <p style="font-size:1.5rem; text-shadow: 2px 2px 4px #000;">El Saiyan que protege la Tierra</p>
+      <img src="https://files.evogb.win/f8g1F2.jpg" alt="Goku" class="goku-img">
+      
+      <div class="music-player">
+        <p style="margin-bottom:15px; font-size:1.1rem;">🎵 Tema de Batalla</p>
+        <button class="btn-music" onclick="toggleMusic()">▶️ REPRODUCIR</button>
+      </div>
+      
+      <a href="#contenido" class="btn-ki">ENTRAR A LA BATALLA</a>
     </div>
-</header>
+  </div>
 
-<section class="hero">
-    <div class="container">
-        <h2>Automatiza tu WhatsApp.<br>Al siguiente nivel.</h2>
-        <p>Servicios digitales premium con soporte humano 24/7</p>
-    </div>
-</section>
+  <!-- CONTENIDO -->
+  <div class="container" id="contenido">
+    <section>
+      <h2>¿QUIÉN ES GOKU?</h2>
+      <p style="font-size:1.1rem; line-height:1.8;">
+        Son Goku es un saiyan enviado a la Tierra de niño. Criado por el abuelo Gohan, 
+        se convirtió en el guerrero más fuerte del universo. Siempre busca rivales más fuertes 
+        y protege a sus amigos sin importar qué. ¡Su corazón puro y su sed de batalla lo hacen único!
+      </p>
+    </section>
 
-<main class="container">
-    <h2 class="section-title">Elige tu servicio</h2>
-    <div class="products-grid">
-        <div class="product-card">
-            <div class="product-badge">POPULAR</div>
-            <h3>Bot Para Grupo Mensual</h3>
-            <div class="price">S/ 5.00</div>
-            <p class="comision">+ Comisión tarjeta: S/ 1.56</p>
-            <ul class="features"><li>✓ 47 Comandos</li><li>✓ Soporte 24/7</li><li>✓ Activación 5 min</li></ul>
-            <button class="btn-primary" onclick="openCheckout('Bot Para Grupo Mensual', 5, 'https://mpago.la/2UBqiPc')">Comprar</button>
-        </div>
+    <section>
+      <h2>TRANSFORMACIONES</h2>
+      <div class="poderes">
+        <div class="poder">Base</div>
+        <div class="poder">Kaioken x20</div>
+        <div class="poder">Super Saiyan</div>
+        <div class="poder">Super Saiyan Blue</div>
+        <div class="poder">Ultra Instinto</div>
+        <div class="poder">Ultra Instinto Dominado</div>
+      </div>
+    </section>
 
-        <div class="product-card">
-            <div class="product-badge">RECOMENDADO</div>
-            <h3>Bot Para Grupo Permanente</h3>
-            <div class="price">S/ 7.00</div>
-            <p class="comision">+ Comisión tarjeta: S/ 2.53</p>
-            <ul class="features"><li>✓ De por vida</li><li>✓ 47 Comandos</li><li>✓ Actualizaciones gratis</li></ul>
-            <button class="btn-primary" onclick="openCheckout('Bot Para Grupo Permanente', 7, 'https://mpago.la/2p3QEsk')">Comprar</button>
-        </div>
+    <section>
+      <h2>TÉCNICAS MÁS FAMOSAS</h2>
+      <div class="poderes">
+        <div class="poder">Kamehameha 🌊</div>
+        <div class="poder">Genkidama 💫</div>
+        <div class="poder">Teletransportación ⚡</div>
+        <div class="poder">Nube Voladora ☁️</div>
+        <div class="poder">Puño del Dragón 🐉</div>
+        <div class="poder">Instant Transmission</div>
+      </div>
+    </section>
 
-        <div class="product-card">
-            <h3>Bot Personalizado Premium</h3>
-            <div class="price">S/ 30.00</div>
-            <p class="comision">+ Comisión tarjeta: S/ 3.52</p>
-            <ul class="features"><li>✓ Hecho a tu medida</li><li>✓ Entrega 24h</li><li>✓ 1 mes de soporte</li></ul>
-            <button class="btn-primary" onclick="openCheckout('Bot Personalizado Premium', 30, 'https://mpago.la/2rBoK8k')">Comprar</button>
-        </div>
+    <section style="text-align:center;">
+      <h2>¡ÚNETE AL ENTRENAMIENTO!</h2>
+      <a href="https://wa.me/51960815679?text=Quiero%20entrenar%20con%20Goku%20%F0%9F%90%89" class="btn-ki">Entrenar con Goku</a>
+    </section>
 
-        <div class="product-card">
-            <h3>Servidor Hosting</h3>
-            <div class="price">S/ 10.00</div>
-            <p class="comision">+ Comisión tarjeta: S/ 1.66</p>
-            <ul class="features"><li>✓ 24/7 Online</li><li>✓ Sin caídas</li><li>✓ Panel de control</li></ul>
-            <button class="btn-primary" onclick="openCheckout('Servidor Hosting', 10, 'https://mpago.la/1W7Nbi6')">Comprar</button>
-        </div>
-
-        <div class="product-card">
-            <h3>Página Web Profesional</h3>
-            <div class="price">S/ 35.00</div>
-            <p class="comision">+ Comisión tarjeta: S/ 2.73</p>
-            <ul class="features"><li>✓ Diseño Responsive</li><li>✓ Dominio 1 año</li><li>✓ Entrega 3 días</li></ul>
-            <button class="btn-primary" onclick="openCheckout('Página Web', 35, 'https://mpago.la/16MBw3m')">Comprar</button>
-        </div>
-    </div>
-</main>
-
-<section class="benefits">
-    <div class="container">
-        <h3>Pago 100% Seguro</h3>
-        <p>💳 Tarjeta | 📱 Yape | 💰 Prex | 🌍 Global66</p>
-    </div>
-</section>
-
-<section class="container about">
-    <h2 class="section-title">¿Por qué elegirnos?</h2>
-    <div class="about-grid">
-        <div class="about-item"><h4>⚡ Entrega Inmediata</h4><p>Bots de grupo activos en 5 minutos. Personalizados en 24h</p></div>
-        <div class="about-item"><h4>🛡️ Garantía Total</h4><p>Si hay fallas te lo reparamos gratis o te devolvemos el 100%</p></div>
-        <div class="about-item"><h4>💬 Soporte 24/7</h4><p>Te responde una persona real por WhatsApp</p></div>
-    </div>
-</section>
-
-<section class="container aclaracion">
-    <h2 class="section-title">Aclaración Importante</h2>
-    <div class="aclaracion-box">
-        <p><b>1. Activación:</b> Los bots de grupo se activan en máximo 5 minutos después del pago.</p>
-        <p><b>2. Soporte:</b> Incluye soporte y actualizaciones durante el tiempo contratado.</p>
-        <p><b>3. Reembolso:</b> Solo aplica si no podemos activar tu servicio en 24 horas.</p>
-        <p><b>4. Uso Responsable:</b> El bot debe usarse respetando las políticas de WhatsApp.</p>
-    </div>
-</section>
-
-<section class="container faq">
-    <h2 class="section-title">Preguntas Frecuentes</h2>
-    <div class="faq-item">
-        <h4>¿En cuánto tiempo me entregan el bot?</h4>
-        <p>Bots para grupo: Inmediato, máximo 5 minutos. Bots personalizados: Máximo 24 horas.</p>
-    </div>
-    <div class="faq-item">
-        <h4>¿Tengo garantía si el bot falla?</h4>
-        <p>Sí. Damos garantía total. Si hay fallas lo reparamos gratis o te devolvemos el 100% de tu dinero.</p>
-    </div>
-    <div class="faq-item">
-        <h4>¿Puedo pagar con Yape, Plin, Prex?</h4>
-        <p>Claro. Aceptamos Yape, Prex, Global66 y Tarjeta. Elige el método que prefieras al comprar.</p>
-    </div>
-    <div class="faq-item">
-        <h4>¿El bot funciona 24/7?</h4>
-        <p>Sí. Con el servicio de Hosting el bot estará online 24/7 sin caídas.</p>
-    </div>
-    <div class="faq-item">
-        <h4>¿Qué pasa si WhatsApp banea mi número?</h4>
-        <p>Te ayudamos a recuperar el bot en un nuevo número sin costo adicional durante el primer mes.</p>
-    </div>
-</section>
-
-<section class="container affiliate">
-    <h2>Programa de Afiliados</h2>
-    <p>Gana <b>S/ 2</b> por cada venta que refieras. Pago por Yape cada viernes.</p>
-    <button onclick="window.open('https://wa.me/51936994155?text=Quiero ser afiliado', '_blank')">Quiero ser Afiliado</button>
-</section>
-
-<!-- MODAL CHECKOUT CON SELECTOR -->
-<div id="checkout-modal" class="modal"><div class="modal-box">
-<span class="close-btn" onclick="closeCheckout()">×</span>
-<h2 style="font-size:2em; font-weight:800; margin-bottom:20px;">Finalizar Compra</h2>
-<p id="modal-product-name" style="font-size:1.2em; margin-bottom:10px;"></p>
-<p style="font-size:2.5em; font-weight:900; margin-bottom:30px;">S/ <span id="modal-total"></span></p>
-
-<h3 style="font-size:1.3em; font-weight:700; margin-bottom:20px;">Elige tu método de pago</h3>
-
-<div class="payment-methods">
-    <div class="payment-option" onclick="selectPayment('card')">
-        <input type="radio" name="payment" id="pay-card">
-        <label for="pay-card">
-            <span class="icon">💳</span>
-            <div>
-                <b>Tarjeta Débito/Crédito</b>
-                <p>Pago automático. Se activa al instante</p>
-            </div>
-        </label>
-    </div>
-
-    <div class="payment-option" onclick="selectPayment('yape')">
-        <input type="radio" name="payment" id="pay-yape">
-        <label for="pay-yape">
-            <span class="icon">📱</span>
-            <div>
-                <b>Yape</b>
-                <p>Transferencia directa. Envía captura</p>
-            </div>
-        </label>
-    </div>
-
-    <div class="payment-option" onclick="selectPayment('prex')">
-        <input type="radio" name="payment" id="pay-prex">
-        <label for="pay-prex">
-            <span class="icon">💰</span>
-            <div>
-                <b>Prex</b>
-                <p>Transferencia directa. Envía captura</p>
-            </div>
-        </label>
-    </div>
-
-    <div class="payment-option" onclick="selectPayment('global66')">
-        <input type="radio" name="payment" id="pay-global66">
-        <label for="pay-global66">
-            <span class="icon">🌍</span>
-            <div>
-                <b>Global66</b>
-                <p>Transferencia Global66 a Global66</p>
-            </div>
-        </label>
-    </div>
-</div>
-
-<div id="payment-content"></div>
-
-</div></div>
-
-<a href="https://chat.whatsapp.com/LjPhgjqCM934QEzYz3vrVk" target="_blank" class="whatsapp-float">💬</a>
-
-<footer class="footer">
-    <div class="container"><p>© 2026 Cyber Bot. Creado por Whois Yallico | <a href="#" style="color:var(--accent);">Términos</a> | <a href="#" style="color:var(--accent);">Privacidad</a></p></div>
-</footer>
+    <footer>
+      <p>© 2026 Fan Page de Son Goku | "¡Yo soy el que va a superar a todos!"</p>
+    </footer>
+  </div>
 
 <script>
-let currentPrice=0;
-let currentProduct='';
-let currentLink='';
-let selectedMethod='';
+  const audio = document.getElementById('gokuAudio');
+  const btnMusic = document.querySelector('.btn-music');
+  let isPlaying = false;
 
-function openCheckout(name, price, link){
-    currentPrice=price;
-    currentProduct=name;
-    currentLink=link;
-    selectedMethod='';
-    document.getElementById('checkout-modal').style.display='flex';
-    document.getElementById('modal-product-name').innerText=name;
-    document.getElementById('modal-total').innerText=price.toFixed(2);
-    document.getElementById('payment-content').innerHTML='';
-    document.querySelectorAll('input[name="payment"]').forEach(i=>i.checked=false);
-}
-
-function closeCheckout(){ 
-    document.getElementById('checkout-modal').style.display='none'; 
-}
-
-function selectPayment(method){
-    selectedMethod=method;
-    document.getElementById('pay-'+method).checked=true;
-    showPaymentContent(method);
-}
-
-function showPaymentContent(method){
-    const message=`Hola! Pagué: ${currentProduct} - S/ ${currentPrice}. Adjunto captura.`;
-    const waLink=`https://wa.me/51936994155?text=${encodeURIComponent(message)}`;
-    let content='';
-
-    if(method === 'card'){
-        content = `
-        <div class="payment-details">
-            <p style="color:var(--text-dim); margin-bottom:15px;">Serás redirigido a Mercado Pago para completar tu pago de forma segura.</p>
-            <button onclick="window.open('${currentLink}', '_blank')" class="btn-primary btn-big">Pagar S/ ${currentPrice.toFixed(2)} con Tarjeta</button>
-        </div>`;
+  function toggleMusic() {
+    if(isPlaying) {
+      audio.pause();
+      btnMusic.innerHTML = '▶️ REPRODUCIR';
+      isPlaying = false;
+    } else {
+      audio.play();
+      btnMusic.innerHTML = '⏸️ PAUSAR';
+      isPlaying = true;
     }
+  }
 
-    if(method === 'yape'){
-        content = `
-        <div class="payment-details">
-            <p><b>Número Yape:</b> <span class="copy-text" onclick="copyText('936994155')">936 994 155 📋</span></p>
-            <p><b>Nombre:</b> Cristhofer Rojas Huarcaya</p>
-            <img src="https://files.evogb.win/kc99Pp.jpg" class="qr-code">
-            <p style="color:var(--text-dim); margin:15px 0;">1. Yapea el monto<br>2. Envía la captura</p>
-            <a href="${waLink}" target="_blank" class="btn-primary btn-big">Ya pagué por Yape</a>
-        </div>`;
-    }
+  // Estrellas
+  const starsContainer = document.getElementById('stars');
+  for(let i=0; i<120; i++){
+    let star = document.createElement('div');
+    star.className = 'star';
+    star.style.width = Math.random() * 3 + 'px';
+    star.style.height = star.style.width;
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 100 + '%';
+    star.style.animationDelay = Math.random() * 2 + 's';
+    starsContainer.appendChild(star);
+  }
 
-    if(method === 'prex'){
-        content = `
-        <div class="payment-details">
-            <p><b>Número Prex:</b> <span class="copy-text" onclick="copyText('12249975')">12249975 📋</span></p>
-            <p><b>Nombre:</b> Cristhofer Rojas Huarcaya</p>
-            <p style="color:var(--text-dim); margin:15px 0;">1. Transfiere el monto<br>2. Envía la captura</p>
-            <a href="${waLink}" target="_blank" class="btn-primary btn-big">Ya pagué por Prex</a>
-        </div>`;
-    }
-
-    if(method === 'global66'){
-        content = `
-        <div class="payment-details">
-            <p><b>Usuario Global66:</b> <span class="copy-text" onclick="copyText('@CRIROJ1855')">@CRIROJ1855 📋</span></p>
-            <p><b>Nombre:</b> Cristhofer Rojas Huarcaya</p>
-            <p style="background:rgba(0,113,227,0.1); padding:12px; border-radius:10px; margin:15px 0;"><b>Nota:</b> De Global66 a Global66</p>
-            <p style="color:var(--text-dim); margin:15px 0;">1. Transfiere por Global66<br>2. Envía la captura</p>
-            <a href="${waLink}" target="_blank" class="btn-primary btn-big">Ya pagué por Global66</a>
-        </div>`;
-    }
-
-    document.getElementById('payment-content').innerHTML=content;
-}
-
-// FUNCION PARA COPIAR
-function copyText(text){
-    navigator.clipboard.writeText(text);
-    alert('✅ Copiado: ' + text);
-}
+  document.querySelectorAll('.poder').forEach(poder => {
+    poder.addEventListener('click', () => {
+      poder.style.animation = 'pulse 0.5s';
+      setTimeout(() => poder.style.animation = '', 500);
+    });
+  });
 </script>
 </body>
 </html>
