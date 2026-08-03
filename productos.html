@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Productos - Son Goku</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Orbitron:wght@500;700&display=swap');
+  body {
+    background: linear-gradient(180deg, #0a0a2a 0%, #1a1a5e 100%);
+    color: white; font-family: 'Orbitron', sans-serif; margin: 0; padding: 20px;
+  }
+  .container { max-width: 900px; margin: auto; }
+  
+  header { text-align: center; margin-bottom: 30px; }
+  h1 { font-family: 'Bangers', cursive; font-size: 3rem; color: #ff6b00; text-shadow: 3px 3px 0 #000; }
+  
+  section {
+    background: rgba(0,0,0,0.7); border: 2px solid #ff6b00;
+    border-radius: 15px; padding: 25px; margin: 20px 0;
+    backdrop-filter: blur(5px);
+  }
+  h2 { font-family: 'Bangers', cursive; font-size: 2rem; color: #ffd700; margin-bottom: 15px; }
+  
+  /* PRODUCTOS */
+  .producto {
+    background: linear-gradient(135deg, #ff6b00, #ffd700);
+    color: #000; padding: 20px; border-radius: 12px;
+    margin: 15px 0; display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 10px;
+    transition: 0.3s;
+  }
+  .producto:hover { transform: scale(1.02); box-shadow: 0 0 20px #ffd700; }
+  .prod-info { flex: 1; }
+  .prod-nombre { font-weight: 700; font-size: 1.2rem; display: block; }
+  .prod-desc { font-size: 0.9rem; opacity: 0.8; }
+  .prod-precio { font-weight: 700; font-size: 1.4rem; color: #ff0000; }
+  .btn-comprar {
+    background: #ff0000; color: white; border: none;
+    padding: 12px 25px; border-radius: 25px; cursor: pointer;
+    font-weight: 700; font-family: 'Orbitron', sans-serif;
+    transition: 0.3s; font-size: 1rem;
+  }
+  .btn-comprar:hover { transform: scale(1.1); box-shadow: 0 0 15px #ff0000; }
+  
+  /* AUDIO */
+  .music-player { text-align: center; margin: 20px 0; }
+  .btn-music {
+    background: linear-gradient(90deg, #ff0000, #ff6b00);
+    color: white; border: none; padding: 12px 25px;
+    border-radius: 50px; font-family: 'Bangers', cursive; font-size: 1.1rem; cursor: pointer;
+  }
+  .btn-music:hover { transform: scale(1.05); }
+  
+  .btn-volver {
+    display: inline-block; margin-top: 20px;
+    color: #ffd700; text-decoration: none; font-weight: 700; font-size: 1.1rem;
+  }
+  .btn-volver:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+  <audio id="gokuAudio" loop><source src="goku.mp3" type="audio/mpeg"></audio>
+  
+  <div class="container">
+    <header>
+      <h1>TIENDA DE GOKU</h1>
+      <div class="music-player">
+        <button class="btn-music" onclick="toggleMusic()">▶️ MÚSICA</button>
+      </div>
+    </header>
+
+    <section>
+      <h2>¿QUIÉN ES GOKU?</h2>
+      <p style="line-height:1.8; font-size:1.1rem;">
+        Son Goku es un saiyan enviado a la Tierra de niño. Criado por el abuelo Gohan, 
+        se convirtió en el guerrero más fuerte del universo. Protege a la Tierra y siempre 
+        busca ser más fuerte. ¡Nunca se rinde!
+      </p>
+    </section>
+
+    <section>
+      <h2>¿QUÉ VENDE?</h2>
+      <p style="font-size:1.1rem;">Bots para grupos, bots personalizados y páginas web con poder Saiyan 🐉</p>
+    </section>
+
+    <section>
+      <h2>PRODUCTOS</h2>
+      
+      <div class="producto">
+        <div class="prod-info">
+          <span class="prod-nombre">Bot Para Grupo Mensual</span>
+          <span class="prod-desc">Acceso por 30 días</span>
+        </div>
+        <span class="prod-precio">S/ 5.00</span>
+        <button class="btn-comprar" onclick="comprar('Bot Para Grupo Mensual - S/ 5.00')">Comprar</button>
+      </div>
+      
+      <div class="producto">
+        <div class="prod-info">
+          <span class="prod-nombre">Bot Para Grupo Permanente</span>
+          <span class="prod-desc">Pago único - Para siempre</span>
+        </div>
+        <span class="prod-precio">S/ 7.00</span>
+        <button class="btn-comprar" onclick="comprar('Bot Para Grupo Permanente - S/ 7.00')">Comprar</button>
+      </div>
+      
+      <div class="producto">
+        <div class="prod-info">
+          <span class="prod-nombre">Bot Personalizado Server</span>
+          <span class="prod-desc">1er pago: S/30 | Siguiente mes: S/10</span>
+        </div>
+        <span class="prod-precio">S/ 30.00</span>
+        <button class="btn-comprar" onclick="comprar('Bot Personalizado Server - 1er pago S/30')">Comprar</button>
+      </div>
+      
+      <div class="producto">
+        <div class="prod-info">
+          <span class="prod-nombre">Página Web</span>
+          <span class="prod-desc">Diseño personalizado como esta</span>
+        </div>
+        <span class="prod-precio">S/ 35.00</span>
+        <button class="btn-comprar" onclick="comprar('Página Web - S/ 35.00')">Comprar</button>
+      </div>
+      
+    </section>
+
+    <a href="index.html" class="btn-volver">← Volver a Portada</a>
+  </div>
+
+<script>
+  const audio = document.getElementById('gokuAudio');
+  let isPlaying = false;
+  function toggleMusic() {
+    if(isPlaying) { 
+      audio.pause(); 
+      document.querySelector('.btn-music').innerHTML = '▶️ MÚSICA';
+      isPlaying = false; 
+    }
+    else { 
+      audio.play(); 
+      document.querySelector('.btn-music').innerHTML = '⏸️ PAUSAR';
+      isPlaying = true; 
+    }
+  }
+  function comprar(producto) {
+    window.open(`https://wa.me/51960815679?text=Hola%20quiero%20comprar:%20${encodeURIComponent(producto)}%20%F0%9F%90%89`, '_blank');
+  }
+</script>
+</body>
+</html>
