@@ -8,70 +8,100 @@
   @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Orbitron:wght@700&display=swap');
     * { margin: 0; padding: 0; }
   body { background: #e0f7ff; overflow: hidden; }
-  
-  .hero {
+
+ .hero {
     height: 100vh;
     background: url('https://files.evogb.win/UqbLDk.jpg') center/cover no-repeat;
     display: flex; align-items: center; justify-content: center;
     flex-direction: column; text-align: center;
     position: relative;
   }
-  .hero::before {
+ .hero::before {
     content: ''; position: absolute; top: 0; left: 0;
     width: 100%; height: 100%;
-    background: linear-gradient(180deg, rgba(224,247,255,0.2) 0%, rgba(0,170,255,0.4) 100%);
+    background: linear-gradient(180deg, rgba(224,247,255,0.3) 0%, rgba(0,170,255,0.5) 100%);
   }
-  .hero-content { position: relative; z-index: 2; margin-top: -100px; }
-  
+ .hero-content { position: relative; z-index: 2; }
+
   h1 {
     font-family: 'Bangers', cursive; font-size: 5rem;
     color: #ffffff; text-shadow: 4px 4px 0px #0055aa, 0 0 30px #00aaff;
-    animation: pulse 1.5s infinite;
+    opacity: 0; animation: aparecer 1s 2s forwards;
   }
-  @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-  
-  .btn-ki {
-    display: inline-block; margin-top: 20px;
+  @keyframes aparecer { to { opacity: 1; transform: scale(1); } }
+
+ .frase {
+    color: #ccefff; font-size: 1.3rem; margin: 10px 0 20px;
+    height: 30px; font-family: 'Orbitron'; text-shadow: 2px 2px 4px #000;
+  }
+
+ .btn-ki {
+    display: inline-block; margin-top: 15px;
     background: linear-gradient(90deg, #0055aa, #00aaff);
     color: white; padding: 18px 40px; border-radius: 50px;
     text-decoration: none; font-family: 'Orbitron', sans-serif;
     font-weight: 700; font-size: 1.3rem; border: 3px solid #fff;
     box-shadow: 0 0 30px rgba(0,170,255,0.8); transition: 0.3s;
+    animation: aura 1.5s infinite;
   }
-  .btn-ki:hover { transform: scale(1.15); box-shadow: 0 0 60px #00ffff; }
-  
-  .btn-music {
+  @keyframes aura { 0%,100% { box-shadow: 0 0 30px #00aaff; } 50% { box-shadow: 0 0 60px #00ffff; transform: scale(1.05); } }
+
+ .btn-music {
     background: linear-gradient(90deg, #0055aa, #00aaff);
     color: white; border: none; padding: 12px 25px;
     border-radius: 50px; font-family: 'Bangers', cursive; font-size: 1.1rem; cursor: pointer;
-    margin-top: 15px; border: 2px solid #fff; font-weight: 700;
+    margin-bottom: 15px; border: 2px solid #fff;
   }
-  
-  /* PARTÍCULAS DE ENERGÍA */
-  .particle {
-    position: absolute; width: 4px; height: 4px;
-    background: #00ffff; border-radius: 50%;
-    box-shadow: 0 0 10px #00aaff;
-    animation: float 8s infinite linear;
-    z-index: 1;
+
+  /* BENEFICIOS */
+ .beneficios {
+    display: flex; gap: 20px; margin-top: 30px; justify-content: center; flex-wrap: wrap;
   }
-  @keyframes float {
-    0% { transform: translateY(100vh) scale(0); opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+ .beneficio {
+    background: rgba(255,255,255,0.9); padding: 15px; border-radius: 12px;
+    border: 2px solid #00aaff; width: 150px; backdrop-filter: blur(5px);
   }
+ .beneficio-icon { font-size: 2rem; }
+
+  /* CONTADOR */
+ .poder { color: #fff; font-size: 1.2rem; margin-top: 20px; text-shadow: 2px 2px 4px #000; }
+
+  /* ESFERAS CARGA */
+ .loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #001f3f; z-index: 10000; display: flex; justify-content: center; align-items: center; gap: 15px; }
+ .esfera { width: 40px; height: 40px; background: radial-gradient(circle, #ff6b00, #ff0000); border-radius: 50%; animation: girar 1.5s infinite; box-shadow: 0 0 25px #ff6b00; }
+ .esfera:nth-child(2) { animation-delay: 0.2s; }
+ .esfera:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes girar { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-25px); } }
+
+  /* PARTÍCULAS */
+ .particle { position: absolute; width: 4px; height: 4px; background: #00ffff; border-radius: 50%; box-shadow: 0 0 10px #00aaff; animation: float 8s infinite linear; z-index: 1; }
+  @keyframes float { 0% { transform: translateY(100vh) scale(0); opacity: 0; } 10% { opacity: 1; } 100% { transform: translateY(-10vh) scale(1.5); opacity: 0; } }
 </style>
 </head>
 <body>
+  <!-- CARGA ESFERAS -->
+  <div class="loader" id="loader">
+    <div class="esfera"></div><div class="esfera"></div><div class="esfera"></div>
+  </div>
+
   <audio id="gokuAudio" loop><source src="goku.mp3" type="audio/mpeg"></audio>
-  
+
   <div class="hero" id="hero">
     <div class="hero-content">
-      <h1>GOKU PREM BOT</h1>
+      <h1 id="titulo">GOKU PREM BOT</h1>
+      <div class="frase" id="frase"></div>
+
       <button class="btn-music" onclick="toggleMusic()">▶️ REPRODUCIR MÚSICA</button>
       <br>
-      <a href="productos.html" class="btn-ki">ENTRAR A LA TIENDA</a>
+      <a href="productos.html" class="btn-ki">ENTRAR A LA BATALLA</a>
+
+      <div class="beneficios">
+        <div class="beneficio"><div class="beneficio-icon">⚡</div><b>Rápido</b><br><small>Entrega 24h</small></div>
+        <div class="beneficio"><div class="beneficio-icon">💪</div><b>Poderoso</b><br><small>0 Fallas</small></div>
+        <div class="beneficio"><div class="beneficio-icon">🔥</div><b>Barato</b><br><small>Desde S/5</small></div>
+      </div>
+
+      <div class="poder">NIVEL DE PODER: <span id="poder">0</span></div>
     </div>
   </div>
 
@@ -79,8 +109,50 @@
   const audio = document.getElementById('gokuAudio');
   const btn = document.querySelector('.btn-music');
   const hero = document.getElementById('hero');
-  
-  // Crear partículas
+
+  // QUITAR LOADER
+  window.onload = () => {
+    setTimeout(() => document.getElementById('loader').style.display='none', 2000);
+    escribirFrase();
+    iniciarContador();
+    if(localStorage.getItem('musicPlaying') === 'true') {
+      audio.currentTime = localStorage.getItem('musicTime') || 0;
+      audio.play(); btn.innerHTML = '⏸️ PAUSAR MÚSICA';
+    }
+  }
+
+  // 1. FRASE ESCRIBIENDOSE
+  const frases = [
+    "¡Yo soy el que va a superar a todos!",
+    "¡Mi poder no tiene límites!",
+    "¡Hora de vender como un Saiyan!"
+  ];
+  let fIndex = 0;
+  function escribirFrase(){
+    const frase = frases[fIndex];
+    let i = 0;
+    document.getElementById('frase').innerText = '';
+    const interval = setInterval(() => {
+      document.getElementById('frase').innerText += frase[i];
+      i++;
+      if(i >= frase.length) {
+        clearInterval(interval);
+        setTimeout(() => { fIndex = (fIndex+1)%frases.length; escribirFrase(); }, 3000);
+      }
+    }, 70);
+  }
+
+  // 2. CONTADOR PODER
+  function iniciarContador(){
+    let poder = 0;
+    const interval = setInterval(() => {
+      poder += 200;
+      document.getElementById('poder').innerText = poder + "+";
+      if(poder >= 9000) clearInterval(interval);
+    }, 50);
+  }
+
+  // 3. PARTÍCULAS
   function createParticle() {
     const p = document.createElement('div');
     p.className = 'particle';
@@ -90,19 +162,12 @@
     setTimeout(() => p.remove(), 8000);
   }
   setInterval(createParticle, 150);
-  
-  window.onload = () => {
-    if(localStorage.getItem('musicPlaying') === 'true') {
-      audio.currentTime = localStorage.getItem('musicTime') || 0;
-      audio.play();
-      btn.innerHTML = '⏸️ PAUSAR MÚSICA';
-    }
-  }
-  
+
+  // 4. MUSICA CONTINUA
   setInterval(() => {
     if(!audio.paused) { localStorage.setItem('musicTime', audio.currentTime); }
   }, 1000);
-  
+
   function toggleMusic() {
     if(audio.paused) {
       audio.play(); btn.innerHTML = '⏸️ PAUSAR MÚSICA';
@@ -112,7 +177,7 @@
       localStorage.setItem('musicPlaying', 'false');
     }
   }
-  
+
   window.onbeforeunload = () => {
     localStorage.setItem('musicTime', audio.currentTime);
   }
