@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Son Goku - El Guerrero Saiyan</title>
+<title>Goku Prem Bot</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Orbitron:wght@700&display=swap');
     * { margin: 0; padding: 0; }
-  body { background: #000; overflow: hidden; }
+  body { background: #e0f7ff; overflow: hidden; }
   
   .hero {
     height: 100vh;
-    background: url('https://files.evogb.win/f8g1F2.jpg') center/cover no-repeat;
+    background: url('https://files.evogb.win/UqbLDk.jpg') center/cover no-repeat;
     display: flex; align-items: center; justify-content: center;
     flex-direction: column; text-align: center;
     position: relative;
@@ -19,55 +19,78 @@
   .hero::before {
     content: ''; position: absolute; top: 0; left: 0;
     width: 100%; height: 100%;
-    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(255,107,0,0.5) 100%);
+    background: linear-gradient(180deg, rgba(224,247,255,0.2) 0%, rgba(0,170,255,0.4) 100%);
   }
-  .hero-content { position: relative; z-index: 2; }
+  .hero-content { position: relative; z-index: 2; margin-top: -100px; }
   
   h1 {
-    font-family: 'Bangers', cursive; font-size: 6rem;
-    color: #ffd700; text-shadow: 5px 5px 0px #ff0000, 0 0 40px #ff6b00;
+    font-family: 'Bangers', cursive; font-size: 5rem;
+    color: #ffffff; text-shadow: 4px 4px 0px #0055aa, 0 0 30px #00aaff;
     animation: pulse 1.5s infinite;
   }
-  @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+  @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
   
   .btn-ki {
     display: inline-block; margin-top: 20px;
-    background: linear-gradient(90deg, #ff0000, #ff6b00);
-    color: white; padding: 20px 45px; border-radius: 50px;
+    background: linear-gradient(90deg, #0055aa, #00aaff);
+    color: white; padding: 18px 40px; border-radius: 50px;
     text-decoration: none; font-family: 'Orbitron', sans-serif;
-    font-weight: 700; font-size: 1.4rem; border: 3px solid #ffd700;
-    box-shadow: 0 0 30px rgba(255,107,0,0.8); transition: 0.3s;
+    font-weight: 700; font-size: 1.3rem; border: 3px solid #fff;
+    box-shadow: 0 0 30px rgba(0,170,255,0.8); transition: 0.3s;
   }
-  .btn-ki:hover { transform: scale(1.15); box-shadow: 0 0 60px #ff0000; }
+  .btn-ki:hover { transform: scale(1.15); box-shadow: 0 0 60px #00ffff; }
   
   .btn-music {
-    background: linear-gradient(90deg, #ff0000, #ff6b00);
-    color: white; border: none; padding: 15px 30px;
-    border-radius: 50px; font-family: 'Bangers', cursive; font-size: 1.2rem; cursor: pointer;
-    margin-top: 15px; border: 2px solid #ffd700;
+    background: linear-gradient(90deg, #0055aa, #00aaff);
+    color: white; border: none; padding: 12px 25px;
+    border-radius: 50px; font-family: 'Bangers', cursive; font-size: 1.1rem; cursor: pointer;
+    margin-top: 15px; border: 2px solid #fff; font-weight: 700;
   }
-  .btn-music:hover { transform: scale(1.1); }
+  
+  /* PARTÍCULAS DE ENERGÍA */
+  .particle {
+    position: absolute; width: 4px; height: 4px;
+    background: #00ffff; border-radius: 50%;
+    box-shadow: 0 0 10px #00aaff;
+    animation: float 8s infinite linear;
+    z-index: 1;
+  }
+  @keyframes float {
+    0% { transform: translateY(100vh) scale(0); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+  }
 </style>
 </head>
 <body>
   <audio id="gokuAudio" loop><source src="goku.mp3" type="audio/mpeg"></audio>
   
-  <div class="hero">
+  <div class="hero" id="hero">
     <div class="hero-content">
-      <h1>SON GOKU</h1>
-      <p style="font-size:1.6rem; color:white; text-shadow:2px 2px 4px #000;">El Guerrero Saiyan</p>
-      
+      <h1>GOKU PREM BOT</h1>
       <button class="btn-music" onclick="toggleMusic()">▶️ REPRODUCIR MÚSICA</button>
       <br>
-      <a href="productos.html" class="btn-ki">ENTRAR A LA BATALLA</a>
+      <a href="productos.html" class="btn-ki">ENTRAR A LA TIENDA</a>
     </div>
   </div>
 
 <script>
   const audio = document.getElementById('gokuAudio');
   const btn = document.querySelector('.btn-music');
+  const hero = document.getElementById('hero');
   
-  // Cargar estado de la música
+  // Crear partículas
+  function createParticle() {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.animationDuration = (5 + Math.random() * 5) + 's';
+    hero.appendChild(p);
+    setTimeout(() => p.remove(), 8000);
+  }
+  setInterval(createParticle, 150);
+  
   window.onload = () => {
     if(localStorage.getItem('musicPlaying') === 'true') {
       audio.currentTime = localStorage.getItem('musicTime') || 0;
@@ -76,26 +99,20 @@
     }
   }
   
-  // Guardar tiempo cada segundo
   setInterval(() => {
-    if(!audio.paused) {
-      localStorage.setItem('musicTime', audio.currentTime);
-    }
+    if(!audio.paused) { localStorage.setItem('musicTime', audio.currentTime); }
   }, 1000);
   
   function toggleMusic() {
     if(audio.paused) {
-      audio.play();
-      btn.innerHTML = '⏸️ PAUSAR MÚSICA';
+      audio.play(); btn.innerHTML = '⏸️ PAUSAR MÚSICA';
       localStorage.setItem('musicPlaying', 'true');
     } else {
-      audio.pause();
-      btn.innerHTML = '▶️ REPRODUCIR MÚSICA';
+      audio.pause(); btn.innerHTML = '▶️ REPRODUCIR MÚSICA';
       localStorage.setItem('musicPlaying', 'false');
     }
   }
   
-  // Guardar antes de irse
   window.onbeforeunload = () => {
     localStorage.setItem('musicTime', audio.currentTime);
   }
