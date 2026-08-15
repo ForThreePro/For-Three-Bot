@@ -11,13 +11,33 @@
     <div class="bg-grid"></div>
     <audio id="bg-music" src="goku.mp3" loop autoplay></audio>
     
+    <!-- BOTON CARRITO -->
+    <div class="cart-icon" onclick="toggleCart()">
+        🛒 <span id="cart-count">0</span>
+    </div>
+
+    <!-- CARRITO LATERAL -->
+    <div id="cart" class="cart">
+        <div class="cart-header">
+            <h3>🛒 Tu Carrito</h3>
+            <span class="close-cart" onclick="toggleCart()">X</span>
+        </div>
+        <div id="cart-items" class="cart-items"></div>
+        <div class="cart-footer">
+            <p class="cart-total">Total: S/ <span id="cart-total">0</span></p>
+            <button class="checkout-btn" onclick="sendWhatsApp()">📱 Pedir por WhatsApp</button>
+            <button class="clear-btn" onclick="clearCart()">🗑️ Vaciar Carrito</button>
+        </div>
+    </div>
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+
     <div class="container">
         <header>
             <img src="https://files.evogb.win/FmVWNa.jpg" alt="Sapito Bot" class="logo-img">
             <h1 class="logo">SAPITO BOT</h1>
             <p class="subtitle">Bot para WhatsApp - Nivel Dios</p>
             <p class="version">VERSION 3.0 PREM | ESTADO: EN LÍNEA 24/7</p>
-            <a href="https://wa.me/51927174369" class="cta-btn">💬 PEDIR POR WHATSAPP</a>
+            <a href="https://wa.me/51927174369" class="cta-btn">💬 CONTACTAR</a>
             <a href="https://instagram.com/whois.yallico" class="cta-btn">📸 INSTAGRAM</a>
             <button id="music-btn" class="music-btn">🔊 Música ON</button>
         </header>
@@ -37,66 +57,54 @@
             </div>
         </div>
 
-        <div class="info-grid">
-            <div class="card">
-                <h3>😂 JUEGOS & DIVERSIÓN</h3>
-                <div class="cmd-list">
-                    <div class="cmd"><span class="cmd-name">.formarpareja</span><span class="cmd-desc">Empareja usuarios al azar</span></div>
-                    <div class="cmd"><span class="cmd-name">.gay @user</span><span class="cmd-desc">Mide el % gay</span></div>
-                    <div class="cmd"><span class="cmd-name">.marry @user</span><span class="cmd-desc">Cásate con alguien</span></div>
-                    <div class="cmd"><span class="cmd-name">.chisme @</span><span class="cmd-desc">Genera chisme random</span></div>
-                    <div class="cmd"><span class="cmd-name">.pelea @user</span><span class="cmd-desc">Inicia pelea épica</span></div>
-                    <div class="cmd"><span class="cmd-name">.verdad</span><span class="cmd-desc">Verdad o reto</span></div>
-                    <div class="cmd"><span class="cmd-name">.chiste</span><span class="cmd-desc">Cuenta un chiste</span></div>
-                </div>
+        <h2 class="section-title">🛒 PRODUCTOS</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <h3>🤖 Bot Para Grupo</h3>
+                <p class="price">S/ 7</p>
+                <p class="desc">Bot básico para administrar tu grupo. 150+ comandos incluidos.</p>
+                <button class="add-cart-btn" onclick="addToCart('Bot Para Grupo', 7)">Agregar al Carrito</button>
             </div>
-
-            <div class="card">
-                <h3>⚙️ ADMINISTRACIÓN</h3>
-                <div class="cmd-list">
-                    <div class="cmd"><span class="cmd-name">.antilink on/off</span><span class="cmd-desc">Bloquea links</span></div>
-                    <div class="cmd"><span class="cmd-name">.antispam on/off</span><span class="cmd-desc">Detecta spam</span></div>
-                    <div class="cmd"><span class="cmd-name">.bienvenida on/off</span><span class="cmd-desc">Mensaje bienvenida</span></div>
-                    <div class="cmd"><span class="cmd-name">.kick @user</span><span class="cmd-desc">Expulsar usuario</span></div>
-                    <div class="cmd"><span class="cmd-name">.promote @user</span><span class="cmd-desc">Dar admin</span></div>
-                    <div class="cmd"><span class="cmd-name">.todos texto</span><span class="cmd-desc">Menciona a todos</span></div>
-                </div>
+            <div class="product-card featured">
+                <span class="tag">MÁS VENDIDO</span>
+                <h3>👑 Bot Permanente Personalizado</h3>
+                <p class="price">S/ 30</p>
+                <p class="desc">Bot 24/7 con tu nombre, logo y comandos exclusivos. Sin límites.</p>
+                <button class="add-cart-btn" onclick="addToCart('Bot Permanente Personalizado', 30)">Agregar al Carrito</button>
             </div>
-
-            <div class="card">
-                <h3>📁 DESCARGAS</h3>
-                <div class="cmd-list">
-                    <div class="cmd"><span class="cmd-name">.play busqueda</span><span class="cmd-desc">Música de YouTube</span></div>
-                    <div class="cmd"><span class="cmd-name">.ytmp3 url</span><span class="cmd-desc">YouTube a MP3</span></div>
-                    <div class="cmd"><span class="cmd-name">.tiktok link</span><span class="cmd-desc">TikTok sin marca</span></div>
-                    <div class="cmd"><span class="cmd-name">.ig link</span><span class="cmd-desc">Descarga Instagram</span></div>
-                    <div class="cmd"><span class="cmd-name">.spotify busqueda</span><span class="cmd-desc">Descarga Spotify</span></div>
-                </div>
+            <div class="product-card">
+                <h3>🌐 Página Web</h3>
+                <p class="price">S/ 35</p>
+                <p class="desc">Landing page como esta para tu bot, marca o negocio. 100% responsive.</p>
+                <button class="add-cart-btn" onclick="addToCart('Página Web', 35)">Agregar al Carrito</button>
             </div>
-
-            <div class="card">
-                <h3>🤖 INTELIGENCIA ARTIFICIAL</h3>
-                <div class="cmd-list">
-                    <div class="cmd"><span class="cmd-name">.gpt4 texto</span><span class="cmd-desc">Pregúntale a GPT-4</span></div>
-                    <div class="cmd"><span class="cmd-name">.gemini texto</span><span class="cmd-desc">Pregúntale a Gemini</span></div>
-                    <div class="cmd"><span class="cmd-name">.tts texto</span><span class="cmd-desc">Texto a voz</span></div>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3>💰 MÉTODOS DE PAGO</h3>
-                <div>
-                    <span class="badge">Yape</span>
-                    <span class="badge">Global66</span>
-                    <span class="badge">Prex</span>
-                </div>
-                <p style="margin-top: 20px; line-height: 1.8;">
-                    📱 <strong>WhatsApp:</strong> +51 927 174 369<br>
-                    📸 <strong>Instagram:</strong> @whois.yallico
-                </p>
-                <p style="margin-top: 15px; color: #00ff88;">Escríbeme para coordinar tu pago y activar el bot</p>
+            <div class="product-card">
+                <h3>🖥️ Servidor Privado Mensual</h3>
+                <p class="price">S/ 10</p>
+                <p class="desc">Hosting para tu bot. Uptime 24/7 garantizado. Soporte incluido.</p>
+                <button class="add-cart-btn" onclick="addToCart('Servidor Privado Mensual', 10)">Agregar al Carrito</button>
             </div>
         </div>
+
+        <h2 class="section-title">💰 MÉTODOS DE PAGO</h2>
+        <div class="payments-grid">
+            <div class="payment-card">
+                <div class="payment-icon">📱</div>
+                <h3>Yape</h3>
+                <p>927 174 369</p>
+            </div>
+            <div class="payment-card">
+                <div class="payment-icon">🌍</div>
+                <h3>Global66</h3>
+                <p>Disponible para LATAM</p>
+            </div>
+            <div class="payment-card">
+                <div class="payment-icon">💳</div>
+                <h3>Prex</h3>
+                <p>Tarjeta virtual</p>
+            </div>
+        </div>
+        <p class="contact-pay">Escríbeme al WhatsApp para coordinar tu pago y activar el servicio</p>
 
         <div class="warning">
             ⚠️ No se realizan reembolsos - Bot para WhatsApp - El Mejor ⚠️<br>
