@@ -1,186 +1,414 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Goku Prem Bot</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Orbitron:wght@700&display=swap');
-    * { margin: 0; padding: 0; }
-  body { background: #e0f7ff; overflow: hidden; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapito Bot - Bot para WhatsApp | Nivel Dios</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
- .hero {
-    height: 100vh;
-    background: url('https://files.evogb.win/UqbLDk.jpg') center/cover no-repeat;
-    display: flex; align-items: center; justify-content: center;
-    flex-direction: column; text-align: center;
-    position: relative;
-  }
- .hero::before {
-    content: ''; position: absolute; top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: linear-gradient(180deg, rgba(224,247,255,0.3) 0%, rgba(0,170,255,0.5) 100%);
-  }
- .hero-content { position: relative; z-index: 2; }
+        body {
+            font-family: 'Arial Black', 'Helvetica', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
 
-  h1 {
-    font-family: 'Bangers', cursive; font-size: 5rem;
-    color: #ffffff; text-shadow: 4px 4px 0px #0055aa, 0 0 30px #00aaff;
-    opacity: 0; animation: aparecer 1s 2s forwards;
-  }
-  @keyframes aparecer { to { opacity: 1; transform: scale(1); } }
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(90deg, rgba(0,255,136,0.03) 1px, transparent 1px),
+                linear-gradient(rgba(0,255,136,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            animation: gridMove 20s linear infinite;
+        }
 
- .frase {
-    color: #ccefff; font-size: 1.3rem; margin: 10px 0 20px;
-    height: 30px; font-family: 'Orbitron'; text-shadow: 2px 2px 4px #000;
-  }
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
 
- .btn-ki {
-    display: inline-block; margin-top: 15px;
-    background: linear-gradient(90deg, #0055aa, #00aaff);
-    color: white; padding: 18px 40px; border-radius: 50px;
-    text-decoration: none; font-family: 'Orbitron', sans-serif;
-    font-weight: 700; font-size: 1.3rem; border: 3px solid #fff;
-    box-shadow: 0 0 30px rgba(0,170,255,0.8); transition: 0.3s;
-    animation: aura 1.5s infinite;
-  }
-  @keyframes aura { 0%,100% { box-shadow: 0 0 30px #00aaff; } 50% { box-shadow: 0 0 60px #00ffff; transform: scale(1.05); } }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
 
- .btn-music {
-    background: linear-gradient(90deg, #0055aa, #00aaff);
-    color: white; border: none; padding: 12px 25px;
-    border-radius: 50px; font-family: 'Bangers', cursive; font-size: 1.1rem; cursor: pointer;
-    margin-bottom: 15px; border: 2px solid #fff;
-  }
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
 
-  /* BENEFICIOS */
- .beneficios {
-    display: flex; gap: 20px; margin-top: 30px; justify-content: center; flex-wrap: wrap;
-  }
- .beneficio {
-    background: rgba(255,255,255,0.9); padding: 15px; border-radius: 12px;
-    border: 2px solid #00aaff; width: 150px; backdrop-filter: blur(5px);
-  }
- .beneficio-icon { font-size: 2rem; }
+        .logo {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #00ff88;
+            text-shadow: 
+                0 0 10px #00ff88,
+                0 0 20px #00ff88,
+                0 0 40px #00ff88;
+            margin-bottom: 10px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
 
-  /* CONTADOR */
- .poder { color: #fff; font-size: 1.2rem; margin-top: 20px; text-shadow: 2px 2px 4px #000; }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88, 0 0 40px #00ff88; }
+            to { text-shadow: 0 0 20px #00ff88, 0 0 30px #00ff88, 0 0 60px #00ff88; }
+        }
 
-  /* ESFERAS CARGA */
- .loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #001f3f; z-index: 10000; display: flex; justify-content: center; align-items: center; gap: 15px; }
- .esfera { width: 40px; height: 40px; background: radial-gradient(circle, #ff6b00, #ff0000); border-radius: 50%; animation: girar 1.5s infinite; box-shadow: 0 0 25px #ff6b00; }
- .esfera:nth-child(2) { animation-delay: 0.2s; }
- .esfera:nth-child(3) { animation-delay: 0.4s; }
-  @keyframes girar { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-25px); } }
+        .subtitle {
+            font-size: 1.5rem;
+            color: #00ff88;
+            margin-bottom: 10px;
+        }
 
-  /* PARTÍCULAS */
- .particle { position: absolute; width: 4px; height: 4px; background: #00ffff; border-radius: 50%; box-shadow: 0 0 10px #00aaff; animation: float 8s infinite linear; z-index: 1; }
-  @keyframes float { 0% { transform: translateY(100vh) scale(0); opacity: 0; } 10% { opacity: 1; } 100% { transform: translateY(-10vh) scale(1.5); opacity: 0; } }
-</style>
+        .version {
+            font-size: 1rem;
+            color: #8b00ff;
+            text-shadow: 0 0 10px #8b00ff;
+            margin-bottom: 30px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: #8b00ff;
+            color: #fff;
+            padding: 18px 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 3px solid #00ff88;
+            box-shadow: 0 0 20px rgba(0,255,136,0.5);
+            transition: all 0.3s ease;
+            margin: 20px 10px;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(0,255,136,0.8);
+            background: #a020f0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 60px 0;
+        }
+
+        .card {
+            background: rgba(20,20,20,0.9);
+            border: 2px solid #00ff88;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0,255,136,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 40px rgba(0,255,136,0.4);
+        }
+
+        .card h3 {
+            color: #00ff88;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #00ff88;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cmd-list {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .cmd-list::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .cmd-list::-webkit-scrollbar-thumb {
+            background: #00ff88;
+            border-radius: 10px;
+        }
+
+        .cmd {
+            background: rgba(139,0,255,0.1);
+            border-left: 3px solid #8b00ff;
+            padding: 10px 15px;
+            margin: 8px 0;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .cmd:hover {
+            background: rgba(139,0,255,0.2);
+            border-left-color: #00ff88;
+        }
+
+        .cmd-name {
+            color: #00ff88;
+            font-weight: bold;
+        }
+
+        .cmd-desc {
+            color: #aaa;
+            font-size: 0.85rem;
+            display: block;
+            margin-top: 3px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #8b00ff;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin: 5px;
+            font-weight: bold;
+            border: 1px solid #00ff88;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-size: 3rem;
+            color: #00ff88;
+            text-shadow: 0 0 20px #00ff88;
+            font-weight: 900;
+        }
+
+        .stat-label {
+            color: #aaa;
+            font-size: 1rem;
+        }
+
+        .warning {
+            background: #8b00ff;
+            color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border: 2px solid #00ff88;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 2px solid #00ff88;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .logo { font-size: 2.5rem; }
+            .subtitle { font-size: 1.1rem; }
+            .cta-btn { padding: 15px 30px; font-size: 1.1rem; }
+            .info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-  <!-- CARGA ESFERAS -->
-  <div class="loader" id="loader">
-    <div class="esfera"></div><div class="esfera"></div><div class="esfera"></div>
-  </div>
+    <div class="bg-grid"></div>
+    
+    <div class="container">
+        <header>
+            <h1 class="logo">🐸 SAPITO BOT 🐸</h1>
+            <p class="subtitle">Bot para WhatsApp - Nivel Dios</p>
+            <p class="version">VERSION 3.0 PREM | ESTADO: EN LÍNEA</p>
+            <a href="https://wa.me/51927174369" class="cta-btn">💬 PEDIR POR WHATSAPP</a>
+            <a href="https://instagram.com/whois.yallico" class="cta-btn">📸 INSTAGRAM</a>
+        </header>
 
-  <audio id="gokuAudio" loop><source src="goku.mp3" type="audio/mpeg"></audio>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-num">1705+</div>
+                <div class="stat-label">Usuarios Activos</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">150+</div>
+                <div class="stat-label">Comandos</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">24/7</div>
+                <div class="stat-label">En Línea</div>
+            </div>
+        </div>
 
-  <div class="hero" id="hero">
-    <div class="hero-content">
-      <h1 id="titulo">GOKU PREM BOT</h1>
-      <div class="frase" id="frase"></div>
+        <div class="info-grid">
+            <div class="card">
+                <h3>😂 JUEGOS & DIVERSIÓN</h3>
+                <div class="cmd-list">
+                    <div class="cmd"><span class="cmd-name">.formarpareja</span><span class="cmd-desc">Empareja usuarios al azar</span></div>
+                    <div class="cmd"><span class="cmd-name">.gay @user</span><span class="cmd-desc">Mide el % gay</span></div>
+                    <div class="cmd"><span class="cmd-name">.lesbiana @user</span><span class="cmd-desc">Mide el % lesbiana</span></div>
+                    <div class="cmd"><span class="cmd-name">.marry @user</span><span class="cmd-desc">Cásate con alguien</span></div>
+                    <div class="cmd"><span class="cmd-name">.divorce</span><span class="cmd-desc">Divórciate</span></div>
+                    <div class="cmd"><span class="cmd-name">.couple</span><span class="cmd-desc">Ver parejas del grupo</span></div>
+                    <div class="cmd"><span class="cmd-name">.chisme @</span><span class="cmd-desc">Genera chisme random</span></div>
+                    <div class="cmd"><span class="cmd-name">.piropo @</span><span class="cmd-desc">Lanza piropo</span></div>
+                    <div class="cmd"><span class="cmd-name">.top texto</span><span class="cmd-desc">Top 10 de cualquier cosa</span></div>
+                    <div class="cmd"><span class="cmd-name">.pelea @user</span><span class="cmd-desc">Inicia pelea épica</span></div>
+                    <div class="cmd"><span class="cmd-name">.cachetear @user</span><span class="cmd-desc">Cachetea a alguien</span></div>
+                    <div class="cmd"><span class="cmd-name">.abrazar @user</span><span class="cmd-desc">Abraza con cariño</span></div>
+                    <div class="cmd"><span class="cmd-name">.kiss @user</span><span class="cmd-desc">Beso romántico</span></div>
+                    <div class="cmd"><span class="cmd-name">.pregunta</span><span class="cmd-desc">Pregunta random</span></div>
+                    <div class="cmd"><span class="cmd-name">.verdad</span><span class="cmd-desc">Verdad o reto</span></div>
+                    <div class="cmd"><span class="cmd-name">.chiste</span><span class="cmd-desc">Cuenta un chiste</span></div>
+                    <div class="cmd"><span class="cmd-name">.facto</span><span class="cmd-desc">Tira un facto</span></div>
+                </div>
+            </div>
 
-      <button class="btn-music" onclick="toggleMusic()">▶️ REPRODUCIR MÚSICA</button>
-      <br>
-      <a href="productos.html" class="btn-ki">ENTRAR A LA BATALLA</a>
+            <div class="card">
+                <h3>⚙️ ADMINISTRACIÓN</h3>
+                <div class="cmd-list">
+                    <div class="cmd"><span class="cmd-name">.antilink on/off</span><span class="cmd-desc">Bloquea links de otros grupos</span></div>
+                    <div class="cmd"><span class="cmd-name">.antispam on/off</span><span class="cmd-desc">Detecta spam automático</span></div>
+                    <div class="cmd"><span class="cmd-name">.modoadmin on/off</span><span class="cmd-desc">Solo admins usan comandos</span></div>
+                    <div class="cmd"><span class="cmd-name">.bienvenida on/off</span><span class="cmd-desc">Mensaje de bienvenida</span></div>
+                    <div class="cmd"><span class="cmd-name">.antibot on/off</span><span class="cmd-desc">Bloquea otros bots</span></div>
+                    <div class="cmd"><span class="cmd-name">.nsfw on/off</span><span class="cmd-desc">Contenido +18</span></div>
+                    <div class="cmd"><span class="cmd-name">.antiprivado on/off</span><span class="cmd-desc">No responde al privado</span></div>
+                    <div class="cmd"><span class="cmd-name">.autoread on/off</span><span class="cmd-desc">Marca mensajes como leídos</span></div>
+                    <div class="cmd"><span class="cmd-name">.setwelcome</span><span class="cmd-desc">Configura bienvenida</span></div>
+                    <div class="cmd"><span class="cmd-name">.setbye</span><span class="cmd-desc">Configura despedida</span></div>
+                    <div class="cmd"><span class="cmd-name">.promote @user</span><span class="cmd-desc">Dar admin</span></div>
+                    <div class="cmd"><span class="cmd-name">.demote @user</span><span class="cmd-desc">Quitar admin</span></div>
+                    <div class="cmd"><span class="cmd-name">.kick @user</span><span class="cmd-desc">Expulsar usuario</span></div>
+                    <div class="cmd"><span class="cmd-name">.mute @user</span><span class="cmd-desc">Silenciar usuario</span></div>
+                    <div class="cmd"><span class="cmd-name">.abrir</span><span class="cmd-desc">Abrir grupo</span></div>
+                    <div class="cmd"><span class="cmd-name">.cerrar</span><span class="cmd-desc">Cerrar grupo</span></div>
+                    <div class="cmd"><span class="cmd-name">.todos texto</span><span class="cmd-desc">Menciona a todos</span></div>
+                    <div class="cmd"><span class="cmd-name">.link</span><span class="cmd-desc">Link del grupo</span></div>
+                </div>
+            </div>
 
-      <div class="beneficios">
-        <div class="beneficio"><div class="beneficio-icon">⚡</div><b>Rápido</b><br><small>Entrega 24h</small></div>
-        <div class="beneficio"><div class="beneficio-icon">💪</div><b>Poderoso</b><br><small>0 Fallas</small></div>
-        <div class="beneficio"><div class="beneficio-icon">🔥</div><b>Barato</b><br><small>Desde S/5</small></div>
-      </div>
+            <div class="card">
+                <h3>📁 DESCARGAS</h3>
+                <div class="cmd-list">
+                    <div class="cmd"><span class="cmd-name">.play busqueda</span><span class="cmd-desc">Descarga música de YouTube</span></div>
+                    <div class="cmd"><span class="cmd-name">.play2 busqueda</span><span class="cmd-desc">Descarga video de YouTube</span></div>
+                    <div class="cmd"><span class="cmd-name">.ytmp3 url</span><span class="cmd-desc">YouTube a MP3</span></div>
+                    <div class="cmd"><span class="cmd-name">.ytmp4 url</span><span class="cmd-desc">YouTube a MP4</span></div>
+                    <div class="cmd"><span class="cmd-name">.tiktok link</span><span class="cmd-desc">Descarga TikTok sin marca</span></div>
+                    <div class="cmd"><span class="cmd-name">.tiktoksearch busqueda</span><span class="cmd-desc">Busca en TikTok</span></div>
+                    <div class="cmd"><span class="cmd-name">.ig link</span><span class="cmd-desc">Descarga de Instagram</span></div>
+                    <div class="cmd"><span class="cmd-name">.fb link</span><span class="cmd-desc">Descarga de Facebook</span></div>
+                    <div class="cmd"><span class="cmd-name">.spotify busqueda</span><span class="cmd-desc">Descarga de Spotify</span></div>
+                    <div class="cmd"><span class="cmd-name">.mediafire link</span><span class="cmd-desc">Descarga de MediaFire</span></div>
+                    <div class="cmd"><span class="cmd-name">.yts busqueda</span><span class="cmd-desc">Busca en YouTube</span></div>
+                    <div class="cmd"><span class="cmd-name">.google busqueda</span><span class="cmd-desc">Busca en Google</span></div>
+                </div>
+            </div>
 
-      <div class="poder">NIVEL DE PODER: <span id="poder">0</span></div>
+            <div class="card">
+                <h3>🧩 STICKERS & MEDIA</h3>
+                <div class="cmd-list">
+                    <div class="cmd"><span class="cmd-name">.s</span><span class="cmd-desc">Convierte imagen/video a sticker</span></div>
+                    <div class="cmd"><span class="cmd-name">.wm nombre|autor</span><span class="cmd-desc">Sticker con marca de agua</span></div>
+                    <div class="cmd"><span class="cmd-name">.brat texto</span><span class="cmd-desc">Texto estilo Brat</span></div>
+                    <div class="cmd"><span class="cmd-name">.qc texto</span><span class="cmd-desc">Quote estilo iPhone</span></div>
+                    <div class="cmd"><span class="cmd-name">.emojimix 😂+🔥</span><span class="cmd-desc">Combina emojis</span></div>
+                    <div class="cmd"><span class="cmd-name">.tovid sticker</span><span class="cmd-desc">Sticker a video</span></div>
+                    <div class="cmd"><span class="cmd-name">.toimg</span><span class="cmd-desc">Sticker a imagen</span></div>
+                    <div class="cmd"><span class="cmd-name">.tomp3</span><span class="cmd-desc">Video a audio</span></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>🤖 INTELIGENCIA ARTIFICIAL</h3>
+                <div class="cmd-list">
+                    <div class="cmd"><span class="cmd-name">.gpt4 texto</span><span class="cmd-desc">Pregúntale a GPT-4</span></div>
+                    <div class="cmd"><span class="cmd-name">.gemini texto</span><span class="cmd-desc">Pregúntale a Gemini</span></div>
+                    <div class="cmd"><span class="cmd-name">.claude texto</span><span class="cmd-desc">Pregúntale a Claude</span></div>
+                    <div class="cmd"><span class="cmd-name">.copilot texto</span><span class="cmd-desc">Pregúntale a Copilot</span></div>
+                    <div class="cmd"><span class="cmd-name">.tts texto</span><span class="cmd-desc">Texto a voz</span></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>🛠️ HERRAMIENTAS</h3>
+                <div class="cmd-list">
+                    <div class="cmd"><span class="cmd-name">.hd</span><span class="cmd-desc">Mejora calidad de imagen</span></div>
+                    <div class="cmd"><span class="cmd-name">.remini</span><span class="cmd-desc">Restaura fotos antiguas</span></div>
+                    <div class="cmd"><span class="cmd-name">.upscale</span><span class="cmd-desc">Aumenta resolución</span></div>
+                    <div class="cmd"><span class="cmd-name">.tourl</span><span class="cmd-desc">Sube archivo y da link</span></div>
+                    <div class="cmd"><span class="cmd-name">.info</span><span class="cmd-desc">Info del bot</span></div>
+                    <div class="cmd"><span class="cmd-name">.ping</span><span class="cmd-desc">Ver latencia</span></div>
+                    <div class="cmd"><span class="cmd-name">.cpu</span><span class="cmd-desc">Uso de CPU</span></div>
+                    <div class="cmd"><span class="cmd-name">.ram</span><span class="cmd-desc">Uso de RAM</span></div>
+                    <div class="cmd"><span class="cmd-name">.uptime</span><span class="cmd-desc">Tiempo activo</span></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>🎮 FREE FIRE</h3>
+                <div class="cmd-list">
+                    <div class="cmd"><span class="cmd-name">.vs16</span><span class="cmd-desc">Lista Mixta Sur 4vs4</span></div>
+                    <div class="cmd"><span class="cmd-name">.vs18</span><span class="cmd-desc">Lista Mixta Sur 4vs4</span></div>
+                    <div class="cmd"><span class="cmd-name">.vs20</span><span class="cmd-desc">Lista Mixta Sur 4vs4</span></div>
+                    <div class="cmd"><span class="cmd-name">.vsfem16</span><span class="cmd-desc">Lista Femenina Sur</span></div>
+                    <div class="cmd"><span class="cmd-name">.vsmasc16</span><span class="cmd-desc">Lista Masculina Sur</span></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>💰 MÉTODOS DE PAGO</h3>
+                <div>
+                    <span class="badge">Yape</span>
+                    <span class="badge">Global66</span>
+                    <span class="badge">Prex</span>
+                </div>
+                <p style="margin-top: 20px; line-height: 1.8;">
+                    📱 <strong>WhatsApp:</strong> +51 927 174 369<br>
+                    📸 <strong>Instagram:</strong> @whois.yallico
+                </p>
+                <p style="margin-top: 15px; color: #00ff88;">Escríbeme para coordinar tu pago y activar el bot</p>
+            </div>
+        </div>
+
+        <div class="warning">
+            ⚠️ No se realizan reembolsos - Bot para WhatsApp - El Mejor ⚠️<br>
+            > Usa . antes de cada comando para activarlo
+        </div>
+
+        <footer>
+            <p style="color: #00ff88; font-size: 1.3rem; text-shadow: 0 0 10px #00ff88;">
+                🐸 SAPITO BOT - NIVEL DIOS 🐸
+            </p>
+            <p style="margin-top: 15px; color: #aaa;">
+                "No subestimes mi poder... o serás polvo" ⚡
+            </p>
+            <p style="margin-top: 20px; color: #666;">© 2026 Sapito Bot. Todos los derechos reservados.</p>
+        </footer>
     </div>
-  </div>
-
-<script>
-  const audio = document.getElementById('gokuAudio');
-  const btn = document.querySelector('.btn-music');
-  const hero = document.getElementById('hero');
-
-  // QUITAR LOADER
-  window.onload = () => {
-    setTimeout(() => document.getElementById('loader').style.display='none', 2000);
-    escribirFrase();
-    iniciarContador();
-    if(localStorage.getItem('musicPlaying') === 'true') {
-      audio.currentTime = localStorage.getItem('musicTime') || 0;
-      audio.play(); btn.innerHTML = '⏸️ PAUSAR MÚSICA';
-    }
-  }
-
-  // 1. FRASE ESCRIBIENDOSE
-  const frases = [
-    "¡Yo soy el que va a superar a todos!",
-    "¡Mi poder no tiene límites!",
-    "¡Hora de vender como un Saiyan!"
-  ];
-  let fIndex = 0;
-  function escribirFrase(){
-    const frase = frases[fIndex];
-    let i = 0;
-    document.getElementById('frase').innerText = '';
-    const interval = setInterval(() => {
-      document.getElementById('frase').innerText += frase[i];
-      i++;
-      if(i >= frase.length) {
-        clearInterval(interval);
-        setTimeout(() => { fIndex = (fIndex+1)%frases.length; escribirFrase(); }, 3000);
-      }
-    }, 70);
-  }
-
-  // 2. CONTADOR PODER
-  function iniciarContador(){
-    let poder = 0;
-    const interval = setInterval(() => {
-      poder += 200;
-      document.getElementById('poder').innerText = poder + "+";
-      if(poder >= 9000) clearInterval(interval);
-    }, 50);
-  }
-
-  // 3. PARTÍCULAS
-  function createParticle() {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    p.style.left = Math.random() * 100 + 'vw';
-    p.style.animationDuration = (5 + Math.random() * 5) + 's';
-    hero.appendChild(p);
-    setTimeout(() => p.remove(), 8000);
-  }
-  setInterval(createParticle, 150);
-
-  // 4. MUSICA CONTINUA
-  setInterval(() => {
-    if(!audio.paused) { localStorage.setItem('musicTime', audio.currentTime); }
-  }, 1000);
-
-  function toggleMusic() {
-    if(audio.paused) {
-      audio.play(); btn.innerHTML = '⏸️ PAUSAR MÚSICA';
-      localStorage.setItem('musicPlaying', 'true');
-    } else {
-      audio.pause(); btn.innerHTML = '▶️ REPRODUCIR MÚSICA';
-      localStorage.setItem('musicPlaying', 'false');
-    }
-  }
-
-  window.onbeforeunload = () => {
-    localStorage.setItem('musicTime', audio.currentTime);
-  }
-</script>
 </body>
 </html>
